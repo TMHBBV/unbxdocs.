@@ -1,5 +1,5 @@
 ---
-title: Prepare Schema
+title: Prepare Your Schema
 deprecated: false
 hidden: false
 metadata:
