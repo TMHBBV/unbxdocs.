@@ -1,14 +1,10 @@
 ---
-title: 'Feed '
+title: Prepare Schema
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-***
-
-# Prepare Schema
-
 A schema establishes the properties of each attribute within a product catalog and determines the various functions and operations that can be supported for each attribute. For example, a numeric dataType will allow less than, greater than, and range facets, whereas a text dataType will support operations such as contains and support text facets.
 
 ***
