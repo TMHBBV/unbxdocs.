@@ -29,7 +29,7 @@ Each field in the schema must contain the following four mandatory properties:
       </th>
 
       <th>
-        Mandatory (Yes/ No)
+        Mandatory/ Optional
       </th>
     </tr>
   </thead>
@@ -89,11 +89,10 @@ Each field in the schema must contain the following four mandatory properties:
       </td>
 
       <td>
-        The multiValued attribute specifies whether a field can accept multiple values for a product.Set multiValued to true if the field can accept multiple values (e.g., a product that can have multiple colors or styles).
+        The multiValued attribute specifies whether a field can accept multiple values for a product.
 
-        <br />
-
-        Set multiValued to false if the field can have only one value (e.g., product brand).
+        * multiValued = **true** if the field can accept multiple values. For example - a product that can have multiple colors or styles like "Casual" or "Sport"
+        * multiValued = **false** if the field can have only one value. For example product brand like "Nike"
       </td>
 
       <td>
@@ -107,7 +106,7 @@ Each field in the schema must contain the following four mandatory properties:
       </td>
 
       <td>
-
+        This specifies whether the attribute should have an auto-suggestion feature. This feature helps in providing suggestions as the user types, typically for text-based attributes (e.g., brand, title).
       </td>
 
       <td>
@@ -121,7 +120,10 @@ Each field in the schema must contain the following four mandatory properties:
       </td>
 
       <td>
+        The isVariant attribute indicates whether the field is a variant attribute, which is used only for catalogs with variants.
 
+        * isVariant = true for variant attributes (e.g., size, color).
+        * isVariant = false for parent product attributes (e.g., title, brand).
       </td>
 
       <td>
@@ -144,20 +146,3 @@ Each field in the schema must contain the following four mandatory properties:
     </tr>
   </tbody>
 </Table>
-
-<br />
-
-fieldName
-
-Case-sensitive.
-
-Should start with an alphabet or underscore.
-
-Can only contain alphanumeric characters, hyphens (-), and underscores (\_).
-
-Cannot contain special characters or spaces.
-
-Cannot end with an underscore.
-
-id\
-The id attribute in the schema represents a numerical identifier for an attribute within the catalog. This is useful when product feeds contain field IDs instead of field names.
