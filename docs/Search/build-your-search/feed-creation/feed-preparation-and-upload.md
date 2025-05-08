@@ -146,3 +146,51 @@ Each field in the schema must contain the following four mandatory properties:
     </tr>
   </tbody>
 </Table>
+
+### Sample Schema
+
+```json json
+{
+"feed": {
+        "catalog": {
+            "schema": [{
+                "fieldName": "code",
+                "dataType": "text",
+                "multiValued": "false",
+                "autoSuggest": "false",
+                "isVariant": "false"
+            }, {
+                "fieldName": "title",
+                "dataType": "text",
+                "multiValued": "false",
+                "autoSuggest": "false",
+                "isVariant": "false"
+            }, {
+                "fieldName": "imageUrl",
+                "dataType": "link",
+                "multiValued": "true",
+                "autoSuggest": "false",
+                "isVariant": "false"
+            }, {
+                "fieldName": "brand",
+                "dataType": "link",
+                "multiValued": "true",
+                "autoSuggest": "false",
+                "isVariant": "false"
+            }, {
+                "fieldName": "brand",
+                "dataType": "link",
+                "multiValued": "true",
+                "autoSuggest": "false",
+                "isVariant": "false"
+            }, { 
+                "fieldName": "vPrice",
+                "dataType": "decimal",
+                "multiValued": "true",
+                "autoSuggest": "false",
+                "isVariant": "true"
+            }]
+        }
+ }
+}
+```
