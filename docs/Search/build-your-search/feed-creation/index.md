@@ -41,3 +41,11 @@ To integrate Unbxd search, follow these three key steps:
    * RESTful APIs for Search & Autosuggest: Use these to integrate **Search** and **Suggest** functionality.
    * SDKs for Search: Unbxd provides SDKs for integration with Android, iOS, and JavaScript-based sites.
    * Platform Plugins: Pre-built plugins are available for Magento, Shopify, and Hybris stores.
+
+> 📘 Resources
+>
+> [Search API Documentation]()
+>
+> [Autosuggest API Documentation]()
+>
+> [Platform-Specific Integration Guides]()
