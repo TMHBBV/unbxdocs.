@@ -7,6 +7,11 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+next:
+  pages:
+    - slug: feed-preparation-and-upload
+      title: Feed Preparation and Upload
+      type: basic
 ---
 # Overview
 
