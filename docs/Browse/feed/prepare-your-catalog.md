@@ -97,9 +97,15 @@ Once your catalog has updated information related to variants, you can add varia
 
 Illustration 1 : The HDMI cable has 5 variants – color, size, gauge, quantity, and output.
 
+<Image align="center" className="border" border={true} width="50% " src="https://files.readme.io/ac96c364512753c5f0d83eca68ae1bd38553578a1f5b8a49bcbced781d07f09b-illustration_1.png" />
+
 Illustration 2: In the illustration below, the product ‘Mango Badam’ has 1 variant – size. The PLP chooses to display the product as two separate entities here.
 
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/e5b8cb45687cdf406764b1779e82c9d27666e7e54fcec544565372e7fae85ad0-illustration_2.png" />
+
 Illustration 3: In this illustration, the skirt has two variants – color and size. The other fields like title, description, fabric/material, price are the same.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/ecbf3c0ec82ca26f1ac9a30c0c36647fa3c23a4c321ba522f72e50127c1971e7-Variant_3.png" />
 
 ***
 
@@ -111,5 +117,5 @@ To ensure your feed is uploaded and integrated seamlessly, here are some practic
 * Ensure all attributes are defined in the schema.
 * Ensure your catalog file is in JSON format.
 * Field names are case-sensitive.
-* Field names should start with alphabets or underscore. It can be alphanumeric, can have hyphens and underscores. It cannot contain special characters, spaces in between words, or end with an underscore.
+* Field names should start with an alphabet or underscore. They can be alphanumeric, have hyphens, or underscores. They cannot contain special characters, spaces between words, or end with an underscore.
 * Do not send fields that have null values.
