@@ -8,6 +8,10 @@ hidden: false
 metadata:
   robots: index
 ---
+# Overview
+
+Unbxd offers a powerful, platform-agnostic site search engine designed to provide highly relevant search results, increase engagement, and optimize the user experience for the end users. Integrate and manage site search features, including feed preparation, analytics setup, and deploying **Unbxd** **Search**.
+
 # Prerequisites
 
 Before you begin integrating **Unbxd Search** into your site, the following requirements must be met:
