@@ -1,9 +1,17 @@
 ---
 title: Feed Preparation and Upload
+excerpt: >-
+  Guide to preparing and uploading product catalog feeds and schemas for
+  seamless integration with Unbxd
 deprecated: false
 hidden: false
 metadata:
   robots: index
+next:
+  pages:
+    - slug: set-up-analytics
+      title: Set up Analytics
+      type: basic
 ---
 # Overview
 
