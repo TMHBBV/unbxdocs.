@@ -86,16 +86,12 @@ Variants are different versions of the same product that share the same SKU or p
 
 To ensure your catalog is uploaded and integrated seamlessly, follow these best practices:
 
-* Ensure every product has a unique uniqueId.
-* Define all attributes in the schema (including custom fields).
-* Ensure the catalog file is in JSON format.
-* Field names are case-sensitive.
-* Field names should follow these rules:
-
-Start with an alphabet or an underscore.
-
-Can include alphanumeric characters, hyphens, and underscores.
-
-Cannot contain special characters, spaces, or end with an underscore.
-
-Do not send fields that have null values.
+1. Ensure every product has a unique uniqueId.
+2. Define all attributes in the schema (including custom fields).
+3. Ensure the catalog file is in JSON format.
+4. Field names are case-sensitive.
+5. Field names should follow these rules:
+   * Start with an alphabet or an underscore.
+   * Can include alphanumeric characters, hyphens, and underscores.
+   * Cannot contain special characters, spaces, or end with an underscore.
+   * Do not send fields that have null values.
