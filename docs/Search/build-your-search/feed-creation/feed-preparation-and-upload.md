@@ -202,3 +202,89 @@ Each field in the schema must contain the following four mandatory properties:
  }
 }
 ```
+
+### Schema Upload Process
+
+You can upload a schema using the following methods:
+
+1. APIs: Upload via the schema API (for most use cases).
+2. SFTP: Required if post-processing is done by Unbxd on the schema.
+
+### Behavior of Schema Upload
+
+1. Each schema upload appends to the existing schema (if any).
+2. If a field already exists, the property values will be updated.
+3. New fields are added to the schema.
+4. It is not possible to delete existing fields via the API.
+
+### API Parameters
+
+```Text API End Point
+Method : POST
+ 
+End Point :  {feed end point}/api/{siteKey}/upload/schema
+
+Description : This API will perform an upload/update of the schema file.
+```
+```Text Parameter
+siteKey: A unique identifier provided when your Unbxd account is created. This key can also be retrieved from your Unbxd Console. This is a required field.
+
+secretKey: A unique identifier provided when your Unbxd account is created. The secretKey is used to authorize your upload request. This is a private key and will not be exposed to the public. This is a required field.
+
+file: The name of the schema, as a JSON file.
+
+feed end point : The feed end point depends upon the region selected at the time of site creation.
+
+US region: http://feed.unbxd.io/
+ANZ region : http://feed-anz.unbxd.io/
+UK region : http://feed-uk.unbxd.io/
+SG region : http://feed-apac.unbxd.io/
+```
+```Text Error Codes
+We use conventional HTTP response codes to indicate success or failure of an API request.
+
+201 (Ok): Indicates the upload was successful.
+401 (Authorization Error): Indicates you may have provided an invalid API key.
+400 (Bad Request): Indicates you may have missed a required parameter.
+500 (Internal Server Error): Though these are rare, this indicates we may have messed up.
+```
+```Text Sample Request
+curl -X POST https://{Feed end point}/api/{siteKey}/upload/schema 
+-H 'Authorization:{secretKey}' 
+-F file={file}
+```
+
+<br />
+
+This API performs the upload/update of the schema file.
+
+Best Practices for Schema Upload\
+Schema is required for all fields (except internal fields created by Unbxd).
+
+<br />
+
+Ensure your schema file is in JSON format.
+
+<br />
+
+Field names are case-sensitive.
+
+<br />
+
+Field names should:
+
+<br />
+
+Start with an alphabet or underscore.
+
+<br />
+
+Be alphanumeric, can include hyphens and underscores.
+
+<br />
+
+Cannot contain special characters, spaces, or end with an underscore.
+
+<br />
+
+Do not send fields with null values.
