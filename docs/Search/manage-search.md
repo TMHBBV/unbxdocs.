@@ -126,23 +126,34 @@ Merchandising features in Unbxd’s site search solution are designed to enhance
 
 <br />
 
-1.1 Facets
+## 2. Console / Site Features
 
-1.2
+The Console / Site Features are designed to provide comprehensive monitoring, multi-language support, and other functionalities that enhance your site's performance and user experience. Below are the key features:
 
-1.3
+1. **System Health / Monitoring Dashboard**
 
-1.4
+The Monitoring Dashboard provides detailed reports and insights into the status of the uploaded catalog and API integration. It helps ensure that all the functionalities are working correctly and allows for proactive troubleshooting. Key Features includes:
 
-1.5
+* Real-Time Monitoring: You can track the performance of the catalog and APIs to ensure everything is running smoothly.
+* Error Indicators: If certain functionalities are not integrated correctly, such as the Auto Suggest feature, the relevant section will appear grayed out with no statistics displayed, signaling that action is required.
 
-1.6\
-.
+This feature helps keep track of integrations and provides transparency on the system’s health.
 
-1.7
+2. **Multi-Language Support**
 
-1.8 Sorting\
-Sorting allows products to be organized based on specific fields, either in ascending or descending order. For example, products can be sorted by price, popularity, or newest arrivals, helping shoppers find products according to their preferences.
+Unbxd now supports multi-language capabilities, allowing shoppers to search in a variety of languages. This feature ensures that language barriers do not hinder shoppers from finding the products they are looking for. Currently we support the below languages:
 
-1.9 Banners / Redirects\
-Event-driven banners or redirects allow you to display promotional images on your site during special events, like a sale or holiday season. These banners can be linked to specific product categories, attracting shoppers to a targeted set of products based on the event.
+* French
+* Spanish
+* German
+* Bahasa
+* Italian
+* Swedish
+* Portuguese
+* Dutch
+* Danish
+* Polish
+
+> 📘 Note
+>
+> Shoppers can conduct searches in any of these languages, and Unbxd will handle the search functionality in the background, ensuring accurate and relevant results. This multi-language feature helps create a global eCommerce experience for customers across different regions.
