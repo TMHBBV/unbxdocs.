@@ -1,5 +1,5 @@
 ---
-title: Set up Analytics
+title: Prepare Your Catalog
 deprecated: false
 hidden: false
 metadata:
@@ -32,11 +32,13 @@ The product catalog holds all relevant information about your products. This dat
 These attributes help define the characteristics of the products in the catalog and are critical to search and discovery processes. In addition to the basic attributes, many catalogs will also include feature fields and custom fields.
 
 2. **Product Catalog Fields** : The attributes in a product catalog can be classified into three main categories:
+
    <Accordion title="UniqueId" icon="fa-info-circle">
      The UniqueId is a unique identifier for each product in your catalog, commonly known as SKU or productID (PID). This identifier helps track products, sales, and inventory.\
      Note:
      The **UniqueId** does not have to be visible to shoppers but must be included for proper functionality in Unbxd. Specifying the UniqueId is mandatory for each product
    </Accordion>
+
    <Accordion title="Feature Fields" icon="fa-info-circle">
      Feature fields are critical attributes that are necessary for the basic functionality of Unbxd and should be included in the catalog. Here are some common feature fields:
 
