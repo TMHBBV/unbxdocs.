@@ -254,7 +254,7 @@ curl -X POST https://{Feed end point}/api/{siteKey}/upload/schema
 -F file={file}
 ```
 
-### Best Practices for Schema Upload
+## Best Practices for Schema Upload
 
 1. Schema is required for all fields (except internal fields created by Unbxd).
 2. Ensure your schema file is in JSON format.
