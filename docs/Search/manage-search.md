@@ -157,3 +157,14 @@ Unbxd now supports multi-language capabilities, allowing shoppers to search in a
 > 📘 Note
 >
 > Shoppers can conduct searches in any of these languages, and Unbxd will handle the search functionality in the background, ensuring accurate and relevant results. This multi-language feature helps create a global eCommerce experience for customers across different regions.
+
+## 3. Features
+
+The Enhanced Relevancy Features in Unbxd’s search solution are focused on delivering the most relevant product results based on shopper behavior, product interactions, and personalized experiences. These features ensure that the search results not only meet the shopper’s expectations but also improve overall engagement, conversion rates, and inventory management. The key components of these enhanced relevancy features include:
+
+1. **Algorithmic Ranking**\
+   Unbxd’s ranking algorithms use shopper behavior data to optimize product rankings in search results. The system automatically adjusts rankings based on product traction, conversion rates, and overall shopper interactions. This ensures that products receiving higher engagement are ranked higher, improving the conversion rate and ensuring relevancy.
+2. **Personalization**\
+   Personalization involves tailoring the product suggestions based on the individual shopper's behavior. By tracking shoppers’ past interactions, preferences, and browsing habits, Unbxd uses AI-driven models to recommend products that best match each shopper’s interests and previous activity on the site.
+3. **Stock Keeping Unit Search (SKU Search)**\
+   The SKU search feature enables you to search products using their unique stock-keeping unit (SKU) to help manage inventory and monitor stock levels. This feature is particularly useful for quickly locating a product within your catalog based on its SKU.
