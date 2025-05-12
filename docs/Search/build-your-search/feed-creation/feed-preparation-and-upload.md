@@ -10,7 +10,7 @@ metadata:
 next:
   pages:
     - slug: set-up-analytics
-      title: Set up Analytics
+      title: Prepare Your Catalog
       type: basic
 ---
 # Overview
@@ -254,37 +254,13 @@ curl -X POST https://{Feed end point}/api/{siteKey}/upload/schema
 -F file={file}
 ```
 
-<br />
+### Best Practices for Schema Upload
 
-This API performs the upload/update of the schema file.
-
-Best Practices for Schema Upload\
-Schema is required for all fields (except internal fields created by Unbxd).
-
-<br />
-
-Ensure your schema file is in JSON format.
-
-<br />
-
-Field names are case-sensitive.
-
-<br />
-
-Field names should:
-
-<br />
-
-Start with an alphabet or underscore.
-
-<br />
-
-Be alphanumeric, can include hyphens and underscores.
-
-<br />
-
-Cannot contain special characters, spaces, or end with an underscore.
-
-<br />
-
-Do not send fields with null values.
+1. Schema is required for all fields (except internal fields created by Unbxd).
+2. Ensure your schema file is in JSON format.
+3. Field names are case-sensitive.
+4. Field names should:
+   * Start with an alphabet or underscore.
+   * Be alphanumeric, can include hyphens and underscores.
+   * Cannot contain special characters, spaces, or end with an underscore.
+   * Do not send fields with null values.
