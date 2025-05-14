@@ -76,58 +76,79 @@ B2B shoppers know exactly what they are looking for and need an efficient way to
 
 ### 3. Catalog Visibility Based on User Groups
 
-In a B2B business that sells office supplies, customers are grouped into different user categories based on the products they commonly purchase. For this example, there are two main customer groups:
+Let’s take a B2B business which sells office supplies.  The business may group all the  IT companies into the same user group (say  group1) who commonly purchas products such as Laptops, Monitors, Printers etc. The Backoffices customers may be  grouped into a different user group (say group2) who commonly purchase products like Printers, Paper Supply, Scanner, Xerox Machine.
 
-1. IT Companies
-2. Backoffices
+For this example let’s assume that there are three products: Lenovo laptop (P1),Xerox machine (P2) and HP Inkjet printer (P3). The B2B retailer has allowed IT companies (group1) access to products from categories Laptop & Printers (i.e. P1 & P3 are accessible to group1). Similarly, the B2B retailer has allowed Backoffices (group2) access to products from categories Printers & Copier devices (i.e. group2 has access to P2 and P3). The table below summarises this scenario.
 
-IT Companies typically purchases products such as Laptops, Monitors, and Printers. The B2B retailer has provided access to products within the Laptop and Printers categories for this group. Therefore, Group 1 has access to the Lenovo Laptop (P1) and the HP Inkjet Printer (P3).
+| **Product ID** | **Title**            | **User Group Authorized** | **Price** |
+| -------------- | -------------------- | ------------------------- | --------- |
+| P1             | Lenovo Laptop        | group1                    | $670      |
+| P2             | Xerox Copier Machine | group2                    | $950      |
+| P3             | HP Inkjet Printer    | group1, group2            | $650      |
 
-Backoffices usually purchases products like Printers, Paper Supplies, Scanners, and Xerox Machines. For this group, the retailer has granted access to products from the Printers and Copier Devices categories. As a result, Backoffices can access the Xerox Machine (P2) and the HP Inkjet Printer (P3).
-
-The table below summarizes the product access for each group:
-
-Group 1 (IT Companies):
-
-Lenovo Laptop (P1)
-
-HP Inkjet Printer (P3)
-
-Group 2 (Backoffices):
-
-Xerox Machine (P2)
-
-HP Inkjet Printer (P3)
+<br />
 
 ```Text JSON
 [{
-  "uniqueId": "P1",
-  "title": "Lenovo laptop",
-  "description": "Lenovo laptops 9th generation CPU.",
-  "variants": [
-    {
-      "user_group": "group1",
-      "price": 670
-    }
-  ]
+	"uniqueId": "P1",
+	"title": "Lenovo laptop",
+	"description": "Lenovo laptops 9th generation CPU. Compatible with wireless printer.",
+	"variants":[
+		{
+			"user_group" :"group1",
+			"price":670
+		}
+
+	]
 },
+
 {
-  "uniqueId": "P2",
-  "title": "Xerox Copier Machine",
-  "description": "Xerox Machine with double side printing.",
-  "variants": [
-    {
-      "user_group": "group2",
-      "price": 950
-    }
-  ]
+	"uniqueId": "P2",
+	"title": "Xerox Copier Machine",
+	"description": "Xerox Machine with double side printing. USB connection with laptop to transfer scanned documents.",
+	"variants":[
+		{
+			"user_group" :"group2",
+			"price":950
+		}
+
+	]
+},
+
+{
+	"uniqueId": "P3",
+	"title": "HP Ink Printer",
+	"description": "HP Inkjet printer for fine printing.",
+	"variants":[
+		{
+			"user_group" :"group1",
+			"price":650
+		},
+		{
+			"user_group" :"group2",
+			"price":650
+		}
+	]
 }]
 ```
 
-Search Request Examples:
+**Creating the Search Request**
 
-* Group 1 ([IT companies](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Laptop"\&variants.condition=user_group:"group1))
-* Group 2 ([Backoffices](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user_group:"group2))
+1. **When a buyer from IT companies (group1) logs in to the B2B site and searches for “Laptop”, the following search API will be triggered**
+
+```
+https://search.unbxd.io/{APIKEY}/{SITEKEY}/search?q="Laptop"&variants.condition=user_group:"group1"
+```
+
+**Description**: This API request will return only product P1. The product P2 has the term “laptop” in description so it matches the search term. Since the buyers from group1 do not have access to P2 it will be hidden from the search result for this user.
+
+2. **When a buyer from Backoffices (group2) logs in to the B2B site and searches for “printer”. The following search API will be triggered**
+
+```
+https://search.unbxd.io/{APIKEY}/{SITEKEY}/search?q="printer"&variants.condition=user_group:"group2"
+```
+
+**Description**: Although, the products P1 & P3 have the term printer in title or description. The search request will only return the product P2 because the buyer only has access to P2.
 
 ### 4. Pricing Based on User Groups
 
