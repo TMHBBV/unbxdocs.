@@ -7,7 +7,7 @@ metadata:
 ---
 ## Overview
 
-Search plays a critical role in B2B e-commerce sites, with 92% of B2B purchases beginning with a search, according to Forrester. However, B2B e-commerce sites face unique challenges such as managing large catalogs, complex pricing models, user group-based restrictions, and different variations of SKU searches. **Unbxd** empowers B2B stores to provide a seamless, consumer-grade search experience while handling the complexities specific to the B2B space.
+Search plays a critical role in B2B e-commerce sites, with 92% of B2B purchases beginning with a search. However, B2B e-commerce sites face unique challenges such as managing large catalogs, complex pricing models, user group-based restrictions, and different variations of SKU searches. **Unbxd** empowers B2B stores to provide a seamless, consumer-grade search experience while handling the complexities specific to the B2B space.
 
 ### Challenges Faced by B2B Sites:
 
@@ -132,7 +132,7 @@ For this example let’s assume that there are three products: Lenovo laptop (P1
 }]
 ```
 
-**Creating the Search Request**
+**Use Case for Creating the Search Request**
 
 1. **When a buyer from IT companies (group1) logs in to the B2B site and searches for “Laptop”, the following search API will be triggered**
 
@@ -152,7 +152,10 @@ https://search.unbxd.io/{APIKEY}/{SITEKEY}/search?q="printer"&variants.condition
 
 ### 4. Pricing Based on User Groups
 
-B2B sites often have different pricing, discounts, and taxes based on user groups. Unbxd supports this by indexing product prices, discounts, and taxes for each user group.Example of Different Pricing for User Groups:
+The prices, discounts & taxes of products on B2B sites may change based on the user group of the buyer. We allow B2B sites to handle this complexity by adding the pricing, tax and discount information for each user group. When a user searches on the website, only the relevant prices, discounts & taxes applicable for the buyer are returned.
+
+How to support different prices for different user groups ?\
+Let’s take the same B2B office supplier discussed above. Now let’s assume that the retailer wants to set different prices of HP Inkjet printers (P3) for IT Companies (group1) and Backoffices (group2). The table below describes the scenario.
 
 | ProductID | Title                | UserGroup | Price |
 | --------- | -------------------- | --------- | ----- |
@@ -161,25 +164,145 @@ B2B sites often have different pricing, discounts, and taxes based on user group
 | P3        | HP Inkjet printer    | group1    | $650  |
 | P3        | HP Inkjet printer    | group2    | $600  |
 
-Search Request Examples:
+In our previous example, Product P3 was accessible to both user groups. in this scenario, business has more complicated requirements where if this product is being viewed by a buyer from IT Companies (group1) then price of the product should be shown as $650 and if the product is being viewed by a buyer from Backoffices (group2) then price of the product should be shown as $600.
 
-* Group 1 (IT companies): [https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Printer"\&variants.condition=user\_group:"group1](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Printer"\&variants.condition=user_group:"group1)"
-* Group 2 (Backoffices): [https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user\_group:"group2](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user_group:"group2)
+Unbxd Feed Example:
+
+```
+[{
+	"uniqueId": "P1",
+	"title": "Lenovo laptop",
+	"description": "Lenovo laptops 9th generation CPU. Compatible with wireless printer.",
+	"variants":[
+		{
+			"user_group" :"group1",
+			"price":670
+		}
+
+	]
+},
+
+{
+	"uniqueId": "P2",
+	"title": "Xerox Copier Machine",
+	"description": "Xerox Machine with double side printing. USB connection with laptop to transfer scanned documents.",
+	"variants":[
+		{
+			"user_group" :"group2",
+			"price":950
+		}
+
+	]
+},
+
+{
+	"uniqueId": "P3",
+	"title": "HP Ink Printer",
+	"description": "HP Inkjet printer for fine printing.",
+	"variants":[
+		{
+			"user_group" :"group1",
+			"price":650
+		},
+		{
+			"user_group" :"group2",
+			"price":600
+		}
+	]
+}]
+```
+
+**Use Case for Creating the Search Request for**
+
+1. When a buyer from IT companies (group1) logs in to the B2B site and searches for “Printer”. The following search API will be triggered :
+
+```
+https://search.unbxd.io/{APIKEY}/{SITEKEY}/search?q="Printer"&variants.condition=user_group:"group1"
+```
+
+This API request will return P3 the variant document for group1 which has the price as 650.
+
+2. When a buyer from Backoffices (group2) logs in to the B2B site and searches for “printer”. The following search API will be triggered :
+   ```
+   https://search.unbxd.io/{APIKEY}/{SITEKEY}/search?q="printer"&variants.condition=user_group:"group2"
+   ```
+
+This API request will return the product P3 and P2. For the product P3, only the variant document with price of $600 would be returned.
 
 ### 5. Multi-Seller and Multi-User Group Scenario
 
-Unbxd supports complex scenarios where multiple sellers serve multiple user groups with varying prices and availability. This functionality is useful for B2B marketplaces with multiple sellers. For Example:
+We have two sellers: **Seller 1** and\*\* Seller 2\*\*. Seller 1 may choose to classify small scale IT companies and enterprise IT companies in different user groups to sell them products at different prices. But Seller 2 may classify both the small scale IT companies and enterprise IT companies in the same group. So, a shopper may be assigned to usergroup\_1 by Seller 1 and usergroup\_3 by Seller 2.
 
-| ProductID | Seller   | UserGroup 1 Pricing | UserGroup 2 Pricing | UserGroup 3 Pricing |
-| --------- | -------- | ------------------- | ------------------- | ------------------- |
-| 124       | Seller 1 | $100                | $150                | NA                  |
-| 124       | Seller 2 | NA                  | NA                  | $120                |
+<br />
 
-Search Request Example:\
-For a shopper looking for Laptops from multiple sellers:
+| **Seller**  | **Small Scale IT Companies (User Group 1)** | **Enterprise IT Companies (User Group 2)** | **Comments**                                                                                                        |
+| ----------- | ------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| **Seller1** | usergroup\_1                                | usergroup\_2                               | Seller 1 classifies small scale and enterprise IT companies in different user groups (usergroup\_1 & usergroup\_2). |
+| **Seller2** | usergroup\_3                                | usergroup\_3                               | Seller 2 considers both small scale and enterprise IT companies in a single user group (usergroup\_3).              |
 
-```Text Plaintext
-https://search.unbxd.io/{APIKEY}/{SITEKEY}/search?q="laptops"&variants.condition=(seller_id:"seller_1" AND usergroup:"usergroup_1") OR (seller_id:"seller_2" AND usergroup:"usergroup_3")
+**Unbxd Feed Structure Sample Example**:
+
+```
+[{
+	"uniqueId" :"124",
+	"title":"Lenevo laptop 9th generation",
+	"variants":[{
+
+		"usergroup":"usergroup_1",
+		"seller_id" : "seller_1",
+		"price" :100$
+	},{
+		"usergroup":"usergroup_2",
+		"seller_id":"seller_1",
+		"price":150$
+	},{
+		"usergroup":"usergroup_3",
+		"seller_id":"seller_2",
+		"price":120$
+	}]
+},
+{
+	"uniqueId" :"4572",
+	"title":"Xerox Copier Machine multipurpose",
+	"variants":[{
+
+		"usergroup":"usergroup_3",
+		"seller_id" : "seller_2",
+		"price" :500$
+	}]
+},
+{
+	"uniqueId" :"34634",
+	"title":"HP Laptops with Intel CPU inside",
+	"variants":[{
+
+		"usergroup":"usergroup_3",
+		"seller_id" : "seller_2",
+		"price" :120$
+	}]
+},
+{
+	"uniqueId" :"92457",
+	"title":"HP Inkjet Printer ",
+	"variants":[{
+
+		"usergroup":"usergroup_1",
+		"seller_id" : "seller_1",
+		"price" :300$
+	},{
+		"usergroup":"usergroup_2",
+		"seller_id":"seller_1",
+		"price":350$
+	}]
+}]
 ```
 
-This will return both pricing options for the Lenovo Laptop.
+**Use Case for Creating the Search Request for**
+
+When Shopper 1 is looking for Laptops, first fetch the seller and user group relationship, which in this case is – Seller 1 and Usergroup 1 ; Seller 2 and Usergroup 3. The API request to Unbxd will then look like below:
+
+```Text API format
+https://search.unbxd.io/{APIKEY}/{SITEKEY}/search?q="laptops"&variants.condition=(seller_id:"seller_1" AND usergroup:"usergroup_1" ) OR (seller_id:"seller_2" AND usergroup:"usergroup_A" )
+```
+
+In this case, the user sees Lenovo Laptop (124) & HP Laptop (34634). Since Lenovo laptop (124) is sold through Seller 1 and Seller 2, this product will show both pricing options for the user ($100, $120).
