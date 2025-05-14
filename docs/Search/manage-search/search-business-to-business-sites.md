@@ -143,9 +143,7 @@ B2B sites often have different pricing, discounts, and taxes based on user group
 Search Request Examples:
 
 * Group 1 (IT companies): [https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Printer"\&variants.condition=user\_group:"group1](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Printer"\&variants.condition=user_group:"group1)"
-* Group 2 (Backoffices): [https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user\_group:"group2](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user_group:"group2)"
-
-<br />
+* Group 2 (Backoffices): [https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user\_group:"group2](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user_group:"group2)
 
 ### 5. Multi-Seller and Multi-User Group Scenario
 
