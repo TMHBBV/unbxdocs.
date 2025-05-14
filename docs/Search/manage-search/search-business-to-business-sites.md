@@ -76,10 +76,28 @@ B2B shoppers know exactly what they are looking for and need an efficient way to
 
 ### 3. Catalog Visibility Based on User Groups
 
-B2B e-commerce often involves multiple user groups, with different access rights to products. Unbxd supports user group-specific catalogs, ensuring that shoppers only see products relevant to their group. For Example: For a B2B business selling office supplies:
+In a B2B business that sells office supplies, customers are grouped into different user categories based on the products they commonly purchase. For this example, there are two main customer groups:
 
-* IT companies (group1) can access laptops and printers.
-* Backoffice companies (group2) can access copiers and printers.
+1. IT Companies
+2. Backoffices
+
+IT Companies typically purchases products such as Laptops, Monitors, and Printers. The B2B retailer has provided access to products within the Laptop and Printers categories for this group. Therefore, Group 1 has access to the Lenovo Laptop (P1) and the HP Inkjet Printer (P3).
+
+Backoffices usually purchases products like Printers, Paper Supplies, Scanners, and Xerox Machines. For this group, the retailer has granted access to products from the Printers and Copier Devices categories. As a result, Backoffices can access the Xerox Machine (P2) and the HP Inkjet Printer (P3).
+
+The table below summarizes the product access for each group:
+
+Group 1 (IT Companies):
+
+Lenovo Laptop (P1)
+
+HP Inkjet Printer (P3)
+
+Group 2 (Backoffices):
+
+Xerox Machine (P2)
+
+HP Inkjet Printer (P3)
 
 ```Text JSON
 [{
@@ -108,8 +126,8 @@ B2B e-commerce often involves multiple user groups, with different access rights
 
 Search Request Examples:
 
-* Group 1 (IT companies): [https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Laptop"\&variants.condition=user\_group:"group1](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Laptop"\&variants.condition=user_group:"group1)"\
-  Group 2 (Backoffices): [https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user\_group:"group2](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user_group:"group2)"
+* Group 1 ([IT companies](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="Laptop"\&variants.condition=user_group:"group1))
+* Group 2 ([Backoffices](https://search.unbxd.io/\{APIKEY}/\{SITEKEY}/search?q="printer"\&variants.condition=user_group:"group2))
 
 ### 4. Pricing Based on User Groups
 
