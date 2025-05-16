@@ -1,5 +1,5 @@
 ---
-title: 'Search: Business-to-Business Sites'
+title: Business-to-Business Sites
 deprecated: false
 hidden: false
 metadata:
