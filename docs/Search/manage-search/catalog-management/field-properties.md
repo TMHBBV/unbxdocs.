@@ -125,7 +125,7 @@ Following capabilities are available in Filter:
   </tbody>
 </Table>
 
-<Image align="center" src="https://files.readme.io/7bf63b1f089a97f2bfa38edf050821a3a5ce92c474e013f5170405eda8ce2057-Filterfieldpro.gif" />
+<Image align="center" border={true} caption="Filter a Field Property" src="https://files.readme.io/7bf63b1f089a97f2bfa38edf050821a3a5ce92c474e013f5170405eda8ce2057-Filterfieldpro.gif" width="80% " />
 
 ### Sync the field properties
 
@@ -178,4 +178,8 @@ Follow these steps to configure your fields and enable necessary features:
   Feature Tag Mismatch: Verify that the feature tags in the import file match the predefined tags in the system (e.g., Merchandisable, Facetable, Autosuggest).
 
   Missing Fields: If a field mentioned in the import file does not exist in the catalog, ensure that the field is created first before importing the configuration.
+</Accordion>
+
+<Accordion title="Exported File Contains Missing Data">
+  If certain fields or configurations are missing from the exported file:  Refresh Field Config Page: Refresh the page and try exporting again.  Check for Permissions: Ensure you have the necessary permissions to export field configurations.
 </Accordion>
