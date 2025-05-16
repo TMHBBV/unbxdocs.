@@ -68,7 +68,7 @@ Dimension Mapping is divided into two categories:
 
 # Troubleshoot & FAQs
 
-<Accordion title="What happens if I update my product feed—do I need to remap attributes?" icon="fa-info-circle">
+<Accordion title="What happens if I update my product feed—do I need to remap attributes?">
   Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
   ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
   occaecat cupidatat non proident!
