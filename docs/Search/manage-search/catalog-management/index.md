@@ -34,15 +34,3 @@ Only fields present in the user catalog will be visible by default. All fields i
 > Fields of data type “path” are handled differently. Fields like “catinfo” and its variations such as “catinfo1,” “catinfo2,” will appear in the console.
 
 **Custom fields** are product attributes that are not part of Unbxd’s predefined feature fields but are present in your catalog. These attributes and their properties are included in the schema. Like feature fields, custom fields power product discovery through Unbxd’s search engine and can influence the product recommendations on your web page.
-
-### Field Properties
-
-Field properties provide a detailed view of the attributes in your catalog and their associated schema. These properties define each product attribute's characteristics and how it should be handled. **For example**: For a product like “mobile phone,” the fields might include color, brand, and manufacturing date. Some fields, such as ‘color’ and ‘brand’, might support multiple values (e.g., red, blue, green for color; Apple, Samsung for brand). In contrast, the ‘manufacturing date’ field would only support a single value (e.g., a specific date).
-
-To view the field properties for your products by navigate to **Manage** > **Configure Site** > **Field Properties**. The screen displays:
-
-| **Attribute**    | **Description**                                                                              |
-| ---------------- | -------------------------------------------------------------------------------------------- |
-| **Field Name**   | The name of the field in the catalog for a product (e.g., color, brand, price).              |
-| **Field Type**   | Defines the type of value the field contains (e.g., title, descriptive-text, decimal).       |
-| **Multi-Valued** | Specifies whether the field can hold multiple values (Enabled) or just one value (Disabled). |
