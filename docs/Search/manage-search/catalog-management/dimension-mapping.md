@@ -69,7 +69,21 @@ Dimension Mapping is divided into two categories:
 # Troubleshoot & FAQs
 
 <Accordion title="What happens if I update my product feed—do I need to remap attributes?">
-  Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
-  ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
-  occaecat cupidatat non proident!
+  No, once your dimension and product card mappings are set, you only need to ensure new feed fields follow the same naming and structure. If new fields are added, map them accordingly.
+</Accordion>
+
+<Accordion title="Some of the product filters missing in Search or Browse Preview?">
+  This could be because the required product attributes are not correctly mapped in Dimension Mapping or the attribute values are missing in your product feed.
+  Navigate to Manage > Catalog > Dimension Mapping and ensure the attributes are listed under Essential Fields or Vertical Fields.
+  Ensure your product feed includes valid data for those attributes you want to use as filters or facets.
+</Accordion>
+
+<Accordion title="I seeing a popup warning about missing dimension mapping attributes?">
+  Check the required attributes (like Title, Image URL, or Selling Price) are missing either in your feed or in your mapping configuration. Review your Dimension Mapping to ensure all required fields are mapped. Re-upload your product feed and confirm that the values for the essential attributes are present.
+</Accordion>
+
+<Accordion title="My attribute filters behaving unexpectedly">
+  The field types might be incorrectly configured (e.g., a number stored as text). Fields intended for filtering may not be marked as Facetable.
+  Check that the field type matches its intended use (e.g., price should be numeric). Ensure the field is marked as Facetable in the backend.
+  If the issue persists, contact Unbxd Support for further assistance.
 </Accordion>
