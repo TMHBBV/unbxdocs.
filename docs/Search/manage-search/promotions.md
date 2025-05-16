@@ -1,5 +1,5 @@
 ---
-title: Promotions
+title: 'Merchandising : Promotions'
 excerpt: >-
   Merchandising campaigns designed to boost the visibility and sales of specific
   products
