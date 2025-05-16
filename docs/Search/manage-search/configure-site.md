@@ -60,12 +60,3 @@ Available APIs include:
 3. Typeahead (Autocomplete) API: Used to provide search suggestions as the user types in the search bar.
 
 Copy the relevant API signature from the interface to start making API calls to the Unbxd platform.
-
-### Catalog
-
-You can upload or re-upload your product catalog at any time from the **Manage** > **Configure Site** > **Catalog section.**
-
-Catalog Upload Details\
-Every upload is considered a full-feed upload, meaning it will replace all previously uploaded data.
-
-The catalog section provides the following details:
