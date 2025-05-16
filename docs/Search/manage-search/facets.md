@@ -7,7 +7,7 @@ metadata:
 ---
 # Overview
 
-Facets are essential tools that help shoppers narrow down search results on an eCommerce site. When searching for products, the Product Listing Page (PLP) can quickly become overwhelming if many products are returned for a single query. By using product attributes as facets, you can effectively narrow down the listing, which improves the overall shopping experience.
+Facets are essential tools that help shoppers narrow down search results on an e-commerce site. When searching for products, the Product Listing Page (PLP) can quickly become overwhelming if many products are returned for a single query. By using product attributes as facets, you can effectively narrow down the listing, which improves the overall shopping experience.
 
 ## Advantages of Using Faceted Search
 
@@ -47,7 +47,7 @@ To configure facets, follow these steps:
 
 ### Types of Facet Merchandising Available
 
-<Table>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -223,3 +223,45 @@ To adjust the order of facets, click the three dots next to a facet under the Ra
 > 📘 Note
 >
 > You can view the facet configuration in a graphical format to easily adjust the ranking.
+
+## AI Recommendations for Facets
+
+Unbxd’s AI recommendations automatically suggest probable facets based on tracking your catalog. To enable AI recommendations:
+
+1. Click **Apply AI recommendations** to view the list of recommended facets. If you’ve added new fields to your catalog, click **Refresh AI recommendations** to update the list.
+
+### Facet Features
+
+**Multiselect Facet:** Allows users to select multiple values within a facet or across facets, refining the search results.
+
+1. **AND**: Filters products matching all selected conditions.
+2. **OR**: Filters products matching at least one selected condition.
+
+**Displaying Exact Value Count of Facets** The facet algorithm shows the exact count of values for each facet, allowing customers to know how many products are present in each facet.
+
+**Sorting in Facet**: You can configure facets to be sorted by:
+
+1. Product Count
+2. Alphabetical Order
+
+**Flexibility to Modify Facet Position**: Use drag-and-drop to change the order of facets on the site to match business needs.
+
+**Different Facets for Different Category Pages**: Customize facets based on the category. For example, facets for "shirts" may include brand, size, and price, while facets for "smartphones" may include brand, RAM, and OS.
+
+**Breadcrumbs**:Display the position of search results within the category hierarchy.
+
+**Disabling Facets**: If you don’t want a facet to be displayed on your site, change the status to "Disable" instead of deleting it. You can enable it again later.
+
+## Edit and Publish Facet Rules
+
+1. To Edit the “All Queries” Rule, navigate to **Merchandising** > **Search** > **Facets** in the console. Click the **Edit** icon next to the "**All Queries**" rule. Modify the facets as needed (e.g., Display Name, Sort Order). Click **Apply Changes,** then **Publish Rule** to make the changes live.
+2. To Create a Field-based Facet Rule: Navigate to Field Settings and select the attributes you want to merchandise.
+   * Set Up the Campaign: Choose the attributes for the condition (e.g., "Sneakers") and specify facet items.
+   * Configure the Facets: Define properties like Display Name, Facet Length, and Sort Order.
+   * Publish the Rule: Click Save for a draft or Publish Rule to make it live.
+3. View and Manage Facet Campaigns, navigate to **Merchandising** > **Search** > **Facets**. The Facets Overview page shows all campaigns (draft or live). Use filters to find campaigns based on criteria like **Status**, **Created By**, or **Query**.
+4. Additional Actions for Facet Campaigns
+
+* Stop Active Campaigns: Temporarily halt a campaign without deleting it.
+* Bulk Upload: Upload multiple facet rules at once.
+* Bulk Download: Download existing facet rules for backup or review.
