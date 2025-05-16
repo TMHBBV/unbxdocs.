@@ -65,3 +65,11 @@ Dimension Mapping is divided into two categories:
 | Waist Type  | The type of waist (e.g., High-rise, Low-rise).                   |
 
 **Dimension Mapping** is critical for optimizing the e-commerce experience. They not only enhance product visibility and search accuracy but also help businesses deliver a high-quality, customer-friendly shopping environment that drives conversions and fosters long-term trust. By paying attention to these mappings, businesses can offer a seamless, engaging, and efficient product discovery process for their customers.
+
+# Troubleshoot & FAQs
+
+<Accordion title="What happens if I update my product feed—do I need to remap attributes?" icon="fa-info-circle">
+  Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
+  ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
+  occaecat cupidatat non proident!
+</Accordion>
