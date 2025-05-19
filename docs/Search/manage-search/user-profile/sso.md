@@ -48,3 +48,18 @@ Follow the given steps.
 2. Enter your Account Name and Work Email.
 3. If the dashboard is SSO-enabled, you are redirected to the **IdP login page**.
 4. Upon successful authentication, you are redirected back to the Netcore Netcore Panel.
+
+<br />
+
+## Common Errors and Messages
+
+Refer to the given table to know the common failure reasons for SSO.
+
+| **Scenario**                          | **Message**                                                                                                     |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Panel is not SSO-enabled**          | This account is not configured for SSO.                                                                         |
+| **Email not linked to SSO**           | This email is not configured for SSO.                                                                           |
+| **Duplicate usernames for one email** | It seems that multiple usernames are associated with this email ID. Please contact your admin or Unbxd support. |
+| **IdP authentication failure**        | Login failed due to incorrect credentials.                                                                      |
+| **Redirection fails**                 | Unable to connect to your identity provider. Please try again later.                                            |
+| **Session expired**                   | Your session has expired. Please log in again.                                                                  |
