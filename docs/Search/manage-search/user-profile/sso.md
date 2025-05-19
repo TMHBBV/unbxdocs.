@@ -39,3 +39,12 @@ Once account is enabled in Azure AD, enter the below details (Azure help desk wi
 
 * Ensure the **App federation Metadata URL** from Azure AD is mapped to **Metadata URL** in the Netcore Unbxd panel.
 * Ensure the **Login URL** from Azure AD is mapped to**Login URL** in the Netcore Unbxd panel.
+
+## SSO Workflow
+
+Follow the given steps.
+
+1. Click "Log in with SSO" on the Netcore Netcore login page.
+2. Enter your Account Name and Work Email.
+3. If the dashboard is SSO-enabled, you are redirected to the **IdP login page**.
+4. Upon successful authentication, you are redirected back to the Netcore Netcore Panel.
