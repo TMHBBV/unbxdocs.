@@ -53,3 +53,15 @@ It allows you to optimize product visibility by promoting or demoting products i
 Track metrics like clicks and conversions to understand which campaigns (e.g., flash sales) perform best and refine future strategies accordingly.\
 Analyze engagement metrics for individual products to identify best-sellers and promote them for higher visibility.
 Monitor shopper behavior patterns on category pages, identify popular items, and adjust merchandising strategies to cater to demand.
+
+## Use Case
+
+Netcore Unbxd Workbench supports using multiple merchandising rules, enabling retailers to create a cohesive shopping experience. For a search query “back-to-school” campaign, using workbench, you can
+
+1. Segment shoppers.
+2. Run a banner to advertise the campaign on the home page, category pages, and search query listing pages.
+3. Create a landing page by applying filters for stationery, lunch bags, or water bottles.
+4. Redirect users to the landing page dedicated to back-to-school products and deals.
+5. Boost new arrivals and highly rated items unique to each segment and bury products with lower ratings.Pin
+6. items from popular brands in positions 1 to 10 on the search result page.
+7. Analyze the campaign’s performance and the shoppers’ journeys.
