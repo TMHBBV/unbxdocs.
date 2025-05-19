@@ -6,7 +6,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Optional options for promotions provide flexibility and precision in tailoring the search and shopping experience for customers. They allow you to
+Optional options for promotions provide flexibility and precision in tailoring customers' search. They allow you to
 
 1. Enhance Visibility
 2. Personalize User Experience
@@ -193,6 +193,9 @@ Filtering products enables you to include or exclude specific products from the 
 
 1. **Set up Filter**\
    Navigate to the Set merchandising strategy section and click the Filter button. Choose the attribute you want to base the condition on (e.g., Price, Brand, Category). If the attribute is missing from the dropdown, navigate to the Field Configuration page to add it to the configuration table. Define the operator (e.g., equals, contains) to compare the attribute value. Select the value that the attribute should match or exclude (e.g., Price = 100).
+
+<Image align="center" border={true} caption="Filterh and shopping experience" src="https://files.readme.io/fa70e7e5c1046bb94e3f81e28311f76cb61b6823c703c25e504ec35339cd1c93-Filter.gif" width="80% " />
+
 2. **Multiple Conditions within a Filter Group**\
    Click `+` Add Another Attribute to include more conditions in the same group. All conditions within a Filter group must be satisfied for the product to be included. If any condition is not met, the product will be excluded.
 3. **Adding New Filter Groups**\
@@ -200,7 +203,7 @@ Filtering products enables you to include or exclude specific products from the 
 
 ***Filter groups are connected with an OR condition. This means if the products meet the conditions of at least one group, they will be included.***
 
-4. DeleteExisting Filter Conditions\
+4. **Delete Existing Filter Conditions**\
    To delete an entire Filter group, click the **Delete** icon next to the group and confirm your action. To remove a specific Filter condition within a group, click the **Delete** icon next to the condition and confirm your action.
 
 Save the campaign as a draft if you want to retain it for later or continue adding more rules if necessary. Click **Publish** rule to make the filter strategy live on your site.
