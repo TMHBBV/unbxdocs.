@@ -186,3 +186,21 @@ Slotting allows you to assign specific products to predefined positions in the s
    If you're on the listing page, click the Edit icon next to Slot in the Strategy Summary section. To remove a Slot group, click the **Delete** icon next to the group and confirm the action. To remove a specific Slot condition within a group, click the **Delete** icon next to the condition and confirm your action.
 
 After configuring the slot rule, click Apply slot to save your changes. You can view your merchandising strategy summary by clicking View summary, but it is recommended to click Apply slot before viewing to prevent losing your changes. Continue adding more rules if necessary or click **Publish** rule to make the changes live on your site.
+
+# Filter
+
+Filtering products enables you to include or exclude specific products from the search results based on defined criteria. Unlike other merchandising strategies like Boost, Sort, Slot, or Pin, Filter strictly removes products that don’t meet the set conditions, ensuring only the most relevant items are displayed.
+
+1. **Set up Filter**\
+   Navigate to the Set merchandising strategy section and click the Filter button. Choose the attribute you want to base the condition on (e.g., Price, Brand, Category). If the attribute is missing from the dropdown, navigate to the Field Configuration page to add it to the configuration table. Define the operator (e.g., equals, contains) to compare the attribute value. Select the value that the attribute should match or exclude (e.g., Price = 100).
+2. **Multiple Conditions within a Filter Group**\
+   Click `+` Add Another Attribute to include more conditions in the same group. All conditions within a Filter group must be satisfied for the product to be included. If any condition is not met, the product will be excluded.
+3. **Adding New Filter Groups**\
+   Click `+` Add New Filter Group to create additional groups with separate conditions. Products that meet the conditions of the secondary filter groups will be shortlisted.
+
+***Filter groups are connected with an OR condition. This means if the products meet the conditions of at least one group, they will be included.***
+
+4. DeleteExisting Filter Conditions\
+   To delete an entire Filter group, click the **Delete** icon next to the group and confirm your action. To remove a specific Filter condition within a group, click the **Delete** icon next to the condition and confirm your action.
+
+Save the campaign as a draft if you want to retain it for later or continue adding more rules if necessary. Click **Publish** rule to make the filter strategy live on your site.
