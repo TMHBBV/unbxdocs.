@@ -35,4 +35,7 @@ Sign in to your Netcore Unbxd account Panel. Navigate to **Profile**  > **SSO**.
 >
 > Once the user account is registered in **Azure AD** for Unbxd application, then you would be able to enable button on the SSO screen under profile section. Refer to [Azure Registration]() For SSO
 
-Once account is enabled in Azure AD, enter the below details (Azure help desk will share the details)
+Once account is enabled in Azure AD, enter the below details (Azure help desk will share the details) and save the configuration.
+
+* Ensure the **App federation Metadata URL** from Azure AD is mapped to **Metadata URL** in the Netcore Unbxd panel.
+* Ensure the **Login URL** from Azure AD is mapped to**Login URL** in the Netcore Unbxd panel.
