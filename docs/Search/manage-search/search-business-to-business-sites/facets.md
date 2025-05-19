@@ -1,5 +1,5 @@
 ---
-title: Facets
+title: 'Merchandising : Search : Facets'
 deprecated: false
 hidden: false
 metadata:
