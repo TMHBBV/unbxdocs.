@@ -48,7 +48,7 @@ You can perform following actions from the Promotions overview page.
 
 1. Manage campaigns: You can perform the below actions:
 
-| **Action**          | **Description (Promotions Context)**                                                    |
+| **Action**          | **Description**                                                                         |
 | ------------------- | --------------------------------------------------------------------------------------- |
 | **Create**          | Design and set up a new promotion campaign or offer from scratch.                       |
 | **Edit**            | Modify the details or parameters of an existing promotion to optimize performance.      |
@@ -60,31 +60,56 @@ You can perform following actions from the Promotions overview page.
 | **Export to email** | Share promotion details or reports via email for collaboration or review.               |
 | **Import Rule**     | Bring in predefined promotion rules or criteria from external sources for consistency.  |
 
-To view a comprehensive list of all your launched campaigns, select the site key, click Merchandising, navigate toSearch, and then Promotions.
-
-Key information on the campaign list
-
-Campaigns are grouped by query. If multiple campaigns are set for the same query, they will appear in the same row of that query.
-
-Details available on each listing:
-
-The campaign’s date range
-
-The segment it’s applied to
-
-Its current status (Active, Upcoming, Draft, Stopped, or Expired)
-
-Whether it’s a Merchandised Page or a Landing Page
-
-Analytical data on the campaign performance
-
-1. Filter campaigns by status, page type, segment, creator, and date.
-2. Edit and publish campaigns live.
-3. Duplicate campaigns to save time.
-4. Add multiple queries to campaigns to reuse rules efficiently.
-5. Preview campaigns live on the site.
-6. Enable product and query performance metrics to analyze clicks, add-to-carts, and orders.
-
 > 📘 Note
 >
 > Avoid using overlapping active campaigns for the same query and segment to prevent conflicts.
+
+### View and Manage Campaigns
+
+1. **View All Campaigns**\
+   Navigate to **Merchandising** > **Search** > **Promotions** to view all launched campaigns. Campaigns are grouped by query and show details like date range, applied segment, current status, type (Merchandised Page or Landing Page), and campaign performance data.
+2. **Search Campaign**\
+   To find a campaign/query using Filters use the search bar to find campaigns by entering the associated query or apply filters based on status, page type, date range, created by, segment, or collection to narrow your search.
+3. **Summary of the rules added to campaign**\
+   Click the **Eye icon** next to the campaign to view a summary of the rules applied.
+
+### Edit and Modify Campaigns
+
+1. **Edit an existing campaign**\
+   Locate the campaign and click the **Edit icon** to make necessary changes. After editing, click Publish rule to make the campaign live.
+2. **Applying the same rule to additional queries**\
+   Click the **More options** icon, select **+** Apply same rule to more queries, and add the additional queries. The rules from the original query will apply to the new queries.
+3. **Create new campaigns for the same query**\
+   Duplicate an existing campaign or create a new one for the same query. Creating a new campaign requires configuring rules from scratch, while duplicating carries over existing rules.
+4. **Duplicate existing campaigns**\
+   Click the More options icon, select Duplicate Rule, and a copy of the campaign will be created. You can then edit the new campaign and save it as a draft or publish it.
+5. **Stop active campaigns**\
+   Locate the campaign, click the More Options icon, and select Stop promotions to stop it from being live.
+
+### Campaign Preview and Testing
+
+1. **Preview the site with the campaign rules applied**\
+   Click the More options icon and select Search preview to view the campaign results on a preview site.
+2. **Customize the quick preview**\
+   Access **Performance Metrics** and **Insights** by clicking the More Options button to toggle between Site Performance and Query Performance, and choose between List View or Grid View to display products.
+
+### Bulk Actions
+
+1. **Bulk upload Promotion rules**\
+   Use the Bulk Upload Promotions option under More Options to upload promotion rules via a JSONL file. The file can be uploaded by dragging or browsing, and you can choose to override existing rules.
+2. **Import campaigns from one site to another**\
+   Use the Import Rule option under More Options to import campaigns from one site to another. You can select the source site, review campaigns, and click Import.
+3. **Export existing campaigns**\
+   Click **Export** to Email under More Options to receive a JSON file with your campaign data via email.
+
+### Campaign Performance and Analytics
+
+1. **Access campaign performance data**\
+   On the Promotion overview page, find the overall campaign performance. For product-specific performance, use Quick Preview to view Site Performance and Query Performance metrics.
+2. **View product-specific performance**\
+   In the Quick Preview page, enable Site Performance and Query Performance to view key metrics for individual products and how they performed for specific queries.
+
+### Delete Campaigns
+
+1. **Delete an existing campaign**\
+   Locate the campaign, click the More options icon, and select Delete Rule to remove it.
