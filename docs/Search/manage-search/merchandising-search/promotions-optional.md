@@ -68,4 +68,4 @@ Boost is a merchandising strategy that lets you control the visibility of produc
 
 ## Set up use the Boost option
 
-Click the **Boost** button in the Set merchandising strategy section. Choose the **Attribute** you want to base the condition on from the drop-down menu. Define the **Operator** by clicking the `=` button and selecting the desired one (e.g., equals, contains). Select the attribute value that the condition will match or exclude.
+Click the **Boost** button in the Set merchandising strategy section. Choose the **Attribute** you want to base the condition on from the drop-down menu. Define the **Operator** by clicking the `=` button and selecting the desired one (e.g., equals, contains). Select the attribute value that the condition will match or exclude. Refer [here](https://unbxdocs.readme.io/update/docs/ui-terminologies#/) to understand the operators offerref by Netcore Unbxd
