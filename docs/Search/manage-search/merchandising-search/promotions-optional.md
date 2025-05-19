@@ -160,3 +160,29 @@ After configuring the sort rule, click Apply sort to save your changes. You can 
 ***It is recommended to click Apply sort before viewing the summary.***
 
 Continue adding more rules if needed or click **Publish** rule to push the sorting strategy live to your site.
+
+# Slot
+
+Slotting allows you to assign specific products to predefined positions in the search results. Unlike Pin, which locks a product in place, Slot ensures a product only occupies the assigned position if it meets the defined conditions. If the conditions are not met, the slot remains empty, and other rules or algorithms determine the products in those positions. Slotting can cover multiple positions at once, offering more flexibility than Pinning, which is restricted to a single product and position.
+
+1. **Set up Slot**\
+   Navigate to the Set merchandising strategy section and click the **Slot** button.
+
+* Define the range of positions where you want to slot the products. For example, position 1 to position 3.
+* Choose the attribute you want to use for the condition. For example,, Brand, Price, Category.
+* Select the operator like equals, contains to define the condition that the products must meet.
+* Choose the value for the attribute that the condition will match or exclude. For example, Price = 100.
+
+2. **Multiple Conditions within a Slot Group**\
+   Once the first condition is added, you can click `+` Add Another Attribute to add additional conditions. All conditions within a Slot group must be met for the product to occupy the designated slot. Products that don’t meet all conditions will not be slotted into those positions.
+
+> 📘 Note
+>
+> Products cannot be Pinned and Slotted at the same position.
+
+3. **Add New Slot Groups**\
+   Click `+` Add New Slot Group to define a new range of positions for the products. Each slot group will have specific conditions to filter the products eligible for those positions. **OR condition**: Slot groups are connected with an OR condition, meaning that products meeting the conditions of at least one group will be included.
+4. **Delete Existing Slot Conditions**\
+   If you're on the listing page, click the Edit icon next to Slot in the Strategy Summary section. To remove a Slot group, click the **Delete** icon next to the group and confirm the action. To remove a specific Slot condition within a group, click the **Delete** icon next to the condition and confirm your action.
+
+After configuring the slot rule, click Apply slot to save your changes. You can view your merchandising strategy summary by clicking View summary, but it is recommended to click Apply slot before viewing to prevent losing your changes. Continue adding more rules if necessary or click **Publish** rule to make the changes live on your site.
