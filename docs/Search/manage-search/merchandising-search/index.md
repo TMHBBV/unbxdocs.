@@ -10,84 +10,46 @@ metadata:
 ---
 # Overview
 
-The Promotions feature in the Netcore Unbxd Self Serve Console allows retailers to strategically control product placement on Search Results Pages (SRPs). By leveraging this tool, businesses can prioritize or hide products, pin or slot items in specific positions, and organize listings to align with marketing goals. Promotions enhance user experience and drive sales by ensuring that relevant and high-priority products get the visibility they deserve.
+Netcore Unbxd’s Merchandising Workbench is a robust tool for managing product visibility and enhancing user engagement by promoting specific products or categories. It provides a versatile, no-code Visual Editor, making it comfortable to create, configure, and fine-tune merchandising rules. It allows you to optimize product visibility by promoting or demoting products in the search results, aligning them with business goals or seasonal campaigns.
 
-## Prerequisites
+## What can I do with Merchandising Workbench?
 
-Before setting up promotions, ensure the following are in place:
+It allows you to optimize product visibility by promoting or demoting products in the search results, aligning them with business goals or seasonal campaigns. You can
 
-1. Complete Product Catalog is uploaded and updated.
-2. Ensure product attributes are accurate and comprehensive to create effective promotion rules.
-3. You have the required access to the Netcore Unbxd Self Serve Console with merchandising privileges.
+1. **Promote or Hide Products**\
+   Easily prioritize specific products or remove less relevant items from search results based on keywords or customer preferences. By controlling product visibility, you guide shoppers toward the best-fit items.  Promote items relevant to the current season, like **winter coats** for the winter months or **beachwear** in summer.
+   Prioritize visibility for newly launched products, ensuring they appear prominently in search results to drive awareness and engagement or temporarily hide products that are low on stock or in clearance to maintain shopper expectations around availability.
+   ​
+2. **Pin Products to Specific Positions**\
+   Pin selected products to designated spots in the search results of any query to ensure shoppers see the items you want to highlight. This helps increase visibility for new arrivals, high-margin items, or promotional products. Pin high-profit products to prominent positions, increasing visibility for items with the best business interest.
+   Feature highly rated or reviewed products at the top of relevant search results to guide shoppers toward quality choices.
+   ​
+3. **Run Campaigns with Banners and Landing Pages**\
+   Elevate your marketing initiatives by displaying banners for sales, events, or seasonal promotions. Promote holiday sales with special offers. Showcase banners for a new collection launch or create dedicated landing pages specific to a query for an engaging and cohesive shopping experience. You can showcase all discounted products together. Curate a **Shopper Favorites** page that includes top-rated and best-selling items
+   ​
+4. **Showcase Handpicked Product Collections**\
+   Create curated collections that cater to specific shopper interests, such as **Top Picks for Summer** or **Gifts for Her**, providing an easy way to navigate high-interest items. You can also create collections like **Eco-Friendly Essential**s or **Tech for Travelers** to help shoppers quickly find curated items for specific themes. or create collections around special occasions like **Mother’s Day Gifts** to guide shoppers toward popular gift ideas.
+   ​
+5. **Instantly separate products that match set conditions**\
+   Automatically filter and organize products based on specific criteria such as pricing, stock levels, or shopper preferences allowing for quick, dynamic adjustments in merchandising. Create price-sensitive campaigns by quickly filtering products based on the price attribute. You can instantly filter all products based on color to run Christmas or St. Patrick’s Day campaigns.
+   ​
+6. **Customize Facets for High-Conversion Filters**\
+   Present high-impact filters to narrow search results and match shopper intent, such as **eco-friendly** or **popular brands**, enabling quick discovery of relevant products. Feature filters for popular brands to make it easy for brand-loyal shoppers to navigate directly to their preferred options.
+7. **Redirect Shoppers to Targeted URLs**\
+   Guide users to relevant pages when they search for popular categories or keywords. For example, redirecting customer support queries to the help page ensures a smoother user experience. Creating redirect searches like **new releases** to a dedicated page that showcases the latest product drops or for out-of-stock popular items, redirect users to a similar collection page or **back-in-stock** alert page.
+   ​
+8. **Merchandise Query Autosuggest**\
+   Promote a specific suggestion/typeahead option and increase active campaign visibility.
 
-# Promotion Strategy
+​
 
-Utilize Netcore Unbxd following Promotional strategies to target merchandising tactics to prioritize, organize, and test product visibility to maximize engagement and sales.
+9. **Segment Shoppers and A/B Test Ideas**\
+   Leverage segmentation to personalize the shopping experience based on user behaviors or preferences. Learn
+   Use A/B testing to measure the impact of merchandising adjustments on conversions.
+   ​
+10. **Analyze Product and Campaign-Wise Shopper Behavior**\
+    Get in-depth insights into how your shoppers engage with specific products, campaigns, or queries.
 
-| **Strategy**          | **Description**                                                                         | **Example**                                                                             |
-| --------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| **Boost Products**    | Raise priority for specific products to appear higher in search results.                | Outdoor gear store boosts “insulated water bottles” for “camping essentials” searches.  |
-| **Bury Products**     | Hide irrelevant or unwanted products from specific searches.                            | Beauty store hides products with animal ingredients when users search “vegan.”          |
-| **Pin Products**      | Fix products to specific positions in search results.                                   | Fashion retailer pins “winter coats” at the top for “outerwear” searches.               |
-| **Slot Products**     | Assign multiple products to fixed ranks in search results for strategic placement.      | Electronics store slots “noise-canceling headphones” in top positions for “headphones.” |
-| **Sort Listing Page** | Organize products by attributes like price or alphabetical order.                       | Furniture store sorts products A-Z by brand for easier navigation.                      |
-| **A/B Testing**       | Experiment with different merchandising strategies to find what drives best engagement. | Test promoting new arrivals vs. best-sellers for the same query.                        |
-| **Landing Pages**     | Create custom pages for themes or promotions to showcase relevant products together.    | “Back to School” page featuring backpacks and stationery                                |
-
-## Types of Promotion Rules
-
-1. **Global Rule**\
-   Applies universally to all queries and segments. Only one per site. Automatically created when the site is set up. It supports Boost/Bury or Filter strategies.
-2. **Query-Specific Rules**\
-   Tailored to specific search queries or customer segments. Supports Boost/Bury, Sort, Pin, Slot, and Filter strategies. **Query-specific rules override Global Rules**.
-
-Example: Global Rule boosts “Summer Dresses” everywhere, but a query-specific rule for “Winter Sale” hides them.
-
-### How to Use Promotions
-
-Log in to the Netcore Unbxd Console. Select the site you want to put the strategy and naviagate to **Merchandising** > **Search** > **Promotions**.
-
-You can perform following actions from the Promotions overview page.
-
-1. Manage campaigns: You can perform the below actions:
-
-| **Action**          | **Description (Promotions Context)**                                                    |
-| ------------------- | --------------------------------------------------------------------------------------- |
-| **Create**          | Design and set up a new promotion campaign or offer from scratch.                       |
-| **Edit**            | Modify the details or parameters of an existing promotion to optimize performance.      |
-| **Publish**         | Activate the promotion, making it live and visible to customers.                        |
-| **Preview**         | Review how the promotion will appear to users before going live.                        |
-| **Duplicate**       | Copy an existing promotion to quickly create a similar campaign with slight variations. |
-| **Stop**            | Pause or terminate an ongoing promotion to prevent further customer exposure.           |
-| **Bulk Upload**     | Upload multiple promotions or promotional assets at once to streamline campaign setup.  |
-| **Export to email** | Share promotion details or reports via email for collaboration or review.               |
-| **Import Rule**     | Bring in predefined promotion rules or criteria from external sources for consistency.  |
-
-To view a comprehensive list of all your launched campaigns, select the site key, click Merchandising, navigate toSearch, and then Promotions.
-
-Key information on the campaign list
-
-Campaigns are grouped by query. If multiple campaigns are set for the same query, they will appear in the same row of that query.
-
-Details available on each listing:
-
-The campaign’s date range
-
-The segment it’s applied to
-
-Its current status (Active, Upcoming, Draft, Stopped, or Expired)
-
-Whether it’s a Merchandised Page or a Landing Page
-
-Analytical data on the campaign performance
-
-1. Filter campaigns by status, page type, segment, creator, and date.
-2. Edit and publish campaigns live.
-3. Duplicate campaigns to save time.
-4. Add multiple queries to campaigns to reuse rules efficiently.
-5. Preview campaigns live on the site.
-6. Enable product and query performance metrics to analyze clicks, add-to-carts, and orders.
-
-> 📘 Note
->
-> Avoid using overlapping active campaigns for the same query and segment to prevent conflicts.
+Track metrics like clicks and conversions to understand which campaigns (e.g., flash sales) perform best and refine future strategies accordingly.\
+Analyze engagement metrics for individual products to identify best-sellers and promote them for higher visibility.
+Monitor shopper behavior patterns on category pages, identify popular items, and adjust merchandising strategies to cater to demand.
