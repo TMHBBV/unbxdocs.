@@ -85,6 +85,9 @@ Azure Active Directory (Azure AD) registration allows Unbxd to integrate with SS
 3. **Assign Users and Groups**\
    Navigate to Users and Groups in the Azure AD portal. Click **Add user/group**. Select the users or groups that should have access to Unbxd via SSO. Click **Assign**.
 4. **Finalize Configuration in Unbxd**\
-   Log in to your Unbxd account. Navigate to SSO Settings under profile. Enter the below required Information
+   Log in to your Unbxd account. Navigate to SSO Settings under profile.
+
+* Ensure the **App federation Metadata URL** from Azure AD is mapped to **Metadata URL** in the Netcore Unbxd panel.
+* Ensure the **Login URL** from Azure AD is mapped to**Login URL** in the Netcore Unbxd panel.
 
 Save the configuration and test the login.
