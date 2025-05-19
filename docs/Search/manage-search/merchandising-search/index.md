@@ -56,7 +56,7 @@ Monitor shopper behavior patterns on category pages, identify popular items, and
 
 ## Use Case
 
-Netcore Unbxd Workbench supports using multiple merchandising rules, enabling retailers to create a cohesive shopping experience. For a search query “back-to-school” campaign, using workbench, you can
+Netcore Unbxd Workbench supports using multiple merchandising rules, enabling retailers to create a cohesive shopping experience. For a search query **back-to-school** campaign, using workbench, you can
 
 1. Segment shoppers.
 2. Run a banner to advertise the campaign on the home page, category pages, and search query listing pages.
