@@ -44,9 +44,7 @@ Example: Global Rule boosts “Summer Dresses” everywhere, but a query-specifi
 
 Log in to the Netcore Unbxd Console. Select the site you want to put the strategy and naviagate to **Merchandising** > **Search** > **Promotions**.
 
-You can perform following actions from the Promotions overview page.
-
-1. Manage campaigns: You can perform the below actions:
+You can perform following actions from the Promotions overview page. You can perform the below actions:
 
 | **Action**          | **Description**                                                                         |
 | ------------------- | --------------------------------------------------------------------------------------- |
@@ -113,3 +111,80 @@ You can perform following actions from the Promotions overview page.
 
 1. **Delete an existing campaign**\
    Locate the campaign, click the More options icon, and select Delete Rule to remove it.
+
+## Create New Promotion
+
+Query-specific merchandising rules allow you to customize promotions for specific queries or segments, offering a more targeted approach to shopper engagement. Navigate to **Merchandising** > **Search** > **Promotions** > **Add promotions**. Following parameters is mandatory to fill.
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Parameter**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Query**
+      </td>
+
+      <td>
+        Define the search query (e.g., winter boots) that will trigger the redirect.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Campaign Name**
+      </td>
+
+      <td>
+        Assign a name to the promotion rule.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Segment**
+      </td>
+
+      <td>
+        Specify the user segment this promotion applies to or click + Create New Segment to make a custom/new one.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Campaign Duration**
+      </td>
+
+      <td>
+        Set the time period during which the promotion will be active.
+        For an open-ended campaign, enable **Run Perpetually**. This option allows you to run any campaign until it is manually stopped.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Campaign Description**
+      </td>
+
+      <td>
+        Provide a brief description of the promotion’s purpose.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+> 📘 Note
+>
+> As you update the **Query** name, the instant preview will display products relevant to the query and show the total number of applicable products.
+
+Once the details are in place, click **Next** to add an extensive optional options to strategically control product placement on Search Results Pages.
