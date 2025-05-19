@@ -133,14 +133,4 @@ The list of multiple sites added for your profile are displayed here with the fo
 
 ## SSO
 
-Single Sign-On (SSO) is an authentication process that allows users to access multiple applications with a single set of credentials. It enhances security, reduces user effort, and simplifies credential management.\
-If your organization uses SSO to sign in to applications, you can register with Azure AD to use the same credentials.
-Follow the link below to learn how to register on Azure Active Directory. Registration must be completed by users individually:  Azure Registration For SSO
-Prerequisites:
-An Azure AD tenant with admin access.
-A Unbxd account with admin privileges.
-A registered custom domain in Azure AD.
-Enabling SSO Login for Unbxd
-Unbxd supports SSO using SAML 2.0 and functions as an SSO service provider. SAML (Security Assertion Markup Language) is a standard for exchanging authentication and authorization data between an identity provider and a service provider.
-
-This is how your account will look if SSO is not enabled.
+Single Sign-On (SSO) is an authentication process that allows users to access multiple applications with a single set of credentials. It enhances security, reduces user effort, and simplifies credential management.
