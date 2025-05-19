@@ -68,4 +68,95 @@ Boost is a merchandising strategy that lets you control the visibility of produc
 
 ## Set up use the Boost option
 
-Click the **Boost** button in the Set merchandising strategy section. Choose the **Attribute** you want to base the condition on from the drop-down menu. Define the **Operator** by clicking the `=` button and selecting the desired one (e.g., equals, contains). Select the attribute value that the condition will match or exclude. Refer [here](https://unbxdocs.readme.io/update/docs/ui-terminologies#/) to understand the operators offerref by Netcore Unbxd
+Click the **Boost** button in the Set merchandising strategy section. Choose the **Attribute** you want to base the condition on from the drop-down menu. Define the **Operator** by clicking the `=` button and selecting the desired one (e.g., equals, contains). Select the attribute value that the condition will match or exclude. Refer [here](https://unbxdocs.readme.io/update/docs/ui-terminologies#/) to understand the operators offerref by Netcore Unbxd.
+
+### Add multiple conditions within a Boost group
+
+After adding first rule to the Boost group, use `+` to add another attribute to include additional rules within the same Boost group. All conditions within the group must be met for the Boost Value of the Boost group to apply. If even one condition fails, the Boost Value will not be applied.
+
+***Each Boost group will have its own Boost Value.***\
+​
+
+### Configure the Boost Value:
+
+After configuring the rules, set the Boost Value. A **positive** (Boost Value = 1 to 100) boost value moves qualifying products higher in search results. A **negative** (Boost Value = -1 to -100) boost value moves qualifying products lower in search results.
+
+***Boost Value cannot be set to 0.***\
+​
+
+### Add new Boost groups
+
+Use `+` to add new Boost Group to create additional Boost groups. The assigned Boost Value will be applied if all the conditions in any Boost groups are met.
+
+***Groups are connected with an OR condition it means if the products meet all the conditions of at least one group, they will be included.***\
+​
+
+### Delete existing Boost conditions
+
+If you accessed this page from the listing page, click the Edit icon next to Boost in the Strategy Summary section. To delete an entire Boost group, click the **Delete** icon next to the desired group and confirm your action.\
+To remove a specific Boost condition within a group, click the Delete icon next to the condition and confirm your action. Once you have configured the rule, click **Apply boost**. You can also view your merchandising strategy summary by clicking the View summary button.
+
+***Viewing the summary before applying the changes will lead to the configurations being lost. It is recommended that you click Apply boost before viewing the summary.***\
+​
+
+### Publish the rule to your live site
+
+Click the **Save** button to retain the Campaign as a draft. or continue adding more rules. Click the **Publish** rule button to push it live.
+
+# Pin Products
+
+Pinning products allows you to control the positioning of specific items in the search results, ensuring they appear in a fixed, prioritized spot based on your merchandising strategy. T
+
+1. **Drag and Drop**\
+   On the right side of the screen, drag and drop products into the desired position to pin them.
+
+If a product is already pinned at a position, it will automatically shift to the next available position when you drop a new product into that spot.
+
+2. **Hover and Pin**\
+   Hover over the product in the preview and click the Pin icon to keep it in place, unaffected by other rules or AI.
+
+This works only for products already in the desired position.
+
+3. **Use .CSV File**\
+   If your merchandising team has set up product positions, you can upload the setup quickly by uploading a .CSV file. Click Pin strategy > Upload Pins (.CSV), then drag and drop the file to apply the setup.
+4. **Delete Pins**\
+   To delete a pinned product, click the Delete icon next to the pinned product in the strategy summary or hover over the product and click the Pin icon to unpin it.
+
+To remove all pins, go to Pin Settings and select Clear Pins. After configuring the pinning rule, click Apply pin. You can also view the merchandising strategy summary, but it’s recommended to apply the pin first to avoid losing changes.
+
+5. **Publish the Rule**\
+   After applying the pin, you can either Save the campaign as a draft, continue adding more rules, or Publish the rule to push it live.
+
+# Sort
+
+Sorting allows you to organize search results based on selected attributes, providing a more tailored and prioritized shopping experience. You can sort products in various ways, such as by numerical values (price, ratings) or text-based attributes (brand, material type).
+
+**Numerical Attributes** : Sort in ascending (lowest to highest) or descending (highest to lowest) order, useful for attributes like Price, Ratings, or Stock Quantity.
+
+**Text Attributes**: Sort alphabetically, either from A-Z or Z-A, helpful for attributes like Brand, Material Type, or Category.
+
+By default, products are displayed based on their relevance to the shopper's query, but sorting gives you more control to override this behavior.
+
+> 👍 Important
+>
+> Enabling sorting disables other merchandising strategies like Boost, Pin, and Slot.
+
+1. **Setting up Sort**\
+   Select the Attribute to Sort By. Click the Sort button in the Set merchandising strategy section.
+   From the drop-down, choose the attribute you want to sort by (e.g., Price, Brand).
+2. **Choose the Sort Order**\
+   Choose either Ascending or Descending depending on how you want the results organized.
+   You can further refine the sorting by adding multiple conditions. Each condition will apply sequentially with the **THEN** operator, like a layered sorting rule.
+
+For Example, **First Rule**: Sort by Material\_Type in ascending order (A-Z). Products made of **Cotton** will appear before **Leather**, followed by **Velvet**. **Second Rule**: Sort by Price in descending order (High to Low). Among products made of the same material, the most expensive products will be listed first.
+
+To add more conditions, click `+`Add a set of conditions and repeat the sorting process for each additional attribute.
+
+3. **Delete an existing Sort Conditions**\
+   If you are on the listing page, click the Edit icon next to Sort By in the Strategy Summary section. To remove a sort condition, click the Delete icon next to it and confirm by clicking Delete.
+
+After configuring the sort rule, click Apply sort to save your changes. You can view your merchandising strategy summary by clicking View summary, but be aware that viewing the summary before applying will lose the current configurations.
+
+***It is recommended to click Apply sort before viewing the summary.***
+
+Continue adding more rules if needed or click **Publish** rule to push the sorting strategy live to your site.
