@@ -1,5 +1,5 @@
 ---
-title: 'Search: Merchandising Features'
+title: Merchandising Features
 excerpt: 'Managing Search involves settings to configure your site and search. '
 deprecated: false
 hidden: false
