@@ -68,34 +68,9 @@ The system will process the file and add the specified stemming overrides.
 
 To ensure your stemming rules function correctly and maintain data quality, avoid creating entries with the following issues:
 
-Empty Entries: Both 'Keyword' and 'Stemmed Word' fields must contain values (cannot be blank or just whitespace).
-
-<br />
-
-<br />
-
-Missing Stemmed Word: Every 'Keyword' must have a corresponding 'Stemmed Word' defined in your override entry.
-
-<br />
-
-<br />
-
-Symbol-Only Entries: Entries consisting only of symbols (e.g., \*&^%) are not valid in either the 'Keyword' or 'Stemmed Word' field.
-
-<br />
-
-<br />
-
-Forbidden Characters: Do not use these specific characters within your keywords or stemmed words: , (comma), + (plus), \{ (curly braces), } (curly braces), \* (asterisk), & (ampersand), \ (backslash).
-
-<br />
-
-<br />
-
-Purely Alphanumeric/Codes: Overrides for entries that are only numbers or non-descriptive codes without meaningful text (e.g., "12345", "X4T5") are generally not applicable or useful for stemming.
-
-<br />
-
-<br />
-
-Stopwords: Defining custom stemming for common stopwords (like 'the', 'a', 'is', 'of', 'for') is typically unnecessary and not recommended as it usually doesn't significantly impact search relevance.
+1. **Empty Entries**: Both 'Keyword' and 'Stemmed Word' fields must contain values (cannot be blank or just whitespace).
+2. **Missing Stemmed Word**: Every 'Keyword' must have a corresponding 'Stemmed Word' defined in your override entry.
+3. **Symbol-Only Entries**: Entries consisting only of symbols (e.g., `*&^%`) are not valid in either the **Keyword** or **Stemmed Word** field.
+4. **Forbidden Characters**: Do not use these specific characters within your keywords or stemmed words: `,` (comma), `+` (plus), `{`, `}` (curly braces), `*` (asterisk), `&` (ampersand), `\` (backslash).
+5. **Purely Alphanumeric/Codes**: Overrides for entries that are only numbers or non-descriptive codes without meaningful text (e.g., `12345`, `X4T5`) are generally not applicable or useful for stemming.
+6. **Stopwords**: Defining custom stemming for common stopwords (like `the`, `a`, `is`, `of`, `for`) is typically unnecessary and not recommended as it usually doesn't significantly impact search relevance.
