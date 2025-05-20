@@ -59,9 +59,9 @@ You can upload a list of phrases using the Bulk Upload Phrase feature. You can
 
 To ensure phrases function correctly and maintain data quality, avoid entries that are:
 
-1. Empty or Blank: Phrases cannot be empty or consist only of whitespace.
-2. Symbol-Only: Phrases composed entirely of symbols are not permitted.
-3. Containing Forbidden Characters: Avoid using the following characters within any part of the phrase: `,` (comma), `+` (plus), `{` (curly braces), `}` (curly braces), `*` (asterisk), `&` (ampersand), `\` (backslash).
-4. Purely Alphanumeric/Codes: Phrases must contain meaningful words. Entries consisting only of numbers or alphanumeric codes without descriptive text (e.g., `12345`, `ABC789`) are not valid phrases.
-5. Stopword-Only: Phrases made entirely of common, non-specific words (e.g., "the of", "for a") lack meaning and are invalid.
-6. Single Words: This feature is for multi-word terms. Do not add single words (e.g., "shoes"). A phrase must contain at least two words to be effective here.
+1. **Empty or Blank**: Phrases cannot be empty or consist only of whitespace.
+2. **Symbol-Only**: Phrases composed entirely of symbols are not permitted.
+3. **Containing Forbidden Characters**: Avoid using the following characters within any part of the phrase: `,` (comma), `+` (plus), `{` (curly braces), `}` (curly braces), `*` (asterisk), `&` (ampersand), `\` (backslash).
+4. **Purely Alphanumeric/Codes**: Phrases must contain meaningful words. Entries consisting only of numbers or alphanumeric codes without descriptive text (e.g., `12345`, `ABC789`) are not valid phrases.
+5. **Stopword-Only**: Phrases made entirely of common, non-specific words (e.g., "the of", "for a") lack meaning and are invalid.
+6. **Single Words**: This feature is for multi-word terms. Do not add single words (e.g., "shoes"). A phrase must contain at least two words to be effective here.
