@@ -10,7 +10,7 @@ metadata:
 ---
 # What are Phrases?
 
-Phrases are common multi-word search terms that shoppers use when looking for specific types of products (e.g., "paintbrush," "shoe polish," "running shoes"). The Phrases feature allows you to define these multi-word terms and guide the search engine to understand the shopper's true intent behind them, leading to more relevant search results.
+Phrases are standard multi-word search terms that shoppers use when looking for specific types of products (e.g., "paintbrush," "shoe polish," "running shoes"). The Phrases feature allows you to define these multi-word terms and guide the search engine to understand the shopper's true intent behind them, leading to more relevant search results.
 
 ## Why are Phrases Important?
 
@@ -32,182 +32,36 @@ When you add a phrase, you instruct the search system on how to prioritize resul
 
 For phrases with three or more words (e.g., "Hand sanitizer dispenser"), the "left-term" and "right-term" options refer to the most significant defining word on the respective side ('Hand' or 'Dispenser' in the example), guiding the focus along with the full phrase match.
 
-## Example Phrase 1: Shoe Polish
+## Use Case
 
-Shopper Intent: Looking for polish for shoes, not shoes themselves.
+| **Example Phrase**           | **Shopper Intent**                                                        | **Key Term**                     | **Configuration**               | **Result**                                                                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------- | -------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Shoe Polish**              | Looking for polish for shoes, not shoes themselves.                       | 'Polish' (the rightmost term)    | Select "Include the right-term" | Prioritizes results for 'polish' products and exact 'shoe polish' matches, minimizing irrelevant 'shoe' results.                |
+| **Paint Brush**              | Looking for brushes specifically for painting.                            | 'Brush' (the rightmost term)     | Select "Include the right-term" | Focuses on 'brush' products suitable for painting and exact 'paintbrush' matches, reducing noise from general 'paint' products. |
+| **Hand Sanitizer Dispenser** | Looking for dispensers for hand sanitizer, not just the sanitizer liquid. | 'Dispenser' (the rightmost term) | Select "Include the right-term" | Prioritizes 'dispenser' results and exact 'hand sanitizer dispenser' matches.                                                   |
 
-Key Term: 'Polish' (the rightmost term).
-
-Configuration: Select "Include the right-term".
-
-Result: When a shopper searches for "Shoe Polish", the engine prioritizes results for 'polish' products and exact 'shoe polish' matches, minimizing irrelevant 'shoe' results.
-
-<br />
-
-<br />
-
-Phrase: Paint Brush
-
-<br />
-
-<br />
-
-<br />
-
-Shopper Intent: Looking for brushes specifically for painting.
-
-<br />
-
-<br />
-
-Key Term: 'Brush' (the rightmost term).
-
-<br />
-
-<br />
-
-Configuration: Select "Include the right term".
-
-<br />
-
-<br />
-
-Result: The search focuses on 'brush' products suitable for painting and exact 'paintbrush' matches, reducing noise from general 'paint' products.
-
-<br />
-
-<br />
-
-Phrase: Hand Sanitizer Dispenser
-
-<br />
-
-<br />
-
-<br />
-
-Shopper Intent: Looking for dispensers for hand sanitizer, not just the sanitizer liquid.
-
-<br />
-
-<br />
-
-Key Term: 'Dispenser' (the rightmost term).
-
-<br />
-
-<br />
-
-Configuration: Select "Include the right-term".
-
-<br />
-
-<br />
-
-Result: The search prioritizes 'dispenser' results and exact 'hand sanitizer dispenser' matches.
-
-<br />
-
-Add a Phrase
-
-<br />
+## Add a Phrase
 
 To add Phrase (or a single synonym):
 
-<br />
-
-<br />
-
-<br />
-
-Navigate to Content > Phrase.
-
-<br />
-
-<br />
-
-Click Add a Phrase to configure your keywords along with the synonyms.
-
-<br />
-
-<br />
+1. Navigate to **Algorithms** > **Content** > **Phrase**. Click **Add a Phrase** to configure your keywords along with the synonyms.
 
 In the Terms or Phrase field, enter the multi-word phrase (e.g., "coffee table").
 
-<br />
+2. Click **Proceed** to **save** configure phrase.
+3. Select the desired relevance option: Include the left-term, Include the right-term, or Include the full phrase based on the shopper's likely intent
 
-<br />
+### Bulk Upload Phrase
 
-Click \*\*Proceed \*\* to \*\*save \*\* configure phrase.
+You can upload a list of phrases using the Bulk Upload Phrase feature. You can browse on your computer or use drag-and-drop. The supported upload format is .csv. You may need to check specific formatting requirements for including the left/right/full term designation in the CSV. Once uploaded, you can see the number of phrases added. Using the Bulk Download Phrase feature, you can also bulk download all the phrases you have configured. A .csv file is downloaded.
 
-<br />
-
-<br />
-
-Select the desired relevance option: Include the left-term, Include the right-term, or Include the full phrase based on the shopper's likely intent
-
-<br />
-
-Bulk Upload Phrase
-
-<br />
-
-You can upload a list of phrases using the Bulk Upload Phrase feature. You can browse on your computer or use drag-and-drop. The supported upload format is .csv. 
-
-<br />
-
-<br />
-
-You may need to check specific formatting requirements for including the left/right/full term designation in the CSV
-
-<br />
-
-Once uploaded, you can see the number of phrases added. Using the Bulk Download Phrase feature, you can also bulk download all the phrases you have configured. A .csv file is downloaded.
-
-<br />
-
-What Phrases Should NOT Include
-
-<br />
+### What Phrases Should NOT Include
 
 To ensure phrases function correctly and maintain data quality, avoid entries that are:
 
-<br />
-
-<br />
-
-<br />
-
-Empty or Blank: Phrases cannot be empty or consist only of whitespace.
-
-<br />
-
-<br />
-
-Symbol-Only: Phrases composed entirely of symbols are not permitted.
-
-<br />
-
-<br />
-
-Containing Forbidden Characters: Avoid using the following characters within any part of the phrase: , (comma), + (plus), \{ (curly braces), } (curly braces), \* (asterisk), & (ampersand), \ (backslash).
-
-<br />
-
-<br />
-
-Purely Alphanumeric/Codes: Phrases must contain meaningful words. Entries consisting only of numbers or alphanumeric codes without descriptive text (e.g., "12345", "ABC789") are not valid phrases.
-
-<br />
-
-<br />
-
-Stopword-Only: Phrases made entirely of common, non-specific words (e.g., "the of", "for a") lack meaning and are invalid.
-
-<br />
-
-<br />
-
-Single Words: This feature is for multi-word terms. Do not add single words (e.g., "shoes"). A phrase must contain at least two words to be effective here.
-
-E
+1. Empty or Blank: Phrases cannot be empty or consist only of whitespace.
+2. Symbol-Only: Phrases composed entirely of symbols are not permitted.
+3. Containing Forbidden Characters: Avoid using the following characters within any part of the phrase: `,` (comma), `+` (plus), `{` (curly braces), `}` (curly braces), `*` (asterisk), `&` (ampersand), `\` (backslash).
+4. Purely Alphanumeric/Codes: Phrases must contain meaningful words. Entries consisting only of numbers or alphanumeric codes without descriptive text (e.g., `12345`, `ABC789`) are not valid phrases.
+5. Stopword-Only: Phrases made entirely of common, non-specific words (e.g., "the of", "for a") lack meaning and are invalid.
+6. Single Words: This feature is for multi-word terms. Do not add single words (e.g., "shoes"). A phrase must contain at least two words to be effective here.
