@@ -1,5 +1,8 @@
 ---
 title: Synonyms
+excerpt: >-
+  Improve product discoverability by mapping similar, related, or alternate
+  search terms using synonyms feature.
 deprecated: false
 hidden: false
 metadata:
