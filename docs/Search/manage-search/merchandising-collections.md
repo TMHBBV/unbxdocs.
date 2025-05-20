@@ -36,3 +36,18 @@ Follow below steps to create a collection:
 >
 > * Collections can only be used for landing pages once their status is Live.
 > * Utilise use of collection [here](https://unbxdocs.readme.io/update/docs/promotions-optional#/).
+
+## Collection Listing Page
+
+Below functionality is present on the Collection Page
+
+1. **Search a Collection** : Use the search option to find and manage existing Collections based on custom attributes such as color, types of products etc.
+2. **Refresh a Collection**: Use Refresh button update or renew the content of a specific group of items (e.g., products, content, users, etc.) within a collection. It is used to keep it up-to-date with the latest data, trends, or user preferences.
+3. **Filter**: Use the filter option (filter icon) to view to filter the Collection based on the table below.
+
+| **Option**        | **Description**                         |
+| ----------------- | --------------------------------------- |
+| **Created date**  | Period in which the segment was created |
+| **Creator email** | Who has created the segment             |
+
+4. **Bulk export/import collections**: Easily upload or download segments in bulk for efficient management. You can upload a locally created XLS file with multiple collections to the console simultaneously. Similarly, you can also download the list of created collections in bulk.
