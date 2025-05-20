@@ -34,144 +34,16 @@ For phrases with three or more words (e.g., "Hand sanitizer dispenser"), the "le
 
 ### Examples of Phrase Configuration
 
-\<Tabs>
-&#x20; \<Tab title="Example 1">
-&#x20;  Phrase: Shoe Polish
-
-
-
-
-
-Shopper Intent: Looking for polish for shoes, not shoes themselves.
-
-
-
-Key Term: 'Polish' (the rightmost term).
-
-
-
-Configuration: Select "Include the right-term".
-
-
-
-Result: When a shopper searches for "Shoe Polish", the engine prioritizes results for 'polish' products and exact 'shoe polish' matches, minimizing irrelevant 'shoe' results.
-
-
-
-Phrase: Paint Brush
-
-
-
-
-
-Shopper Intent: Looking for brushes specifically for painting.
-
-
-
-Key Term: 'Brush' (the rightmost term).
-
-
-
-Configuration: Select "Include the right term".
-
-
-
-Result: The search focuses on 'brush' products suitable for painting and exact 'paintbrush' matches, reducing noise from general 'paint' products.
-
-
-
-Phrase: Hand Sanitizer Dispenser
-
-
-
-
-
-Shopper Intent: Looking for dispensers for hand sanitizer, not just the sanitizer liquid.
-
-
-
-Key Term: 'Dispenser' (the rightmost term).
-
-
-
-Configuration: Select "Include the right-term".
-
-
-
-Result: The search prioritizes 'dispenser' results and exact 'hand sanitizer dispenser' matches.
-
-Add a Phrase
-
-To add Phrase (or a single synonym):
-
-
-
-
-
-Navigate to Content > Phrase.
-
-
-
-Click Add a Phrase to configure your keywords along with the synonyms.
-
-
-
-In the Terms or Phrase field, enter the multi-word phrase (e.g., "coffee table").
-
-
-
-Click \*\*Proceed \*\* to \*\*save \*\* configure phrase.
-
-
-
-Select the desired relevance option: Include the left-term, Include the right-term, or Include the full phrase based on the shopper's likely intent
-
-Bulk Upload Phrase
-
-You can upload a list of phrases using the Bulk Upload Phrase feature. You can browse on your computer or use drag-and-drop. The supported upload format is .csv. 
-
-
-
-You may need to check specific formatting requirements for including the left/right/full term designation in the CSV
-
-Once uploaded, you can see the number of phrases added. Using the Bulk Download Phrase feature, you can also bulk download all the phrases you have configured. A .csv file is downloaded.
-
-What Phrases Should NOT Include
-
-To ensure phrases function correctly and maintain data quality, avoid entries that are:
-
-
-
-
-
-Empty or Blank: Phrases cannot be empty or consist only of whitespace.
-
-
-
-Symbol-Only: Phrases composed entirely of symbols are not permitted.
-
-
-
-Containing Forbidden Characters: Avoid using the following characters within any part of the phrase: , (comma), + (plus), \{ (curly braces), } (curly braces), \* (asterisk), & (ampersand), \ (backslash).
-
-
-
-Purely Alphanumeric/Codes: Phrases must contain meaningful words. Entries consisting only of numbers or alphanumeric codes without descriptive text (e.g., "12345", "ABC789") are not valid phrases.
-
-
-
-Stopword-Only: Phrases made entirely of common, non-specific words (e.g., "the of", "for a") lack meaning and are invalid.
-
-
-
-Single Words: This feature is for multi-word terms. Do not add single words (e.g., "shoes"). A phrase must contain at least two words to be effective here.
-&#x20; \</Tab>
-
-&#x20; \<Tab title="Second Tab">
-&#x20;   Here's content that's only inside the second Tab.
-&#x20; \</Tab>
-
-&#x20; \<Tab title="Third Tab">
-&#x20;   Here's content that's only inside the third Tab.
-&#x20; \</Tab>
-\</Tabs>
+<Tabs>
+  <Tab title="First Tab">
+    Welcome to the content that you can only see inside the first Tab.
+  </Tab>
+
+  <Tab title="Second Tab">
+    Here's content that's only inside the second Tab.
+  </Tab>
+
+  <Tab title="Third Tab">
+    Here's content that's only inside the third Tab.
+  </Tab>
+</Tabs>
