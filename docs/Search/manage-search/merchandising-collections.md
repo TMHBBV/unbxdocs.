@@ -31,3 +31,8 @@ Follow below steps to create a collection:
 2. Add a collection name and click on **Download the sample collection file**. This file contains a list of unique IDs associated with your products. Modify the product IDs in the file to match the products you want to include in your collection. Save it and upload the prepared file to the Unbxd console page.
 
 <Image align="center" border={true} caption="Upload a Collection" src="https://files.readme.io/d0489216a62159a7bdfab4af38b9983dc1af44caf862a77db20a238deb61b8b4-Addcollections1.png" width="80% " />
+
+> 📘 Note
+>
+> * Collections can only be used for landing pages once their status is Live.
+> * Utilise use of collection [here](https://unbxdocs.readme.io/update/docs/promotions-optional#/).
