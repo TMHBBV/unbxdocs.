@@ -36,21 +36,7 @@ To create a segment, follow these steps:
 
 1. Navigate to **Merchandising** > **Segments** > **Add Segment**
 2. Click on the **add new segment** and provide the name of your segment in the Add Segment Name box at the top.
-3. Set up the attributes in the next block. You can set up a maximum of **6** attributes, which includes **one default** attribute and **five custom attributes.** Refer [here]() for the attribute details.
-
-> 📘 Note
->
-> * **Default attributes** list includes the below. There is no limit set for the default attribute.
->
-> | **Attribute**  | **Details**                                                       |
-> | -------------- | ----------------------------------------------------------------- |
-> | **Location**   | Any number of locations can be added.                             |
-> | **Visit Type** | Choose between new and repeated users. Can select one or both.    |
-> | **Devices**    | Select the devices you wish to target from the available options. |
->
-> * **Custom attributes**:  Ensure to include the "exact custom attribute" in your search/browse request. After creation, Unbxd passes these attribute values in the search API.\
->   Click here to learn more about Segment attributes.
-
+3. Set up the attributes in the next block. You can set up a maximum of **6** attributes, which includes **one default** attribute and **five custom attributes.** Refer [here](https://unbxdocs.readme.io/update/docs/attributes#/) for the attribute details.
 4. Select the "save segment" button.
 
 The created segment will be visible on the Listing Page.
