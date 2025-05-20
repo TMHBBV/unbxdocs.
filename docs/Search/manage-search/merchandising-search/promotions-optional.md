@@ -26,7 +26,7 @@ You can use Collections to associate a curated product set with the landing page
 
 If you prefer to add customizations on top of the search results produced by Netcore Unbxd AI and don’t want to access your complete catalog, you can proceed without enabling the Landing Page option (keep it in its default disabled state). Refer [here](https://unbxdocs.readme.io/update/docs/merchandising-collections#/) to understand about collcetions.
 
-<Image align="center" border={true} caption="Landing page Collection" src="https://files.readme.io/a9e22b70e73712c3f3b6e31ef7d9b09cc08083b72e48567da4d92295bf20f7b8-image.png" width="80% " />
+<Image align="center" border={true} caption="Landing Page Collection" src="https://files.readme.io/a9e22b70e73712c3f3b6e31ef7d9b09cc08083b72e48567da4d92295bf20f7b8-image.png" width="80% " />
 
 # AI-Suggested Queries
 
