@@ -24,7 +24,7 @@ To create landing pages, toggle the button to **green**. Once enabled, the previ
 
 You can use Collections to associate a curated product set with the landing page by selecting one or multiple Collections from the drop-down menu. You can create new ones by clicking + Create New Collection. After associating Collections with the landing page, the preview will update to display only the products included in the selected Collections
 
-If you prefer to add customizations on top of the search results produced by Netcore Unbxd AI and don’t want to access your complete catalog, you can proceed without enabling the Landing Page option (keep it in its default disabled state).
+If you prefer to add customizations on top of the search results produced by Netcore Unbxd AI and don’t want to access your complete catalog, you can proceed without enabling the Landing Page option (keep it in its default disabled state). Refer [here](https://unbxdocs.readme.io/update/docs/merchandising-collections#/) to understand about collcetions.
 
 # AI-Suggested Queries
 
