@@ -16,7 +16,7 @@ However, every business is unique. You may use specific product terms, naming co
 
 ## Types of Algorithms offered by Netcore Unbxd
 
-1. Content Algorithms :
-2. Intent Algorithms
-3. Ranking Algorithms
-4. AI Experiments Algorithms
+1. **Content Algorithms**: The Content section allows you to add site-specific dictionaries to help Unbxd algorithms better interpret your unique product catalog and customer behavior. This ensures that your search results stay relevant, even in edge cases
+2. **Intent Algorithms**: These algorithms analyze user behavior to understand their purchase intent and deliver more relevant product recommendations.
+3. **Ranking Algorithms**: Ranking algorithms sort and prioritize search results or recommendations based on relevance, popularity, and user preferences.
+4. **AI Experiments Algorithms**: AI experiments algorithms test and optimize different strategies or models to improve personalization and user engagement.
