@@ -32,51 +32,182 @@ When you add a phrase, you instruct the search system on how to prioritize resul
 
 For phrases with three or more words (e.g., "Hand sanitizer dispenser"), the "left-term" and "right-term" options refer to the most significant defining word on the respective side ('Hand' or 'Dispenser' in the example), guiding the focus along with the full phrase match.
 
-### Examples of Phrase Configuration
+## Example Phrase 1: Shoe Polish
 
-\<Tabs>
-&#x20; \<Tab title="Example 1">
-Phrase: Shoe Polish
 Shopper Intent: Looking for polish for shoes, not shoes themselves.
+
 Key Term: 'Polish' (the rightmost term).
+
 Configuration: Select "Include the right-term".
 
 Result: When a shopper searches for "Shoe Polish", the engine prioritizes results for 'polish' products and exact 'shoe polish' matches, minimizing irrelevant 'shoe' results.
-&#x20;   Add a Phrase
+
+<br />
+
+<br />
+
+Phrase: Paint Brush
+
+<br />
+
+<br />
+
+<br />
+
+Shopper Intent: Looking for brushes specifically for painting.
+
+<br />
+
+<br />
+
+Key Term: 'Brush' (the rightmost term).
+
+<br />
+
+<br />
+
+Configuration: Select "Include the right term".
+
+<br />
+
+<br />
+
+Result: The search focuses on 'brush' products suitable for painting and exact 'paintbrush' matches, reducing noise from general 'paint' products.
+
+<br />
+
+<br />
+
+Phrase: Hand Sanitizer Dispenser
+
+<br />
+
+<br />
+
+<br />
+
+Shopper Intent: Looking for dispensers for hand sanitizer, not just the sanitizer liquid.
+
+<br />
+
+<br />
+
+Key Term: 'Dispenser' (the rightmost term).
+
+<br />
+
+<br />
+
+Configuration: Select "Include the right-term".
+
+<br />
+
+<br />
+
+Result: The search prioritizes 'dispenser' results and exact 'hand sanitizer dispenser' matches.
+
+<br />
+
+Add a Phrase
+
+<br />
 
 To add Phrase (or a single synonym):
 
-1.Navigate to Content > Phrase.
+<br />
 
-2.Click Add a Phrase to configure your keywords along with the synonyms.
+<br />
+
+<br />
+
+Navigate to Content > Phrase.
+
+<br />
+
+<br />
+
+Click Add a Phrase to configure your keywords along with the synonyms.
+
+<br />
+
+<br />
 
 In the Terms or Phrase field, enter the multi-word phrase (e.g., "coffee table").
-Click Proceed to save the configure phrase.
+
+<br />
+
+<br />
+
+Click \*\*Proceed \*\* to \*\*save \*\* configure phrase.
+
+<br />
+
+<br />
 
 Select the desired relevance option: Include the left-term, Include the right-term, or Include the full phrase based on the shopper's likely intent
-&#x20;  &#x20;
+
+<br />
+
+Bulk Upload Phrase
+
+<br />
+
+You can upload a list of phrases using the Bulk Upload Phrase feature. You can browse on your computer or use drag-and-drop. The supported upload format is .csv. 
+
+<br />
+
+<br />
+
+You may need to check specific formatting requirements for including the left/right/full term designation in the CSV
+
+<br />
+
+Once uploaded, you can see the number of phrases added. Using the Bulk Download Phrase feature, you can also bulk download all the phrases you have configured. A .csv file is downloaded.
+
+<br />
+
 What Phrases Should NOT Include
+
+<br />
 
 To ensure phrases function correctly and maintain data quality, avoid entries that are:
 
-1\. Empty or Blank: Phrases cannot be empty or consist only of whitespace.
+<br />
 
-2\. Symbol-Only: Phrases composed entirely of symbols are not permitted.
-&#x20;  &#x20;
-3\. Containing Forbidden Characters: Avoid using the following characters within any part of the phrase: , (comma), + (plus), \{ (curly braces), } (curly braces), \* (asterisk), & (ampersand), \ (backslash).
+<br />
 
-4\. Purely Alphanumeric/Codes: Phrases must contain meaningful words. Entries consisting only of numbers or alphanumeric codes without descriptive text (e.g., "12345", "ABC789") are not valid phrases.
-&#x20;  &#x20;
-5\. Stopword-Only: Phrases made entirely of common, non-specific words (e.g., "the of", "for a") lack meaning and are invalid.
-&#x20;  &#x20;
-6\. Single Words: This feature is for multi-word terms. Do not add single words (e.g., "shoes"). A phrase must contain at least two words to be effective here.
-&#x20; \</Tab>
+<br />
 
-&#x20; \<Tab title="Second Tab">
-&#x20;   Here's content that's only inside the second Tab.
-&#x20; \</Tab>
+Empty or Blank: Phrases cannot be empty or consist only of whitespace.
 
-&#x20; \<Tab title="Third Tab">
-&#x20;   Here's content that's only inside the third Tab.
-&#x20; \</Tab>
-\</Tabs>
+<br />
+
+<br />
+
+Symbol-Only: Phrases composed entirely of symbols are not permitted.
+
+<br />
+
+<br />
+
+Containing Forbidden Characters: Avoid using the following characters within any part of the phrase: , (comma), + (plus), \{ (curly braces), } (curly braces), \* (asterisk), & (ampersand), \ (backslash).
+
+<br />
+
+<br />
+
+Purely Alphanumeric/Codes: Phrases must contain meaningful words. Entries consisting only of numbers or alphanumeric codes without descriptive text (e.g., "12345", "ABC789") are not valid phrases.
+
+<br />
+
+<br />
+
+Stopword-Only: Phrases made entirely of common, non-specific words (e.g., "the of", "for a") lack meaning and are invalid.
+
+<br />
+
+<br />
+
+Single Words: This feature is for multi-word terms. Do not add single words (e.g., "shoes"). A phrase must contain at least two words to be effective here.
+
+E
