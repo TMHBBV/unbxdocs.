@@ -95,3 +95,39 @@ To ensure your catalog is uploaded and integrated seamlessly, follow these best 
    * Can include alphanumeric characters, hyphens, and underscores.
    * Cannot contain special characters, spaces, or end with an underscore.
    * Do not send fields that have null values.
+
+## Map catalog fields to an entity
+
+During mapping a catalog field to an entity, it is recommended that you map the fields from the catalog that contains the information related to the entity. Let’s say a retailer has a title, description, and brand attribute in their catalog. The title and description attribute may contain the brand names of the product for most of the products in the catalog. However, they also contain other details about the products such as size, color, etc. Hence, in order to get the best results for different algorithm, it is recommended to map only the brand attribute to the entity called BRAND because it would only contain the information about product brands and it won’t have details about other product properties.
+
+If catalog does not have an independent attribute for an entity, leave the field mapping against the entity as blank.\
+In such cases, it won’t influence the search results based on the detection. However, if there is an entity that is extremely important and used frequently by your shopper during searches you can go ahead and map the attribute which is closest to the entity.
+
+### Assign Weights
+
+The weight-ages assigned to entity/fields mapped against an entity allows us to understand how important these entities/fields are for your shoppers. These weight-ages are used while re-ranking the search results and increasing the product count in search results.  TYPE (i.e. product type) , BRAND, COLOR are some of the entities which are found to be important for a shopper Fashion domain.
+
+> 📘 Note
+>
+> Entities without field mapping and weightage won’t be available for re-ranking results and increasing result count.
+
+As quoted above, imagine people searching for ‘blue sofa’, get ‘blue shirt’ in their results?\
+It would be a terrible experience for shoppers indeed. This might happen when you rank the attributes wrong or do not rank them at all. In such a case, the search engine randomly selects products for display. Therefore,
+
+Assign proper weights to the mapped fields:
+
+| **Weight** | **Description**                                              |
+| ---------- | ------------------------------------------------------------ |
+| **High**   | The first priority of attribute while searching for results. |
+| **Medium** | Good to have, but not the most critical attribute.           |
+| **Low**    | Not particularly needed, less important in results.          |
+
+So, if we assign HIGH weightage to **product\_type** while searching for **blue sofa**, we would get results for **blue sofa** and **not blue shirt**.
+
+With relevant mapping and assigning weights, you provide:
+
+1. **Re-ranking of products**: We are indirectly boosting products that you would want your customers to see above others. For example, Encouraging your **brand name**.
+
+If Amazon wants to promote solimo, whenever a shopper searches for roasted brown almonds, solimo almonds would show the top results.
+
+2. **Improved recall**: With algoritms offered by Netcore Unbxd, you get the option to abstain your site from providing zero results. So, whenever a shopper types a long tail search query that has no exact match, sites return zero results or 1-2 results. For example with one of the algorithms, **Named Entity Recognition(NER)**, you could provide more products in the result set by providing a number. This means if the result set contains less than  number of products then let NER increase the number of results. For example, If a shopper searches for Bain brown boots. The result set contains 3 products. So, NER matches the query with the HIGH weightage attribute which in this case was color and product type and provides more results on the same. More brown shoes or boots. Learn more about the different algorithms offered here.
