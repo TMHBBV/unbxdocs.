@@ -66,3 +66,17 @@ Top Queries appear based on shoppers’ behavior on the site. The frequently sea
 <br />
 
 As we can see in the above illustration, the maximum number of hits and clicks were received on the 3rd of August and 11th of August. The  graph shows the metrics of the number of query hits, depicted on the left x-axis v/s the number of clicks, on the right x-axis. The report shown here is from Aug 02,2019 to Aug 15, 2019.
+
+### Popular Products
+
+The list of similar products appears based on the query phrase that you type. In this way, the buyer gets more options to add to the cart by just a single click.
+
+<Image align="center" border={true} caption="Popular Products Report" src="https://files.readme.io/4d5c4ec0982609bcbb8554896de98cf3e3f6767c86856fd395b3b27d290c9cb8-image.png" width="% " />
+
+So, as you can see, product like ‘slim fit convertible sleeve portofino shirt’ was viewed 9219 number of times, added to the cart 1705 times, and ordered 264 times. In this way, you get to know the popular products or the least popular ones. We can
+
+You can change the order of the products based on any of the metrics.
+
+> 📘 NOTE
+>
+> To download a query report, click the download icon on the top-right part of the screen.
