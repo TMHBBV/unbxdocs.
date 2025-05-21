@@ -30,14 +30,19 @@ These are all semantically related, even if they don’t contain the exact same 
 
 Vector Search helps users find what they mean, not just what they say. It improves the accuracy, depth, and usefulness of search results, especially for longer or more natural language queries.
 
-Understands intent:\
-Helps the search engine interpret the meaning behind what users type, not just the words.
+1. **Understands intent:**\
+   Helps the search engine interpret the meaning behind what users type, not just the words.
+2. **Fewer dead ends**:\
+   Reduces the chances of “no results found” pages by showing related products.
+3. **Better relevance**:\
+   Surfaces products that truly match what the user is looking for, even if the keywords don’t match exactly.
+4. **Boosts conversions**:\
+   When users find what they need faster, they’re more likely to buy — improving sales and user satisfaction.
 
-Fewer dead ends:\
-Reduces the chances of “no results found” pages by showing related products.
+## Enable Vector Search
 
-Better relevance:\
-Surfaces products that truly match what the user is looking for, even if the keywords don’t match exactly.
+<br />
 
-Boosts conversions:\
-When users find what they need faster, they’re more likely to buy — improving sales and user satisfaction.
+1. Navigate to **Algorithm** > **Intent** > **Vector Search**.
+
+Click Contact support link to auto create support ticket for enabling this feature on your panel. Once approved, the toggle button is enabled for your panel.
