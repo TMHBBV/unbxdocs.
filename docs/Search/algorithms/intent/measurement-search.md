@@ -45,7 +45,7 @@ Log in to Netcore Unbxd console page.
 
 <Image align="center" border={true} caption="Set up Measurement Search" src="https://files.readme.io/bdb4e4041895b596d28027be519512a1995bca84864aa958e02406c6140cf446-image.png" width="80% " />
 
-3. Strategy Selection: You can select either of the available strategy: Boost or Filter.
+3. Strategy Selection: You can select either of the available strategy: **Boost or Filter**.
 4. Boost Strategy: This strategy gives priority to products that are close to the measurement the user searched for even if they're not an exact match.For example : If a user searches for a "7 kg washing machine", and only 7.5 kg models are available, then the system will still show the 7.5 kg options at the top of the results.
 
 It works best when shoppers are open to similar options or when exact matches are not available.
