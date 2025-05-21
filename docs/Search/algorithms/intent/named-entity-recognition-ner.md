@@ -69,3 +69,20 @@ The NER model can be applied to your website as below:
 > 📘 Note
 >
 > At-least one entity must be mapped to a catalog field and assigned a weightage to enable NER.
+
+### Configure strategy for increased result count
+
+Two steps are needed in order to configure the strategy for increasing the result count.
+
+1. Enable the strategy by clicking on the checkbox against **Increase the product count in search result**.
+2. Select the threshold above which the NER based query reformulation must be disabled. By default, the threshold is set as 10 which means if a query returns more than 10 products in the search result (with high precision) then the query reformulation will not be applied. Only if the number of products in the search result is less than the selected threshold, the NER based query reformulation will take place. In order to decide the threshold, you need to consider the following factors :
+   1. The number of products displayed on the search results page. If the search results page displays 50 product on a single page then you may choose to increase the limit to 20 or 25.
+   2. The number of queries that would be impacted by NER. A lower threshold would mean that query reformulation would happen for lesser number of queries. In order to decide the threshold, you can look create a table that contains the number of queries and their conversion rates across different ranges.
+
+| **# Products in Search Result** | **# Search Hits** | **Conversion Rate** |
+| ------------------------------- | ----------------- | ------------------- |
+| 0-5                             | 10,000            | 1.5%                |
+| 0-10                            | 25,000            | 2%                  |
+| 0-20                            | 100,000           | 2.1%                |
+| 0-25                            | 125,000           | 2.5%                |
+| 0-50                            | 500,000           | 5%                  |
