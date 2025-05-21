@@ -79,10 +79,10 @@ Two steps are needed in order to configure the strategy for increasing the resul
    1. The number of products displayed on the search results page. If the search results page displays 50 product on a single page then you may choose to increase the limit to 20 or 25.
    2. The number of queries that would be impacted by NER. A lower threshold would mean that query reformulation would happen for lesser number of queries. In order to decide the threshold, you can look create a table that contains the number of queries and their conversion rates across different ranges.
 
-| **# Products in Search Result** | **# Search Hits** | **Conversion Rate** |
-| ------------------------------- | ----------------- | ------------------- |
-| 0-5                             | 10,000            | 1.5%                |
-| 0-10                            | 25,000            | 2%                  |
-| 0-20                            | 100,000           | 2.1%                |
-| 0-25                            | 125,000           | 2.5%                |
-| 0-50                            | 500,000           | 5%                  |
+| **Products in Search Result** | **Search Hits** | **Conversion Rate** |
+| ----------------------------- | --------------- | ------------------- |
+| 0-5                           | 10,000          | 1.5%                |
+| 0-10                          | 25,000          | 2%                  |
+| 0-20                          | 100,000         | 2.1%                |
+| 0-25                          | 125,000         | 2.5%                |
+| 0-50                          | 500,000         | 5%                  |
