@@ -35,3 +35,7 @@ You can set-up a site search solution using Unbxd with the following steps :
 3. Upload a Catalog
 4. Setup Search
 5. Integrate Search
+
+> 📘 Note
+>
+> A fully functional Sandbox will be available for testing after step 4. You can use our UI library to quickly integrate Unbxd search on your website.
