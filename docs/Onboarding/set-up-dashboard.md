@@ -28,3 +28,11 @@ To create your account, you need to specify the account details as below:
 Once your account is activated you can login to Unbxd console.
 
 <Image align="center" border={true} caption="Log in to Netcore Unbxd" src="https://files.readme.io/55a2666ca2c985acb4fdb6c3b20e6dc98ba26b096e93dd71eba4863330f39279-image.png" />
+
+> 📘 Good to Check
+>
+> Before you proceed further, ensure following is done.
+>
+> 1. Your Netcore Unbxd account is created
+> 2. Your account is activated. To ensure this, check your inbox for the activation email and click the activation link to enable your account.
+> 3. While log in to the Netcore Unbxd account, ensure that your username and password entered is correct. If you have forgotten your password, click on **Forgot Password** to reset it.
