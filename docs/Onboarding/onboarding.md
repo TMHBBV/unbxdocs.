@@ -1,5 +1,5 @@
 ---
-title: Onboarding
+title: Onboarding Flow
 deprecated: false
 hidden: false
 metadata:
