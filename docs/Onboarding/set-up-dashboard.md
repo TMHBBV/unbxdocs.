@@ -36,3 +36,13 @@ Once your account is activated you can login to Unbxd console.
 > 1. Your Netcore Unbxd account is created
 > 2. Your account is activated. To ensure this, check your inbox for the activation email and click the activation link to enable your account.
 > 3. While log in to the Netcore Unbxd account, ensure that your username and password entered is correct. If you have forgotten your password, click on **Forgot Password** to reset it.
+
+# Create an Unbxd Site
+
+After you have created your account and logged into it, the next step is to create an **Unbxd Site**.
+
+> 📘 Note
+>
+> Each **Unbxd Site** represents an independent instance for **Search** / **Browse** with a catalog.
+
+<Image align="center" border={true} caption="Create Site" src="https://files.readme.io/dea2c1201cf30ed6c9c70636bc2fcfafb4db0fa0a410e2367655947d31426389-image.png" />
