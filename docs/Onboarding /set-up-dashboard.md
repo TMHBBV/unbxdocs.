@@ -75,15 +75,3 @@ After setting up the site, you can start building your site solution by uploadin
 2. **Feed API**: If the number of products in your catalog are more than 25K then, you can upload the catalog via our Feed APIs. **Feed APIs only support the JSON file format**.
 
 <Image align="center" border={true} caption="Upload a catalog via Feed API" src="https://files.readme.io/314900b1e1d6b1cb0bc8adca9d6178030d16463acbd8425dd434f6f2018c0d34-image.png" />
-
-3. **PIM**: PIM allows you to upload the catalog via SFTP, URL, or directly via your computer. PIM uploads are recommended for catalog with less than 25K products. Unbxd PIM allows you to add transformations for each attribute before uploading the catalog.
-
-> 📘 Good to Know
->
-> PIM stands for **Product Information Management**. It is a system or software used by businesses to manage and centralize product information in a single location. The purpose of a PIM system is to ensure consistency, accuracy, and ease of access to product data, which can then be used across various sales channels.
-
-<Image align="center" border={true} caption="Upload catalog via PIM" src="https://files.readme.io/679f3ac3b8bffffd9415ef867f96ea8c76eab00fbca1bc454895f0165afd7823-image.png" />
-
-> 📘 Note
->
-> You can also import your catalog via SFTP locations. Though, which catalog will be uploaded first depends on the catalog size.
