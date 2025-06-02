@@ -107,3 +107,5 @@ In Magento:
 1. Navigate to the Netcore Unbxd tab in the admin panel.
 2. Under General Settings, enter your Site Key, API Key, and Secret Key copied from Netcore Unbxd console.
 3. Click Save Configuration.
+
+<Image align="center" border={true} caption="Setting up Netcore Unbxd Keys in Magento" src="https://files.readme.io/ce1d1405912b8440ec90dbba664a55551c06d8c4afb7b5f599ca892aaf92a15f-Authentication.png" width="80% " />
