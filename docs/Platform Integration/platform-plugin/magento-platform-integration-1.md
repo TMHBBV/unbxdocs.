@@ -87,3 +87,13 @@ php bin/magento cache:flush
 ```
 
 Once this is done, you have successfully downloaded, installed, and enabled the Unbxd Magento extension using Direct Plugin Feed Upload.
+
+# Authentication
+
+Once the Netcore Unbxd extension is installed, you need to authenticate it using your Unbxd account keys (also known as Authentication Keys).
+
+> 📘 Important
+>
+> You can find your authentication keys within the Welcome mail you receive when signing up with Netcore Unbxd. Alternatively, you can also find the following keys in the within your Unbxd Console. **Manage** > **Configure Site** > **Keys**
+>
+> Also, If you have more than one Magento store, select the correct store from the Store View option at the top of the screen to update the Site Key, API Key, and Secret Key.
