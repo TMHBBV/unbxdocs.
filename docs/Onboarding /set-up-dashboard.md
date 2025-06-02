@@ -75,3 +75,13 @@ After setting up the site, you can start building your site solution by uploadin
 2. **Feed API**: If the number of products in your catalog are more than 25K then, you can upload the catalog via our Feed APIs. **Feed APIs only support the JSON file format**.
 
 <Image align="center" border={true} caption="Upload a catalog via Feed API" src="https://files.readme.io/314900b1e1d6b1cb0bc8adca9d6178030d16463acbd8425dd434f6f2018c0d34-image.png" />
+
+# Setup Search
+
+The final step involves ways to set up your search features incorporated with AI recommendations. We scan through the catalog to calculate the attributes that will be made searchable or considered as facets.
+
+Our AI system also has diversified knowledge of catalogs from different verticals which makes it intelligent to identify the probable relevancy settings. We use this to set the relevancy of your site automatically which reduces the zero-result queries and improves the recall.
+
+> 📘 Note
+>
+> These settings can be changed from the console later.
