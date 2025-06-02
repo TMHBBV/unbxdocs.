@@ -1,5 +1,5 @@
 ---
-title: Content
+title: Content Relevance
 excerpt: >-
   Customize your eCommerce search with content algorithms by defining synonyms,
   phrases, concepts, and more to improve result relevancy. Customize your
