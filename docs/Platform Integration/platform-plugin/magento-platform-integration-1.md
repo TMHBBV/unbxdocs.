@@ -67,5 +67,23 @@ This is a method of integrating product data with an external service (like Unbx
 * Unbxd [ProductFeed](https://drive.google.com/file/d/1H_v3hd6KJsKL-s3u0a_9uWKVSMvczcA2/view?usp=drive_link)
 * Unbxd [Search](https://drive.google.com/file/d/1N34h2WHsn1Vmm763isSjw6o90ZO32b1F/view?usp=drive_link)
 
-1. Extract and copy files to the Magento root directory.
-2. Create missing directories:
+2. Extract and copy files to the Magento root directory.
+3. Create missing directories. If the ***app/code/Unbxd*** folder is missing, follow the steps below to create it:
+
+```
+mkdir -p app/code/Unbxd/SearchJs
+mkdir app/code/Unbxd/ProductFeed  
+```
+
+4. Login to the SSH console of your server and run the following commands from Magento 2 root directory to enable the extensions:
+
+```
+php bin/magento module:enable Unbxd_SearchJs
+php bin/magento module:enable Unbxd_ProductFeed
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy
+php bin/magento cache:flush 
+```
+
+Once this is done, you have successfully downloaded, installed, and enabled the Unbxd Magento extension using Direct Plugin Feed Upload.
