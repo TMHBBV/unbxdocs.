@@ -97,3 +97,13 @@ Once the Netcore Unbxd extension is installed, you need to authenticate it using
 > You can find your authentication keys within the Welcome mail you receive when signing up with Netcore Unbxd. Alternatively, you can also find the following keys in the within your Unbxd Console. **Manage** > **Configure Site** > **Keys**
 >
 > Also, If you have more than one Magento store, select the correct store from the Store View option at the top of the screen to update the Site Key, API Key, and Secret Key.
+
+* **Site Key**: Unique identifier for your Unbxd site.
+* **API Key**: Unique identifier for API calls.
+* **Secret Key**: Used for secure requests like Product Feed uploads.
+
+In Magento:
+
+1. Navigate to the Netcore Unbxd tab in the admin panel.
+2. Under General Settings, enter your Site Key, API Key, and Secret Key copied from Netcore Unbxd console.
+3. Click Save Configuration.
