@@ -79,3 +79,9 @@ After setting up the site, you can start building your site solution by uploadin
 > 📘 Good to Know
 >
 > PIM stands for **Product Information Management**. It is a system or software used by businesses to manage and centralize product information in a single location. The purpose of a PIM system is to ensure consistency, accuracy, and ease of access to product data, which can then be used across various sales channels.
+
+<Image align="center" border={true} caption="Upload catalog via PIM" src="https://files.readme.io/679f3ac3b8bffffd9415ef867f96ea8c76eab00fbca1bc454895f0165afd7823-image.png" />
+
+> 📘 Note
+>
+> You can also import your catalog via SFTP locations. Though, which catalog will be uploaded first depends on the catalog size.
