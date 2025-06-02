@@ -69,7 +69,9 @@ Set up the following details, and click the enabled **Proceed** button to start 
 
 After setting up the site, you can start building your site solution by uploading your product catalog. Select a mode for uploading your catalog from the following options :
 
-1. **Platform Plugin**: Use our platform plugins to upload catalog if you are using one of these platforms (SAP Hybris and Magento2). Using platform plugins is the fastest way to integrate Unbxd search.
+1. **Platform Plugin**: The most convenient way to upload your feed is via platform plugins. When you choose ‘Platform’ as your chosen option for uploading the catalog, you get redirected to the next page. We currently support plugins for two platforms:
+   * [SAP Hybris]()
+   * [Magento]()
 2. **Feed API**: If the number of products in your catalog are more than 25K then, you can upload the catalog via our Feed APIs. **Feed APIs only support the JSON file format**.
 
 <Image align="center" border={true} caption="Upload a catalog via Feed API" src="https://files.readme.io/314900b1e1d6b1cb0bc8adca9d6178030d16463acbd8425dd434f6f2018c0d34-image.png" />
