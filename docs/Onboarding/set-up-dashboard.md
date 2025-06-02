@@ -46,3 +46,36 @@ After you have created your account and logged into it, the next step is to crea
 > Each **Unbxd Site** represents an independent instance for **Search** / **Browse** with a catalog.
 
 <Image align="center" border={true} caption="Create Site" src="https://files.readme.io/dea2c1201cf30ed6c9c70636bc2fcfafb4db0fa0a410e2367655947d31426389-image.png" />
+
+### Set up the field data:
+
+Set up the following details, and click the enabled **Proceed** button to start the site creation.
+
+| **Field**        | **Description**                                                                                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Name of Site** | Fill in a relevant name for your site (e.g., walmart\_dev, walmart\_demo) by appending the environment type (Dev, Prod, Stage). This name uniquely identifies your site. |
+| **Environment**  | Select the hosting environment for your eCommerce site (Prod, Dev, or Staging).                                                                                          |
+| **Vertical**     | Select the most appropriate business vertical from the dropdown. This helps set up relevance on the website.                                                             |
+| **Platform**     | Select an eCommerce platform from the dropdown menu. You’ll receive updates about your platform from Unbxd.                                                              |
+| **Language**     | Select the preferred language for your Unbxd site, based on the language used in your catalog to describe products.                                                      |
+| **Data Center**  | Choose the data center nearest to the shoppers for improved response time.                                                                                               |
+
+> 📘 Note
+>
+> * The process of site creation may take a five minutes or more.
+> * At the time of site creation, customers will get an option to select the location of their website.
+
+# Upload a Catalog
+
+After setting up the site, you can start building your site solution by uploading your product catalog. Select a mode for uploading your catalog from the following options :
+
+1. **Platform Plugin**: Use our platform plugins to upload catalog if you are using one of these platforms (SAP Hybris and Magento2). Using platform plugins is the fastest way to integrate Unbxd search.
+2. **Feed API**: If the number of products in your catalog are more than 25K then, you can upload the catalog via our Feed APIs. **Feed APIs only support the JSON file format**.
+
+<Image align="center" border={true} caption="Upload a catalog via Feed API" src="https://files.readme.io/314900b1e1d6b1cb0bc8adca9d6178030d16463acbd8425dd434f6f2018c0d34-image.png" />
+
+3. **PIM**: PIM allows you to upload the catalog via SFTP, URL, or directly via your computer. PIM uploads are recommended for catalog with less than 25K products. Unbxd PIM allows you to add transformations for each attribute before uploading the catalog.
+
+> 📘 Good to Know
+>
+> PIM stands for **Product Information Management**. It is a system or software used by businesses to manage and centralize product information in a single location. The purpose of a PIM system is to ensure consistency, accuracy, and ease of access to product data, which can then be used across various sales channels.
