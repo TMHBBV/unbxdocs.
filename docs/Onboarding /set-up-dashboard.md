@@ -180,4 +180,18 @@ Use Unbxd SDK to integrate Unbxd Site Search by following just two steps.
 1. Click the Download UI kit.
 2. Unzip the package and open the index.html file in your browser to view the search results landing page for your catalog with the Unbxd default template.
 
-To know more about the Search SDK configs and the different possible options, read the SDK documentation here.
+To know more about the Search SDK configs and the different possible options, read the SDK documentation [here]().
+
+## Integrate APIs
+
+Use our inbuilt APIs to integrate any Search functionality via:
+
+1. Search API
+2. Autosuggest API
+
+## Platform Plugins
+
+If your eCommerce is based on any platform like Magento or Hybris then you can use our native plugins:
+
+1. [Magento](https://unbxdocs.readme.io/update/docs/magento-platform-integration-1#/)
+2. [SAP Hybris](https://unbxdocs.readme.io/update/docs/sap-hybris#/)
