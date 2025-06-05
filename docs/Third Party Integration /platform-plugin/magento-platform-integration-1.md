@@ -115,3 +115,12 @@ To know more, Refer the Feed API documentation [here](https://unbxdocs.readme.io
 > 📘 NOTE
 >
 > The API key and Secret key must be saved somewhere as they are hidden behind the asterisk value.
+
+# Catalog Synchronization
+
+Unbxd algorithms rely on product-related information from your product catalog. When you send your catalog to Unbxd, we convert it into our format, store it, and index it on our servers. This process is known as the Product Feed.
+
+Synchronizing Your Catalog Feed\
+By synchronizing your feed, your Unbxd extension will be able to retrieve the catalog information from your Magento database.
+
+To know more, refer to the  [documentation](https://unbxdocs.readme.io/update/docs/set-up-analytics#/) for Catalog preparation.
