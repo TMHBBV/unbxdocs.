@@ -37,3 +37,11 @@ Unbxd requires some header parameters along with the search request in order to 
 > 📘 Important Note
 >
 > For Search and Autosuggest API, we can enable personalization, segmentation, and A/B testing of the merchandising campaign. we recommend passing certain parameters as HTTPS headers.
+
+The following parameters are available:
+
+| Parameter           | Description                                                                                                                                      | Significance                                                                                           |
+| :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
+| unbxd-user-id       | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics JavaScript sets the userid in your browser cookie. | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work |
+| user-agent          | Browser identification information is passed to the web server with every HTTPS request.                                                         | If not passed, device-based merchandising campaigns will not work.                                     |
+| unbxd-device-type\* | This header is an Unbxd custom header which is required to identify if the request is coming from an app.                                        |                                                                                                        |
