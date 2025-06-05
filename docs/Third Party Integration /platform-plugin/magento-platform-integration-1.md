@@ -109,3 +109,7 @@ In Magento:
 3. Click Save Configuration.
 
 <Image align="center" border={true} caption="Setting up Netcore Unbxd Keys in Magento" src="https://files.readme.io/ce1d1405912b8440ec90dbba664a55551c06d8c4afb7b5f599ca892aaf92a15f-Authentication.png" width="80% " />
+
+To know more, Refer the Feed API documentation [here](https://unbxdocs.readme.io/update/docs/feed-preparation-and-upload#/).
+
+NOTE: All keys (API and Secret Key) other than the Site Key must be saved somewhere as they are hidden behind the asterisk value
