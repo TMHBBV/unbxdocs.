@@ -22,13 +22,11 @@ ccurl -X GET \
  -H 'unbxd-user-id: uid-1499941737191-79890'
 ```
 
-<br />
-
 ## Authentication
 
 Our APIs use an API\_KEY and a SITE\_KEY to authenticate search requests.
 
-These keys are generated when account creation and can be accessed within Console at Manage -> Configure Site -> Keys.
+These keys are generated when an account is created and can be accessed within the Console at Manage -> Configure Site -> Keys.
 
 ## Headers
 
@@ -40,8 +38,197 @@ Unbxd requires some header parameters along with the search request in order to 
 
 The following parameters are available:
 
-| Parameter           | Description                                                                                                                                      | Significance                                                                                           |
-| :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
-| unbxd-user-id       | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics JavaScript sets the userid in your browser cookie. | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work |
-| user-agent          | Browser identification information is passed to the web server with every HTTPS request.                                                         | If not passed, device-based merchandising campaigns will not work.                                     |
-| unbxd-device-type\* | This header is an Unbxd custom header which is required to identify if the request is coming from an app.                                        |                                                                                                        |
+| Parameter         | Description                                                                                                                                                                           | Significance                                                                                           |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
+| unbxd-user-id     | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics JavaScript sets the userid in your browser cookie.                                      | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work |
+| user-agent        | Browser identification information is passed to the web server with every HTTPS request.                                                                                              | If not passed, device-based merchandising campaigns will not work.                                     |
+| unbxd-device-type | This header is an Unbxd custom header, which is required to identify if the request is coming from an app.                                                                            | If not passed, device-based merchandising campaigns cannot differentiate between browsers and apps.    |
+| Accept-Encoding   | This header signifies the response's content encoding. Currently, Unbxd supports only gzip compression. To enable this, ‘gzip’ needs to be passed.                                    | If not passed, the response will not be compressed.                                                    |
+| X-Forwarded-For   | This header signifies the end-user's IP address. It is primarily required if the integration is a backend, as Unbxd doesn’t get the IP of the end-user from the browser in that case. | If not passed, segmentation, A/B testing, and personalization will not work.                           |
+
+#### unbxd-device-type:
+
+```
+ { "type":"tablet" , "os": "iOS" , "source": "app" }
+```
+
+possible values of “type” : “desktop”, “tablet”, “mobile”
+
+possible values of “os” : “android”, “ios”, “windows”
+
+possible values of “source” : “browser”, “app”
+
+## Error Codes
+
+* 404 (Not Found): Indicates the requested resource doesn’t exist. In the browser, this means the URL is not recognized. This can also mean that the endpoint is valid in an API, but the resource does not exist.
+* 400 (Bad Request): Indicates the request was unacceptable, often due to missing a required parameter.
+* 401 (Unauthorized): No valid API key provided.
+* 200 (OK): Indicates that everything worked as expected.
+
+## Request Parameters
+
+The value of the request parameters is defined below:
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Parameter
+      </th>
+
+      <th>
+        Description
+      </th>
+
+      <th>
+        Data Type
+      </th>
+
+      <th>
+        Possible Values/Format
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        q
+
+        Mandatory
+      </td>
+
+      <td>
+        The main query parameter passed in the request is the search term a shopper enters in the e-commerce site's search box.
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        `Format: ?q={search_query}`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        version
+
+        Mandatory
+      </td>
+
+      <td>
+        The version parameter specifies the version of the API. To get the latest API features, you should always pass “\&version=V2” in every API call. The facet response changes in V1 as compared to V2.
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Format: `&version=V2`
+
+        <br />
+
+        Supported Values: V1, V2
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        user-type
+
+        Mandatory
+      </td>
+
+      <td>
+        Number of times a user visits the site. Probable values can be: frequent,  first-time.
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Format: “first-time”
+
+        <br />
+
+        Supported Values: first-time, frequent
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        uid
+
+        Mandatory
+      </td>
+
+      <td>
+        Unique identification ID for visitors, with value to pass, can be obtained from Unbxd. userId browser cookie
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        `&uid=uid-1666356549013-78531`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        format
+
+        Optional
+      </td>
+
+      <td>
+        The format parameter specifies the format for generating the response result.
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Format: `&format=xml`
+
+        <br />
+
+        Supported values: JSON, XML
+
+        <br />
+
+        Default Value: JSON
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        start
+
+        Optional
+      </td>
+
+      <td>
+        The start parameter is used to offset the results by a specific number.
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Format: `&start=2`
+
+        <br />
+
+        Default Value: 0
+      </td>
+    </tr>
+  </tbody>
+</Table>
