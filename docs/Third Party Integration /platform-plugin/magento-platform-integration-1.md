@@ -112,4 +112,6 @@ In Magento:
 
 To know more, Refer the Feed API documentation [here](https://unbxdocs.readme.io/update/docs/feed-preparation-and-upload#/).
 
-NOTE: All keys (API and Secret Key) other than the Site Key must be saved somewhere as they are hidden behind the asterisk value
+> 📘 NOTE
+>
+> The API key and Secret key must be saved somewhere as they are hidden behind the asterisk value.
