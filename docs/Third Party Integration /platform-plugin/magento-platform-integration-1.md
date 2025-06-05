@@ -120,7 +120,16 @@ To know more, Refer the Feed API documentation [here](https://unbxdocs.readme.io
 
 Unbxd algorithms rely on product-related information from your product catalog. When you send your catalog to Unbxd, we convert it into our format, store it, and index it on our servers. This process is known as the Product Feed.
 
-Synchronizing Your Catalog Feed\
-By synchronizing your feed, your Unbxd extension will be able to retrieve the catalog information from your Magento database.
+**Synchronizing Your Catalog Feed**\
+By synchronizing your feed, your Unbxd extension will be able to retrieve the catalog information from your Magento database. To know more, refer to the  [documentation](https://unbxdocs.readme.io/update/docs/set-up-analytics#/) for Catalog preparation.
 
-To know more, refer to the  [documentation](https://unbxdocs.readme.io/update/docs/set-up-analytics#/) for Catalog preparation.
+When synchronizing a catalog, you'll see one of the following status updates:
+
+| **Status Code** | **Description**                                                             |
+| --------------- | --------------------------------------------------------------------------- |
+| **Running**     | The catalog synchronization is in progress and has been submitted to Unbxd. |
+| **Indexing**    | The catalog data is currently being indexed.                                |
+| **Complete**    | The catalog has been successfully uploaded.                                 |
+| **Error**       | There was an issue with the catalog synchronization, and it has failed.     |
+
+These statuses help you track the progress and identify any issues during synchronization.
