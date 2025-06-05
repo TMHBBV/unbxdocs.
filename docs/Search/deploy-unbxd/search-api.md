@@ -29,3 +29,11 @@ ccurl -X GET \
 Our APIs use an API\_KEY and a SITE\_KEY to authenticate search requests.
 
 These keys are generated when account creation and can be accessed within Console at Manage -> Configure Site -> Keys.
+
+## Headers
+
+Unbxd requires some header parameters along with the search request in order to provide support for personalization and merchandising campaigns created on location, browser or device type. Headers need to be passed through the URL to process the actual response.
+
+> 📘 Important Note
+>
+> For Search and Autosuggest API, we can enable personalization, segmentation, and A/B testing of the merchandising campaign. we recommend passing certain parameters as HTTPS headers.
