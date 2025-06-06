@@ -135,3 +135,7 @@ When synchronizing a catalog, you'll see one of the following status updates:
 These statuses help you track the progress and identify any issues during synchronization.
 
 <Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/d925ed645d49ff95cfbda1be19740489c80f2980383ad8ef4507b9c98a572722-image.png" />
+
+> 📘 NOTE:
+>
+> By default, Magento doesn’t synchronize a catalog automatically.
