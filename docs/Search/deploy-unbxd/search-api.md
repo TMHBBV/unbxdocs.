@@ -315,7 +315,7 @@ The value of the request parameters is defined below:
       </td>
 
       <td>
-        Defines attributes for a product like color, size etc.
+        Defines attributes for a product like color, size, etc.
       </td>
 
       <td>
@@ -328,6 +328,44 @@ The value of the request parameters is defined below:
         <br />
 
         Default Values: If not applied, returns all fields
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bucket.field
+      </td>
+
+      <td>
+        It allows you to group products with a common field value into groups known as buckets, returning the top products per bucket.
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Format: `&bucket.field=,`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bucket.limit
+      </td>
+
+      <td>
+        Determines the number of products in a bucket.
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Format: `&bucket.limit=10`
+
+        Default Value: 10
       </td>
     </tr>
 
