@@ -425,8 +425,778 @@ After the catalog indexing is done, you can navigate to Unbxd > Website config a
 
 <Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/6c1cec07851469b1485caae23321f52382456c856e9236b531f933de52f274ca-image.png" />
 
-To know more about the Autosuggest SDK configs and the different possible options, click here.
+To know more about the Autosuggest SDK configs and the different possible options, click [here]().
 
-Enable Custom Template
+1. **Enable Custom Template**
 
 If you are using a custom template with a different CSS selector for your Search input box, then select ‘Yes’ and populate the block with the field value, so that we can get that input from our JS onto the CSS selector.
+
+![](https://files.readme.io/f50b5355e7efc52959e865ce4f665fd8e058244a557419189e739ccd39832356-image.png)
+
+<br />
+
+2. **Search Configuration** The Search features that let you power your site by Unbxd can be enabled in a Magento powered webshop by following the below steps:
+   1. To enable the search feature, login into the admin console,  navigate to Unbxd > Website config.
+   2. In the search section, update the enabled field value to ‘Yes’. To know more about all the configs, [click here](https://netcoreunbxd.com/docs/site-search/integration-documentation/js-library-integration/).
+3. **Browse Configuration**\
+   You can enable this feature to let your shoppers browse through your product categories. To enable the browse feature, login into the admin console,  navigate to Unbxd > Website config.
+   In the Category section, update the enable field value to ‘Yes’.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/6f2cca817128685983a2868e885bf37312bb8de3c1a7c8ccc29cd66e554ecc5d-image.png" />
+
+To know more about the Search or Browse SDK configs and the different possible options, click here.
+
+## Analytics Integration
+
+Unbxd search tracks user behavior anonymously and uses machine learning algorithms to power personalized search results that are relevant and accurate. Analytics is built into your Unbxd Magento extension.
+
+The extension helps us track and analyze user events, like product clicks, search queries, add to cart clicks, and successful orders. We then use this information to build a user profile that shows the user’s affinity towards a certain category, brand or price. This enables us to help you provide search results that are intuitive and relevant.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/812daaf15a6674e0e14e0f4483d656d2bc15ef5dea3ade2fa2fa2b8a3a74d9c1-image.png" />
+
+1. To enable the Analytics feature, login into the admin console,  navigate to Unbxd > Website config.
+2. In the Analytics section, update the enable field value to ‘Yes’.
+
+## Recommendations Configuration
+
+To enable recommendations on the web, it is a two-step process. Log in to the admin console and navigate to the Unbxd > Website Config > Recommendations
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/d3a8d4366deb7146a5e0bdaf08de23dad1a8d27b04e3de8d7e43371842c06a22-image.png" />
+
+Create widgets and update them to the layout in the respective pages, for this Navigate to Create a widget of type “Unbxd Recommendation Products List”.
+
+Create widgets and update them to the layout in the respective pages, for this\
+Navigate to Create a widget of type “Unbxd Recommendation Products List”.
+Select the page type  from the drop-down options (Product, Cart, Category, Home) , page type indicate which page the widget would be displayed.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/14097d490e50f6a44098ac715290359bf997c87bd7643ce4af187fb7ea56f75e-image.png" />
+
+<br />
+
+* Select the Content Elements> Widgets> Add Widget.
+* Select container in which you have to put the widget. Update the layout on where this widget should be displayed in the product page,\
+  Now the widget should be displayed on the page,
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/f2a58e7ec04ebc9db574ff2937e7ba285eade80ec3626299ed695fd232bcfe60-image.png" />
+
+> 📘 Note
+>
+> You can add up-to 3 widgets per page.
+
+## Custom Template
+
+Unbxd Search JS plugin enables Unbxd powered Search, Browse, Recommendations, Autosuggest pages, and tracking of analytics events. To customize or extend the default template/layout and user experience, you may choose one of the following configuration options:
+
+1. Using JSON object:\
+   You can modify Search/Browse/Autosuggest behavior by changing the configuration of the respective features available as a JSON object in the admin console.
+   Choose this option if your requirement is one of the following: (Refer to the Javascript library for a comprehensive list of all the available parameters):
+   ✔️ Change the product card/tile (adding a link to wishlist, add to cart, overlays, etc)
+   ✔️ Create hover on image effect
+   ✔️  Update the default and number of products per page options
+   ✔️  Update the sort option
+   ✔️  Change the style of pagination (supports Fixed pagination, Infinite scroll, Click and scroll)
+   ✔️ Customize the ‘Did you mean’ messages
+   ✔️  Customize the look and feel of facets
+2. Customize the stylesheet:\
+   You can customize the features based on your requirements. For ex. if you wish to display Pagination on the bottom left than the standard top right, then customize the stylesheet which would override the Unbxd stylesheet. By default, our SDK inherits brand guidelines in case of conflict.
+   Note: Ensure that the custom stylesheet gets loaded before the Unbxd stylesheet (autosuggest.css & search.css).
+3. Through extension:\
+   Use this option if you intend to change the layout of the search widgets. Imagine, if you wish to display widgets of different Create an extension module using the starter template to extend the search/browse page layouts, the position of custom blocks in and around the main or side column:
+   Add your new layouts to templates/category/productresults.phtml (or) templates/search/productresults.phtml
+   Add your new stylings to web/css/search.css
+   To modify the arrangement of block & containers in the browse page update layout  file catalog\_category\_view\.xml
+   To modify the arrangement of block & containers in the search page update layout  file unbxd\_search\_handle.xml
+
+## Indexing Queue View
+
+To view the products added to the indexing queue, before the cron job or manual synchronization is triggered, use the Indexing Queue View within the Unbxd tab.
+
+For example, every time a product is added/deleted/modified, a row will be created to record the change within the Indexing Queue.
+
+The labels in the screenshot above are explained in the table below:
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Label**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **ID**
+      </td>
+
+      <td>
+        Indicates the unique identifier of the record.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Store View**
+      </td>
+
+      <td>
+        Indicates the store related to reindex operation.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Created**
+      </td>
+
+      <td>
+        Indicates the calendar date and time the specific Indexing queue entry was created.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Started**
+      </td>
+
+      <td>
+        Indicates the reindexing start time of the catalog.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Finished**
+      </td>
+
+      <td>
+        Indicates the reindexing end time of the catalog.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Status**
+      </td>
+
+      <td>
+        Indicates the status of a catalog’s reindex operation. Possible values: Pending, Running, Complete, Error, Hold.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Pending**
+      </td>
+
+      <td>
+        Default: Indicates the reindex entry was just created and is waiting to be processed.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Running**
+      </td>
+
+      <td>
+        Indicates the catalog is currently being processed.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Complete**
+      </td>
+
+      <td>
+        Indicates the catalog has successfully finished reindexing.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Error**
+      </td>
+
+      <td>
+        Indicates the catalog has finished reindexing with errors.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Hold**
+      </td>
+
+      <td>
+        Indicates the catalog’s reindexing is paused. This may also mean the reindexing may not resume.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Execution Time(s)**
+      </td>
+
+      <td>
+        Indicates the duration of time (in seconds) the reindexing took to complete.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Affected Entities**
+      </td>
+
+      <td>
+        Indicates the total number of products affected by reindexing.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Number of Entities**
+      </td>
+
+      <td>
+        Indicates the total number of entities in the reindex process.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Action Type**
+      </td>
+
+      <td>
+        Indicates the type of reindexing action for the entities. Possible values: Row reindex, List reindex, Full reindex.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Row reindex**
+      </td>
+
+      <td>
+        Allows you to reindex only one product.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **List reindex**
+      </td>
+
+      <td>
+        Allows you to reindex a list of products.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Full reindex**
+      </td>
+
+      <td>
+        Allows you to reindex an entire catalog.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Additional Information**
+      </td>
+
+      <td>
+        Indicates the information related to reindexing.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Actions**
+      </td>
+
+      <td>
+        Indicates actions you can perform on required cron job.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **View Details**
+      </td>
+
+      <td>
+        Redirects to separate UI layout with queue item details.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Hold**
+      </td>
+
+      <td>
+        Sets the reindex operation to ‘Hold’.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Unhold**
+      </td>
+
+      <td>
+        Releases reindex operation from ‘Hold’ status (switch to ‘Pending’ status).
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Delete**
+      </td>
+
+      <td>
+        Deletes reindex operation item from queue.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Log Viewer**
+      </td>
+
+      <td>
+        Provides some operations with log file:
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Log File Operations**
+      </td>
+
+      <td>
+        * Log file can be flushed. Log content can be refreshed to show actual information. Log file can be downloaded.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Log File Details**
+      </td>
+
+      <td>
+        The viewer displays the current log file location and file size (in KB).
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+## Feed View
+
+The Feed View (Unbxd > Feed View) screen lists all your product catalogs and its upload status. Primarily it would tell you if the upload was full or incremental and if it successfully completed or not.
+
+To view the description of the labels in the screenshot above, refer to the table below:
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Label**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **ID**
+      </td>
+
+      <td>
+        Indicates the unique identifier of the record.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Store View**
+      </td>
+
+      <td>
+        Indicates the store related to the upload operation.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Created**
+      </td>
+
+      <td>
+        Indicates the calendar date and time the specific upload queue entry was created.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Finished**
+      </td>
+
+      <td>
+        Indicates the upload end time of the catalog.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Execution Time(s)**
+      </td>
+
+      <td>
+        Indicates the duration of time (in seconds) the upload took to complete.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Affected Entities**
+      </td>
+
+      <td>
+        Indicates the total number of products affected by the feed upload.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Number of Entities**
+      </td>
+
+      <td>
+        Indicates the total number of entities in the upload process.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Operation Type**
+      </td>
+
+      <td>
+        Indicates the status of a feed upload operation. Possible values: Running, Indexing, Complete.
+
+        * Running: Indicates the catalog is running and has been submitted to Unbxd.
+        * Indexing: Indicates the catalog is being indexed.
+        * Complete: Indicates the catalog has successfully uploaded.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Additional Information**
+      </td>
+
+      <td>
+        Indicates the information related to reindexing.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Action**
+      </td>
+
+      <td>
+        Indicates the action available for the specific entity.
+
+        * View Details: Allows you to view the information of the entity. The General Information also allows you to ‘delete’ the upload.
+        * Delete: Allows you to delete the reindexing activity. You cannot delete an entity when the upload is ‘Running’.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Clear Feed View**
+      </td>
+
+      <td>
+        Allows you to clear the Feed View queue.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **View Log**
+      </td>
+
+      <td>
+        Allows you to view the log file entries for the entire cron job. You can also download the log file, refresh the log entries, and clear the log.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Actions**
+      </td>
+
+      <td>
+        Allows you to delete feed upload for multiple entities.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Filters**
+      </td>
+
+      <td>
+        Allows you to create filters to refine the Feed View table.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Default View**
+      </td>
+
+      <td>
+        Allows you to reset the Feed View table to its original settings.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Columns**
+      </td>
+
+      <td>
+        Allows you to select the columns you want displayed in the Feed View table.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Log Viewer**
+      </td>
+
+      <td>
+        Provides some operations with log file:
+
+        * The log file can be flushed.
+        * The log content can be refreshed to show actual information.
+        * The log file can be downloaded.
+        * The viewer displays the current log file location and file size (in KB)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+> 📘 Note
+>
+> These endpoints are exposed taken directly from the plugin to avoid any discrepancy in case the Unbxd server is in APAC region
+
+## Exposing Endpoints
+
+You can integrate API endpoints to directly upload full feed or delta feed, know the upload status, or check the size of the uploaded catalog.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/1a5288c78aabdbebaa78245164ebb830942f4acb0748b1d87b696e0fece86314-image.png" />
+
+> 📘 Note
+>
+> These endpoints are exposed taken directly from the plugin to avoid any discrepancy in case the Unbxd server is in APAC region
+
+## Upgrade
+
+Depending on the installation method you choose, you can upgrade the Unbxd extension in two ways:
+
+1. **Manual Upgrade**: If the extensions files are located within app/code/Unbxd, then the extensions were installed manually and you need to upgrade the extensions files manually. You will need to log into your Github account.
+
+If you have installed the Unbxd extension via a direct file upload, you can upgrade manually:To upgrade manually:
+
+* Download and install the latest version of the extension from the following Github locations:\
+  **UnbxdProductFeed**
+  **UnbxdAnalytics**
+  **UnbxdSearch**
+* To download a related extension, click Clone or download > Download Zip. For more information on how you can download and install via a direct link, refer to Installation via direct file upload.
+* Extract and replace all existing files. Login to the Secure Shell (SSH) console of your server, navigate to the Magento 2 root directory and run:
+
+```
+php bin/magento cache:flush
+<br>php bin/magento setup:upgrade
+```
+
+* If production mode is enabled, run:
+
+```
+php bin/magento setup:di:compile
+```
+
+* To deploy content, run:
+
+```
+php bin/magento setup:static-content:deploy (use key –f if developer mode is enabled)
+<br><span style="font-size: 16px;">php bin/magento cache:flush</span>
+```
+
+**You have successfully upgraded using the direct file.**
+
+2. **Composer**: If the extension files are located within vendor/unbxd/, then the extension was installed using the Composer and you need to use the Composer to upgrade.
+
+If you have installed the Unbxd extension via the Composer, you can upgrade via the Composer as well.To upgrade via the Composer:
+
+* Login to the SSH console of your server, navigate to the Magento 2 root directory and run:
+
+```
+composer update unbxd/*<br>php bin/magento setup:upgrade
+```
+
+* If production mode is enabled, run:
+
+```
+php bin/magento setup:di:compile
+```
+
+* To deploy content, run:
+
+```
+php bin/magento setup:static-content:deploy (use key –f if developer mode is enabled)<br><span style="font-size: 16px;">php bin/magento cache:flush</span>
+```
+
+You have successfully upgrade via the Composer.
+
+> 📘 Note
+>
+> 1. Create a backup (via System > Tools > Backup) before you upgrade.
+> 2. To perform this operation, in some cases, you need to setup your Magento 2 access keys. These would available in auth.json file located in your Magento 2 root directory. By default, Magento 2 provides auth.json.sample file located in root directory.
+
+## Uninstall
+
+Depending on the installation method you choose, you can uninstall the Unbxd extension in two ways:
+
+1. **Manual Uninstall**: If the extensions files are located within app/code/Unbxd, then the extensions were installed manually and you need to uninstall the extensions files manually. You will need to log into your Github account. To uninstall manually:
+
+* Login to the SSH console of your server, navigate to the Magento 2 root directory and check the list of related extensions including their enable/disable status:
+
+```
+php bin/magento module:status Unbxd_Search
+<br>php bin/magento module:status Unbxd_Analytics
+```
+
+* To disable the extensions, run:
+
+```
+php bin/magento module:disable Unbxd_Search
+<br><span style="font-size: 16px;">php bin/magento module:disable Unbxd_Analytics</span><br><span style="font-size: 16px;">php bin/magento module:disable Unbxd_ProductFeed</span><br><span style="font-size: 16px;">You can also disable extensions via Module Manager (System > Web Setup Wizard > Module Manager)</span>
+```
+
+* To remove files related to the extensions, run the following commands from Magento 2 instance root directory:
+
+```
+rm -rf app/code/Unbxd
+```
+
+* for remove main extensions files
+
+```
+rm -rf val/log/unbxd
+```
+
+* or remove log files:
+  1. Login to the MySQL server where the Magento 2 instance database is located.
+  2. To remove all tables related to the extensions:\
+     Login to the MySQL server where the Magento 2 instance database is located.
+     To remove all tables related to the extensions, run:
+     SET FOREIGNKEYCHECKS=0;
+     DROP TABLE IF EXISTS unbxdproductfeedindexingqueue;
+     DROP TABLE IF EXISTS unbxdproductfeedfeedview;
+     SET FOREIGNKEYCHECKS=1;
+     To remove module configuration settings from coreconfigdata table, run:
+     DELETE FROM coreconfigdata WHERE path LIKE ‘%unbxd%’;
+     To remove module from setupmodule table, run:
+     DELETE FROM setupmodule WHERE module LIKE ‘Unbxd\_%’.
+
+     Run
+
+     ```
+     php bin/magento setup:upgrade 
+     ```
+  from Magento 2 instance root directory:\
+  If production mode is enabled,
+  ```
+   runphp bin/magento setup:di:compile
+  ```
+
+To deploy content, run:
+
+```
+php bin/magento setup:static-content:deploy(use key –f if developer mode is enabled)
+php bin/magento cache:flush
+```
+
+**You have successfully uninstalled the Unbxd extension.**
+
+2. **Composer**: If the extension files are located within vendor/unbxd/, then the extension was installed using the Composer and you need to use the Composer to uninstall.\
+   If you have installed the Unbxd extension via a direct file upload, you can uninstall manually.
+
+To uninstall via the Composer:
+
+Login to the SSH console of your server, navigate to the Magento 2 root directory and check the list of related extensions including their enable/disable status:
+
+```
+php bin/magento module:status Unbxd\_Search\
+php bin/magento module:status Unbxd\_Analytics
+php bin/magento module:status Unbxd\_ProductFeed
+```
+
+To disable the extensions, run:
+
+```
+php bin/magento module:disable Unbxd_Search<br><span style="font-size: 16px;">php bin/magento module:disable Unbxd_Analytics</span><br><span style="font-size: 16px;">php bin/magento module:disable Unbxd_ProductFeed</span><br><span style="font-size: 16px;">You can also disable extensions via Module Manager (System > Web Setup Wizard > Module Manager).</span>
+```
+
+To remove files related to the extensions, run the following commands from Magento 2 instance root directory:
+
+```
+php bin/magento module:disable Unbxd_Search<br><span style="font-size: 16px;">php bin/magento module:disable Unbxd_Analytics</span><br><span style="font-size: 16px;">php bin/magento module:disable Unbxd_ProductFeed</span><br><span style="font-size: 16px;">You can also disable extensions via Module Manager (System > Web Setup Wizard > Module Manager).</span>
+```
+
+The -r flag removes extension data.\
+To remove extensions log files,
+
+```
+run rm -rf var/log/unbxd
+```
+
+To remove modules from composer and clean up the database and code, run the following commands after modules have been successfully uninstalled:
+
+```
+composer remove unbxd/*<br>php bin/magento setup:upgrade
+```
+
+If production mode is enabled, run
+
+```
+php bin/magento setup:di:compile
+```
+
+To deploy, run:
+
+```
+php bin/magento setup:static-content:deploy (use key –f if developer mode is enabled)<br><span style="font-size: 16px;">php bin/magento cache:flush.</span>
+```
+
+**You have successfully uninstalled the Unbxd extension via the Composer.**
