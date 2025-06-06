@@ -371,7 +371,65 @@ The value of the request parameters is defined below:
 
     <tr>
       <td>
+        bucket.offset
+      </td>
 
+      <td>
+        To Paginate to the next 5 products of the group
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Format: `&bucket.offset=10`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        rows
+      </td>
+
+      <td>
+        Determines the number of buckets displayed at a time in case bucketing is done on a field.
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Format: `&rows=10`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        analytics
+      </td>
+
+      <td>
+        Enables or disables tracking the query hit for analytics.
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Default value: Tracking is enabled
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        stats
+      </td>
+
+      <td>
+        It gives information about the products with the highest and lowest field values.
       </td>
 
       <td>
@@ -379,12 +437,230 @@ The value of the request parameters is defined below:
       </td>
 
       <td>
+        Format: `fieldName`\
+        (only numerical fields)
+      </td>
+    </tr>
 
+    <tr>
+      <td>
+        fallback
+      </td>
+
+      <td>
+        Spell checks the search query and displays results for the autocorrected search query.
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Default fallback: `True`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        banners
+      </td>
+
+      <td>
+        Creates sales/promotional images to promote a brand or occasion.
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Default value: `True`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        redirect
+      </td>
+
+      <td>
+        Redirects visitors to a web page for the search query
       </td>
 
       <td>
 
+      </td>
+
+      <td>
+        Default Value: Enabled
       </td>
     </tr>
   </tbody>
 </Table>
+
+## Response Components
+
+Unbxd returns the list of products that match the search criteria. The response would be in application/JSON or application/XML content types format.
+
+| Component        | Description                                                                                                                                 |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| status           | The response status code defines whether it is OK(code 200), Not Found(code 404), Internal Server Error(code 500), or many other types.     |
+| queryTime        | Time is taken to process the shopper's request.                                                                                             |
+| queryParams      | Parameters sent as part of the request.                                                                                                     |
+| numberOfProducts | The total number of products returned for the page.                                                                                         |
+| start            | Offset in the complete result set of products for the page.                                                                                 |
+| products         | Product details are sent as a result that matches the request query. The structure will be the same as passed in the feed.                  |
+| relevantDocument | Mention whether the parent or the variant for a particular product needs to be displayed in the UI. It can be either "parent" or "variant". |
+| facets           | Filters that are displayed in the UI allow visitors to narrow down the result set based on product fields.                                  |
+| breadcrumb       | Position in the field hierarchy.                                                                                                            |
+| selected         | Filters that are selected for the query.                                                                                                    |
+| redirect         | Redirect response for the query.                                                                                                            |
+| didYouMean       | Spellcheck response with a query suggestion.                                                                                                |
+| banner           | Banner response for the query.                                                                                                              |
+
+<br />
+
+## How to work with Search APIs
+
+The table, as mentioned above, provides the default values of the request parameters.
+
+Let’s delve deeper and understand the API calls of each parameter individually.
+
+## Querying
+
+The q (query) parameter in the search API defines the query a visitor searches for in your store. This process of searching is also known as querying.
+
+For instance, you searched for “red dress“, in the API call, the query will look like this:
+
+```Text Sample
+q=red%20dress
+```
+
+Querying is URL-based, i.e., all queries are URL-encoded. Here, %20 represents the word space in the URL-encoded API call.
+
+### Quick Tips for Handling Special Characters
+
+Unbxd strives to better understand your visitor queries by translating commonly used punctuation while querying. However, our algorithm treats special characters differently.
+
+For example, a query typed within double quotation marks, “red dress,” allows the algorithm to recognize the query as a phrase and tokenize it as one single token to be indexed, instead of indexing the words red and dress separately.
+
+To escape these special characters in a query, use a trailing slash before the character. For example, the special characters in a query (jeans+shirt)\*2? can be escaped as shown below:
+
+```
+\(jeans\+shirt\)\*2\?
+```
+
+#### The current list of special characters are:
+
+```
++  -  &&  ||  !  (  )  {  }  [  ]  ^  "  ~  *  ?  :  \
+```
+
+#### Sample request to get JSON response
+
+```
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2
+```
+
+#### Sample JSON Response
+
+```
+{
+searchMetaData: {
+status: 0,
+queryTime: 32,
+queryParams: {
+log.response: "false",
+original.q: "dog",
+module.exclude: "personalization",
+alternate.op: "true",
+req.rm.asterix: "true",
+q.op: "AND",
+enableTaxonomy: "false",
+q: "dog",
+req.rm.promotionEngine: "true",
+promotion.fields: [
+"color_uFilter",
+"gender_uFilter",
+"category_uFilter"
+],
+enablePf: "false",
+user.behaviour: "true",
+enablePopularity: "true"
+}
+},
+response: {
+numberOfProducts: 0,
+start: 0,
+products: [ ]
+},
+didYouMean: [
+{
+suggestion: "dot",
+frequency: "100"
+}
+]
+}
+```
+
+***
+
+## Pagination
+
+To get the paginated response in the search API, specify the value of the parameters “start”, “rows”, “page”, and “maxRows”. The “start” parameter defines the product's position in the response. The “rows” attribute defines the number of products required per API call.
+
+E.g. for the first page of results, the start=0 and rows=20
+
+For the next page of results, the start= 20 and rows=20.
+
+```Text Sample Request
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2&start=0&rows=20
+```
+
+**start**: It indicates offset in the complete result set of the products.
+
+```Text Sample Request
+https://search.unbxd.io/c85ec9e6c53e6522f2d0f88c4a214717/hsn-com700091495001458/search?&q=red&start=5&rows=5
+```
+
+This request will fetch all the results starting with the offset 5 for the result set of the query red.
+
+**page**: Call the ‘page’ parameter when you want the correct set of products to be returned concerning the number of products shown on one page(rows parameter).
+
+If you specify the page value as 2, with rows as 20, then the products with the offset 40 will be returned for the results.
+
+```Text Sample Request
+http://search.unbxd.io/c85ec9e6c53e6522f2d0f88c4a214717/hsn-com700091495001458/search?&q=red&page=5&rows=5
+```
+
+**page**: The ‘rows’ parameter is used to paginate the results of a query. It indicates the number of products displayed on a single page.
+
+```
+http://search.unbxd.io/c85ec9e6c53e6522f2d0f88c4a214717/hsn-com700091495001458/search?&q=red&start=5&rows=5
+```
+
+This request will fetch a total of 5 products.
+
+> 📘 NOTE
+>
+> If the products are not required in the response, the parameter needs to be set to 0.
+
+**maxRows**: Parameter to override the maximum rows returned by the rows parameter, i.e, 100. Fetching more products in the API response can adversely impact the latency; hence, the maxRows parameter should be used only where necessary.
+
+```Text Sampel Request
+http://search.unbxd.io/c85ec9e6c53e6522f2d0f88c4a214717/hsn-com700091495001458/search?&q=red&rows=500&maxRows=500&fields=uniqueId
+```
+
+This request will return 500 products.
+
+***
+
+## Filtering
+
+Filters are applied to fetch only the details you need, reducing the latency time. To use a filter on the search result page, specify the filter attribute and value in the "filter" parameter. The API supports multiple types of filters.
+
+* User can select a single value from a filter:
+
+```Text Sample Request 
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2&filter=gender_uFilter:”women”
+```
