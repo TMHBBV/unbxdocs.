@@ -233,6 +233,84 @@ The value of the request parameters is defined below:
 
     <tr>
       <td>
+        page
+
+        optional
+      </td>
+
+      <td>
+        Displays the right set of products with respect to the number of products shown on one page(rows parameter).
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Format: `&page=2`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        rows
+
+        optional
+      </td>
+
+      <td>
+        Paginate the results of a query
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Format: `&rows=2`
+
+        Default Value: 10
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        variants
+      </td>
+
+      <td>
+        Displays variants of the same product
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Format: `&variants.count=5`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        variants.count
+      </td>
+
+      <td>
+        Displays multiple defined variants of a product.
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Format: `&variants.count=5`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
 
       </td>
 
