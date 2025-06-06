@@ -311,6 +311,28 @@ The value of the request parameters is defined below:
 
     <tr>
       <td>
+        fields
+      </td>
+
+      <td>
+        Defines attributes for a product like color, size etc.
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Format: \&fields=,
+
+        <br />
+
+        Default Values: If not applied, returns all fields
+      </td>
+    </tr>
+
+    <tr>
+      <td>
 
       </td>
 
