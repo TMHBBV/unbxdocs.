@@ -249,9 +249,17 @@ We use conventional HTTP response codes to indicate success or failure of an API
 500 (Internal Server Error): Though these are rare, this indicates we may have messed up.
 ```
 ```Text Sample Request
-curl -X POST https://{Feed end point}/api/{siteKey}/upload/schema 
--H 'Authorization:{secretKey}' 
--F file={file}
+curl -X POST \  
+https://feed.unbxd.io/api/{siteKey}/upload/catalog/full \  
+    -H 'Authorization:{secretKey}'\
+    -F file=@{fileName}.json`
+```
+```Text  Sample Response
+{
+  "fileName": "{fileName}",
+  "uploadId": "{id}",
+  "timeStamp": 6581239201,  "status":"ACCEPTED",  "message":"File Queued", "code":200
+}
 ```
 
 ## Best Practices for Schema Upload
