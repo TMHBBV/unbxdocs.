@@ -664,3 +664,78 @@ Filters are applied to fetch only the details you need, reducing the latency tim
 ```Text Sample Request 
 https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2&filter=gender_uFilter:”women”
 ```
+
+* User can select multiple values from the filter:
+
+```Text Sample Request
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2&filter=type_uFilter:”Shirt” OR ”type_uFilter=”Mini”&facet.multiselect=true
+```
+
+* User can select single values from multiple filters:
+
+```Text Sample Request
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2&filter=type_uFilter:”Shirt”&filter=collar_uFilter:”Point”&facet.multiselect=true
+```
+
+* User can select multiple values from multiple filters:
+
+```Text Sample Request
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2&filter=type_uFilter:”Shirt”&filter=collar_uFilter:”Point” OR collar_uFilter:”Spread”&facet.multiselect=true
+```
+
+* User can select range filter:
+
+```Text Sample Request
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&filter=price:[0 TO 40]&version=V2
+```
+
+***
+
+## Sorting
+
+The sort parameter ranks the products based on specified fields in the specified order. It is an optional parameter. If not passed, products will be returned and ordered on the Unbxd relevancy algorithm.
+
+**Sorting on a Single Field**: You can sort your search API results using a sort function as shown below:
+
+E.g. for the first page of results, the start=0 and rows=20
+
+For the next page of results, the start= 20 and rows=20.
+
+```Text Sample Request
+https://search.unbxd.io/fb853e3332f2645fac9d71dc63e09ec1/demo-unbxd700181503576558/search?q=dress&version=V2&sort=fieldname sort_order 
+```
+
+* **fieldname**: The field on which the sort is applied.
+* **sort\_order**: The order in which the sort is applied. This value can be “asc” (for ascending) or “desc” (for descending)
+
+For example, a visitor wants to sort results on price in ascending order, the API call below is made:
+
+```Text Sample Request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?q=shirt&version=V2&sort=price%20asc
+```
+
+> 📘 NOTE
+>
+> There is a space between the field name and the sort\_order in the API call.
+
+**Sorting on Multiple Fields**
+
+To apply multiple sort rules, you need to make an API call as shown below:
+
+```Text Sample Request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/sort=field1 sort_order,field2 sort_order,field3 sort_order 
+```
+
+For example, to show results sorted on price and title the API call below is made:
+
+```Text Sample Request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search&q=mobile&filter=categoryPath"Mobiles & Tablets"&filter=brand_uFilter:"Apple"&filter=product_min_price:[35000 TO 37500]&version=V2&facet.multiselect=true 
+```
+
+> 📘 NOTE
+>
+> When multiple sort parameters are applied, the products will be sorted based on the first criteria passed in the request. Only in the case when multiple products have the same value for the first criteria, then the latter sorting criteria will be applied within those products.
+
+***
+
+## Banners
