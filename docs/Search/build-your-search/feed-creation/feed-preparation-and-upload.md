@@ -1,5 +1,5 @@
 ---
-title: Feed Preparation and Upload
+title: Prepare Schema
 excerpt: >-
   Guide to preparing and uploading product catalog feeds and schemas for
   seamless integration with Unbxd
@@ -264,3 +264,5 @@ curl -X POST https://{Feed end point}/api/{siteKey}/upload/schema
    * Be alphanumeric, can include hyphens and underscores.
    * Cannot contain special characters, spaces, or end with an underscore.
    * Do not send fields with null values.
+
+s
