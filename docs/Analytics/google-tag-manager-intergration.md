@@ -1,5 +1,5 @@
 ---
-title: Google Tag Manager Intergration
+title: Google Tag Manager Integration
 excerpt: >-
   llows you to manage and deploy marketing tags on your website without having
   to modify the code
