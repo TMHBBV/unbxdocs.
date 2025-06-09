@@ -7,6 +7,8 @@ metadata:
 ---
 # Overview
 
+Unbxd offers a powerful, platform-agnostic site search engine designed to provide highly relevant search results, increase engagement, and optimize the user experience for the end users. Integrate and manage site search features, including feed preparation, analytics setup, and deploying **Unbxd** **Search**.
+
 The complexities of setting up the site search from scratch is extreme for the eCommerce site owners. And when the Onboarding becomes difficult, site owners drop out losing out on integrating more features and capabilities onto their site.
 
 You can also refer to this video to set up your site search using our Onboarding console within 5 minutes:
