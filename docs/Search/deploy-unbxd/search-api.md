@@ -739,3 +739,783 @@ https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd7001815088467
 ***
 
 ## Banners
+
+Banners can easily be configured from your dashboard during campaign creation. Once you have correctly configured your banner, the search API call will return the banner information as part of the catalog-based response.
+
+This feature can be disabled from the HTTPS request using the ‘banner’ parameter.
+
+```Text Custom Request
+https://search.unbxd.io/<api-key>/<site-key>/search?q=<query>&banner=false&version=V2   
+```
+
+```Text Response for Hosted Banners
+{
+    "banner": {
+        "banners": [{
+            "imageUrl": "value",
+            "landingUrl": "value",
+            "bannerHtml": null
+        }]
+    }
+}
+```
+
+```Text Response for Custom Banners
+{
+    "banner": {
+        "banners": [{
+            "imageUrl": null,
+            "landingUrl": null,
+            "bannerHtml": "value "
+        }]
+    }
+}
+{
+    "banner": {
+        "banners": [{
+            "imageUrl": null,
+            "landingUrl": null,
+            "bannerHtml": "value "
+        }]
+    }
+}
+```
+
+* **imageUrl**: The URL of the hosted banner image.
+* **landingUrl**: The page URL visitors arrive at after clicking the banner.
+* **bannerHtml**: The URL of the custom (HTML) banner image.
+
+> 📘 NOTE
+>
+> The value of the response parameters will change to "null" according to the type of banner configuration.
+
+For example, if a visitor searches a query, the banner response below will help you set up a hosted banner in your e-commerce site:
+
+```Text Response for Hosted Banners
+{
+    "banner": {
+        "banners": [{
+"imageUrl":"http://www.myecommercewebsite.com/images/iphone-cases-banner.jpg",
+"landingUrl":"http://www.myecommercewebsite.com/search?q=iphone%20cases",
+            "bannerHtml": null
+        }]
+    }
+}
+```
+
+***
+
+## Redirects
+
+Redirects visitors to a web page for the search query. This helps visitors navigate to the category pages as well as non-catalog-based information of the website, such as contact information, privacy policy, etc., right from your site’s search box. Redirects for a query can be configured from the Merchandising section of your Console.
+
+By default, the value of redirects is enabled.
+
+```Text Sample Request
+https://search.unbxd.com/64a4a2592a648ac8415e13c561e44991/demosite-u1407617955968/search?q=iphone%20cases&redirect=false
+```
+
+```Text Response
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 716,
+        "queryParams": {
+            "redirect": "false",
+            "q": "iphone cases",
+            "removeSpecialCharacters": "true",
+            "escapeSpecialCharacters": "true",
+            "boost": "sum(1,popularity(uniqueId))",
+            "type": "interpreter",
+            "personalization.recentlyViewed": "true",
+            "queryTrimmer": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 89,
+        "start": 0,
+        "products": [
+            {
+                "uniqueId": "5315b8565e4016e5737be4a7",
+                "category": [
+                    "women"
+                ],
+                "category_fq": [
+                    "women"
+                ],
+                "test_fq": [
+                    "women"
+                ],
+                "description": "A zebra with attitude lends new dimension to a sturdy holographic-print case that keeps your iPhone safe from scratches. Fits iPhone 5 and 5s.Polycarbonate.By MARC BY MARC JACOBS; imported.",
+                "title": "'Zebra' Lenticular iPhone 5 & 5s Case",
+                "color": [
+                    "Orange Multi"
+                ],
+                "color_fq": [
+                    "Orange Multi"
+                ],
+                "gender": "women",
+                "imageUrl": [
+                    "http://g.nordstromimage.com/imagegallery/store/product/Medium/1/_8493781.jpg"
+                ],
+                "image_link": "http://g.nordstromimage.com/imagegallery/store/product/Medium/1/_8493781.jpg",
+                "catlevel1Name": "women",
+                "pname": "'Zebra' Lenticular iPhone 5 & 5s Case",
+                "price": 2803.0,
+                "price_fq": 2803.0,
+                "brand": "MARC BY MARC JACOBS",
+                "brand_fq": "MARC BY MARC JACOBS",
+                "test2_fq": "MARC BY MARC JACOBS",
+                "categories": [
+                    "Women"
+                ],
+                "cat_fq": [
+                    "Women"
+                ],
+                "size": [
+                    "NA"
+                ],
+                "size_fq": [
+                    "NA"
+                ]
+            },
+         {...}
+```
+
+> 📘 NOTE
+>
+> If you want to forcefully override redirect response with search response, set value to false.
+
+***
+
+## Fields
+
+Defines attributes for a product like color, size, etc. The fields parameter specifies the set of fields to be returned, a comma-separated list of field names. Only fields in the list will be included when returning the results. It is an optional parameter; however, passing only the fields required in the response is recommended to reduce the response size and latency.
+
+```Text Sample Request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?q=shirt&fields=title,vPrice&version=V2
+```
+
+```Text Response
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 20,
+        "queryParams": {
+            "log.response": "false",
+            "original.q": "*",
+            "module.exclude": "personalization",
+            "alternate.op": "true",
+            "req.rm.asterix": "true",
+            "q.op": "AND",
+            "version": "V2",
+            "enableTaxonomy": "false",
+            "q": "*",
+            "req.rm.promotionEngine": "true",
+            "user.behaviour": "true",
+            "fields": "title,vPrice",
+            "enablePopularity": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 7,
+        "start": 0,
+        "products": [
+            {
+                "vPrice": [
+                    150.0
+                ],
+                "uniqueId": "parent-id-2_child-5",
+                "title": "Oxford Formal Shoes"
+            },
+            {
+                "vPrice": [
+                    150.0
+                ],
+                "uniqueId": "parent-id-2_child-4",
+                "title": "Oxford Formal Shoes"
+            },
+            {
+                "uniqueId": "parent-id-2",
+                "title": "Oxford Formal Shoes"
+            },
+            {
+                "vPrice": [
+                    50.0
+                ],
+                "uniqueId": "parent-id-1_child-3",
+                "title": "Ralph Lauren formal shirt"
+            },
+            {
+                "vPrice": [
+                    45.0
+                ],
+                "uniqueId": "parent-id-1_child-2",
+                "title": "Ralph Lauren formal shirt"
+            },
+            {
+                "vPrice": [
+                    50.0
+                ],
+                "uniqueId": "parent-id-1_child-1",
+                "title": "Ralph Lauren formal shirt"
+            },
+            {
+                "uniqueId": "parent-id-1",
+                "title": "Ralph Lauren formal shirt"
+            }
+        ]
+    }
+}
+```
+
+***
+
+## Fallback
+
+Visitors may misspell when searching for an item on your website. The site must be able to autocorrect the misspelled words and display the most relevant search results without waiting for the customer to request results for the correctly spelled search query.
+
+The fallback flag will spellcheck the search query and display results for the autocorrected search query.
+
+Spellcheck can also be enabled or disabled in a request.
+
+By default, `spellcheck=true`, so spellcheck is enabled.
+
+```Text Sample Request
+https://search.unbxd.com/64a4a2592a648ac8415e13c561e44991/demosite-u1407617955968/search?q=shits&fallback=true&fallback.method=spellcheck
+```
+
+```Text Reponse
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 470,
+        "queryParams": {
+            "q": "shits",
+            "removeSpecialCharacters": "true",
+            "escapeSpecialCharacters": "true",
+            "fallback.method": "spellcheck",
+            "boost": "sum(1,popularity(uniqueId))",
+            "type": "interpreter",
+            "amp;fallback": "true",
+            "personalization.recentlyViewed": "true",
+            "queryTrimmer": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 0,
+        "start": 0,
+        "products": []
+    },
+    "facets": {
+        "price_fq": {
+            "type": "facet_ranges",
+            "values": {
+                "counts": [],
+                "gap": 100.0,
+                "start": 100.0,
+                "end": 1000.0
+            },
+            "position": 1,
+            "displayName": "price_fq"
+        },
+        "category_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 2,
+            "displayName": "category_fq"
+        },
+        "color_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 3,
+            "displayName": "color_fq"
+        },
+        "brand_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 4,
+            "displayName": "brand_fq"
+        },
+        "size_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 5,
+            "displayName": "size_fq"
+        },
+        "cat_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 6,
+            "displayName": "cat_fq"
+        },
+        "test_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 7,
+            "displayName": "test_fq"
+        },
+        "test1_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 8,
+            "displayName": "test1_fq"
+        },
+        "test2_fq": {
+            "type": "facet_fields",
+            "values": [],
+            "position": 9,
+            "displayName": "test2_fq"
+        }
+    },
+    "didYouMean": [
+        {
+            "suggestion": "shirt",
+            "frequency": "1101"
+        }
+    ]
+}
+         {...}
+```
+
+***
+
+## Relevant Document
+
+When the user enters a query where the keyword matches more with the variant product, the search API shows the attribute “`relevantDocument`” with the value “`variants`” and the first variant available in the “`variants`” array in the API response is the relevant variant. In other cases, the “`relevantDocument`” is “parent” when the master product matches the query.
+
+***
+
+## Format
+
+The format parameter specifies the format for generating the response result. Possible values are ‘JSON’ or ‘XML’. It is an optional parameter, and the default value is ‘JSON’.
+
+```Text Sample request to get JSON response
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?q=shirt&format=json&version=V2
+```
+
+```Text Sample JSON Response
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 27,
+        "queryParams": {
+            "log.response": "false",
+            "original.q": "shoes",
+            "module.exclude": "personalization",
+            "format": "json",
+            "alternate.op": "true",
+            "req.rm.asterix": "true",
+            "q.op": "AND",
+            "version": "V2",
+            "enableTaxonomy": "false",
+            "q": "shoes",
+            "req.rm.promotionEngine": "true",
+            "user.behaviour": "true",
+            "enablePopularity": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 0,
+        "start": 0,
+        "products": []
+    }
+}
+```
+
+```Text Sample request to get XML response
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?q=shirt&format=xml&version=V2
+```
+
+```Text XML Response
+<?xml version="1.0" encoding="UTF-8”?>
+<response>
+    <lst name="searchMetaData">
+        <int name="status">0</int>
+        <long name="queryTime">26</long>
+        <lst name="queryParams">
+            <str name=“log.response”>false</str>
+           <str name=“original.q”>shoes</str>
+            <str name=“module.exclude”>personalization</str>
+            <str name=“format”>xml</str>
+            <str name=“alternate.op”>true</str>
+            <str name=“req.rm.asterix”>true</str>
+            <str name=“q.op”>AND</str>
+            <str name=“version”>V2</str>
+            <str name=“enableTaxonomy”>false</str>
+            <str name=“q”>shoes</str>
+            <str name=“req.rm.promotionEngine”>true</str>
+            <str name=“user.behaviour”>true</str>
+            <str name=“enablePopularity”>true</str>
+        </lst>
+    </lst>
+    <result name="response" numberOfProducts="0" start="0">
+</result>
+    <lst name="facets"/>
+</response>
+```
+
+***
+
+## Bucketing
+
+Bucketing allows you to group products with a common field value into groups known as buckets, returning the top products per bucket, and the top buckets based on what documents are in the groups. It is necessary that every bucket field is also the facet field in your e-commerce store. To use bucketing feature, you need to use bucket.field, bucket.limit and bucket.offset parameters to define the field name on which bucketing has to be done, the number of products that should be returned per bucket and bucket.offset parameter to define the starting position of the product returned in each bucket. The rows parameter controls the number of buckets that should be returned.
+
+For example, a search at your site for a common term such as DVD, will show the top 3 results for each category (“TVs & Video”,”Movies”,”Computers”, etc).
+
+```Text Sample request
+https://search.unbxdapi.io/<API-KEY>/<SITE-KEY>/search?q=Shirts&format=<xml|json>&& bucket.field=<bucket.field>&<rows=42><bucket.limit=5>&&<bucket.offset=5> &<sort>&bucket.sortByCount=desc&sort=<sort field>desc  
+```
+
+```Text Response
+"buckets":{
+                "totalProducts":22331,
+                "numberOfBuckets":386,
+                "":{"numberOfProducts":168,"start":0,"products":[
+                                {
+                                        product_1
+                                },
+                                .
+                                .
+                                .
+                                {
+                                        product_N
+                                }]
+                },
+                "":{"numberOfProducts":4098,"start":0,"products":[
+                                {
+                                        product_1
+                                },
+                                .
+                                .
+                                .
+                                {
+                                        product_N
+                                }]
+                },
+                "":{"numberOfProducts":1370,"start":0,"products":[
+                                {
+                                        product_1
+                                },
+                                .
+                                .
+                                .
+                                {
+                                        product_N
+                                }]
+                }
+        }
+```
+
+***
+
+## Analytics
+
+The analytics parameter is used specifically for enabling visual autosuggest. It enables or disables tracking the query hit for analytics. By default, tracking is enabled. To disable tracking, set the value to false.
+
+```Text Sample request
+https://search.unbxd.com/64a4a2592a648ac8415e13c561e44991/demosite-u1407617955968/search?q=&analytics=false&version=V2
+```
+
+```Text Response
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 727,
+        "queryParams": {
+            "analytics": "false",
+            "q": "shirts",
+            "removeSpecialCharacters": "true",
+            "escapeSpecialCharacters": "true",
+            "boost": "sum(1,popularity(uniqueId))",
+            "type": "interpreter",
+            "version": "V2",
+            "personalization.recentlyViewed": "true",
+            "queryTrimmer": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 1101,
+        "start": 0,
+        "products": [
+            {
+                "uniqueId": "5315b8565e4016e5737bef50",
+                "category": [
+                    "Sport Shirts"
+                ],
+                "category_fq": [
+                    "Sport Shirts"
+                ],
+                "test_fq": [
+                    "Sport Shirts"
+                ],
+                "productDescription": "Button-down point collar. Applied buttoned placket.Long sleeves with barrel cuffs. Curved hem.Split back yoke for smooth, contoured shoulders. Our signature embroidered pony accents the left chest. 100% cotton. Machine washable. Imported.",
+                "title": "Custom-Fit Tattersall Shirt",
+                "url": "http://www.ralphlauren.com/product/index.jsp?productId=23840006",
+                "gender": "men",
+                "imageUrl": [
+                    "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg"
+                ],
+                "brand": "Ralph Lauren",
+                "brand_fq": "Ralph Lauren",
+                "test2_fq": "Ralph Lauren",
+                "taxID": "11",
+                "image_link": "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg",
+                "color": [
+                    "Blue/Navy"
+                ],
+                "color_fq": [
+                    "Blue/Navy"
+                ],
+                "catlevel1Name": "Sport Shirts",
+                "pname": "Custom-Fit Tattersall Shirt",
+                "price": 89.5,
+                "price_fq": 89.5,
+                "id": "product-23840006"
+            },
+         {...}
+```
+
+***
+
+## Stats
+
+Gives information about the products with highest and lowest field value. Applicable only on fields with numeric or decimal values.
+
+To apply stats on the price field make the below API call:
+
+```Text Sample Request
+https://search.unbxd.com/64a4a2592a648ac8415e13c561e44991/demosite-u1407617955968/search?q=shirts&stats=price&version=V2
+```
+
+```Text Response
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 726,
+        "queryParams": {
+            "q": "shirts",
+            "removeSpecialCharacters": "true",
+            "escapeSpecialCharacters": "true",
+            "stats": "price",
+            "boost": "sum(1,popularity(uniqueId))",
+            "type": "interpreter",
+            "version": "V2",
+            "personalization.recentlyViewed": "true",
+            "queryTrimmer": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 1101,
+        "start": 0,
+        "products": [
+            {
+                "uniqueId": "5315b8565e4016e5737bef50",
+                "category": [
+                    "Sport Shirts"
+                ],
+                "category_fq": [
+                    "Sport Shirts"
+                ],
+                "test_fq": [
+                    "Sport Shirts"
+                ],
+                "productDescription": "Button-down point collar. Applied buttoned placket.Long sleeves with barrel cuffs. Curved hem.Split back yoke for smooth, contoured shoulders. Our signature embroidered pony accents the left chest. 100% cotton. Machine washable. Imported.",
+                "title": "Custom-Fit Tattersall Shirt",
+                "url": "http://www.ralphlauren.com/product/index.jsp?productId=23840006",
+                "gender": "men",
+                "imageUrl": [
+                    "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg"
+                ],
+                "brand": "Ralph Lauren",
+                "brand_fq": "Ralph Lauren",
+                "test2_fq": "Ralph Lauren",
+                "taxID": "11",
+                "image_link": "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg",
+                "color": [
+                    "Blue/Navy"
+                ],
+                "color_fq": [
+                    "Blue/Navy"
+                ],
+                "catlevel1Name": "Sport Shirts",
+                "pname": "Custom-Fit Tattersall Shirt",
+                "price": 89.5,
+                "price_fq": 89.5,
+                "id": "product-23840006"
+            },
+         {...}
+```
+
+***
+
+## Variants
+
+Variants cover all the parameters related to the variants feature. To integrate any functionality, we have to set variants=true (to enable variants).
+
+The feed defines variants for a product. If the product doesn’t have variants, the variants parameter is disabled in the API response, and if it does, it is defined as enabled.
+
+It can have two values, viz. True or False.
+
+* If “variants” is set to true, all the variants for a product are clubbed together.
+* If “variants” is set to false, all the variants are sent separately as different products.
+
+> 📘 NOTE
+>
+> The default value is set to false.
+
+```Text Request with variants enabled
+https://search.unbxd.com/64a4a2592a648ac8415e13c561e44991/demosite-u1407617955968/search?q=dress&variants=true
+```
+
+```Text Request with variants disabled
+https://search.unbxd.com/64a4a2592a648ac8415e13c561e44991/demosite-u1407617955968/search?q=dress&variants=false
+```
+
+## Variants Count
+
+This parameter limits the number of variants that must be returned per product. This is equivalent to the rows parameter.
+
+* This is an integer parameter, if not specified, is set to default value of 1
+* When there is a need to enable all the variants, specify variants.count=\*. Please avoid using this value, as this would lead to performance degradation.
+
+If you want to get more than one variant in the API response, you can use this parameter.
+
+```Text Request with variants count
+http://search.unbxd.io/c85ec9e6c53e6522f2d0f88c4a214717/hsn-com700091495001458/search?q=dress&variants=true&variants.count=1
+```
+
+```Text Response
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 42,
+        "queryParams": {
+            "log.response": "false",
+            "module.exclude": "none",
+            "alternate.op": "true",
+            "enableTrendingProducts": "true",
+            "q.op": "AND",
+            "variants": "true",
+            "variants.count": "1",
+            "f.categoryPath.facet.limit": "100",
+            "f.categoryPath.position": "1",
+            "req.rm.promotionEngine": "true",
+            "f.categoryPath.nameId": "true",
+            "original.q": "dress",
+            "req.rm.asterix": "true",
+            "enableTaxonomy": "false",
+            "version": "V2",
+            "f.categoryPath.displayName": "Category",
+            "q": "dress",
+            "f.categoryPath.max.depth": "4",
+            "promotion.fields": [
+                "categoryPath1_uFilter",
+                "categoryPath2_uFilter",
+                "Brand_uFilter"
+            ],
+            "facet.multilevel": "categoryPath",
+            "user.behaviour": "true",
+            "fallback": "true",
+            "fallback.response": "false",
+            "enablePopularity": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 0,
+        "start": 0,
+        "products": []
+    },
+    "redirect": {
+        "type": "url",
+        "value": "https://www.hsn.com/shop/dresses/fa0283"
+    }
+}
+```
+
+***
+
+## Facets Overview
+
+Faceting helps your shoppers narrow down search results by selecting filter values as needed. Every time a user clicks a facet value, the results are reduced to only the items with that value. Additional clicks continue to narrow down the search—the previous facet values are remembered and applied again.
+
+Facets can be easily configured from the **Manage** -> **Configure Search** -> **Configure Facet** section of the Console.
+
+```Text Sample Request
+https://search.unbxd.io/<api_key>/<site_key>/search?q=samsung&facet.multiselect=true
+```
+
+```Text Sample Request
+{
+    "facets": {
+        "multilevel": {
+            "list": [{
+                "filterField": "productType",
+                "level": 2,
+                "id": "100",
+                "displayName": "Product Type",
+                "position": 1,
+                "values": [{
+                        "id": "HO001",
+                        "name": "Decor",
+                        "count": 15
+                    },
+                    {
+                        "id": "Ho002",
+                        "name": "Outdoors",
+                        "count": 16
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "productType",
+                    "values": [{
+                        "id": "HO",
+                        "name": "Home"
+                    }],
+                    "level": 1
+                }
+
+            }]
+        },
+        "range": {
+            "list": []
+        },
+        "text": {
+            "list": []
+        }
+    }
+}
+```
+
+<br />
+
+Here, when a search API is fired, “facet” is received in response.
+
+Facet response contains different types of facets (for example, Categories, Brand , Color, Price etc..) that are configured by client with respective values and count of those values. For example, if Brand is configured for faceting, response will look like:
+
+```
+{
+  "facets": {
+    "text": {
+      "list": [
+        {
+          "facetName": "brand_uFilter",
+          "filterField": "brand_uFilter",
+          "values": [
+            "Samsung",
+            663
+          ],
+          "displayName": "brand",
+          "position": 3
+        }
+      ]
+    }
+  }
+}
+```
+
+Response contains Facet Name: Brand, Value: Samsung, and Count of products with filter Samsung = 663.
+
+If integrated, the website will look like:
+
+<Image align="center" className="border" border={true} width="50% " src="https://files.readme.io/4f8b47c0f6f7715a51bb9e83fe07e2fbf585cfa852182656deedfc322c827d0b-facet-exam.png" />
