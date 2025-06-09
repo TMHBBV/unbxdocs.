@@ -7,8 +7,6 @@ metadata:
 ---
 # Overview
 
-Unbxd offers a powerful, platform-agnostic site search engine designed to provide highly relevant search results, increase engagement, and optimize the user experience for the end users. Integrate and manage site search features, including feed preparation, analytics setup, and deploying **Unbxd** **Search**.
-
 The complexities of setting up the site search from scratch is extreme for the eCommerce site owners. And when the Onboarding becomes difficult, site owners drop out losing out on integrating more features and capabilities onto their site.
 
 You can also refer to this video to set up your site search using our Onboarding console within 5 minutes:
@@ -31,7 +29,39 @@ After setting up the site, you can start building your site solution by uploadin
 
 Select a mode for uploading the catalog from the following options :
 
-Platform Plugin: Use our platform plugins to upload catalog if you are using one of these platforms (SAP Hybris and Magento2). Using platform plugins is the fastest way to integrate Unbxd search.
+1. Platform Plugin: Use our platform plugins to upload catalog if you are using one of these platforms (SAP Hybris and Magento2). Using platform plugins is the fastest way to integrate Unbxd search.
 
 * [Magento](https://unbxdocs.readme.io/update/docs/magento-platform-integration-1#/)
 * [SAP Hybris](https://unbxdocs.readme.io/update/docs/sap-hybris#/)
+
+2. Feed API: If the products in your catalog are more than 25K then, you can upload the catalog via our Feed APIs. Feed APIs only support the JSON file format. Refer [here](https://unbxdocs.readme.io/update/docs/feed-api#/) for the doucmentation.
+
+## 4) Setup Search
+
+After the creation and upload of the catalog is done, set up your site search using our AI system that identifies the relevant set of synonyms, searchable fields, and facets in accordance with your product catalog upfront.
+
+Searchable Fields & Facets: We scan through the catalog and automatically set the searchable attributes and facets by looking at the coverage.
+
+Content Relevance: Our AI system has the knowledge of catalogs from different verticals and the textual information that has been crawled from the World Wide Web (WWW). We use this to set the relevancy of your site automatically which reduces the zero-result queries and improves the recall. Refer [here](https://unbxdocs.readme.io/update/docs/onboarding#/) for the documentation.
+
+## 5. Integrate Search
+
+> 📘 Note
+>
+> A fully functional Sandbox will be available for testing after step 4. You can use our UI library to quickly integrate Unbxd Search on your website.
+
+The final step in the process of Onboarding is to use integrate Unbxd Search to display search results for shopper’s queries. Unbxd offers RESTful APIs & SDKs for different platforms to allows easy implementation of our Search features.
+
+Use Unbxd SDK to integrate Unbxd Site Search by following just three steps
+
+* JavaScript SDK
+
+If your eCommerce is based on any platform like Magento or Hybris then you can use our native plugins:
+
+* Magento
+* Hybris
+
+REST APIs for Search & Autosuggest integration :
+
+* Search API
+* Autosuggest API
