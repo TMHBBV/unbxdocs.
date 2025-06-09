@@ -69,4 +69,4 @@ The Unbxd Advantage you get:
 
 Research has shown that shoppers are biased towards products that others have also bought or rated before. That’s where our solutions like Bought Also Bought, Viewed Also Viewed and Recently Viewed help you.
 
-We allow merchandisers and product managers, like you, to customize algorithms that can help your shopper find the perfect product for them.
+We allow merchandisers and product managers, like you, to customize algorithms that can help your shopper find the perfect product for them. Use our [Dimension Mapping](https://unbxdocs.readme.io/update/docs/dimension-mapping#/) to set up more efficient recommendation results.
