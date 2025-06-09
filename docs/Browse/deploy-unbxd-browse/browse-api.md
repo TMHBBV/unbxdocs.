@@ -430,7 +430,7 @@ The values of the request parameters are defined below:
       </td>
 
       <td>
-
+        Restrict the products based on criteria passed (using field-name).
       </td>
 
       <td>
@@ -450,11 +450,31 @@ The values of the request parameters are defined below:
       </td>
 
       <td>
-
+        Restrict the products based on category (using path comprised of category ID). Used only for multilevel-facets.
       </td>
 
       <td>
         `Integer`
+      </td>
+
+      <td>
+        n/a (no filter will be applied)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        category-filter
+
+        Optional
+      </td>
+
+      <td>
+        Restrict the products based on category (using path comprised of category name). Used only for multilevel-facets.
+      </td>
+
+      <td>
+        `String`
       </td>
 
       <td>
@@ -470,7 +490,7 @@ The values of the request parameters are defined below:
       </td>
 
       <td>
-
+        Rank products based on criteria passed.
       </td>
 
       <td>
@@ -478,97 +498,67 @@ The values of the request parameters are defined below:
       </td>
 
       <td>
-        n/a (no filter will be applied)
+        n/a (default rank would be based on Unbxd relevancy)
       </td>
     </tr>
 
     <tr>
       <td>
+        banner
 
+        Optional
       </td>
 
       <td>
-
+        Enables or disables displaying of banner set in the Console.
       </td>
 
       <td>
-
+        `String`
       </td>
 
       <td>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
+        true
       </td>
     </tr>
 
     <tr>
       <td>
+        analytics
 
+        Optional
       </td>
 
       <td>
-
+        Enables or disables tracking of the request by Unbxd analytics.
       </td>
 
       <td>
-
+        `String`
       </td>
 
       <td>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
+        true
       </td>
     </tr>
 
     <tr>
       <td>
+        stats
 
+        Optional
       </td>
 
       <td>
-
+        Specifies a field for which statistics should be generated.
       </td>
 
       <td>
-
+        `String`
       </td>
 
       <td>
-
+        n/a
       </td>
     </tr>
   </tbody>
