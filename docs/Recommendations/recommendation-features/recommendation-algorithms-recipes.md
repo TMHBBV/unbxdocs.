@@ -1,5 +1,5 @@
 ---
-title: Recommendation Algorithms/ Recipes
+title: Core Algorithms
 deprecated: false
 hidden: false
 metadata:
