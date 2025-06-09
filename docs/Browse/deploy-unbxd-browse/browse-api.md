@@ -34,7 +34,7 @@ The following parameters are available:
 | :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------- | :------------------------------------------------------------------------------------------------------------- |
 | **unbxd-user-id**       | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics javascript sets the userid in your browser cookie.                                            | No        | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work.        |
 | **user-agent**          | Browser identification information passed to the webserver with every HTTP request                                                                                                          | No        | If not passed, device-based merchandising campaigns will not work.                                             |
-| **unbxd-device-type\*** | This header is an Unbxd custom header which is required to identify if the request is coming from an app.                                                                                   | No        | If not passed, device-based merchandising campaigns will not be able to differentiate between browser and apps |
+| **unbxd-device-type**\* | This header is an Unbxd custom header which is required to identify if the request is coming from an app.                                                                                   | No        | If not passed, device-based merchandising campaigns will not be able to differentiate between browser and apps |
 | **Accept-Encoding**     | This header signifies the content encoding of the response. Currently, Unbxd supports only gzip compression. To enable this, ‘gzip’ needs to be passed                                      | No        | If not passed, the response will not be compressed.                                                            |
 | **X-Forwarded-For**     | This header signifies the IP address of the end-user. This is primarily required if the integration is a backend as Unbxd doesn’t get the IP of the end-user from the browser in that case. | No        | If not passed, segmentation, A/B testing and personalization will not work.                                    |
 
@@ -322,133 +322,111 @@ The values of the request parameters are defined below:
 
     <tr>
       <td>
+        fields
 
+        Optional
       </td>
 
       <td>
-
+        Set of fields to be returned.
       </td>
 
       <td>
-
+        `String`
       </td>
 
       <td>
+        Format: \&fields=,
 
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
+        Default Values: If not applied, returns all fields
       </td>
     </tr>
 
     <tr>
       <td>
+        facet
 
+        Optional
       </td>
 
       <td>
-
+        Enables or disables displaying of facets in the UI. Note: All other parameters related to facet feature are mentioned in detail below.
       </td>
 
       <td>
-
+        `String`
       </td>
 
       <td>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
+        true
       </td>
     </tr>
 
     <tr>
       <td>
+        facet.multilevel
 
+        Optional
       </td>
 
       <td>
-
+        Enables or disables displaying multi-level facets in response.
       </td>
 
       <td>
-
+        `String`
       </td>
 
       <td>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-
+        n/a
       </td>
     </tr>
 
     <tr>
       <td>
+        selectedfacet
 
+        Optional
       </td>
 
       <td>
-
+        Enables or disables sending selected facets in the API response.
       </td>
 
       <td>
-
+        `String`
       </td>
 
       <td>
-
+        false
       </td>
     </tr>
 
     <tr>
       <td>
+        filter-id
 
+        Optional
+      </td>
+
+      <td>
+        Restrict the products based on criteria passed (using field-id).
+      </td>
+
+      <td>
+        `Integer`
+      </td>
+
+      <td>
+        n/a (no filter will be applied)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        filter
+
+        Optional
       </td>
 
       <td>
@@ -456,11 +434,51 @@ The values of the request parameters are defined below:
       </td>
 
       <td>
+        `String`
+      </td>
 
+      <td>
+        n/a (no filter will be applied)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        category-filter-id
+
+        Optional
       </td>
 
       <td>
 
+      </td>
+
+      <td>
+        `Integer`
+      </td>
+
+      <td>
+        n/a (no filter will be applied)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sort
+
+        Optional
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        `String`
+      </td>
+
+      <td>
+        n/a (no filter will be applied)
       </td>
     </tr>
 
