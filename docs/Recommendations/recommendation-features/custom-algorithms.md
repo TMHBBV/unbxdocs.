@@ -99,3 +99,57 @@ There are two types of Custom Algorithms:
     </tr>
   </tbody>
 </Table>
+
+## Custom algorithms help you make your own custom widget formats.
+
+You can create custom algorithms based on:
+
+1. Recommended For You
+2. Top Sellers
+3. Bought Also Bought
+4. Viewed Also Viewed
+5. More Like This
+6. Recently Viewed
+7. Complete The Look
+8. Cross-Sell
+9. Category Top Sellers
+10. Brand Top Sellers
+
+## Starter Pack Algorithms
+
+These algorithms are Unbxd-defined custom/hybrid algorithms with specific observation periods and pre-defined fallbacks.
+
+| **Custom Algorithm**                           | **Observation Period** | **Core Algorithm**                                                                                                            | **Fallback**                         |
+| ---------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| Recommended For You                            | –                      | All 18 Slots: Recommended For You                                                                                             | Recently Viewed, Top Sellers         |
+| Top Sellers                                    | 30 days                | All 18 Slots: Top Sellers                                                                                                     | Recommended For You, Recently Viewed |
+| Top Sellers by location                        | 30 days                | All 18 Slots: Top Sellers                                                                                                     | Recommended For You, Recently Viewed |
+| Optimize for new Users                         | 30 days                | Slots 1–3: Recently Viewed\<br>Slots 4–6: Top Sellers\<br>Slots 7–9: Recently Viewed\<br>Slots 10–18: Top Sellers             | –                                    |
+| Wisdom Of The Crowd – Users also bought        | 30 days                | All 18 Slots: Bought Also Bought                                                                                              | Viewed Also Viewed, More Like This   |
+| Wisdom Of The Crowd – Users also Viewed        | 30 days                | All 18 Slots: Viewed Also Viewed                                                                                              | Bought Also Bought, More Like This   |
+| Similar Products (based on category and title) | 30 days                | All 18 Slots: More Like This                                                                                                  | –                                    |
+| Similar products – Bought Also Bought          | 30 days                | Slots 1–3: Bought Also Bought\<br>Slots 4–6: More Like This\<br>Slots 7–9: Bought Also Bought\<br>Slots 10–18: More Like This | Viewed Also Viewed, More Like This   |
+| Similar products – Viewed Also Viewed          | 30 days                | Slots 1–3: Viewed Also Viewed\<br>Slots 4–6: More Like This\<br>Slots 7–9: Viewed Also Viewed\<br>Slots 10–18: More Like This | Bought Also Bought, More Like This   |
+| Complete The Look                              | 30 days                | All 18 Slots: Complete The Look                                                                                               | –                                    |
+| Cross Sell – Similar products                  | 30 days                | All 18 Slots: More Like This                                                                                                  | –                                    |
+| Cross-sell                                     | 30 days                | All 18 Slots: Cross Sell                                                                                                      | More Like This                       |
+| Category Top Sellers                           | 30 days                | All 18 Slots: Category Top Sellers                                                                                            | –                                    |
+| Category Top Sellers by location               | 30 days                | All 18 Slots: Category Top Sellers                                                                                            | –                                    |
+
+## Create
+
+To create a custom algorithm:
+
+1. Click Manage > Algorithms.
+2. On the Manage Algorithms page, click Custom.
+3. Click the Create New button. The Create Custom Algorithm page appears.
+4. Type in a name for the algorithm in the title text field.
+5. Click the Create an algorithm based on a drop-down box and select the required algorithm.
+6. To choose the number of slots you want to apply the algorithm on, click the Slots drop-down arrow. By default, the algorithm is applied to all 18 slots.
+7. To create filter rules, click Add within Custom Filter Rules. You can create Dynamic or Static filters.
+8. To enable fallbacks, click the Fallback toggle button. You can choose between:
+   * Fallback: Indicates the fallback is based on the algorithm you chose in the Create an algorithm based on field. You can specify the base algorithm you want to use and the number of slots for the widget. To add fallbacks, click Add.
+   * Manual Fallback: Indicates the fallback is manual with a static list of products to display.\
+     Note: By default, Fallback is enabled. When fallback is disabled, widgets will not display any product recommendations.
+9. Click the Save button. The new custom algorithm will appear in the Manage Algorithms table.\
+   You have successfully created a custom algorithm.
