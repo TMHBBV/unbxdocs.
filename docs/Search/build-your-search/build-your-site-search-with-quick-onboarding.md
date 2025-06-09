@@ -15,6 +15,21 @@ You can also refer to this video to set up your site search using our Onboarding
 
 Looking at the complexities that you face to set up your site search, we at Unbxd have launched a simplified onboarding process. The Onboarding flow is developed to streamline the process of uploading catalog, indexing, setting up the relevance, and integrating the search in five steps:
 
-## 1. **Create an Unbxd Account**
+## 1. Create an Unbxd Account
 
 Create an account before dwelling on the creation of the site search process by signing up for a free trial at [console.unbxd.io/signup](). Refer [here](https://unbxdocs.readme.io/update/docs/onboarding#/) for more information for account creation.
+
+## 2. Create an Unbxd Site
+
+Post account creation, create an Unbxd site that would power your eCommerce site search. You can do this by citing the various details on the console. Refer [here](https://unbxdocs.readme.io/docs/set-up-dashboard#create-an-unbxd-site) for Site creation.
+
+## 3. Upload a Catalog
+
+After setting up the site, you can start building your site solution by uploading your product catalog. We support uploading the catalog in either CSV, Excel, JSON, XML, or ZIP format.
+
+Select a mode for uploading the catalog from the following options :
+
+Platform Plugin: Use our platform plugins to upload catalog if you are using one of these platforms (SAP Hybris and Magento2). Using platform plugins is the fastest way to integrate Unbxd search.
+
+* [Magento](https://unbxdocs.readme.io/update/docs/magento-platform-integration-1#/)
+* [SAP Hybris](https://unbxdocs.readme.io/update/docs/sap-hybris#/)
