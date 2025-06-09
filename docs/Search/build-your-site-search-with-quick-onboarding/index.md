@@ -58,10 +58,10 @@ Use Unbxd SDK to integrate Unbxd Site Search by following just three steps
 
 If your eCommerce is based on any platform like Magento or Hybris then you can use our native plugins:
 
-* Magento
-* Hybris
+* [Magento](https://unbxdocs.readme.io/update/docs/magento-platform-integration-1#/)
+* [Hybris](https://unbxdocs.readme.io/update/docs/sap-hybris#/)
 
 REST APIs for Search & Autosuggest integration :
 
-* Search API
+* [Search API](https://unbxdocs.readme.io/update/docs/search-api#/)
 * Autosuggest API
