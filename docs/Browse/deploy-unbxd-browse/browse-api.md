@@ -563,3 +563,89 @@ The values of the request parameters are defined below:
     </tr>
   </tbody>
 </Table>
+
+# Response Components
+
+Unbxd returns the list of products that match the search criteria. The response would be in application/JSON or application/XML content type format.
+
+| **Component**        | **Description**                                                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **status**           | Response status code defines if it is Ok (code 200), Not Found (code 404), Internal server error (code 500), and many more             |
+| **queryTime**        | Time taken to process the shopper’s request                                                                                            |
+| **queryParams**      | Parameters sent as a part of the request                                                                                               |
+| **numberOfProducts** | Total number of products returned for the page                                                                                         |
+| **start**            | Offset in the complete result set of products for the page                                                                             |
+| **products**         | Product details sent as a result that matches the request query. The structure will be the same as passed in the feed                  |
+| **relevantDocument** | Mentions if the parent or the variant for a particular product needs to be displayed in the UI. It can be either “parent” or “variant” |
+| **facets**           | Filters displayed in the UI to allow visitors to narrow down the result set based on product fields                                    |
+| **breadcrumb**       | Position in the field hierarchy                                                                                                        |
+| **selected**         | Filters which are selected in the UI                                                                                                   |
+| **banner**           | Banner response for the query                                                                                                          |
+
+# Component Description
+
+The aforementioned table provided as with the default values of the request parameters. Let’s dwell deep and understand the API calls of each parameter individually.
+
+### Page Parameters
+
+* **p-id**: Identifier of the page being requested as IDs. It is an optional parameter and has the following form p-id=field-id:value-id. For category page, field-id is “categoryPathId” and value-id is the corresponding category path comprised of category IDs. Example, p-id=categoryPathId:”J>J00157>J00158”. For any other page, field-id is corresponding field ID as passed in the feed and value-id is the corresponding value ID. Example, p-id=1:9357, p-id=12224:18010.
+* **p**: Identifier of the page being requested as Names. It is an optional parameter and has the following form.
+
+  p=fieldname:”fieldvalue”: Page rules in the console should be created as this) &#x20;
+  p=\<value> (Field name is not specified): Page rules in console should be created with the name  \<value> . By using categoryPath as the default field.
+  For category page, fieldname is “categoryPath” and fieldvalue is the corresponding category path comprised of category names. Example, p=categoryPath:”Jewelery>Necklaces>Beaded Necklaces”. For any other page, fieldname is corresponding field as passed in the feed and fieldvalue is the corresponding value. Example, p=Brand:”Nike”, p=Events:”40 Years of Innovation”
+
+```Text Sample request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:"Fashion>Shoes"&pagetype=boolean&rows=1&version=V2  
+```
+
+### Sample Response
+
+```Text json
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 27,
+        "queryParams": {
+            "log.response": "false",
+            "original.q": "shoes",
+            "module.exclude": "personalization",
+            "format": "json",
+            "alternate.op": "true",
+            "req.rm.asterix": "true",
+            "q.op": "AND",
+            "version": "V2",
+            "enableTaxonomy": "false",
+            "q": "shoes",
+            "req.rm.promotionEngine": "true",
+            "user.behaviour": "true",
+            "enablePopularity": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 0,
+        "start": 0,
+        "products": []
+    }
+}
+```
+
+<br />
+
+> 📘 Important Points
+>
+> It is mandatory to pass either “p” or “p-id”. If both are passed together, “p” would be ignored and results would be shown as per “p-id”.\
+> The value passed under “p-id” (or “p”) is displayed in the Console and reports as-it-is.
+> IMPORTANT: In the tracker api, the following parameters need to be passed:
+>
+> page: Pass the exact value as passed under “p-id” (or “p”).\
+> page\_type: Always pass “BOOLEAN”.
+> If you have a categorypath containing “&”, you will need to encode it in the request.
+>
+> Example,“Fashion>Shoes>Sneakers & Athletic shoes” will be encoded to“Fashion%3EShoes%3ESneakers%20%26%20Athletic%20shoes”
+>
+> pagetype
+>
+> The pagetype is a mandatory parameter and has the value “boolean”.
+>
+> NOTE: The values passed in the API should be encoded, when required, for correct interpretation.
