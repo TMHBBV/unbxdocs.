@@ -24,7 +24,7 @@ Unbxd offers a platform-agnostic integration for your e-commerce site search. Yo
    Following resources can guide you for converting your catalog to Unbxd compatible format and uploading it on Unbxd systems:
 
 * Direct Feed Upload
-* Feed APIs
+* [Feed APIs](https://unbxdocs.readme.io/update/docs/feed-api#/)
 
 2. **Set up Analytics**\
    Once you upload your catalog, the next step is to integrate analytics so that Unbxd systems can collect data to optimize your site search performance. You can integrate Unbxd analytics using one of the following methods:
