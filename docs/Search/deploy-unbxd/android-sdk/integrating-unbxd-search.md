@@ -320,3 +320,11 @@ public void onFailure(@NotNull String s,
 }
 });
 ```
+
+<br />
+
+> 📘 NOTE
+>
+> Default value is “false”.
+
+If you want to get multiple variants in the API response, you can use the ‘variantCount’ parameter. The variantCount parameter can have any numerical value (eg, 1,2,3, etc).
