@@ -229,3 +229,6 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler
 Promoted Suggestions are product recommendations that a merchandiser can configure from the console.
 
 This allows you to manually insert keyword suggestions in autosuggest, which may not be part of the default relevance results.Promoted Suggestions doctype with result count can be configured as below:
+
+```
+```
