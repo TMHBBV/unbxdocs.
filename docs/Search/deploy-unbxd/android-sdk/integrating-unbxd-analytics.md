@@ -160,3 +160,13 @@ Here, `userId.id`: The SDK will generate a randomized unique identifier – UID 
 `requestId`: The unbxd request id returned in the search/category page/recommendations API call response.
 
 `categoryPath`: unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. For instance, if you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=categoryName](https://search.unbxd.io/api-key/site-key/category?p=categoryName) then categoryQuery will be called as
+
+```
+let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
+```
+
+<br />
+
+But if you have integrated category pages using the API call: \[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+
+Then categoryQuery will be called as
