@@ -231,4 +231,166 @@ Promoted Suggestions are product recommendations that a merchandiser can configu
 This allows you to manually insert keyword suggestions in autosuggest, which may not be part of the default relevance results.Promoted Suggestions doctype with result count can be configured as below:
 
 ```
+val docType = DocTypePromotedSuggestions.Builder().resultCount(5).build() val autosuggestQuery = AutosuggestQuery.Builder("Shir").promotedSuggestions(docType).build()  
+client.autosuggest(autosuggestQuery, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      //Handle success }
+override fun onFailure(errorMessage: String, exception: Exception)  
+                                      { 
+                                      //Handle failure
+                                      } 
+                                      }
+)
+```
+
+> 👍 NOTE
+>
+> If resultCount is not set, default value 2 will be considered as results count for Top Queries doctype.
+
+### Popular Products
+
+The Product Products doctype displays products most searched for in your eCommerce store with thumbnail images.
+
+Popular Products doctype with fields and result count can be configured as below:
+
+```
+val docType = DocTypePopularProducts.Builder().resultCount(3).fields(arrayOf("vColor", "price")).build()  
+val autosuggestQuery = AutosuggestQuery.Builder("Shir").popularProducts(docType).build()  
+client.autosuggest(autosuggestQuery, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      //Handle success 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      //Handle failure
+                                      } 
+                                      }
+)
+```
+
+> 👍 NOTE
+>
+> If resultCount is not set, default value 3 will be considered as results count for Promoted Suggestions doctype.
+
+## Filters
+
+Filters, when used in AutoSuggest, helps to restrict products based on criteria passed.
+
+Two types of filters are supported:
+
+* Text
+* Range
+
+### Text
+
+The text filter is used to filter products based on fields with string values such as color, gender, brand, etc. It can be defined in the API call in two ways:
+
+#### Using Fields IDs
+
+IdFilter can be formed with two parameters.
+
+* field: The id of the field on which the text filter is applied.
+* value: The id of the value on which results are filters.
+
+```
+val idFilter = IdFilter("76678", "5001")  
+val autosuggestQuery = AutosuggestQuery.Builder("Shir").filter(idFilter).build() client.autosuggest(autosuggestQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      //Handle success
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      //Handle failure
+                                      } 
+                                      }
+)
+```
+
+#### Using Field Names
+
+Again, NameFilter can be formed with two parameters:
+
+* field: The ID of the field on which the text filter is applied.
+* value: The ID of the value on which the results are filtered.
+
+```
+val nameFilter = NameFilter("vColor", "Black")  
+val autosuggestQuery = AutosuggestQuery.Builder("Shir").filter(nameFilter).build() client.autosuggest(autosuggestQuery, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      //Handle success
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      //Handle failure
+                                      } 
+                                      }
+)
+```
+
+### Range
+
+The range filter is used to refine products based on fields with datatypes:
+
+* date
+* number
+* decimal
+
+You can define the API in two ways:
+
+#### Using Fields IDs
+
+Filter Range of type id is built using FilterIdRange class and it can be initialized with below parameters.
+
+* field: The ID of the field on which the text filter is applied.
+* lower: The ID of the lower limit if the range.
+* upper: The ID of the upper limit of the range.
+
+```
+val idFilterRange = IdFilterRange("76678","2034", "8906") val autosuggestQuery = AutosuggestQuery.Builder("Shir").filter(idFilterRange).build()  
+client.autosuggest(autosuggestQuery, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      //Handle success
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      {
+                                      //Handle failure 
+                                      }
+                                      }
+)
+```
+
+<br />
+
+### Using Field Names
+
+Filter Range of type name is built using the FilterNameRange class, and it can be initialized with the following parameters.
+
+* field: The name of the field on which the text filter is applied.
+* lower: The name of the lower limit of the range.
+* upper: The name of the upper limit of the range.
+
+```
+val nameFilterRange = NameFilterRange("vColor","red", "blue") val autosuggestQuery = AutosuggestQuery.Builder("Shir").filter(nameFilterRange).build()  
+client.autosuggest(autosuggestQuery, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      //Handle success 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      //Handle failure
+                                      } 
+                                      }
+)
 ```
