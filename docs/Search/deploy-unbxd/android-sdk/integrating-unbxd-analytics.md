@@ -167,7 +167,7 @@ let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
 
 <br />
 
-But if you have integrated category pages using the API call: \[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+But if you have integrated category pages using the API call: \[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
 
 Then categoryQuery will be called as
 
@@ -220,4 +220,5 @@ Possible Values are
 | Widget Type         | Box type              |
 | :------------------ | :-------------------- |
 | Recommended For You | RECOMMENDED\_FOR\_YOU |
-| Recently Viewed     |                       |
+| Recently Viewed     | RECENTLY\_\_VIEWED    |
+| More Like These     | MORE\_LIKE\_\_THESE   |
