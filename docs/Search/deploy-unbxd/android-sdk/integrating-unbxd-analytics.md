@@ -47,3 +47,33 @@ var requestId = allHeaders.get("Unbxd-Request-Id") if (!requestId.isNullOrEmpty(
                                       return null
                                       }<br>
 ```
+
+<br />
+
+Using Analytics Method Using Analytics methods app can publish event details and the merchandiser would be able to track those events in the portal. Below are the events, analytics method support
+
+* Visitor
+* Search Hit
+* Category Page Hit
+* Product Click
+* Add to Cart
+* Order
+* Product Page View
+* Cart Removal
+* AutoSuggest
+* Recommendation Widget Impression
+* Search Impression
+* Category Page Impression
+* Dwell time (time spent on a product page)
+
+## Tracking Visitor Event
+
+Whenever a new user visits the app, a visitor event is fired, containing information about whether a user is a first time visitor or a repeat visitor.
+
+This information is extracted from a ‘visitor’ cookie which is set every time the visitor event is fired. The cookie maintains the information about “visitType” parameter (also used by other events). Its value can be either ‘first-time’ or ‘repeat’.
+
+The SDK will generate a randomized unique identifier (UUID)- UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to a storage device so that it will persist across sessions.
+
+Whenever a new user installs, launches and do some activity such as search, click, etc.. on the application, a visitor event is fired from SDK, that contains information that shopper is a ‘first-time’ user.
+
+Each session of the shopper on the application has an expiry time of 30 minutes and after it expires, the visitor event is fired again and reset the ‘visitType’ as “repeat” user. Next time the shopper opens the application, if the last visitor event was fired more than 30 minutes ago, the visitor event is fired again with ‘visitType’ as “repeat” user. This means, that if the shopper is logged on to the application for more than 30 minutes, his/her visitType will be changed from ‘first-time’ to ‘repeat’ and will be “repeat” forever until he uninstalls and re-installs the application.
