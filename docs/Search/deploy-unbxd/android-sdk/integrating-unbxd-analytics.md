@@ -77,3 +77,24 @@ The SDK will generate a randomized unique identifier (UUID)- UID to each unique 
 Whenever a new user installs, launches and do some activity such as search, click, etc.. on the application, a visitor event is fired from SDK, that contains information that shopper is a ‘first-time’ user.
 
 Each session of the shopper on the application has an expiry time of 30 minutes and after it expires, the visitor event is fired again and reset the ‘visitType’ as “repeat” user. Next time the shopper opens the application, if the last visitor event was fired more than 30 minutes ago, the visitor event is fired again with ‘visitType’ as “repeat” user. This means, that if the shopper is logged on to the application for more than 30 minutes, his/her visitType will be changed from ‘first-time’ to ‘repeat’ and will be “repeat” forever until he uninstalls and re-installs the application.
+
+```
+val userId = client.userId()  
+val visitorAnalytics = VisitorAnalytics(userId.id, userId.visitType, requestId)  
+client.track(visitorAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response)                                                                 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+> 👍 NOTE
+>
+> All of the above-mentioned tracking is done by the SDK itself and you as an application developer has to do nothing in order to track visitor event. You can retrieve the UID and visit type using the userId method.
