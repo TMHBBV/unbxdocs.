@@ -1519,3 +1519,535 @@ Response contains Facet Name: Brand, Value: Samsung, and Count of products with 
 If integrated, the website will look like:
 
 <Image align="center" className="border" border={true} width="50% " src="https://files.readme.io/4f8b47c0f6f7715a51bb9e83fe07e2fbf585cfa852182656deedfc322c827d0b-facet-exam.png" />
+
+***
+
+## Common Feature Across all Facets
+
+### 1. MultiSelect Facet
+
+Multi-select facet is the option to enable or disable the customers to select more than one facet at a time for a query.
+
+```Text Sample Request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?&q=mobile&filter=categoryPath"Mobiles & Tablets"&filter=brand_uFilter:"Apple"&filter=product_min_price:[35000 TO 37500]&version=V2&facet.multiselect=true 
+```
+```Text Response
+{
+  "facets": {
+    "multilevel": {},
+    "range": {
+      "list": [
+        {
+          "facetName": "product_min_price",
+          "values": {
+            "counts": [
+              "35000.0",
+              1,
+              "37500.0",
+              3,
+              "40000.0",
+              5
+            ],
+            "gap": 2500,
+            "start": 0,
+            "end": 2635000
+          },
+          "displayName": "price",
+          "position": 1
+        }
+      ]
+    },
+    "text": {
+"list": [
+        {
+
+
+
+          "facetName": "brand_uFilter",
+          "filterField": "brand_uFilter",
+          "values": [
+            "Apple",
+            1,
+            "LG",
+            4,
+            "Samsung",
+            9,
+            "Sony Xperia",
+            3
+          ],
+          "displayName": "brand",
+          "position": 3
+        }
+      ]
+    }
+  }
+}
+```
+
+<br />
+
+### 2. SelectedFacet
+
+This displays the values of a single facet or multiple selected facets. If you selecet the facet 'brand' then the values 'Apple', 'Samsung', and so are displayed.
+
+```Text Sample Request 
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?&q=mobile&filter=brand_uFilter:%22Apple%22&facet.multiselect=true&selectedfacet=true
+```
+```Text Response
+{
+  "response": {
+    "numberOfProducts": 47,
+    "products": []
+  },
+  "searchMetaData": {},
+  "facets": {
+    "text": {
+      "list": [
+        {
+          "facetName": "brand_uFilter",
+          "filterField": "brand_uFilter",
+          "values": [
+            "Acer",
+            1,
+            "Apple",
+            47,
+            "Gionee",
+            28,
+            "Google",
+            10,
+            "HTC",
+            20
+          ],
+          "displayName": "brand",
+ "position": 0
+        },
+        {
+          "facetName": "color_uFilter",
+          "filterField": "color_uFilter",
+          "values": [
+            "Black",
+            99,
+            "Gold",
+            80,
+            "White",
+            48,
+            "Silver",
+            31,
+            "Grey",
+            24
+          ],
+          "displayName": "color",
+          "position": 1
+        },
+        {
+"selected": [
+            {
+              "facetName": "brand_uFilter",
+              "position": 3,
+              "filterField": "brand_uFilter",
+              "displayName": "brand",
+              "values": [
+                "Apple"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+}
+}
+```
+
+<br />
+
+### 3. Disabling Facet
+
+If facets are not needed, we can disable them. Value of facets can be either 'false' or 'true'. Facet: Disabled in response
+
+```Text Sample Request
+http://search.unbxd.io/c85ec9e6c53e6522f2d0f88c4a214717/hsn-com700091495001458/search?&q=mobile&facet=false
+```
+```Text Response
+{
+  "response": {
+    "numberOfProducts": 490,
+    "start": 0,
+    "products": []
+  },
+  "searchMetaData": {}
+}
+```
+
+<br />
+
+***
+
+## Multilevel Facet
+
+You can build a hierarchy in your facet values to enable multi-level navigation and filtering. This pattern is great for very long lists of values and to improve discoverability: your users will be able to browse up and down in the levels to refine their searches.
+
+| Property    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| multilevel  | Hierarchical facets configured on the hierarchical field(s). Facets are grouped under their respective types, so that it is easy to deserialize them. Currently, we support “multilevel” (MultiLevel Facets), “text” (Text Facets), “range” (Range Facets).                                                                                                                                                                                                                                                            |
+| list        | Array of hierarchical facets as configured on the hierarchical fields in Unbxd Console.                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| values      | All the unique values for the sub categories available for query and their count. For example, for query “mobile” , values are “Mobiles & Tablets”(300) , “Smartphones” (36) and so on.. This means for query mobile , under multilevel facet we have Mobiles & Tablets, Smartphones as filters ( values) and total number of products available with that value is also available. Shopper can select any value among ( Mobiles & Tablets , Smartphones ..) and that value will be applied as filter in search query. |
+| level       | Depth of multilevel field.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| filterField | Field on which hierarchical facet is created                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| breadcrumb  | Position within the hierarchical field where the results appear.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+
+<br />
+
+### 1. When no Facet is selected
+
+When no facets are selected (or no filters are passed), API is going to respond with facets belonging to the first level of the field.
+
+```Text Sample Request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?&q=mobile&version=V2
+```
+```Text Response
+{
+"searchMetaData": {...},
+"response": {...},
+"facets":
+ {
+    "multilevel": {
+        "list": [{
+                "filterField": "productType",
+                "level": 1,
+                "id": "100",
+                "displayName": "Product Type",
+                "position": 1,
+                "values": [{
+                        "id": "HO",
+                        "name": "Home",
+                        "count": 31
+                    },
+                    {
+                        "id": "J",
+                        "name": "Jewelry",
+                        "count": 22
+                    }
+                ],
+                "breadcrumb": {}
+            },
+            {
+                "filterField": "theme",
+                "level": 1,
+                "id": "200",
+                "displayName": "Theme",
+                "position": 2,
+                "values": [{
+                        "id": "12",
+                        "name": "Animals",
+                        "count": 34
+                    },
+                    {
+                        "id": "13",
+                        "name": "Birds",
+                        "count": 21
+                    }
+                ],
+                "breadcrumb": {}
+            }
+        ]
+    }
+}
+}
+```
+
+### 2. When first level of facets are selected
+
+When first level of facets are selected, the API will respond with the second level of field values.
+
+```Text Sample Request
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/
+search?&q=mobile&version=V2&filter=productType:"Home"
+```
+```Text Response 
+{
+"searchMetaData": {...},
+"response": {...},
+"facets":
+{
+    "multilevel": {
+        "list": [{
+                "filterField": "productType",
+                "level": 2,
+                "id": "100",
+                "displayName": "Product Type",
+                "position": 1,
+                "values": [{
+                        "id": "HO001",
+                        "name": "Decor",
+                        "count": 15
+                    },
+                    {
+                        "id": "HO002",
+                        "name": "Outdoors",
+                        "count": 16
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "productType",
+                    "values": [{
+                        "id": "HO",
+                        "name": "Home"
+                    }],
+                    "level": 1
+                }
+
+            },
+            {
+                "filterField": "theme",
+                "level": 1,
+                "id": "200",
+                "displayName": "Theme",
+                "position": 2,
+                "values": [{
+                        "id": "12",
+                        "name": "Animals",
+                        "count": 34
+                    },
+                    {
+                        "id": "13",
+                        "name": "Birds",
+                        "count": 21
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "theme",
+                    "values": [{
+                        "id": "21",
+                        "name": "MNP"
+                    }],
+                    "child": {
+                        "filterField": "theme",
+                        "values": [{
+                            "id": "23",
+                            "name": "ZZZ"
+                        }],
+                        "level": 2
+                    },
+                    "level": 1
+                }
+            }
+        ]
+    }
+}
+}
+```
+
+### 3. When second level of facets are selected
+
+When the second level of facets are selected, API will respond with the third level of field values.
+
+```Text Sample Request 
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/
+search?&q=mobile&version=V2&&filter=productType:"Home>Decor"
+```
+```Text Response
+{
+"searchMetaData": {...},
+"response": {...},
+"facets":
+{
+{
+    "multilevel": {
+        "list": [{
+                "filterField": "productType",
+                "level": 3,
+                "id": "100",
+                "displayName": "Product Type",
+                "position": 1,
+                "values": [{
+                        "id": "HO011",
+                        "name": "Wall Decor",
+                        "count": 10
+                    },
+                    {
+                        "id": "Ho012",
+
+                        "name": "Floor Decor",
+                        "count": 5
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "productType",
+                    "values": [{
+                        "id": "HO",
+                        "name": "Home"
+                    }],
+                    "child": {
+                        "filterField": "productType",
+                        "values": [{
+                            "id": "HO001",
+                            "name": "Decor"
+                        }],
+                        "level": 2
+                    },
+                    "level": 1
+                }
+
+            },
+            {
+                "filterField": "theme",
+                "level": 1,
+                "id": "200",
+                "displayName": "Theme",
+                "position": 2,
+                "values": [{
+                        "id": "12",
+                        "name": "Animals",
+                        "count": 34
+                    },
+                    {
+                        "id": "13",
+                        "name": "Birds",
+                        "count": 21
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "theme",
+                    "values": [{
+                        "id": "21",
+                        "name": "MNP"
+                    }],
+                    "child": {
+
+                        "filterField": "theme",
+                        "values": [{
+                            "id": "23",
+                            "name": "ZZZ"
+                        }],
+                        "level": 2
+                    },
+                    "level": 1
+                }
+            }
+        ]
+    }
+}
+```
+
+<br />
+
+### 4. When the value from the last level is selected
+
+When the value from the last level is selected, API will respond back with the sibling field values from the last level
+
+Sample Request
+
+Here is the API when the “*Home>Decor>Wall Decor*” is selected:
+
+```Text Sample Response 
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/
+search?&q=mobile&version=V2&filter=productType:"Home>Decor>Wall Decor"  
+```
+```Text Reponse 
+{
+"searchMetaData": {...},
+"response": {...},
+"facets":
+{
+{
+    "multilevel": {
+        "list": [{
+                "filterField": "productType",
+                "level": 3,
+                "id": "100",
+                "displayName": "Product Type",
+                "position": 1,
+                "values": [{
+                        "id": "HO011",
+                        "name": "Wall Decor",
+                        "count": 10
+                    },
+                    {
+                        "id": "Ho012",
+                        "name": "Floor Decor",
+                        "count": 5
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "productType",
+                    "values": [{
+                        "id": "HO",
+                        "name": "Home"
+                    }],
+                    "child": {
+                        "filterField": "productType",
+                        "values": [{
+                            "id": "HO001",
+                            "name": "Decor"
+                        }],
+                        "child": {
+                            "filterField": "productType",
+                            "values": [{
+                                "id": "HO011",
+                                "name": "Wall Decor"
+                            }],
+                            "level": 3
+                        },
+                        "level": 2
+                    },
+                    "level": 1      }],
+
+                    "child": {
+                        "filterField": "productType",
+                        "values": [{
+                            "id": "HO001",
+                            "name": "Decor"
+                        }],
+                        "child": {
+                            "filterField": "productType",
+                            "values": [{
+                                "id": "HO011",
+                                "name": "Wall Decor"
+                            }],
+                            "level": 3
+                        },
+                        "level": 2
+                    },
+                    "level": 1
+                }
+            },
+            {
+                "filterField": "theme",
+                "level": 1,
+                "id": "200",
+                "displayName": "Theme",
+                "position": 2,
+                "values": [{
+                        "id": "12",
+                        "name": "Animals",
+                        "count": 34
+                    },
+                    {
+                        "id": "13",
+                        "name": "Birds",
+                        "count": 21
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "theme",
+                    "values": [{
+                        "id": "21",
+                        "name": "MNP"
+                    }],
+
+                    "child": {
+                        "filterField": "theme",
+                        "values": [{
+                            "id": "23",
+                            "name": "ZZZ"
+                        }],
+                        "level": 2
+                    },
+                    "level": 1
+                }
+            }
+        ]
+    }
+}
+}
+```
