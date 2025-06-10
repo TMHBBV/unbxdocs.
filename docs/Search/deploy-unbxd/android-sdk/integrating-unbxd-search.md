@@ -218,3 +218,105 @@ public void onFailure(@NotNull String s,
 }
 });
 ```
+
+<br />
+
+## Analytics
+
+This parameter allows you to enable or disable analytics tracking of the site search event.
+
+> 👍 Tips
+>
+> This is an optional Parameter. By default, tracking is enabled.
+
+```Text sample
+val searchQuery = SearchQuery.Builder("Shirt").analytics(false).build() client.search(searchQuery, object : ICompletionHandler  
+                                       {
+                                       override fun onSuccess(json: JSONObject, response: Response) 
+                                       { 
+                                       //Handle success
+                                       }
+                                       override fun onFailure(errorMessage: String, exception: Exception) 
+                                       {
+                                       //Handle failure 
+                                       }
+                                       }
+)
+```
+
+## Stats
+
+This parameter provides information about all your catalog products with the highest and lowest field values.
+
+```Text Sample
+val searchQuery = SearchQuery.Builder("Shirt").showStatsForField("vPrice").build()  
+client.search(searchQuery, object : ICompletionHandler  
+                                       {
+                                       override fun onSuccess(json: JSONObject, response: Response) 
+                                       {
+                                       //Handle success 
+                                       }
+                                       override fun onFailure(errorMessage: String, exception: Exception) 
+                                       { 
+                                       //Handle failure
+                                       } 
+                                       }
+)
+```
+
+<br />
+
+## Variants
+
+Products in the feed can be available in different sizes, colors, styles, materials, etc. For example, a dress can be available in different sizes, colors and/or styles.
+
+* Variant 1:\
+  Color – Blue,
+  Size: Small,
+  Style – Solid print
+* Variant 2:\
+  Color – Red,
+  Size: Small,
+  Style – Solid print
+* Variant 3:\
+  Color – Blue
+  Size: Large
+  Style – Polka-dot
+
+The variants parameter enables or disables variants in the API response. It can take two values: “true” or “false”. The default value is “false”.
+
+The variants parameter enables or disables variants in the API response. Variants have two values: True or False.
+
+```Text Kotlin
+val variant = Variant(true, 2)  
+val searchQuery = SearchQuery.Builder("Shirt").variant(variant).build()  
+client.search(searchQuery, object : ICompletionHandler  
+                                       {
+                                       override fun onSuccess(json: JSONObject, response: Response) 
+                                       {
+                                       //Handle success 
+                                       }
+                                       override fun onFailure(errorMessage: String, exception: Exception) 
+                                       { 
+                                       //Handle failure
+                                       } 
+                                       }
+)
+```
+```java
+Variant variant = new Variant(true, 20);
+SearchQuery search query = new SearchQuery.Bu
+ilder(shirt).variant(variant).build();
+client.search(searchQuery, new
+CompletionHandler() {
+@Override
+public void onSuccess(@NotNull
+JSONObject json object, @NotNull Response
+response) {
+}
+@Override
+public void onFailure(@NotNull String s,
+@NotNull Exception e) {
+}
+});
+```
