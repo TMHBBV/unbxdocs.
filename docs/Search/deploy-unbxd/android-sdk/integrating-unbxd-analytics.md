@@ -167,7 +167,7 @@ let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
 
 <br />
 
-But if you have integrated category pages using the API call: \[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+But if you have integrated category pages using the API call: \[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
 
 Then categoryQuery will be called as
 
@@ -184,3 +184,26 @@ PageType: It's an enum defined in the SDK. It accepts the following values:
 * TAXONOMY\_NODE
 * ATTRIBUTE
 * BOOLEAN
+
+## Tracking Product Click Event
+
+A ' click ' action is generated whenever a user clicks on a particular product in the search or category page results.
+
+The following code needs to be called along with the appended data as described below:
+
+```
+val userId = client.userId()  
+val productClickAnalytics = ProductClickAnalytics(userId.id, userId.visitType, requestId, "2301609", "Socks", RecommendationType.RecommendedForYou.boxType)  
+client.track(productClickAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
