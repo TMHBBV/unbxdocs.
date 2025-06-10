@@ -150,3 +150,13 @@ client.track(categoryPageAnalytics, object : ICompletionHandler
                                       }
 )
 ```
+
+<br />
+
+Here, `userId.id`: The SDK will generate a randomized unique identifier – UID to each unique user who installs your application, and it will be used to identify the user as a first-time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+
+`userId.visitType`: SDK extracts this information from a ‘visitor’ cookie setup. Its value can be either ‘first-time’ or ‘repeat’.
+
+`requestId`: The unbxd request id returned in the search/category page/recommendations API call response.
+
+`categoryPath`: unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. For instance, if you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=categoryName](https://search.unbxd.io/api-key/site-key/category?p=categoryName) then categoryQuery will be called as
