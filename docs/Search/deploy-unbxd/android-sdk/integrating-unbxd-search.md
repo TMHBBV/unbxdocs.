@@ -812,8 +812,9 @@ Sort can be done on a single field or multiple fields.
 * fieldName: The field on which the sort is applied.
 * sortOrder: The order in which the sort is applied.
 
+This value can be 'ASC'(for ascending) or 'DSC'(for descending)
+
 ```Text Kotlin
-//This value can be 'ASC'(for ascending) or 'DSC'(for descending)
 var fieldsOrder = ArrayList() fieldsOrder.add(FieldSortOrder("vPrice", SortOrder.ASC))  
 val searchQuery = SearchQuery.Builder("Shirt").fieldsSortOrder(fieldsOrder).build() client.search(searchQuery, object : ICompletionHandler  
                                       { 
@@ -828,8 +829,32 @@ val searchQuery = SearchQuery.Builder("Shirt").fieldsSortOrder(fieldsOrder).buil
                                       }
 )
 ```
+
+#### Multiple Fields
+
+When two or more `FieldSortOrder` instances are added:
+
+```
+var fieldsOrder = ArrayList() fieldsOrder.add(FieldSortOrder("vPrice", SortOrder.ASC))  
+fieldsOrder.add(FieldSortOrder("title", SortOrder.DSC))  
+val searchQuery = SearchQuery.Builder("Shirt").fieldsSortOrder(fieldsOrder).build()  
+client.search(searchQuery, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      //Handle success 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      //Handle failure
+                                      } 
+                                      }
+)
+```
+
+#### “ASC” (for ascending)
+
 ```Text Java
-//ASC (for ascending )
 FieldSortOrder[] fieldSortOrder = new
 FieldSortOrder[]{new FieldSortOrder("VPrice",
 Sortorder.ASC)};
@@ -847,5 +872,27 @@ public void onFailure(@NotNull String s,
 
 @NotNull Exception e) {
 }
+});
+```
+
+#### “DSC” (for descending)
+
+```java
+FieldSortOrder[] fieldSortOrder = new
+FieldSortOrder[]{new FieldSortOrder("VPrice",
+SortOrder.ASC), new FieldSortOrder("title",
+SortOrder.DSC)};
+SearchQuery searchQuery = new SearchQuery.Bu
+ilder(shirt).fieldsSortOrder(fieldSortOrder).build();
+client.search(searchQuery, new
+CompletionHandler() {
+@Override
+public void onSuccess(@NotNull
+JSONObject jsonObject, @NotNull Response
+response) {
+}
+@Override
+public void onFailure(@NotNull String s,
+@NotNull Exception e) {
 });
 ```
