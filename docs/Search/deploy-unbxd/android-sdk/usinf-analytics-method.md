@@ -41,6 +41,16 @@ Unbxd Autosuggest comprises different types of suggestions that are known as doc
 
     <tr>
       <td>
+        Top Queries
+      </td>
+
+      <td>
+        This doctype displays the frequently searched queries in your e-commerce store populated with the help of Unbxd Analytics, which keeps a track of your store.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
 
       </td>
 
