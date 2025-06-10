@@ -98,3 +98,33 @@ client.track(visitorAnalytics, object : ICompletionHandler
 > 👍 NOTE
 >
 > All of the above-mentioned tracking is done by the SDK itself and you as an application developer has to do nothing in order to track visitor event. You can retrieve the UID and visit type using the userId method.
+
+## Tracking Search Event
+
+A search event is fired when a shopper types something in the search box and presses enter or clicks on the search button. This will take the user to the search results page.
+
+```
+val userId = client.userId()  
+val searchAnalytics = SearchAnalytics(userId.id, userId.visitType, requestId,  
+"Shirt")
+client.track(searchAnalytics, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+In this example, “Shirt” is the string the shopper types in the search box and presses enter or clicks the search button.
+
+* `userId.visitType`: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* `userId.id`:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* `requestId`: The unbxd request id returned in the search/category page/recommendations api call response.
