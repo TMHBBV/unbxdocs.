@@ -153,3 +153,76 @@ To create a custom algorithm:
      Note: By default, Fallback is enabled. When fallback is disabled, widgets will not display any product recommendations.
 9. Click the Save button. The new custom algorithm will appear in the Manage Algorithms table.\
    You have successfully created a custom algorithm.
+
+## Preview
+
+Specific widgets will require specific information to display recommendation previews.
+
+To preview:
+
+1. Click Manage > Algorithms.
+2. On the Manage Algorithms page, click Custom.
+3. Click the drop-down arrow for the required user-defined algorithm within the Manage Algorithms table.
+4. Click Preview. The Preview Algorithm page appears.
+
+Depending on the widget, type the User ID, Product ID, or Category ID to view product recommendations.
+
+5. Click Preview. To exit, click the X.
+6. The preview gives you a visual snapshot of the algorithm.
+
+## Edit
+
+Unbxd allows you to edit and modify user-defined custom algorithms.
+
+1. Click Manage > Algorithms.
+2. On the Manage Algorithms page, click Custom.
+3. Click the drop-down arrow for the required user-defined algorithm within the Manage Algorithms table.
+4. Click Edit. The Create Custom Algorithm page appears.
+5. To edit the title of the algorithm, type in a name in the title text field.
+6. To edit the algorithm, click the Create an algorithm based on the drop-down box and select the required algorithm.
+7. To create a hybrid, click Create Hybrid. To know how to create a hybrid algorithm, click here.
+8. To choose the number of slots you want to apply the algorithm on, click the Slots drop-down arrow. By default, the algorithm is applied to all 18 slots.
+9. To enable fallbacks, click the Fallback toggle button. You can choose between:
+   * Fallback: Indicates the fallback is based on the algorithm you chose in the Create an algorithm based on field. You can specify the base algorithm you want to use and the number of slots for the widget. To add fallbacks, click Add.
+   * Manual Fallback: Indicates the fallback is manual with a static list of products to display.\
+     Note: By default, Fallback is enabled. When fallback is disabled, widgets will not display any product recommendations.
+10. Click the Save button.
+
+You have successfully edited your custom algorithm.
+
+## Delete
+
+You can delete user-defined custom algorithms.
+
+> 📘 Note
+>
+> Algorithms once deleted cannot be retrieved.
+
+To Delete
+
+1. Click Manage > Algorithms.
+2. On the Manage Algorithms page, click Custom.
+3. Click the drop-down arrow for the required user-defined algorithm within the Manage Algorithms table. Click Delete.
+4. Click Yes, Delete.
+
+You have successfully deleted your custom algorithm.
+
+## Duplicate
+
+To duplicate:
+
+1. Click Manage > Algorithms.
+2. On the Manage Algorithms page, click Custom.
+3. Click the drop-down arrow for the required custom algorithm within the Manage Algorithms table.
+4. Click Duplicate. The Create Custom Algorithm page appears.To edit the title of the algorithm, type in a name in the title text field.
+5. To edit the algorithm, click the Create an algorithm based on the drop-down box and select the required algorithm.
+6. To create a hybrid, click Create Hybrid. To know how to create a hybrid algorithm, click here.
+7. To choose the number of slots you want to apply the algorithm on, click the Slots drop-down arrow. By default, the algorithm is applied to all 18 slots.
+8. To enable fallbacks, click the Fallback toggle button. You can choose between:
+   * Fallback: Indicates the fallback is based on the algorithm you chose in the Create an algorithm based on field. You can specify the base algorithm you want to use and the number of slots for the widget. To add fallbacks, click Add.
+   * Manual Fallback: Indicates the fallback is manual with a static list of products to display.
+   > 📘 Note:
+   >
+   > By default, Fallback is enabled. When fallback is disabled, widgets will not display any product recommendations.
+9. Click the Save button.\
+   You have successfully duplicated a custom algorithm.
