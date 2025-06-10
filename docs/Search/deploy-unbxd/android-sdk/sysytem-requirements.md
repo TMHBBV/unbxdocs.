@@ -1,5 +1,5 @@
 ---
-title: Sysytem Requirements
+title: System Requirements
 deprecated: false
 hidden: false
 metadata:
