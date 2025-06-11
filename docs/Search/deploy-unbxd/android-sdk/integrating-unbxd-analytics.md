@@ -167,7 +167,7 @@ let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
 
 <br />
 
-But if you have integrated category pages using the API call: \[\[\[\[\[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+But if you have integrated category pages using the API call: \[\[\[\[\[\[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
 
 Then categoryQuery will be called as
 
@@ -311,3 +311,33 @@ client.track(productDisplayAnalytics, object : ICompletionHandler
 * **userId.visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
 * **requestId**: The unbxd request id returned in the search/category page/recommendations api call response.
 * **pid**: SKU id of the product. For example “2034” in the above code.
+
+## Tracking Cart Removals
+
+A cart removal event is fired when a shopper removes an item from the cart.
+
+```
+val userId = client.userId() &#x20;
+val cartRemovalAnalytics = CartRemovalAnalytics(userId.id, userId.visitType, requestId, "2034", "231221", 2) &#x20;
+client.track(cartRemovalAnalytics, object : ICompletionHandler &#x20;
+&#x20;                                     \{  &#x20;
+&#x20;                                     override fun onSuccess(json: JSONObject, response: Response)&#x20;
+&#x20;                                     \{
+&#x20;                                     Log.d("Client Response",json.toString())&#x20;
+&#x20;                                     }
+&#x20;                                     override fun onFailure(errorMessage: String, exception: Exception)&#x20;
+&#x20;                                     \{&#x20;
+&#x20;                                     Log.d("Client Response",errorMessage)
+&#x20;                                     }&#x20;
+&#x20;                                     }
+)
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+```
+
+<br />
+
+* **userId.visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations api call response.
+* **pid**: SKU id of the product. For Example “2034” in the above code.
+* **variantId**: Id of the variant being removed. For example “231221” in the above code.
+* **qty**: Quantity of the product removed. For example “2” in the above code.
