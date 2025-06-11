@@ -167,7 +167,7 @@ let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
 
 <br />
 
-But if you have integrated category pages using the API call: \[\[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+But if you have integrated category pages using the API call: \[\[\[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
 
 Then categoryQuery will be called as
 
@@ -229,3 +229,24 @@ Possible Values are
 | Category Top Sellers | CATEGORY\_\_TOP\_\_SELLERS |
 | PDP Top Sellers      | PDP\_\_TOP\_\_SELLERS      |
 | Brand Top Sellers    | BRAND\_\_TOP\_\_SELLERS    |
+
+## Tracking Add to Cart Clicks
+
+An Add to Cart click event is fired every time shopper adds an item to cart.
+
+```
+val userId = client.userId()  
+val addToCartAnalytics = ProductAddToCartAnalytics(userId.id, userId.visitType, requestId, "2301609", "231221", 2)  
+client.track(addToCartAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+override fun onFailure(errorMessage: String, exception: Exception)  
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
