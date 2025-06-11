@@ -167,7 +167,7 @@ let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
 
 <br />
 
-But if you have integrated category pages using the API call: \[\[\[\[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+But if you have integrated category pages using the API call: \[\[\[\[\[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
 
 Then categoryQuery will be called as
 
@@ -257,3 +257,57 @@ override fun onFailure(errorMessage: String, exception: Exception)
 * `PID`: SKU id of the product. For example, “2301609” in the above code.
 * `variantId`: Id of the variant being added. For example, “231221” in the above code.
 * `quantity`: Quantity of the product added to the checkout bag. For example, “2” in the above code.
+
+## Tracking Order Event
+
+A product order event is fired upon order completion after the shopper returns to a product page from the payment gateway.
+
+```
+val userId = client.userId()  
+val orderAnalytics = ProductOrderAnalytics(userId.id, userId.visitType, requestId, "2301609", 20.5, 2)  
+client.track(orderAnalytics, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+Log.d("Client Response",json.toString())  
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+* **userId.id**:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **userId.visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **pid**: SKU id of the product. For example “2301609” in the above code.
+* **Price**: Order Payment of the product paid by the customer. For example “20.5” in the above code.
+* **qty**: Quantity of the product bought. For example “2” in the above code.
+
+## Tracking Product Display Page Views
+
+A product display page view event is fired every time a shopper visits a Product Display Page (PDP).
+
+```
+val userId = client.userId()  
+val productDisplayAnalytics = ProductDisplayPageViewAnalytics(userId.id, userId.visitType, requestId, "2034")  
+client.track(productDisplayAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+* **userId.id**:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **userId.visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations api call response.
+* **pid**: SKU id of the product. For example “2034” in the above code.
