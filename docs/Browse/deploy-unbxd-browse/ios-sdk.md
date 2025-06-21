@@ -1680,17 +1680,3 @@ Please find the link to sample iOS App:
 
 - **Fashion vertical**: [https://github.com/unbxd/FashionApp](https://github.com/unbxd/FashionApp)
 - **Home Decor App**: [https://github.com/unbxd/HomeDecorApp](https://github.com/unbxd/HomeDecorApp)
-
-## Feedback
-
-Did this answer your question?
-
-- **Yes!**  
-  Nice work, I love it.
-
-- **No…**  
-  I have some feedback
-
-## Copyright
-
-Copyright 2020 © Unbxd Inc, All Rights Reserved. [Privacy Policy](https://unbxd.com/privacy-policy)
