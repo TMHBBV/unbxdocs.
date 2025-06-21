@@ -592,7 +592,7 @@ The aforementioned table provided as with the default values of the request para
 * **p**: Identifier of the page being requested as Names. It is an optional parameter and has the following form.
 
   p=fieldname:”fieldvalue”: Page rules in the console should be created as this)\
-  p=\<value> (Field name is not specified): Page rules in console should be created with the name  \<value> . By using categoryPath as the default field.\
+  p=\<value> (Field name is not specified): Page rules in console should be created with the name  \<value> . By using categoryPath as the default field.
   For category page, fieldname is “categoryPath” and fieldvalue is the corresponding category path comprised of category names. Example, p=categoryPath:”Jewelery>Necklaces>Beaded Necklaces”. For any other page, fieldname is corresponding field as passed in the feed and fieldvalue is the corresponding value. Example, p=Brand:”Nike”, p=Events:”40 Years of Innovation”
 
 ```Text Sample request
@@ -1124,3 +1124,269 @@ http://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd70018150884676
 > 📘 NOTE
 >
 > When multiple sort parameters are applied, the products will be sorted based on the first criteria passed in the request. Only in the case when multiple products have the same value for the first criteria, then the latter sorting criteria will be applied within those products.
+
+***
+
+# Facets
+
+Faceting helps your shoppers narrow down search results by selecting filter values as needed. Every time a user clicks a facet value, the set of results is reduced to only the items that have that value. Additional clicks continue to narrow down the search—the previous facet values are remembered and applied again.
+
+Facets can be easily configured from the Manage -> Configure Search -> Configure Facet section of the Console.
+
+### Sample Request
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&facet=false&version=V2
+```
+
+### Sample Response
+
+```json
+{
+    "facets": {
+        "multilevel": {
+            "list": [{
+                "filterField": "productType",
+                "level": 2,
+                "id": "100",
+                "displayName": "Product Type",
+                "position": 1,
+                "values": [{
+                        "id": "HO001",
+                        "name": "Decor",
+                        "count": 15
+                    },
+                    {
+                        "id": "Ho002",
+                        "name": "Outdoors",
+                        "count": 16
+                    }
+                ],
+                "breadcrumb": {
+                    "filterField": "productType",
+                    "values": [{
+                        "id": "HO",
+                        "name": "Home"
+                    }],
+                    "level": 1
+                }
+            }]
+        },
+        "range": {
+            "list": []
+        },
+        "text": {
+            "list": []
+        }
+    }
+}
+```
+
+Here, when a search API is fired, “facet” is received in response.
+
+Facet response contains different types of facets (for example, Categories, Brand , Color, Price etc..) that are configured by client with respective values and count of those values. For example, if Brand is configured for faceting, response will look like:
+
+```json
+{
+  "facets": {
+    "text": {
+      "list": [
+        {
+          "facetName": "brand_uFilter",
+          "filterField": "brand_uFilter",
+          "values": [
+            "Samsung",
+            663
+          ],
+          "displayName": "brand",
+          "position": 3
+        }
+      ]
+    }
+  }
+}
+```
+
+Response contains Facet Name: Brand, Value: Samsung and Count of products with filter Samsung = 663.
+
+***
+
+# Common Features across all Facets
+
+## 1. MultiSelect Facet
+
+Multi-select facet is the option to enable or disable the customers to select more than one facet at a time for a query.
+
+### Sample Request
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/search?&q=mobile&filter=categoryPath"Mobiles & Tablets"&filter=brand_uFilter:"Apple"&filter=product_min_price:[35000 TO 37500]&version=V2&facet.multiselect=true
+```
+
+### Response
+
+```json
+{
+  "facets": {
+    "multilevel": {},
+    "range": {
+      "list": [
+        {
+          "facetName": "product_min_price",
+          "values": {
+            "counts": [
+              "35000.0",
+              1,
+              "37500.0",
+              3,
+              "40000.0",
+              5
+            ],
+            "gap": 2500,
+            "start": 0,
+            "end": 2635000
+          },
+          "displayName": "price",
+          "position": 1
+        }
+      ]
+    },
+    "text": {
+      "list": [
+        {
+          "facetName": "brand_uFilter",
+          "filterField": "brand_uFilter",
+          "values": [
+            "Apple",
+            1,
+            "LG",
+            4,
+            "Samsung",
+            9,
+            "Sony Xperia",
+            3
+          ],
+          "displayName": "brand",
+          "position": 3
+        }
+      ]
+    }
+  }
+}
+```
+
+## 2. SelectedFacet
+
+This displays the values of a single selected facet or multiple selected facets. If you select the facet ‘brand’ then the values ‘Apple’, ‘Samsung’, and so are displayed.
+
+### Sample Request
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&filter-id=76678:5001&selectedfacet=true&version=V2
+```
+
+### Response
+
+```json
+{
+    "selected": [
+        {
+            "facetName": "u_5110_unbxdMap",
+            "displayName": "Color",
+            "values": [
+                "5335"
+            ],
+            "id": "5110",
+            "position": 785,
+            "filterField": "ShopbyColor_uFilter"
+        },
+        {
+            "facetName": "u_2707_unbxdMap",
+            "displayName": "Price",
+            "values": [
+                "6666"
+            ],
+            "id": "2707",
+            "position": 784,
+            "filterField": "ShopbyPrice_uFilter"
+        }
+    ]
+}
+```
+
+***
+
+# Multilevel Facet
+
+You can build a hierarchy in your facet values to enable multi-level navigation and filtering. This pattern is great for very long lists of values and to improve discoverability: your users will be able to browse up and down in the levels to refine their searches.
+
+### Property Descriptions
+
+| Property    | Description                                                                 |
+| ----------- | --------------------------------------------------------------------------- |
+| multilevel  | Hierarchical facets configured on the hierarchical field(s).                |
+| list        | Array of hierarchical facets as configured on the hierarchical fields.      |
+| values      | All the unique values for the sub categories available for query and count. |
+| level       | Depth of multilevel field                                                   |
+| filterField | Field on which hierarchical facet is created                                |
+| breadcrumb  | Position within the hierarchical field where the results appear             |
+
+The `facet.multilevel` parameter is used to enable multi-level facets in the API response. It takes a fixed value `categoryPath` if you want multi-level facets in the response. If not passed, multi-level facets will not appear in the response.
+
+### Sample Request
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&facet.multilevel=categoryPath&version=V2
+```
+
+### Response
+
+```json
+{
+"searchMetaData": {...},
+"response": {...},
+"facets":
+ {
+    "multilevel": {
+        "list": [{
+                "filterField": "productType",
+                "level": 1,
+                "id": "100",
+                "displayName": "Product Type",
+                "position": 1,
+                "values": [{
+                        "id": "HO",
+                        "name": "Home",
+                        "count": 31
+                    },
+                    {
+                        "id": "J",
+                        "name": "Jewelry",
+                        "count": 22
+                    }
+                ],
+                "breadcrumb": {}
+            },
+            {
+                "filterField": "theme",
+                "level": 1,
+                "id": "200",
+                "displayName": "Theme",
+                "position": 2,
+                "values": [{
+                        "id": "12",
+                        "name": "Animals",
+                        "count": 34
+                    },
+                    {
+                        "id": "13",
+                        "name": "Birds",
+                        "count": 21
+                    }
+                ],
+                "breadcrumb": {}
+            }
+        ]
+    }
+}
+```
