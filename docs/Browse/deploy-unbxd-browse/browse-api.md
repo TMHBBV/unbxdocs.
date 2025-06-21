@@ -591,8 +591,8 @@ The aforementioned table provided as with the default values of the request para
 * **p-id**: Identifier of the page being requested as IDs. It is an optional parameter and has the following form p-id=field-id:value-id. For category page, field-id is “categoryPathId” and value-id is the corresponding category path comprised of category IDs. Example, p-id=categoryPathId:”J>J00157>J00158”. For any other page, field-id is corresponding field ID as passed in the feed and value-id is the corresponding value ID. Example, p-id=1:9357, p-id=12224:18010.
 * **p**: Identifier of the page being requested as Names. It is an optional parameter and has the following form.
 
-  p=fieldname:”fieldvalue”: Page rules in the console should be created as this) &#x20;
-  p=\<value> (Field name is not specified): Page rules in console should be created with the name  \<value> . By using categoryPath as the default field.
+  p=fieldname:”fieldvalue”: Page rules in the console should be created as this)\
+  p=\<value> (Field name is not specified): Page rules in console should be created with the name  \<value> . By using categoryPath as the default field.\
   For category page, fieldname is “categoryPath” and fieldvalue is the corresponding category path comprised of category names. Example, p=categoryPath:”Jewelery>Necklaces>Beaded Necklaces”. For any other page, fieldname is corresponding field as passed in the feed and fieldvalue is the corresponding value. Example, p=Brand:”Nike”, p=Events:”40 Years of Innovation”
 
 ```Text Sample request
@@ -649,3 +649,478 @@ https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd7001815088467
 > The pagetype is a mandatory parameter and has the value “boolean”.
 >
 > NOTE: The values passed in the API should be encoded, when required, for correct interpretation.
+
+# Format
+
+The format parameter specifies the format in which the response result will be generated. Possible values are ‘JSON’ or ‘XML’. It is an optional parameter and the default value is ‘JSON’.
+
+### Sample request to get JSON response
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&format=json&version=V2
+```
+
+### Sample JSON Response
+
+```json
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 27,
+        "queryParams": {
+            "log.response": "false",
+            "original.q": "shoes",
+            "module.exclude": "personalization",
+            "format": "json",
+            "alternate.op": "true",
+            "req.rm.asterix": "true",
+            "q.op": "AND",
+            "version": "V2",
+            "enableTaxonomy": "false",
+            "q": "shoes",
+            "req.rm.promotionEngine": "true",
+            "user.behaviour": "true",
+            "enablePopularity": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 0,
+        "start": 0,
+        "products": []
+    }
+}
+```
+
+### Sample request to get XML response
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&format=xml&version=V2
+```
+
+### XML Response
+
+```xml
+<?xml version="1.0" encoding="UTF-8”?>
+<response>
+    <lst name="searchMetaData">
+        <int name="status">0</int>
+        <long name="queryTime">26</long>
+        <lst name="queryParams">
+            <str name=“log.response”>false</str>
+           <str name=“original.q”>shoes</str>
+            <str name=“module.exclude”>personalization</str>
+            <str name=“format”>xml</str>
+            <str name=“alternate.op”>true</str>
+            <str name=“req.rm.asterix”>true</str>
+            <str name=“q.op”>AND</str>
+            <str name=“version”>V2</str>
+            <str name=“enableTaxonomy”>false</str>
+            <str name=“q”>shoes</str>
+            <str name=“req.rm.promotionEngine”>true</str>
+            <str name=“user.behaviour”>true</str>
+            <str name=“enablePopularity”>true</str>
+        </lst>
+    </lst>
+    <result name="response" numberOfProducts="0" start="0">
+</result>
+    <lst name="facets"/>
+</response>
+```
+
+# Fields
+
+Defines attributes for a product like color, size etc. Fields parameter is used to specify the set of fields to be returned. The set of fields to be returned can be specified as a comma-separated list of field names. When returning the results, only fields in the list will be included. It is an optional parameter; however, it is recommended to pass only the fields required in the response to reduce the response size and latency.
+
+### Sample request
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&fields=product_name&version=V2
+```
+
+### Response
+
+```json
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 20,
+        "queryParams": {
+            "log.response": "false",
+            "original.q": "*",
+            "module.exclude": "personalization",
+            "alternate.op": "true",
+            "req.rm.asterix": "true",
+            "q.op": "AND",
+            "version": "V2",
+            "enableTaxonomy": "false",
+            "q": "*",
+            "req.rm.promotionEngine": "true",
+            "user.behaviour": "true",
+            "fields": "title,vPrice",
+            "enablePopularity": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 7,
+        "start": 0,
+        "products": [
+            {
+                "vPrice": [
+                    150.0
+                ],
+                "uniqueId": "parent-id-2_child-5",
+                "title": "Oxford Formal Shoes"
+            },
+            {
+                "vPrice": [
+                    150.0
+                ],
+                "uniqueId": "parent-id-2_child-4",
+                "title": "Oxford Formal Shoes"
+            },
+            {
+                "uniqueId": "parent-id-2",
+                "title": "Oxford Formal Shoes"
+            },
+            {
+                "vPrice": [
+                    50.0
+                ],
+                "uniqueId": "parent-id-1_child-3",
+                "title": "Ralph Lauren formal shirt"
+            },
+            {
+                "vPrice": [
+                    45.0
+                ],
+                "uniqueId": "parent-id-1_child-2",
+                "title": "Ralph Lauren formal shirt"
+            },
+            {
+                "vPrice": [
+                    50.0
+                ],
+                "uniqueId": "parent-id-1_child-1",
+                "title": "Ralph Lauren formal shirt"
+            },
+            {
+                "uniqueId": "parent-id-1",
+                "title": "Ralph Lauren formal shirt"
+            }
+        ]
+    }
+}
+```
+
+# Banners
+
+Banners can be easily configured from your dashboard during campaign creation. Once you have correctly configured your banner, the category page API call will return the banner information as a part of the catalog-based response.
+
+This feature can be disabled from the HTTP request using the ‘banner’ parameter. The default value of this parameter would be true.
+
+### Sample request
+
+```
+http://search.unbxd.io///category?p=&pagetype=boolean&banner=false&version=V2
+```
+
+### Response for ‘Hosted Banners’
+
+```json
+{
+    "banner": {
+        "banners": [{
+            "imageUrl": "value",
+            "landingUrl": "value",
+            "bannerHtml": null
+        }]
+    }
+}
+```
+
+### Response for ‘Custom Banners’
+
+```json
+{
+    "banner": {
+        "banners": [{
+            "imageUrl": null,
+            "landingUrl": null,
+            "bannerHtml": "value "
+        }]
+    }
+}
+```
+
+```json
+{
+    "banner": {
+        "banners": [{
+            "imageUrl": null,
+            "landingUrl": null,
+            "bannerHtml": "value "
+        }]
+    }
+}
+```
+
+**imageUrl**: The URL of the hosted banner image.\
+**landingUrl**: The URL of the page your visitors arrives after clicking the banner.
+**bannerHtml**: The URL of the custom (HTML) banner image.
+
+**NOTE**: The value of the response parameters will change to "null" according to the type of banner configuration.
+
+For example, a visitor searched a query, the banner response below will help you set up a hosted banner in your eCommerce site:
+
+### Response for ‘Hosted Banners’
+
+```json
+{
+    "banner": {
+        "banners": [{
+            "imageUrl":"http://www.myecommercewebsite.com/images/iphone-cases-banner.jpg",
+            "landingUrl":"http://www.myecommercewebsite.com/search?q=iphone%20cases",
+            "bannerHtml": null
+        }]
+    }
+}
+```
+
+***
+
+# Analytics
+
+The analytics parameter enables or disables tracking the query hit for analytics. By default, tracking is enabled. To disable tracking, set value to false.
+
+### Sample request
+
+```
+http://search.unbxd.io/<api-key>/<site-key>/category?p=<page>&pagetype=boolean&analytics=false&version=V2
+```
+
+### Response
+
+```json
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 727,
+        "queryParams": {
+            "analytics": "false",
+            "q": "shirts",
+            "removeSpecialCharacters": "true",
+            "escapeSpecialCharacters": "true",
+            "boost": "sum(1,popularity(uniqueId))",
+            "type": "interpreter",
+            "version": "V2",
+            "personalization.recentlyViewed": "true",
+            "queryTrimmer": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 1101,
+        "start": 0,
+        "products": [
+            {
+                "uniqueId": "5315b8565e4016e5737bef50",
+                "category": [
+                    "Sport Shirts"
+                ],
+                "category_fq": [
+                    "Sport Shirts"
+                ],
+                "test_fq": [
+                    "Sport Shirts"
+                ],
+                "productDescription": "Button-down point collar. Applied buttoned placket.Long sleeves with barrel cuffs. Curved hem.Split back yoke for smooth, contoured shoulders. Our signature embroidered pony accents the left chest. 100% cotton. Machine washable. Imported.",
+                "title": "Custom-Fit Tattersall Shirt",
+                "url": "http://www.ralphlauren.com/product/index.jsp?productId=23840006",
+                "gender": "men",
+                "imageUrl": [
+                    "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg"
+                ],
+                "brand": "Ralph Lauren",
+                "brand_fq": "Ralph Lauren",
+                "test2_fq": "Ralph Lauren",
+                "taxID": "11",
+                "image_link": "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg",
+                "color": [
+                    "Blue/Navy"
+                ],
+                "color_fq": [
+                    "Blue/Navy"
+                ],
+                "catlevel1Name": "Sport Shirts",
+                "pname": "Custom-Fit Tattersall Shirt",
+                "price": 89.5,
+                "price_fq": 89.5,
+                "id": "product-23840006"
+            }
+         ]
+    }
+}
+```
+
+# Stats
+
+Gives information about the products with highest and lowest field value. Applicable only on fields with numeric or decimal values.
+
+To apply stats on the price field make the below API call:
+
+### Sample request
+
+```
+http://search.unbxd.io/<api-key>/<site-key>/category?p=<page>&pagetype=boolean&stats=price&version=V2
+```
+
+### Response
+
+```json
+{
+    "searchMetaData": {
+        "status": 0,
+        "queryTime": 726,
+        "queryParams": {
+            "q": "shirts",
+            "removeSpecialCharacters": "true",
+            "escapeSpecialCharacters": "true",
+            "stats": "price",
+            "boost": "sum(1,popularity(uniqueId))",
+            "type": "interpreter",
+            "version": "V2",
+            "personalization.recentlyViewed": "true",
+            "queryTrimmer": "true"
+        }
+    },
+    "response": {
+        "numberOfProducts": 1101,
+        "start": 0,
+        "products": [
+            {
+                "uniqueId": "5315b8565e4016e5737bef50",
+                "category": [
+                    "Sport Shirts"
+                ],
+                "category_fq": [
+                    "Sport Shirts"
+                ],
+                "test_fq": [
+                    "Sport Shirts"
+                ],
+                "productDescription": "Button-down point collar. Applied buttoned placket.Long sleeves with barrel cuffs. Curved hem.Split back yoke for smooth, contoured shoulders. Our signature embroidered pony accents the left chest. 100% cotton. Machine washable. Imported.",
+                "title": "Custom-Fit Tattersall Shirt",
+                "url": "http://www.ralphlauren.com/product/index.jsp?productId=23840006",
+                "gender": "men",
+                "imageUrl": [
+                    "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg"
+                ],
+                "brand": "Ralph Lauren",
+                "brand_fq": "Ralph Lauren",
+                "test2_fq": "Ralph Lauren",
+                "taxID": "11",
+                "image_link": "http://www.ralphlauren.com/graphics/product_images/pPOLO2-16755537_standard_t240.jpg",
+                "color": [
+                    "Blue/Navy"
+                ],
+                "color_fq": [
+                    "Blue/Navy"
+                ],
+                "catlevel1Name": "Sport Shirts",
+                "pname": "Custom-Fit Tattersall Shirt",
+                "price": 89.5,
+                "price_fq": 89.5,
+                "id": "product-23840006"
+            }
+         ]
+    }
+}
+```
+
+***
+
+# Pagination
+
+To get the paginated response in the search API, specify the value of the parameter “start”, and “rows”. The “start” parameter defines the position of the product in the response. The “rows” attribute defines the number of products required per API call.
+
+E.g. for the first page of results, the start=0 and rows=20
+
+For the next page of results, the start= 20 and rows=20.
+
+## start
+
+It indicates offset in the complete result set of the products.
+
+### Sample Request
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&start=40&version=V2
+```
+
+This request will fetch all the results starting with the offset 5 for the result set of the query red.
+
+## rows
+
+The row parameter is used to paginate the results of listing in a category page. It indicates number of products in a single page. It is an optional parameter and the default value is 10, maximum value is 100.
+
+### Sample Request
+
+```
+https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&rows=20&version=V2
+```
+
+> 📘 NOTE
+>
+> If the products are not required in the response, the parameter needs to be set to 0.
+
+***
+
+# Sorting
+
+The sort parameter is used to rank the products based on specified fields in the specified order. It is an optional parameter. If not passed, products would be returned ordered on Unbxd relevancy algorithm.
+
+## Sorting on Single Field
+
+You can sort your search API results using a sort function as shown below:
+
+E.g. for the first page of results, the start=0 and rows=20
+
+For the next page of results, the start= 20 and rows=20.
+
+### Sample Request
+
+```
+http://search.unbxd.io/<api-key>/<site-key>/category?p=<page>&version=V2&sort=fieldname sort_order
+```
+
+* **fieldname**: The field on which the sort is applied.
+* **sort\_order**: The order in which the sort is applied. This value can be “asc” (for ascending) or “desc” (for descending)
+
+For example, a visitor wants to sort results on price in ascending order, the API call below is made:
+
+### Sample Request
+
+```
+http://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&sort=price%20asc&version=V2
+```
+
+**NOTE**: There is a space between the field name and the sort\_order in the API call.
+
+## Sorting on Multiple Fields
+
+To apply multiple sort rules, you need to make an API call as shown below:
+
+### Sample Request
+
+```
+http://search.unbxd.io///category?p=&verison=V2&sort=field1 sort_order,field2 sort_order,field3 sort_order
+```
+
+For example, to show results sorted on price and title the API call below is made:
+
+```
+http://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd700181508846765/category?p=categoryPath:%22Fashion%22&pagetype=boolean&sort=price%20asc&sort=title%20desc&version=V2
+```
+
+> 📘 NOTE
+>
+> When multiple sort parameters are applied, the products will be sorted based on the first criteria passed in the request. Only in the case when multiple products have the same value for the first criteria, then the latter sorting criteria will be applied within those products.
