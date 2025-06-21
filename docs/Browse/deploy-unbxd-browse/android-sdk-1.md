@@ -1146,3 +1146,7 @@ client.recommend(completeTheLookRecommendation, object : ICompletionHandler {
     }
 })
 ```
+
+# Sample iOS App
+
+For sample app, click the link below: [Android Home Decor](https://github.com/unbxd/AndroidHomeDecor-/%22).
