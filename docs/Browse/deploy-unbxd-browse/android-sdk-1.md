@@ -977,8 +977,172 @@ val facet = FacetAnalytics(userId.id, userId.visitType, requestId, "Shirts", Nam
 client.track(facet, object : ICompletionHandler { ... })
 ```
 
-<br />
+### Integrating Unbxd Recommendations
 
-# Integrating Unbxd Browse (Overview)
+Unbxd Recommendations offers a wide range of widgets tailored for different pages. The Recommendations API returns product suggestions such as More Like This, Recently Viewed, and others.
 
-The SDK also provides full support for Browse functionality — powering category, brand, and attribute pages.
+#### Supported Recommendation Widgets:
+
+* Recommended For You
+* Recently Viewed
+* More Like This
+* Viewed also Viewed
+* Bought also Bought
+* Cart Recommendations
+* Top Sellers (Home, Category, Product, Brand)
+* Complete the Look
+
+#### Recommended For You
+
+```kotlin
+val userId = client.userId()
+val recommendedForYou = RecommendedForYourRecommendation.Builder(userId.id).region("US").currency("USD").build()
+client.recommend(recommendedForYou, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Recently Viewed
+
+```kotlin
+val recentlyViewedRecommendation = RecentlyViewedRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
+client.recommend(recentlyViewedRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### More Like This
+
+```kotlin
+val moreLikeThisRecommendation = MoreLikeThisRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
+client.recommend(moreLikeThisRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Viewed also Viewed
+
+```kotlin
+val viewedAlsoViewedRecommendation = ViewedAlsoViewedRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
+client.recommend(viewedAlsoViewedRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Bought also Bought
+
+```kotlin
+val boughtAlsoBoughtRecommendation = BoughtAlsoBoughtRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
+client.recommend(boughtAlsoBoughtRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Cart Recommendations
+
+```kotlin
+val cartRecommendation = CartRecommendation.Builder(userId.id).region("US").currency("USD").build()
+client.recommend(cartRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Top Sellers – Home Page
+
+```kotlin
+val homePageTopSellersRecommendation = HomePageTopSellersRecommendation.Builder(userId.id).region("US").currency("USD").build()
+client.recommend(homePageTopSellersRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Top Sellers – Category Page
+
+```kotlin
+val categoryTopSellersRecommendation = CategoryTopSellersRecommendation.Builder(userId.id).region("US").currency("USD").build()
+client.recommend(categoryTopSellersRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Top Sellers – Product Page
+
+```kotlin
+val pdpTopSellersRecommendation = PDPTopSellersRecommendation.Builder(userId.id, "23121").region("US").currency("USD").build()
+client.recommend(pdpTopSellersRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Top Sellers – Brand
+
+```kotlin
+val brandTopSellersRecommendation = BrandTopSellersRecommendation.Builder(userId.id, "Nike").region("US").currency("USD").build()
+client.recommend(brandTopSellersRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
+
+#### Complete the Look
+
+```kotlin
+val completeTheLookRecommendation = CompleteTheLookRecommendation.Builder(userId.id, "23121").region("US").currency("USD").build()
+client.recommend(completeTheLookRecommendation, object : ICompletionHandler {
+    override fun onSuccess(json: JSONObject, response: Response) {
+        Log.d("Client Response", json.toString())
+    }
+    override fun onFailure(errorMessage: String, exception: Exception) {
+        Log.d("Client Response", errorMessage)
+    }
+})
+```
