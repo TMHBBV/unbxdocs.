@@ -11,7 +11,7 @@ In an age where search engines like Google can generate vast information about a
 
 # About UNBXD
 
-Unbxd was founded in 2011 by Pavan Sondur and Prashant Kumar to revolutionize e-commerce product discovery with AI-powered search and recommendations. In its growth phase (2015–2018), it expanded globally, secured major clients, and enhanced its platform with deep learning and personalization tools. In 2021, Unbxd was acquired by Netcore Cloud, to combine Unbxd’s capabilities with Netcore’s customer engagement tools. This acquisition offers a complete solution for all your online shopping experiences.
+Unbxd was founded in 2011 and it expanded globally, secured major clients, and enhanced its platform with deep learning and personalization tools. In 2021, Unbxd was acquired by Netcore Cloud, to combine Unbxd’s capabilities with Netcore’s customer engagement tools. This acquisition offers a complete solution for all your online shopping experiences.
 
 Unbxd is used by more than 1,300 e-commerce sites in over 40 countries, including brands like Ashley HomeStore, Express, and HSN. Unbxd powers over 8 billion interactions each month and supports $8 billion in online revenue.
 
