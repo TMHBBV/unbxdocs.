@@ -35,21 +35,17 @@ Refer to the given table to know how Unbxd stands out for your traditional or ge
 
 Netcore Unbxd offers a set of AI-driven tools for every stage of the product discovery process. From intelligent search to personalized recommendations, these features help you create engaging and high-converting e-commerce experiences.
 
-## Search
+## Search & Browse
 
-Optimize shopping across devices with AI-powered Search featuring autocomplete, dynamic ranking, and personalized relevance. Build over a hundred personalized product discovery experiences using APIs, SDKs, and platform plug-ins.
+Optimize shopping across devices with AI-powered Search & Browse. Automatically reorder and rank products based on real-time data and user intent, optimizing for higher conversion rates.  Enable visual search and chat-based product discovery experiences using APIs, SDKs, and platform plug-ins.
 
 ## Recommendations
 
-Show personalized product recommendations and smart upsells or cross-sells based on shopper behavior, preferences, and purchase history. Use customizable widgets to place these suggestions across key touchpoints like homepages, product pages, and checkout flows to boost AOV and sales.
+Show personalized product recommendations based on shopper behavior, preferences, and purchase history. Use customizable widgets to place these suggestions across key touchpoints like homepages, product pages, and checkout flows to boost sales.
 
 ## Analytics
 
 Get real-time analytics to understand shopper behavior, product performance, and engagement trends. Use reports and performance metrics to make strategic decisions and enhance the shopping experience.
-
-## APIs & SDKs
-
-Use Netcore Unbxd’s APIs, SDKs, and easy-to-implement plug-ins to activate powerful features on top of existing e-commerce platforms and stores.
 
 # How Unbxd Delivers Value Across Roles
 
