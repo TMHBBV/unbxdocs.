@@ -21,6 +21,8 @@ Unbxd also includes a **Product Information Management** (**PIM**) system that f
 
 # What Makes UNBXD Different
 
+Refer to the given table to know how Unbxd stands out for your traditional or generic search platforms.
+
 | Traditional Search          | UNBXD Intelligent Search      |
 | :-------------------------- | :---------------------------- |
 | Shows exact keyword matches | Understands customer intent   |
