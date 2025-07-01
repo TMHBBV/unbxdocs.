@@ -1,6 +1,6 @@
 ---
 title: Netcore Unbxd Brand Info
-excerpt: do not delete this file
+excerpt: do not delete this file(created by Gargi)
 deprecated: false
 hidden: true
 metadata:
