@@ -42,7 +42,8 @@ Variables – Variables are values used in triggers and tags to filter when a sp
 
 DataLayer – The dataLayer is a JSON that contains name value pairs of data points you wish to pass from your website into GTM. (And GTM can then, in turn, pass on to any tags that are managed in GTM, including Unbxd tags.)
 
-Requirements for Unbxd tracking through GTM\
+## Requirements for Unbxd tracking through GTM
+
 Unbxd analytics scripts need to be loaded across all the pages. We require a tag which will need to be loaded on all the pages. Below is the required code block for Unbxd analytics script. This should be loaded before other Unbxd tracking scripts and is mandatory to be added on all pages.
 
 ```
@@ -386,6 +387,360 @@ Push payload to Datalayer
          'pid': 'PRODUCT ID',
          'variantId': 'VARIANT ID OF SELECTED VARIANT'
        }
+     });
+</script>
+```
+
+Parameter Details:
+
+| **Attribute Name** | **Datatype** | **What value to be passed**                                                                                            |
+| ------------------ | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `requestId`        | String       | To be extracted from the Unbxd search API response headers, from `unx-request-id`.                                     |
+| `pid`              | String       | Unique ID for the product.                                                                                             |
+| `variantId`        | String       | VariantId of the selected product variant, if `relevantDocumentType="variant"`, in the search API response, or `null`. |
+
+Events Flow will be:
+
+As soon as the ‘Productview\` event got pushed to the dataLayer.\
+This initiates the trigger UnbxdProductViewTrigger which we created in the step-1.
+UnbxdProductViewTrigger executes the tag UnbxdProductViewTag: which we created in step-3.
+Inside UnbxdProductViewTrigger we have added an Unbxd analytics product view tag.
+Product view tracker code gets the data from the variable UnbxdProductViewPayload which we created in step-2.
+Finally, UnbxdProductViewTrigger event data will be updated in the Unbxd analytics database for the particular siteKey.
+Add to Cart
+Tracking products added to the cart help us further improve product ranks for a search query.
+
+1. Create Trigger in GTM to catch the uniqueId of product on product add to cart.
+
+Trigger Configuration:
+
+Trigger Name: UnbxdProductAddToCartTrigger
+
+Trigger Type: Custom Event
+
+Event Name:  ProductCarted (Use regex matching)
+
+TriggerFiresOn: All Custom Events
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/9235fcc8d12b3c1b0d480cc3f331d9a16ddf198c55d743ae88857c822a078d64-image.png" />
+
+<br />
+
+2. Create Variable in GTM, to fetch the product details from the dataLayer.
+
+Variable Configuration:
+
+Variable Name: UnbxdProductCartedPayload
+
+Variable Type: Data Layer Variable
+
+Data Layer Variable Name: ProductCartedPayload
+
+![](https://files.readme.io/0c66ffc76cfc57379f8ba3a45c2ea0cafa98a05ca164919c02516c617ef67cbf-image.png)
+
+<br />
+
+3. Create Create a Javascript tag with the below details.
+
+Tag Configuration:
+
+Tag Name: UnbxdProductCartedTag
+
+Tag Type: Custom HTML
+
+HTML Content:
+
+```
+// Pass payload to Unbxd.track function
+// to call the tracker API
+
+<script type="text/javascript">
+   var u_payload = {{UnbxdProductCartedPayload}};
+   if (Unbxd && typeof Unbxd.track === 'function') {
+      Unbxd.track("addToCart", u_payload);
+   } else {
+       console.error('ERRNO-006: unbxdAnalytics.js is not loaded or payload incorrect!')
+   }
+</script>
+```
+
+Push payload to Datalayer:
+
+```
+// Add payload to Datalayer variable ProductCartedPayload
+// Should be triggered on add to cart button onclick() event
+// when product is added to cart
+
+<script type="text/javascript">
+   window.dataLayer = window.dataLayer || [];
+   dataLayer.push(
+     {
+      'event': 'ProductCarted',
+      'ProductCartedPayload':
+       {
+           'requestId': 'REQUEST ID',
+           'pid': 'PRODUCT ID',
+           'variantId': 'VARIANT ID OF SELECTED VARIANT',
+           'qty': 'QUANTITY SELECTED',
+           'price': 'UNIT PRICE FOR PRODUCT'
+       }
+     });
+</script>
+```
+
+Payload details:
+
+| **Attribute Name** | **Datatype** | **What value to be passed**                                                                                            |
+| ------------------ | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `requestId`        | String       | To be extracted from the Unbxd search API response headers, from `unx-request-id`.                                     |
+| `pid`              | String       | Unique ID for the product.                                                                                             |
+| `variantId`        | String       | VariantId of the selected product variant, if `relevantDocumentType="variant"`, in the search API response, or `null`. |
+| `qty`              | String       | Quantity being added to the cart by the user.                                                                          |
+| `price`            | String       | Unit price of the product (variant, if variant is selected).                                                           |
+
+## Cart Removal
+
+Like “Cart Additions”, tracking “Cart Removal” is also important as it helps us better understand the visitor’s preferences. To track the “Cart Removal”, customer needs to call the Unbxd API on the cart Removal event.
+
+1. Create Trigger in GTM to catch the uniqueId of the product if a product is removed from cart page.
+
+Trigger Configuration:
+
+Trigger Name: RemoveFromCartTrigger
+
+Trigger Type: Custom Event
+
+Event Name: CartRemoved (Use regex matching)
+
+TriggerFiresOn: All Custom Events
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/d49ed1ccc16e67ad267e5b4280a34928375b9df4052aea7d8db234a7f71d1a51-image.png" />
+
+<br />
+
+2. Create Variable in GTM, to fetch the product details from the dataLayer.
+
+Variable Configuration:
+
+Variable Name: RemoveProductFromCart
+
+Variable Type:  Data Layer VariableData Layer
+
+Variable Name: CartRemovedPayload
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/aabb40f731071d4c9924c9923196cb926d5fe7f84af2b1b7d5e752a22cbe11b9-image.png" />
+
+<br />
+
+3. Create a Javascript tag with the below details.
+
+Tag Configuration:
+
+Tag Name: RemoveCartTag
+
+Tag Type: Custom HTML
+
+HTML Content:
+
+```
+// Pass payload to Unbxd.track function
+// to call the tracker API
+
+<script type="text/javascript">
+   var u_payload = {{RemoveProductFromCart}};
+   if (Unbxd && typeof Unbxd.track === 'function') {
+      Unbxd.track("cartRemoval", u_payload);
+   } else {
+       console.error('ERRNO-007: unbxdAnalytics.js is not loaded or payload incorrect!')
+   }
+</script>
+```
+
+Push payload to Datalayer:
+
+```
+// Add payload to Datalayer variable CartRemovedpayload
+// Should be triggered when a product is removed
+// from cart
+
+<script type="text/javascript">
+   window.dataLayer = window.dataLayer || [];
+   dataLayer.push(
+     {
+      'event': ' 'CartRemoved',
+      'CartRemovedPayload':
+       {
+           'requestId': 'REQUEST ID',
+           'pid': 'PRODUCT ID',
+           'variantId': 'VARIANT ID OF SELECTED VARIANT',
+           'qty': 'QUANTITY SELECTED',
+           'price': 'UNIT PRICE FOR PRODUCT'
+       }
+     });
+</script>
+```
+
+Payload details:
+
+| **Attribute Name** | **Datatype** | **What value to be passed**                                                                                            |
+| ------------------ | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `requestId`        | String       | To be extracted from the Unbxd search API response headers, from `unx-request-id`.                                     |
+| `pid`              | String       | Unique ID for the product.                                                                                             |
+| `variantId`        | String       | VariantId of the selected product variant, if `relevantDocumentType="variant"`, in the search API response, or `null`. |
+| `qty`              | String       | Quantity being added to the cart by the user.                                                                          |
+| `price`            | String       | Unit price of the product (variant, if variant is selected).                                                           |
+
+### Order
+
+Unbxd analytics also track orders placed by the visitor from your eCommerce store.
+
+1. Create Trigger in GTM to catch the products details on order confirmation.
+
+Trigger Configuration:
+
+Trigger Name: UnbxdProductOrderTrigger
+
+Trigger Type: Custom Event
+
+Event Name: ProductOrder (Use regex matching)
+
+TriggerFiresOn: All Custom Events
+
+![](https://files.readme.io/6c2478fc821ac36c7497973e227d3317924515f4787a60d72534481521485610-image.png)
+
+2. Create Variable in GTM, to fetch the products data from the dataLayer.
+
+Variable Configuration:
+
+Variable Name: UnbxdProductsOrderedPayload
+
+Variable Type:  Data Layer VariableData Layer
+
+Variable Name: ProductsOrderedPayload
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/348adfb7147530e54667b26aedc127b36d9ddd113f7042143f64108294b7d90d-image.png" />
+
+<br />
+
+3. **Create a Javascript tag with the below details.**
+
+Tag Configuration:
+
+Tag Name: UnbxdProductsOrderedTag
+
+Tag Type: Custom HTML
+
+HTML Content:
+
+Individually for each product
+
+Tag Configuration:
+
+HTML Content:
+
+```
+// Pass payload to Unbxd.track function
+// to call the tracker API
+
+<script type="text/javascript">
+   var u_payload = {{UnbxdProductsOrderedPayload}};
+   if( Unbxd && typeof Unbxd.track === 'function' &&
+       u_payload.hasOwnProperty("pid") &&
+       u_payload.hasOwnProperty("price") &&
+       u_payload.hasOwnProperty ("qty")){
+       Unbxd.track('order', u_payload);
+   } else {
+       console.error('ERRNO-008: unbxdAnalytics.js is not loaded or payload incorrect!')
+   }
+</script>
+```
+
+Push payload to Datalayer:
+
+```
+// Add payload to Datalayer variable ProductOrderedPayload
+// Should be triggered individually for all the products on
+// order success page
+
+<script  type="text/javascript">
+   window.dataLayer = window.dataLayer || [];
+   dataLayer.push(
+     {
+      'event': 'ProductOrder',
+      'ProductsOrderedPayload':
+       {
+           'requestId': 'REQUEST ID',
+           'pid': 'PRODUCT ID',
+           'variantId': 'VARIANT ID OF SELECTED VARIANT',
+           'qty': 'QUANTITY SELECTED',
+           'price': 'UNIT PRICE FOR PRODUCT'
+       }
+     });
+</script>
+```
+
+Payload Details:
+
+| **Attribute Name** | **Datatype** | **What value to be passed**                                                        |
+| ------------------ | ------------ | ---------------------------------------------------------------------------------- |
+| `requestId`        | String       | To be extracted from the Unbxd search API response headers, from `unx-request-id`. |
+| `pid`              | String       | Unique ID for the product.                                                         |
+| `variantId`        | String       | VariantId of the selected product variant (if variant), or `null`.                 |
+| `qty`              | String       | Quantity of the product being ordered.                                             |
+| `price`            | String       | Unit price of the product (variant, if variant is selected).                       |
+
+trackMultiple
+
+```
+// Pass payload to Unbxd.track function
+// to call the tracker API
+
+<script type="text/javascript">
+   var u_payload = {{UnbxdProductsOrderedPayload}};
+   if( Unbxd && typeof Unbxd.track === 'function'
+       && typeof(u_payload) == "object"
+       && u_payload.length > 1){
+       Unbxd.trackMultiple('order', u_payload);
+   } else {
+       console.error('unbxdAnalytics.js is not loaded or payload incorrect!')
+   }
+</script>
+```
+
+Push payload to Datalayer:
+
+```
+// Add payload to Datalayer variable ProductOrderedPayload
+// Should be triggered on order success page
+// for all products in order added to a list
+
+<script  type="text/javascript">
+   window.dataLayer = window.dataLayer || [];
+   dataLayer.push(
+     {
+      'event': 'ProductOrder',
+      'ProductsOrderedPayload':
+       [{
+           'requestId': 'REQUEST ID',
+           'pid': 'PRODUCT ID',
+           'variantId': 'VARIANT ID OF SELECTED VARIANT',
+           'qty': 'QUANTITY SELECTED',
+           'price': 'UNIT PRICE FOR PRODUCT'
+       },
+       {
+           'requestId': 'REQUEST ID',
+           'pid': 'PRODUCT ID',
+           'variantId': 'VARIANT ID OF SELECTED VARIANT',
+           'qty': 'QUANTITY SELECTED',
+           'price': 'UNIT PRICE FOR PRODUCT'
+       },
+       {
+           'requestId': 'REQUEST ID',
+           'pid': 'PRODUCT ID',
+           'variantId': 'VARIANT ID OF SELECTED VARIANT',
+           'qty': 'QUANTITY SELECTED',
+           'price': 'UNIT PRICE FOR PRODUCT'
+       }]
      });
 </script>
 ```
