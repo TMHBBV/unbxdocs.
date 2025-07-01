@@ -1,7 +1,7 @@
 ---
 title: What can Netcore Unbxd do?
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
