@@ -9,6 +9,24 @@ hidden: true
 
 In an age where search engines like Google can generate vast information about anything and everything, why is it still so hard for shoppers to find the products they want on e-commerce sites? That’s the problem we solve at **Netcore Unbxd**.
 
+<Cards columns={4}>
+  <Card title="First Card" href="https://unbxdocs.readme.io/docs/why-use-netcore-unbxd#">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="Second Card" icon="fa-user">
+    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  </Card>
+
+  <Card title="Third Card" icon="fa-star">
+    > Ut enim ad minim veniam, quis nostrud ullamco
+  </Card>
+
+  <Card title="Fourth Card" icon="fa-question">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+</Cards>
+
 # About UNBXD
 
 Unbxd was founded in 2011 and it expanded globally, secured major clients, and enhanced its platform with deep learning and personalization tools. In 2021, Unbxd was acquired by Netcore Cloud, to combine Unbxd’s capabilities with Netcore’s customer engagement tools. This acquisition offers a complete solution for all your online shopping experiences.
