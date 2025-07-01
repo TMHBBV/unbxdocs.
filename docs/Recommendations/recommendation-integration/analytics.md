@@ -67,7 +67,7 @@ Please find below the list of all the events required to be added based on the s
       </td>
 
       <td>
-        *
+        * <br />
       </td>
     </tr>
 
@@ -109,7 +109,7 @@ Please find below the list of all the events required to be added based on the s
       </td>
 
       <td>
-        *
+        * <br />
       </td>
     </tr>
 
@@ -184,3 +184,14 @@ Please find below the list of all the events required to be added based on the s
     </tr>
   </tbody>
 </Table>
+
+> 📘 Note:
+>
+> Refer to the code snippets in the integration links above for examples. All events must be invoked correctly with the documented payload for correct behavior e.g. if an attribute is missing in the search hit event, to our system will not be able to attribute a product click to a search query. Such issues will lead to incorrect session tracking, product attribution, leading to degraded relevance and misleading reports.
+>
+> Analytics Validation\
+> Unbxd provides a tool to validate analytics integration, which makes your job easier to troubleshoot issues and ensure  correctness.
+>
+> Link to Unbxd Events Validator: : [https://unbxd.com/docs/site-search/integration-documentation/browser-integration/](https://unbxd.com/docs/site-search/integration-documentation/browser-integration/)
+>
+> The tool is compatible for GTM integration as well as Browser integration. We highly recommend you use this tool by visiting the link above and give us your feedback.
