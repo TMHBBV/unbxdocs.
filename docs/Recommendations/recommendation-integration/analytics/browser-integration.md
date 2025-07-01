@@ -97,16 +97,16 @@ Payload details:
 Product View\
 Product Page View indicates the total number of visits that has been made to the product details page (PDP) by the visitor irrespective of the source (search result page, category page, search engine, email, marketing campaigns, etc).The product view can be tracked whenever a user lands on the PDP page.
 
-\<script type="text/javascript">
-&#x20; var payload = \{
-&#x20;   pid: '\{\{uniqueId-of-the-product}}',
-&#x20;   variantId: '\{\{variantId-of-selected-variant}}'
-&#x20; }
-&#x20; if(Unbxd && typeof Unbxd.track === 'function') \{
-&#x20;   Unbxd.track('product\_view', payload)
-&#x20; } else \{
-&#x20;   console.error('unbxdAnalytics.js is not loaded!')
-&#x20; }
+\<script type="text/javascript">\
+var payload = \{
+pid: '\{\{uniqueId-of-the-product}}',
+variantId: '\{\{variantId-of-selected-variant}}'
+}
+if(Unbxd && typeof Unbxd.track === 'function') \{
+Unbxd.track('product\_view', payload)
+} else \{
+console.error('unbxdAnalytics.js is not loaded!')
+}
 \</script>
 
 Payload details:
@@ -216,3 +216,157 @@ Individually for all events
   }
 </script>
 ```
+
+# HTML Based Integration
+
+With Browser Integration, you can insert the unique tracker, as a custom Javascript file, anywhere within the HTML pages in your website for all the various events. As a first step we need to include UnbxdAnalytics.js script to the head of all the HTML pages, where we want the track functionality to work. You can add it using the below code to you HTML:
+
+Sample Request:
+
+```
+<script type="text/javascript">
+  var UnbxdSiteName = "{{site-key}}"; // Replace the value with the Site Key.
+  var UnbxdApiKey = "{{api-key}}"; // Replace the value with API key
+  (function() {
+    var ubx = document.createElement('script');
+    ubx.type = 'text/javascript';
+    ubx.async = true;
+    ubx.src = '//libraries.unbxdapi.com/ua-js/v1.0.0/uaLibrary.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ubx);
+  })();
+</script>
+```
+
+<br />
+
+<div unbxdAttr="product" unbxdparam_sku="{{uniqueId-of-product}}" />
+
+Also, add the script below before Unbxd analytics library is loaded.
+
+```
+<script type="text/javascript">
+UnbxdAnalyticsConf=window.UnbxdAnalyticsConf ||{};
+UnbxdAnalyticsConf["experience_pagetype"]="{{recs-pagetype}}";
+UnbxdAnalyticsConf["experience_widget"]="{{recs-widget}}";
+</script>
+```
+
+Parameter details:
+
+<br />
+
+| **Attribute Name**    | **Datatype** | **What value to be passed**                                                                                        |
+| --------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `unbxdattr`           | Constant     | Specifies the type of event being captured. For product clicks, the value is “product” always.                     |
+| `unbxdparam_sku`      | Variable     | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response. |
+| `experience_pagetype` | Variable     | Pagetype for the widget should be either Home, Product, Category,\_                                                |
+
+### Product Click
+
+The Product Click event is generated every time a shopper clicks on a product in a Product Listing Page (PLP) or in a recommendation widget. This helps us understand your shoppers’ search preferences. This information is analyzed to list and promote ‘Popular Products’ in the autosuggest dropdown  and display personalized ‘Recommended For You’ recommendations.
+
+<br />
+
+To display products within the PLP on the search results or category page, insert the following code snippet within \<div> of product grid (product thumbnail) or within the \<li> html tag.
+
+<br />
+
+Sample code snippet with \<li> tags
+
+```
+<li unbxdattr="product" unbxdparam_sku="{{uniqueId-of-product}}" unbxdparam_prank="{{rank-of-product}}" unbxdparam_requestId="{{window.requestId}}"> </li>
+
+```
+
+Sample code snippet within \<div> tags
+
+```
+<div unbxdattr="product" unbxdparam_sku="{{uniqueId-of-product}}" unbxdparam_prank="{{rank-of-product}}" unbxdparam_requestId="{{window.requestId}}" />
+
+Parameter details:
+```
+
+Parameter details:
+
+<br />
+
+| **Attribute Name**     | **Datatype** | **What value to be passed**                                                                                                                                                     |
+| ---------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unbxdattr`            | Constant     | Specifies the type of event being captured. For product clicks, the value is “product” always.                                                                                  |
+| `unbxdparam_sku`       | Variable     | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response.                                                              |
+| `unbxdparam_prank`     | Variable     | Specifies the position of the product in the search results grid/list. When this value is not specified, the first product will have a value of 1, second will be 2, and so on. |
+| `unbxdparam_requestId` | Variable     | Specifies the request Id, which is part of the response readers of the Search/Category API request. For Search SDK integration, this is handled by the SDK and can be ignored.  |
+
+Product View\
+Product View indicates the total number of visits that has been made to the product details page (PDP) by the visitor irrespective of the source (search result page, category page, search engine, email, marketing campaigns, etc).The product view can be tracked whenever a user lands on the PDP page by adding the below link to your HTML on page load.
+
+```
+<li unbxdattr= “ProductView” unbxdparam_sku = “{{uniqueId-of-product}}” unbxdparam_variant = “{{variantId-of-variant}}” > </li>
+```
+
+Parameter details:
+
+| **Attribute Name**   | **Datatype**        | **What value to be passed**                                                                                                                                        |
+| -------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `unbxdattr`          | Constant            | Specifies the type of event being captured. For product view, the value is “ProductView” always.                                                                   |
+| `unbxdparam_sku`     | Variable            | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response.                                                 |
+| `unbxdparam_variant` | Variable (Optional) | Specifies the uniqueID (variantId) of the product variant added to the cart as defined in the feed schema. This parameter is required if the catalog has variants. |
+
+Add to Cart\
+Whenever a user adds any product to cart or shopping bag, the add to cart event will get fired. To track this event , insert the following code snippet on the “Add to Cart” button within your HTML page.
+
+```
+<li unbxdattr="AddToCart"  unbxdparam_sku="{{uniqueId-of-product}}" unbxdparam_variant= “{{variantId-of-variant}}” unbxdparam_qty="{{no-of-units}}" unbxdparam_requestId="{{window.requestId}}" ></li>
+```
+
+Parameter details
+
+| **Attribute Name**     | **Datatype**         | **What value to be passed**                                                                                                                                                                                                                                                                  |
+| ---------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unbxdattr`            | Constant             | Specifies the type of event being captured. For the cart event, the value is “AddToCart.”                                                                                                                                                                                                    |
+| `unbxdparam_sku`       | Variable             | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response.                                                                                                                                                                           |
+| `unbxdparam_variant`   | Variable (Optional)  | Specifies the uniqueID of the product variant added to the cart as defined in the feed schema. This parameter is required if the catalog has variants.                                                                                                                                       |
+| `unbxdparam_qty`       | Variable (Mandatory) | The number of units added to the cart. This should be the string value of the quantity added. For example, if 4 quantities of a product are added, its value would be “4” (instead of 4).                                                                                                    |
+| `unbxdparam_requestId` | Variable             | Specifies the request Id from the response of the search/category API. If the widget is not on the listing page, this parameter can be ignored when products within the PLP widget have the "Add to Cart" button. For Search SDK integration, this is handled by the SDK and can be ignored. |
+
+Cart Removal\
+This event tracks every instance a product is removed from cart as well. Information helps us better understand the visitor’s preferences. To track products being removed from cart, insert the following attributes within all “Remove from Cart” buttons on the cart page.
+
+```
+<button unbxdattr= “RemoveFromcart” unbxdparam_sku= “{{uniqueId-of-product}}” unbxdparam_variant = “{{variantId-of-product}}” unbxdparam_price = “{{price-of-product}}” unbxdparam_qty = “{{no-of-units}}”/></button>
+```
+
+<br />
+
+<br />
+
+| **Attribute Name**   | **Datatype**         | **What value to be passed**                                                                                                                                                                       |
+| -------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unbxdattr`          | Constant             | Specifies the type of event being captured. For cart removal, the value is “RemoveFromCart.”                                                                                                      |
+| `unbxdparam_sku`     | Variable             | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response.                                                                                |
+| `unbxdparam_variant` | Variable (Optional)  | Specifies the uniqueID of the product variant removed from the cart as defined in the feed schema. This parameter is required if the catalog has variants.                                        |
+| `unbxdparam_price`   | Variable             | Specifies the price of the individual product/variant removed from the cart.                                                                                                                      |
+| `unbxdparam_qty`     | Variable (Mandatory) | The number of units removed from the cart. This should be the string value of the quantity removed. For example, if 4 quantities of a product are removed, its value would be “4” (instead of 4). |
+
+Order\
+The Orders event is pushed for every product that is purchased on your site.
+
+Using Custom HTML attributes you can integrate the functionality to track orders that have been successfully completed.
+
+You can insert the following code snippet within \< div > of product grid (product thumbnail) or within the \< li > html tag.To display products within the PLP on the search results:
+
+```
+<li unbxdattr="order"  unbxdparam_sku="{{uniqueId-of-product}}" unbxdparam_variant= “{{variantId-of-variant}}” unbxdparam_qty="{{no-of-units}}" unbxdparam_price=“{{price-of-product}}”></li>
+```
+
+Parameter details:
+
+<br />
+
+| **Attribute Name**   | **Datatype**        | **What value to be passed**                                                                                                                    |
+| -------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unbxdattr`          | Constant            | Specifies the type of event being captured. For product clicks, the value is “order” always.                                                   |
+| `unbxdparam_sku`     | Variable            | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response.                             |
+| `unbxdparam_variant` | Variable (Optional) | Specifies the uniqueID of the product variant purchased as defined in the feed schema. This parameter is required if the catalog has variants. |
+| `unbxdparam_qty`     | Variable            | Specifies the number of products/variants purchased.                                                                                           |
+| `unbxdparam_price`   | Variable            | Specifies the amount of a single unit the shopper has paid for the product/variant.                                                            |
