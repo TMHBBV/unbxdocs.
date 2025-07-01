@@ -156,3 +156,320 @@ componentDidUpdate(){
 > 📘 Note
 >
 > window object needs to be used, otherwise the specific component won’t be able to access the recommendations call.
+
+## Invoke function to register hooks on before and after template rendered
+
+Function Name:
+
+`_unbxd_RegisterHook(“beforeTemplateRender”, beforeTemplateRenderer);`
+
+`_unbxd_RegisterHook(“afterTemplateRender”, afterTemplateRenderer);`
+
+Function Argument: Event name (beforeTemplateRender/ afterTemplateRender) & callback function which gets called when the event triggers in SDK. Prior to this, templateRenderer callback can be used to modify the recommendation items received from the Recommendation API. afterTemplateRendered gets called after every time the widget/template gets rendered. afterTemplateRendered callback is called with a parameter “isVertical” which can be used to distinguish between horizontal and vertical rendered templates.
+
+```
+ beforeTemplateRenderer = function(templateData){
+           // modify the data received from recommendation API in case required.
+          console.log("template data");
+          return templateData;
+       }
+ 
+            //Perform activity after template render
+       afterTemplateRenderer = function(isVertical){
+         if(!isVertical){
+               console.log("Horizontal Template Rendered");
+         } else {
+               console.log("Vertical Template Rendered");
+         }
+      }
+ 
+      window._unbxd_registerHook("beforeTemplateRender", beforeTemplateRenderer);
+      window._unbxd_registerHook("afterTemplateRender", afterTemplateRenderer);
+```
+
+<br />
+
+Context Object Details\
+It is a Javascript object which would have following keys:
+
+## widgets
+
+\*REQUIRED
+
+At least one of the keys among ‘widget1’, ‘widget2’ and ‘widget3’ has to be provided along with its configuration. The description of these keys can be found below
+
+| **Key**          | **Type**          | **Description**                                                |
+| ---------------- | ----------------- | -------------------------------------------------------------- |
+| `widget1`        | JavaScript Object | Configuration for widget 1                                     |
+| `widget1 > name` | String            | Unique Target DOM element ID where widget 1 will be displayed. |
+| `widget2`        | Object            | Configuration for widget 2                                     |
+| `widget2 > name` | String            | Target DOM element ID where widget 2 will be displayed.        |
+| `widget3`        | Object            | Configuration for widget 3                                     |
+| `widget3 > name` | String            | Target DOM element ID where widget 3 will be displayed.        |
+
+Sample Value
+
+```
+<span style="font-size: 16px;">widgets: {
+                widget1: {
+                    name: "home_recommendations1"
+                },
+                widget2: {
+                    name: "home_recommendations2"
+                },
+                widget3: {
+                    name: "home_recommendations3"
+                }
+            }</span>
+```
+
+## userInfo
+
+\*REQUIRED
+
+userInfo must contain following key value pairs:
+
+| **Key**   | **Type** | **Description**                                              |
+| --------- | -------- | ------------------------------------------------------------ |
+| `userId`  | String   | User tracking ID to be used for personalized recommendations |
+| `siteKey` | String   | Site key shared by UNBXD                                     |
+| `apiKey`  | String   | API key shared by UNBXD                                      |
+
+> 📘 NOTE
+>
+> You can fetch the key details from the Search documentation.
+
+Sample Code:
+
+```
+<span style="font-size: 16px;">userInfo: {
+                userId: 'uid',
+                siteKey: 'site-key',
+                apiKey: 'apiKey''
+},</span>
+```
+
+<br />
+
+pageInfo\
+\*REQUIRED
+
+pageInfo must contain values for the following keys:
+
+| **Key**         | **Type** | **Description**                                                                                                                            |
+| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `pageType`      | String   | Must be one of ‘HOME’, ‘PRODUCT’, ‘CART’, ‘CATEGORY’.                                                                                      |
+| `productIds`    | Array    | An array of a list of product ids of String type. This field is required only when the `pageType` is ‘PRODUCT’ or ‘CART’.                  |
+| `catlevel1Name` | String   | Defines the first level of category filter. This field is required only when the `pageType` is ‘CATEGORY’.                                 |
+| `catlevel2Name` | String   | Defines the second level of category filter. This is an optional field which needs to be mentioned only when the `pageType` is ‘CATEGORY’. |
+| `catlevel3Name` | String   | Defines the third level of category filter. This is an optional field which needs to be mentioned only when the `pageType` is ‘CATEGORY’.  |
+| `catlevel4Name` | String   | Defines the fourth level of category filter. This is an optional field which needs to be mentioned only when the `pageType` is ‘CATEGORY’. |
+
+Category Level values must be in continuous order starting with catlevel1Name.
+
+For instance:
+
+‘catlevel1Name’: ‘Women’,
+
+‘catlevel2Name’: ‘Clothes’,
+
+‘catlevel3Name’: ‘Top’,
+
+‘catlevel4Name’: ‘Denim’
+
+catlevel1Name is REQUIRED for the Category page.
+
+> 📘 NOTE
+>
+> If a category level value is skipped, the next level values will be ignored i.e. if ‘‘catlevel2Name’ value is not set, then ‘‘catlevel3Name’ and ‘‘catlevel4Name’ will be ignored by SDK. They will not be used to fetch recommendations.
+
+### itemClickHandler
+
+OPTIONAL
+
+Description for this handler can be found below:
+
+| **Key**            | **Type** | **Description**                                                                                                                                                                                                   |
+| ------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `itemClickHandler` | Function | Callback method that will be called when the recommendation item is clicked in the widget. The callback is called with one argument that contains all the product attributes sent by the recommendation platform. |
+
+dataParser\
+OPTIONAL
+
+| **Key**      | **Type** | **Description**                                                                                                                                                                                                                                                                                                                                                     |
+| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dataParser` | Function | Callback method that will be called just before feeding the data to the dot template with original recommendations data. You can modify the original data based on your requirement and return the modified data to be passed to the template. This is useful when you are using your custom template and you don’t want to write parsing logic in a template file. |
+
+## Sample function calls for each Page Type
+
+Sample function calls for each page type\
+HOMEPAGE
+
+```
+_unbxd_getRecommendations({
+            widgets: {
+                widget1: {
+                    name: "home_recommendations1"
+                },
+                widget2: {
+                    name: "home_recommendations2"
+                },
+                widget3: {
+                    name: "home_recommendations3"
+                }
+            },
+            userInfo: {
+                userId: 'uidValue'',
+                siteKey: 'siteKeyValue',
+                apiKey: 'apiKeyValue''
+            },
+            pageInfo: {
+                pageType: 'HOME'
+            },
+            itemClickHandler: function (product) {
+                //do what you want to do with product that has been clicked here
+                alert(JSON.stringify(product));
+            },
+             dataParser: function (templateData) {
+              // modify the data received from recommendation API 
+              // in case required        
+            return templateData;
+            }
+    });
+```
+
+**Product Page**
+
+```
+_unbxd_getRecommendations({
+            widgets: {
+                widget1: {
+                    name: "product_recommendations1"
+                },
+                widget2: {
+                    name: "product_recommendations2"
+                },
+                widget3: {
+                    name: "product_recommendations3"
+                }
+            },
+           userInfo: {
+                userId: 'uidValue'',
+                siteKey: 'siteKeyValue',
+                apiKey: 'apiKeyValue''
+            },
+            pageInfo: {
+                pageType: 'PRODUCT',
+                productIDs: ['uniqueId1', 'uniqueId2']
+            },
+            itemClickHandler: function (product) {
+                // product information will be provided here
+                alert(JSON.stringify(product));
+            },
+            dataParser: function (templateData) {
+             // modify the data received from recommendation API 
+             // in case required        
+            return templateData;
+            }
+    });
+```
+
+**CART PAGE**
+
+```
+_unbxd_getRecommendations({
+            widgets: {
+                widget1: {
+                    name: "product_recommendations1"
+                },
+                widget2: {
+                    name: "product_recommendations2"
+                },
+                widget3: {
+                    name: "product_recommendations3"
+                }
+            },
+            userInfo: {
+                userId: 'uidValue'',
+                siteKey: 'siteKeyValue',
+                apiKey: 'apiKeyValue''
+            },
+            pageInfo: {
+                pageType: 'CART',
+                productIDs: ['uniqueId1', 'uniqueId2']
+            },
+            itemClickHandler: function (product) {
+                // product information will be provided here
+                alert(JSON.stringify(product));
+            },
+            dataParser: function (templateData) {
+              //modify the data received from recommendation API
+              //in case required        
+            return templateData;
+            },
+    });
+```
+
+**CATEGORY PAGE**
+
+```
+_unbxd_getRecommendations({
+            widgets: {
+                widget1: {
+                    name: "product_recommendations1"
+                },
+                widget2: {
+                    name: "product_recommendations2"
+                },
+                widget3: {
+                    name: "product_recommendations3"
+                }
+            },
+            userInfo: {
+                userId: 'uidValue'',
+                siteKey: 'siteKeyValue',
+                apiKey: 'apiKeyValue''
+            },
+            pageInfo: {
+                pageType: 'CATEGORY',
+                catlevel1Name: 'MENS',
+            catlevel2Name: 'FORMALS',
+            catlevel3Name: 'SHIRTS',
+            catlevel4Name: 'NEW ARRIVALS'
+            },
+            itemClickHandler: function (product) {
+                // product information will be provided here
+                alert(JSON.stringify(product));
+            },
+              dataParser: function (templateData) {
+             //modify the data received from recommendation 
+             // API in case required        
+            return templateData;
+            },
+    });
+```
+
+<br />
+
+## Default Template
+
+Under the recommendations section, you have the option to select Unbxd’s default templates for displaying recommendations. The display of widgets varies with the device type and screen resolution. So, it’s important to choose templates for specific devices.
+
+The template selection is specifically defined for all device types which are primarily divided into:
+
+Desktop\
+Mobile
+Let’s look at the various template types available for each device type.
+
+Desktop\
+Selecting a template for the desktop version defines how would the recommendation widget be displayed across the portrait orientations.
+
+To see the desktop templates, navigate to Manage > Templates.
+
+You can select either a Horizontal or Vertical template display for the products.
+
+**Horizontal**: Horizontal template displays products in a single plane, next to each other. Such a display makes it easier for customers to look at multiple products in one sight.
+
+![](https://files.readme.io/6c83465fdc3879ca20caa3a6429f1dee0a85cd9edd138c228df36cb8c151de38-image.png)
+
+**Vertical**: Vertical template displays products in a line one after another. In this shoppers see one product at a time.
