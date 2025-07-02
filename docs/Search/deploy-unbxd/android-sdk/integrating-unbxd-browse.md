@@ -351,3 +351,247 @@ client.browse(browseQuery, object : ICompletionHandler
                                       }
 )
 ```
+
+Selected facet with field name and value name:
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val nameFilter = NameFilter("Brand_uFilter", "Vince Camuto")  
+val browseQuery = BrowseQuery.Builder(categoryPath).  
+facet(SelectedFacet(nameFilter)).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+**Filtering**\
+Filtering can be performed on fields using field Id or field Name.Three types of filters are supported:
+
+1. Text
+
+The text filter is used to filter products based on fields with string values such as color, gender, brand, etc. It can be defined in the API call in two ways:
+
+* Using Field IDs: IdFilter can be formed with 2 parameters.field: The id of the field on which the text filter is applied. value: The id of the value on which the results are filtered.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val idFilter = IdFilter("76678", "5001")  
+val browseQuery = BrowseQuery.Builder(categoryPath).filter(idFilter).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+* Using Field Names
+
+  Again NameFilter can be formed with 2 parameters.
+
+  **type**: The ID of the field on which the text filter is applied.
+
+  **value**: The ID of the value on which the results are filtered
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val nameFilter = NameFilter("vColor_uFilter","Black")  
+val browseQuery = BrowseQuery.Builder(categoryPath).filter(nameFilter).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+The range filter is used to filter products based on fields with datatypes – date, number or decimal. It can be defined in the API in two ways:
+
+1. Using Field IDs
+
+Filter Range of type id is built using IdFilterRange class and it can be initialized with below parameters.
+
+field: The ID of the field on which the text filter is applied.
+
+lower: The ID of the lower limit of the range.
+
+upper: The ID of the upper limit of the range.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val idFilterRange = IdFilterRange("76678","2034", "8906")  
+val browseQuery = BrowseQuery.Builder(categoryPath).filter(idFilterRange).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+override fun onFailure(errorMessage: String, exception: Exception)  
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+2. Using Field Names
+
+Filter Range of type name is built using NameFilterRange class and it can be initialized with parameters:
+
+field: The name of the field on which the text filter is applied.
+
+lower: The name of the lower limit of the range.
+
+upper: The name of the upper limit of the range.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val nameFilterRange = NameFilterRange("vColor","red", "blue")  
+val browseQuery = BrowseQuery.Builder(categoryPath). filter(nameFilterRange).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+**Multilevel**
+
+The multilevel filter is used to filter products based on categories.The API call can be defined in two ways:
+
+* Using Field IDs
+
+“CategoryIdFilter” is used to filter the results using category path comprised of category IDs
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val categoryIdFilter = CategoryIdFilter(ReferenceType.TypeId, arrayOf("BC", "B0485"))  
+val browseQuery = BrowseQuery.Builder(categoryPath). categoryFilter(categoryIdFilter).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+* Using Field Names\
+  “CategoryNameFilter” is used to filter the results using category path comprised of category Names
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val categoryNameFilter = CategoryNameFilter(ReferenceType.TypeName, arrayOf("Fashion", "Shirts")) val browseQuery = BrowseQuery.Builder(categoryPath). categoryFilter(categoryNameFilter).build() client.browse(browseQuery, object : ICompletionHandler { override fun onSuccess(json: JSONObject, response: Response) { Log.d("Client Response",json.toString()) } override fun onFailure(errorMessage: String, exception: Exception) { Log.d("Client Response",errorMessage) } } ) val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val categoryNameFilter = CategoryNameFilter(ReferenceType.TypeName, arrayOf("Fashion", "Shirts")) val browseQuery = BrowseQuery.Builder(categoryPath). categoryFilter(categoryNameFilter).build() client.browse(browseQuery, object : ICompletionHandler { override fun onSuccess(json: JSONObject, response: Response) { Log.d("Client Response",json.toString()) } override fun onFailure(errorMessage: String, exception: Exception) { Log.d("Client Response",errorMessage) } } )
+```
+
+<br />
+
+**Multiple Filters**\
+There are two types of filter operations: AND, OR
+
+1. And
+
+* Using Field IDs
+
+MultipleIdFilter takes 2 parameters, field Id and value id. Multiple filters can be added and ‘operatorType’ is set to ‘AND’.
+
+```
+var idFilters = ArrayList() idFilters.add(IdFilter("76678", "5001")) idFilters.add(IdFilter("76678", "5021"))  
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath). multipleFilter(MultipleIdFilter(idFilters, FilterOperatorType.AND)).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+* Using Field Names\
+  MultipleNameFilter takes 2 parameters, field name and value name. Multiple filters can be added and ‘operatorType’ is set to ‘AND’.
+
+```
+var nameFilters = ArrayList() nameFilters.add(NameFilter("vColor_uFilter", "Black")) nameFilters.add(NameFilter("vColor_uFilter", "White"))  
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath). multipleFilter(MultipleIdFilter(nameFilters, FilterOperatorType.AND)).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception)                                       
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+**OR**
+
+* Using Field IDs
+
+MultipleIdFilter is takes 2 parameter, field Id and value id. Multiple filters can be added and ‘operatorType’ is set to ‘OR’.
+
+```
+var idFilters = ArrayList() idFilters.add(IdFilter("76678", "5001")) idFilters.add(IdFilter("76678", "5021"))  
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath). multipleFilter(MultipleIdFilter(idFilters, FilterOperatorType.OR)).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
