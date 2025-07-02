@@ -1,12 +1,12 @@
 ---
-title: Introducing Unbxd Search & Browse
-excerpt: Deliver fast, intelligent product discovery at scale with Search & Browse.
+title: Introducing Unbxd Search
+excerpt: Deliver fast, intelligent product discovery at scale with Search feature.
 deprecated: false
 hidden: true
 metadata:
   robots: index
 ---
-**Netcore Unbxd Search & Browse** is an AI-powered product discovery solution designed to help e-commerce platforms connect shoppers with the products they want. Curate unique experiences for every shopper and deliver highly relevant search results using natural language processing (NLP) and vector understanding .
+**Netcore Unbxd Search** is an AI-powered product discovery solution designed to help e-commerce platforms connect shoppers with the products they want. Curate unique experiences for every shopper and deliver highly relevant search results using natural language processing (NLP) and vector understanding.
 
 # Key Capabilities
 
@@ -28,7 +28,7 @@ With Netcore Unbxd, you can deliver fast and intelligent search and browse exper
 
 # Best Practices
 
-To get the most out of Netcore Unbxd’s Search and Browse features, follow these best practices to enhance product discovery:
+To get the most out of Netcore Unbxd’s Search feature, follow these best practices to enhance product discovery:
 
 * Keep product titles clear and descriptive to improve search accuracy.
 * Highlight popular or seasonal items using banners or pinned results.
@@ -39,7 +39,7 @@ To get the most out of Netcore Unbxd’s Search and Browse features, follow thes
 
 ## Use Cases
 
-**Use case:** How Netcore Unbxd Search and Browse improves product discovery for a bag brand
+**Use case:** How Netcore Unbxd Search improves product discovery for a bag brand
 
 **Scenario:** Consider an e-commerce site for backpacks, totes, and travel bags.
 
@@ -50,34 +50,3 @@ To get the most out of Netcore Unbxd’s Search and Browse features, follow thes
 5. Only in-stock products available in the shopper’s region are displayed. Out-of-stock items are automatically hidden.
 
 **Result:** The shopper quickly finds the desired bag, and the brand delivers a seamless shopping experience across devices.
-
-***
-
-## **Unbxd Recommendations**
-
-**Boost Conversions with Personalized, Contextual Product Suggestions**
-
-### **What It Is**
-
-Unbxd Recommendations leverages machine learning and shopper behavior data to dynamically deliver relevant product suggestions across the ecommerce funnel. From homepage to cart, recommendations adapt in real-time to optimize engagement, average order value, and repeat purchases.
-
-### **Key Capabilities**
-
-* **AI-Driven Personalization:** Tailored recommendations based on user behavior, trends, and product affinity.
-* **Multiple Strategies:** Cross-sell, upsell, similar products, new arrivals, trending items, and more.
-* **Real-Time Context:** Reacts to on-site interactions to adjust recommendations on the fly.
-* **Visual Widgets:** Fully customizable UI elements for seamless integration.
-* **A/B Testing & Reporting:** Optimize strategy performance with built-in experimentation tools.
-
-### **Best Practices**
-
-* Use different recommendation strategies across the funnel: "Trending" on home, "Similar Products" on PDPs, "Frequently Bought Together" in cart.
-* Continuously A/B test strategies to improve CTR and conversion rate.
-* Monitor cold-start products and manually boost high-margin SKUs where needed.
-* Ensure mobile-first rendering for recommendation widgets.
-
-### **Use Cases**
-
-* **Retail Brands:** Personalize product discovery for new and returning users.
-* **DTC Sites:** Increase average order value through effective bundling and upselling.
-* **Subscription Commerce:** Drive repeat engagement with replenishment-based recommendations.
