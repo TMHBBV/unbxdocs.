@@ -13,5 +13,3 @@ We offer three methods for uploading your product catalog feed:
    * JSON
    * XML
 3. **Platform Extensions**: Use our platform extensions for seamless feed upload. Integrate with Magento 2, Shopify, or SAP Hybris plugins to automate the catalog transfer from these platforms.
-
-,dgldf
