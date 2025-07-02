@@ -35,8 +35,6 @@ Unbxd is used by more than 1,300 e-commerce sites in over 40 countries, includin
 
 Unbxd is an AI-powered ecommerce search and product discovery platform that enhances how shoppers interact with online stores. It transforms traditional search by delivering results by analyzing shopper intent, ultimately improving conversion rates and reducing bounce. By using AI models, Unbxd analyzes catalog data, clickstream behavior, and various other signals to understand user intent across search, browse, and recommendation touchpoints. This approach ensures that shoppers quickly find products that match their needs.
 
-Unbxd also includes a **Product Information Management** (**PIM**) system that fetches product data from diverse sources. It ensures consistent content across channels, streamlining operations for e-commerce teams. Merchandisers benefit from Unbxd’s UI-friendly dashboard, which provides full control over rules, promotions, and personalization strategies without needing engineering/ tech support.
-
 # What Makes UNBXD Different
 
 Refer to the given table to know how Unbxd stands out for your traditional or generic search platforms.
