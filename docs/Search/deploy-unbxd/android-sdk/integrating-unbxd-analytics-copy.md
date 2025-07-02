@@ -162,3 +162,20 @@ client.track(dwellTimeAnalytics, object : ICompletionHandler
 ## Facets
 
 A facet event is fired when a filter is applied on Search or Category pages.
+
+```
+val userId = client.userId()  
+val facetAnalytics = FacetAnalytics(userId.id, userId.visitType, requestId, "Shirts", NameFilter("fit_fq", "Fitted"))  
+client.track(facetAnalytics, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
