@@ -125,3 +125,40 @@ then categoryQuery will be called as
 ```
 let categoryQuery = CategoryNamePath(withCategories: ["category:\(categoryName)"])  
 ```
+
+pageType: \* It is an enum defined in SDK. it accepts the following values
+
+URL\
+CATEGORY\_PATH
+TAXONOMY\_NODE
+ATTRIBUTE
+BOOLEAN
+requestId: The unbxd request id returned in the search/category page/recommendations API call response.
+
+productIds : List of product ids of products visible in the window when the event occurs. For example “arrayOf(“1692741”, “01692015”, “1692908”))” in above code.
+
+### Dwell Time
+
+A dwell time event is used to capture the amount of time a shopper spends on the product description page.
+
+```
+val userId = client.userId()  
+val dwellTimeAnalytics = DwellTimeAnalytics(userId.id, userId.visitType, requestId,  
+"2301609", 60.0)
+client.track(dwellTimeAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+## Facets
+
+A facet event is fired when a filter is applied on Search or Category pages.
