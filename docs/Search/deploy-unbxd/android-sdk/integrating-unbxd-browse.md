@@ -595,3 +595,67 @@ client.browse(browseQuery, object : ICompletionHandler
                                       }
 )
 ```
+
+* Using Field Names\
+  MultipleNameFilter takes 2 parameters, field name and value name. Multiple filters can be added and ‘operatorType’ is set to ‘OR’.
+
+```
+var nameFilters = ArrayList() nameFilters.add(NameFilter("vColor_uFilter", "Black")) nameFilters.add(NameFilter("vColor_uFilter", "White"))  
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath). multipleFilter(MultipleIdFilter(nameFilters, FilterOperatorType.OR)).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+**Sort**\
+The sort parameter is used to rank the products based on specified fields in the specified order.Sort can be done on a single field or multiple fields.
+
+Single Field\
+fieldName: The field on which the sort is applied.sortOrder: The order in which the sort is applied. This value can be “ASC” (forascending) or “DSC” (for descending)
+
+```
+var fieldsOrder = ArrayList() fieldsOrder.add(FieldSortOrder("vPrice", SortOrder.ASC))  
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val browseQuery = BrowseQuery.Builder(categoryPath). fieldsSortOrder(fieldsOrder).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception)                                       
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+**Multiple Fields**\
+Here 2 or more FieldSortOrder instances are added.
+
+```
+var fieldsOrder = ArrayList() fieldsOrder.add(FieldSortOrder("vPrice", SortOrder.ASC)) fieldsOrder.add(FieldSortOrder("title", SortOrder.DSC))  
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val browseQuery = BrowseQuery.Builder(categoryPath). fieldsSortOrder(fieldsOrder).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+Log.d("Client Response",json.toString())  
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
