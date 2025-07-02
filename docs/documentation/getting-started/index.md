@@ -7,7 +7,9 @@ hidden: true
 ---
 *Welcome to UNBXD Documentation*!
 
-In an age where search engines like Google can generate vast information about anything and everything, why is it still so hard for shoppers to find the products they want on e-commerce sites? That’s the problem we solve at **Netcore Unbxd**.
+Search engines like Google can instantly deliver vast amounts of information on nearly any topic. Despite this, shoppers still struggle to find the products they want on e-commerce websites.
+
+That’s the problem we solve at **Netcore Unbxd**.
 
 <Cards columns={4}>
   <Card title="What Can Netcore Unbxd Do?" href="https://unbxdocs.readme.io/docs/what-can-netcore-unbxd-do">
@@ -29,9 +31,9 @@ In an age where search engines like Google can generate vast information about a
 
 # About UNBXD
 
-Unbxd was founded in 2011 and it expanded globally, secured major clients, and enhanced its platform with deep learning and personalization tools. In 2021, Unbxd was acquired by Netcore Cloud, to combine Unbxd’s capabilities with Netcore’s customer engagement tools. This acquisition offers a complete solution for all your online shopping experiences.
+Unbxd was founded in 2011 and expanded globally, enhancing its platform with deep learning and personalization tools. In 2021, Unbxd was acquired by Netcore Cloud, to combine Unbxd’s capabilities with Netcore’s customer engagement tools. This acquisition offers a complete solution for all your online shopping experiences.
 
-Unbxd is used by more than 1,300 e-commerce sites in over 40 countries, including brands like Ashley HomeStore, Express, and HSN. Unbxd powers over 8 billion interactions each month and supports $8 billion in online revenue.
+Unbxd is used by over 1,300 e-commerce sites in more than 40 countries, including brands such as Ashley HomeStore, Express, and HSN. Unbxd powers over 8 billion interactions each month and supports $8 billion in online revenue.
 
 Unbxd is an AI-powered ecommerce search and product discovery platform that enhances how shoppers interact with online stores. It transforms traditional search by delivering results by analyzing shopper intent, ultimately improving conversion rates and reducing bounce. By using AI models, Unbxd analyzes catalog data, clickstream behavior, and various other signals to understand user intent across search, browse, and recommendation touchpoints. This approach ensures that shoppers quickly find products that match their needs.
 
