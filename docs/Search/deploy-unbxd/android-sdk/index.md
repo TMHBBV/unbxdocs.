@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Our Software Development Kit (SDK) supports network calls your eCommerce application makes to the Unbxd platform and allows you to configure and integrate Unbxd Site Search within your web store.
+Our  Software Development Kit (SDK) supports network calls your eCommerce application makes to the Unbxd platform and allows you to configure and integrate Unbxd Site Search within your web store.
 
 The following features are currently supported with UnbxdSDK:
 
