@@ -47,3 +47,7 @@ recommendationType : Specifies the type of recommendation widget. For different 
 | Category Top Sellers | CATEGORY\_\_TOP\_\_SELLERS |
 | PDP Top Sellers      | PDP\_\_TOP\_\_SELLERS      |
 | Brand Top Sellers    | BRAND\_\_TOP\_\_SELLERS    |
+
+### Search Result Impression
+
+A search impression event is fired when a search results page loads for the first time, and whenever results changes on applying pagination, auto scroll, sort, and filters. For each of these actions, the uniqueIds’ of the products visible on the search page will be sent as payload.
