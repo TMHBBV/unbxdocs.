@@ -84,3 +84,29 @@ query:For example “shirt” in the above code.
 ## Category Page Impression
 
 Similar to a search page impression event, a category page impression event is fired when a category page results loads for the first time, and every time the results changes on applying pagination, auto scroll, sort, and filters. For each of these actions, the uniqueIds’ of the products visible on the search page will be sent as payload.
+
+```
+val categoryPath = CategoryNamePath(arrayOf("home", "furniture", "entrywayfurniture"))  
+val categoryPageImpressionAnalytics = CategoryPageImpressionAnalytics(userId.id, userId.visitType, requestId,  
+categoryPath, PageType.Url, arrayOf("1692741", "01692015", "1692908"))  
+client.track(visitorAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+
+userId.visitType:This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+categoryPath: unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. for instance, If you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=categoryNamethen](https://search.unbxd.io/api-key/site-key/category?p=categoryNamethen) categoryQuery will be called as
