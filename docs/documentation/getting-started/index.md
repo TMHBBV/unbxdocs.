@@ -11,19 +11,19 @@ In an age where search engines like Google can generate vast information about a
 
 <Cards columns={4}>
   <Card title="What Can Netcore Unbxd Do?" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+    Deliver AI-powered search, navigation, and recommendations that improve conversions.
   </Card>
 
   <Card title="Why Use Netcore Unbxd?" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+    Gain full control over product discovery with intelligent merchandising and personalization.
   </Card>
 
   <Card title="What are Netcore Unbxd Features?" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
+    Includes smart search, real-time analytics, PIM, and cross-device performance optimization.
   </Card>
 
   <Card title="How Can Netcore Unbxd Help You?" icon="fa-question">
-    **Excepteur sint occaecat cupidatat non proident**
+    Simplifies complex ecommerce search challenges while enabling business-specific customization.
   </Card>
 </Cards>
 
