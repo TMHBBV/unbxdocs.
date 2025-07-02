@@ -1,5 +1,5 @@
 ---
-title: Introducing Unbxd Search
+title: Introducing Search
 excerpt: Deliver fast, intelligent product discovery at scale with Search feature.
 deprecated: false
 hidden: true
