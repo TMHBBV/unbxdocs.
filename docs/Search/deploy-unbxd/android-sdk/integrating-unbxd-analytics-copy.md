@@ -110,3 +110,18 @@ userId.id:The SDK will generate a randomized unique identifier – UID to each u
 userId.visitType:This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
 
 categoryPath: unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. for instance, If you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=categoryNamethen](https://search.unbxd.io/api-key/site-key/category?p=categoryNamethen) categoryQuery will be called as
+
+```
+let categoryQuery = CategoryNamePath(withCategories:  
+["categoryName"])
+```
+
+<br />
+
+but if you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+
+then categoryQuery will be called as
+
+```
+let categoryQuery = CategoryNamePath(withCategories: ["category:\(categoryName)"])  
+```
