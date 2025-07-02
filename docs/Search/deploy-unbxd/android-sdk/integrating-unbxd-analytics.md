@@ -1,7 +1,7 @@
 ---
 title: 'Integrating Unbxd Analytics '
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
