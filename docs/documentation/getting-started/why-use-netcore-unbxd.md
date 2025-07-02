@@ -1,18 +1,33 @@
 ---
 title: Why Use Netcore Unbxd?
+excerpt: Transform Your Ecommerce Experience with AI-Powered Product Discovery
 deprecated: false
 hidden: true
 metadata:
   robots: index
 ---
-Transform your eCommerce experience with AI-powered product discovery.
+**Netcore Unbxd** enables businesses to deliver personalized, engaging shopping experiences that drive conversions and customer satisfaction. Here is why it stands out:
 
-Netcore Unbxd helps businesses deliver personalized, engaging shopping experiences that drive conversions. Here’s why you should use it:
+# AI-Driven Discovery
 
-AI-Driven Discovery: Enhance search accuracy and deliver relevant product recommendations using advanced AI and NLP.\
-Real-Time Personalization: Tailor the shopping experience based on individual behavior and preferences.
-Seamless Integration: Easily integrate with your existing eCommerce platform for quick deployment.
-Actionable Insights: Gain real-time analytics to optimize product offerings and boost performance.
-Scalable & Flexible: Supports growing businesses with large catalogs and high traffic volumes.
-Improved Engagement & Conversions: Features like visual search and dynamic recommendations drive higher customer engagement and increase sales.
-​
+Enhance search accuracy and relevance with advanced AI and natural language processing (NLP) capabilities.
+
+# Real-Time Personalization
+
+Customize the shopping journey to each individual’s behavior, preferences, and purchase intent.
+
+# Integration
+
+Quickly deploy with out-of-the-box compatibility for most e-commerce platforms.
+
+# Actionable Insights
+
+Access real-time analytics to monitor performance, optimize strategies, and improve ROI.
+
+# Scalable and Flexible
+
+Handle large product catalogs and high traffic volumes with ease—ideal for growing businesses.
+
+# Engagement and Conversions
+
+Boost customer interaction and sales through features like visual search, intelligent recommendations, and dynamic content.
