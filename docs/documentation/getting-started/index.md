@@ -14,15 +14,15 @@ In an age where search engines like Google can generate vast information about a
     Deliver AI-powered search, navigation, and recommendations that improve conversions.
   </Card>
 
-  <Card title="Why Use Netcore Unbxd?" href="https://unbxdocs.readme.io/docs/what-can-netcore-unbxd-do">
+  <Card title="Why Use Netcore Unbxd?" href="https://unbxdocs.readme.io/docs/why-use-netcore-unbxd#">
     Gain full control over product discovery with intelligent merchandising and personalization.
   </Card>
 
-  <Card title="What are Netcore Unbxd Features?" href="https://unbxdocs.readme.io/docs/what-can-netcore-unbxd-do">
+  <Card title="What are Netcore Unbxd Features?" href="https://unbxdocs.readme.io/docs/getting-started#/features-overview">
     Includes smart search, real-time analytics, PIM, and cross-device performance optimization.
   </Card>
 
-  <Card title="How Can Netcore Unbxd Help You?" href="https://unbxdocs.readme.io/docs/what-can-netcore-unbxd-do">
+  <Card title="How Can Netcore Unbxd Help You?" href="https://unbxdocs.readme.io/docs/how-can-unbxd-make-a-difference-for-you#/">
     Simplifies complex ecommerce search challenges while enabling business-specific customization.
   </Card>
 </Cards>
