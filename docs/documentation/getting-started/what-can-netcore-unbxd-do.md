@@ -35,3 +35,7 @@ Let shoppers search with images or interact with virtual shopping assistants—c
 ## Gain Deep Analytics and Insights
 
 Understand what’s working and where to optimize with actionable analytics, user behavior data, and performance metrics.
+
+## Product Information Management (PIM)
+
+Unbxd also includes a **Product Information Management** (**PIM**) system that fetches product data from diverse sources. It ensures consistent content across channels, streamlining operations for e-commerce teams. Merchandisers benefit from Unbxd’s UI-friendly dashboard, which provides full control over rules, promotions, and personalization strategies without needing engineering/ tech support.
