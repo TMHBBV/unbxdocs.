@@ -82,8 +82,6 @@ Netcore Unbxd's Merchandising Workbench is a robust tool for managing product vi
   * Track metrics like clicks and conversions to understand which campaigns (e.g., flash sales) perform best and refine future strategies accordingly.
   * Analyze engagement metrics for individual products to identify best-sellers and promote them for higher visibility.
   * Monitor shopper behavior patterns on category pages, identify popular items, and adjust merchandising strategies to cater to demand.
-
-  And more…
 </Accordion>
 
 ## How to access the Merchandising Workbench?
