@@ -126,11 +126,11 @@ Netcore Unbxd's Merchandising Workbench is a robust tool for managing product vi
 
   5. Logical Operators
 
-  AND: All conditions must be true for the rule to apply. This operator is used to combine multiple conditions where all must be met. **Example:** : Brand = Nike AND Color = Red will include only products that are both "Nike" and "Red."
+  **AND**: All conditions must be true for the rule to apply. This operator is used to combine multiple conditions where all must be met. **Example:** Brand = Nike AND Color = Red will include only products that are both "Nike" and "Red."
 
-  OR: At least one of the conditions must be true for the rule to apply. This operator is used to broaden the scope of the condition. **Example:** : Brand = Nike OR Brand = Adidas will include products from either "Nike" or "Adidas," but not necessarily both.
+  **OR**: At least one of the conditions must be true for the rule to apply. This operator is used to broaden the scope of the condition. **Example:**  Brand = Nike OR Brand = Adidas will include products from either "Nike" or "Adidas," but not necessarily both.
 
-  THEN: This operator is used to define the sequence of rules. If the first condition is met, the second rule will apply. It is typically used when you want to create a layered, sequential set of rules. **Example:** : Sort by Price Ascending THEN Sort by Rating Descending means that the products will first be sorted by price from low to high. If products are at the same price, they will be sorted by rating them high or low.
+  **THEN**: This operator is used to define the sequence of rules. If the first condition is met, the second rule will apply. It is typically used when you want to create a layered, sequential set of rules. **Example:** Sort by Price Ascending THEN Sort by Rating Descending means that the products will first be sorted by price from low to high. If products are at the same price, they will be sorted by rating them high or low.
 </Accordion>
 
 ## How to combine rules to create a cohesive merchandising strategy?
