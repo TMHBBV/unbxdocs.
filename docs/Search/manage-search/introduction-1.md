@@ -7,12 +7,6 @@ metadata:
 ---
 Netcore Unbxd's Merchandising Workbench is a robust tool for managing product visibility and enhancing user engagement by promoting specific products or categories. It provides a versatile, no-code Visual Editor, making it comfortable to create, configure, and fine-tune merchandising rules.
 
-<Accordion title="My Accordion Title" icon="fa-info-circle">
-  Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
-  ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
-  occaecat cupidatat non proident!
-</Accordion>
-
 <Accordion title="What can I do with the Merchandising Workbench?">
   ### 1. Promote or Hide Products
 
@@ -86,69 +80,76 @@ Netcore Unbxd's Merchandising Workbench is a robust tool for managing product vi
 
 ## How to access the Merchandising Workbench?
 
-1. Login to Netcore Unbxd’s [self-serve console](https://console.unbxd.io/) ↗
+1. Log in to Netcore Unbxd’s [self-serve console](https://console.unbxd.io/) ↗
 2. From the **Site Key Picker**, click the site you want to apply a merchandising strategy.
 3. After selecting the appropriate site key, navigate to **Merchandising**.
 
 ## What are the Netcore Unbxd UI terminologies you should know?
 
-\<Accordion>\
-\<Accordion title="Attributes">
-In an ecommerce catalog, attributes are the characteristics or properties that describe a product. These attributes can be textual or numerical and help effectively organize, filter, and display products.
+<Accordion title="Attributes">
+  In an ecommerce catalog, attributes are the characteristics or properties that describe a product. These attributes can be textual or numerical and help effectively organize, filter, and display products.
 
-```
-```
+  **Example:** Attributes like Color, Price, and Brand define key traits of a product.
+</Accordion>
 
-\<Accordion title="Values">\
-Values represent the specific details or data points associated with an attribute. These values define the characteristics that an attribute describes.
+<Accordion title="Values">
+  Values represent the specific details or data points associated with an attribute. These values define the characteristics that an attribute describes.
 
-```
-```
+  * **Example:**
+    * The attribute Color might have values like *Red*, *Blue*, or *Green*.
+    * The attribute Price might have values like *50*, *100*, or *150*.
+    * The attribute Brand might have values like *Nike* or *Adidas*.
+</Accordion>
 
-\<Accordion title="Operators">\
-Conditions allow you to create rules by comparing attributes and their values. These conditions determine how products are filtered, boosted, or buried.
-\</Accordion>
+<Accordion title="Operators">
+  Conditions allow you to create rules by comparing attributes and their values. These conditions determine how products are filtered, boosted, or buried.
+</Accordion>
 
-\<Accordion title="Equals (=)">\
-The attribute value must exactly match the specified value.
-**Example:**
-Brand = Nike will include only products with the brand "Nike." Products like "Nike Limited Edition" will not be included because it's not an exact match.
-\</Accordion>
+<Accordion title="Equals (=)">
+  The attribute value must exactly match the specified value.
+  **Example:**
+  Brand = Nike will include only products with the brand "Nike." Products like "Nike Limited Edition" will not be included because it's not an exact match.
+</Accordion>
 
-\<Accordion title="Not Equals (≠)">\
-The attribute value must not exactly match the specified value.
-**Example:**
-Color ≠ Red will exclude products that have "Red" as their color. However, products like "Dark Red" or "Red Velvet" will still be included because they are not an exact match for "Red."
-\</Accordion>
+<Accordion title="Not Equals (≠)">
+  The attribute value must not exactly match the specified value.
+  **Example:**
+  Color ≠ Red will exclude products that have "Red" as their color. However, products like "Dark Red" or "Red Velvet" will still be included because they are not an exact match for "Red."
+</Accordion>
 
-\<Accordion title="Contains (⊂)">\
-The attribute value must include the specified keyword or text.
-**Example:**
-Brand ⊂ "Nike" will include products where the brand contains the word "Nike," such as "Nike" or "Nike Limited Edition."
-\</Accordion>
+<Accordion title="Contains (⊂)">
+  The attribute value must include the specified keyword or text.
+  **Example:**
+  Brand ⊂ "Nike" will include products where the brand contains the word "Nike," such as "Nike" or "Nike Limited Edition."
+</Accordion>
 
-\<Accordion title="Does Not Contain (⊄)">\
-The attribute value must not contain the specified keyword or text.
-**Example:**
-Color ⊄ "Red" will exclude all products with "Red" anywhere in the color description, such as "Dark Red" or "Red Velvet."
-\</Accordion>
+<Accordion title="Does Not Contain (⊄)">
+  The attribute value must not contain the specified keyword or text.
+  **Example:**
+  Color ⊄ "Red" will exclude all products with "Red" anywhere in the color description, such as "Dark Red" or "Red Velvet."
+</Accordion>
 
-\<Accordion title="Logical Operators">### AND:
+<Accordion title="Logical Operators">
+  ### AND:
 
-```
-```
+  All conditions must be true for the rule to apply. This operator is used to combine multiple conditions where all must be met.
+  **Example:**
+  Brand = Nike AND Color = Red will include only products that are both "Nike" and "Red."
 
-```
-```
+  ### OR:
 
-```
-```
+  At least one of the conditions must be true for the rule to apply. This operator is used to broaden the scope of the condition.
+  **Example:**
+  Brand = Nike OR Brand = Adidas will include products from either "Nike" or "Adidas," but not necessarily both.
 
-```
-```
+  ### THEN:
 
-```
-```
+  This operator is used to define the sequence of rules. If the first condition is met, the second rule will apply. It is typically used when you want to create a layered, sequential set of rules.
+  **Example:**
+  Sort by Price Ascending THEN Sort by Rating Descending means that the products will first be sorted by price from low to high. If products are at the same price, they will be sorted by rating them high or low.
+</Accordion>
+
+<br />
 
 ## How to combine rules to create a cohesive merchandising strategy?
 
