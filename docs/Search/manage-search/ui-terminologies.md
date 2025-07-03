@@ -48,7 +48,7 @@ In an ecommerce catalog, attributes are the characteristics or properties that d
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Conditions used to create rules by comparing attributes and their values. This is applicable for [Boost]() and [Filter]().
+        Conditions used to create rules by comparing attributes and their values. This is applicable for [Boost](https://unbxdocs.readme.io/docs/promotions-optional#/boost-or-bury-specific-products) and [Filter](https://unbxdocs.readme.io/docs/promotions-optional#/filter).
 
         * **Equals (=)**:The attribute value must exactly match the specified value. Example: Brand = Nike.
         * **Not Equals (≠)**:The attribute value must not exactly match the specified value. Example: Color ≠ Red.
