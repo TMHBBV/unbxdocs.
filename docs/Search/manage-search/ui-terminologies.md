@@ -61,31 +61,15 @@ In an ecommerce catalog, attributes are the characteristics or properties that d
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        **AND**
+        **Logical Operators**
       </td>
 
       <td style={{ textAlign: "left" }}>
-        All conditions must be true for the rule to apply. Example: Brand = Nike AND Color = Red.
-      </td>
-    </tr>
+        Logical operators are used to combine or modify conditions in queries.
 
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        **OR**
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        At least one condition must be true for the rule to apply. Example: Brand = Nike OR Brand = Adidas.
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        **THEN**
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        Defines the sequence of rules. The second rule will apply if the first condition is met. Example: Sort by Price Ascending THEN Sort by Rating Descending.
+        * **AND**: All conditions must be true for the rule to apply. Example: Brand = Nike **AND** Color = Red.
+        * **OR**: At least one condition must be true for the rule to apply. Example: Brand = Nike **OR** Brand = Adidas.
+        * **THEN**: Defines the sequence of rules. The second rule will apply only if the first condition is met. Example: Sort by Price Ascending **THEN** Sort by Rating Descending.
       </td>
     </tr>
   </tbody>
