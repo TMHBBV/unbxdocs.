@@ -55,7 +55,7 @@ In an ecommerce catalog, attributes are the characteristics or properties that d
         * **Contains (⊂)**:The attribute value must include the specified keyword or text. Example: Brand ⊂ "Nike".
         * **Does Not Contain (⊄)**: The attribute value must not contain the specified keyword or text. Example: Color ⊄ "Red".
         * **Greater than or Equal to (>=)**: The attribute value must be greater than or equal to the specified value. Example: "Price >= 100".
-        * **Less than or Equal to** (\<=): The attribute value must be less than or equal to the specified value. Example: Rating =\< 4
+        * **Less than or Equal to** (\<=): The attribute value must be less than or equal to the specified value. Example: "Rating `=< 4".
       </td>
     </tr>
 
