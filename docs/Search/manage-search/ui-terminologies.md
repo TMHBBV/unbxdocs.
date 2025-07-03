@@ -54,8 +54,8 @@ In an ecommerce catalog, attributes are the characteristics or properties that d
         </li><li>**Not Equals (≠)**:The attribute value must not exactly match the specified value. Example: Color ≠ Red.
         </li><li>**Contains (⊂)**:The attribute value must include the specified keyword or text. Example: Brand ⊂ "Nike".
         </li><li>**Does Not Contain (⊄)**: The attribute value must not contain the specified keyword or text. Example: Color ⊄ "Red".
-        </li><li>**Greater than or Equal to (>=)**: The attribute value must be greater than or equal to the specified value. Example: Price >= 100.
-        </li><li>**Less than or Equal to (>=)**: The attribute value must be less than or equal to the specified value. Example: Rating less than or equal to 4.</li></ul>
+        </li><li>**Greater than or Equal to (>=)**: The attribute value must be greater than or equal to the specified value. Example: "Price >= 100".
+        </li><li>**Less than or Equal to (=)**: The attribute value must be less than or equal to the specified value. Example: Rating =\< 4.</li></ul>
       </td>
     </tr>
 
