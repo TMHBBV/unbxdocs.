@@ -48,31 +48,14 @@ In an ecommerce catalog, attributes are the characteristics or properties that d
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Conditions used to create rules by comparing attributes and their values.
-
-        <ul><li>**Equals (=)**:The attribute value must exactly match the specified value. Example: Brand = Nike
-        </li><li>**Not Equals (≠)**:The attribute value must not exactly match the specified value. Example: Color ≠ Red.
-        </li><li>**Contains (⊂)**:The attribute value must include the specified keyword or text. Example: Brand ⊂ "Nike".
-        </li><li>**Does Not Contain (⊄)**: The attribute value must not contain the specified keyword or text. Example: Color ⊄ "Red".
-        </li><li>**Greater than or Equal to (>=)**: The attribute value must be greater than or equal to the specified value. Example: "Price >= 100".
-        </li><li>**Less than or Equal to (=)**: The attribute value must be less than or equal to the specified value. Example: Rating =\< 4.</li></ul>
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        **Operators**
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        Conditions used to create rules by comparing attributes and their values.
+        Conditions used to create rules by comparing attributes and their values. This is applicable for [Boost]() and [Filter]().
 
         * **Equals (=)**:The attribute value must exactly match the specified value. Example: Brand = Nike.
         * **Not Equals (≠)**:The attribute value must not exactly match the specified value. Example: Color ≠ Red.
         * **Contains (⊂)**:The attribute value must include the specified keyword or text. Example: Brand ⊂ "Nike".
         * **Does Not Contain (⊄)**: The attribute value must not contain the specified keyword or text. Example: Color ⊄ "Red".
         * **Greater than or Equal to (>=)**: The attribute value must be greater than or equal to the specified value. Example: "Price >= 100".
-        * \*\*Less than or Equal to\*\* (\<=): The attribute value must be less than or equal to the specified value. Example: Rating =\\\< 4
+        * **Less than or Equal to** (\<=): The attribute value must be less than or equal to the specified value. Example: Rating =\< 4
       </td>
     </tr>
 
