@@ -155,12 +155,14 @@ Netcore Unbxd's Merchandising Workbench is a robust tool for managing product vi
 
 Netcore Unbxd Workbench supports using multiple merchandising rules, enabling retailers to create a cohesive shopping experience.
 
-Here’s a simple example for a search query "back-to-school" campaign:
+Here’s a simple example for a search query **back-to-school** campaign:
 
-1. Segment shoppers.
-2. Run a banner to advertise the campaign on the home page, category pages, and search query listing pages.
-3. Create a landing page by applying filters for stationery, lunch bags, or water bottles.
-4. Redirect users to the landing page dedicated to back-to-school products and deals.
-5. Boost new arrivals and highly rated items unique to each segment and bury products with lower ratings.
-6. Pin items from popular brands in positions 1 to 10 on the search result page.
-7. Analyze the campaign's performance and the shoppers’ journeys to apply what was learned in the next campaign.
+| Action                  | Description                                                                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Segment shoppers        | Divide shoppers based on behaviors, preferences, or demographic data.                                                         |
+| Run a banner            | Display a banner on the homepage, category pages, and search query listing pages promoting the "**back-to-school**" campaign. |
+| Create a landing page   | Apply filters for specific items such as stationery, lunch bags, or water bottles to create a campaign landing page.          |
+| Redirect users          | Guide users to the landing page dedicated to back-to-school products and deals.                                               |
+| Boost and bury products | Highlight new arrivals and highly rated items for each segment, while burying products with lower ratings.                    |
+| Pin popular items       | Pin products from popular brands in the top 1 to 10 positions on the search results page.                                     |
+| Analyze performance     | Evaluate the campaign's success and analyze shoppers' journeys to improve future campaigns.                                   |
