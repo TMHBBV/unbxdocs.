@@ -89,57 +89,41 @@ For Example: 2. **Latin Script - Similar to Translation**
 This format simplifies the explanation and example for users, making it easy to understand the functionality of the **Transliterate Enrichment** strategy.
 ````
 
-<br />
+4. **SEO Keyword Enrichment**:
 
-<Table>
-  <thead>
-    <tr>
-      <th>
-        **Feature Name**
-      </th>
+The SEO Keyword Enrichment strategy uses Large Language Models (LLM) to generate relevant SEO keywords for your products based on existing product data. These keywords help improve your product's visibility in organic search results, driving more traffic to your e-commerce site.
 
-      <th>
-        **Description**
-      </th>
+For Example: **Configuration from fields: product\_title, description, category**
 
-      <th>
-        **Example**
-      </th>
-    </tr>
-  </thead>
+```Text Original Product Data
+{  
+  "id": "PROD789",  
+  "product_title": "Organic Cotton Baby Bodysuit",  
+  "description": "Soft and breathable 100% organic cotton bodysuit for infants aged 0-6 months. Features snap closures for easy diaper changes and a cute animal print. Perfect for sensitive skin.",  
+  "category": "Baby Clothing"  
+} 
+```
+````Text Enriched Product Data (after SEO Keyword processing):
+{  
+  "id": "PROD789",  
+  "product_title": "Organic Cotton Baby Bodysuit",  
+  "description": "Soft and breathable 100% organic cotton bodysuit for infants aged 0-6 months. Features snap closures for easy diaper changes and a cute animal print. Perfect for sensitive skin.",  
+  "category": "Baby Clothing",  
+  "seo_keywords": [  
+    "organic baby clothes",  
+    "cotton bodysuit infant",  
+    "newborn organic cotton",  
+    "baby clothes 0-6 months",  
+    "snap closure bodysuit",  
+    "sensitive skin baby clothes",  
+    "animal print baby outfit"  
+  ]  
+}  
+```  |
 
-  <tbody>
-    <tr>
-      <td>
-        **Large Language Models (LLMs)**
-      </td>
+This format breaks down how the SEO Keyword Enrichment strategy works, providing a simple explanation and an example of how it generates SEO keywords from product data.
 
-      <td>
-        This strategy harnesses the power of **Large Language Models (LLMs)** to intelligently generate new, missing product fields based on existing information in your catalog. It's ideal for creating descriptive content or structured data points that are not readily available.
-      </td>
-
-      <td>
-        For a **"Smartwatch"** missing the "battery life" attribute, the LLM analyzes the product description, such as "Up to 48 hours of usage on a single charge," and automatically adds the missing "battery life" data.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **Google Translator Enrichment**
-      </td>
-
-      <td>
-        This strategy enables the translation of existing product fields from one language (typically English) into a specified target language. It helps expand your e-commerce presence into new markets and provides localized search experiences by generating multilingual product data.
-      </td>
-
-      <td>
-        <br />
-
-        <br />
-      </td>
-    </tr>
-  </tbody>
-</Table>
+````
 
 ## How to Get Started
 
