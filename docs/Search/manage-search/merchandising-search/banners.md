@@ -90,37 +90,30 @@ Code explanation:
 
 ## Set up Query-based Banner
 
-"Navigate to the Banners section"
-&#x20;   1\. Login to Netcore Unbxd’s \[self-serve console]\(https\://console.unbxd.io/) ↗
-&#x20;   2\. From the \*\*Site Key Picker\*\*, click the site you want to apply a merchandising strategy.
-&#x20;   3\. After selecting the appropriate site key, navigate to \*\*Merchandising\*\*.
-&#x20;   4\. Hover over \*\*Search\*\* and click \*\*Banners\*\*.
+"Navigate to the Banners section"1) Login to Netcore Unbxd’s [self-serve console](\[https://console.unbxd.io/]\(https://console.unbxd.io/\)) ↗
+2) From the **Site Key Picker**, click the site you want to apply a merchandising strategy.
+3) After selecting the appropriate site key, navigate to **Merchandising**.
+4) Hover over **Search** and click **Banners**.
 
-&#x20;   To know more about the Banners overview page, click here.
+```
+```
 
-"Setting up the campaign"
-&#x20;   1\. On the Banners overview page, navigate to New banner and then click Query-based banner.
-&#x20;   2\. You'll go to the Add banners interface.
-&#x20;   3\. Enter the Query for which you want to set up banners for—this is the search term you expect your shopper to use.
-&#x20;      1\. To apply the same rule to additional queries, click + Apply same rule to more queries, add queries separated by commas, and press Enter.
-&#x20;   4\. Enter a Campaign Name for internal reference.
-&#x20;   5\. Select a Segment from the list to target specific shopper groups or click + Create New Segment to make a custom/new one.
-&#x20;   6\. Set the Duration for the campaign, including the Time Zone, Start and End dates, and times.
-&#x20;      1\. For an open-ended campaign, enable Run Perpetually. This option allows you to run any campaign until it is manually stopped.
-&#x20;   7\. Optionally, add a Description for future reference.
-&#x20;   8\. When finished, click Next to proceed.
-&#x20;
+"Setting up the campaign"1) On the Banners overview page, navigate to New banner and then click Query-based banner.
+2) You'll go to the Add banners interface.
+3) Enter the Query for which you want to set up banners for—this is the search term you expect your shopper to use.
+   1. To apply the same rule to additional queries, click + Apply same rule to more queries, add queries separated by commas, and press Enter.
+4) Enter a Campaign Name for internal reference.
+5) Select a Segment from the list to target specific shopper groups or click + Create New Segment to make a custom/new one.
+6) Set the Duration for the campaign, including the Time Zone, Start and End dates, and times.
+   1. For an open-ended campaign, enable Run Perpetually. This option allows you to run any campaign until it is manually stopped.
+7) Optionally, add a Description for future reference.
+8) When finished, click Next to proceed.
 
-"Configuring the banner"
-&#x20;   Put in the HTML code of the pre-designed image based on your preference.
+"Configuring the banner"\
+Put in the HTML code of the pre-designed image based on your preference.
 
-"Saving or publishing the banner"
-&#x20;   After applying the rule, you can do one of the following.
-
-&#x20;   1\. Click the Save button to retain the Campaign as a draft.
-&#x20;   2\. Click the Publish rule button to push it live.
-&#x20; \</Step>
-\</Steps>
+"Saving or publishing the banner"\
+After applying the rule, you can do one of the following.
 
 ## Banners overview page
 
@@ -140,121 +133,76 @@ Apart from adding new banner rules via the overview page, you can,
 12. Import banners from one site to another
 13. Bulk download existing banner rules
 
-&#x20;\<Accordion title="How to view a comprehensive list of all the campaigns I launched?">
-&#x20;   To view a comprehensive list of all your banner campaigns, select the site key, click \*\*Merchandising\*\*, navigate to \*\*Search\*\*, and then \*\*Banners\*\*.
+\<Accordion title="How to view a comprehensive list of all the campaigns I launched?">\
+To view a comprehensive list of all your banner campaigns, select the site key, click **Merchandising**, navigate to **Search**, and then **Banners**.
 
-&#x20;   \#### Key Information on the Campaign List
+\<Accordion title="How to edit an existing campaign or publish a draft campaign?">1) Locate the campaign you wish to modify.
+2) Click the **Edit** icon to open the campaign.
+3) Review and make necessary changes.
+4) Click **Publish Rule** to make the campaign live.
+   \</Accordion>
 
-&#x20;   \* Campaigns are grouped by query. If multiple campaigns are set for the same query, they will appear in the same row of that query.
-&#x20;   \* Details available on each listing:
-&#x20;     \* Whether it’s a \*\*Query Rule\*\* or \*\*Field Rule\*\*.
-&#x20;     \* The campaign’s \*\*date range\*\*.
-&#x20;     \* The segment it’s applied to.
-&#x20;     \* Its current \*\*status\*\* (Active, Upcoming, Draft, Stopped, or Expired).
+\<Accordion title="How to view a summary of the rules I added to my campaign?">\
+To view the summary of a specific banner, locate the campaign in the list and click the **Eye** icon at the far-right end of the row.
+\</Accordion>
 
-&#x20;   \#### Finding the Campaign/Query Using Filters and the Search Bar
+\<Accordion title="How to apply the same rule to additional queries?">\
+💡 **Note**: This applies only to Query-based Banners. Field rules are applicable across all queries.
 
-&#x20;   1\. Log in to \*\*Netcore Unbxd’s self-serve console\*\* ↗.
-&#x20;   2\. Select the site key where you want to apply the merchandising strategy.
-&#x20;   3\. Go to \*\*Merchandising\*\* > \*\*Search\*\* > \*\*Banners\*\*.
-&#x20;   4\. Use the search bar to find campaigns by entering the associated query.
-&#x20;   5\. Apply filters to narrow your search:
-&#x20;      \* \*\*Status\*\*: Active, Upcoming, Draft.
-&#x20;      \* \*\*Created On\*\*: Date range.
-&#x20;      \* \*\*Created By\*\*: The user who created the campaign.
-&#x20;      \* \*\*Segment\*\*: Associated Segment.
-&#x20;   6\. Click \*\*Apply Filters\*\* to display campaigns matching the selected criteria.
-&#x20; \</Accordion>
+\<Accordion title="Why create different banners for the same query?">\
+Creating different banners for the same query enables you to:
 
-&#x20; \<Accordion title="How to edit an existing campaign or publish a draft campaign?">
-&#x20;   1\. Locate the campaign you wish to modify.
-&#x20;   2\. Click the \*\*Edit\*\* icon to open the campaign.
-&#x20;   3\. Review and make necessary changes.
-&#x20;   4\. Click \*\*Publish Rule\*\* to make the campaign live.
-&#x20; \</Accordion>
+```
+```
 
-&#x20; \<Accordion title="How to view a summary of the rules I added to my campaign?">
-&#x20;   To view the summary of a specific banner, locate the campaign in the list and click the \*\*Eye\*\* icon at the far-right end of the row.
-&#x20; \</Accordion>
+```
+```
 
-&#x20; \<Accordion title="How to apply the same rule to additional queries?">
-&#x20;   💡 \*\*Note\*\*: This applies only to Query-based Banners. Field rules are applicable across all queries.
+```
+```
 
-&#x20;   1\. Locate the campaign you wish to modify.
-&#x20;   2\. Click the \*\*More Options\*\* icon next to the query.
-&#x20;   3\. Select \*\*+ Apply Same Rule to More Queries\*\*.
-&#x20;   4\. Enter additional queries in the \*\*Add Queries\*\* section, separating multiple queries with a comma.
-&#x20;   5\. Press \*\*Enter\*\* to confirm.
-&#x20;   6\. Click \*\*Apply Changes\*\*.
-&#x20; \</Accordion>
+\<Accordion title="How to duplicate existing campaigns?">1) Locate the campaign to duplicate.
+2) Click the **More Options** icon and select **Duplicate Rule**.
+3) Edit the duplicated banner as needed, ensuring no overlapping date ranges.
+4) Save the campaign as a **Draft** or publish it live by clicking **Publish Rule**.
+   \</Accordion>
 
-&#x20; \<Accordion title="Why create different banners for the same query?">
-&#x20;   Creating different banners for the same query enables you to:
+\<Accordion title="How to create new campaigns for the same query?">1) Locate the campaign to modify.
+2) Click the **More Options** icon and select **Add Another Campaign**.
+3) Configure the banner settings as needed.
+4) Save as a **Draft** or publish it live by clicking **Publish Rule**.
+   \</Accordion>
 
-&#x20;   1\. Target specific audience segments (e.g., new vs. returning customers).
-&#x20;   2\. Run time-bound campaigns alongside evergreen campaigns.
-&#x20;   3\. Address diverse objectives, such as promoting new arrivals and best-sellers.
-&#x20;   4\. Manage and prioritize multiple strategies.
+\<Accordion title="How to stop active campaigns?">\
+💡 **Note**: For Field Rule banners, you must delete the campaign.
 
-&#x20;   Options:
+```
+```
 
-&#x20;   \* \*\*Duplicate an existing campaign\*\*: Retains the banner image and speeds up setup.
-&#x20;   \* \*\*Create a new campaign\*\*: Requires configuring the banner image and settings from scratch.
-&#x20; \</Accordion>
+\<Accordion title="How to preview the site with the campaign rules applied?">1) Locate the campaign to preview.
+2) Click the **More Options** icon and select **Search Preview**.
+3) Review the banner and its details on the preview site.
+   \</Accordion>
 
-&#x20; \<Accordion title="How to duplicate existing campaigns?">
-&#x20;   1\. Locate the campaign to duplicate.
-&#x20;   2\. Click the \*\*More Options\*\* icon and select \*\*Duplicate Rule\*\*.
-&#x20;   3\. Edit the duplicated banner as needed, ensuring no overlapping date ranges.
-&#x20;   4\. Save the campaign as a \*\*Draft\*\* or publish it live by clicking \*\*Publish Rule\*\*.
-&#x20; \</Accordion>
+\<Accordion title="How to bulk upload banners?">1) Navigate to the **More Options** button and select **Bulk Upload Banners**.
+2) Upload the CSV file (download the sample file for reference).
+3) If overriding existing rules, check the corresponding option.
+4) Imported banners will appear on the Overview page.
+   \</Accordion>
 
-&#x20; \<Accordion title="How to create new campaigns for the same query?">
-&#x20;   1\. Locate the campaign to modify.
-&#x20;   2\. Click the \*\*More Options\*\* icon and select \*\*Add Another Campaign\*\*.
-&#x20;   3\. Configure the banner settings as needed.
-&#x20;   4\. Save as a \*\*Draft\*\* or publish it live by clicking \*\*Publish Rule\*\*.
-&#x20; \</Accordion>
+\<Accordion title="How to import banners from one site to another?">1) Navigate to the **More Options** button and select **Import Rule**.
+2) Choose the **Source Site**.
+3) Select the query and campaigns to import.
+4) Click **Import** to complete the process.
+   💡 **Note**: Imported campaigns with conflicts will override existing rules.
+   \</Accordion>
 
-&#x20; \<Accordion title="How to stop active campaigns?">
-&#x20;   💡 \*\*Note\*\*: For Field Rule banners, you must delete the campaign.
+\<Accordion title="How to export existing banner campaigns?">1) Navigate to the **More Options** button and select **Bulk Download Banners**.
+2) A CSV file containing campaign data will be downloaded.
+   \</Accordion>
 
-&#x20;   1\. Locate the active banner.
-&#x20;   2\. Click the \*\*More Options\*\* icon and select \*\*Stop Banners\*\*.
-&#x20;   3\. Confirm by clicking \*\*Stop\*\*.
-&#x20; \</Accordion>
+\<Accordion title="How to delete an existing banner campaign?">\
+💡 **Note**: Deleting a campaign is the only way to stop Field Rule banners from displaying.
 
-&#x20; \<Accordion title="How to preview the site with the campaign rules applied?">
-&#x20;   1\. Locate the campaign to preview.
-&#x20;   2\. Click the \*\*More Options\*\* icon and select \*\*Search Preview\*\*.
-&#x20;   3\. Review the banner and its details on the preview site.
-&#x20; \</Accordion>
-
-&#x20; \<Accordion title="How to bulk upload banners?">
-&#x20;   1\. Navigate to the \*\*More Options\*\* button and select \*\*Bulk Upload Banners\*\*.
-&#x20;   2\. Upload the CSV file (download the sample file for reference).
-&#x20;   3\. If overriding existing rules, check the corresponding option.
-&#x20;   4\. Imported banners will appear on the Overview page.
-&#x20; \</Accordion>
-
-&#x20; \<Accordion title="How to import banners from one site to another?">
-&#x20;   1\. Navigate to the \*\*More Options\*\* button and select \*\*Import Rule\*\*.
-&#x20;   2\. Choose the \*\*Source Site\*\*.
-&#x20;   3\. Select the query and campaigns to import.
-&#x20;   4\. Click \*\*Import\*\* to complete the process.
-&#x20;      💡 \*\*Note\*\*: Imported campaigns with conflicts will override existing rules.
-&#x20; \</Accordion>
-
-&#x20; \<Accordion title="How to export existing banner campaigns?">
-&#x20;   1\. Navigate to the \*\*More Options\*\* button and select \*\*Bulk Download Banners\*\*.
-&#x20;   2\. A CSV file containing campaign data will be downloaded.
-&#x20; \</Accordion>
-
-&#x20; \<Accordion title="How to delete an existing banner campaign?">
-&#x20;   💡 \*\*Note\*\*: Deleting a campaign is the only way to stop Field Rule banners from displaying.
-
-&#x20;   1\. Locate the campaign to delete.
-&#x20;   2\. Click the \*\*More Options\*\* icon and select \*\*Delete\*\*.
-&#x20;   3\. Confirm by clicking \*\*Delete\*\*.
-&#x20; \</Accordion>
-\</AccordionGroup>
+```
+```
