@@ -91,9 +91,72 @@ Before using the Index Time Synonym feature, ensure that the following prerequis
 
 Below is step by step workflow on Index Time Synonym:
 
-| **Step**                                          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Synonym Mapping Input**                         | Merchandisers define synonym relationships through the dashboard. Example: \<br> \*\*Unidirectional Synonyms\*\*: "pants → trousers, slacks, long briefs" \<br> \*\*Bidirectional Synonyms\*\*: "pants ↔ trousers ↔ slacks ↔ long briefs" \<br> These mappings are passed to the backend system for indexing.                                                                                                                                           |
-| **Building the Inverted Synonym Trie**            | During feed ingestion, the system constructs an inverted synonym trie using the configured synonyms: \<br> \*\*Unidirectional Mapping\*\*: \<br> "trousers → pants", \<br> "slacks → pants", \<br> "long briefs → pants" \<br> \*\*Bidirectional Mapping\*\*: \<br> "trousers → pants, slacks, long briefs" \<br> "pants → trousers, slacks, long briefs", \<br> "slacks → pants, trousers, long briefs", \<br> "long briefs → pants, trousers, slacks" |
-| **SynonymTransformer Processing**                 | The SynonymTransformer processes the product catalog’s searchable fields (e.g., product titles, descriptions) and extracts text using a maximum window size of 3 words. These phrases are passed through the synonym trie to find matching synonyms. \<br> \*\*Note\*\*: Only single-token synonyms are indexed. Multi-word synonyms like "long briefs" are ignored.                                                                                    |
-| **Indexing into`syn_unx_tpm` and `syn_unx_auto`** | Valid single-token synonyms are indexed into the following fields: \<br> \*\*syn\\\_unx\\\_tpm\*\* for search queries \<br> \*\*syn\\\_unx\\\_auto\*\* for autosuggest queries \<br> Example: \<br> Product title "slacks" → synonym mapping "pants → slacks" → "pants" is indexed into \`syn\_unx\_tpm\`. \<br> Multi-word synonyms like "long briefs" are not indexed.                                                                                |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Step**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Synonym Mapping Input**
+      </td>
+
+      <td>
+        Merchandisers define synonym relationships through the dashboard.
+        Example:
+
+        * **Unidirectional Synonyms**: "pants → trousers, slacks, long briefs"
+        * **Bidirectional Synonyms**: "pants ↔ trousers ↔ slacks ↔ long briefs"
+        * These mappings are passed to the backend system for indexing.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Building the Inverted Synonym Trie**
+      </td>
+
+      <td>
+        During feed ingestion, the system constructs an inverted synonym using the configured synonyms:
+
+        * **Unidirectional Mapping**:"trousers → pants",  "slacks → pants",  "long briefs → pants"
+        * **Bidirectional Mapping**: "trousers → pants, slacks, long briefs" "pants → trousers, slacks, long briefs", "slacks → pants, trousers, long briefs", "long briefs → pants, trousers, slacks"
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **SynonymTransformer Processing**
+      </td>
+
+      <td>
+        In the Synonym Transformer processes the product catalog’s searchable fields (e.g., product titles, descriptions) and extracts text using a maximum window size of 3 words.\
+        **Note**: Only single-token synonyms are indexed. Multi-word synonyms like "long briefs" are ignored.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Indexing into`syn_unx_tpm` and `syn_unx_auto`**
+      </td>
+
+      <td>
+        Valid single-token synonyms are indexed into the following fields:
+
+        * **syn\_unx\_tpm** for search queries
+        * **syn\_unx\_auto** for autosuggest queries
+        * Example: Product title "slacks" → synonym mapping "pants → slacks" → "pants" is indexed into `syn_unx_tpm`.\
+          Multi-word synonyms like "long briefs" are not indexed.
+      </td>
+    </tr>
+  </tbody>
+</Table>
