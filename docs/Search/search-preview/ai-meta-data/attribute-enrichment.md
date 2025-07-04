@@ -139,8 +139,6 @@ Log in to Netcore Unbxd Dashboard and navigate to **Manage** > **Catalog** > **A
 4. Monitor Progress: Use the "Status" and "Mapping" columns to monitor the enrichment process and track the lifecycle of each attribute.
 5. Prioritize Action: Use the "Actions" column to trigger appropriate actions (enrich, publish, review) based on the status of each attribute.
 
-Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics. For a personalized walkthrough, consider booking a demo or requesting a search experience audit through your Unbxd account.
-
 ## Dashboard Keywords and Their Functionality
 
 Below are the functionality present on the Netcore Unbxd Console.
