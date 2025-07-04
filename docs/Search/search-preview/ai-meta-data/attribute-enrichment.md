@@ -246,7 +246,7 @@ Below are the functionality present on the Netcore Unbxd Console.
 
 <Image align="center" border={true} caption="Add New Attribute Enrichment" src="https://files.readme.io/a2e8d0948e14068c9a7c1b09e2714aa5f4e3f83f0274c3ee8d26e3dcada5b438-setup_attribute_enrich.gif" width="80% " />
 
-2. Select the [Strategies]() that suit your requirement and click on **Next**.
+2. Select the [Strategies](https://unbxdocs.readme.io/docs/attribute-enrichment#/product-enrichment-strategies) that suit your requirement and click on **Next**.
 3. Map your attributes and click **Preview** or **Run on entire catalog**.
 
 Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics.
