@@ -162,3 +162,21 @@ Below is step by step workflow on Index Time Synonym:
     </tr>
   </tbody>
 </Table>
+
+## FAQ & Troubleshoot
+
+<Accordion title="When should I use Index Time Synonym?">
+  Index Time Synonym is best used when you have a large number of synonyms to be indexed (e.g., 25+). It’s particularly useful during the onboarding process as feeds are indexed regularly.
+</Accordion>
+
+<Accordion title="Can I index multi-word synonyms?">
+  No, the system only processes and indexes single-token synonyms (e.g., "pants" → "slacks"). Multi-word synonyms like "long briefs" are not indexed to avoid noise in the system.
+</Accordion>
+
+<Accordion title="What happens if I add synonyms after the feed is ingested?">
+  If you add new synonyms after a feed has already been ingested, they will be indexed only during the next full feed or re-indexing cycle.
+</Accordion>
+
+<Accordion title="How often should I refresh the synonyms?">
+  Synonyms are typically refreshed during full feeds or delta feeds, which are indexed regularly. Ensure the feed is ingested at appropriate intervals to keep the synonym mappings up-to-date.
+</Accordion>
