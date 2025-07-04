@@ -27,6 +27,15 @@ Once done, spellcheck is set.
 
 <Image align="center" border={true} caption="Set up Spellcheck Override" src="https://files.readme.io/0dc559e9a04678f4813d04795d23ee7494aeca2182e646cfc02cea26f30c23fd-image-20250609-100811.png" width="80% " />
 
+Once enabled, click on **Add Keywords** to override specific keywords to stop suggesting similar queries. Below is use case scenarios accepted for Spellcheck override.
+
+| **Use Case**                                    | **Description**                                                                                                                                                 | **Example**                                                                                                          |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Single-Word (Token) Handling**                | The system applies to single-word (one-token) terms only. Multi-word phrases are not processed by this setup.                                                   | "kursi" is valid, while "long briefs" is not processed.                                                              |
+| **Camel Casing**                                | Camel casing is automatically handled during **query parsing**. Camel-cased words are treated as single terms for search.                                       | "CamelCase" is recognized as a single term, similar to "camel case."                                                 |
+| **Special Character Handling**                  | Special characters like apostrophes, hyphens, etc., are handled automatically during **query parsing**, ensuring they do not interfere with the search process. | "l’oreal" is interpreted correctly, and the search will return relevant results.                                     |
+| **Accepting Camel Casing & Special Characters** | The system accepts both camel-cased terms and single-term words containing special characters for accurate search results.                                      | "l’Oreal" (camel case) and "l’oreal" (with special character) are both valid and will return correct search results. |
+
 Below functionality is available on the dashboard of Spellcheck
 
 | **Operation**     | **Description**                                                                                                                                               |
