@@ -75,3 +75,25 @@ Once uploaded, you can see the number of synonyms added. Using the Bulk Download
 2. Search for the keyword and click the hamburger icon next to it. 
 3. Click **Delete**, where you will receive a confirmation message for deletion. 
 4. Click **Yes** if confirmed or No otherwise.
+
+## Index Time Synonym
+
+The **Index Time Synonym** feature is designed to improve search recall by adding synonym keywords to the search index during the **full feed** or **re-indexing** process. These synonyms help to map multiple terms with the same meaning, ensuring that users can find relevant products, even if they use different words in their search queries.
+
+### Prerequisites
+
+Before using the Index Time Synonym feature, ensure that the following prerequisites are met:
+
+1. Merchandisers must configure synonym relationships in the dashboard.
+2. Feed Ingestion: This feature is applied during the full feed or re-indexing process, meaning the system will only index synonyms when a new feed is ingested or a re-indexing job is triggered.
+
+### How it works
+
+Below is step by step workflow on Index Time Synonym:
+
+| **Step**                                          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Synonym Mapping Input**                         | Merchandisers define synonym relationships through the dashboard. Example: \<br> \*\*Unidirectional Synonyms\*\*: "pants → trousers, slacks, long briefs" \<br> \*\*Bidirectional Synonyms\*\*: "pants ↔ trousers ↔ slacks ↔ long briefs" \<br> These mappings are passed to the backend system for indexing.                                                                                                                                           |
+| **Building the Inverted Synonym Trie**            | During feed ingestion, the system constructs an inverted synonym trie using the configured synonyms: \<br> \*\*Unidirectional Mapping\*\*: \<br> "trousers → pants", \<br> "slacks → pants", \<br> "long briefs → pants" \<br> \*\*Bidirectional Mapping\*\*: \<br> "trousers → pants, slacks, long briefs" \<br> "pants → trousers, slacks, long briefs", \<br> "slacks → pants, trousers, long briefs", \<br> "long briefs → pants, trousers, slacks" |
+| **SynonymTransformer Processing**                 | The SynonymTransformer processes the product catalog’s searchable fields (e.g., product titles, descriptions) and extracts text using a maximum window size of 3 words. These phrases are passed through the synonym trie to find matching synonyms. \<br> \*\*Note\*\*: Only single-token synonyms are indexed. Multi-word synonyms like "long briefs" are ignored.                                                                                    |
+| **Indexing into`syn_unx_tpm` and `syn_unx_auto`** | Valid single-token synonyms are indexed into the following fields: \<br> \*\*syn\\\_unx\\\_tpm\*\* for search queries \<br> \*\*syn\\\_unx\\\_auto\*\* for autosuggest queries \<br> Example: \<br> Product title "slacks" → synonym mapping "pants → slacks" → "pants" is indexed into \`syn\_unx\_tpm\`. \<br> Multi-word synonyms like "long briefs" are not indexed.                                                                                |
