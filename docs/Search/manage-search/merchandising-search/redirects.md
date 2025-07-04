@@ -13,18 +13,17 @@ Redirects allow you to route users to a particular page of your preference. This
 
 Log in to the **Netcore Unbxd** console site. From the **Site Key Picker**, click the site you want to apply a merchandising strategy. After selecting the appropriate site key, navigate to **Merchandising** > **Search** > **Redirects**
 
-### Set up the Campaign.
+### Set Up a New Campaign Using Redirects.
 
-1. On the **Redirects** overview page, navigate to **Add redirect.**
-2. You'll go to the Add banners interface.
-3. Enter the Query for which you want to set up redirects—this is the search term you expect your shopper to use.
-   1. To apply the same rule to additional queries, click + Apply same rule to more queries, add queries separated by commas, and press Enter.
-4. Enter a Campaign Name for internal reference.
-5. Select a Segment from the list to target specific shopper groups or click + Create New Segment to make a custom/new one.
-6. Set the Duration for the campaign, including the Time Zone, Start and End dates, and times.
+On the Redirects dashboard, click **Add redirect**. You will be directed to the **Add banners** interface.
+
+1. Enter the Query for which you want to set up **redirects**. This is the search term you expect your shopper to use. To apply the same rule to additional queries,  **[Click to apply same rule to more AI suggested queries]()**, add queries separated by commas, and press Enter.
+2. Enter a Campaign Name for internal reference.
+3. Select a Segment from the list to target specific shopper groups or click + Create New Segment to make a custom/new one.
+4. Set the Duration for the campaign, including the Time Zone, Start and End dates, and times.
    1. For an open-ended campaign, enable Run Perpetually. This option allows you to run any campaign until it is manually stopped.
-7. Optionally, add a Description for future reference.
-8. When finished, click Next to proceed.
+5. Optionally, add a Description for future reference.
+6. When finished, click Next to proceed.
 
 "Configuring the redirect"
 
