@@ -23,7 +23,7 @@ Once done, spellcheck is set.
 
 <Image align="center" border={true} caption="Enable Spellcheck" src="https://files.readme.io/a03edbb1fc7a9c5c2e2d66440f6ee83a15200ac548c9359f05c000656b162295-image.png" />
 
-### To Set up Spellcheck Override
+## Spellcheck Override
 
 <Image align="center" border={true} caption="Set up Spellcheck Override" src="https://files.readme.io/0dc559e9a04678f4813d04795d23ee7494aeca2182e646cfc02cea26f30c23fd-image-20250609-100811.png" width="80% " />
 
