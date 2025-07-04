@@ -29,14 +29,3 @@ Whether you are setting up a new feed or editing an existing configuration, this
 | **Sync**         | If you have made any changes to any of the fields features. CLick Re-sync to refresh the feed.                                                                                                                                                                 |
 | **Actions**      | Provides bulk operation options: \<br>• **Bulk Enable Features**- Turn on properties for multiple fields in one action. \<br>• **Bulk Disable Features** – Turn off properties in bulk.                                                                        |
 | **Edit**         | Opens an edit dialog for individual field property configuration. Allows enabling/disabling features or modifying attributes.                                                                                                                                  |
-
-<br />
-
-#### Field Attributes
-
-* **Multi-valued**: Supports multiple values per field.
-* **Merchandisable**: Enables the field for use in merchandising promotions.
-* **Facetable**: Allows the field to be used for filtering (facets, banners).
-* **Searchable**: Field is used in product indexing and search results.
-* **Autosuggest**: Field will power suggestions in search UI (keywords, in-field).
-* **FieldRule**: Enables field for rule-based merchandising like facet or banner rules.
