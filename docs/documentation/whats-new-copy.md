@@ -7,6 +7,17 @@ metadata:
 ---
 Netcore Unbxd continuously evolves to help you deliver more intelligent, personalized shopping experiences. In this section, you'll find the latest feature rollouts, performance enhancements, and platform updates designed to optimize product discovery, boost conversions, and elevate the customer journey.
 
+# July 2025
+
+1. **Index Time Synonym**\
+   We’re thrilled to announce the Index Time Synonym feature, designed to supercharge your search experience! By adding synonym keywords to the search index during feed ingestion or re-indexing, this feature ensures that users find relevant products, even when using different terms in their queries. With this enhancement, searching has never been more intuitive and seamless! Read [here](https://unbxdocs.readme.io/docs/synonyms#/index-time-synonyms) no know more
+
+<br />
+
+<br />
+
+<br />
+
 # April 2025
 
 OWASP Compliance for Search/Browse Console
