@@ -26,47 +26,24 @@ A real-time **Product Card Preview** appears in the center of the screen. This p
 * Image
 * Additional info (e.g., color, brand, category path)
 
-***
+6. Add additional fields for preview (Optional). You can add up to **5 additional attributes**. These appear under the main title/price in the preview and help visualize more metadata such as:`color`, `brand`, `categoryPath1`, `category`,`new`. Select fields from the dropdown (or remove them using the "x" next to each).
+7. After selecting the required and optional attributes, click the **Save Changes** button in the top right corner. Your mappings will be saved and used for rendering product cards across the platform.
 
-### 5. **Add Additional Fields for Preview (Optional)**
+> 💡 Tips
+>
+> * Always preview changes to ensure product cards appear clean and informative.
+> * Use consistent naming conventions in your catalog feed to simplify mapping.
+> * Map frequently used fields (e.g., color, size, category) to enhance the preview’s clarity.
 
-* At the bottom of the preview section, you can add up to **5 additional attributes**.
-
-* These appear under the main title/price in the preview and help visualize more metadata such as:
-
-  * `color`
-  * `brand`
-  * `categoryPath1`
-  * `category`
-  * `new`
-
-* To add fields:
-
-  1. Click inside the dropdown box under “**Add additional fields for preview**”.
-  2. Select fields from the dropdown (or remove them using the "x" next to each).
-
-***
-
-### 6. **Save Your Configuration**
-
-* After selecting the required and optional attributes:
-
-  * Click the **“Save Changes”** button in the top right corner.
-  * Your mappings will be saved and used for rendering product cards across the platform.
-
-***
-
-## Tips
-
-* Always preview changes to ensure product cards appear clean and informative.
-* Use consistent naming conventions in your catalog feed to simplify mapping.
-* Map frequently used fields (e.g., color, size, category) to enhance the preview’s clarity.
+<br />
 
 ***
 
 When **Product Mapping** is correctly configured, the **Search Preview** or **Browse Preview** will display products in a seamless, clear, and compelling way.
 
 Below is the reference of how attribute mapping will look like:
+
+ADD IMAGE
 
 ## Troubleshooting &  FAQ's
 
