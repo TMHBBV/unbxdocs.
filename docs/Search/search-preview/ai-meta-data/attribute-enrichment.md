@@ -11,26 +11,15 @@ The **Attribute Enrichment** in the console aims to enhance catalog completeness
 
 ## Why is this Useful?
 
-Below are the benefits of using Attribute Enrichment:
+Merchandisers often struggle with incomplete or inconsistent product data, such as missing attributes for key categories like **material** for a **T-shirt** or **screen size** for a **Smartwatch**. These gaps can lead to:
 
-* **Analyze Your Data:** Use Unbxd’s tools to assess the quality of your product data and search results.
-* **Manage Attributes:** Access an intuitive dashboard to review and control enriched attributes.
-* **Optimize Continuously:** Monitor key performance indicators (KPIs) and refine enrichment rules as needed to maximize impact.
+* **Poor Search Relevance**: Customers might not find products if key attributes are missing.
+* **Reduced Discoverability**: Filters and facets relying on these attributes won't function effectively.
+* **Inconsistent Product Information**: Leading to a fragmented customer experience.
 
-### How It Works
+**AI Suggested Redirects** leverages advanced [strategies]() to intelligently suggest redirects based on past search patterns, filling in these gaps and improving product visibility. This ensures a smoother and more relevant shopping experience for your customers.
 
-Our attribute enrichment technology combines advanced AI techniques with your merchandising expertise to:
-
-* Augment existing product attributes.
-* Generate new attributes and categories where data is missing.
-* Standardize and correct inconsistent product information.
-
-### Benefits
-
-* **Improved Product Discovery:** Enriched attributes enable more relevant search results, helping shoppers find the right products faster.
-* **Increased Revenue:** Better search relevance drives higher Revenue Per Visitor (RPV) and Average Order Value (AOV).
-* **Efficiency for Merchandisers:** Automating manual data tasks frees up valuable time, allowing merchandisers to focus on strategic initiatives.
-* **Continuous Improvement:** Easily review, manage, and analyze enriched product data to optimize search performance and key metrics over time.
+### Product Enrichment Strategies
 
 ## How to Get Started
 
