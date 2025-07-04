@@ -76,18 +76,20 @@ Once uploaded, you can see the number of synonyms added. Using the Bulk Download
 3. Click **Delete**, where you will receive a confirmation message for deletion. 
 4. Click **Yes** if confirmed or No otherwise.
 
-## Index Time Synonym
+## Index Time Synonyms
 
 The **Index Time Synonym** feature is designed to improve search recall by adding synonym keywords to the search index during the **full feed** or **re-indexing** process. These synonyms help to map multiple terms with the same meaning, ensuring that users can find relevant products, even if they use different words in their search queries.
 
 ### Prerequisites
 
-Before using the Index Time Synonym feature, ensure that the following prerequisites are met:
+Before using the Index Time Synonyms feature, ensure that the following prerequisites are met:
 
 1. Merchandisers must configure synonym relationships in the dashboard.
 2. Feed Ingestion: This feature is applied during the full feed or re-indexing process, meaning the system will only index synonyms when a new feed is ingested or a re-indexing job is triggered.
 
 ### How it works
+
+Log in to Netcore Unbxd Dashboard and navigate to **Algorithm** > **Content** > **Synonyms**.
 
 Below is step by step workflow on Index Time Synonym:
 
