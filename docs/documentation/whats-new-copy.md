@@ -9,12 +9,13 @@ Netcore Unbxd continuously evolves to help you deliver more intelligent, persona
 
 # July 2025
 
-1. **Index Time Synonym**\
-   We’re thrilled to announce the Index Time Synonym feature, designed to supercharge your search experience! By adding synonym keywords to the search index during feed ingestion or re-indexing, this feature ensures that users find relevant products, even when using different terms in their queries. With this enhancement, searching has never been more intuitive and seamless! Read [here](https://unbxdocs.readme.io/docs/synonyms#/index-time-synonyms) no know more
+1. **Index Time Synonym**
 
-<br />
+We’re thrilled to announce the Index Time Synonym feature, designed to supercharge your search experience! By adding synonym keywords to the search index during feed ingestion or re-indexing, this feature ensures that users find relevant products, even when using different terms in their queries. With this enhancement, searching has never been more intuitive and seamless! Read [here](https://unbxdocs.readme.io/docs/synonyms#/index-time-synonyms) to know more.
 
-<br />
+1. **Spellcheck Override**
+
+We’re excited to introduce the Spellcheck Override feature, empowering you to control search suggestions more precisely! With this new functionality, you can easily override specific keywords to prevent the system from suggesting similar queries. This ensures users are directed exactly where they want to go, without confusing or irrelevant alternatives. Refer to the [documentation](https://unbxdocs.readme.io/docs/spellcheck#/to-set-up-spellcheck-override) here.
 
 <br />
 
