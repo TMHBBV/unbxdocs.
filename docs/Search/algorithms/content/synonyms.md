@@ -84,8 +84,8 @@ The **Index Time Synonym** feature is designed to improve search recall by addin
 
 Before using the Index Time Synonyms feature, ensure that the following prerequisites are met:
 
-1. Merchandisers must configure synonym relationships in the dashboard.
-2. Feed Ingestion: This feature is applied during the full feed or re-indexing process, meaning the system will only index synonyms when a new feed is ingested or a re-indexing job is triggered.
+1. Configure your synonym relationships in the dashboard.
+2. Feed Ingestion is done. This feature is applied during the full feed or re-indexing process, meaning the system will only index synonyms when a new feed is ingested or a re-indexing job is triggered.
 
 ### How it works
 
