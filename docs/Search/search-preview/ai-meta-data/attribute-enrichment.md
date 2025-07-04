@@ -17,9 +17,129 @@ Merchandisers often struggle with incomplete or inconsistent product data, such 
 * **Reduced Discoverability**: Filters and facets relying on these attributes won't function effectively.
 * **Inconsistent Product Information**: Leading to a fragmented customer experience.
 
-**AI Suggested Redirects** leverages advanced [strategies]() to intelligently suggest redirects based on past search patterns, filling in these gaps and improving product visibility. This ensures a smoother and more relevant shopping experience for your customers.
+**AI Suggested Redirects** leverages advanced [strategies](https://unbxdocs.readme.io/docs/attribute-enrichment#/product-enrichment-strategies) to intelligently suggest redirects based on past search patterns, filling in these gaps and improving product visibility. This ensures a smoother and more relevant shopping experience for your customers.
 
 ### Product Enrichment Strategies
+
+The Netcore Unbxd console offers four core enrichment strategies to help you optimize and enhance your product catalog.
+
+1. **Large Language Models (LLMs)**
+
+This strategy harnesses the power of **Large Language Models (LLMs)** to intelligently generate new, missing product fields based on existing information in your catalog. It's ideal for creating descriptive content or structured data points that are not readily available.
+
+For Example: For a **"Smartwatch"** missing the "battery life" attribute, the LLM analyzes the product description, such as "Up to 48 hours of usage on a single charge," and automatically adds the missing "battery life" data.
+
+2. **Google Translator Enrichment**
+
+This strategy enables the translation of existing product fields from one language (typically English) into a specified target language. It helps expand your e-commerce presence into new markets and provides localized search experiences by generating multilingual product data.
+
+For Example: **Original Product Data:**
+
+```Text Original Product Data
+{  
+  "id": "PROD123",  
+  "product_type": "Smartwatch"  
+}  
+
+```
+```Text Enriched Product Data (after translation)
+{  
+  "id": "PROD123",  
+  "product_type": "Smartwatch",  
+  "enr_unx_ar_translate_product_type": "ساعة ذكية"  
+} 
+```
+
+3. **Transliterate Enrichment**
+
+The Transliterate Enrichment strategy converts text from one script to another while preserving phonetic pronunciation. This is especially useful for search queries where users might type foreign words using English characters. It differs from translation by changing the script, not the meaning.
+
+For Example : 1. **English to Hindi Transliteration**
+
+```Text Original Product Data
+{  
+  "id": "GROCERY456",  
+  "product_name": "Basmati Rice"  
+}  
+```
+```Text Enriched Product Data (after Transliterate processing):
+{  
+  "id": "GROCERY456",  
+  "product_name": "Basmati Rice",  
+  "enr_unx_hi_translit_product_name": "bāsmatī rā'is"  
+}  
+```
+
+For Example: 2. **Latin Script - Similar to Translation**
+
+```Text Original Product Data
+{  
+  "id": "PROD123",  
+  "product_type": "Smartwatch"  
+}  
+```
+````Text Enriched Product Data (after Transliterate processing):
+{  
+  "id": "PROD123",  
+  "product_type": "Smartwatch",  
+  "enr_unx_es_translit_product_type": "Reloj inteligente"  
+}  
+```  | 
+
+This format simplifies the explanation and example for users, making it easy to understand the functionality of the **Transliterate Enrichment** strategy.
+````
+
+<br />
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Feature Name**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+
+      <th>
+        **Example**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Large Language Models (LLMs)**
+      </td>
+
+      <td>
+        This strategy harnesses the power of **Large Language Models (LLMs)** to intelligently generate new, missing product fields based on existing information in your catalog. It's ideal for creating descriptive content or structured data points that are not readily available.
+      </td>
+
+      <td>
+        For a **"Smartwatch"** missing the "battery life" attribute, the LLM analyzes the product description, such as "Up to 48 hours of usage on a single charge," and automatically adds the missing "battery life" data.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Google Translator Enrichment**
+      </td>
+
+      <td>
+        This strategy enables the translation of existing product fields from one language (typically English) into a specified target language. It helps expand your e-commerce presence into new markets and provides localized search experiences by generating multilingual product data.
+      </td>
+
+      <td>
+        <br />
+
+        <br />
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ## How to Get Started
 
