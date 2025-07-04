@@ -1,5 +1,8 @@
 ---
 title: Attribute Enrichment
+excerpt: >-
+  Leverages AI to automatically fill in missing or incomplete product
+  attributes, enhancing search visibility and improving product discoverability.
 deprecated: false
 hidden: false
 metadata:
