@@ -40,7 +40,7 @@ By understanding these scenarios, you can set up synonyms that reflect how your 
 ## What should synonyms not include?
 
 1. **Empty record**: entry where there is no value entered (whitespace)
-2. \*\*Symbols\*\*: entries where only symbols are typed as the value. The following characters are not accepted by our system : , ( comma) , \\+ (plus), \{, } (curly braces), \\\* (Asterix),& (Ampersand) , \\\ (backslash)
+2. **Symbols**: entries where only symbols are typed as the value. The following characters are not accepted by our system : , ( comma) , + (plus), \{, } (curly braces), \* (Asterix),& (Ampersand) , \ (backslash)
 3. **Alphanumeric**: entries with only alphanumeric values. It should have text characters.
 4. **Stopwords**: entries that contain just words that add no value like of, for, the, or any such stopwords.
 5. **Redundant Synonyms**: entries that already exist. Don’t add two similar inputs.
