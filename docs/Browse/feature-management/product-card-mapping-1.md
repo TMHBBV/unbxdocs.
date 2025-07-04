@@ -18,6 +18,10 @@ The **Product Card Mapping** feature allows you to configure how your product da
 
 A real-time **Product Card Preview** appears in the center of the screen. This preview updates as you configure the mappings and helps ensure that the selected attributes are displayed as expected.
 
+Below is the reference of how attribute mapping will look like:
+
+ADD IMAGE
+
 **Example card includes:**
 
 * SKU/ID
@@ -34,16 +38,6 @@ A real-time **Product Card Preview** appears in the center of the screen. This p
 > * Always preview changes to ensure product cards appear clean and informative.
 > * Use consistent naming conventions in your catalog feed to simplify mapping.
 > * Map frequently used fields (e.g., color, size, category) to enhance the preview’s clarity.
-
-<br />
-
-***
-
-When **Product Mapping** is correctly configured, the **Search Preview** or **Browse Preview** will display products in a seamless, clear, and compelling way.
-
-Below is the reference of how attribute mapping will look like:
-
-ADD IMAGE
 
 ## Troubleshooting &  FAQ's
 
