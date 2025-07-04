@@ -13,11 +13,15 @@ Netcore Unbxd continuously evolves to help you deliver more intelligent, persona
 
 We’re thrilled to announce the Index Time Synonym feature, designed to supercharge your search experience! By adding synonym keywords to the search index during feed ingestion or re-indexing, this feature ensures that users find relevant products, even when using different terms in their queries. With this enhancement, searching has never been more intuitive and seamless! Read [here](https://unbxdocs.readme.io/docs/synonyms#/index-time-synonyms) to know more.
 
-1. **Spellcheck Override**
+2. **Spellcheck Override**
 
 We’re excited to introduce the Spellcheck Override feature, empowering you to control search suggestions more precisely! With this new functionality, you can easily override specific keywords to prevent the system from suggesting similar queries. This ensures users are directed exactly where they want to go, without confusing or irrelevant alternatives. Refer to the [documentation](https://unbxdocs.readme.io/docs/spellcheck#/to-set-up-spellcheck-override) here.
 
-<br />
+3. **Attribute Enrichment**
+
+We are thrilled to roll out Attribute Enrichment, a powerful feature designed to enhance your product data by adding valuable attributes during the indexing process. This improves product visibility and search relevance, helping users find the most relevant products faster and more accurately.
+
+Attribute Enrichment enriches your product data by automatically adding relevant attributes based on predefined criteria, making your product catalog smarter and more insightful. Refer to the [documentation](https://unbxdocs.readme.io/docs/attribute-enrichment#/) to know more.
 
 # April 2025
 
