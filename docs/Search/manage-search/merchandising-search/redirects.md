@@ -1,5 +1,8 @@
 ---
 title: Redirects
+excerpt: >-
+  uses AI to smartly redirect traffic, improving user experience by fixing
+  broken links and boosting site visibility.
 deprecated: false
 hidden: false
 metadata:
@@ -7,7 +10,124 @@ metadata:
 ---
 # Overview
 
-Redirects allow you to route users to a particular page of your preference. This is useful when you want your shoppers to view products relevant to their queries from your catalog. For instance, if you create a landing page for products related to Thanksgiving, redirect your shoppers to this page whenever they search for products related to Thanksgiving.
+Redirects allow you to route users to a particular page of your preference. This is useful when you want your shoppers to view products relevant to their queries from your catalog. For instance, if you create a landing page for products related to Thanksgiving, redirect your shoppers to this page whenever they search for Thanksgiving-related products.
+
+## Key Functionality of the Redirects Dashboard
+
+The functionality below is offered on the Redirects Dashboard.
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Key words**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Search Query**
+      </td>
+
+      <td>
+        A search bar where users can type a query to find specific redirect entries. Users can search for particular redirects by query name.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Filters**
+      </td>
+
+      <td>
+        This allows users to filter or narrow down the displayed data based on specific conditions or parameters. You can filter campaigns based on the following criteria:
+
+        * **Status**: Active, Upcoming, Draft
+        * **Created On**: Date range on which the banner was created
+        * **Creator email**: The user who created the campaign
+        * **Segment**: Associated Segment
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Kebab Menu**
+      </td>
+
+      <td>
+        Choose between the following options:
+
+        * Bulk upload redirects
+        * Bulk download redirects
+        * Import Rules
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **AI Suggested Redirects**
+      </td>
+
+      <td>
+        A button that suggests redirects automatically using AI based on the search query data. It helps optimize redirect management by offering AI-driven recommendations.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Add Redirect**
+      </td>
+
+      <td>
+        A button that allows users to manually add a new redirect entry by specifying the query and the corresponding redirect path.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Campaign Listing page**
+      </td>
+
+      <td>
+        Displays details of the campaign related to each redirect, including additional campaign-related information to help users track the effectiveness of their redirects.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+## AI Suggested Redirects
+
+**AI Suggested Redirects** enable users to create redirects for seasonal collections or category paths that are broadly applicable. These recommendations are powered by **Netcore Unbxd’s AI**, leveraging **past search patterns**, **user behavior**, **popular searches**, and **trending queries.**
+
+This feature allows merchandisers to automatically configure redirects suggested by Unbxd, ensuring that users are directed to the most relevant and timely content based on emerging trends and search data. This enhances the browsing experience and ensures that users can easily find the products they are most likely to search for, optimizing site navigation and search performance.
+
+### Set Up AI Suggested Redirects
+
+Navigate to **Merchandising** > **Search** > **Redirects**. Click on **AI Suggested Redirects**.
+
+> 📘 Note
+>
+> When the user clicks for the first time on **AI Suggested Redirects**, the system will kick off a job to generate suggestions based on past search patterns and trends. These suggestions will be ready within the next hour.
+
+<Image align="center" border={true} caption="Navigate to AI Suggested Redirects" src="https://files.readme.io/aeb6e14dba00f9ebdf01c4dad44e98f4de0b295f4c5f42871da541d7b153c7d9-Ai_Suggested_redirects.gif" width="80% " />
+
+Once the suggestions are up, there will be tow options for users to select:
+
+| **Option** | **Description**                                                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Accept** | Click **Accept**, if you liked a suggested redirect. You can **Preview** it in a new tab before applying it. This allows you to review the redirect before finalizing it. |
+| **Reject** | Click**Reject**, if you did not like the suggested redirect. The system will ensure that the specific suggestion will **never** be shown again in the future.             |
+
+> 📘 Note
+>
+> 1. AI-generated redirect suggestions will be refreshed every 15 days.
+> 2. After the 15-day refresh interval, when you click on the button again, the system will trigger a new job to update the suggestions. This process may take time to complete.
 
 ## Set up Redirects
 
@@ -19,22 +139,35 @@ On the Redirects dashboard, click **Add redirect**. You will be directed to the 
 
 1. Enter the Query for which you want to set up **redirects**. This is the search term you expect your shopper to use. To apply the same rule to additional queries,  **[Click to apply same rule to more AI suggested queries](https://unbxdocs.readme.io/docs/promotions-optional#/ai-suggested-queries)**, add queries separated by commas, and press Enter.
 2. Enter a Campaign Name for internal reference.
-3. Select a [Segment]() from the list to target specific shopper groups or click + Create New Segment to make a custom/new one.
-4. Set the Duration for the campaign, including the Time Zone, Start and End dates, and times.
-   1. For an open-ended campaign, enable Run Perpetually. This option allows you to run any campaign until it is manually stopped.
-5. Optionally, add a Description for future reference.
-6. When finished, click Next to proceed.
+3. Select a [Segment](https://unbxdocs.readme.io/docs/merchandising-segments#/) from the list to target specific shopper groups or click **+Create New Segment** to make a custom/new one.
+4. Set the **Duration** for the campaign, including the Time Zone, Start and End dates, and times.
 
-"Configuring the redirect"
+> 📘 Note
+>
+> For an open-ended campaign, enable Run P**erpetually**. This option allows you to run any campaign until it is manually stopped.
 
-1. Enter the redirect URL. Make sure the URL entered is publicly accessible and operational. Netcore Unbxd will not determine the validity of the URL provided.
+5. Optionally, add a Description for future reference. Then click **Next** to proceed.
+
+### Set Redirect Strategy
+
+1. Enter the **Redirect URL**.
+
+> 📘 Note
+>
+> Make sure the Redirect URL entered is **publicly accessible** and **operational**. Netcore Unbxd will NOT determine the validity of the URL provided.
+
 2. You can preview the redirect URL by clicking the Preview button on the instant preview section.
 
-Saving or publishing the redirect\
+### Saving or publishing the redirect
+
 After providing the redirect link, you can do one of the following.
 
 1. Click the Save button to retain the Campaign as a draft.
 2. Click the Publish rule button to push it live.
+
+<br />
+
+
 
 ## What can you do with the Redirects overview page?
 
