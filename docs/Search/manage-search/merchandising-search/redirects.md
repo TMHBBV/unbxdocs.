@@ -162,30 +162,8 @@ On the Redirects dashboard, click **Add redirect**. You will be directed to the 
 
 After providing the redirect link, you can do one of the following.
 
-1. Click the Save button to retain the Campaign as a draft.
-2. Click the Publish rule button to push it live.
-
-<br />
-
-
-
-## What can you do with the Redirects overview page?
-
-Apart from adding new redirects via the overview page, you can,
-
-1. View a comprehensive list of all campaigns
-2. Edit and publish the Global Rule
-3. Edit existing campaigns
-4. Publish draft campaigns to the live site
-5. View summary of campaign rules
-6. Duplicate existing campaigns
-7. Apply the same rule to additional queries
-8. Create new campaigns for the same query
-9. Stop active campaigns when necessary
-10. Bulk upload redirects for efficiency
-11. Import campaigns from one site to another
-12. Export existing campaigns via email
-13. Access campaign performance data
+1. Click the **Save** button to retain the Campaign as a draft.
+2. Click the **Publish** rule button to push it live.
 
 ## Troubleshooting and FAQs
 
