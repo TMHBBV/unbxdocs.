@@ -9,7 +9,7 @@ Netcore Unbxd continuously evolves to help you deliver more intelligent, persona
 
 # July 2025
 
-1. **Index Time Synonym**
+1. **Elevate Your Search Game with Synonyms**
 
 We’re thrilled to announce the Index Time Synonym feature, designed to supercharge your search experience! By adding synonym keywords to the search index during feed ingestion or re-indexing, this feature ensures that users find relevant products, even when using different terms in their queries. With this enhancement, searching has never been more intuitive and seamless! Read [here](https://unbxdocs.readme.io/docs/synonyms#/index-time-synonyms) to know more.
 
@@ -17,11 +17,19 @@ We’re thrilled to announce the Index Time Synonym feature, designed to superch
 
 We’re excited to introduce the Spellcheck Override feature, empowering you to control search suggestions more precisely! With this new functionality, you can easily override specific keywords to prevent the system from suggesting similar queries. This ensures users are directed exactly where they want to go, without confusing or irrelevant alternatives. Refer to the [documentation](https://unbxdocs.readme.io/docs/spellcheck#/to-set-up-spellcheck-override) here.
 
-3. **Attribute Enrichment**
+3. **Attribute Enrichment: Supercharge Your Product Data for Better Search Results!**
 
 We are thrilled to roll out Attribute Enrichment, a powerful feature designed to enhance your product data by adding valuable attributes during the indexing process. This improves product visibility and search relevance, helping users find the most relevant products faster and more accurately.
 
 Attribute Enrichment enriches your product data by automatically adding relevant attributes based on predefined criteria, making your product catalog smarter and more insightful. Refer to the [documentation](https://unbxdocs.readme.io/docs/attribute-enrichment#/) to know more.
+
+4. **Two-Factor Authentication (2FA) – Boost Your Security with an Extra Layer of Protection!**
+
+We’re excited to introduce Two-Factor Authentication (2FA), a new security feature that adds an extra layer of protection to your Netcore Unbxd account. With 2FA enabled, users will need to verify their identity through a second authentication step, significantly enhancing account security and protecting sensitive data.
+
+5. **Enhanced Filter & Boost Conditions**
+
+We’re excited to introduce a new enhancement to your filter and boost conditions! You can now use >= (greater than or equal to) and \<= (less than or equal to) operators in your filter or boost conditions, providing you with even more flexibility and precision when refining search results. Refer \[here]\(https\://unbxdocs.readme.io/docs/ui-terminologies#/) to know more.
 
 # April 2025
 
