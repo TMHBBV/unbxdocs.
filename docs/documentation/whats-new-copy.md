@@ -29,7 +29,7 @@ We’re excited to introduce Two-Factor Authentication (2FA), a new security fea
 
 5. **Enhanced Filter & Boost Conditions**
 
-We’re excited to introduce a new enhancement to your filter and boost conditions! You can now use >= (greater than or equal to) and \<= (less than or equal to) operators in your filter or boost conditions, providing you with even more flexibility and precision when refining search results. Refer \[here]\(https\://unbxdocs.readme.io/docs/ui-terminologies#/) to know more.
+We’re excited to introduce a new enhancement to your filter and boost conditions! You can now use >= (greater than or equal to) and \<= (less than or equal to) operators in your filter or boost conditions, providing you with even more flexibility and precision when refining search results. Refer [here](https://unbxdocs.readme.io/docs/ui-terminologies#/) to know more.
 
 6. **Let AI Optimize Your User Experience using AI Suggested Redirects !**
 
