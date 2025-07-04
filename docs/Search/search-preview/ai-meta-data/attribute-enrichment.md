@@ -131,8 +131,6 @@ Log in to Netcore Unbxd Dashboard and navigate to **Manage** > **Catalog** > **A
 
 <Image align="center" border={true} caption="Navigate to Attribute Enrichment" src="https://files.readme.io/4dac8cf8173b238cc8e531f14d089772e618331133cb30e58c3e82a7177229d9-Attribute_Enrichment.gif" width="80% " />
 
-<br />
-
 1. Initial Setup: Map product attributes to Google Category taxonomy (e.g., Product Title, Category, Brand) using the "Target Field" column.
 2. Track Completeness: Ensure the "Completeness" column accurately reflects the percentage of attributes populated for each product category.
 3. Define Metrics: Set up calculation formulas for the "Missing" and "Search Impact" columns based on product data and search analytics.
