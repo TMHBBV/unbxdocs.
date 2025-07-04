@@ -9,20 +9,13 @@ metadata:
 
 Redirects allow you to route users to a particular page of your preference. This is useful when you want your shoppers to view products relevant to their queries from your catalog. For instance, if you create a landing page for products related to Thanksgiving, redirect your shoppers to this page whenever they search for products related to Thanksgiving.
 
-## How to setup redirects for a specific query?
+## Set up Redirects
 
-<br />
+Log in to the **Netcore Unbxd** console site. From the **Site Key Picker**, click the site you want to apply a merchandising strategy. After selecting the appropriate site key, navigate to **Merchandising** > **Search** > **Redirects**
 
-"Navigate to Redirects">
+### Set up the Campaign.
 
-1. Login to Netcore Unbxd’s [<u>self-serve console</u>](https://console.unbxd.io/) ↗
-2. From the **Site Key Picker**, click the site you want to apply a merchandising strategy.
-3. After selecting the appropriate site key, navigate to **Merchandising**.
-4. Hover over **Search** and click **Redirects**.
-
-"Set up the campaign"
-
-1. On the Redirects overview page, navigate to Add redirect.
+1. On the **Redirects** overview page, navigate to **Add redirect.**
 2. You'll go to the Add banners interface.
 3. Enter the Query for which you want to set up redirects—this is the search term you expect your shopper to use.
    1. To apply the same rule to additional queries, click + Apply same rule to more queries, add queries separated by commas, and press Enter.
@@ -38,7 +31,7 @@ Redirects allow you to route users to a particular page of your preference. This
 1. Enter the redirect URL. Make sure the URL entered is publicly accessible and operational. Netcore Unbxd will not determine the validity of the URL provided.
 2. You can preview the redirect URL by clicking the Preview button on the instant preview section.
 
-Saving or publishing the redirect
+Saving or publishing the redirect\
 After providing the redirect link, you can do one of the following.
 
 1. Click the Save button to retain the Campaign as a draft.
