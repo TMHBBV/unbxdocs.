@@ -131,6 +131,8 @@ Log in to Netcore Unbxd Dashboard and navigate to **Manage** > **Catalog** > **A
 
 <Image align="center" border={true} caption="Navigate to Attribute Enrichment" src="https://files.readme.io/4dac8cf8173b238cc8e531f14d089772e618331133cb30e58c3e82a7177229d9-Attribute_Enrichment.gif" width="80% " />
 
+<br />
+
 1. Initial Setup: Map product attributes to Google Category taxonomy (e.g., Product Title, Category, Brand) using the "Target Field" column.
 2. Track Completeness: Ensure the "Completeness" column accurately reflects the percentage of attributes populated for each product category.
 3. Define Metrics: Set up calculation formulas for the "Missing" and "Search Impact" columns based on product data and search analytics.
@@ -143,22 +145,113 @@ Leverage Attribute Enrichment to boost your e-commerce platform’s search exper
 
 Below are the functionality present on the Netcore Unbxd Console.
 
-| **Keyword**         | **Functionality**                                                                                                                                                      | **Use Case**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Target Field**    | Displays standardized attribute names based on Google Category taxonomy. Shows the ideal attributes for optimal catalog completeness.                                  | **For Example**: For a motorsports customer with a diverse product selection (e.g., trousers, tires, helmet gears, e-bikes), the Target Field "closure" is only applicable for relevant categories like trousers, not for irrelevant ones like tires or helmets. Metrics like completeness, missing values, and search impact are calculated based on products in the relevant category. The details section displays product and category-related information based on the identified relevant categories. |
-| **Completeness**    | Shows the percentage of products with populated attribute values. Displays a progress bar with color coding (red, orange, green) to indicate coverage levels.          | **For Example**: For a motorsports customer with 100 products in the "trousers" category, if only 60 out of 100 products have the "closure" attribute filled, the completeness for this attribute is 60%. This metric is calculated based on products in the relevant category (e.g., trousers) and does not include irrelevant categories like tires, helmets, or e-bikes. This ensures that the completeness metric is category-specific.                                                                 |
-| **Missing**         | Displays the count of products lacking attribute values. Sortable and clickable for detailed product lists. Helps prioritize enrichment based on missing values.       | **For Example**: Using the same motorsports example, if the "closure" attribute is missing for 40 out of 100 trouser products, the "Missing" column would show "40". This gives merchandisers a clear count of products that need attention, allowing them to prioritize enrichment efforts based on the volume of missing data.                                                                                                                                                                            |
-| **Search Impact**   | Shows the potential improvement in search performance if missing attributes were enriched. Calculated using a specific formula and displayed as a percentage.          | **For Example**: If enriching the "breathability" attribute for all products in the boots category will help boost relevant search results by 15%, the search impact will reflect this potential improvement, allowing merchandisers to prioritize based on search performance gains.                                                                                                                                                                                                                       |
-| **Status**          | Tracks the lifecycle status of each attribute (Unmapped, Mapped, Enriching, Enriched). Visual indicators (color coding) represent the current stage of each attribute. | **For Example**: Product Title might be in the "Unmapped" state, while Product Description is "Mapped". This helps merchandisers quickly see where each attribute is in the enrichment workflow, from initial setup to completed enrichment.                                                                                                                                                                                                                                                                |
-| **Mapping**         | Displays the actual catalog field mapped to the Google Category attribute. Shows the connection between standard and internal fields.                                  | **For Example**: If "prod\_desc" is the internal field for product descriptions, the Mapping column will show "prod\_desc" mapped to the Google Category standard "Product Description", helping merchandisers understand how their internal catalog aligns with Google Category standards.                                                                                                                                                                                                                 |
-| **Actions**         | Provides contextual action buttons based on the attribute's current status. Options include "Enrich," "Publish," "Review," and "Analyze Impact."                       | **For Example**: When the "Category" attribute is in "Enriching" status, the action button might be "Review" to preview the enriched data. For a "Mapped" attribute like "Brand", the action might be "Enrich" to start the enrichment process or "Publish" if the data is ready to go live.                                                                                                                                                                                                                |
-| **Category Picker** | A dropdown menu allowing users to select categories. Categories are sorted based on the number of products. Helps in filtering by relevant categories.                 | **For Example**: Merchandisers can select "Trousers" from the dropdown to filter attributes that are specifically relevant to that category. Categories are sorted to prioritize those with the most products, streamlining the workflow.                                                                                                                                                                                                                                                                   |
-| **Search Bar**      | Allows users to search for attributes and displays them dynamically as users type. Facilitates easy navigation to relevant attributes.                                 | **For Example**: Merchandisers can quickly search for attributes such as "closure" or "breathability" to view relevant data across products, without needing to navigate manually through categories.                                                                                                                                                                                                                                                                                                       |
-| **Refresh**         | A button to update completeness, missing, and search impact metrics in real-time, ensuring data accuracy.                                                              | **For Example**: After running an enrichment process or adding new data, merchandisers can click the refresh button to immediately see the updated completeness, missing counts, and search impact metrics on the dashboard.                                                                                                                                                                                                                                                                                |
-| **View Details**    | An expandable option to view detailed information about the attributes, showing product and category-related details for enrichment decisions.                         | **For Example**: A merchandiser clicks "View Details" for the "Closure" attribute, which reveals the list of products and categories that are missing this information, enabling them to make an informed decision about enrichment priorities.                                                                                                                                                                                                                                                             |
-| **Sort Order**      | Controls the order in which attributes are displayed on the landing page. Options include completeness, missing & search impact, and status.                           | **For Example**: Merchandisers might prefer to sort attributes by "Missing" to immediately identify the ones that require the most attention, or by "Search Impact" to prioritize attributes with the highest potential impact on search performance.                                                                                                                                                                                                                                                       |
-| **Advance Filters** | A set of filters to narrow down data based on specific criteria. Used to refine the view of attributes.                                                                | **For Example**: Merchandisers can use advanced filters to view only attributes with a certain completeness threshold, or filter by the number of missing products in a category, streamlining the data analysis process.                                                                                                                                                                                                                                                                                   |
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        **Keyword**
+      </th>
 
-### Next Steps
+      <th>
+        **Functionality**
+      </th>
 
-Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics. For a personalized walkthrough, consider booking a demo or requesting a search experience audit through your Unbxd account.
+      <th>
+        **Use Case**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Catalog Score**
+      </td>
+
+      <td>
+        The Catalog Score is a performance metric that evaluates the quality and completeness of your product catalog based on attribute enrichment.
+      </td>
+
+      <td>
+        * Score **Red(0-60)**: It indicates that the catalog has significant gaps in data, requiring immediate action to improve attributes and ensure better product visibility.
+        * Score **Yellow(61-80)**: It indicates that your catalog is performing adequately but needs enhancements to reach optimal performance.
+        * Score **Green(81-100)**: It indicates that the catalog is optimized for better search ranking and user experience. Continue maintaining the quality of product data to retain this high score.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Missing Attributes**
+      </td>
+
+      <td>
+        The Missing Attributes score evaluates how many essential product attributes are missing from your catalog..
+      </td>
+
+      <td>
+        **For Example**: A score of 35/67 indicates that 35 out of 67 expected attributes are missing, which may impact search relevance and discoverability.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Search**
+      </td>
+
+      <td>
+        The Search function allows you to quickly locate specific fields, attributes, or products in your catalog. It makes it easy to find missing or incomplete attributes for enrichment.
+      </td>
+
+      <td>
+        **For Example**: Searching for "Smartphone" in the product catalog to identify missing attributes like "screen size" or "battery life" that need to be enriched for better search optimization.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Rerun**
+      </td>
+
+      <td>
+        The Rerun option allows you to trigger attribute mapping for the entire catalog again.
+      </td>
+
+      <td>
+        **For Example**: After enriching missing attributes, you can rerun the process to ensure new attributes are properly reflected in the product data or to update the catalog score.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Filter**
+      </td>
+
+      <td>
+        Filter allows you to narrow down the data by specific criteria, such as the status of the attribute enrichment or category. It enables you to focus on areas that need attention or enrichment.
+      </td>
+
+      <td>
+        Available filters are:
+
+        * **By State**: Filter attributes based on their current state, such as **Mapped**, **Unmapped**, **Enriched**, **Enriching**, or **Review**.
+        * **By Category**: Filter attributes by product category to focus on specific types of products.
+        * **By Type**: Filter by the type of data, either **Metrics**  or **Info**.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+## Add New Enrichment
+
+1. On the Attribute Enrichment Dashboard, scroll on the Attribute listing page to click on **Enrich**.
+
+<Image align="center" border={true} caption="Add New Attribute Enrichment" src="https://files.readme.io/a2e8d0948e14068c9a7c1b09e2714aa5f4e3f83f0274c3ee8d26e3dcada5b438-setup_attribute_enrich.gif" width="80% " />
+
+2. Select the [Strategies]() that suit your requirement and click on **Next**.
+3. Map your attributes and click **Preview** or **Run on entire catalog**.
+
+Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics.
+
+> 📘 Note
+>
+> For a personalized walkthrough, consider booking a demo or requesting a search experience audit through your Netcore Unbxd account.
