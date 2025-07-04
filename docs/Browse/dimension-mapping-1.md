@@ -53,7 +53,7 @@ The **mapping process** ensures that these attributes are correctly recognized a
    | Badges                   | Any product badges, such as "New", "Bestseller", or "Sale".                              |
    | Swatch                   | The color swatch or image link for color variants.                                       |
 
-   |
+   <br />
 
    * Vertical Field: These are additional fields specific to the **apparel** category. Refer to the given table for description of fields available in vertical field.
 
