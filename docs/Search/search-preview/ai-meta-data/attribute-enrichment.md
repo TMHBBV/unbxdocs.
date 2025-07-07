@@ -325,7 +325,3 @@ This below section on the dashboard, helps you monitor the overall progress of y
 4. Review generated attribute values in a sample set. You can download the enriched data file, make changes and re-upload it. Click on **Publish** to apply enriched data to the entire catalog.
 
 Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics.
-
-> 📘 Note
->
-> For a personalized walkthrough, consider booking a demo or requesting a search experience audit through your Netcore Unbxd account.
