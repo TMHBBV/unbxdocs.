@@ -223,7 +223,7 @@ This below section on the dashboard, helps you monitor the overall progress of y
       </td>
 
       <td>
-        Initiates the enrichment process for selected attributes. By clicking this, you can automatically enrich missing or incomplete attributes using AI-driven enhancements.
+        Initiates the enrichment process for selected attributes. By clicking this, you can automatically enrich missing or incomplete attributes using **AI-driven enhancements.**
       </td>
 
       <td>
@@ -316,6 +316,8 @@ This below section on the dashboard, helps you monitor the overall progress of y
 > * Metrics such as Dimensions, Completeness, and Missing Attributes, are calculated only for products in relevant categories.
 
 ## Add New Enrichment
+
+<Image align="center" border={true} caption="Add New Enrichment" src="https://files.readme.io/dd7cf10e964f50cba309b2f89540898d946f8870a3d5da5f1102d81de0835410-Attribute_enrich.gif" width="80% " />
 
 1. On the Attribute Enrichment Dashboard, scroll on the Attribute listing page to click on **Enrich Attributes**.
 2. Select the [Strategies](https://unbxdocs.readme.io/docs/attribute-enrichment#/product-enrichment-strategies) that suit your requirement and click on **Next**.
