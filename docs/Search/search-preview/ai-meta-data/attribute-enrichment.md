@@ -144,101 +144,19 @@ Log in to Netcore Unbxd Dashboard and navigate to **Manage** > **Catalog** > **A
 
 Below are the functionality present on the Netcore Unbxd Console.
 
-<Table align={["left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        **Keyword**
-      </th>
+| **Section**             | **Description**                                                                                                                                                                                                                                                                                                        | **Details from Image**                                                                             |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Dimensions**          | Dimensions refer to standard attributes taken from [Google taxonomy]() that should be present in your product catalog to enhance search performance. These dimensions are essential for improving how your products are discovered and ranked in search results, making them an integral part of attribute enrichment. | **33** total dimensions.                                                                           |
+| **Mapped Dimensions**   | Shows the attributes that have been successfully mapped and are ready for enrichment.                                                                                                                                                                                                                                  | **19** mapped dimensions.                                                                          |
+| **Missing Dimensions**  | Tracks the attributes that are missing or incomplete in your catalog and need to be enriched.                                                                                                                                                                                                                          | **14** missing dimensions.                                                                         |
+| **Completeness**        | Indicates the progress or percentage of completion for the enrichment process of the catalog.                                                                                                                                                                                                                          | Visual progress circle shows the overall state of enrichment (partially filled).                   |
+| **Missing In Products** | Displays the number of products missing certain attributes, indicating which products need to be enriched.                                                                                                                                                                                                             | **302** products missing specific attributes.                                                      |
+| **Status**              | Shows the current status of attributes: **Mapped**, **In Review**, **Unmapped**, or **Enriched**.                                                                                                                                                                                                                      | Attributes are in various states: **Mapped**, **In Review**, **Unmapped**.                         |
+| **Catalog Attributes**  | Provides a detailed view of each catalog attribute’s enrichment process, including its status and necessary actions to complete enrichment.                                                                                                                                                                            | Includes catalog attributes like **adwords\_grouping**, **dress\_occasion**, and **dress\_style**. |
 
-      <th>
-        **Functionality**
-      </th>
-
-      <th>
-        **Use Case**
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        **Catalog Score**
-      </td>
-
-      <td>
-        The Catalog Score is a performance metric that evaluates the quality and completeness of your product catalog based on attribute enrichment.
-      </td>
-
-      <td>
-        * Score **Red(0-60)**: It indicates that the catalog has significant gaps in data, requiring immediate action to improve attributes and ensure better product visibility.
-        * Score **Yellow(61-80)**: It indicates that your catalog is performing adequately but needs enhancements to reach optimal performance.
-        * Score **Green(81-100)**: It indicates that the catalog is optimized for better search ranking and user experience. Continue maintaining the quality of product data to retain this high score.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **Missing Attributes**
-      </td>
-
-      <td>
-        The Missing Attributes score evaluates how many essential product attributes are missing from your catalog..
-      </td>
-
-      <td>
-        **For Example**: A score of 35/67 indicates that 35 out of 67 expected attributes are missing, which may impact search relevance and discoverability.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **Search**
-      </td>
-
-      <td>
-        The Search function allows you to quickly locate specific fields, attributes, or products in your catalog. It makes it easy to find missing or incomplete attributes for enrichment.
-      </td>
-
-      <td>
-        **For Example**: Searching for "Smartphone" in the product catalog to identify missing attributes like "screen size" or "battery life" that need to be enriched for better search optimization.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **Rerun**
-      </td>
-
-      <td>
-        The Rerun option allows you to trigger attribute mapping for the entire catalog again.
-      </td>
-
-      <td>
-        **For Example**: After enriching missing attributes, you can rerun the process to ensure new attributes are properly reflected in the product data or to update the catalog score.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        **Filter**
-      </td>
-
-      <td>
-        Filter allows you to narrow down the data by specific criteria, such as the status of the attribute enrichment or category. It enables you to focus on areas that need attention or enrichment.
-      </td>
-
-      <td>
-        Available filters are:
-
-        * **By State**: Filter attributes based on their current state, such as **Mapped**, **Unmapped**, **Enriched**, **Enriching**, or **Review**.
-        * **By Category**: Filter attributes by product category to focus on specific types of products.
-        * **By Type**: Filter by the type of data, either **Metrics**  or **Info**.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+> 👍 Good to know:
+>
+> **Google Taxonomy** is a structured classification system used by Google to categorize products in various categories for search and shopping purposes. It is a standardized list of product categories that help organize products and ensure they appear in relevant search results across Google services, such as Google Search, Google Shopping, and Google Ads.
 
 ## Add New Enrichment
 
