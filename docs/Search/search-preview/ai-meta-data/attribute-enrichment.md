@@ -146,7 +146,7 @@ Log in to Netcore Unbxd Dashboard and navigate to **Manage** > **Catalog** > **A
 
 This below section on the dashboard, helps you monitor the overall progress of your attribute enrichment process and provides clarity on which attributes are ready, which ones are missing, and how many are already mapped for enrichment.
 
-<Table align={["left","left"]}>
+<Table align={["left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -155,6 +155,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
 
       <th>
         **Description**
+      </th>
+
+      <th>
+        Use Case
       </th>
     </tr>
   </thead>
@@ -168,6 +172,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
       <td>
         Allows you to search for specific attributes or products in the catalog. It helps quickly locate dimensions or attributes that need enrichment.
       </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
@@ -177,6 +185,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
 
       <td>
         Triggers the enrichment process again for attributes. This button is useful for refreshing or recalculating attribute data when necessary.
+      </td>
+
+      <td>
+
       </td>
     </tr>
 
@@ -199,6 +211,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
           **Metrics**: Numerical or measurable attributes
           **Info**: Descriptive attributes
       </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
@@ -209,6 +225,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
       <td>
         Initiates the enrichment process for selected attributes. By clicking this, you can automatically enrich missing or incomplete attributes using AI-driven enhancements.
       </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
@@ -217,8 +237,11 @@ This below section on the dashboard, helps you monitor the overall progress of y
       </td>
 
       <td>
-        It refer to standard attributes taken from **Google taxonomy** that should be present in your product catalog to enhance search performance.\
-        For example: For a motorsports customer with a wide range of products like **trousers**, **tires**, **helmets**, and **e-bikes**, the attribute **closure**is only relevant for specific categories like trousers, not for others like tires or helmets.
+        It refer to standard attributes taken from **Google taxonomy** that should be present in your product catalog to enhance search performance.
+      </td>
+
+      <td>
+        For a motorsports merchandiser with a wide range of products like **trousers**, **tires**, **helmets**, and **e-bikes**, the attribute **closure**is only relevant for specific categories like trousers, not for others like tires or helmets.
       </td>
     </tr>
 
@@ -231,6 +254,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
         Indicates the progress or percentage of completion for the enrichment process of the catalog.\
         refers to the percentage of products that have attribute values, calculated within the relevant categories.
       </td>
+
+      <td>
+        For the same motorsports merchandiser, If only 60 out of 100 trousers have the **closure** attribute filled, then the completeness for that attribute is 60%.
+      </td>
     </tr>
 
     <tr>
@@ -241,6 +268,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
       <td>
         This field indicates the number of products that are currently missing values for a particular attribute within the relevant categories.
       </td>
+
+      <td>
+        If the **closure** attribute is missing for 40 out of 100 trouser products, the **Missing in Products** column will display **40**, giving merchandisers a clear view of how many products need attribute enrichment.
+      </td>
     </tr>
 
     <tr>
@@ -250,6 +281,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
 
       <td>
         The Status reflects the current stage of enrichment for an attribute.
+      </td>
+
+      <td>
+        Types of status on the dashboard:
 
         * **Mapped**: The attribute is linked to the system and ready for enrichment.
         * **Unmapped**: The attribute is not yet linked or integrated into the system.
@@ -267,6 +302,10 @@ This below section on the dashboard, helps you monitor the overall progress of y
       <td>
         It refers to the catalog fields that have been mapped to other dimensions, such as **Google attributes**. This mapping shows the actual linkage between your **product catalog** and the **Google taxonomy**, ensuring that your product data is properly categorized and ready for search optimization.
       </td>
+
+      <td>
+        if a customer uses **prod\_desc** as their internal field name for product descriptions, this column will show **prod\_desc** mapped to the Google standard **Product Description**, helping merchandisers clearly understand how their internal fields align with standardized attributes.
+      </td>
     </tr>
   </tbody>
 </Table>
@@ -280,7 +319,8 @@ This below section on the dashboard, helps you monitor the overall progress of y
 
 1. On the Attribute Enrichment Dashboard, scroll on the Attribute listing page to click on **Enrich Attributes**.
 2. Select the [Strategies](https://unbxdocs.readme.io/docs/attribute-enrichment#/product-enrichment-strategies) that suit your requirement and click on **Next**.
-3. Configure your enrichment strategy and click **Preview** or **Run on entire catalog**.
+3. Configure your enrichment strategy and click **Preview**. Once **Preview** is generated, click on **Run on entire catalog** to proceed.
+4. Review generated attribute values in a sample set. You can download the enriched data file, make changes and re-upload it. Click on **Publish** to apply enriched data to the entire catalog.
 
 Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics.
 
