@@ -19,7 +19,7 @@ We’re excited to introduce the Spellcheck Override feature, empowering you to 
 
 3. **Attribute Enrichment: Supercharge Your Product Data for Better Search Results!**
 
-We are thrilled to roll out Attribute Enrichment, a powerful feature designed to enhance your product data by adding valuable attributes during the indexing process. This improves product visibility and search relevance, helping users find the most relevant products faster and more accurately.
+We are thrilled to roll out Attribute Enrichment, a powerful feature designed to enhance your catalog by adding valuable attributes to improve precision and recall. This also improves product visibility and search relevance, helping shoppers find the most relevant products faster and more accurately.
 
 Attribute Enrichment enriches your product data by automatically adding relevant attributes based on predefined criteria, making your product catalog smarter and more insightful. Refer to the [documentation](https://unbxdocs.readme.io/docs/attribute-enrichment#/) to know more.
 
