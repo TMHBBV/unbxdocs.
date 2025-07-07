@@ -117,7 +117,7 @@ Navigate to **Merchandising** > **Search** > **Redirects**. Click on **AI Sugges
 
 <Image align="center" border={true} caption="Navigate to AI Suggested Redirects" src="https://files.readme.io/aeb6e14dba00f9ebdf01c4dad44e98f4de0b295f4c5f42871da541d7b153c7d9-Ai_Suggested_redirects.gif" width="80% " />
 
-Once the suggestions are up, there will be tow options for users to select:
+Once the suggestions are up, there will be two options for users to select:
 
 | **Option** | **Description**                                                                                                                                                           |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
