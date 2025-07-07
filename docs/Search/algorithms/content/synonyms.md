@@ -89,7 +89,7 @@ Before using the Index Time Synonyms feature, ensure that the following prerequi
 
 ### How it works
 
-Log in to Netcore Unbxd Dashboard and navigate to **Algorithm** > **Content** > **Synonyms**.
+This feature is accessible only to Unbxd Admin users. Log in to Netcore Unbxd Dashboard and navigate to **Algorithm** > **Configs** > **Index Time Synonyms**.
 
 Below is step by step workflow on Index Time Synonym:
 
