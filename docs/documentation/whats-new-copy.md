@@ -15,7 +15,7 @@ We’re thrilled to announce the Index Time Synonym feature, designed to superch
 
 2. **Spellcheck Override**
 
-We’re excited to introduce the Spellcheck Override feature, empowering you to control search suggestions more precisely! With this new functionality, you can easily override specific keywords to prevent the system from suggesting similar queries. This ensures users are directed exactly where they want to go, without confusing or irrelevant alternatives. Refer to the [documentation](https://unbxdocs.readme.io/docs/spellcheck#/spellcheck-override) here.
+We’re excited to introduce the Spellcheck Override feature, empowering you to control search suggestions more precisely! With this new functionality, you can easily override specific keywords to prevent the system from suggesting similar queries. This ensures users are directed exactly where they want to go, without confusing or displaying irrelevant alternatives. Refer to the [documentation](https://unbxdocs.readme.io/docs/spellcheck#/spellcheck-override) here.
 
 3. **Attribute Enrichment: Supercharge Your Product Data for Better Search Results!**
 
