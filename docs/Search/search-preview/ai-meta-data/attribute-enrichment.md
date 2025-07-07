@@ -62,14 +62,14 @@ For Example : 1. **English to Hindi Transliteration**
 ```Text Original Product Data
 {  
   "id": "GROCERY456",  
-  "product_name": "Basmati Rice"  
+  "product_name": "Chawal"  
 }  
 ```
 ```Text Enriched Product Data (after Transliterate processing):
 {  
   "id": "GROCERY456",  
-  "product_name": "Basmati Rice",  
-  "enr_unx_hi_translit_product_name": "bāsmatī rā'is"  
+  "product_name": "Chawal",  
+  "enr_unx_hi_translit_product_name": "Rice"  
 }  
 ```
 
@@ -217,7 +217,8 @@ This below section on the dashboard, helps you monitor the overall progress of y
       </td>
 
       <td>
-        It refer to standard attributes taken from **Google taxonomy** that should be present in your product catalog to enhance search performance.
+        It refer to standard attributes taken from **Google taxonomy** that should be present in your product catalog to enhance search performance.\
+        For example: For a motorsports customer with a wide range of products like **trousers**, **tires**, **helmets**, and **e-bikes**, the attribute **closure**is only relevant for specific categories like trousers, not for others like tires or helmets.
       </td>
     </tr>
 
@@ -272,13 +273,14 @@ This below section on the dashboard, helps you monitor the overall progress of y
 
 > 👍 Good to know:
 >
-> **Google Taxonomy** is a structured classification system used by Google to categorize products in various categories for search and shopping purposes. It is a standardized list of product categories that help organize products and ensure they appear in relevant search results across Google services, such as Google Search, Google Shopping, and Google Ads.
+> * **Google Taxonomy** is a structured classification system used by Google to categorize products in various categories for search and shopping purposes. It is a standardized list of product categories that help organize products and ensure they appear in relevant search results across Google services, such as Google Search, Google Shopping, and Google Ads.
+> * Metrics such as Dimensions, Completeness, and Missing Attributes, are calculated only for products in relevant categories.
 
 ## Add New Enrichment
 
-1. On the Attribute Enrichment Dashboard, scroll on the Attribute listing page to click on **Enrich**.
+1. On the Attribute Enrichment Dashboard, scroll on the Attribute listing page to click on **Enrich Attributes**.
 2. Select the [Strategies](https://unbxdocs.readme.io/docs/attribute-enrichment#/product-enrichment-strategies) that suit your requirement and click on **Next**.
-3. Map your attributes and click **Preview** or **Run on entire catalog**.
+3. Configure your enrichment strategy and click **Preview** or **Run on entire catalog**.
 
 Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics.
 
