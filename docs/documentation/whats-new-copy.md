@@ -9,7 +9,7 @@ Netcore Unbxd continuously evolves to help you deliver more intelligent, persona
 
 # July 2025
 
-1. **Elevate Your Search Game with Synonyms**
+1. **Elevate Your Search Game with Index Time Synonyms**
 
 We’re thrilled to announce the Index Time Synonym feature, designed to supercharge your search experience! By adding synonym keywords to the search index during feed ingestion or re-indexing, this feature ensures that users find relevant products, even when using different terms in their queries. With this enhancement, searching has never been more intuitive and seamless! Read [here](https://unbxdocs.readme.io/docs/synonyms#/index-time-synonyms) to know more.
 
