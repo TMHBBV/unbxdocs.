@@ -203,7 +203,7 @@ This below section on the dashboard, helps you monitor the overall progress of y
 
     <tr>
       <td>
-        **[Enrich Attributes]()**
+        **[Enrich Attributes](https://unbxdocs.readme.io/docs/attribute-enrichment#/add-new-enrichment)**
       </td>
 
       <td>
