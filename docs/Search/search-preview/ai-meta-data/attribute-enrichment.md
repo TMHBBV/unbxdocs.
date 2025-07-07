@@ -203,7 +203,7 @@ This below section on the dashboard, helps you monitor the overall progress of y
 
     <tr>
       <td>
-        **Enrich Attributes**
+        **[Enrich Attributes]()**
       </td>
 
       <td>
@@ -270,18 +270,6 @@ This below section on the dashboard, helps you monitor the overall progress of y
   </tbody>
 </Table>
 
-<br />
-
-| **Action**            | **Description**                                                                                                                                                         |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Search**            | Allows you to search for specific attributes or products in the catalog. It helps quickly locate dimensions or attributes that need enrichment.                         |
-| **Rerun**             | Triggers the enrichment process again for attributes. This button is useful for refreshing or recalculating attribute data when necessary.                              |
-| **Filter**            | Opens the Filter Options, where you can apply filters based on the attribute state, category, or type to focus on specific data that needs attention.                   |
-| **Enrich Attributes** | Initiates the enrichment process for selected attributes. By clicking this, you can automatically enrich missing or incomplete attributes using AI-driven enhancements. |
-
-|   |
-| - |
-
 > 👍 Good to know:
 >
 > **Google Taxonomy** is a structured classification system used by Google to categorize products in various categories for search and shopping purposes. It is a standardized list of product categories that help organize products and ensure they appear in relevant search results across Google services, such as Google Search, Google Shopping, and Google Ads.
@@ -289,9 +277,6 @@ This below section on the dashboard, helps you monitor the overall progress of y
 ## Add New Enrichment
 
 1. On the Attribute Enrichment Dashboard, scroll on the Attribute listing page to click on **Enrich**.
-
-<Image align="center" border={true} caption="Add New Attribute Enrichment" src="https://files.readme.io/a2e8d0948e14068c9a7c1b09e2714aa5f4e3f83f0274c3ee8d26e3dcada5b438-setup_attribute_enrich.gif" width="80% " />
-
 2. Select the [Strategies](https://unbxdocs.readme.io/docs/attribute-enrichment#/product-enrichment-strategies) that suit your requirement and click on **Next**.
 3. Map your attributes and click **Preview** or **Run on entire catalog**.
 
