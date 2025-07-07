@@ -33,7 +33,7 @@ We’re excited to introduce a new enhancement to your filter and boost conditio
 
 6. **Let AI Optimize Your User Experience using AI Suggested Redirects !**
 
-We’re excited to launch AI Suggested Redirects, a feature that leverages the power of artificial intelligence to automatically recommend redirects for search queries. This ensures that users are directed to the most relevant pages, even when they type in incorrect or ambiguous search terms. Read the [documentation](https://unbxdocs.readme.io/docs/redirects#/ai-suggested-redirects) to know more.
+We’re excited to launch AI Suggested Redirects, a feature that leverages the power of artificial intelligence to automatically recommend redirects for search queries. This ensures that users are directed to the most relevant pages, even when they type in incorrect or ambiguous search terms. Read the [documentation](https://unbxdocs.readme.io/docs/redirects#/set-up-ai-suggested-redirects) to know more.
 
 # April 2025
 
