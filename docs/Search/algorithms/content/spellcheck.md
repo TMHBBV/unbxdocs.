@@ -25,6 +25,8 @@ Once done, spellcheck is set.
 
 ## Spellcheck Override
 
+Rule-based control that allows merchandisers to override automatic spell correction behavior for specific queries or terms
+
 <Image align="center" border={true} caption="Set up Spellcheck Override" src="https://files.readme.io/0dc559e9a04678f4813d04795d23ee7494aeca2182e646cfc02cea26f30c23fd-image-20250609-100811.png" width="80% " />
 
 Once enabled, click on **Add Keywords** to override specific keywords to stop suggesting similar queries. Below is use case scenarios accepted for Spellcheck override.
