@@ -1,5 +1,5 @@
 ---
-title: Feature Management
+title: Catalog Management
 deprecated: false
 hidden: false
 metadata:
