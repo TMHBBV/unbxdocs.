@@ -7,8 +7,6 @@ metadata:
 ---
 This section allows you to control which fields from your product catalog are available for search. It also allows you how much weight each field carries in influencing search relevance. To add searchable fields, set the 'Search Weight' to High, Normal, Low. Fields with 'Search Weight' set as Non-Searchable will not be available for search.
 
-<br />
-
 # Navigate to the Searchable Fields Section
 
 1. Navigate to **Manage Search** > **Searchable fields** tab. Refer to the given table to know the headers available here.
