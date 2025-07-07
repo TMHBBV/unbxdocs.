@@ -144,7 +144,7 @@ On the Redirects dashboard, click **Add redirect**. You will be directed to the 
 
 > 📘 Note
 >
-> For an open-ended campaign, enable Run P**erpetually**. This option allows you to run any campaign until it is manually stopped.
+> For an open-ended campaign, enable Run **Perpetually**. This option allows you to run any campaign until it is manually stopped.
 
 5. Optionally, add a Description for future reference. Then click **Next** to proceed.
 
