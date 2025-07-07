@@ -31,12 +31,52 @@ Rule-based control that allows merchandisers to override automatic spell correct
 
 Once enabled, click on **Add Keywords** to override specific keywords to stop suggesting similar queries. Below is use case scenarios accepted for Spellcheck override.
 
-| **Use Case**                                    | **Description**                                                                                                                                                 | **Example**                                                                                                          |
-| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Single-Word (Token) Handling**                | The system applies to single-word (one-token) terms only. Multi-word phrases are not processed by this setup.                                                   | "kursi" is valid, while "long briefs" is not processed.                                                              |
-| **Camel Casing**                                | Camel casing is automatically handled during **query parsing**. Camel-cased words are treated as single terms for search.                                       | "CamelCase" is recognized as a single term, similar to "camel case."                                                 |
-| **Special Character Handling**                  | Special characters like apostrophes, hyphens, etc., are handled automatically during **query parsing**, ensuring they do not interfere with the search process. | "l’oreal" is interpreted correctly, and the search will return relevant results.                                     |
-| **Accepting Camel Casing & Special Characters** | The system accepts both camel-cased terms and single-term words containing special characters for accurate search results.                                      | "l’Oreal" (camel case) and "l’oreal" (with special character) are both valid and will return correct search results. |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Use Case**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Single-Word (Token) Handling**
+      </td>
+
+      <td>
+        The system applies to single-word (one-token) terms only. Multi-word phrases are not processed by this setup.
+        For example: "kursi" is valid, while "long briefs" is not processed.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Camel Casing**
+      </td>
+
+      <td>
+        Camel casing is automatically handled during **query parsing**. Camel-cased words are treated as single terms for search.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Special Character Handling**
+      </td>
+
+      <td>
+        Special characters like apostrophes, hyphens, etc., are handled automatically during **query parsing**, ensuring they do not interfere with the search process.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 Below functionality is available on the dashboard of Spellcheck
 
