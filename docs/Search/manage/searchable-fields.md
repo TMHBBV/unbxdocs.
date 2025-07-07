@@ -1,5 +1,5 @@
 ---
-title: Searchable fields
+title: Searchable Fields
 deprecated: false
 hidden: false
 metadata:
