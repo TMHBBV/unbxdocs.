@@ -8,20 +8,15 @@ hidden: true
 metadata:
   robots: index
 ---
----
-title: " Shopping Agent"
-description: "This guide outlines two methods for integrating the Shopping Assistant for Netcore Unbxd console."
----
-
 # Overview
 
 The Netcore Unbxd Shopping Assistant, is an AI-driven chatbot integrated into e-commerce websites. It assists customers by understanding their preferences, guiding them in product selection, and offering tailored suggestions based on their interactions with the assistant.
 
-
-  1. Netcore Unbxd's Shopping Assistant is a **_PAID_** feature and is not included by default in the standard Unbxd Panel.
-  2. Merchandisers do not have access to enable this feature, contact **Unbxd Business Team** to enable this feature for your panel.
-  3. Once it's enabled, customers can preview the shopping assistant within their console in the preview section under the tab Shopping Assistant.
-
+> 📘 Note
+>
+> 1. Netcore Unbxd's Shopping Assistant is a ***PAID*** feature and is not included by default in the standard Unbxd Panel.
+> 2. Merchandisers do not have access to enable this feature, contact **Unbxd Business Team** to enable this feature for your panel.
+> 3. Once it's enabled, customers can preview the shopping assistant within their console in the preview section under the tab Shopping Assistant.
 
 ### Key Features of a Shopping Assistant:
 
@@ -86,9 +81,9 @@ GET /v1/sites/your_site_key/conversation?uid=user123
 
 **Response Fields**:
 
-| **Field**           | **Description**                                                                                                               |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
-| **conversation_id** | A unique identifier for the newly created chat session. This ID will be used for all subsequent messages within this session. |
+| **Field**            | **Description**                                                                                                               |
+| :------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+| **conversation\_id** | A unique identifier for the newly created chat session. This ID will be used for all subsequent messages within this session. |
 
 **Possible Error Codes**:
 
@@ -143,11 +138,11 @@ POST /v1/sites/{site_key}/conversation/{conversation_id}/chat?uid={uid}
 
 **Request Fields**:
 
-| **Field**    | **Type** | **Description**                                                                                                                                                                                                                                                                                         | **Required** |
-| :----------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------- |
-| **message**  | string   | The user's current chat message or query.                                                                                                                                                                                                                                                               | Yes          |
-| **filters**  | array    | A list of filters to apply to the product search. Each filter object includes:<br /><br />1. **field (string):** The field name to filter by (e.g., "brand", "color", "price").  <br />2. **options (array)**: An array of values to filter for the specified field (e.g., ["Nike"], ["Red"], [10, 50]) | No(optional) |
-| **metadata** | array    | Metadata that provides context about the user's interactions. Each metadata object includes:<br /><br />**name (string)**: The type of metadata (e.g., "clicks", "carts", "views").  **value (array)**: An array of product identifiers related to the metadata.                                        | No(optional) |
+| **Field**    | **Type** | **Description**                                                                                                                                                                                                                                                                                            | **Required** |
+| :----------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- |
+| **message**  | string   | The user's current chat message or query.                                                                                                                                                                                                                                                                  | Yes          |
+| **filters**  | array    | A list of filters to apply to the product search. Each filter object includes:<br /><br />1. **field (string):** The field name to filter by (e.g., "brand", "color", "price").  <br />2. **options (array)**: An array of values to filter for the specified field (e.g., \["Nike"], \["Red"], \[10, 50]) | No(optional) |
+| **metadata** | array    | Metadata that provides context about the user's interactions. Each metadata object includes:<br /><br />**name (string)**: The type of metadata (e.g., "clicks", "carts", "views").  **value (array)**: An array of product identifiers related to the metadata.                                           | No(optional) |
 
 **Successful Response (200 OK)**:
 
@@ -193,10 +188,9 @@ POST /v1/sites/{site_key}/conversation/{conversation_id}/chat?uid={uid}
 | **products** | array    | A list of recommended products, each containing:  <br /><br />1. **productId (string)**: Unique identifier of the product.  <br />2. **title (string)**: Title of the product. <br />3. **imageUrl (string)**: URL of the product image. <br />4. **productUrl (string)**: URL of the product details page. <br />5. **price (number)**: Price of the product and potentially other product-specific fields custom configured for the site | Yes          |
 | **filters**  | array    | An array of additional filters that the user can apply to further refine the results.                                                                                                                                                                                                                                                                                                                                                      | No(Optional) |
 
-
-  **Note**
-  The actual fields returned can vary based on your site's configuration and the data available in your product feed. The product objects are not limited to just the fields listed above.
-
+> 📘 Note
+>
+> The actual fields returned can vary based on your site's configuration and the data available in your product feed. The product objects are not limited to just the fields listed above.
 
 **Possible Error Codes**:
 
@@ -212,7 +206,7 @@ POST /v1/sites/{site_key}/conversation/{conversation_id}/chat?uid={uid}
 
 This method offers a faster and simpler way to integrate the Shopping Assistant by embedding a JavaScript script and a CSS file into your website.
 
-To implement using the JS script, include the following in your website's **\<head\>** or **\<body\>**:
+To implement using the JS script, include the following in your website's **\<head>** or **\<body>**:
 
 **HTML:**
 
