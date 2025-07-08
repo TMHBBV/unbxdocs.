@@ -42,8 +42,8 @@ This section allows you to control which fields from your product catalog are av
 
 8. Once all changes are made, click the **Save Changes** button. Your updated searchable field weights will be saved and applied to the search index.
 
-## Best Practices
-
-* Prioritize fields like **title**, **sku**, and **brand** for `High` search weight.
-* Review AI recommendations periodically to keep search relevance optimized.
-* Keep rarely-used or inconsistent fields set to **Non-Searchable** to improve indexing efficiency.
+> 👍 Best Practices
+>
+> * Prioritize fields like **title**, **sku**, and **brand** for `High` search weight.
+> * Review AI recommendations periodically to keep search relevance optimized.
+> * Keep rarely-used or inconsistent fields set to **Non-Searchable** to improve indexing efficiency.
