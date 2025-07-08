@@ -37,7 +37,7 @@ This section allows you to control which fields from your product catalog are av
 
 > 📘 Search and Sort Fields
 >
-> * **Search by Field Name**: Use the search box at the top to filter fields quickly.
+> * **Search by Field Name**: Use the search box at the top to filter fields.
 > * **Sort Columns**: Click on the column headers (Field Name, Product Coverage, etc.) to sort ascending or descending.
 
 8. Once all changes are made, click the **Save Changes** button. Your updated searchable field weights will be saved and applied to the search index.
