@@ -1,5 +1,5 @@
 ---
-title: Deploy Unbxd
+title: Deploy Unbxd (Search)
 deprecated: false
 hidden: false
 metadata:
