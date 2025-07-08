@@ -22,6 +22,42 @@ Unzip the package & open the index.html file in your browser to view the search 
 
 Or,
 
-Download the Unbxd Search Library default template package from here . &#x20;
-Unzip the package & open the index.html file inside the folder.
+Download the Unbxd Search Library default template package from here .\
+Unzip the package & open the index.html file inside the folder.\
 Update the global variables UNBXD\_SITE\_KEY and UNBXD\_API\_KEY present in the \<head> section \<script>  tag of the index.html file with your Site key & API keys.
+
+```
+window.UNBXD_SITE_KEY=  < your site key >//yoursitekey
+window.UNBXD_API_KEY= < your API key>//yourapikey
+```
+
+Update the global variable “UNBXD\_MAPPED\_FIELDS” with the field mapping of your catalog fields.
+
+```
+ window.UNBXD_MAPPED_FIELDS = {
+   "unxTitle": "title",
+  "unxImageUrl": "Image_Link",
+   "unxPrice": "Price",
+   "unxDescription":" productDescription"
+};
+```
+
+Finally, open index.html in your browser to view the search results landing page for your catalog with the Unbxd default template.
+
+## Quick Integration to your Site
+
+To integrate the JS Library into your site, follow the following steps:
+
+Include the JS Library. This can be done in two ways:\
+a. Adding it as a URL to your HTML file.
+First, add the following CSS file into the “ section of your HTML page to get the Unbxd default theme styles.
+
+```
+<link rel="stylesheet" href="https://libraries.unbxdapi.com/search-sdk/v2.0.0/vanillaSearch.min.css" /> 
+```
+
+Then add the following script file for the library at the end of the body section.
+
+```
+<script type="text/javascript" src="https://libraries.unbxdapi.com/search-sdk/v2.0.0/vanillaSearch.min.js">
+```
