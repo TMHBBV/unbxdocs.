@@ -9,7 +9,7 @@ This section allows you to control which fields from your product catalog are av
 
 # Navigate to the Searchable Fields Section
 
-1. Navigate to **Manage Search** > **Searchable fields** tab. Refer to the given table to know the headers available here.
+1. Navigate to **Manage Search** > **Searchable fields** tab. Refer to the table given to learn the headers available here.
 
 | Column Name                      | Description                                                                                                                                             |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
