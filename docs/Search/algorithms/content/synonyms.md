@@ -55,7 +55,9 @@ By understanding these scenarios, you can set up synonyms that reflect how your 
 
 Now that we know various use cases and types of synonyms let us understand how to configure these synonyms using the Unbxd console. 
 
-## To add synonyms:
+## Add Synonyms
+
+<Image align="center" border={true} caption="Add a Synonym" src="https://files.readme.io/fc002d24a7aff57d95027dec1bae74003cd3352e41ea534ed14d841474400326-AddSynonym.gif" width="80% " />
 
 1. Navigate to **Content** > **Synonyms**.
 2. Click **Add a Synonym** to configure your keywords along with the synonyms.
