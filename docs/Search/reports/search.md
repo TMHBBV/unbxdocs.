@@ -5,13 +5,27 @@ hidden: false
 metadata:
   robots: index
 ---
-Search: Provides insights about overall search performance, top search queries, zero result queries, top products\
-Typeahead: Summarizes the performance of query suggestions based on the autosuggest. You can use these reports to identify the engagement level of each type of query suggestion
-Product: Individual product performance for the top selling products can be reviewed here
-The Search reports can be used to track the performance of search on your website and generate insights to improve the performance of search on the website. The analytics events captured on your website are aggregated to generate these reports in order to present the activity of shoppers on your website.
+# Overview
 
-The search report is divided into three sections:
+It provides insights about overall search performance, top search queries, zero result queries, top products.
 
-Site : Provides plots to summarize overall search performance on your website\
-Query reports : Top search terms received on your website are available here along with corresponding metrics such as conversion rate, CTR etc.
-Zero result queries : Queries returning zero results are captured in this report
+## Key Interface Features:
+
+| **Component**                 | **Description**                                                                                                                                  |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Metric Selector**           | Set to **Hits**, allowing analysis of how many search results were returned for user queries.                                                    |
+| **Comparison Toggle (`v/s`)** | Offers the ability to compare hits against another metric (e.g., clicks, conversions), though no secondary metric is selected in this view.      |
+| **Time Granularity**          | Configured to **Daily**, providing day-wise trend analysis.                                                                                      |
+| **Chart Type**                | Shows the **Trend** view (line graph); an alternative **Funnel** view is available but not selected.                                             |
+| **Visualization**             | The chart displays a flat line at zero, indicating **no search hits were recorded** within the selected timeframe.                               |
+| **Legend**                    | Indicates that hits are being measured for an **undefined search segment**, suggesting possible configuration gaps or filters not yielding data. |
+
+The search report is divided into below sections:
+
+| **Tab Name**          | **Description**                                                                                                                                                  |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Site**              | Provides overall search performance metrics across the entire site, including hits, conversions, and trends.                                                     |
+| **Query Report**      | Delivers insights at the **individual query level**, such as search volume, performance, and click behavior.                                                     |
+| **Zero Result Query** | Focuses on queries that returned **no results**, helping identify catalog gaps or keyword mismatches.                                                            |
+| **Product Level**     | Breaks down performance **at the product level**, showing which products are getting searched, clicked, or ignored.                                              |
+| **A/B Tests**         | Tracks and compares performance between **control and test groups**, useful for evaluating changes like ranking logic, UI tweaks, or personalization strategies. |
