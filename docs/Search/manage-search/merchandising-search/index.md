@@ -40,9 +40,9 @@ It allows you to optimize product visibility by promoting or demoting products i
 10. **Analyze Product and Campaign-Wise Shopper Behavior**\
     Get in-depth insights into how your shoppers engage with specific products, campaigns, or queries.
 
-Track metrics like clicks and conversions to understand which campaigns (e.g., flash sales) perform best and refine future strategies accordingly.\
-Analyze engagement metrics for individual products to identify best-sellers and promote them for higher visibility.
-Monitor shopper behavior patterns on category pages, identify popular items, and adjust merchandising strategies to cater to demand.
+* Track metrics like clicks and conversions to understand which campaigns (e.g., flash sales) perform best and refine future strategies accordingly.
+* Analyze engagement metrics for individual products to identify best-sellers and promote them for higher visibility.
+* Monitor shopper behavior patterns on category pages, identify popular items, and adjust merchandising strategies to cater to demand.
 
 ## Use Case
 
