@@ -11,7 +11,7 @@ It provides insights about overall search performance, top search queries, zero 
 
 ## Key Interface Features:
 
-| **Component**                 | **Description**                                                                                                                                  |
+| **Features**                  | **Description**                                                                                                                                  |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Metric Selector**           | Set to **Hits**, allowing analysis of how many search results were returned for user queries.                                                    |
 | **Comparison Toggle (`v/s`)** | Offers the ability to compare hits against another metric (e.g., clicks, conversions), though no secondary metric is selected in this view.      |
@@ -19,7 +19,7 @@ It provides insights about overall search performance, top search queries, zero 
 | **Chart Type**                | Shows the **Trend** view (line graph); an alternative **Funnel** view is available but not selected.                                             |
 | **Legend**                    | Indicates that hits are being measured for an **undefined search segment**, suggesting possible configuration gaps or filters not yielding data. |
 
-The search report is divided into below sections:
+The search report is divided into the following sections:
 
 | **Tab Name**          | **Description**                                                                                                                                                  |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
