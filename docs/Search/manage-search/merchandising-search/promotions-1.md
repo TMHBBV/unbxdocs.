@@ -1,5 +1,8 @@
 ---
 title: Promotions
+excerpt: >-
+  Highlighting your products through prioritizing, pinning, arranging, and
+  organizing to present what the shoppers desire to view.
 deprecated: false
 hidden: false
 metadata:
