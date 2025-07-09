@@ -1,11 +1,11 @@
 ---
-title: Unbxd Browse UI Dashboard
+title: User Management
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# User Management
+# Overview
 
 The Users page provides a way to manage user accounts within the Netcore Unbxd console. Admins can create new users, assign them roles, and edit their existing roles. This ensures that only authorized users have access to Netcore Unbxd's features. On this page, account owners can:
 
@@ -15,9 +15,9 @@ The Users page provides a way to manage user accounts within the Netcore Unbxd c
 * Onboard a new team member.
 * Track and manage site allocations within your account.
 
-### **Profile**
+## **Profile**
 
-#### Profile Settings: General Information
+### Profile Settings: General Information
 
 Manage your personal and organizational details. Keep your account information up-to-date to ensure smooth communication and accurate configuration.
 
