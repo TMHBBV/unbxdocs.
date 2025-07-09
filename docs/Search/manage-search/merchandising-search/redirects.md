@@ -101,13 +101,13 @@ The functionality below is offered on the Redirects Dashboard.
   </tbody>
 </Table>
 
-## AI Suggested Redirects
+# AI Suggested Redirects
 
 **AI Suggested Redirects** enable users to create redirects for seasonal collections or category paths that are broadly applicable. These recommendations are powered by **Netcore Unbxd’s AI**, leveraging **past search patterns**, **user behavior**, **popular searches**, and **trending queries.**
 
 This feature allows merchandisers to automatically configure redirects suggested by Unbxd, ensuring that users are directed to the most relevant and timely content based on emerging trends and search data. This enhances the browsing experience and ensures that users can easily find the products they are most likely to search for, optimizing site navigation and search performance.
 
-### Set Up AI Suggested Redirects
+## Set Up AI Suggested Redirects
 
 Navigate to **Merchandising** > **Search** > **Redirects**. Click on **AI Suggested Redirects**.
 
@@ -129,13 +129,13 @@ Once the suggestions are up, there will be two options for users to select:
 > 1. AI-generated redirect suggestions will be refreshed every 15 days.
 > 2. After the 15-day refresh interval, when you click on the button again, the system will trigger a new job to update the suggestions. This process may take time to complete.
 
-## Set up Redirects
+# Set up Redirects
 
 <Image align="center" border={true} caption="Add a Redirect" src="https://files.readme.io/9f7d760646705a1b22c8e6e6d37415a4f65dd34a69ae9ec60f3d0f5d0fce1b5a-AddRedirect.gif" width="80% " />
 
 Log in to the **Netcore Unbxd** console site. From the **Site Key Picker**, click the site you want to apply a merchandising strategy. After selecting the appropriate site key, navigate to **Merchandising** > **Search** > **Redirects**
 
-### Set Up a New Campaign Using Redirects.
+## Set Up a New Campaign Using Redirects.
 
 On the Redirects dashboard, click **Add redirect**. You will be directed to the **Add banners** interface.
 
@@ -167,7 +167,7 @@ After providing the redirect link, you can do one of the following.
 1. Click the **Save** button to retain the Campaign as a draft.
 2. Click the **Publish** rule button to push it live.
 
-## Troubleshooting and FAQs
+# Troubleshooting and FAQs
 
 <Accordion title="How to view a comprehensive list of all the campaigns I launched?">
   To view a comprehensive list of all your redirect campaigns, select the site key, click Merchandising, navigate to Search, and then Banners.
