@@ -7,23 +7,23 @@ metadata:
 ---
 # Overview
 
-The performance of query suggestions powered using autosuggest can be monitored using Typeahead report. This report provides a break-up of the engagement received by various query suggestions types along with corresponding conversions. You get to know the conversion rate, click-through rate, and revenue generated from each type of suggestion. The insights derived from this report can be used to configure auto-suggest settings in order to drive higher engagement.
+The performance of query suggestions powered by autosuggest can be monitored using the Typeahead report. This report provides a breakdown of the engagement received by various query suggestion types and corresponding conversions. You get to know the conversion rate, click-through rate, and revenue generated from each type of suggestion. The insights derived from this report can be used to configure auto-suggest settings in order to drive higher engagement.
 
-This report, shows the engagement metrics of Autosuggest parameters like:
+This report shows the engagement metrics of Autosuggest parameters like:
 
 * In-fields
 * Keyword-suggestion
 * Top queries
 * Popular products.
 
-The **Overview** tab shows you the consolidated data for all the suggestion types in the same screen. When a shopper types a query and selects a query suggestion, Unbxd analytics tracks the products ordered via in-feature suggestions, keyword suggestions, or from the list of popular products. Therefore, we get an overview report including all the individual metrics, conversion rate, revenue percentage, and percentage of engagement.
+The **Overview** tab shows consolidated data for all suggestion types on the same screen. When a shopper types a query and selects a query suggestion, Unbxd analytics tracks the products ordered via in-feature suggestions, keyword suggestions, or from the list of popular products. Therefore, we get an overview report including all the individual metrics, conversion rate, revenue percentage, and engagement percentage.
 
 <Image align="center" border={true} caption="Overview Reports" src="https://files.readme.io/57a217039d3ee9254e6173d820739880d5d084367ee55a67db25a68f0dde39b6-image.png" width="80% " />
 
 By looking at the above chart, you can quickly draw these insights :
 
 1. In \~17% of the searches, the shopper selects a query/product suggestion in autosuggest. This suggests that the query suggestions are relevant to shoppers in \~17% of the cases.
-2. Top search queries & in-fields suggestions are the two most frequently used suggestions. The reason for lower engagement on Keywords suggestions & Popular products could be lower visibility in the UI or relevance issues.
+2. The two most frequently used suggestions are top search queries and in-field suggestions. Lower engagement on Keyword suggestions and popular products could be due to lower visibility in the UI or relevance issues.
 
 You can make changes in the UI or autosuggest configurations to fix these.
 
@@ -36,18 +36,18 @@ You can make changes in the UI or autosuggest configurations to fix these.
 | **Hits**              | Number of times shoppers selected a suggestion from autosuggest.                                                                                                                         |
 | **Clicks**            | Number of times shoppers select a product from the Product Listing Page (PLP) after selecting a query suggestion from autosuggest. For "Popular products," hits and clicks are the same. |
 | **Carts**             | Number of times a shopper added a product to their shopping list after selecting a query suggestion from autosuggest.                                                                    |
-| **Products Sold**     | Number of products that shoppers ordered after adding them to the cart.                                                                                                                  |
+| **Products Sold**     | The number of products that shoppers ordered after adding them to the cart.                                                                                                              |
 | **% Conversion Rate** | % Conversion Rate = Number of orders / Number of hits on a suggestion. Conversion Rate is the ratio of products ordered from auto-suggested ones.                                        |
-| **Revenue**           | Amount of revenue generated from the number of orders placed by shoppers through autosuggest.                                                                                            |
-| **% Engagement**      | % Engagement = Hits (Autosuggest suggestions) / Total search hits (of the site). Engagement shows how many times a product/query suggestion was selected during search.                  |
+| **Revenue**           | Amount of revenue generated from the number of orders shoppers place through autosuggest.                                                                                                |
+| **% Engagement**      | % Engagement = Hits (Autosuggest suggestions) / Total search hits (of the site). Engagement shows how often a product/query suggestion was selected during a search.                     |
 
 ## In-Field Suggestions
 
-When auto-suggest provides query results, for some of the products, it displays an In-field suggestion. In-field suggestions are sub-fields of an auto-suggested query. In-field suggestions are displayed when the products are defined under different categories. They typically represent the query in the context of the category or brand.
+When auto-suggest provides query results, it displays an In-field suggestion for some of the products. In-field suggestions are sub-fields of an auto-suggested query. In-field suggestions are displayed when the products are defined under different categories. They typically represent the query in the context of the category or brand.
 
 <Image align="center" border={true} caption="In-Field Suggestions Report" src="https://files.readme.io/1f91fa79f12cc14c16607649bb7d85c71d8a2a31f2561e214a647e98a11db6db-image.png" width="80% " />
 
-In the above illustration, the maximum number of hits and clicks were received on 5th of August and 8th of August. The  graph shows the metrics of the number of query hits, depicted on the left side x-axis v/s the number of clicks, on the right x-axis. The report shown here is from 02-August to 15-August.
+In the above illustration, the maximum number of hits and clicks was received on August 5th and 8th. The graph shows the metrics of the number of query hits, depicted on the left side x-axis, v/s the number of clicks, depicted on the right x-axis. The report shown here is from August 02 to August 15.
 
 ### Keyword Suggestions
 
@@ -73,7 +73,7 @@ The list of similar products appears based on the query phrase that you type. In
 
 <Image align="center" border={true} caption="Popular Products Report" src="https://files.readme.io/4d5c4ec0982609bcbb8554896de98cf3e3f6767c86856fd395b3b27d290c9cb8-image.png" />
 
-So, as you can see, product like ‘slim fit convertible sleeve portofino shirt’ was viewed 9219 number of times, added to the cart 1705 times, and ordered 264 times. In this way, you get to know the popular products or the least popular ones. We can
+So, as you can see, a product like ‘slim fit convertible sleeve portofino shirt’ was viewed 9219 times, added to the cart 1705 times, and ordered 264 times. In this way, you get to know the popular products or the least popular ones. We can
 
 You can change the order of the products based on any of the metrics.
 
