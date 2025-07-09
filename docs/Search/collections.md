@@ -4,7 +4,7 @@ excerpt: >-
   Ability to upload products and enhance them with custom attributes for landing
   pages
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
