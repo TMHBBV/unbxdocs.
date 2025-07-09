@@ -131,6 +131,8 @@ Once the suggestions are up, there will be two options for users to select:
 
 ## Set up Redirects
 
+<Image align="center" border={true} caption="Add a Redirect" src="https://files.readme.io/9f7d760646705a1b22c8e6e6d37415a4f65dd34a69ae9ec60f3d0f5d0fce1b5a-AddRedirect.gif" width="80% " />
+
 Log in to the **Netcore Unbxd** console site. From the **Site Key Picker**, click the site you want to apply a merchandising strategy. After selecting the appropriate site key, navigate to **Merchandising** > **Search** > **Redirects**
 
 ### Set Up a New Campaign Using Redirects.
