@@ -1,5 +1,5 @@
 ---
-title: 'Merchandising : Segments'
+title: Segments
 excerpt: >-
   It allow you to group and target shoppers based on attributes, enabling
   personalized experiences and marketing strategies
@@ -66,5 +66,3 @@ The below functionality is present on the Segment listing page.
 > 📘 Good to know
 >
 > **Active Segment**: If a segment is used by any active or upcoming campaigns in search or browse. It cannot be deleted unless the Segment expires or stopped.
-
-<Image align="center" border={true} caption="Delete a Segment" src="https://files.readme.io/8dd8b2e22a0376a2dd8c9a338b65f4660d4d53e5f5098501ac6e07a50f0b2700-image.png" width="80% " />
