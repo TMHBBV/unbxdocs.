@@ -34,7 +34,9 @@ If your shoppers are highly brand conscious and search for products using brand 
 >
 > Our Named Entity Recognition (NER) algorithm offers an intelligent way of handling long tail searches.
 
-## Add concepts:
+# Add Concept
+
+<Image align="center" border={true} caption="Add a Concept" src="https://files.readme.io/b57ca297fbad095144e16ea15c7fef2ba58dbee54c2196c957f6d8f89b9a7163-AddConcept.gif" width="80% " />
 
 1. Navigate to **Content** > **Concepts**.
 2. Click **Add a Concept** . Enter the keywords you want to add.
@@ -42,7 +44,7 @@ If your shoppers are highly brand conscious and search for products using brand 
 
 Unbxd’s AI will identify the concepts from your catalog and you could edit them as needed.
 
-### What should concepts not include:
+## What should concepts not include:
 
 1. **Empty record**: entry where there is no value entered (whitespace)
 2. **Symbols** : entries where only symbols are typed as the value. The following characters are not accepted by our system : `, ` ( comma) , `+`(plus), `{`, `}` (curly braces), `*` (Asterix),`&` (Ampersand) , `\` (backslash)
