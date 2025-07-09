@@ -59,6 +59,8 @@ These banners are **contextually triggered** based on the products in the search
 
 ## Banner Asset Setup
 
+<Image align="center" border={true} caption="Create A New Banner" src="https://files.readme.io/51abec375e099e4e2aad1167d2e474d34c3672ba6e9b9d12d42bc7977c6baa91-Merchandisng_Banners.gif" width="80% " />
+
 You can configure your banner in two ways:
 
 1. **Use a Pre-Designed Image**
