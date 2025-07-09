@@ -2,7 +2,7 @@
 title: Promotions
 excerpt: Add new query-specific product promotion rules
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
