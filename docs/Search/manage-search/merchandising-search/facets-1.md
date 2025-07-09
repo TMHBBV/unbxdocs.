@@ -33,9 +33,11 @@ The simplified process facilitates a smoother shopping experience, increasing th
 
 ## Facets Configuration in Unbxd Console
 
+<Image align="center" border={true} caption="Add A New Facet" src="https://files.readme.io/7891cb0f1e455a07c274885bd7bb570373e34734972f9927b0871a4b5184c83b-AddNewFacet.gif" width="80% " />
+
 To configure facets, follow these steps:
 
-1. Login to the Unbxd console. Navigate to **Manage** > **Search** > **Facets** to access the facet settings page.
+1. Log in to the Unbxd console. Navigate to **Manage** > **Search** > **Facets** to access the facet settings page.
 2. Review existing facets or click Add New Facet to create a new one.
 3. Enable global facets and control their rankings under **Merchandising** > **Search** > **Facet**.
 
