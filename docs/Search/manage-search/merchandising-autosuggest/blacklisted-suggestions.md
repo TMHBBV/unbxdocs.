@@ -17,6 +17,8 @@ Blacklisted suggestions will not appear in the Autosuggest dropdown if the shopp
 
 ## Add a Blacklisted Suggestion
 
+<Image align="center" border={true} caption="Add Blacklisted Suggestions" src="https://files.readme.io/fd82ace208e17b4b07d64fae82bef179fd6b8694904d4946c829c7b318e97ff0-Blacklisted_Suggestions.gif" width="80% " />
+
 Navigate to the **Blacklisted Suggestions** page and click the **Add Blacklisted Suggestion** button.
 
 In the popup window, enter the terms you want to blacklist. Specify the start and end date and time for the blacklisting period (optional). Once all details are configured, click **Add** to save the blacklisted suggestion.
