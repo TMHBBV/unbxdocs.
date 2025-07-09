@@ -71,7 +71,7 @@ As we can see in the above illustration, the maximum number of hits and clicks w
 
 The list of similar products appears based on the query phrase that you type. In this way, the buyer gets more options to add to the cart by just a single click.
 
-<Image align="center" border={true} caption="Popular Products Report" src="https://files.readme.io/4d5c4ec0982609bcbb8554896de98cf3e3f6767c86856fd395b3b27d290c9cb8-image.png" width="% " />
+<Image align="center" border={true} caption="Popular Products Report" src="https://files.readme.io/4d5c4ec0982609bcbb8554896de98cf3e3f6767c86856fd395b3b27d290c9cb8-image.png" />
 
 So, as you can see, product like ‘slim fit convertible sleeve portofino shirt’ was viewed 9219 number of times, added to the cart 1705 times, and ordered 264 times. In this way, you get to know the popular products or the least popular ones. We can
 
