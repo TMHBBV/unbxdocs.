@@ -1,7 +1,7 @@
 ---
 title: Boost or Bury specific products
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
