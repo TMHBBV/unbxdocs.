@@ -1,5 +1,5 @@
 ---
-title: 'Merchandising : Collections'
+title: Collections
 excerpt: >-
   Ability to upload products and enhance them with custom attributes for landing
   pages
@@ -30,7 +30,7 @@ Follow below steps to create a collection:
 1. Log in to Netcore Unbxd self-serve console. Navigate to **Merchandising** > **Collections** > **Add a Collection** > **Upload a File**
 2. Add a collection name and click on **Download the sample collection file**. This file contains a list of unique IDs associated with your products. Modify the product IDs in the file to match the products you want to include in your collection. Save it and upload the prepared file to the Unbxd console page.
 
-<Image align="center" border={true} caption="Upload a Collection" src="https://files.readme.io/d0489216a62159a7bdfab4af38b9983dc1af44caf862a77db20a238deb61b8b4-Addcollections1.png" width="80% " />
+<Image align="center" border={true} caption="Upload a Collection" src="https://files.readme.io/d0489216a62159a7bdfab4af38b9983dc1af44caf862a77db20a238deb61b8b4-Addcollections1.png" width="60% " />
 
 > 📘 Note
 >
