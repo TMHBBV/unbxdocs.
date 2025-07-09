@@ -17,7 +17,6 @@ It provides insights about overall search performance, top search queries, zero 
 | **Comparison Toggle (`v/s`)** | Offers the ability to compare hits against another metric (e.g., clicks, conversions), though no secondary metric is selected in this view.      |
 | **Time Granularity**          | Configured to **Daily**, providing day-wise trend analysis.                                                                                      |
 | **Chart Type**                | Shows the **Trend** view (line graph); an alternative **Funnel** view is available but not selected.                                             |
-| **Visualization**             | The chart displays a flat line at zero, indicating **no search hits were recorded** within the selected timeframe.                               |
 | **Legend**                    | Indicates that hits are being measured for an **undefined search segment**, suggesting possible configuration gaps or filters not yielding data. |
 
 The search report is divided into below sections:
