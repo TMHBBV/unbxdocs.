@@ -41,7 +41,7 @@ You can make changes in the UI or autosuggest configurations to fix these.
 | **Revenue**           | Amount of revenue generated from the number of orders placed by shoppers through autosuggest.                                                                                            |
 | **% Engagement**      | % Engagement = Hits (Autosuggest suggestions) / Total search hits (of the site). Engagement shows how many times a product/query suggestion was selected during search.                  |
 
-### In-Field Suggestions
+## In-Field Suggestions
 
 When auto-suggest provides query results, for some of the products, it displays an In-field suggestion. In-field suggestions are sub-fields of an auto-suggested query. In-field suggestions are displayed when the products are defined under different categories. They typically represent the query in the context of the category or brand.
 
@@ -77,6 +77,6 @@ So, as you can see, product like ‘slim fit convertible sleeve portofino shirt�
 
 You can change the order of the products based on any of the metrics.
 
-> 📘 NOTE
+> 📘 Note
 >
 > To download a query report, click the download icon on the top-right part of the screen.
