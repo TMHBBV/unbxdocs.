@@ -8,11 +8,11 @@ hidden: false
 metadata:
   robots: index
 ---
-# **What are Phrases?**
+# What are Phrases?
 
 Phrases are common multi-word search terms that shoppers use when looking for specific types of products (e.g., "paintbrush," "shoe polish," "running shoes"). The Phrases feature allows you to define these multi-word terms and guide the search engine to understand the shopper's *true intent* behind them, leading to more relevant search results.
 
-## **Why are Phrases Important?**
+## Why are Phrases Important?
 
 Without specific guidance, a search engine might treat each word in a multi-word query equally. For example:
 
@@ -65,6 +65,8 @@ When you add a phrase, you instruct the search system on how to prioritize resul
 
 # Add a Phrase
 
+<Image align="center" border={true} caption="Add a Phrase" src="https://files.readme.io/7323b88ed40f5e4c8de57ed36aafc3a6e49d837efdbdc43e9ac883636864cd64-AddPhrase.gif" width="80% " />
+
 **To add Phrase (or a single synonym)**:
 
 1. Navigate to **Content > Phrase**.
@@ -73,15 +75,13 @@ When you add a phrase, you instruct the search system on how to prioritize resul
 4. Click \*\*Proceed \*\* to \*\*save \*\* configure phrase.
 5. Select the desired relevance option: **Include the left-term**, **Include the right-term**, or **Include the full phrase** based on the shopper's likely intent
 
-   ### Bulk Upload Phrase
+## Bulk Upload Phrase
 
-   You can upload a list of phrases using the **Bulk Upload Phrase** feature. You can browse on your computer or use drag-and-drop. The supported upload format is ***.csv****.* 
-
-   > You may need to check specific formatting requirements for including the left/right/full term designation in the CSV
+You can upload a list of phrases using the **Bulk Upload Phrase** feature. You can browse on your computer or use drag-and-drop. The supported upload format is ***.csv****.* You may need to check specific formatting requirements for including the left/right/full term designation in the CSV
 
 Once uploaded, you can see the number of phrases added. Using the **Bulk Download Phrase** feature, you can also bulk download all the phrases you have configured. A .csv file is downloaded.
 
-## **What Phrases Should NOT Include**
+## What Phrases Should NOT Include
 
 To ensure phrases function correctly and maintain data quality, avoid entries that are:
 
