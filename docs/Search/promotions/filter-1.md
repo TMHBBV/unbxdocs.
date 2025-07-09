@@ -2,7 +2,7 @@
 title: Filter
 excerpt: Apply rules to quickly Filter products
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
