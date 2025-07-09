@@ -273,7 +273,7 @@ products:{
 });
 ```
 
-<Table>
+<Table align={["left","left","left","left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -697,3 +697,195 @@ spellCheck:{
        selectorClass: "UNX-suggestion"
    }
 ```
+
+## Breadcrumbs
+
+To render the breadcrumb component, set the “breadcrumb” config object.
+
+The following options are available under the object:
+
+| **OPTION**      | **DATATYPE** | **DEFAULT VALUE** | **DESCRIPTION**                                                                      |
+| --------------- | ------------ | ----------------- | ------------------------------------------------------------------------------------ |
+| `enabled`       | Boolean      | `true`            | Enables or disables the breadcrumb component                                         |
+| `el`            | Element      | `null`            | Element in which to render the breadcrumbs                                           |
+| `template`      | Function     | `default`         | Function to customize breadcrumb HTML. Receives the **breadcrumb list** as parameter |
+| `selectorClass` | String       | `"bread-crumb"`   | CSS class to apply to each breadcrumb item                                           |
+
+## Variants
+
+Configure variants display by setting the “variants” config object.
+
+The following options are available under the object:
+
+| **OPTION**   | **DATATYPE** | **DEFAULT VALUE**               | **DESCRIPTION**                                                                             |
+| ------------ | ------------ | ------------------------------- | ------------------------------------------------------------------------------------------- |
+| `enabled`    | Boolean      | `false`                         | Set this flag to `true` to enable variant rendering                                         |
+| `count`      | Number       | `5`                             | Number of variants to be shown                                                              |
+| `groupBy`    | String       | `"v_colour"`                    | Field name (as per catalog) to group the variants by (e.g., `"v_colour"`, `"v_size"`, etc.) |
+| `attributes` | Array        | `["title", "v_imageUrl"]`       | Array of catalog fields to include in each variant                                          |
+| `mapping`    | Object       | `{ "image_url": "v_imageUrl" }` | Field mapping from catalog attributes to variant attributes, required for correct rendering |
+
+Sample
+
+```
+variants:{
+        enabled:false,
+        count:5,
+        groupBy:'v_colour',
+        attributes:[
+            "title",
+            "v_imageUrl"
+        ],
+        mapping:{
+            "image_url":"v_imageUrl"
+        }
+    },
+```
+
+## Swatches
+
+Configure swatches display by using the configs in this section.
+
+The following options are available under the object:
+
+| **OPTION**      | **DATATYPE** | **DEFAULT VALUE**                                                                   | **DESCRIPTION**                                                                                                              |
+| --------------- | ------------ | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`       | Boolean      | `false`                                                                             | Enables or disables the swatches component                                                                                   |
+| `attributesMap` | Object       | `{ swatchImgs: "unbxd_color_mapping", swatchColors: "color", swatchList: "color" }` | Field mappings from catalog to swatch attributes (e.g., color images, color names, list of colors)                           |
+| `swatchClass`   | String       | `"UNX-swatch-btn"`                                                                  | CSS class to apply to swatch buttons                                                                                         |
+| `template`      | Function     | `default`                                                                           | Function to customize the swatch UI. Receives two parameters: the **current swatch data** and the **complete swatches list** |
+
+sample:
+
+```
+swatches:{
+       enabled:true,
+       attributesMap:{},
+       swatchClass:'UNX-swatch-btn',
+       template:function(swatchData) {
+           const {
+               swatchColors = [],
+               swatchImgs = []
+           } = swatchData;
+           let btnUI = ``;
+           swatchColors.forEach((item,id) => {
+               const imgId = swatchImgs[id];
+               if(imgId){
+                   const img = imgId.split("::")[1];
+                   btnUI+= [`<button data-swatch-id="${item}" data-swatch-img="${img}" data-action="changeSwatch"`,
+ `data-swatch-target=".UNX-img-block" class="${this.swatchClass}" style="background-color:${item}"> </button>`].join('')
+               }
+           });
+           return `<div class="UNX-swatch-color-list">${btnUI}</div>`;
+       }
+   }
+```
+
+> 📘 NOTE
+>
+> If you wants swatches, variants count should be higher, and “groupBy” field should be present in mapped fields config as shown below
+
+```
+variants:{
+       enabled:false,
+       count:5,
+       groupBy:'v_colour',
+       attributes:[
+           "title",
+           "v_imageUrl"
+       ],
+       mapping:{
+           "image_url":"v_imageUrl"
+       }
+   }
+```
+
+## Banner
+
+Configure the banner display by setting the “banner” config object.
+
+The following options are available under the object:
+
+| **OPTION** | **DATATYPE** | **DEFAULT VALUE** | **DESCRIPTION**                                                                        |
+| ---------- | ------------ | ----------------- | -------------------------------------------------------------------------------------- |
+| `enabled`  | Boolean      | `false`           | Enables or disables the banner component                                               |
+| `el`       | Element      | `null`            | Element in which the banner component will be rendered                                 |
+| `template` | Function     | `default`         | Custom function to define the banner’s HTML. Receives **list of banners** as parameter |
+| `count`    | Number       | `1`               | Number of banners to be displayed                                                      |
+
+## Loader
+
+Configure page loader to be shown when fetching search API results by setting the “loader” config object.
+
+The following options are available under the object:
+
+| **OPTION** | **DATATYPE** | **DEFAULT VALUE**                                                                | **DESCRIPTION**                                                                          |
+| ---------- | ------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `el`       | Element      | `null`                                                                           | Element in which to render the loader component                                          |
+| `template` | Function     | `function(){ return '<div class="UNX-loader">Loading search results….</div>'; }` | Function to customize the loader UI. Should return HTML string for the loading indicator |
+
+## NoResults
+
+Configure the display to be rendered when there are no results by setting the “noResults” config object.
+
+The following options are available under the object:
+
+| **OPTION** | **DATATYPE** | **DEFAULT VALUE**                                                                                | **DESCRIPTION**                                                                                              |
+| ---------- | ------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `template` | Function     | `function(query){ return '<div class="UNX-no-results"> No Results found ' + query + '</div>'; }` | Function to customize the UI when no results are found. Receives the **search query** as the input parameter |
+
+## Miscellaneous Configs
+
+<br />
+
+| **OPTION**          | **DATATYPE** | **DEFAULT VALUE**             | **DESCRIPTION**                                                                                                                                                                                                                            |
+| ------------------- | ------------ | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `siteKey`           | String       | `NA`                          | Unique Site Key assigned by Unbxd (from console dashboard)                                                                                                                                                                                 |
+| `apiKey`            | String       | `NA`                          | Unique API Key assigned by Unbxd (from console dashboard)                                                                                                                                                                                  |
+| `searchBoxEl`       | Element      | `null`                        | DOM element selector for the search input box                                                                                                                                                                                              |
+| `searchButtonEl`    | Element      | `NA`                          | DOM element selector for the search button. Clicking it triggers a search based on `searchBoxEl` value                                                                                                                                     |
+| `unbxdAnalytics`    | Boolean      | `false`                       | Enables Unbxd Analytics event tracking (requires including Unbxd Analytics SDK)                                                                                                                                                            |
+| `hashMode`          | Boolean      | `false`                       | Enables URL updates using hash (`#`) instead of query parameters                                                                                                                                                                           |
+| `updateUrls`        | Boolean      | `true`                        | Controls whether URLs update on search parameter change                                                                                                                                                                                    |
+| `actionBtnClass`    | String       | `"UNX-action-item"`           | CSS class for elements that trigger click events                                                                                                                                                                                           |
+| `actionChangeClass` | String       | `"UNX-action-change"`         | CSS class for elements that trigger change events                                                                                                                                                                                          |
+| `onAction`          | Function     | `function(event, context) {}` | Callback on custom `click` or `change` event. Receives: `event`, `context`                                                                                                                                                                 |
+| `onEvent`           | Function     | `function(context, type) {}`  | Callback for supported Unbxd lifecycle events. Event types: `BEFORE_API_CALL`, `AFTER_API_CALL`, `BEFORE_RENDER`, `AFTER_RENDER`, `BEFORE_NO_RESULTS_RENDER`, `AFTER_NO_RESULTS_RENDER`, `FACETS_CLICK`, `DELETE_FACET`, `PAGE_NEXT`, etc. |
+| `extraParams`       | Object       | `{ "version": "V2" }`         | Additional custom parameters to include in search API calls                                                                                                                                                                                |
+| `productId`         | String       | `"uniqueId"`                  | Field representing the unique product identifier                                                                                                                                                                                           |
+| `defaultFilters`    | Object       | `null`                        | Set default filters to be applied with every API request                                                                                                                                                                                   |
+| `searchQueryParam`  | String       | `"q"`                         | Custom query param name to send search term (e.g., `"query"` instead of `"q"`)                                                                                                                                                             |
+| `searchEndPoint`    | String       | `"https://search.unbxd.io"`   | The domain name of the Unbxd search endpoint                                                                                                                                                                                               |
+| `searchPath`        | String       | `""`                          | Additional path to append to search URL (useful for SPAs or subpaths)                                                                                                                                                                      |
+| `getCategoryId`     | Function     | `null`                        | Custom function to return category ID (default comes from `unbxdPageConf`)                                                                                                                                                                 |
+| `setCategoryId`     | Function     | `null`                        | Custom function to define logic for category navigation via breadcrumbs                                                                                                                                                                    |
+
+## Instance Methods
+
+This section documents the different methods exposed by the Library that you can use to perform various actions.
+
+NOTE: All the below methods can be called on the instance object returned by UnbxdSearch constructor.
+
+updateConfig
+
+| **Function**              | **Purpose**                                                         | **Arguments**                    | **Usage Example**                                                                                                                                                                                             |
+| ------------------------- | ------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `updateConfig(configObj)` | Dynamically update the config object; merges with existing settings | `configObj` (Object)             | `unbxdSearch.updateConfig({ sort: { el: document.getElementById("sortWrapper"), options: [{ value: "sortPrice desc", text: "Price High to Low" }, { value: "sortPrice asc", text: "Price Low to High" }] }})` |
+| `getResults()`            | Refetch search results for a given query                            | `query` (String)                 | `unbxdSearch.getResults("dress")`                                                                                                                                                                             |
+| `getCategoryPage()`       | Render category page results                                        | None                             | `unbxdSearch.getCategoryPage()`                                                                                                                                                                               |
+| `getBrowsePage()`         | Render browse page results                                          | None                             | `unbxdSearch.getBrowsePage()`                                                                                                                                                                                 |
+| `reRender()`              | Re-render UI components, useful on layout or screen changes         | None                             | `unbxdSearch.reRender()`                                                                                                                                                                                      |
+| `resetFacets()`           | Manually reset all selected facets                                  | None                             | `unbxdSearch.resetFacets()`                                                                                                                                                                                   |
+| `resetAll()`              | Reset entire search state (facets, sort, pagination, etc.)          | None                             | `unbxdSearch.resetAll()`                                                                                                                                                                                      |
+| `setPageStart(pageNo)`    | Set specific page number to start from                              | `pageNo` (Number)                | `unbxdSearch.setPageStart(1)`                                                                                                                                                                                 |
+| `setRangeSlider(config)`  | Update range slider filter manually                                 | `{ start, end, facetName, gap }` | `unbxdSearch.setRangeSlider({ start: 0, end: 573, facetName: "price", gap: 200 })`                                                                                                                            |
+
+More Information\
+For any issue that you face during integration or need updates on the changes, follow these tips, raise issues, or track log changes.
+
+## Tips & Tricks
+
+* If you are including our Search JS Library, Autosuggest Library & Analytics Library in your HTML page, the order of the files are important.
+* Include the Search JS Library, followed by Autosuggest Library and then the Analytics JS Library. This should be followed by the code to invoke the library.
+* Always ensure you are invoking the library (i.e. calling the UnbxdSearch constructor) after you have included it either via URL or via npm
+* Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the javascript files.
