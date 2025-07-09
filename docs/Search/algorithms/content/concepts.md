@@ -1,5 +1,6 @@
 ---
 title: Concepts
+excerpt: A curated list of keywords to match the category of the product searched.
 deprecated: false
 hidden: false
 metadata:
