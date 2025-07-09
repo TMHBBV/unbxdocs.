@@ -8,7 +8,7 @@ metadata:
 ---
 # Overview
 
-Spellcheck checks the misspelled queries to avoid zero results. By enabling spellcheck, your site displays results even if they type the wrong spelling of their intended query. It .
+Spellcheck checks the misspelled queries to avoid zero results. By enabling spellcheck, your site displays results even if they type the wrong spelling of their intended query.
 
 **Spellcheck works based on the following factors**:
 
@@ -16,18 +16,15 @@ Spellcheck checks the misspelled queries to avoid zero results. By enabling spel
 2. **Search Results**: It uses the rest of the user's query to generate relevant search results.
 3. **Catalog-Based Suggestions**: Recommendations are limited to the terms available in the catalog.
 
-## To enable/disable spellcheck:
+# Enable/ Disable Spellcheck
 
-Navigate to **Algorithm** > **Content** > **Spellcheck**. Enable or Disable based on the queries.\
-Once done, spellcheck is set.
+Navigate to **Algorithm** > **Content** > **Spellcheck**. Enable or Disable based on the queries. Once done, spellcheck is set.
 
-<Image align="center" border={true} caption="Enable Spellcheck" src="https://files.readme.io/a03edbb1fc7a9c5c2e2d66440f6ee83a15200ac548c9359f05c000656b162295-image.png" />
+<Image align="center" border={true} caption="Check for Misspelled Words/Phrases" src="https://files.readme.io/f111f6d8e2b34a74486a442c864ca6446712a016bcc9877ede226b0ae7d453f3-AddSpellcheck.gif" width="80% " />
 
 ## Spellcheck Override
 
 Rule-based control that allows merchandisers to override automatic spell correction behavior for specific queries or terms
-
-<Image align="center" border={true} caption="Set up Spellcheck Override" src="https://files.readme.io/0dc559e9a04678f4813d04795d23ee7494aeca2182e646cfc02cea26f30c23fd-image-20250609-100811.png" width="80% " />
 
 Once enabled, click on **Add Keywords** to override specific keywords to stop suggesting similar queries. Below is use case scenarios accepted for Spellcheck override.
 
