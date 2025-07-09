@@ -119,7 +119,7 @@ You can perform following actions from the Promotions overview page. You can per
 
 ## Create New Promotion
 
-<Image align="center" border={true} caption="Add New Promotion" src="https://files.readme.io/7a93ee003d9d548f9741a3acf699a111fc827115b3161da46f6eccd84d518709-Add_promotions.gif" width="80% " />
+<Image align="center" border={true} caption="Add New Promotion" src="https://files.readme.io/951685b28a6d6f5697c390b0a7938da46800c897491491e0f271d9c2a1d4c0af-Merchandising_Promotions.gif" width="80% " />
 
 Query-specific merchandising rules allow you to customize promotions for specific queries or segments, offering a more targeted approach to shopper engagement. Navigate to **Merchandising** > **Search** > **Promotions** > **Add promotions**. Following parameters is mandatory to fill.
 
