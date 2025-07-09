@@ -2,7 +2,7 @@
 title: Banners
 excerpt: Publish query and field-based Banners
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
