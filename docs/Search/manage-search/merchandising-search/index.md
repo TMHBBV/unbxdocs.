@@ -1,5 +1,5 @@
 ---
-title: 'Merchandising : Search'
+title: Merchandising
 excerpt: >-
   Merchandising campaigns designed to boost the visibility and sales of specific
   products
