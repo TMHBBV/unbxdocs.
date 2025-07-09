@@ -42,7 +42,9 @@ Example: Global Rule boosts “Summer Dresses” everywhere, but a query-specifi
 
 ### How to Use Promotions
 
-Log in to the Netcore Unbxd Console. Select the site you want to put the strategy and naviagate to **Merchandising** > **Search** > **Promotions**.
+<Image align="center" border={true} caption="Navigate to Promotions" src="https://files.readme.io/e0f7922894abc3c2d6e6741fccfbe52186f479339a0f25cdf11b9ec39fa58dd3-promotions.gif" width="80% " />
+
+Log in to the Netcore Unbxd Console. Select the site you want to put the strategy and navigate to **Merchandising** > **Search** > **Promotions**.
 
 You can perform following actions from the Promotions overview page. You can perform the below actions:
 
@@ -113,6 +115,8 @@ You can perform following actions from the Promotions overview page. You can per
    Locate the campaign, click the More options icon, and select Delete Rule to remove it.
 
 ## Create New Promotion
+
+<Image align="center" border={true} caption="Add New Promotion" src="https://files.readme.io/7a93ee003d9d548f9741a3acf699a111fc827115b3161da46f6eccd84d518709-Add_promotions.gif" width="80% " />
 
 Query-specific merchandising rules allow you to customize promotions for specific queries or segments, offering a more targeted approach to shopper engagement. Navigate to **Merchandising** > **Search** > **Promotions** > **Add promotions**. Following parameters is mandatory to fill.
 
