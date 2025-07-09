@@ -82,7 +82,9 @@ Netcore Unbxd's Merchandising Workbench is a robust tool for managing product vi
 
 1. Log in to Netcore Unbxd’s [self-serve console](https://console.unbxd.io/) ↗
 2. From the **Site Key Picker**, click the site you want to apply a merchandising strategy.
-3. After selecting the appropriate site key, navigate to **Merchandising**.
+3. After selecting the appropriate site key, navigate to **Merchandising** > **Search**. The options under search are: **Promotions**, **Banners**, **Facets**, and **Redirects**.
+
+<Image align="center" border={true} caption="Highlight Your Products Through Merchandising Search" src="https://files.readme.io/c9083d3fc592bc0dcbb7f2fdaaba31ef433197d9acb109b06c7df363eac9e984-Search_Merchandising.gif" width="80% " />
 
 ## What are the Netcore Unbxd UI terminologies you should know?
 
