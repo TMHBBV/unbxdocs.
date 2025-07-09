@@ -20,3 +20,5 @@ However, every business is unique. You may use specific product terms, naming co
 2. **Intent Algorithms**: These algorithms analyze user behavior to understand their purchase intent and deliver more relevant product recommendations.
 3. **Ranking Algorithms**: Ranking algorithms sort and prioritize search results or recommendations based on relevance, popularity, and user preferences.
 4. **AI Experiments Algorithms**: AI experiments algorithms test and optimize different strategies or models to improve personalization and user engagement.
+
+Log in to the **Netcore Unbxd Console** > **Algorithms**. The options here are: **Content**, **Intent**, **Ranking** and **AI Experiments**.
