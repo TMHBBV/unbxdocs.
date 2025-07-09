@@ -15,7 +15,9 @@ Promoted Suggestions in Autosuggest are predefined query suggestions that mercha
 
 Promoted suggestions will appear in the search dropdown when the shopper’s query includes a string of letters that matches any part of the terms you’ve added as promoted suggestions.
 
-## Add a promoted suggestion
+## Add Promoted Suggestion
+
+<Image align="center" border={true} caption="Add Promoted Suggestions" src="https://files.readme.io/1dc92167b523fff2fa2a4c23cd80e2a8601ab435c9e182caf5bac5aaaee70ca1-AddPromotedSuggestions.gif" width="80% " />
 
 Navigate to the **Promoted Suggestions** page and click the **Add Promoted Suggestion** button.
 
