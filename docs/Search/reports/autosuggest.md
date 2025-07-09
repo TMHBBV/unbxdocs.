@@ -9,7 +9,7 @@ metadata:
 
 The performance of query suggestions powered using autosuggest can be monitored using Typeahead report. This report provides a break-up of the engagement received by various query suggestions types along with corresponding conversions. You get to know the conversion rate, click-through rate, and revenue generated from each type of suggestion. The insights derived from this report can be used to configure auto-suggest settings in order to drive higher engagement.
 
-This report, shows the engagement metrics of Autosuggest parameters like
+This report, shows the engagement metrics of Autosuggest parameters like:
 
 * In-fields
 * Keyword-suggestion
