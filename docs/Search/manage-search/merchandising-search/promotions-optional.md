@@ -2,7 +2,7 @@
 title: 'Promotions : Optional '
 excerpt: Powerful tools for Promoting products
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
