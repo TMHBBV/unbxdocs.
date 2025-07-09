@@ -48,6 +48,8 @@ You can typically edit existing rules directly from the list view on this page.
 
 ## Bulk Upload Stemming Rules
 
+<Image align="center" border={true} caption="Add a Stemword" src="https://files.readme.io/c8decd8c7e3cfd957244cf673c5d3ac9c8b47692d0fb6a9d1561ba4670851f3e-AddStemWord.gif" width="80% " />
+
 If you have multiple stemming overrides to define, you can add them efficiently using the bulk upload feature:
 
 1. Navigate to **Content** > **Stemming**.
