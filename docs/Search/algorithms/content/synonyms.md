@@ -46,7 +46,7 @@ By understanding these scenarios, you can set up synonyms that reflect how your 
 5. **Redundant Synonyms**: entries that already exist. Don’t add two similar inputs.
 6. **Multi-term Synonyms**: Synonyms having more than 2 keywords should be avoided. 
 
-## Types of Synonyms
+# Types of Synonyms
 
 1. **One-Way-Synonyms**\
    These are uni-directional. A search for the primary keyword returns results for its synonyms, but not vice versa. Example : If "ivory" is a one-way synonym for "white", then searching for “white running shoes” will return both white and ivory shoes. While searching for “ivory running shoes” will only return ivory shoes, not white.
@@ -55,7 +55,7 @@ By understanding these scenarios, you can set up synonyms that reflect how your 
 
 Now that we know various use cases and types of synonyms let us understand how to configure these synonyms using the Unbxd console. 
 
-## Add Synonyms
+# Add Synonyms
 
 <Image align="center" border={true} caption="Add a Synonym" src="https://files.readme.io/fc002d24a7aff57d95027dec1bae74003cd3352e41ea534ed14d841474400326-AddSynonym.gif" width="80% " />
 
@@ -65,13 +65,13 @@ Now that we know various use cases and types of synonyms let us understand how t
 4. Provide queries in **One-Way-Synonyms**and **Two-way-Synonyms**.
 5. Click **Proceed** to save the configure Synonyms.
 
-### Bulk Upload Synonyms
+## Bulk Upload Synonyms
 
 With the Bulk Upload Synonyms feature, you can upload a list of synonyms. You can browse on your computer or use drag-and-drop. The supported upload format is .csv. It is advisable for first-time users to upload a list of synonyms already known to their previous search system so that they can handle all those instances in Unbxd search. 
 
 Once uploaded, you can see the number of synonyms added. Using the Bulk Download Synonyms feature, you can also bulk download all the synonyms you have configured. A .csv file is downloaded.
 
-### Delete a synonym:
+# Delete a synonym:
 
 1. Navigate to **Content** > **Synonyms**.
 2. Search for the keyword and click the hamburger icon next to it. 
