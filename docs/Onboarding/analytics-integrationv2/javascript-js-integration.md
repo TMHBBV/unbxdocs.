@@ -55,3 +55,8 @@ Refer to the following code snippet to call the Unbxd.track function to trigger 
 # Visual Search
 
 ## Payload details
+
+| Attribute Name | Datatype | What Value to be Passed                                                                                                 |
+| :------------- | :------- | :---------------------------------------------------------------------------------------------------------------------- |
+| `imageId`      | String   | Id of the image, to be retrieved from the response of visualSearch API                                                  |
+| `boxId`        | String   | Optional, the ID of the bounding box that has been selected. Look for the selected key in the visualSearch API response |
