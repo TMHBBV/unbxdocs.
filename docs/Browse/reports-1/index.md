@@ -1,7 +1,7 @@
 ---
-title: Reports
+title: Reports duplicate
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
