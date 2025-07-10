@@ -35,3 +35,24 @@ The trackers will capture your users’ behavior as they navigate and interact w
 <Accordion title="Feature-specific Events" icon="fa-info-circle">
   These track user interactions with specific features of your platform, such as Search, Product Impressions, Autosuggest, Category Pages, Browse Impressions, and Recommendations
 </Accordion>
+
+## What are the events we track?
+
+<Tabs>
+  <Tab title="Visitor Event">
+    The first event created when a shopper visits your site. It tracks and builds profiles using browser           cookies for two types of visitors: first-time users and repeat users.
+    Site-level information are stored as cookies and are titled as,
+
+    1. User ID: `unbxd.userId`
+    2. Visit ID: `unbxd.visitId`
+    3. Viit Type: `unbxd.visit`
+  </Tab>
+
+  <Tab title="Second Tab">
+    Here's content that's only inside the second Tab.
+  </Tab>
+
+  <Tab title="Third Tab">
+    Here's content that's only inside the third Tab.
+  </Tab>
+</Tabs>
