@@ -46,14 +46,6 @@ Refer to the given table to know the metrics avilable here.
 
 The A/B Tests section includes powerful filtering options, allowing you to drill into results by different audience segments:
 
-1. **Device Filter**
-
-Select from**Desktop**, **Tablet** , and **Mobile**
-
-2. **Location Filter**
-
-Segment test results based on user geolocation (not visible in screenshot, but expected from filter category).
-
-3. **Visitor Type Filter**
-
-Select between**New Visitors** and **Existing Visitors**.
+1. **Device Filter**: Select from**Desktop**, **Tablet** , and **Mobile**
+2. **Location Filter**: Segment test results based on user geolocation.
+3. **Visitor Type Filter**: Select between**New Visitors** and **Existing Visitors**.
