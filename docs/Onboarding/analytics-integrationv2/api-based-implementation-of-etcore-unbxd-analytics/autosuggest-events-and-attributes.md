@@ -31,21 +31,21 @@ Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7
 
 Payload details:
 
-| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                            |
-| ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `query`                  | `string` | Suggested query                                                                                                                              |
-| `autosuggest_type`       | `string` | `IN_FIELD` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                   |
-| `field_name`             | `string` | The name of the field used for the `IN_FIELD` suggestion                                                                                     |
-| `field_value`            | `string` | The value of the field in the suggestion                                                                                                     |
-| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                     |
-| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                            |
-| `url`                    | `string` | Website URL where the search is performed                                                                                                    |
-| `visit_type`             | `string` | Either `"first_time"` or `"repeat"`                                                                                                          |
-| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                           |
-| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                       |
-| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`               |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                       |
+| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                            |                                                                 |                      |
+| :----------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :------------------- |
+| `query`                  | `string` | Suggested query                                                                                                                              |                                                                 |                      |
+| `autosuggest_type`       | `string` | `IN_FIELD` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                   |                                                                 |                      |
+| `field_name`             | `string` | The name of the field used for the `IN_FIELD` suggestion                                                                                     |                                                                 |                      |
+| `field_value`            | `string` | The value of the field in the suggestion                                                                                                     |                                                                 |                      |
+| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                     |                                                                 |                      |
+| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                            |                                                                 |                      |
+| `url`                    | `string` | Website URL where the search is performed                                                                                                    |                                                                 |                      |
+| `visit_type`             | `string` | Either `"first_time"` or `"repeat"`                                                                                                          |                                                                 |                      |
+| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                           |                                                                 |                      |
+| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                       |                                                                 |                      |
+| `t`                      | `string` | Timestamp formula: \`t : current\_time \\                                                                                                    | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
+| `referrer`               | `string` | Link from where the page is opened \`referrer: sessionStorage.getItem('urlPrevious') \\                                                      | \| document.referrer \\                                         | \| '';\`             |
 
 ## POPULAR\_PRODUCTS
 
@@ -71,23 +71,23 @@ Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7
 
 Payload details:
 
-| **Attribute Name** | **Type** | **Value to Pass**                                                                                                                                    |
-| ------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `query`            | `string` | Title of the product                                                                                                                                 |
-| `autosuggest_type` | `string` | `POPULAR_PRODUCTS` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `pid`              | `string` | Unique id of the product, to be taken from the search API response                                                                                   |
-| `field_name`       | `string` | The name of the field used for the `IN_FIELD` suggestion                                                                                             |
-| `field_value`      | `string` | The value of the field in the suggestion                                                                                                             |
-| `unbxdprank`       | `string` | Rank of the product from the overall list of suggestions                                                                                             |
-| `internal_query`   | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                    |
-| `url`              | `string` | Website URL where the search is performed                                                                                                            |
-| `UnbxdKey`         | `string` | UnbxdSitekey value                                                                                                                                   |
-| `uid`              | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                               |
-| `t`                | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                       |
+| **Attribute Name** | **Type** | **Value to Pass**                                                                                                                                    |                                                                 |                      |
+| :----------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :------------------- |
+| `query`            | `string` | Title of the product                                                                                                                                 |                                                                 |                      |
+| `autosuggest_type` | `string` | `POPULAR_PRODUCTS` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `pid`              | `string` | Unique id of the product, to be taken from the search API response                                                                                   |                                                                 |                      |
+| `field_name`       | `string` | The name of the field used for the `IN_FIELD` suggestion                                                                                             |                                                                 |                      |
+| `field_value`      | `string` | The value of the field in the suggestion                                                                                                             |                                                                 |                      |
+| `unbxdprank`       | `string` | Rank of the product from the overall list of suggestions                                                                                             |                                                                 |                      |
+| `internal_query`   | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                    |                                                                 |                      |
+| `url`              | `string` | Website URL where the search is performed                                                                                                            |                                                                 |                      |
+| `UnbxdKey`         | `string` | UnbxdSitekey value                                                                                                                                   |                                                                 |                      |
+| `uid`              | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                               |                                                                 |                      |
+| `t`                | `string` | Timestamp formula: \`t : current\_time \\                                                                                                            | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
 
 The `CLICK` event and `CART` event will be be applicable to `POPULAR_PRODUCTS`.
 
-CLICK
+### CLICK
 
 When a popular product is clicked from the autosuggest widget,
 
@@ -95,17 +95,17 @@ When a popular product is clicked from the autosuggest widget,
 
 2. Retrieve the `pid`.
 
-3. Fire the <a href="/integrations/api-implementation/event-specific-attributes#product-click">click event</a>.
+3. Fire the [click event](/integrations/api-implementation/event-specific-attributes#product-click).
 
-CART
+### CART
 
 1. Fire the autosuggest `POPULAR_PRODUCTS` event.
 
 2. Retrieve the `pid`.
 
-3. Fire the <a href="/integrations/api-implementation/event-specific-attributes#product-click">`click event`</a>.
+3. Fire the [click event](/integrations/api-implementation/event-specific-attributes#product-click).
 
-4. After firing the click event, fire the <a href="/integrations/api-implementation/event-specific-attributes#add-to-cart">`add to cart`</a> event.
+4. After firing the click event, fire the [add to cart event](/integrations/api-implementation/event-specific-attributes#add-to-cart).
 
 ## KEYWORD\_SUGGESTION
 
@@ -128,22 +128,22 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 ```
 
-Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Sofa%20Set%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22KEYWORD_SUGGESTION%22%2C%22autosuggest_suggestion%22%3A%22Sofa%20Set%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%22Sofa%20Set%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sofas%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/search/2%2520Seater%2520Sofa%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/c/Drake%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D&UnbxdKey=demo-unbxd700181503576558&action=search&uid=uid-1707194142543-92694&t=1709118365818%7C0.17527713761166375">sample API</a>
+Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Sofa%20Set%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22KEYWORD_SUGGESTION%22%2C%22autosuggest_suggestion%22%3A%22Sofa%20Set%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%22Sofa%20Set%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sofas%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/search/2%2520Seater%2520Sofa%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/c/Drake%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118365818%7C0.17527713761166375]\(https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Sofa%20Set%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22KEYWORD_SUGGESTION%22%2C%22autosuggest_suggestion%22%3A%22Sofa%20Set%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%22Sofa%20Set%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sofas%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/search/2%2520Seater%2520Sofa%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/c/Drake%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118365818%7C0.17527713761166375\))
 
 Payload details:
 
-| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |
-| ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `query`                  | `string` | Suggested query in keywords                                                                                                                            |
-| `autosuggest_type`       | `string` | `KEYWORD_SUGGESTION` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |
-| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |
-| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |
-| `url`                    | `string` | Website URL where the search is performed                                                                                                              |
-| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
-| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
+| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |                                                                 |                      |
+| :----------------------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :------------------- |
+| `query`                  | `string` | Suggested query in keywords                                                                                                                            |                                                                 |                      |
+| `autosuggest_type`       | `string` | `KEYWORD_SUGGESTION` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |                                                                 |                      |
+| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |                                                                 |                      |
+| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |                                                                 |                      |
+| `url`                    | `string` | Website URL where the search is performed                                                                                                              |                                                                 |                      |
+| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |                                                                 |                      |
+| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |                                                                 |                      |
+| `t`                      | `string` | Timestamp formula: \`t : current\_time \\                                                                                                              | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
+| `referrer`               | `string` | Link from where the page is opened \`referrer: sessionStorage.getItem('urlPrevious') \\                                                                | \| document.referrer \\                                         | \| '';\`             |
 
 ## TOP\_SEARCH\_QUERIES
 
@@ -167,22 +167,22 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 ```
 
-Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%222%20Seater%20Sofa%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22TOP_SEARCH_QUERIES%22%2C%22autosuggest_suggestion%22%3A%222%20Seater%20Sofa%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%222%20Seater%20Sofa%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sofa%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/c/Drake%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/c/Sofas%3Fredirectq%3Dsofas%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D&UnbxdKey=demo-unbxd700181503576558&action=search&uid=uid-1707194142543-92694&t=1709118321269%7C0.4497925431675631">sample API</a>
+Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%222%20Seater%20Sofa%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22TOP_SEARCH_QUERIES%22%2C%22autosuggest_suggestion%22%3A%222%20Seater%20Sofa%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%222%20Seater%20Sofa%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sofa%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/c/Drake%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/c/Sofas%3Fredirectq%3Dsofas%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118321269%7C0.4497925431675631]\(https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%222%20Seater%20Sofa%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22TOP_SEARCH_QUERIES%22%2C%22autosuggest_suggestion%22%3A%222%20Seater%20Sofa%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%222%20Seater%20Sofa%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sofa%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/c/Drake%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/c/Sofas%3Fredirectq%3Dsofas%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118321269%7C0.4497925431675631\))
 
 Payload details:
 
-| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |
-| ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `query`                  | `string` | Suggested query                                                                                                                                        |
-| `autosuggest_type`       | `string` | `TOP_SEARCH_QUERIES` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |
-| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |
-| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |
-| `url`                    | `string` | Website URL where the search is performed                                                                                                              |
-| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
-| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
+| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |                                                                 |                      |
+| :----------------------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :------------------- |
+| `query`                  | `string` | Suggested query                                                                                                                                        |                                                                 |                      |
+| `autosuggest_type`       | `string` | `TOP_SEARCH_QUERIES` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |                                                                 |                      |
+| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |                                                                 |                      |
+| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |                                                                 |                      |
+| `url`                    | `string` | Website URL where the search is performed                                                                                                              |                                                                 |                      |
+| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |                                                                 |                      |
+| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |                                                                 |                      |
+| `t`                      | `string` | Timestamp formula: \`t : current\_time \\                                                                                                              | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
+| `referrer`               | `string` | Link from where the page is opened \`referrer: sessionStorage.getItem('urlPrevious') \\                                                                | \| document.referrer \\                                         | \| '';\`             |
 
 ## POPULAR\_PRODUCTS\_FILTERED
 
@@ -206,22 +206,22 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 ```
 
-Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Kenza%203%20Seater%20Sofa%20Bed%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22POPULAR_PRODUCTS%22%2C%22pid%22%3A%22BNC_KEASBOOOLI%22%2C%22unbxdprank%22%3A1%2C%22internal_query%22%3A%22red%20sofa%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Storage-%26-Office/Office/Makeup-Desks/c/makeup-desks%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Bedroom-%26-Mattresses/Beds/Sofa-Beds-%26-Futons/Kenza-3-Seater-Sofa-Bed/p/KEASBD3STOOOLINBLK%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D&UnbxdKey=demo-unbxd700181503576558&action=search&uid=uid-1707194142543-92694&t=1709118176112%7C0.7945598269101375">sample API</a>
+Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Kenza%203%20Seater%20Sofa%20Bed%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22POPULAR_PRODUCTS%22%2C%22pid%22%3A%22BNC_KEASBOOOLI%22%2C%22unbxdprank%22%3A1%2C%22internal_query%22%3A%22red%20sofa%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Storage-%26-Office/Office/Makeup-Desks/c/makeup-desks%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Bedroom-%26-Mattresses/Beds/Sofa-Beds-%26-Futons/Kenza-3-Seater-Sofa-Bed/p/KEASBD3STOOOLINBLK%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118176112%7C0.7945598269101375]\(https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Kenza%203%20Seater%20Sofa%20Bed%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22POPULAR_PRODUCTS%22%2C%22pid%22%3A%22BNC_KEASBOOOLI%22%2C%22unbxdprank%22%3A1%2C%22internal_query%22%3A%22red%20sofa%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Storage-%26-Office/Office/Makeup-Desks/c/makeup-desks%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Bedroom-%26-Mattresses/Beds/Sofa-Beds-%26-Futons/Kenza-3-Seater-Sofa-Bed/p/KEASBD3STOOOLINBLK%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118176112%7C0.7945598269101375\))
 
 Payload details:
 
-| **Attribute Name** | **Type** | **Value to Pass**                                                                                                                                             |
-| ------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `query`            | `string` | Title of the product                                                                                                                                          |
-| `autosuggest_type` | `string` | `POPULAR_PRODUCTS_FILTERED` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `pid`              | `string` | Unique id of the product, to be taken from the search API response                                                                                            |
-| `unbxdprank`       | `string` | Rank of the product from the overall list of suggestions                                                                                                      |
-| `internal_query`   | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                             |
-| `url`              | `string` | Website URL where the search is performed                                                                                                                     |
-| `UnbxdKey`         | `string` | UnbxdSitekey value                                                                                                                                            |
-| `uid`              | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                        |
-| `t`                | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                                |
-| `referrer`         | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                        |
+| **Attribute Name** | **Type** | **Value to Pass**                                                                                                                                             |                                                                 |                      |
+| :----------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------- | :------------------- |
+| `query`            | `string` | Title of the product                                                                                                                                          |                                                                 |                      |
+| `autosuggest_type` | `string` | `POPULAR_PRODUCTS_FILTERED` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `pid`              | `string` | Unique id of the product, to be taken from the search API response                                                                                            |                                                                 |                      |
+| `unbxdprank`       | `string` | Rank of the product from the overall list of suggestions                                                                                                      |                                                                 |                      |
+| `internal_query`   | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                             |                                                                 |                      |
+| `url`              | `string` | Website URL where the search is performed                                                                                                                     |                                                                 |                      |
+| `UnbxdKey`         | `string` | UnbxdSitekey value                                                                                                                                            |                                                                 |                      |
+| `uid`              | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                        |                                                                 |                      |
+| `t`                | `string` | Timestamp formula: \`t : current\_time \\                                                                                                                     | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
+| `referrer`         | `string` | Link from where the page is opened \`referrer: sessionStorage.getItem('urlPrevious') \\                                                                       | \| document.referrer \\                                         | \| '';\`             |
 
 ## PROMOTED\_SUGGESTION
 
@@ -245,22 +245,22 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 ```
 
-Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Sofas%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22PROMOTED_SUGGESTION%22%2C%22autosuggest_suggestion%22%3A%22Sofas%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%22Sofas%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sof%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Bedroom-%252526-Mattresses/Beds/Sofa-Beds-%252526-Futons/Kenza-3-Seater-Sofa-Bed/p/KEASBD3STOOOLINRED%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Storage-%26-Office/Office/Makeup-Desks/c/makeup-desks%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D&UnbxdKey=demo-unbxd700181503576558&action=search&uid=uid-1707194142543-92694&t=1709118207606%7C0.058123470392127174">sample API</a>
+Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Sofas%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22PROMOTED_SUGGESTION%22%2C%22autosuggest_suggestion%22%3A%22Sofas%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%22Sofas%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sof%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Bedroom-%252526-Mattresses/Beds/Sofa-Beds-%252526-Futons/Kenza-3-Seater-Sofa-Bed/p/KEASBD3STOOOLINRED%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Storage-%26-Office/Office/Makeup-Desks/c/makeup-desks%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118207606%7C0.058123470392127174]\(https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Sofas%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22PROMOTED_SUGGESTION%22%2C%22autosuggest_suggestion%22%3A%22Sofas%22%2C%22field_name%22%3A%22autosuggest%22%2C%22field_value%22%3A%22Sofas%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22sof%22%7D%2C%22url%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Bedroom-%252526-Mattresses/Beds/Sofa-Beds-%252526-Futons/Kenza-3-Seater-Sofa-Bed/p/KEASBD3STOOOLINRED%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/Categories/Storage-%26-Office/Office/Makeup-Desks/c/makeup-desks%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118207606%7C0.058123470392127174\))
 
 Payload details:
 
-| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                       |
-| ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `query`                  | `string` | Suggested query                                                                                                                                         |
-| `autosuggest_type`       | `string` | `PROMOTED_SUGGESTION` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                              |
-| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                                |
-| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                       |
-| `url`                    | `string` | Website URL where the search is performed                                                                                                               |
-| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                      |
-| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                  |
-| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                          |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                  |
+| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                       |                                                                 |                      |
+| :----------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------- | :------------------- |
+| `query`                  | `string` | Suggested query                                                                                                                                         |                                                                 |                      |
+| `autosuggest_type`       | `string` | `PROMOTED_SUGGESTION` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                              |                                                                 |                      |
+| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                                |                                                                 |                      |
+| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                       |                                                                 |                      |
+| `url`                    | `string` | Website URL where the search is performed                                                                                                               |                                                                 |                      |
+| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                      |                                                                 |                      |
+| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                  |                                                                 |                      |
+| `t`                      | `string` | Timestamp formula: \`t : current\_time \\                                                                                                               | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
+| `referrer`               | `string` | Link from where the page is opened \`referrer: sessionStorage.getItem('urlPrevious') \\                                                                 | \| document.referrer \\                                         | \| '';\`             |
 
 ## FIELD\_TYPE\_SUGGESTION
 
@@ -287,18 +287,18 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 Payload details:
 
-| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |
-| ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `query`                  | `string` | Suggested query                                                                                                                                        |
-| `autosuggest_type`       | `string` | `KEYWORD_SUGGESTION` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |
-| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |
-| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |
-| `url`                    | `string` | Website URL where the search is performed                                                                                                              |
-| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
-| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
+| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |                                                                 |                      |
+| :----------------------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :------------------- |
+| `query`                  | `string` | Suggested query                                                                                                                                        |                                                                 |                      |
+| `autosuggest_type`       | `string` | `KEYWORD_SUGGESTION` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |                                                                 |                      |
+| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |                                                                 |                      |
+| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |                                                                 |                      |
+| `url`                    | `string` | Website URL where the search is performed                                                                                                              |                                                                 |                      |
+| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |                                                                 |                      |
+| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |                                                                 |                      |
+| `t`                      | `string` | Timestamp formula: \`t : current\_time \\                                                                                                              | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
+| `referrer`               | `string` | Link from where the page is opened \`referrer: sessionStorage.getItem('urlPrevious') \\                                                                | \| document.referrer \\                                         | \| '';\`             |
 
 In addition to the attributes mentioned above, some MANDATORY miscellaneous data must also be included. These should be added under the object named `misc`. Please refer to the table below for the specific attributes to be added under misc.
 
@@ -335,18 +335,18 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 Payload details:
 
-| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |
-| ------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `query`                  | `string` | Suggested query in Infield                                                                                                                             |
-| `autosuggest_type`       | `string` | `TOP_SEARCH_QUERIES` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |
-| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |
-| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |
-| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |
-| `url`                    | `string` | Website URL where the search is performed                                                                                                              |
-| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
-| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
+| **Attribute Name**       | **Type** | **Value to Pass**                                                                                                                                      |                                                                 |                      |
+| :----------------------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :------------------- |
+| `query`                  | `string` | Suggested query in Infield                                                                                                                             |                                                                 |                      |
+| `autosuggest_type`       | `string` | `TOP_SEARCH_QUERIES` autosuggest type selected and submitted for search, usually the same as the value of the `doctype` field in Unbxd autosuggest API |                                                                 |                      |
+| `autosuggest_suggestion` | `string` | Suggested query in Infield                                                                                                                             |                                                                 |                      |
+| `unbxdprank`             | `string` | Rank of the product from the overall list of suggestions                                                                                               |                                                                 |                      |
+| `internal_query`         | `string` | The typed query (the current search string prefix) in the search box, which led to the suggestions in autosuggest                                      |                                                                 |                      |
+| `url`                    | `string` | Website URL where the search is performed                                                                                                              |                                                                 |                      |
+| `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |                                                                 |                      |
+| `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |                                                                 |                      |
+| `t`                      | `string` | Timestamp formula: \`t : current\_time \\                                                                                                              | random number between 0 to 1`and`t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
+| `referrer`               | `string` | Link from where the page is opened \`referrer: sessionStorage.getItem('urlPrevious') \\                                                                | \| document.referrer \\                                         | \| '';\`             |
 
 In addition to the attributes mentioned above, some MANDATORY miscellaneous data must also be included. These should be added under the object named `misc`. Please refer to the table below for the specific attributes to be added under misc.\
 Example schema (showcasing only a part of the api): `&misc:{“unxAsType”:”TRENDING_QUERIES”}`
