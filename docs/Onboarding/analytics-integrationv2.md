@@ -48,11 +48,15 @@ The trackers will capture your users’ behavior as they navigate and interact w
     3. Viit Type: `unbxd.visit`
   </Tab>
 
-  <Tab title="Second Tab">
-    Here's content that's only inside the second Tab.
+  <Tab title="Search Hit">
+    Triggered when a shopper uses the search bar to find a product on your site or selects one of the             suggestions provided by Netcore Unbxd’s Autosuggest widget.
+
+    It captures every query the shopper searches, even if no results are returned, providing insights into         search effectiveness.
   </Tab>
 
-  <Tab title="Third Tab">
-    Here's content that's only inside the third Tab.
+  <Tab title="Product Click">
+    Triggered whenever a shopper clicks a product or product image from any Product Listing Page (PLP),           Category page, or Recommendation widget. It will capture the clicked product’s unique ID and the page      where the click activity occurred.
+
+    This data can be used to highlight ‘Popular Products’ and create personalized ‘Recommended For You’ lists,     ensuring a more customized shopping experience.
   </Tab>
 </Tabs>
