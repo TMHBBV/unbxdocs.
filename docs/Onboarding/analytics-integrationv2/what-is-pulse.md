@@ -501,3 +501,18 @@ Below are the mandatory HTML attributes and values that need to be placed in the
   </li>
 </ul>
 ```
+
+#### POPULAR\_PRODUCTS
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value(should be an exact match)               |
+| :---------------- | :-------------------------------------------- |
+| `data-unxAsType`  | `POPULAR_PRODUCTS`                            |
+| `data-unxAsSugg`  | suggested query                               |
+| `data-unxAsPrank` | index number                                  |
+| `data-unxAsPRANK` | Unique ID of the product as per Unbxd catalog |
+
+> 📘 NOTE
+>
+> The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
