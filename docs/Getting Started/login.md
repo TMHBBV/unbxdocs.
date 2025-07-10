@@ -38,4 +38,4 @@ Admins can assign the appropriate login method during the **user invitation** pr
   2. Be prompted to complete a 2FA verification step (e.g., OTP)
 
 
-  Once SSO is enabled for any account, two-factor authentication gets disabled automatically for that particular account.
+Once SSO is enabled for any account, two-factor authentication gets disabled automatically for that particular account.
