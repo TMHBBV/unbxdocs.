@@ -2,7 +2,7 @@
 title: Feed Status
 excerpt: Track if your catalog feed is in sync with Unbxd.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
