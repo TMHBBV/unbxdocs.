@@ -7,7 +7,7 @@ metadata:
 ---
 The **Manage Autosuggest** dashboard allows you to configure how search suggestions appear to users in real time. This helps improve product discovery by guiding users toward relevant searches as they type.
 
-<Image align="center" border={true} caption="Autosuggest Preview" src="https://files.readme.io/b0d138e0d178b5a98570a06ebb587af7e410b5b3f66a039771d49e8163f77818-image_5.png" width="80% " />
+<Image align="center" border={true} caption="Manage Autosuggest" src="https://files.readme.io/972d052ce54ea780d6f3617a4f6dd49ff7079a21b1e4dfa53247de33224b6d10-image.png" width="80% " />
 
 ### 1. Keyword Suggestions
 
