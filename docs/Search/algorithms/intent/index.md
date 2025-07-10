@@ -1,5 +1,8 @@
 ---
 title: Intent
+excerpt: >-
+  Improve search results by displaying products that match your shopper’s
+  intent.
 deprecated: false
 hidden: false
 metadata:
