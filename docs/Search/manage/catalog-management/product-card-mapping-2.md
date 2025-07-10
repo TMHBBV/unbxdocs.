@@ -4,7 +4,7 @@ excerpt: >-
   Linking specific product attributes to how they appear visually on the product
   listing or search results page.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
