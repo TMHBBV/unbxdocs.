@@ -101,3 +101,38 @@ Refer here for our [sample API](https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%
 | `uid`              | `string`      | `unbxd.userId` (Needs to be extracted from the cookie)                                           |
 | `t`                | `string`  | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();` |
 | `referrer`         | `string`  | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`|
+
+# Browse Impression
+
+## Template API:
+
+```
+https://tracker.unbxdapi.com/v2/1p.jpg
+?data={"page":"categoryPathId:\"117>119\"",
+"page_type":'{{category-page-type}}',
+"pids_list":"{{list-of-products-uniqueId}}",
+"url":"{{url-of-the-website}}",
+"referrer":"{{referrer}}",
+"visit_type":"{{first_or_repeat}}",
+"visitId":"{{visit-id}}"}
+&UnbxdKey={{unbxd-sitekey}}
+&action=PRODUCT_IMPRESSIONS
+&uid={{uid}}
+&t=1662366068017|0.9865798147898728
+```
+Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22page%22%3A%22categoryPathId%3A%5C%22117%3E119%5C%22%22%2C%22page_type%22%3A%22BOOLEAN%22%2C%22pids_list%22%3A%5B%2240866%22%2C%2242301%22%2C%2242814%22%2C%2242803%22%2C%2242246%22%2C%2242295%22%5D%2C%22url%22%3A%22https%3A//demo.unbxd.com/clothing/women-dresses/cat%3Fdepth%3D2%26label%3DClothing-Dresses%22%2C%22referrer%22%3A%22https%3A//demo.unbxd.com/%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A1187461382%2C%22requestId%22%3A%220643220e-c900-4825-9f2d-f740025b2b0d%22%2C%22visitId%22%3A%22visitId-1662366042689-8947%22%7D&UnbxdKey=demo-unbxd700181503576558&action=PRODUCT_IMPRESSIONS&uid=uid-1641990940843-5809&t=1662366068017%7C0.9865798147898728">sample API</a>
+
+### Payload details:
+
+| **Attribute Name**   | **Type**      | **Value to Pass**                                                                                  |
+|-----------------------|---------------|----------------------------------------------------------------------------------------------------|
+| `action`             | `string`      | `PRODUCT_IMPRESSIONS`                                                                                           |
+| `pid`                | `string`      | Unique ID for the product, to be taken from the search API response                              |
+| `qty`                | `string`      | The number of units added to the cart (as a string). For example, `“2”` for 2 units.             |
+| `variantId` (optional)| `string`     | Variant ID assigned to the variant of the product. Necessary only if variants are present.       |
+| `url`                | `string`      | Website URL where the search is performed                                                       |
+| `visit_type`         | `string`      | Either `first_time` or `repeat`                                                                  |
+| `UnbxdKey`           | `string`      | UnbxdSitekey value                                                                               |
+| `uid`                | `string`      | `unbxd.userId` (Needs to be extracted from the cookie)                                           |
+| `t`                | `string`  | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();` |
+| `referrer`         | `string`  | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`|
