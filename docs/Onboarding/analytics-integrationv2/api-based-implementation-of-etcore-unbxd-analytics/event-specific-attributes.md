@@ -91,14 +91,14 @@ Refer here for our [sample API](https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%
 
 ### Payload details
 
-| Attribute Name        | Type   | Value to Pass                                                                                                           |
-| :-------------------- | :----- | :---------------------------------------------------------------------------------------------------------------------- |
-| `action`              | String | `PRODUCT_IMPRESSIONS`                                                                                                   |
-| `pid`                 | String | Unique ID for the product, to be taken from the search API response                                                     |
-| `variantId(optional)` | String | Variant ID assigned to the variant of the product. Necessary only if variants are present.                              |
-| `url`                 | String | Website URL where the search is performed                                                                               |
-| `visit_type`          | String | Either `first_time` or repeat                                                                                           |
-| `UnbxdKey`            | String | UnbxdSitekey value                                                                                                      |
-| `uid`                 | String | `unbxd.userId` (Needs to be extracted from the cookie)                                                                  |
-| `t`                   | String | Timestamp formula: \`t : current\_time \\                                                                               |
-| `referrer`            | String | Link from where the page is opened: `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';` |
+| Attribute Name        | Type   | Value to Pass                                                                                                      |
+| :-------------------- | :----- | :----------------------------------------------------------------------------------------------------------------- |
+| `action`              | String | `PRODUCT_IMPRESSIONS`                                                                                              |
+| `pid`                 | String | Unique ID for the product, to be taken from the search API response                                                |
+| `variantId(optional)` | String | Variant ID assigned to the variant of the product. Necessary only if variants are present.                         |
+| `url`                 | String | Website URL where the search is performed                                                                          |
+| `visit_type`          | String | Either `first_time` or repeat                                                                                      |
+| `UnbxdKey`            | String | UnbxdSitekey value                                                                                                 |
+| `uid`                 | String | `unbxd.userId` (Needs to be extracted from the cookie)                                                             |
+| `t`                   | String | Timestamp formula: \`t : current\_time \\                                                                          |
+| `referrer`            | String | Link from where the page is opened: `referrer:sessionStorage.getItem('urlPrevious')\\|\| document.referrer\\|\|";` |
