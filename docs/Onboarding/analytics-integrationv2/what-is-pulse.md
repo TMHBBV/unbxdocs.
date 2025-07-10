@@ -446,3 +446,11 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 #### IN\_FIELD
 
 Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name       | Value(should be an exact match)                     |
+| :------------------- | :-------------------------------------------------- |
+| `data-unxAsType`     | `IN_FIELD`                                          |
+| `data-unxAsSugg`     | suggested query                                     |
+| `data-unxAsPrank`    | index number                                        |
+| `data-unxAsFldName`  | Name of the catalog field associated with the query |
+| `data-unxAsFldValue` | Value of the associated field                       |
