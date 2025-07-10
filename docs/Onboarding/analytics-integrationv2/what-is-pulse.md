@@ -581,3 +581,56 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 > 📘 Note
 >
 > The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
+
+```Text Example Markup
+<ul class="autosuggest-products-section">
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Women Black Shoulder Bag"
+    data-unxAsPrank="1"
+    data-unxAsPid="257376"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Women Black Shoulder Bag</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Men Grey Sports Walking Shoes"
+    data-unxAsPrank="2"
+    data-unxAsPid="336355"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Men Grey Sports Walking Shoes</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Mens Pool Sliders"
+    data-unxAsPrank="3"
+    data-unxAsPid="336354"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Mens Pool Sliders</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Men Brown Wallet"
+    data-unxAsPrank="4"
+    data-unxAsPid="249374"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Men Brown Wallet</p>
+    <span> $49 </span>
+  </li>
+</ul>
+```
