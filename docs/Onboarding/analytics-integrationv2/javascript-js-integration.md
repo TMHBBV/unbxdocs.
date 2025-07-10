@@ -34,3 +34,24 @@ This tracks user search queries, including those using the Autosuggest widget. I
 | Attribute Name | Type   | Value to Pass                            |
 | :------------- | :----- | :--------------------------------------- |
 | `query`        | String | The search query entered by the shopper. |
+
+Refer to the following code snippet to call the Unbxd.track function to trigger the search event.
+
+```
+ <script type="text/javascript">
+   	var payload = {
+   	query: '{{search-query}}',
+   	}
+
+
+   	if(Unbxd && typeof Unbxd.track === 'function') {
+   		Unbxd.track('search', payload)
+   	} else {
+   		console.error('unbxdAnalytics.js is not loaded!')
+   	}
+   </script>
+```
+
+# Visual Search
+
+## Payload details
