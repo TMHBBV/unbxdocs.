@@ -10,6 +10,8 @@ metadata:
 
 Learn how **User Behaviour (UB)** and **Popularity** signals are used to influence product ranking on the search and browse experiences. Both mechanisms rely on analytics data and are **enabled by default** for all sites integrated with analytics.
 
+<Image align="center" border={true} caption="Improve Search Ranking" src="https://files.readme.io/9ac662861cd6a28bd40f63939231c8fb5e038365699524bbf30d3d3f222f3f27-RankingSearch.gif" width="80% " />
+
 # Prerequisites
 
 Before proceeding, ensure the following is done.
