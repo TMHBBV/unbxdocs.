@@ -27,7 +27,12 @@ Refer here for our [sample API](https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%
 
 ### Payload details
 
-| Attribute Name | Type | Value to Pass |
-| :------------- | :--- | :------------ |
-|                |      |               |
-|                |      |               |
+| Attribute Name | Type   | Value to Pass                                                                                                                 |
+| :------------- | :----- | :---------------------------------------------------------------------------------------------------------------------------- |
+| `action`       | String | `visitor`                                                                                                                     |
+| `url`          | String | Website URL where the search is performed                                                                                     |
+| `visit_type`   | String | Either `first_time` or `repeat`                                                                                               |
+| `UnbxdKey`     | String | UnbxdSitekey value                                                                                                            |
+| `uid`          | String | `unbxd.userId` (Needs to be extracted from the cookie)                                                                        |
+| `t`            | String | Timestamp formula: `t : current\_time \\| random number between 0 to 1 and t = new Date().getTime() + ‘\\|’ + Math.random();` |
+| `referrer`     | String | Link from where the page is opened referrer: `sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`        |
