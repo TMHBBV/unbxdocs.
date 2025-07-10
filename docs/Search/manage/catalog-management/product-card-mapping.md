@@ -14,7 +14,10 @@ The Product Card Viewer in Unbxd helps merchandisers and teams visualize how pro
 
 ## Why use Product Card Viewer?
 
-Log in to the Netcore Unbxd Panel. Navigate to **Manage** > **Catalog** > **Product Card Mapping**.\
+Log in to the Netcore Unbxd Panel. Navigate to **Manage** > **Catalog** > **Product Card Mapping**.
+
+<Image align="center" border={true} caption="Map Your Product Data Fields to Create Product Cards" src="https://files.readme.io/5a2b7ac01438af3df96201356c18aa1abc32eaa5002251def0365448a8113c18-ProductCardMapping.gif" width="80% " />
+
 When configured correctly, it allows you to see all the key product details at a glance like how your shoppers would see them on your live site. This includes critical product attributes such as:
 
 **Product Title** : The product's name is clearly displayed to help customers identify and understand the product.
@@ -28,8 +31,6 @@ When configured correctly, it allows you to see all the key product details at a
 These attributes are essential because they directly impact the user's ability to understand the product and purchase.
 
 When Product Mapping is correctly configured, the Search Preview or Browse Preview will display products in a seamless, clear, and compelling way.
-
-<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/1e5c39a9f683107ff77d48a167867fc1be7d26a6e5260ffee8bad47e4bfe7060-image.png" />
 
 # Troubleshoot & FAQs
 
