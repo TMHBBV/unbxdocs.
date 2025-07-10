@@ -6,8 +6,6 @@ hidden: false
 metadata:
   robots: index
 ---
-.
-
 # Overview
 
 The **Banners** section allows you to effectively promote products, brands, special offers, or seasonal sales directly on your platform. With a single click, shoppers can be redirected to the desired landing page, ensuring a seamless user experience.
