@@ -100,8 +100,6 @@ Dimension Mapping is critical for optimizing the e-commerce experience. They not
   If the issue persists, contact Unbxd Support for further assistance.
 </Accordion>
 
-<br />
-
 <Accordion title="What happens if I update my product feed—do I need to remap attributes?">
   No, once your dimension and product card mappings are set, you only need to ensure new feed fields follow the same naming and structure. If new fields are added, map them accordingly.
 </Accordion>
