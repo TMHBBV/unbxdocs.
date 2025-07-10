@@ -23,3 +23,15 @@ These profiles are vital for:
 * generating comprehensve reports
 
 In summary, integrating Netcore Unbxd Analytics is crucial to achieving your conversion goals through precise personalization. Incomplete or broken analytics integration during or after onboarding leads to a diminished search experience, reduced relevance, and less effective personalized AI capabilities.
+
+## What are the types of events tracked?
+
+The trackers will capture your users’ behavior as they navigate and interact with your online touchpoints.
+
+<Accordion title="Global Events" icon="fa-info-circle">
+  These are standard interactions tracked across your entire site, such as Visitor, Page views, Product clicks, Product Cart, and Product Order.
+</Accordion>
+
+<Accordion title="Feature-specific Events" icon="fa-info-circle">
+  These track user interactions with specific features of your platform, such as Search, Product Impressions, Autosuggest, Category Pages, Browse Impressions, and Recommendations
+</Accordion>
