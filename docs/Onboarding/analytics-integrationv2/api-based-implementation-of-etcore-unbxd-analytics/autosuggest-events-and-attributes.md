@@ -5,11 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
----
-title: Autosuggest events and attributes
-sidebarTitle: Autosuggest events and attributes
----
-
 ## IN\_FIELD
 
 Template API:
@@ -32,7 +27,7 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 ```
 
-Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Drake%7CDrake%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22IN_FIELD%22%2C%22autosuggest_suggestion%22%3A%22Drake%7CDrake%22%2C%22field_name%22%3A%22categoryURLMapping_in%22%2C%22field_value%22%3A%22Drake%7CDrake%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22%22%7D%2C%22url%22%3A%22https%3A//www.demp.unbxd.com.com.au/c/Sofas%3Fredirectq%3Dsofas%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/search/Sofas%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D&UnbxdKey=demo-unbxd700181503576558&action=search&uid=uid-1707194142543-92694&t=1709118278254%7C0.2816574258470903">sample API</a>
+Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Drake%7CDrake%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22IN_FIELD%22%2C%22autosuggest_suggestion%22%3A%22Drake%7CDrake%22%2C%22field_name%22%3A%22categoryURLMapping_in%22%2C%22field_value%22%3A%22Drake%7CDrake%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22%22%7D%2C%22url%22%3A%22https%3A//www.demp.unbxd.com.com.au/c/Sofas%3Fredirectq%3Dsofas%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/search/Sofas%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118278254%7C0.2816574258470903]\(https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Drake%7CDrake%22%2C%22autosuggest_data%22%3A%7B%22autosuggest_type%22%3A%22IN_FIELD%22%2C%22autosuggest_suggestion%22%3A%22Drake%7CDrake%22%2C%22field_name%22%3A%22categoryURLMapping_in%22%2C%22field_value%22%3A%22Drake%7CDrake%22%2C%22src_field%22%3A%22%22%2C%22internal_query%22%3A%22%22%7D%2C%22url%22%3A%22https%3A//www.demp.unbxd.com.com.au/c/Sofas%3Fredirectq%3Dsofas%22%2C%22referrer%22%3A%22https%3A//www.demo.unbxd.com.au/search/Sofas%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A3902881952%2C%22visitId%22%3A%22visitId-1709116400821-5910%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709118278254%7C0.2816574258470903\))
 
 Payload details:
 
@@ -49,8 +44,8 @@ Payload details:
 | `visit_type`             | `string` | Either `"first_time"` or `"repeat"`                                                                                                          |
 | `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                           |
 | `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                       |
-| `t`                      | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                 |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`                         |
+| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`               |
+| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                       |
 
 ## POPULAR\_PRODUCTS
 
@@ -72,7 +67,7 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 ```
 
-Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22products%22%3A%5B%7B%22pid%22%3A%229500%22%2C%22qty%22%3A%221%22%2C%22price%22%3A%22153%22%2C%22variantId%22%3A%22V96576%22%7D%2C%7B%22pid%22%3A%229501%22%2C%22qty%22%3A%222%22%2C%22price%22%3A%22143%22%2C%22variantId%22%3A%22V980560%22%7D%2C%7B%22pid%22%3A%229502%22%2C%22qty%22%3A%225%22%2C%22price%22%3A%22133%22%2C%22variantId%22%3A%22V980033%22%7D%5D%2C%22url%22%3A%22http%3A%2F%2Flocalhost%3A8080%2F%22%2C%22referrer%22%3A%22%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A4213677804%2C%22visitId%22%3A%22visitId-1679387024735-20128%22%7D&UnbxdKey=demo-unbxd700181503576558&action=order&uid=uid-1653404599885-19305&t=1679387036973%7C0.7978658173524473">sample API</a>
+Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22products%22%3A%5B%7B%22pid%22%3A%229500%22%2C%22qty%22%3A%221%22%2C%22price%22%3A%22153%22%2C%22variantId%22%3A%22V96576%22%7D%2C%7B%22pid%22%3A%229501%22%2C%22qty%22%3A%222%22%2C%22price%22%3A%22143%22%2C%22variantId%22%3A%22V980560%22%7D%2C%7B%22pid%22%3A%229502%22%2C%22qty%22%3A%225%22%2C%22price%22%3A%22133%22%2C%22variantId%22%3A%22V980033%22%7D%5D%2C%22url%22%3A%22http%3A%2F%2Flocalhost%3A8080%2F%22%2C%22referrer%22%3A%22%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A4213677804%2C%22visitId%22%3A%22visitId-1679387024735-20128%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=order\&uid=uid-1653404599885-19305\&t=1679387036973%7C0.7978658173524473]\(https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22products%22%3A%5B%7B%22pid%22%3A%229500%22%2C%22qty%22%3A%221%22%2C%22price%22%3A%22153%22%2C%22variantId%22%3A%22V96576%22%7D%2C%7B%22pid%22%3A%229501%22%2C%22qty%22%3A%222%22%2C%22price%22%3A%22143%22%2C%22variantId%22%3A%22V980560%22%7D%2C%7B%22pid%22%3A%229502%22%2C%22qty%22%3A%225%22%2C%22price%22%3A%22133%22%2C%22variantId%22%3A%22V980033%22%7D%5D%2C%22url%22%3A%22http%3A%2F%2Flocalhost%3A8080%2F%22%2C%22referrer%22%3A%22%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A4213677804%2C%22visitId%22%3A%22visitId-1679387024735-20128%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=order\&uid=uid-1653404599885-19305\&t=1679387036973%7C0.7978658173524473\))
 
 Payload details:
 
@@ -88,7 +83,7 @@ Payload details:
 | `url`              | `string` | Website URL where the search is performed                                                                                                            |
 | `UnbxdKey`         | `string` | UnbxdSitekey value                                                                                                                                   |
 | `uid`              | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                               |
-| `t`                | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                         |
+| `t`                | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                       |
 
 The `CLICK` event and `CART` event will be be applicable to `POPULAR_PRODUCTS`.
 
@@ -147,8 +142,8 @@ Payload details:
 | `url`                    | `string` | Website URL where the search is performed                                                                                                              |
 | `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
 | `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                           |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`                                   |
+| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
+| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
 
 ## TOP\_SEARCH\_QUERIES
 
@@ -186,8 +181,8 @@ Payload details:
 | `url`                    | `string` | Website URL where the search is performed                                                                                                              |
 | `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
 | `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                           |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`                                   |
+| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
+| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
 
 ## POPULAR\_PRODUCTS\_FILTERED
 
@@ -225,8 +220,8 @@ Payload details:
 | `url`              | `string` | Website URL where the search is performed                                                                                                                     |
 | `UnbxdKey`         | `string` | UnbxdSitekey value                                                                                                                                            |
 | `uid`              | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                        |
-| `t`                | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                                  |
-| `referrer`         | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`                                          |
+| `t`                | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                                |
+| `referrer`         | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                        |
 
 ## PROMOTED\_SUGGESTION
 
@@ -264,8 +259,8 @@ Payload details:
 | `url`                    | `string` | Website URL where the search is performed                                                                                                               |
 | `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                      |
 | `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                  |
-| `t`                      | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                            |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`                                    |
+| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                          |
+| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                  |
 
 ## FIELD\_TYPE\_SUGGESTION
 
@@ -302,8 +297,8 @@ Payload details:
 | `url`                    | `string` | Website URL where the search is performed                                                                                                              |
 | `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
 | `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                           |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`                                   |
+| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
+| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
 
 In addition to the attributes mentioned above, some MANDATORY miscellaneous data must also be included. These should be added under the object named `misc`. Please refer to the table below for the specific attributes to be added under misc.
 
@@ -350,10 +345,10 @@ Payload details:
 | `url`                    | `string` | Website URL where the search is performed                                                                                                              |
 | `UnbxdKey`               | `string` | UnbxdSitekey value                                                                                                                                     |
 | `uid`                    | `string` | `unbxd.userId` (Needs to be extracted from the cookie)                                                                                                 |
-| `t`                      | `string` | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();`                           |
-| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`                                   |
+| `t`                      | `string` | Timestamp formula: `t : current_time \\| random number between 0 to 1` and `t = new Date().getTime() + ‘\\|’ + Math.random();`                         |
+| `referrer`               | `string` | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \\|\| document.referrer \\|\| '';`                                 |
 
-In addition to the attributes mentioned above, some MANDATORY miscellaneous data must also be included. These should be added under the object named `misc`. Please refer to the table below for the specific attributes to be added under misc.
+In addition to the attributes mentioned above, some MANDATORY miscellaneous data must also be included. These should be added under the object named `misc`. Please refer to the table below for the specific attributes to be added under misc.\
 Example schema (showcasing only a part of the api): `&misc:{“unxAsType”:”TRENDING_QUERIES”}`
 
 | **Attribute Name** | **Type** | **Value to Pass**                                                                            |
