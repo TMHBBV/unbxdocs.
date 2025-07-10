@@ -80,19 +80,19 @@ The Netcore Unbxd Analytics tracker must be integrated on every page and version
 Here’s an overview of the implementation methods available:
 
 <Cards columns={4}>
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+  <Card title="Netcore Unbxd Pulse(Recommendation)" href="https://readme.com" icon="fa-home" target="_blank">
+    Simplify Analytics Integration by adding just one line of code to your site and letting Netcore Unbxd experts handle the rest.
   </Card>
 
-  <Card title="Second Card" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  <Card title="API Implementation" icon="fa-user">
+    With this method, you integrate the API references for each event that needs to be tracked. It is particularly suitable for businesses that require a high level of customization.
   </Card>
 
-  <Card title="Third Card" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
+  <Card title="JavaScript" icon="fa-star">
+    This method allows embedding the tracker as a custom JavaScript file, anywhere within the HTML page in your site.
   </Card>
 
-  <Card title="Fourth Card" icon="fa-question">
-    **Excepteur sint occaecat cupidatat non proident**
+  <Card title="Tag Manager Implementation" icon="fa-question">
+    If your website uses a tag manager such as GTM(Google Tag Manager) or Tealium, you can use your tag manager to easily place the tracker in your site.
   </Card>
 </Cards>
