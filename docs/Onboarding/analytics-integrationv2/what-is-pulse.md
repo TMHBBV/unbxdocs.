@@ -458,3 +458,46 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 > 📘 Note
 >
 > The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
+
+```Text Example Markup 
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsPrank="1"
+  >
+    Music
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsFldName="categoryPath1"
+    data-unxAsFldValue="games"
+    data-unxAsPrank="2"
+  >
+    in games
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsFldName="categoryPath1"
+    data-unxAsFldValue="pop vinyl"
+    data-unxAsPrank="3"
+  >
+    in pop vinyl
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsFldName="format"
+    data-unxAsFldValue="accessories"
+    data-unxAsPrank="4"
+  >
+    in accessories
+  </li>
+</ul>
+```
