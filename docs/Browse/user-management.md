@@ -15,11 +15,11 @@ The Users page provides a way to manage user accounts within the Netcore Unbxd c
 * Onboard a new team member.
 * Track and manage site allocations within your account.
 
-## **Profile**
+# Profile
 
-### Profile Settings: General Information
+## Profile Settings
 
-Manage your personal and organizational details. Keep your account information up-to-date to ensure smooth communication and accurate configuration.
+Manage your personal and organizational details. Keep your account information up-to-date to ensure smooth communication and accurate configuration. The fields available here are:
 
 * **Name**: Your full name as registered.
 * **Email**: Primary email ID associated with your account.
@@ -27,9 +27,9 @@ Manage your personal and organizational details. Keep your account information u
 * **Website**: Website associated with your organization.
 * **Time zone**: Time zone used for scheduling and analytics accuracy.
 
-#### Change Password
+### Change Password
 
-Update your account security credentials.
+Update your account security credentials. The fields available here are:
 
 * **Enter current password**: Your existing password.
 * **New Password**: Enter a strong, secure new password.
@@ -37,13 +37,13 @@ Update your account security credentials.
 
 ***
 
-### **Team Management**
+# Team Management
 
 Control and configure user access, roles, and permissions for your organization.
 
-#### Members
+### Members
 
-A centralized list of all users in your team.
+A centralized list of all users in your team. The fields available here are:
 
 * **Role**: Assign predefined roles such as Admin, Merchandiser, Analyst, or Developer.
 * **Created at**: Date when the user was added.
@@ -52,11 +52,9 @@ A centralized list of all users in your team.
 
 ***
 
-### **Add User**
+# Add User
 
-#### Add New User
-
-Quickly onboard a new team member.
+Onboard a new team member. The fields available here are:
 
 * **Email ID**: Email of the new user (e.g., [name@unbxd.com](mailto:name@unbxd.com)).
 * **Site**: Assign the user to a specific site.
@@ -64,9 +62,9 @@ Quickly onboard a new team member.
 
 ***
 
-## My Sites
+# My Sites
 
-Track and manage site allocations within your account.
+Track and manage site allocations within your account. The fields available here are:
 
 * **Number of Sites Allotted**: Total number of sites available under your plan.
 * **Number of Sites Added**: Sites currently added to your account.
@@ -76,9 +74,9 @@ Track and manage site allocations within your account.
 
 ***
 
-### **Account Sites Table**
+## Account Sites
 
-View and manage detailed information about added sites.
+View and manage detailed information about added sites. The fields available here are:
 
 * **SiteKey**: Unique key identifier for each site.
 * **Environment**: Specifies whether the site is in QA, Dev, Prod, or Staging.
@@ -88,9 +86,9 @@ View and manage detailed information about added sites.
 
 ***
 
-### **Add a Site**
+## Add a Site
 
-Onboard a new site with key configurations.
+Onboard a new site with key configurations. The fields available here are:
 
 * **Name your site**: Provide a recognizable name.
 * **Environment**: Choose between QA, Dev, Prod, or Staging.
@@ -100,50 +98,6 @@ Onboard a new site with key configurations.
 
 ***
 
-## SSO (Single Sign-On)
+# SSO (Single Sign-On)
 
 Enable and manage Single Sign-On for secure, streamlined access to the dashboard using centralized credentials.
-
-***
-
-## Browse
-
-### **Facets**
-
-Customize and control product filtering options on your storefront.
-
-#### Configure Global Facets
-
-Enable facets to display on your website for users to refine product results.
-
-* **Enabled/Disabled**: Determines visibility of the facet on the storefront.
-
-#### Add New Facet
-
-Create a new filtering option.
-
-* **Select attribute**: Choose a catalog field to base the facet on.
-* **Display Name**: Set how the facet should appear to users.
-* **Sort Order**: Define how values in the facet should be sorted: by Product Count, Alphabetical (A-Z), Custom Sort, or Personalized.
-* **Facet Length**: Set the maximum number of values shown under the facet.
-* **Enable facet on your website**: Toggle visibility for the facet.
-* **Ranking**: Determines display priority of the facet in the UI.
-
-#### Field Name and Type
-
-* **Field Name**: The attribute from your catalog that drives the facet.
-* **Facet Type**: Defined by the attribute’s data type:
-
-  * **Text** for textual fields.
-  * **Range** for numeric fields.
-  * **Path** for multi-level navigation.
-
-#### Status
-
-Facets marked as "Enabled" will be included in the API response and visible on-site.
-
-***
-
-### **Dimension Mapping**
-
-Link UNBXD dimensions to your feed attributes to improve relevance scoring and search quality.
