@@ -37,4 +37,5 @@ Ensure you have included the Unbxd Analytics JavaScript file in your HTML:
 
 Replace PROD\_SITEKEY with your actual production site key.
 
-2. <br />
+2. To enable analytics tracking upon user consent:\
+   `Unbxd && Unbxd.enableAnalytics();` // Enable Analytics Tracking service
