@@ -2,7 +2,7 @@
 title: Introducing Browse
 excerpt: Guide product discovery for users with smart navigation and filters
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
