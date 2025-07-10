@@ -38,10 +38,9 @@ The system understands that the user is looking for jeans with a **waist measure
 
 ## Set up Measurement Search
 
-Log in to Netcore Unbxd console page.
-
-1. Navigate to **Algorithm** > **Intent** > **Measurement Search**
-2. Click on the **CTA button** to enable the Measurement Search.
+1. Log in to the Netcore Unbxd console.
+2. Navigate to **Algorithm** > **Intent** > **Measurement Search**
+3. Click on the **CTA button** to enable the Measurement Search.
 
 <Image align="center" border={true} caption="Set up Measurement Search" src="https://files.readme.io/b20fd27e1d9e7bb9d96f807bbb67390386c18a95f784832df6b4c7ed420fe0d3-MEasurementsearchGIF.mp4-ezgif.com-crop.gif" width="80% " />
 
@@ -65,15 +64,13 @@ It works best when shoppers are looking for a specific size or fit, with no flex
 | **Pressure**     | pa, kpa, atm, torr, bar, psi, mmhg, psia, psig, ksi                                                              |
 | **Product Info** | b, kb, mb, gb, tb, pb, eb, ib, kib, mib, gib, tib, pib, eib                                                      |
 
-<br />
-
 5. **Default Configuration**: This is used to power the queries that do not have a dimension attribute.\
    For example, your search query is "red shirt under 10". Here, the user/merchandiser must set up a default dimension (Price or Size, in this case) so that the search result displays products with a price less than $10 or products with a size less than ten.
 6. **Tolerance configuration**: It is a flexibility factor that gives you better search results. Currently, the query builder follows a configurable normalization range of ±10%.
 
 After the type of strategy is decided, click Save configuration and click Sync to add measurement search configurations to your search.
 
-### Use Case
+## Use Cases
 
 A user searches for a coffee table, the user enters search query: "Coffee table 48x24x18" (48 inches long, 24 inches wide, 18 inches high).
 
@@ -87,7 +84,7 @@ The search engine would parse these dimensions and query for products where:
 
 Measurement-based search in Netcore Unbxd helps users find products that meet specific criteria based on measurable dimensions (size, weight, pressure, etc.). It improves the overall shopping experience by allowing precise searches and delivering highly relevant results based on the user's needs.
 
-## Troubleshoot & FAQs
+# Troubleshoot & FAQs
 
 <Accordion title="How does Measurement Search improve the shopping experience?">
   It delivers more accurate and relevant results by understanding and applying measurable product dimensions.   This helps shoppers quickly find products that fit their specific needs (e.g., size, capacity, or budget).
