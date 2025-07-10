@@ -39,16 +39,15 @@ Vector Search helps users find what they mean, not just what they say. It improv
 4. **Boosts conversions**:\
    When users find what they need faster, they’re more likely to buy — improving sales and user satisfaction.
 
-## Enable Vector Search
+# Enable Vector Search
 
-Log in to Netcore Unbxd console page.
+<Image align="center" border={true} caption="Set up Vector Search" src="https://files.readme.io/7dd1c4df49e1189d0ceaad21606778586c49da003adc14633343f6385c44435a-VectorSearch.gif" width="80% " />
 
-1. Navigate to **Algorithm** > **Intent** > **Vector Search**.
-2. Click Contact support link to auto create support ticket for enabling this feature on your panel. Once approved, the toggle button is enabled for your panel.
+1. Log in to the Netcore Unbxd console page.
+2. Navigate to **Algorithm** > **Intent** > **Vector Search**.
+3. Click Contact support link to auto create support ticket for enabling this feature on your panel. Once approved, the toggle button is enabled for your panel.
 
-<Image align="center" border={true} caption="Enable Vector Search" src="https://files.readme.io/d4dae9fb2dda3a9b1c00c4ca1b8c53bde17e15ad53d9091727934d96ccfafa3c-image.png" width="80% " />
-
-### Set your Vector Search strategy.
+## Set your Vector Search strategy.
 
 There are two options available to do so: Hybrid search & Fallback search.
 
@@ -59,7 +58,7 @@ There are two options available to do so: Hybrid search & Fallback search.
 
 <br />
 
-### Strategies Selection of Vector Search
+# Strategies Selection of Vector Search
 
 Vector Search helps improve search results by understanding the meaning behind what users type. Unbxd uses two smart strategies to make the most of this: Hybrid search and Fallback search.
 
@@ -92,7 +91,7 @@ For example: If a user searches for “running shoes”, keyword search returns 
 **Final result count: 30 products**\
 *This ensures Vector Search makes up for what keyword search missed.*
 
-## Troubleshooting & FAQs
+# Troubleshooting & FAQs
 
 <Accordion title="Do I need to enable Vector Search manually?">
   Yes, To enable:
