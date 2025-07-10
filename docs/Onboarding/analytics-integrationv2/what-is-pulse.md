@@ -391,3 +391,13 @@ Below are the mandatory HTML attributes and values that need to be placed in the
   </li>
 </ul>
 ```
+
+#### TRENDING\_QUERIES
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value(should be an exact match) |
+| :---------------- | :------------------------------ |
+| `data-unxAsType`  | `TRENDING_QUERIES`              |
+| `data-unxAsSugg`  | suggested query                 |
+| `data-unxAsPrank` | index number                    |
