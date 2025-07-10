@@ -59,4 +59,12 @@ The trackers will capture your users’ behavior as they navigate and interact w
 
     This data can be used to highlight ‘Popular Products’ and create personalized ‘Recommended For You’ lists,     ensuring a more customized shopping experience.
   </Tab>
+
+  <Tab title="Add to Cart">
+    Triggered each time a user adds a product to their cart, regardless of the originating page—whether it’s the   Product Detail Page (PDP), Product Listing Page (PLP), historical orders, or any other page. For users         incrementally adding products, the event should fire once per product addition, and the `qty` parameter       should reflect the quantity added during that specific action.
+  </Tab>
+
+  <Tab title="Order">
+    Triggered when a purchase is completed on your site. This event should be fired for each product in the       order, capturing valuable data such as the product ID, quantity, and order details.
+  </Tab>
 </Tabs>
