@@ -236,3 +236,48 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 > 📘 Note
 >
 > The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
+
+```Text Example Markup
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Apple"
+    data-unxAsPrank="1"
+  >
+    Apple
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Banana"
+    data-unxAsPrank="2"
+  >
+    Banana
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Cherry"
+    data-unxAsPrank="3"
+  >
+    Cherry
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Date"
+    data-unxAsPrank="4"
+  >
+    Date
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Elderberry"
+    data-unxAsPrank="5"
+  >
+    Elderberry
+  </li>
+</ul>
+```
