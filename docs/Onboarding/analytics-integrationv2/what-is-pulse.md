@@ -27,27 +27,26 @@ Pulse is engineered to function without impacting site performance. It operates 
 
 ## How to integrate Netcore Unbxd Pulse?
 
-\<Accordion title="1. Review Prerequisities" icon="fa-info-circle">
-&#x20; Every event requires mandatory attributes to form its payload. Ensure these values are accessible in the page, DOM, or URL for sending the event. Additionally, specific HTML attributes may need to be added for each document or event type. Refer to the event payload section for detailed information.
+\<Accordion title="1. Review Prerequisities" icon="fa-info-circle">\
+Every event requires mandatory attributes to form its payload. Ensure these values are accessible in the page, DOM, or URL for sending the event. Additionally, specific HTML attributes may need to be added for each document or event type. Refer to the event payload section for detailed information.
 \</Accordion>
 
-\<Accordion title="2. Add the integration code" icon="fa-info-circle">
-&#x20; Add the following \`\<script>\` tag at the end of your site’s HTML body.
-&#x20; \`\`\`
-&#x20;    \<script
+\<Accordion title="2. Add the integration code" icon="fa-info-circle">\
+Add the following `\<script>` tag at the end of your site’s HTML body.```
+   \<script
 type="text/javascript"
 defer
 charset="utf-8"
-src="https\://libraries.unbxdapi.com/sdk-clients/PROD\_SITEKEY/ua/ua.js">
-&#x20; \</script>
-\`\`\`
+src="[https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js](https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js)">
+\</script>
+```
 
 The use of the `defer` attribute is to load the script in parallel with HTML parsing, ensuring the script executes only after the HTML is fully parsed. This improves the load performance of the page.
 
 \</Accordion>
 
-\<Accordion title="3.Validation payload data retrieval" icon="fa-info-circle">
-&#x20; Verify that Netcore Unbxd Pulse can retrieve event payload data from sources such as DOM, URL, or browser windows.
+\<Accordion title="3.Validation payload data retrieval" icon="fa-info-circle">\
+Verify that Netcore Unbxd Pulse can retrieve event payload data from sources such as DOM, URL, or browser windows.
 \</Accordion>
 
 ## How to check if event payload data is retrieved?
@@ -113,6 +112,79 @@ The mandatory `pid` payload is captured from the product element of the Products
       <img src="https://www.example.com/images/productname.png" />
       <span>Organic Banana</span>
     </a>
+  </div>
+</div>
+```
+
+### Cart Event
+
+#### 1. Quick view/Product details page
+
+The mandatory `pid` and `variantid` (if your catalog contains product variants) payloads are captured from the DOM or from a URL, such as the browser URL, `img_url`, or `href` in the product details section. The event is triggered when the respective CTA button is clicked.
+
+Example browser URL:`https://www.example.com/product/product_107440/107440_green?sale=clearance`
+
+```Text Example Markup of the Product Description Page
+<div class="pdp-page" id="quickLook">
+  <div
+    class="product-details"
+    data-item-id="107440"
+    data-variant-id="107440_green"
+  >
+    <div class="hero-img">
+      <img
+        src="https://www.example.com/images/product_107440/107440_green.png"
+      />
+    </div>
+    <div id="productInfo">
+      <h3>Fresh Blackberry Holland 125 gm</h3>
+      <input type="number" class="qty-inputbox" />
+      <span class="price">$10.99</span>
+      <button class="add-to-wishlist" type="button"></button>
+      <button class="add-to-cart" type="button"></button>
+    </div>
+  </div>
+</div>
+```
+
+<br />
+
+#### 2. Cart dropdown/Cart page
+
+The mandatory `pid` and `variantid` (if your catalog contains product variants) payloads are captured from the DOM or from a URL, such as the browser URL, `img_url`, or `href` in the product details section. The event is triggered when the quantities are modified.
+
+```Text Example Markup of the Cart Page
+<div class="cart-list-grid">
+  <div class="cart-item" data-item-id="107440">
+    <a href="https://www.example.com/product/product_107440">
+      <img src="https://www.example.com/images/product_107440.png" />
+    </a>
+    <div id="productInfo">
+      <h3>Fresh Blackberry Holland 125 gm</h3>
+      <span class="qty">2</span>
+      <span class="price">$10.99</span>
+      <div class="qty-wrap">
+        <span class="quantity-increase"> + </span>
+        <input type="text" class="quantity-value" />
+        <span class="quantity-decrease"> - </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-item" data-item-id="245102">
+    <a href="https://www.example.com/product/product_245102">
+      <img src="https://www.example.com/images/product_245102.png" />
+    </a>
+    <div id="productInfo">
+      <h3>Fresh Orange Navel Box</h3>
+      <span class="qty">1</span>
+      <span class="price">$20.99</span>
+      <div class="qty-wrap">
+        <span class="quantity-increase"> + </span>
+        <input type="text" class="quantity-value" />
+        <span class="quantity-decrease"> - </span>
+      </div>
+    </div>
   </div>
 </div>
 ```
