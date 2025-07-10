@@ -68,3 +68,31 @@ The trackers will capture your users’ behavior as they navigate and interact w
     Triggered when a purchase is completed on your site. This event should be fired for each product in the       order, capturing valuable data such as the product ID, quantity, and order details.
   </Tab>
 </Tabs>
+
+## How to integrate Netcore UNBXD Analytics?
+
+The Netcore Unbxd Analytics tracker must be integrated on every page and version of your site, including desktop, mobile, and tablet.
+
+> 📘 Note
+>
+> We provide multiple integration options, each designed to meet specific technical requirements and business needs.
+
+Here’s an overview of the implementation methods available:
+
+<Cards columns={4}>
+  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="Second Card" icon="fa-user">
+    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  </Card>
+
+  <Card title="Third Card" icon="fa-star">
+    > Ut enim ad minim veniam, quis nostrud ullamco
+  </Card>
+
+  <Card title="Fourth Card" icon="fa-question">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+</Cards>
