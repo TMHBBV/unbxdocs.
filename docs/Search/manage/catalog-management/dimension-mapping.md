@@ -31,6 +31,8 @@ For Example: When you define the brand as a dimension in UNBXD, users can filter
 
 The mapping process ensures that these attributes are correctly recognized and used for creating dynamic filters in your search or product listing pages. This enhances the search experience by enabling users to easily drill down into product categories.
 
+<Image align="center" border={true} caption="Map Unbxd dimension to the feed attribute" src="https://files.readme.io/02adf2109cbe044ad30d03ae35b43f6df65b9a4f3de7a833a7de90057dba8fc7-DimMapping.gif" width="80% " />
+
 Navigate to **Manage** > **Catalog** > **Dimension Mapping**.
 
 Dimension Mapping is divided into two categories:
