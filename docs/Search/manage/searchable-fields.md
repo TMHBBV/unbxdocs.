@@ -1,5 +1,8 @@
 ---
 title: Searchable Fields
+excerpt: >-
+  Determine which product catalog fields influence search relevance and how much
+  weight each field carries.
 deprecated: false
 hidden: false
 metadata:
