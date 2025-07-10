@@ -16,3 +16,20 @@ Google Tag Manager (GTM) simplifies the process of managing and deploying tags o
 src="https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js">
 </script>
 ```
+
+2. Initialize the GTM window object on page load if it is not already present, using the respective `ContainerID` and `HTMLId`.
+
+```
+/ Container ID is present in GTM-XXXX format in the GTM Dashboard
+ // HTML ID can be found in the URL. Eg:
+ // containers/422XXXX/workspaces/20, 20 is the HTML ID
+
+ <script type="text/javascript">
+     window.google_tag_manager[{{Container ID }}].onHtmlSuccess({{ HTML ID }}); });
+ </script>
+```
+
+3. Import Unbxd Template on GTM
+   1. Download the JSON template for Tags, triggers, and Variables.
+   2. After downloading the JSON template, follow the steps in this document to import it into your GTM container.
+   Follow the steps below for each event to set up the **dataLayer**.
