@@ -26,30 +26,36 @@ To handle session management effectively across multiple platforms with a shared
 
 ## What are the constraints?
 
-Use the code provided to generate the uid, ensuring it meets the required type and length specifications.\
-It should be stored (e.g., in cookies or local storage) and included in the API payload.
-Do NOT generate an ID that violates GDPR compliance or contains personally identifiable information (such as deviceID or unencrypted userID) that could be linked back to the shopper.
-​
-visitId
-A session or visit random identifier that expires after 30 minutes of inactivity.
+1. Use the code provided to generate the uid, ensuring it meets the required type and length specifications.
+2. It should be stored (e.g., in cookies or local storage) and included in the API payload.
+3. Do NOT generate an ID that violates GDPR compliance or contains personally identifiable information (such as deviceID or unencrypted userID) that could be linked back to the shopper.
+   # visitId
+   A session or visit random identifier that expires after 30 minutes of inactivity.
 
-Name	Type\
-visitId	String
-How to generate visitId?
+| Name    | Type   |
+| :------ | :----- |
+| visitId | String |
 
-For web browsers: This will be created by Netcore Unbxd Analytics script in the form of cookies.\
-For mobile apps: visitId = 'visitId-' + now + '-' + Math.floor(Math.random() \* 100000);
-What are the constraints?
+## How to generate visitId?
 
-The visitId should automatically reset after 30 minutes of user inactivity.\
-Once the visitId has been reset due to inactivity, the Visit event must be fired to log the start of a new session.
-​
-url
+1. For web browsers: This will be created by Netcore Unbxd Analytics script in the form of cookies.
+2. For mobile apps: visitId = `'visitId-' + now + '-' + Math.floor(Math.random() * 100000);`
+
+## What are the constraints?
+
+1. The visitId should automatically reset after 30 minutes of user inactivity.
+2. Once the visitId has been reset due to inactivity, the Visit event must be fired to log the start of a new session.\
+   ​
+
+# url
+
 The url attribute refers to the web address of the page where the shopper initiates a search.
 
-Name	Type\
-url	URL string
-For example, if a shopper is on a category page of an ecommerce site, such as: [https://www.example.com/electronics/laptops](https://www.example.com/electronics/laptops) and they use the search bar on that page, then the URL of the page where the search was triggered (before the search results page loads) would be: [https://www.example.com/electronics/laptops](https://www.example.com/electronics/laptops).
+| Name | Type      |
+| :--- | :-------- |
+| url  | URLString |
+
+For example, if a shopper is on a category page of an ecommerce site, such as: `https://www.example.com/electronics/laptops` and they use the search bar on that page, then the URL of the page where the search was triggered (before the search results page loads) would be: `https://www.example.com/electronics/laptops`.
 
 This URL is captured to provide context on where the search originated.
 
