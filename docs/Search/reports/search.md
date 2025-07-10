@@ -9,7 +9,7 @@ metadata:
 
 It provides insights about overall search performance, top search queries, zero result queries, top products.
 
-## Key Interface Features:
+## Key Interface Features
 
 | **Features**                  | **Description**                                                                                                                                  |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
