@@ -39,3 +39,10 @@ Replace PROD\_SITEKEY with your actual production site key.
 
 2. To enable analytics tracking upon user consent:\
    `Unbxd && Unbxd.enableAnalytics();` // Enable Analytics Tracking service
+3. To disable analytics tracking upon user denial:\
+   `Unbxd && Unbxd.disableAnalytics();` // Disable Analytics Tracking service
+
+> 📘 Important
+>
+> It is crucial to respect user consent preferences and manage them correctly to ensure compliance with GDPR regulations. This approach not only protects user privacy but also fosters trust with your customers.\
+> For any further assistance or inquiries regarding GDPR compliance with Unbxd Analytics Tracking service, please reach out to Unbxd support.
