@@ -1,7 +1,7 @@
 ---
 title: Catalog Management
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
