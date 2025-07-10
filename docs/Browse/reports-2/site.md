@@ -86,7 +86,3 @@ This section ranks products based on their **performance on browse pages**, help
 You can navigate through multiple pages of products (up to 1000) to analyze performance at scale.
 
 ***
-
-#### Use Cases
-
-* <br />
