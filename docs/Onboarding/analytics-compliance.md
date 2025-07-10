@@ -23,3 +23,18 @@ Default Behavior: By default, the trackAnalytics flag is set to true, which enab
 ## Persistent User Preferences
 
 Once a user has made their choice regarding consent preferences, it's vital to store this preference locally, such as in a cookie or local storage. This practice ensures that you can respect the user’s decision across multiple sessions. On subsequent visits, check the stored preference and call Unbxd.enableAnalytics() or Unbxd.disableAnalytics() accordingly.
+
+### How to implement, disable, or enable tracking?
+
+1. Initialization
+
+Ensure you have included the Unbxd Analytics JavaScript file in your HTML:
+
+```
+ <script src="https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js">
+ </script>
+```
+
+Replace PROD\_SITEKEY with your actual production site key.
+
+2. <br />
