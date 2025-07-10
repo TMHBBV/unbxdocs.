@@ -223,7 +223,7 @@ Things to note before configuration:
 * Mandatory to add the payload data to the DOM if you’ve not used the Netcore Unbxd Autosuggest SDK.\
   ​
 
-### KEYWORD\_SUGGESTION
+#### KEYWORD\_SUGGESTION
 
 Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
 
@@ -281,3 +281,17 @@ Below are the mandatory HTML attributes and values that need to be placed in the
   </li>
 </ul>
 ```
+
+#### TOP\_SEARCH\_QUERIES
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value(should be an exact match) |
+| :---------------- | :------------------------------ |
+| `data-unxAsType`  | `TOP_SEARCH_QUERIES`            |
+| `data-unxAsSugg`  | suggested query                 |
+| `data-unxAsPrank` | index number                    |
+
+> 📘 Note
+>
+> The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
