@@ -60,3 +60,21 @@ Refer to the following code snippet to call the Unbxd.track function to trigger 
 | :------------- | :------- | :---------------------------------------------------------------------------------------------------------------------- |
 | `imageId`      | String   | Id of the image, to be retrieved from the response of visualSearch API                                                  |
 | `boxId`        | String   | Optional, the ID of the bounding box that has been selected. Look for the selected key in the visualSearch API response |
+
+Refer to the following code snippet to call the `Unbxd.track` function to trigger the `visualSearch` event.
+
+```
+<script type="text/javascript">
+   	var payload = {
+   	imageId: 'ad85491c-9d2b-4cab-900a-df96aa11f0d9',
+     	boxId: '1089',
+   	}
+
+
+   	if(Unbxd && typeof Unbxd.track === 'function') {
+   		Unbxd.track('visualSearch', payload)
+   	} else {
+   		console.error('unbxdAnalytics.js is not loaded!')
+   	}
+   </script>
+```
