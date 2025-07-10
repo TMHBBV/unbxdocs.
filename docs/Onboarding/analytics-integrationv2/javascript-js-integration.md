@@ -89,3 +89,19 @@ To be triggered on all category pages of the e-commerce site.
 | :------------- | :------- | :---------------------------------------------------------------------------------- |
 | `page`         | String   | Category path used for category API call (value of the p parameter).                |
 | `page_type`    | String   | Page type for category path, either `BOOLEAN` or `CATEGORY_PATH` based on the page. |
+
+Refer to the following code snippet to call the `Unbxd.track` function to trigger the categoryPage event:
+
+```
+<script type="text/javascript">
+       var payload = {
+           page: '{{ category- path}}',
+           page_type: '{{ category- page - type}}'
+       }
+       if(Unbxd && typeof Unbxd.track === 'function') {
+           Unbxd.track('categoryPage', payload)
+       } else {
+           console.error('unbxdAnalytics.js is not loaded!')
+       }
+   </script>
+```
