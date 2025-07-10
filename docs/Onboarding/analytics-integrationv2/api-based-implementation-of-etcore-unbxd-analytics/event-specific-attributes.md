@@ -88,16 +88,16 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 
 Refer here for our [sample API](https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22query%22%3A%22Dress%22%2C%22pids_list%22%3A%5B%22RML02384%22%2C%22GER02112%22%2C%22GER02160%22%2C%22WHO03671%22%2C%22KDZ03516%22%2C%22WHO03558%22%2C%22RML02290%22%2C%22GER02158%22%2C%22NAU06605%22%2C%22BEB03937%22%2C%22WHO03672%22%2C%22WHO03670%22%2C%22THA02198%22%2C%22WHO03620%22%2C%22BFA01862%22%2C%22NAU06700%22%2C%22STU04666%22%2C%22STU04612%22%2C%22NCN01301%22%2C%22WHO03659%22%2C%22DKY02759%22%2C%22GER02148%22%2C%22GER02147%22%2C%22ALU10901%22%5D%2C%22url%22%3A%22https%3A//demo.unbxd.com/Search.aspx%3Fk%3DDress%22%2C%22referrer%22%3A%22https%3A//demo.unbxd.com/Search.aspx%3Fk%3Dred%2520dress%22%2C%22requestId%22%3A%220643220e-c900-4825-9f2d-f740025b2b0d%22%2C%22visit_type%22%3A%22repeat%22%2C%22ver%22%3A%224.0.28%22%2C%22_uf%22%3A1187461382%2C%22visitId%22%3A%22visitId-1662364656433-84380%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=PRODUCT_IMPRESSIONS\&uid=uid-1642414737751-20033\&t=1662366285967%7C0.7498946341398707)
 
-### Payload details
+### Payload details:
 
-| Attribute Name        | Type   | Value to Pass                                                                              |                        |        |
-| :-------------------- | :----- | :----------------------------------------------------------------------------------------- | :--------------------- | :----- |
-| `action`              | String | `PRODUCT_IMPRESSIONS`                                                                      |                        |        |
-| `pid`                 | String | Unique ID for the product, to be taken from the search API response                        |                        |        |
-| `variantId(optional)` | String | Variant ID assigned to the variant of the product. Necessary only if variants are present. |                        |        |
-| `url`                 | String | Website URL where the search is performed                                                  |                        |        |
-| `visit_type`          | String | Either `first_time` or repeat                                                              |                        |        |
-| `UnbxdKey`            | String | UnbxdSitekey value                                                                         |                        |        |
-| `uid`                 | String | `unbxd.userId` (Needs to be extracted from the cookie)                                     |                        |        |
-| `t`                   | String | Timestamp formula: \`t : current\_time \\                                                  |                        |        |
-| `referrer`            | String | Link from where the page is opened: \`referrer:sessionStorage.getItem('urlPrevious')\\     | \| document.referrer\\ | \|";\` |
+| **Attribute Name** | **Type**      | **Value to Pass**                                                                                  |
+|---------------------|---------------|----------------------------------------------------------------------------------------------------|
+| `action`           | `string`      | `PRODUCT_IMPRESSIONS`                                                                                           |
+| `pid`              | `string`      | Unique ID for the product, to be taken from the search API response                              |
+| `variantId` (optional)| `string`  | Variant ID assigned to the variant of the product. Necessary only if variants are present.       |
+| `url`              | `string`      | Website URL where the search is performed                                                       |
+| `visit_type`       | `string`      | Either `first_time` or `repeat`                                                                  |
+| `UnbxdKey`         | `string`      | UnbxdSitekey value                                                                               |
+| `uid`              | `string`      | `unbxd.userId` (Needs to be extracted from the cookie)                                           |
+| `t`                | `string`  | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();` |
+| `referrer`         | `string`  | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`|
