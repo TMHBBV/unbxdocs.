@@ -32,14 +32,15 @@ Every event requires mandatory attributes to form its payload. Ensure these valu
 \</Accordion>
 
 \<Accordion title="2. Add the integration code" icon="fa-info-circle">\
-Add the following `\<script>` tag at the end of your site’s HTML body.```
-   \<script
+Add the following `\<script>` tag at the end of your site’s HTML body.\`\`\`
+\<script
 type="text/javascript"
 defer
 charset="utf-8"
-src="[https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js](https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js)">
+src="[https://libraries.unbxdapi.com/sdk-clients/PROD\_SITEKEY/ua/ua.js](https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js)">
 \</script>
-```
+
+````
 
 The use of the `defer` attribute is to load the script in parallel with HTML parsing, ensuring the script executes only after the HTML is fully parsed. This improves the load performance of the page.
 
@@ -69,7 +70,7 @@ In this reference markup, the query value is extracted by targeting the input va
     <i class="fas fa-search-icon"></i>
   </button>
 </form>
-```
+````
 
 ### Browse Event
 
@@ -188,3 +189,50 @@ The mandatory `pid` and `variantid` (if your catalog contains product variants) 
   </div>
 </div>
 ```
+
+### Order event
+
+The ownership of the Order event lies with the retailer. Details of successfully ordered products should be stored as a variable on the browser’s window, as demonstrated in the example below. Netcore Unbxd Pulse will retrieve this data from the window object and trigger the order event accordingly.
+
+> 📘 Note
+>
+> The key names need to be maintained as shown in the example below given the ownership of the event will not be with Netcore Unbxd.
+
+```Text Example JSON of the Order Success Page
+window.unbxdOrderData = [
+  {
+    pid: "107440", // Required - Product ID
+    variantId: "107440_01", // Required only if your catalog has variants
+    qty: "1",
+    price: "29.99",
+  },
+  {
+    pid: "245102", // Required - Product ID
+    variantId: "245102_red", // Required only if your catalog has variants
+    qty: "2",
+    price: "10.99",
+  },
+];
+```
+
+### Autosuggest
+
+Things to note before configuration:
+
+* Only required if you’ve subscribed to the Netcore Unbxd Autosuggest solution.
+* Mandatory to add the payload data to the DOM if you’ve not used the Netcore Unbxd Autosuggest SDK.\
+  ​
+
+### KEYWORD\_SUGGESTION
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value(should be an exact match) |
+| :---------------- | :------------------------------ |
+| `data-unxAsType`  | `KEYWORD\_SUGGESTION`           |
+| `data-unxAsSugg`  | suggested query                 |
+| `data-unxAsPrank` | index number                    |
+
+> 📘 Note
+>
+> The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
