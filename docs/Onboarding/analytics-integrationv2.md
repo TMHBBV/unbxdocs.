@@ -55,7 +55,7 @@ The trackers will capture your users’ behavior as they navigate and interact w
   </Tab>
 
   <Tab title="Product Click">
-    Triggered whenever a shopper clicks a product or product image from any Product Listing Page (PLP),           Category page, or Recommendation widget. It will capture the clicked product’s unique ID and the page      where the click activity occurred.
+    Triggered whenever a shopper clicks a product or product image from any Product Listing Page (PLP),           Category page, or Recommendation widget. It will capture the clicked product’s unique ID and the page         where the click activity occurred.
 
     This data can be used to highlight ‘Popular Products’ and create personalized ‘Recommended For You’ lists,     ensuring a more customized shopping experience.
   </Tab>
