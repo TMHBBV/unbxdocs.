@@ -454,3 +454,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsPrank`    | index number                                        |
 | `data-unxAsFldName`  | Name of the catalog field associated with the query |
 | `data-unxAsFldValue` | Value of the associated field                       |
+
+> 📘 Note
+>
+> The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
