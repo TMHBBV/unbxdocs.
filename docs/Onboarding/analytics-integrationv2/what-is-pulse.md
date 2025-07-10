@@ -577,3 +577,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsPid`      | Unique ID of the product as per Unbxd catalog |
 | `data-unxAsPRANK`    | index number                                  |
 | `data-unxAsSrcQuery` | Name of the suggested query shown upon hover  |
+
+> 📘 Note
+>
+> The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
