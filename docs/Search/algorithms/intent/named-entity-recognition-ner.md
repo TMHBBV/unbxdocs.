@@ -55,11 +55,15 @@ With NER query reformulation the new query becomes: “Blue casual shirt for men
 The PATTERN (i.e. “checks”) is made an option term resulting in an increase in the results from 2 products to 50 products.
 *A boost is applied on the products where PATTERN is “checks” in order to ensure that the 2 products matching exact shopper specifications appear at the top.*
 
-## How to configure NER?
+# Configure NER
 
-The NER model can be applied to your website as below:
+<br />
 
-1. Enable the toggle switch against “Apply NER model to your site”
+<Image align="center" src="https://files.readme.io/aa8c19682974143898763bec673765cfc06d79691e1a9eec4d16a7aa77138ef4-NER.gif" />
+
+The NER model can be applied to your website as follows:
+
+1. Enable the toggle switch against “**Apply NER model to your site**”.
 2. Go to **Manage Map & Weightage** and perform the following actions:
    * **Map Entities identified by the model to the fields in your catalog**: The entities identified by our model are listed in the table. Map the fields in your product catalog which contain the information related to these entities. Our model requires these catalog mapping in order to influence the search results.
    * **Assign weightage**: Once an attribute is mapped against an entity, it would be available for assigning weights.
@@ -70,7 +74,7 @@ The NER model can be applied to your website as below:
 >
 > At-least one entity must be mapped to a catalog field and assigned a weightage to enable NER.
 
-### Configure strategy for increased result count
+## Configure strategy for increased result count
 
 Two steps are needed in order to configure the strategy for increasing the result count.
 
