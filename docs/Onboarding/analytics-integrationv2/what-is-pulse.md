@@ -401,3 +401,44 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsType`  | `TRENDING_QUERIES`              |
 | `data-unxAsSugg`  | suggested query                 |
 | `data-unxAsPrank` | index number                    |
+
+> 📘 Note
+>
+> The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
+
+```Text Example Markup
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Toys"
+    data-unxAsPrank="1"
+  >
+    Toys
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Puma Shoes"
+    data-unxAsPrank="2"
+  >
+    Puma Shoes
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Tissot Watch"
+    data-unxAsPrank="3"
+  >
+    Tissot Watch
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Christmas Gift"
+    data-unxAsPrank="4"
+  >
+    Christmas Gift
+  </li>
+</ul>
+```
