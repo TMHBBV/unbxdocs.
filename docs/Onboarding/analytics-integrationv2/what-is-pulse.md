@@ -511,7 +511,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsType`  | `POPULAR_PRODUCTS`                            |
 | `data-unxAsSugg`  | suggested query                               |
 | `data-unxAsPrank` | index number                                  |
-| `data-unxAsPRANK` | Unique ID of the product as per Unbxd catalog |
+| `data-unxAsID`    | Unique ID of the product as per Unbxd catalog |
 
 > 📘 NOTE
 >
@@ -565,3 +565,15 @@ Below are the mandatory HTML attributes and values that need to be placed in the
   </li>
 </ul>
 ```
+
+#### POPULAR\_PRODUCTS\_FILTERED
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name       | Value(should be an exact match)               |
+| :------------------- | :-------------------------------------------- |
+| `data-unxAsType`     | `POPULAR_PRODUCTS_FILTERED`                   |
+| `data-unxAsSugg`     | suggested query                               |
+| `data-unxAsPid`      | Unique ID of the product as per Unbxd catalog |
+| `data-unxAsPRANK`    | index number                                  |
+| `data-unxAsSrcQuery` | Name of the suggested query shown upon hover  |
