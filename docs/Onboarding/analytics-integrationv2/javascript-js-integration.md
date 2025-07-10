@@ -78,3 +78,14 @@ Refer to the following code snippet to call the `Unbxd.track` function to trigge
    	}
    </script>
 ```
+
+# Category Page
+
+To be triggered on all category pages of the e-commerce site.
+
+## Payload details
+
+| Attribute Name | Datatype | What Value to Be Passed                                                             |
+| :------------- | :------- | :---------------------------------------------------------------------------------- |
+| `page`         | String   | Category path used for category API call (value of the p parameter).                |
+| `page_type`    | String   | Page type for category path, either `BOOLEAN` or `CATEGORY_PATH` based on the page. |
