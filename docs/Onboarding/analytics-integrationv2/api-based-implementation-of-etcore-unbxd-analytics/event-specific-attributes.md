@@ -56,17 +56,17 @@ visitId%22%3A%22visitId-1709116400821-5910%22%7D
 
 Refer here for our sample [API](https://tracker.unbxdapi.com/v2/1p.jpg?data=\{%22query%22:%22red%20sofa%22,%22url%22:%22https://www.demo.unbxd.com/search/red%20sofa%22,%22referrer%22:%22https://www.demo.unbxd.com/c/Sofas?q=sofas%22,%22visit_type%22:%22repeat%22,%22ver%22:%224.0.28%22,%22_uf%22:3902881952,%22visitId%22:%22visitId-1709112773396-59772%22}\&UnbxdKey=demo-unbxd700181503576558\&action=search\&uid=uid-1707194142543-92694\&t=1709112807000|0.10714066830945645)
 
-### Payload details
+### Payload details:
 
-| Attribute Name | Type   | Value to Pass                                                                            |                                                                 |                      |
-| :------------- | :----- | :--------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :------------------- |
-| `action`       | String | `search`                                                                                 |                                                                 |                      |
-| `url`          | String | Website URL where the search is performed                                                |                                                                 |                      |
-| `query`        | String | The search query entered by the shopper                                                  |                                                                 |                      |
-| `UnbxdKey`     | String | UnbxdSitekey value                                                                       |                                                                 |                      |
-| `uid`          | String | `unbxd.userId` (Needs to be extracted from the cookie)                                   |                                                                 |                      |
-| `t`            | String | Timestamp formula: \`t : current\_time \\                                                | random number between 0 to 1 and t = new Date().getTime() + ‘\\ | ’ + Math.random();\` |
-| `referrer`     | String | Link from where the page is opened: \`referrer: sessionStorage.getItem('urlPrevious') \\ | \| document.referrer \\                                         | \| '';\`             |
+| **Attribute Name** | **Type**  | **Value to Pass**                                                                                  |
+|---------------------|-----------|----------------------------------------------------------------------------------------------------|
+| `action`           | `string`  | `search`                                                                                        |
+| `query`            | `string`  | The search query entered by the shopper                                                         |
+| `url`              | `string`  | Website URL where the search is performed                                                       |
+| `UnbxdKey`         | `string`  | UnbxdSitekey value                                                                               |
+| `uid`              | `string`  | `unbxd.userId` (Needs to be extracted from the cookie)                                           |
+| `t`                | `string`  | Timestamp formula: `t : current_time \| random number between 0 to 1` and `t = new Date().getTime() + ‘\|’ + Math.random();` |
+| `referrer`         | `string`  | Link from where the page is opened `referrer: sessionStorage.getItem('urlPrevious') \|\| document.referrer \|\| '';`|
 
 # Search Impression
 
