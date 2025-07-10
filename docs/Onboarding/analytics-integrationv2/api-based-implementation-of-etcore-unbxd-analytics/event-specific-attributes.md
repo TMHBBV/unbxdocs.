@@ -155,7 +155,7 @@ https://tracker.unbxdapi.com/v2/1p.jpg
 &t=1662365583875|0.7442797542869459
 ```
 
-Refer here for our <a href="https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22pid%22:%22BNC_KEASBOOOLI%22,%22url%22:%22https://www.demo.unbxd.com.au/search/red%20sofa%22,%22referrer%22:%22https://www.demo.unbxd.com.au/c/Sofas?q=sofas%22,%22visit_type%22:%22repeat%22,%22ver%22:%224.0.28%22,%22_uf%22:3902881952,%22visitId%22:%22visitId-1709112773396-59772%22%7D&UnbxdKey=demo-unbxd700181503576558&action=click&uid=uid-1707194142543-92694&t=1709112862073%7C0.42677918156526107">sample API</a>
+Refer here for our [sample API](\[https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22pid%22:%22BNC_KEASBOOOLI%22,%22url%22:%22https://www.demo.unbxd.com.au/search/red%20sofa%22,%22referrer%22:%22https://www.demo.unbxd.com.au/c/Sofas?q=sofas%22,%22visit_type%22:%22repeat%22,%22ver%22:%224.0.28%22,%22_uf%22:3902881952,%22visitId%22:%22visitId-1709112773396-59772%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=click\&uid=uid-1707194142543-92694\&t=1709112862073%7C0.42677918156526107]\(https://tracker.unbxdapi.com/v2/1p.jpg?data=%7B%22pid%22:%22BNC_KEASBOOOLI%22,%22url%22:%22https://www.demo.unbxd.com.au/search/red%20sofa%22,%22referrer%22:%22https://www.demo.unbxd.com.au/c/Sofas?q=sofas%22,%22visit_type%22:%22repeat%22,%22ver%22:%224.0.28%22,%22_uf%22:3902881952,%22visitId%22:%22visitId-1709112773396-59772%22%7D\&UnbxdKey=demo-unbxd700181503576558\&action=click\&uid=uid-1707194142543-92694\&t=1709112862073%7C0.42677918156526107\))
 
 ### Payload details
 
