@@ -18,11 +18,11 @@ Generates intelligent suggestions from your product catalog based on attributes 
 
 **How to use:**
 
-- Select the attributes you'd like to use for keyword suggestions.
-- You can choose individual fields (e.g., `color`) or combinations (e.g., `brand + category`).
-- Use the dropdown under **Select attribute** to add more fields.
+* Select the attributes you'd like to use for keyword suggestions.
+* You can choose individual fields (e.g., `color`) or combinations (e.g., `brand + category`).
+* Use the dropdown under **Select attribute** to add more fields.
 
-> **Example:** If a user types "red", suggestions like _red dress_ or _red \+ category_ will be shown based on the selected attributes.
+> **Example:** If a user types "red", suggestions like *red dress* or *red + category* will be shown based on the selected attributes.
 
 ### 2. Infield Suggestions
 
@@ -31,22 +31,20 @@ Displays product segments or categories directly in the suggestion dropdown base
 
 **How to use:**
 
-- Select catalog attributes that define meaningful product groupings (e.g., `category`, `brand`).
-- Use the same dropdown to add more segment types as needed.
+* Select catalog attributes that define meaningful product groupings (e.g., `category`, `brand`).
+* Use the same dropdown to add more segment types as needed.
 
 > **Example:** Typing "Nike" might show “Nike Shoes” or “Nike Accessories” depending on available segments.
 
----
+***
 
 ### Save & Publish
 
 Once you've configured your **keyword** and **in-field** suggestions:
 
-- Click **Save** to store your changes.
-- Click **Publish** to activate the suggestions on your live search experience.
+* Click **Save** to store your changes.
+* Click **Publish** to activate the suggestions on your live search experience.
 
-
-  **Remember:**
-
-  Selecting Templates is not available from the console, but it can only be done now at the time of feed creation.
-Info
+> 📘 **Remember:**
+>
+> Selecting Templates is not available from the console, but it can only be done now at the time of feed creation.
