@@ -339,12 +339,12 @@ INPUT VALUE:
 
 featuredFields:
 
-| **Attribute**    | **Details**                                                                                                                                                             |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Data Type**    | Array                                                                                                                                                                   |
-| **Default**      | `['brand']`                                                                                                                                                             |
-| **Description**  | Can be any autosuggest indexed properties in the product. \<br>\*\*Note:\*\* Before using, ensure Unbxd technicians configure the featured field in the backend system. |
-| **Sample Value** | `['category']`                                                                                                                                                          |
+| **Attribute**    | **Details**                                                                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Data Type**    | Array                                                                                                                                                               |
+| **Default**      | `['brand']`                                                                                                                                                         |
+| **Description**  | Can be any autosuggest indexed properties in the product. \<br>**Note:** Before using, ensure Unbxd technicians configure the featured field in the backend system. |
+| **Sample Value** | `['category']`                                                                                                                                                      |
 
 Featured field property configuration\
 For properties listed in the featured field array, a configuration for each of those properties should be added to the autosuggest options. Assume if category is listed as a featured field then
@@ -391,7 +391,7 @@ category:
       </td>
 
       <td>
-        * \`count: number\` → Number of suggestions to show\<br>- \`header: string\` → Header to display\<br>- \`tpl: string\` → Handlebars template for HTML layout
+        * `count: number` → Number of suggestions to show\<br>- `header: string` → Header to display\<br>- `tpl: string` → Handlebars template for HTML layout
       </td>
     </tr>
 
@@ -426,3 +426,922 @@ count: 2,
 <p><span style="font-weight: 400;">                tpl: "{{{safestring highlighted}}}"</span></p>
 <p><span style="font-weight: 400;">   },</span></p>
 ```
+
+**inFields**:
+
+Default:
+
+```
+{
+ count: 0
+<p><span style="font-weight: 400;">  , fields: {</span></p>
+<p><span style="font-weight: 400;">                    'brand': 3,</span></p>
+<p><span style="font-weight: 400;">                    'category': 3,</span></p>
+<p><span style="font-weight: 400;">                    'color': 3</span></p>
+<p><span style="font-weight: 400;">                }</span></p>
+<p><span style="font-weight: 400;">                , header: ""</span></p>
+<p><span style="font-weight: 400;">                , tpl: "{{{safestring highlighted}}}"</span></p>
+<p><span style="font-weight: 400;">            }</span></p>
+```
+
+Description:
+
+* count:number -> the number of suggestions to be shown
+* header:String -> Header to be displayed
+* tpl:String -> Handlebar template to representing the HTML layout for the suggestion
+* fields:object -> The various properties which should be used for in field suggestion (for someone searching for shoes infield suggestion would be
+  * In brand : Nike, Addidas, Puma
+  * In Color: Red, Green and Blue
+  * In Category: Casuals , Formals or sports
+
+**Input type**
+
+\{doctype: "IN\_FIELD" &#x20;
+brand\_in: \["Wilora Select", "Wilora Classic", "Wilora Premier"]
+0: "Wilora Select"
+1: "Wilora Classic"
+2: "Wilora Premier"
+material\_in: \["Engineered Wood", "Solid Birch with Veneered HDF Panel",…]
+0: "Engineered Wood"
+1: "Solid Birch with Veneered HDF Panel"
+2: "Solid Birch with Veneered MDF Center Panel"
+3: "High-Density Fiberboard (HDF)"
+4: "Solid Birch"
+timeStamp\_unbxd: 1587089849424
+autosuggest: "Wall Cabinets"
+autosuggest\_unstemmed: "Wall Cabinets"
+source\_unbxd\_fields: \["catlevel3Name"]
+frequency\_unbxd\_double: 2018
+uniqueId: "IN\_FIELD \`\~|@\` Wall Cabinets"
+finish\_in: \["Vertical Wood-Grain", "Scratch Resistant High Gloss White "PET" Laminate", "Textured Melamine",…]
+unbxdFeedId: "stage-vevano809641569412780\_-1433400925"
+clicks\_unbxd\_double: 0
+revenues\_unbxd\_double: 0
+carts\_unbxd\_double: 0
+suggestion\_length\_unbxd\_double: 13
+hits\_unbxd\_double: 7
+orders\_unbxd\_double: 0
+\_version\_: 1664184331017388000
+parent\_unbxd: true
+}
+
+Samle Value
+
+```
+{               count: 2,
+             header: "",               tpl: "{{{safestring highlighted}}}"   },
+```
+
+**popularProducts**:\
+Properties applicable when using the default template
+
+| **Property** | **Data Type** | **Required** | **Default** | **Description**                                                                  |
+| ------------ | ------------- | ------------ | ----------- | -------------------------------------------------------------------------------- |
+| **showCart** | boolean       | false        | `true`      | When set to `true`, the **Add to Cart** button is shown for each popular product |
+| **cartType** | string        | false        | `inline`    | Defines how the cart is displayed                                                |
+|              |               |              |             | **Possible values:** `inline` or `separate`                                      |
+
+**popularProducts**:
+
+Data type: object
+
+Required: false
+
+Default:
+
+```
+           { count: 4<p></p>
+<p><span style="font-weight: 400;">                , fields: ['*']</span></p>
+<p><span style="font-weight: 400;">                , price: true</span></p>
+<p><span style="font-weight: 400;">                , priceFunctionOrKey: "price"</span></p>
+<p><span style="font-weight: 400;">                , image: true</span></p>
+<p><span style="font-weight: 400;">                , imageUrlOrFunction: "imageUrl"</span></p>
+<p><span style="font-weight: 400;">                , currency: "Rs."</span></p>
+<p><span style="font-weight: 400;">                , displayHeader: true // used to note if popular products header needs to be shown, Can't base it on the value of header attribute as it get's constructed realtime by filtered products.</span></p>
+<p><span style="font-weight: 400;">                , header: ""</span></p>
+<p><span style="font-weight: 400;">                , loadmore: false // used in conjuction with filteredProductEvent value equal to click</span></p>
+<p><span style="font-weight: 400;">                , view: 'list'</span></p>
+<p><span style="font-weight: 400;">                , tpl: ['{{#if ../showCarts}}'</span></p>
+<p><span style="font-weight: 400;">                    , '{{#unbxdIf ../../cartType "inline"}}'//"inline" || "separate"</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-inlinecart">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-image-container">'</div>
+<p><span style="font-weight: 400;">                    , '{{#if image}}'</span></p>
+<p><span style="font-weight: 400;">                    , '<img src="{{image}}">'</span></p>
+<p><span style="font-weight: 400;">                    , '{{/if}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-name">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div style="table-layout: fixed; width: 100%; display: table;">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div style="display: table-row;">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div style="display: table-cell; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">'</div>
+<p><span style="font-weight: 400;">                    , '{{{safestring highlighted}}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{#if price}}'</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-price">'</div>
+<p><span style="font-weight: 400;">                    , '{{currency}}{{price}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{/if}}'</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-quantity">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-quantity-container">'</div>
+<p><span style="font-weight: 400;">                    , 'Qty'</span></p>
+<p><span style="font-weight: 400;">                    , '<input class="unbxd-popular-product-qty-input" type="text" value="1">'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-cart-action">'</div>
+<p><span style="font-weight: 400;">                    , '<button class="unbxd-as-popular-product-cart-button">Add to cart</button>'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{else}}'</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-info">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-image-container">'</div>
+<p><span style="font-weight: 400;">                    , '{{#if image}}'</span></p>
+<p><span style="font-weight: 400;">                    , '<img src="{{image}}">'</span></p>
+<p><span style="font-weight: 400;">                    , '{{/if}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div>'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-name">'</div>
+<p><span style="font-weight: 400;">                    , '{{{safestring highlighted}}}'</span></p>
+<p><span style="font-weight: 400;">                    //,'{{{processAutosuggestTitle _original.brandName highlighted}}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<br>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-cart">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-cart-action">'</div>
+<p><span style="font-weight: 400;">                    , '<button class="unbxd-as-popular-product-cart-button">Add to cart</button>'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-quantity">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-quantity-container">'</div>
+<p><span style="font-weight: 400;">                    , 'Qty'</span></p>
+<p><span style="font-weight: 400;">                    , '<input class="unbxd-popular-product-qty-input" type="text" value="1">'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{#if price}}'</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-price">'</div>
+<p><span style="font-weight: 400;">                    , '{{currency}}{{price}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{/if}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{/unbxdIf}}'</span></p>
+<p><span style="font-weight: 400;">                    , '{{else}}'</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-info">'</div>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-image-container">'</div>
+<p><span style="font-weight: 400;">                    , '{{#if image}}'</span></p>
+<p><span style="font-weight: 400;">                    , '<img src="{{image}}">'</span></p>
+<p><span style="font-weight: 400;">                    , '{{/if}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-name">'</div>
+<p><span style="font-weight: 400;">                    , '{{{safestring highlighted}}}'</span></p>
+<p><span style="font-weight: 400;">                    //,'{{{processAutosuggestTitle _original.brandName highlighted}}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{#if price}}'</span></p>
+<p><span style="font-weight: 400;">                    , '</span></p>
+<div class="unbxd-as-popular-product-price">'</div>
+<p><span style="font-weight: 400;">                    , '{{currency}}{{price}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{/if}}'</span></p>
+<p><span style="font-weight: 400;">                    , ''</span></p>
+<p><span style="font-weight: 400;">                    , '{{/if}}'].join('')</span></p>
+<p><span style="font-weight: 400;">            }</span></p>
+```
+
+**Description**
+
+**count** : number-> the number of products to be shown
+
+**fields**: array -> The attributes on the products to be fetched
+
+**price**: boolean -> true if product price to be shown in the suggest widget
+
+\*\*priceFunctionOrKey:\*\*String (or) Function -> attribute which contains the price value for the product
+
+**image**:boolean -> true if product image to be shown in the suggest widget
+
+**imageUrlOrFunction**:String (or) Function -> attribute which contains the url to the image for the product
+
+**currency**:String -> Denote the currency symbol
+
+**header**:String -> Title for popular products section
+
+**view**:String -> can be list (or) grid
+
+**tpl**:String -> Handlebar template to representing the HTML layout for the suggestion
+
+```
+{
+            "autosuggest":"Zinger Chair",
+            "highlighted":"Zinger Chair",
+            "type":"POPULAR_PRODUCTS",
+            "pid":"08300",
+            "_original":{
+               "ShortDescription":"Nimble and quick, yet stable thru the turns, the Zinger's patented design is fun and intuitive to drive. Plus, it's not prone to tipping mobility scooters. With no handlebar or joystick in the way, only a Zinger Chair lets you pull right into a table or desk. The Zinger folds to 10 flat instantly to fit into nearly any car trunk, saving you the hassle and expense of a car mounted scooter lift - and at 42 pounds, it can be carried up steps like a suitcase or travel on airplanes. ",
+               "imageUrl":[
+                  "https://www.abc.com/content/ZingerChair_hero_08300_md_200.jpg"
+               ],
+               "productUrl":"https://www.abc.com/Zinger/Zinger+Chair.axd",
+               "CurrentPrice":2499,
+               "OriginalPrice":2799,
+               "uniqueId":"08300",
+               "ItemName":"Zinger Chair",
+               "ProductId":"14408",
+               "doctype":"POPULAR_PRODUCTS",
+               "autosuggest":"Zinger Chair",
+               "variantTotal":1,
+               "score":2078.7332,
+               "relevantDocument":"parent",
+               "variantCount":1,
+               "variants":[
+                  {
+                     "vId":"08300_08300",
+                     "ShortDescription":"Nimble and quick, yet stable thru the turns, the Zinger's patented design is fun and intuitive to drive. Plus, it's not prone to tipping mobility scooters. With no handlebar or joystick in the way, only a Zinger Chair lets you pull right into a table or desk. The Zinger folds to 10 flat instantly to fit into nearly any car trunk, saving you the hassle and expense of a car mounted scooter lift - and at 42 pounds, it can be carried up steps like a suitcase or travel on airplanes. ",
+  "imageUrl":[                        "https://www.abc.com/content/ZingerChair_hero_08300_md_200.jpg"                    ],                      "productUrl":"https://www.abc.com/Zinger/Zinger+Chair.axd",                     "CurrentPrice":2499,                     "OriginalPrice":2799,                   "ItemName":"Zinger Chair",                   "ProductId":"14408",                  "doctype":"POPULAR_PRODUCTS",                    "autosuggest":"Zinger Chair",                     "score":0.53983456                  }               ]           },            "price":2499,             "currency":"$",             "image":[               "https://www.abc.com/content/ZingerChair_hero_08300_md_200.jpg"
+```
+
+<br />
+
+Properties applicable when using the default template.
+
+showCart:
+
+Data type: object
+
+Default:
+
+```
+ count: 4
+
+                , fields: ['*']
+
+                , price: true
+
+                , priceFunctionOrKey: "price"
+
+                , image: true
+
+                , imageUrlOrFunction: "imageUrl"
+
+                , currency: "Rs."
+
+                , displayHeader: true // used to note if popular products header needs to be shown, Can't base it on the value of header attribute as it get's constructed realtime by filtered products.
+
+                , header: ""
+
+                , loadmore: false // used in conjuction with filteredProductEvent value equal to click
+
+                , view: 'list'
+
+                , tpl: ['{{#if ../showCarts}}'
+
+                    , '{{#unbxdIf ../../cartType "inline"}}'//"inline" || "separate"
+
+                    , '
+
+'
+                    , '
+
+'
+                    , '{{#if image}}'
+
+                    , ''
+
+                    , '{{/if}}'
+
+                    , ''
+
+                    , '
+
+'
+                    , '
+
+'
+                    , '
+
+'
+                    , '
+
+'
+                    , '{{{safestring highlighted}}}'
+
+                    , ''
+
+                    , ''
+
+                    , ''
+
+                    , ''
+
+                    , '{{#if price}}'
+
+                    , '
+
+'
+                    , '{{currency}}{{price}}'
+
+                    , ''
+
+                    , '{{/if}}'
+
+                    , '
+
+'
+                    , '
+
+'
+                    , 'Qty'
+
+                    , '
+1
+'
+
+                    , ''
+
+                    , ''
+
+                    , '
+
+'
+                    , 'Add to cart'
+
+                    , ''
+
+                    , ''
+
+                    , '{{else}}'
+
+                    , '
+
+'
+                    , '
+
+'
+                    , '{{#if image}}'
+
+                    , ''
+
+                    , '{{/if}}'
+
+                    , ''
+
+                    , '
+
+'
+                    , '
+
+'
+                    , '{{{safestring highlighted}}}'
+
+                    //,'{{{processAutosuggestTitle _original.brandName highlighted}}}'
+
+                    , ''
+
+
+                    , '
+
+'
+                    , '
+
+'
+                    , 'Add to cart'
+
+                    , ''
+
+                    , '
+
+'
+                    , '
+
+'
+                    , 'Qty'
+
+                    , '
+1
+'
+
+                    , ''
+
+                    , ''
+
+                    , '{{#if price}}'
+
+                    , '
+
+'
+                    , '{{currency}}{{price}}'
+
+                    , ''
+
+                    , '{{/if}}'
+
+                    , ''
+
+                    , ''
+
+                    , ''
+
+                    , '{{/unbxdIf}}'
+
+                    , '{{else}}'
+
+                    , '
+
+'
+                    , '
+
+'
+                    , '{{#if image}}'
+
+                    , ''
+
+                    , '{{/if}}'
+
+                    , ''
+
+                    , '
+
+'
+                    , '{{{safestring highlighted}}}'
+
+                    //,'{{{processAutosuggestTitle _original.brandName highlighted}}}'
+
+                    , ''
+
+                    , '{{#if price}}'
+
+                    , '
+
+'
+                    , '{{currency}}{{price}}'
+
+                    , ''
+
+                    , '{{/if}}'
+
+                    , ''
+
+                    , '{{/if}}'].join('')
+
+            }
+```
+
+**Description**
+
+**Count** : number-> the number of products to be shown
+
+**fields**: array -> The attributes on the products to be fetched
+
+**price**: boolean -> true if product price to be shown in the suggest widget
+
+**priceFunctionOrKey**:String (or) Function -> attribute which contains the price value for the product
+
+**image**:boolean -> true if product image to be shown in the suggest widget
+
+**imageUrlOrFunction**:String (or) Function -> attribute which contains the url to the image for the product
+
+**currency**:String -> Denote the currency symbol
+
+**header**:String -> Title for popular products section
+
+**view**:String -> can be list (or) grid
+
+**tpl**:String -> Handlebar template to representing the HTML layout for the suggestion
+
+**Input Value**:
+
+```
+{
+            "autosuggest":"Zinger Chair",
+            "highlighted":"Zinger Chair",
+            "type":"POPULAR_PRODUCTS",
+            "pid":"08300",
+            "_original":{
+               "ShortDescription":"Nimble and quick, yet stable thru the turns, the Zinger's patented design is fun and intuitive to drive. Plus, it's not prone to tipping mobility scooters. With no handlebar or joystick in the way, only a Zinger Chair lets you pull right into a table or desk. The Zinger folds to 10 flat instantly to fit into nearly any car trunk, saving you the hassle and expense of a car mounted scooter lift - and at 42 pounds, it can be carried up steps like a suitcase or travel on airplanes. ",
+               "imageUrl":[
+                  "https://www.abc.com/content/ZingerChair_hero_08300_md_200.jpg"
+               ],
+               "productUrl":"https://www.abc.com/Zinger/Zinger+Chair.axd",
+               "CurrentPrice":2499,
+               "OriginalPrice":2799,
+               "uniqueId":"08300",
+               "ItemName":"Zinger Chair",
+               "ProductId":"14408",
+               "doctype":"POPULAR_PRODUCTS",
+               "autosuggest":"Zinger Chair",
+               "variantTotal":1,
+               "score":2078.7332,
+               "relevantDocument":"parent",
+               "variantCount":1,
+               "variants":[
+                  {
+                     "vId":"08300_08300",
+                     "ShortDescription":"Nimble and quick, yet stable thru the turns, the Zinger's patented design is fun and intuitive to drive. Plus, it's not prone to tipping mobility scooters. With no handlebar or joystick in the way, only a Zinger Chair lets you pull right into a table or desk. The Zinger folds to 10 flat instantly to fit into nearly any car trunk, saving you the hassle and expense of a car mounted scooter lift - and at 42 pounds, it can be carried up steps like a suitcase or travel on airplanes. ",
+                     "imageUrl":[
+                        "https://www.abc.com/content/ZingerChair_hero_08300_md_200.jpg"
+                     ],
+                     "productUrl":"https://www.abc.com/Zinger/Zinger+Chair.axd",
+                     "CurrentPrice":2499,
+                     "OriginalPrice":2799,
+                     "ItemName":"Zinger Chair",
+                     "ProductId":"14408",
+                     "doctype":"POPULAR_PRODUCTS",
+                     "autosuggest":"Zinger Chair",
+                     "score":0.53983456
+
+```
+
+onCartClick:
+
+| **Property**      | **Data Type** | **Required** | **Default**    | **Description**                                                        |
+| ----------------- | ------------- | ------------ | -------------- | ---------------------------------------------------------------------- |
+| **(onCartClick)** | function      | false        | Empty function | Can be used as an `onClick` hook to trigger the **Add to Cart** action |
+
+On completion of the above steps, the config should be as shown below,
+
+```
+new Unbxd.setSearch({
+       siteName: "{your site key}",
+       APIKey: "{your API key}",
+      version: “io”,
+   resultsClass: "unbxd-as-wrapper",
+      loadingClass: "unbxd-as-loading",
+   mainWidth: jQuery("#search_input").outerWidth() * 0.52,
+   sideWidth: 524,
+   zIndex: 1000000,
+   position: "relative",
+   sideContentOn: "right",
+   template: "2column",
+   theme: "#ff8400",
+   mainTpl: ["topQueries", "keywordSuggestions"],
+   sideTpl: ["popularProducts"],
+featuredFields: [],
+       showCarts: false,
+       cartType: "separate",
+featuredFields: [],
+       inFields: {
+         count: 0,
+         fields: {
+           brand: 3,
+           category: 3,
+           color: 3
+         },
+         header: "",
+         tpl: "{{{safestring highlighted}}}"
+       },
+       topQueries: {
+         count: 6,
+         hidden: false,
+         header: "",
+         tpl: "{{{safestring highlighted}}}"
+       },
+       keywordSuggestions: {
+         count: 6,
+         header: "",
+         tpl: "{{{safestring highlighted}}}"
+       },
+       popularProducts: {
+         count: 6,
+         fields: [
+           "title",
+           "uniqueId",
+           "imageUrl",
+           "productUrl",
+           "price",
+           "autosuggest",
+           "doctype"
+         ],
+         price: true,
+         image: true,
+         imageUrlOrFunction: "imageUrl",
+         priceFunctionOrKey: "price",
+         autosuggestName: "ItemName",
+         currency: "$",
+         header: "Most Popular Products",
+         tpl: [
+           '
+', '
+', '
+', '', "
+", '
+{{{safestring highlighted}}}
+', "
+"
+         ].join("")
+       }
+     });
+```
+
+### Other Properties
+
+| **Property**    | **Data Type**     | **Required** | **Default** | **Description**                                                                                                                                                   |
+| --------------- | ----------------- | ------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **noResultTpl** | string / function | false        | N/A         | A Handlebars template string representing the HTML layout to show when **no suggestions** are available. Can also be a **function** that returns such a template. |
+
+<br />
+
+| **Property**   | **Data Type** | **Required** | **Default** | **Description**                                                                        |
+| -------------- | ------------- | ------------ | ----------- | -------------------------------------------------------------------------------------- |
+| **hbsHelpers** | Function      | false        | N/A         | Used to bind custom **Handlebars helper functions** that can be used within templates. |
+
+SampleValue:
+
+```
+function () {
+
+Handlebars.registerHelper("toUpper", function (context, options) {
+
+    return context.toUpperCase();
+
+});
+
+}
+```
+
+<br />
+
+| **Property** | **Data Type** | **Required** | **Default** | **Description**                                                                                              |
+| ------------ | ------------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------ |
+| **filtered** | Boolean       | false        | `false`     | When set to `true`, the **popular products section** is refreshed based on the **hover of each suggestion**. |
+
+**Callback functions**\
+This section documents the different callback functions exposed by the SDK that you can hook into to listen to respond to various events.
+
+| **Property**      | **Data Type** | **Required** | **Default** | **Description**                                                                                                                                            |
+| ----------------- | ------------- | ------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **onSimpleEnter** | Function      | Optional     | N/A         | Callback function invoked when the **Enter** key is pressed in the search input box. Used to **validate and submit** the search if the input is not empty. |
+
+Sample Value:
+
+```
+function() {
+
+          this.lastKeyEvent.preventDefault();
+
+          if (this.input.value.trim().length > 0) {
+
+            this.input.form.submit();
+
+          }
+
+        }
+```
+
+<br />
+
+| **Property**     | **Data Type** | **Required** | **Default** | **Description**                                                                                               |
+| ---------------- | ------------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| **onItemSelect** | Function      | Optional     | N/A         | Callback function invoked when a **suggestion** or **popular product** is selected from the search interface. |
+
+Sample Value:
+
+```
+function(data, original) {
+
+          if (
+
+            data.type === "POPULAR_PRODUCTS" ||
+
+            data.type === "POPULAR_PRODUCTS_FILTERED"
+
+          ) {
+
+            window.location =
+
+              window.location.origin + getRelativeUrl(original.productUrl);
+
+          } else if (data.type == "IN_FIELD") {
+
+            window.location =
+
+              window.location.origin + "/?q=" + encodeURIComponent(data.value);
+
+          } else if (data.type == "brand") {
+
+            window.location =
+
+              window.location.origin +
+
+              "/?q=" +
+
+              encodeURIComponent(original.autosuggest_unstemmed); // + '&dispatch=products.advsearch&cid=0&subcats=Y', '_blank';
+
+          } else {
+
+            window.location =
+
+              window.location.origin + "/?q=" + encodeURIComponent(data.value);
+
+          }
+
+        }
+
+      }
+```
+
+## Sample Options Object
+
+Including the script object as shown below, would render the autosuggest widget as exhibited on this website
+
+```
+<script>
+     unbxdAutoSuggestFunction(jQuery, Handlebars);
+     unbxd_as_config = {
+       siteName: "2modern_com-u1435315921404",
+       APIKey: "2880cec60e264bc9b342a379666d4439",
+       resultsClass: "unbxd-as-wrapper",
+       minChars: 1,
+       delay: 100,
+       loadingClass: "unbxd-as-loading",
+       mainWidth: jQuery("#search_input").outerWidth() * 0.52,
+       sideWidth: 524,
+       zIndex: 1000000,
+       position: "relative",
+       sideContentOn: "right",
+       template: "2column",
+       theme: "#ff8400",
+       mainTplHeader: null,
+       mainTpl: [
+         "topQueries",
+         "keywordSuggestions",
+         "promotedSuggestion",
+         "inFields"
+       ],
+       sideTpl: ["popularProducts"],
+       featuredFields: [],
+       showCarts: false,
+       cartType: "separate",
+       maxSuggestions: 10,
+       hbsHelpers: null,
+       filtered: true,
+       processResultsStyles: function(fpos) {
+         fpos.width = "800px";
+         return fpos;
+       },
+       mainTpl: ["topQueries", "keywordSuggestions"],
+       sideTpl: ["popularProducts"],
+       featuredFields: [],
+       inFields: {
+         count: 0,
+         fields: {
+           brand: 3,
+           category: 3,
+           color: 3
+         },
+         header: "",
+         tpl: "{{{safestring highlighted}}}"
+       },
+       topQueries: {
+         count: 6,
+         hidden: false,
+         header: "",
+         tpl: "{{{safestring highlighted}}}"
+       },
+       keywordSuggestions: {
+         count: 6,
+         header: "",
+         tpl: "{{{safestring highlighted}}}"
+       },
+       popularProducts: {
+         count: 6,
+         fields: [
+           "title",
+           "uniqueId",
+           "imageUrl",
+           "productUrl",
+           "price",
+           "autosuggest",
+           "doctype"
+         ],
+         price: true,
+         image: true,
+         imageUrlOrFunction: "imageUrl",
+         priceFunctionOrKey: "price",
+         autosuggestName: "ItemName",
+         currency: "$",
+         header: "Most Popular Products",
+         tpl: [
+           '<div class="unbxd-as-popular-product unbxd-as-popular-product-grid" data-value="{{autosuggest}}" data-index="{{@index}}" data-type="{{type}}" data-pid="{{_original.uniqueId}}" data-src="{{src}}">',
+           '<div class="unbxd-as-popular-product-info">',
+           '<div class="unbxd-as-popular-product-image-container">',
+           '<img src="{{image}}" />',
+           "</div>",
+           '<div class="unbxd-as-popular-product-name">{{{safestring highlighted}}}</div>',
+           "</div></div>"
+         ].join("")
+       },
+       onSimpleEnter: function() {
+         this.lastKeyEvent.preventDefault();
+         if (this.input.value.trim().length > 0) {
+           /*jags to be updated to actual endpoint*/
+           window.location =
+             window.location.origin +
+             "/?q=" +
+             encodeURIComponent(this.input.value);
+         }
+       },
+       onItemSelect: function(data, original) {
+         if (
+           data.type === "POPULAR_PRODUCTS" ||
+           data.type === "POPULAR_PRODUCTS_FILTERED"
+         ) {
+           window.location =
+             window.location.origin + getRelativeUrl(original.productUrl);
+         } else if (data.type == "IN_FIELD") {
+           window.location =
+             window.location.origin + "/?q=" + encodeURIComponent(data.value);
+         } else if (data.type == "brand") {
+           window.location =
+             window.location.origin +
+             "/?q=" +
+             encodeURIComponent(original.autosuggest_unstemmed); // + '&dispatch=products.advsearch&cid=0&subcats=Y', '_blank';
+         } else {
+           window.location =
+             window.location.origin + "/?q=" + encodeURIComponent(data.value);
+         }
+       }
+     };
+     jQuery("#search_input").unbxdautocomplete(unbxd_as_config);
+   </script>
+```
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Helper Function**
+      </th>
+
+      <th>
+        **Purpose**
+      </th>
+
+      <th>
+        **Arguments**
+      </th>
+
+      <th>
+        **Usage Example**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **`unbxdIf`**
+      </td>
+
+      <td>
+        Renders a block if **two arguments** are physically equal.
+      </td>
+
+      <td>
+        * Two arguments- Returns `true` if both are equal in value and type
+      </td>
+
+      <td>
+        `handlebars<br>{{#unbxdIf ../facet_name "v_PriceRange_uFilter"}}Price{{else}}{{../facet_name}}{{/unbxdIf}}<br>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **`prepareFacetValue`**
+      </td>
+
+      <td>
+        Returns **three non-breaking spaces** if the input value is empty, else returns the value itself.
+      </td>
+
+      <td>
+        * One argument- If empty → returns `&nbsp;&nbsp;&nbsp;`- Else → returns value itself
+      </td>
+
+      <td>
+        `handlebars<br>{{#prepareFacetValue value}}{{/prepareFacetValue}}<br>`
+      </td>
+    </tr>
+  </tbody>
+</Table>
