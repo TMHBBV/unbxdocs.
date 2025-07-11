@@ -1166,71 +1166,1171 @@ Including the script object as shown below, would render the autosuggest widget 
 
 <br />
 
-| Config Name                    | Data Type       | Description                                                              | Sample Values                                           |
-| ------------------------------ | --------------- | ------------------------------------------------------------------------ | ------------------------------------------------------- |
-| siteName                       | String          | Site name assigned from Unbxd (unique identifier for each customer/site) | demo-com809841570123270                                 |
-| APIKey                         | String          | Unique key assigned from Unbxd                                           | 7689867nbh868u4j3b4u998                                 |
-| inputSelector                  | String          | CSS selector of the search input box                                     | #search\_mini\_form input                               |
-| searchButtonSelector           | String          | CSS selector of the search submit button/icon                            | #search\_mini\_form button.searchicon                   |
-| type                           | String          | Used to indicate whether search or category page                         | search / category                                       |
-| searchQueryParam               | String          | Search query parameter name                                              | q                                                       |
-| getCategoryId                  | Function        | Evaluates category id or path for category pages                         | function returning categoryPath                         |
-| deferInitRender                | Array           | List of components to defer render until initial setup                   |                                                         |
-| spellCheck                     | String          | CSS selector for 'did you mean' section                                  | #did\_you\_mean                                         |
-| spellCheckTemp                 | String          | Handlebars HTML template for spell check suggestions                     | `<span class='base'>...</span>`                         |
-| searchQueryDisplay             | String          | CSS selector for search results message                                  | #search\_result\_display                                |
-| searchQueryDisplayTemp         | String          | Handlebars HTML template for search result message                       | `<span class='base'>...</span>`                         |
-| searchResultContainer          | String          | CSS selector for product results container                               | #results-container                                      |
-| searchResultSetTemp            | String/Function | Template/function for displaying product results                         | `{{#products}}...{{/products}}`                         |
-| isAutoScroll                   | Boolean         | Enable autoscroll without pagination                                     | true                                                    |
-| heightDiffToTriggerNextPage    | Number          | Trigger next page load before this pixel value from bottom               | 250                                                     |
-| isClickNScroll                 | Boolean         | Enable 'load more' behavior                                              | true                                                    |
-| clickNScrollElementSelector    | String          | CSS selector for 'load more' button                                      | #load-more-results                                      |
-| isPagination                   | Boolean         | Enable traditional pagination                                            | true                                                    |
-| setPagination                  | Function        | Custom logic after pagination data load                                  | function with 3 args                                    |
-| paginationContainerSelector    | String          | Selector for pagination section                                          | .page-nav-section                                       |
-| paginationTemp                 | String          | Template for rendering pagination                                        | `<a href='javascript:;'>Next</a>`                       |
-| facetMultiSelect               | Boolean         | Allow multiple facet selections                                          | true                                                    |
-| facetContainerSelector         | String          | Selector for facet section                                               | #facets\_container                                      |
-| facetCheckBoxSelector          | String          | Selector for all facet checkboxes                                        | #facets\_container .facet\_value input\[type=checkbox]  |
-| selectedFacetTemp              | String          | Template for applied filters                                             | `<ol class='unbxd_selected_facets'>...</ol>`            |
-| selectedFacetContainerSelector | String          | Selector for selected filters section                                    | #applied-filter-section                                 |
-| facetMultilevel                | Boolean         | Enable multilevel facets                                                 | true                                                    |
-| facetMultilevelName            | String          | Field name for multilevel facet                                          | CATEGORY                                                |
-| clearSelectedFacetsSelector    | String          | Selector for clear all filters link                                      | #clear-all-filters                                      |
-| removeSelectedFacetSelector    | String          | Selector for individual filter remove buttons                            | .unbxd-remove-item                                      |
-| loaderSelector                 | String          | Selector for loading indicator                                           | #loader-icon                                            |
-| onFacetLoad                    | Function        | Callback after facet rendering                                           | function(obj) \{...}                                    |
-| onIntialResultLoad             | Function        | Callback after first result set is loaded                                | function(obj) \{...}                                    |
-| onPageLoad                     | Function        | Callback after every subsequent result load                              | function(obj) \{...}                                    |
-| sanitizeQueryString            | Function        | Sanitize search input                                                    | function(q) \{...}                                      |
-| getFacetStats                  | String          | Variable for holding facet stats                                         | facetstats                                              |
-| processFacetStats              | Function        | Logic for slider range behavior                                          | function(obj) \{...}                                    |
-| setDefaultFilters              | Function        | Apply default filters on data fetch                                      | function() \{...}                                       |
-| fields                         | Array           | Product attributes to be fetched                                         | \['title', 'price', 'brand']                            |
-| onNoResult                     | Function        | Handler when no search result found                                      | function(obj) \{...}                                    |
-| noEncoding                     | Boolean         | Enable encoding of URL params                                            | true                                                    |
-| customReset                    | Function        | Custom behavior on reset or sort                                         | function() \{...}                                       |
-| bannerSelector                 | String          | Selector for merchandising banners                                       | #up-sell-banner-section                                 |
-| bannerTemp                     | String          | Template for banners                                                     | `<a href='{{landingUrl}}'><img src='{{imageUrl}}'></a>` |
-| bannerCount                    | Number          | Number of banners to show                                                | 2                                                       |
-| sortContainerSelector          | String          | Selector for sort section                                                | #sort-section                                           |
-| sortOptions                    | Array           | Sorting options to be shown                                              | \[\{name: 'Popularity'}, \{...}]                        |
-| sortContainerType              | String          | Sort interaction type                                                    | click / select                                          |
-| sortContainerTemp              | String          | Template for sort UI                                                     | `<select>...</select>`                                  |
-| pageSize                       | Number          | Products per page                                                        | 24                                                      |
-| pageSizeContainerSelector      | String          | Selector for page size UI                                                | #results-pagesize                                       |
-| pageSizeOptions                | Array           | Page size options                                                        | \[\{name: '48 items', value: '48'}, ...]                |
-| pageSizeContainerType          | String          | Page size selection method                                               | click / select                                          |
-| pageSizeContainerTemp          | String          | Template for page size UI                                                | `<select>...</select>`                                  |
-| viewTypeContainerTemp          | String          | Template for view type UI                                                | `<a class='selected'>grid</a>`                          |
-| viewTypeContainerSelector      | String          | Selector for view type section                                           | #results-pageview                                       |
-| viewTypes                      | Array           | Available views                                                          | \['grid', 'list']                                       |
-| variants                       | Boolean         | Enable variant display                                                   | true                                                    |
-| variantsCount                  | Number          | Number of variants per product                                           | 3                                                       |
-| isSwatches                     | Boolean         | Enable swatch display                                                    | true                                                    |
-| swatchesSelector               | String          | Selector for swatch UI                                                   | .swatch-box                                             |
-| mappedFields                   | Object          | Mapping of product attributes                                            | \{ imageUrl: 'imageUrl', ... }                          |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        Config Name
+      </th>
+
+      <th>
+        Data Type
+      </th>
+
+      <th>
+        Description
+      </th>
+
+      <th>
+        Sample Values
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        siteName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Site name assigned from Unbxd (unique identifier for each customer/site)
+      </td>
+
+      <td>
+        demo-com809841570123270
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        APIKey
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Unique key assigned from Unbxd
+      </td>
+
+      <td>
+        7689867nbh868u4j3b4u998
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        inputSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector of the search input box
+      </td>
+
+      <td>
+        \#search\_mini\_form input
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchButtonSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector of the search submit button/icon
+      </td>
+
+      <td>
+        \#search\_mini\_form button.searchicon
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        type
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Used to indicate whether search or category page
+      </td>
+
+      <td>
+        search / category
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchQueryParam
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Search query parameter name
+      </td>
+
+      <td>
+        q
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        getCategoryId
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Evaluates category id or path for category pages
+      </td>
+
+      <td>
+        function returning categoryPath
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        deferInitRender
+      </td>
+
+      <td>
+        Array
+      </td>
+
+      <td>
+        List of components to defer render until initial setup
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        spellCheck
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector for 'did you mean' section
+      </td>
+
+      <td>
+        \#did\_you\_mean
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        spellCheckTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Handlebars HTML template for spell check suggestions
+      </td>
+
+      <td>
+        `<span class='base'>...</span>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchQueryDisplay
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector for search results message
+      </td>
+
+      <td>
+        \#search\_result\_display
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchQueryDisplayTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Handlebars HTML template for search result message
+      </td>
+
+      <td>
+        `<span class='base'>...</span>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchResultContainer
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector for product results container
+      </td>
+
+      <td>
+        \#results-container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchResultSetTemp
+      </td>
+
+      <td>
+        String/Function
+      </td>
+
+      <td>
+        Template/function for displaying product results
+      </td>
+
+      <td>
+        `{{#products}}...{{/products}}`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        isAutoScroll
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Enable autoscroll without pagination
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        heightDiffToTriggerNextPage
+      </td>
+
+      <td>
+        Number
+      </td>
+
+      <td>
+        Trigger next page load before this pixel value from bottom
+      </td>
+
+      <td>
+        250
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        isClickNScroll
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Enable 'load more' behavior
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        clickNScrollElementSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector for 'load more' button
+      </td>
+
+      <td>
+        \#load-more-results
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        isPagination
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Enable traditional pagination
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        setPagination
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Custom logic after pagination data load
+      </td>
+
+      <td>
+        function with 3 args
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        paginationContainerSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for pagination section
+      </td>
+
+      <td>
+        .page-nav-section
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        paginationTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Template for rendering pagination
+      </td>
+
+      <td>
+        `<a href='javascript:;'>Next</a>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        facetMultiSelect
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Allow multiple facet selections
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        facetContainerSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for facet section
+      </td>
+
+      <td>
+        \#facets\_container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        facetCheckBoxSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for all facet checkboxes
+      </td>
+
+      <td>
+        \#facets\_container .facet\_value input\[type=checkbox]
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        selectedFacetTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Template for applied filters
+      </td>
+
+      <td>
+        `<ol class='unbxd_selected_facets'>...</ol>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        selectedFacetContainerSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for selected filters section
+      </td>
+
+      <td>
+        \#applied-filter-section
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        facetMultilevel
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Enable multilevel facets
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        facetMultilevelName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Field name for multilevel facet
+      </td>
+
+      <td>
+        CATEGORY
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        clearSelectedFacetsSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for clear all filters link
+      </td>
+
+      <td>
+        \#clear-all-filters
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        removeSelectedFacetSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for individual filter remove buttons
+      </td>
+
+      <td>
+        .unbxd-remove-item
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        loaderSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for loading indicator
+      </td>
+
+      <td>
+        \#loader-icon
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        onFacetLoad
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Callback after facet rendering
+      </td>
+
+      <td>
+        function(obj) \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        onIntialResultLoad
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Callback after first result set is loaded
+      </td>
+
+      <td>
+        function(obj) \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        onPageLoad
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Callback after every subsequent result load
+      </td>
+
+      <td>
+        function(obj) \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sanitizeQueryString
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Sanitize search input
+      </td>
+
+      <td>
+        function(q) \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        getFacetStats
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Variable for holding facet stats
+      </td>
+
+      <td>
+        facetstats
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        processFacetStats
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Logic for slider range behavior
+      </td>
+
+      <td>
+        function(obj) \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        setDefaultFilters
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Apply default filters on data fetch
+      </td>
+
+      <td>
+        function() \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        fields
+      </td>
+
+      <td>
+        Array
+      </td>
+
+      <td>
+        Product attributes to be fetched
+      </td>
+
+      <td>
+        \['title', 'price', 'brand']
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        onNoResult
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Handler when no search result found
+      </td>
+
+      <td>
+        function(obj) \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        noEncoding
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Enable encoding of URL params
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        customReset
+      </td>
+
+      <td>
+        Function
+      </td>
+
+      <td>
+        Custom behavior on reset or sort
+      </td>
+
+      <td>
+        function() \{...}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bannerSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for merchandising banners
+      </td>
+
+      <td>
+        \#up-sell-banner-section
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bannerTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Template for banners
+      </td>
+
+      <td>
+        `<a href='{{landingUrl}}'><img src='{{imageUrl}}'></a>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bannerCount
+      </td>
+
+      <td>
+        Number
+      </td>
+
+      <td>
+        Number of banners to show
+      </td>
+
+      <td>
+        2
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sortContainerSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for sort section
+      </td>
+
+      <td>
+        \#sort-section
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sortOptions
+      </td>
+
+      <td>
+        Array
+      </td>
+
+      <td>
+        Sorting options to be shown
+      </td>
+
+      <td>
+        \[\{name: 'Popularity'}, \{...}]
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sortContainerType
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Sort interaction type
+      </td>
+
+      <td>
+        click / select
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sortContainerTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Template for sort UI
+      </td>
+
+      <td>
+        `<select>...</select>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pageSize
+      </td>
+
+      <td>
+        Number
+      </td>
+
+      <td>
+        Products per page
+      </td>
+
+      <td>
+        24
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pageSizeContainerSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for page size UI
+      </td>
+
+      <td>
+        \#results-pagesize
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pageSizeOptions
+      </td>
+
+      <td>
+        Array
+      </td>
+
+      <td>
+        Page size options
+      </td>
+
+      <td>
+        \[\{name: '48 items', value: '48'}, ...]
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pageSizeContainerType
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Page size selection method
+      </td>
+
+      <td>
+        click / select
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pageSizeContainerTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Template for page size UI
+      </td>
+
+      <td>
+        `<select>...</select>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        viewTypeContainerTemp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Template for view type UI
+      </td>
+
+      <td>
+        `<a class='selected'>grid</a>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        viewTypeContainerSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for view type section
+      </td>
+
+      <td>
+        \#results-pageview
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        viewTypes
+      </td>
+
+      <td>
+        Array
+      </td>
+
+      <td>
+        Available views
+      </td>
+
+      <td>
+        If the customer only have grid view then \[‘grid’]
+
+        <br />
+
+        \*If the customer only have list view then \[‘list’]
+
+        <br />
+
+        \*If customer has both views then \[“list”,”grid”]
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        variants
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Enable variant display
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        variantsCount
+      </td>
+
+      <td>
+        Number
+      </td>
+
+      <td>
+        Number of variants per product
+      </td>
+
+      <td>
+        3
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        isSwatches
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        Enable swatch display
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        swatchesSelector
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Selector for swatch UI
+      </td>
+
+      <td>
+        .swatch-box
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        mappedFields
+      </td>
+
+      <td>
+        Object
+      </td>
+
+      <td>
+        Mapping of product attributes
+      </td>
+
+      <td>
+        \{ imageUrl: 'imageUrl', ... }
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 mappedFields: object: Pass the field names for the important product attributes that you want to render
 
