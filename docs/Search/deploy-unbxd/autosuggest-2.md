@@ -456,8 +456,8 @@ Description:
 
 **Input type**
 
-\{doctype: "IN\_FIELD" &#x20;
-brand\_in: \["Wilora Select", "Wilora Classic", "Wilora Premier"]
+\{doctype: "IN\_FIELD"\
+brand\_in: \["Wilora Select", "Wilora Classic", "Wilora Premier"]\
 0: "Wilora Select"
 1: "Wilora Classic"
 2: "Wilora Premier"
@@ -472,7 +472,7 @@ autosuggest: "Wall Cabinets"
 autosuggest\_unstemmed: "Wall Cabinets"
 source\_unbxd\_fields: \["catlevel3Name"]
 frequency\_unbxd\_double: 2018
-uniqueId: "IN\_FIELD \`\~|@\` Wall Cabinets"
+uniqueId: "IN\_FIELD `~|@` Wall Cabinets"
 finish\_in: \["Vertical Wood-Grain", "Scratch Resistant High Gloss White "PET" Laminate", "Textured Melamine",…]
 unbxdFeedId: "stage-vevano809641569412780\_-1433400925"
 clicks\_unbxd\_double: 0
@@ -481,7 +481,7 @@ carts\_unbxd\_double: 0
 suggestion\_length\_unbxd\_double: 13
 hits\_unbxd\_double: 7
 orders\_unbxd\_double: 0
-\_version\_: 1664184331017388000
+*version*: 1664184331017388000
 parent\_unbxd: true
 }
 
@@ -1286,7 +1286,7 @@ Including the script object as shown below, would render the autosuggest widget 
    </script>
 ```
 
-<Table>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -1345,3 +1345,7 @@ Including the script object as shown below, would render the autosuggest widget 
     </tr>
   </tbody>
 </Table>
+
+## List of available Configurations
+
+The following table summarises the various properties which can be  passed as search options while invoking the “setSearch” function in “Unbxd” object.
