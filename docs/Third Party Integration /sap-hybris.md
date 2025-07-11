@@ -78,3 +78,105 @@ ant addoninstall -Daddonnames="unbxdanalytics" -<br>DaddonStorefront.yaccelerato
 Once you rebuild the solution. You can see that unbxdanalytics related files are copied in your storefront plugin. When we run the above command and rebuild **hybris unbxdAnalytics**,  addon files are copied into the yacceleratorstorefront.
 
 <Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/09f473b41cb9e51512aed5490e0a8e35a39eae2b93f1989b43e120e3401e3720-image.png" />
+
+After the whole process, restart the server.
+
+For Linux users:
+
+```
+$ cd <HYBRIS-INSTALL-ROOT-DIR>/bin/platform<br>$ ./hybrisserver.sh stop<br>$ ./hybrisserver.sh start
+```
+
+For Windows users:
+
+```
+C:> cd <HYBRIS-INSTALL-ROOT-DIR>\bin\platform<br>C:> hybrisserver.bat stop<br>C:> hybrisserver.bat start
+```
+
+## Configuration
+
+Configuration of Catalog Index
+
+To configure SAP Commerce with Unbxd plugin, you have to sync the data properly. SAP uses ‘Apache Solr’ to index the products.
+
+Therefore, to change syncing of data from Solr to Unbxd, ‘isUnbxd’ attribute in the Indexed Type needs to be set to ‘true’.
+
+To do this, follow these steps:
+
+Login to BackOffice:\
+Access backoffice: https\:///backoffice
+Username: \*\*\*\*\*\*
+Password: \*\*\*\*\*\*\*
+Search for Indexed Types or navigate to ‘Search and Navigation’ > Indexed Types. Choose the catalog that you wish to edit.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/564bbb681895c8a5056fd7d5d7211ce6f38b2ba46aa75cffd957b98b92a435af-image.png" />
+
+Under the ‘Administration’ tab, change the value of ‘isUnbxd’ attribute in the UNBOUND section to ‘true’.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/0f6e060e67457a4a36943b63a3537cc5343a075264329f9b3ddf38c905c39740-image.png" />
+
+Once done, click ‘Save’. The selected catalog will get synced with Unbxd.
+
+## Configuration of Attribute Index
+
+This allows you to index the attributes that you want to include in the product feed. To enable:
+
+In the ‘Indexed Properties’ tab, choose the attribute that you wish to edit by clicking ‘Edit Details’.
+
+Go to the ‘Administration’ tab, select the value of ‘isUnbxd’ attribute to true or false depending on your choice to include or ignore this property/field in the catalog respectively.
+
+If you wish to include the field in your response, then change the value of ‘Include in Response’ to ‘True’ or ‘False’.
+
+## Configure Feed
+
+Once installed, you need to authenticate your Unbxd extension using your Unbxd account keys (also known as Authentication Keys).
+
+You can sync the product catalog with Unbxd in multiple ways:
+
+* Full Feed Upload
+* Delta Feed Upload
+* Single Feed Upload
+
+### Full Feed Upload
+
+It allows you to upload the full version of your schema and catalog files. You can configure it by navigating to back office.
+
+**Back-Office Configuration**
+
+You can also select products to synchronise by navigating to the back office. To configure:
+
+Go to Backoffice in the right panel of options.\
+Search for ‘Facet Search Configuration’.
+Choose the relevant configuration for your index & Click on the ‘Index’ button.
+
+Once you click on ‘Index’, you will be presented with a dialog box with 3 different options to run on the index. Choose the option and Click ‘Start’.
+
+> 📘 NOTE
+>
+> Full option to run full catalog feed & Update option to run delta feed.
+
+### Incremental Feed Upload
+
+It allows you to update on the product feed of your schema and catalog files.
+
+If you click ‘Update’, you get to make incremental updates on the product feed.
+
+Back-office navigation
+
+You can select products to synchronise by navigating to the back office. To configure:
+
+Go to System> Search and Navigation> Facet Search Configuration in the right panel of options.\
+Select a catalog.
+Choose the relevant configuration for your index & Click on the ‘Index’ button.
+Then ‘Update’ the products.
+
+### Single Feed Upload
+
+You can either perform ‘Hot Indexing’ on a selected list of products or on individual products.
+
+Hot Indexing\
+To run indexing on a selected list of products, choose the ‘Hot Index’ option.
+
+1. Navigate to ‘Facet Search Configurations’ and select a catalog.
+2. Click ‘Hot Update Index’ and choose the Item type ‘Product’ and click ‘Next’.
+3. In the next screen, choose the products that you wish to sync and press ‘Start’.
