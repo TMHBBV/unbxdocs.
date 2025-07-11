@@ -162,13 +162,13 @@ The default value of productType is ‘SEARCH’. If UnbxdSearchWrapper has to b
 
 UnbxdSearchWrapper Props
 
-| **Prop**        | **Description**                                                                                 | **Data Type** | **Required** | **Default** |
-| --------------- | ----------------------------------------------------------------------------------------------- | ------------- | ------------ | ----------- |
-| `siteKey`       | Site key of the site.                                                                           | string        | true         | –           |
-| `apiKey`        | API key of the site.                                                                            | string        | true         | –           |
-| `getCategoryId` | Custom function to return the Category ID. \<br>(Mandatory if \`productType\` is \`CATEGORY\`.) | function      | false        | –           |
-| `productType`   | Product type: `SEARCH` or `CATEGORY`.                                                           | string        | false        | `'SEARCH'`  |
-| `priceUnit`     | Currency type of the catalog.                                                                   | string        | false        | `'$'`       |
+| **Prop**        | **Description**                                                                             | **Data Type** | **Required** | **Default** |
+| --------------- | ------------------------------------------------------------------------------------------- | ------------- | ------------ | ----------- |
+| `siteKey`       | Site key of the site.                                                                       | string        | true         | –           |
+| `apiKey`        | API key of the site.                                                                        | string        | true         | –           |
+| `getCategoryId` | Custom function to return the Category ID. \<br>(Mandatory if `productType` is `CATEGORY`.) | function      | false        | –           |
+| `productType`   | Product type: `SEARCH` or `CATEGORY`.                                                       | string        | false        | `'SEARCH'`  |
+| `priceUnit`     | Currency type of the catalog.                                                               | string        | false        | `'$'`       |
 
 At the end of this step, you should have configured UnbxdSearchWrapper like mentioned below.
 
@@ -202,3 +202,30 @@ In the following sections, we will discuss how to configure and render each of t
 The component contains input and a submit button by default. SearchBox can be further customized by passing a custom Input component, Submit a component according to your needs.
 
 SearchBox Props
+
+| **Prop**          | **Description**                                                                                           | **Data Type** | **Required** | **Default** |
+| ----------------- | --------------------------------------------------------------------------------------------------------- | ------------- | ------------ | ----------- |
+| `autoFocus`       | Should the search input be focused.                                                                       | bool          | false        | false       |
+| `clearable`       | Should the search input be clearable.                                                                     | bool          | false        | false       |
+| `onSubmit`        | Callback called when search is triggered. Should return `true` to continue the search, `false` to cancel. | function      | false        | –           |
+| `onClear`         | Callback called when clear is triggered. Should return `true` to clear input, `false` otherwise.          | function      | false        | –           |
+| `showLoader`      | Should loader be shown on search.                                                                         | bool          | false        | –           |
+| `inputComponent`  | Custom input component instance.                                                                          | element       | false        | –           |
+| `submitComponent` | Custom submit component instance.                                                                         | element       | false        | –           |
+| `clearComponent`  | Custom clear component instance.                                                                          | element       | false        | –           |
+| `placeholder`     | Search input placeholder text.                                                                            | string        | false        | –           |
+
+At the end of this step, you should have configured the SearchBox component like shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+    ...
+    <SearchBox
+    ...
+    autoFocus={true}
+    clearable={true}
+    ...
+ />
+    ...
+ </UnbxdSearchWrapper/>
+```
