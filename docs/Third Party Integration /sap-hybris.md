@@ -208,3 +208,135 @@ Cronjobs are automatically created at the ‘Hybris’ end. To create a cronjob,
 Use the wizard pop up window to configure the settings for your cronjob.
 
 <Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/962f57067eba93ce8f292fb3c64c42d0c1a54ac795cdaf574d7d2dd7cddbdd84-image.png" />
+
+<br />
+
+Configure the settings
+
+* **Code**: a unique code for your cronjob, that makes it easy to distinguish. Example: full-electronicsIndex-cronJob
+* **Indexed Type:** a type to be indexed. Example: Product.
+* **Indexer Operation**: the manner of indexing. To perform the full indexing you need to select full.
+* **Query**: a query used for indexing. Example: select PK from Product .
+* **Solr configuration:** facet search configuration the cronjob applies to.
+* **Job definition**: a definition containing settings for a particular job. Select solrIndexer Job\
+  To change the setting of existing cronjob:
+
+Click the **cronjob** entry to see its details.\
+As you can see, the cronjob settings are grouped in tabs.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/865f5921edf081c9256f4a3bec64a5cb49978f16d6492652dc6398df67c24359-image.png" />
+
+<br />
+
+Each tab features the Essential section, where you can find the general settings for your cronjob. In this section you can find information specific to a particular tab:
+
+* **Log**: Information about the logs and job steps. More details about the logs:
+* **Task:** Indexer specific information and notification settings.
+* **Run as**: Options that allow you to run the task as a defined user or with defined defined session attributes, specify a dedicated server node to run the task (to optimize the load balancing) and choose the priority of the task.
+* **Time Schedule**: Settings allowing you to specify one or multiple time slots to run this task in, or you can run the task immediately.
+* **System Recovery**: Settings allowing you to specify whether the system should recover after the changes.
+* **Administration:** Advanced configuration options.\
+  Running a CronJob
+
+You have two options to run a cronjob: you can either start the cronjob right away or schedule it using a particular time slot.
+
+## To schedule a cronjob:
+
+1. Go to the Time Schedule tab.\
+   You can see the Schedule section where you can specify one or multiple slots to run this task.
+2. Click the Create new Trigger button. A wizard window pops up.\
+   Fill in the fields to provide mandatory information about the schedule. The name of the cronjob is already filled in for you.
+3. Click **Done** to finish scheduling.You have successfully configured basic settings for a cronjob trigger. To add more specific settings, select the trigger from the list and double-click it to open the editor.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/086d4d5113c18584e6352d986e04ec6082c5d971a677967eb322bbe893b583a6-image.png" />
+
+## Features
+
+Once you have added the Unbxd plugin, you can see these three options:
+
+### Product Synchronization
+
+The Product Synchronization section lets you upload and synchronize your products in the catalog. When you click this option, you can see the number of products from the selected catalog that have been added.
+
+Navigate to Unbxd > Product Synchronization to see the list of products. Under ‘Catalog Version’, you can see the catalog name that has been selected with the version status as either ‘Staged’ or ‘Online’.
+
+Staged version– In this version, you can make changes to the product attributes like description, images, or price. This is just a staging version of changes to avoid making mistakes before taking it live.
+
+Online version– This is the version that is visible to the end-users. Once the changes are made for a product,  you can sync it to make it visible online.
+
+<br />
+
+Under Unbxd Uploads tab, you get to know all the details related to the catalog upload. The details range from the time of upload, file name, private key for authentication, and status. The various fields are:
+
+* UnbxdUploadTask.timeStamp describes the date and time of the catalog upload.
+* UnbxdUploadTask.fileName refers to the name of the uploaded file.
+* UnbxdUploadTask.uploadId is a unique ID provided to every catalog upload.
+
+PK is the private key assigned to all the catalogs for access.
+
+In case, you want to make a Delta Feed Upload that includes a few products from the catalog, then change the status of UnbxdUploadTask.isDelta= TRUE.
+
+You can check the number of catalogs that have been uploaded by the Unbxd plugin. Once the catalog is uploaded, the UnbxdUploadTask.status changes to UPLOADED.
+
+## Uninstall
+
+If you want to remove the hybris plugin from your system, you can uninstall Hybris by the following steps:
+
+Open \<HYBRIS-INSTALL-ROOT-DIR>/bin/config/localextensions.xml, remove the code lines:
+
+```
+<extensions>
+  . . . . .
+  <extension name='unbxd' />
+  <extension name='unbxdBackoffice' />
+  <extension name='unbxdanalytics' />
+</extensions>
+```
+
+Open \<HYBRIS-INSTALL-ROOT-DIR>/bin/config/local.properties, remove the keys:
+
+```
+unbxd.sitekey=<YOUR UNBXD SITE KEY>  
+unbxd.secretkey==<YOUR UNBXD SECRET KEY>
+unbxd.apikey==<YOUR UNBXD API KEY>
+```
+
+For uninstalling Analytics, remove the analytics keys.
+
+```
+unbxd.analytics.sitekey.default=DevHybris801271569422411
+```
+
+Analytics plugin needs to be uninstalled as an addon from of hybris storefront plugin. You need to run below command:
+
+Here “yacceleratorstorefront” is storefront plugin it needs to be replaced with the storefront extension name of your installation.
+
+```
+ant addonuninstall -Daddonnames="unbxdanalytics"\
+-DaddonStorefront.yacceleratorstorefront="yacceleratorstorefront"
+```
+
+Rebuild Hybris Solution by running below command
+
+```
+$ cd <HYBRIS-INSTALL-ROOT-DIR>/bin/platform  
+$ ant clean all && ant updatesystem
+```
+
+Restart the server
+
+* For Linux users:
+
+```
+$ cd \<HYBRIS-INSTALL-ROOT-DIR>/bin/platform &#x20;
+$ ./hybrisserver.sh stop
+$ ./hybrisserver.sh start
+```
+
+* For Windows users:
+
+```
+C:> cd <HYBRIS-INSTALL-ROOT-DIR>\bin\platform  
+C:> hybrisserver.bat stop
+C:> hybrisserver.bat start
+```
