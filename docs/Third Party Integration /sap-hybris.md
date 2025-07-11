@@ -16,7 +16,7 @@ Netcore Unbxd Hybris Plugin allows you to use the Unbxd plugin within your SAP H
 
 > 📘 Note
 >
-> The plugin is currently developed on SAP Commerce version 6.6. However, the plugin will support all Commerce versions from 6.0 to 1905 (latest release)
+> The plugin is currently developed on SAP Commerce version 6.6. However, the plugin will support all Commerce versions from 6.0 to 2211 (latest release)
 
 # Installation
 
