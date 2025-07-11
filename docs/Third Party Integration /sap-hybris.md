@@ -180,3 +180,31 @@ To run indexing on a selected list of products, choose the ‘Hot Index’ optio
 1. Navigate to ‘Facet Search Configurations’ and select a catalog.
 2. Click ‘Hot Update Index’ and choose the Item type ‘Product’ and click ‘Next’.
 3. In the next screen, choose the products that you wish to sync and press ‘Start’.
+
+Once done, the product/s is/are added to the catalog with the updated fields.
+
+### Product Synchronization
+
+Another way to directly sync the products is:
+
+Login to Backoffice and navigate to the Unbxd plugin.\
+Click ‘Product Synchronization’. This will show the list of all the products in the selected catalog.
+
+Select a product and click the ‘Unbxd’ icon on the top navbar.\
+A pop-up window opens that asks you to push the selected product to the online stage. Select the product and click ‘Sync’.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/02fe47672d9d672f6486139048950dd73c68a36ddcc6c87dbac667ef3a650630-image.png" />
+
+<br />
+
+Once done, your selected product/s will be added to the catalog with updated values.
+
+## Cron Job
+
+Cronjobs are automatically created at the ‘Hybris’ end. To create a cronjob,
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/f8cc5119ca79c6dae484b43ea3dd99e8ff6f8fa514757ed986cfea5840821c4a-image.png" />
+
+Use the wizard pop up window to configure the settings for your cronjob.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/962f57067eba93ce8f292fb3c64c42d0c1a54ac795cdaf574d7d2dd7cddbdd84-image.png" />
