@@ -1164,6 +1164,8 @@ function(data, original) {
 
 Including the script object as shown below, would render the autosuggest widget as exhibited on this website
 
+<br />
+
 | Config Name                    | Data Type       | Description                                                              | Sample Values                                           |
 | ------------------------------ | --------------- | ------------------------------------------------------------------------ | ------------------------------------------------------- |
 | siteName                       | String          | Site name assigned from Unbxd (unique identifier for each customer/site) | demo-com809841570123270                                 |
@@ -1229,3 +1231,47 @@ Including the script object as shown below, would render the autosuggest widget 
 | isSwatches                     | Boolean         | Enable swatch display                                                    | true                                                    |
 | swatchesSelector               | String          | Selector for swatch UI                                                   | .swatch-box                                             |
 | mappedFields                   | Object          | Mapping of product attributes                                            | \{ imageUrl: 'imageUrl', ... }                          |
+
+mappedFields: object: Pass the field names for the important product attributes that you want to render
+
+```
+{
+
+“imageUrl”: “imageUrl”,
+
+“productUrl”: “productUrl”,
+
+“title”: “title”,
+
+“description”: “description”,
+
+“price”: “price”,
+
+“categoryPath”: “categoryPath”,
+
+“variantFields”: {
+
+“imageUrl”: “v_imageUrl”,
+
+“productUrl”: “v_productUrl”,
+
+“title”: “v_title”,
+
+“price”: “v_price”,
+
+“groupBy”: “variant_color”,
+
+“swatchFields”: {
+
+“swatch_background_image”: “variant_overhead_swatch”,
+
+“swatch_background_color”: “variant_color”,
+
+“swatch_click_image”: “variant_image_array”
+
+}
+
+}
+
+}
+```
