@@ -34,3 +34,8 @@ The first step is to include the Unbxd Autosuggest JS along with its required de
      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.5.3/handlebars.min.js"> </script>
     <script type="text/javascript" src="//libraries.unbxdapi.com/unbxdAutosuggest_v1.js"> </script>
 ```
+
+To instantiate the autosuggest and bind it to the search box,
+
+1. Invoke the “unbxdAutoSuggestFunction” function available as a window variable by passing the instance of jQuery & handlebar as arguments.
+2. Select the input box element using jquery and invoke “unbxdautocomplete” function (a Unbxd function added to jQuery prototype) passing the suggestion options object.
