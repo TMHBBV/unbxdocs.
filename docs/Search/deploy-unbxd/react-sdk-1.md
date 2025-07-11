@@ -26,5 +26,179 @@ npx @unbxd-ui/create-unbxd-search-app  --siteKey  --apiKey
 ```
 
 This sets up a sample Unbxd Search project so that you can explore Unbxd Search.\
-Note: Refer to this section for steps on how to get the Site Key & API Key for your account
+Note: Refer to this [section](https://unbxdocs.readme.io/docs/configure-site#/) for steps on how to get the Site Key & API Key for your account
 Note: Also, if you do not already have npx installed, type this command to install it:
+
+```
+npm install -g npx
+```
+
+Set the dimension mapping for the attributes of your catalog.\
+Navigate to the **Manage** >  **Configure Site** page in your console dashboard to set up dimension mapping of the catalog attributes to Unbxd fields.
+
+Then, update the same in unbxd-search.config.json present on the root level of the newly created React App. For example, if you have mapped “imageUrl” to “Image\_Link” as shown above, then update the same in the JSON file like below:
+
+```
+//unbxd-search.config.json
+ {
+  ...
+"attributesMap": {
+       "productName": "title",
+       "uniqueId": "uniqueId",
+       "imageUrl": "Image_Link",
+       "price": "price",
+       "sellingPrice": "selling_price",
+       "productUrl": "productUrl"
+     }
+   ...
+
+ }
+```
+
+Finally, run the React app to experience the Unbxd search for your site. On the root directory of the project run any of the below commands based on your preferred package manager:
+
+```
+yarn start
+```
+
+### Quick integration to your Site
+
+To integrate the React Search SDK into your existing app, follow the below steps:
+
+1. Add the [react-search-sdk](https://www.npmjs.com/package/@unbxd-ui/react-search-sdk) as a dependency in your project:
+
+```
+yarn add @unbxd-ui/react-search-sdk
+```
+
+2. Import UnbxdSearchWrapper into your app as mentioned below:
+
+```
+import UnbxdSearchWrapper from “@unbxd-ui/react-search-sdk”;
+```
+
+3. Include the UnbxdSearchWrapper component by initializing it with your Site key and API key as props as mentioned below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}>
+  ...
+  <OtherComponents/>
+  ...
+ </UnbxdSearchWrapper/>
+```
+
+4. Import & include the rest of the components (like products, sort, pagination, etc.) based on your preferences.\
+   You can import the required components as mentioned below:
+
+```
+import {Products, Sort, Pagination } from ‘@unbxd-ui/react-search-sdk’;
+```
+
+Imported Search React SDK components can be passed as children to UnbxdSearchWrapper component as mentioned below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}>
+   ...
+   <Products {...props}/>
+   <Sort {...props}/>
+   <Pagination {...props}/>
+  ...
+ </UnbxdSearchWrapper/>
+```
+
+> 📘 NOTE
+>
+> The imported components have to be wrapped by UnbxdSearchWrapper, which ensures that the Unbxd Search Context is being passed down to all the components.
+
+### Installation
+
+Here, we will learn how to integrate the Unbxd Search React SDK to optimize and power the search results display page on your site.The integrated result that we are aiming at with this quickstart can be seen at the  [codesandbox](https://sq99w.csb.app/)  link.
+
+Let us walk through the essential configurations and available components that need to be passed for powering the search results page.
+
+Note: You can find a detailed list of all the components here.
+
+Please refer to the “Quick Integration with your site” section above for steps on how to install and import the desired components.
+
+### Authentication
+
+Once installed, you need to authenticate the Unbxd library using your Unbxd account keys (also known as Authentication Keys).
+
+Whenever a customer signs up with Unbxd, they are issued one or more site keys and API keys depending on their use case. Some common scenarios:
+
+For a customer with one website and two environments (production and staging), 2 site keys (one for each environment) and  1 API key is issued\
+For a customer with more than one website (multi website vendor), the site key would be issued for every website + environment combination. So there would be an “n” number (equal to the number of website’s) of API keys generated.
+For multiple site keys, check if you have:
+
+* more than one environment
+* more than one website
+* a different product set for staging and live, or
+* wish to track search performance and clicks separately for every microsite.
+
+To get your Site Key and API Key in the console, please refer to the steps mentioned in the Help Documentation.
+
+Pass the Site Key and API Key that you get from the console in the “siteName” and “APIKey” configs.
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}>
+   ...
+   <OtherComponents/>
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Types of pages to render
+
+This section allows you to indicate the product types available in your catalog while excluding specific categories of products while synchronizing.
+
+Unbxd has two product offerings:
+
+* Search:  used to power search results pages
+* Browse: powers category listing pages
+
+Pass a prop productType to UnbxdSearchWrapper component to indicate whether you want to render the search results page (productType= ‘SEARCH’) or the category listing page (productType=’CATEGORY’).
+
+The default value of productType is ‘SEARCH’. If UnbxdSearchWrapper has to be configured for a CATEGORY page, pass productType as ‘CATEGORY’ and also pass getCategoryId.
+
+UnbxdSearchWrapper Props
+
+| **Prop**        | **Description**                                                                                 | **Data Type** | **Required** | **Default** |
+| --------------- | ----------------------------------------------------------------------------------------------- | ------------- | ------------ | ----------- |
+| `siteKey`       | Site key of the site.                                                                           | string        | true         | –           |
+| `apiKey`        | API key of the site.                                                                            | string        | true         | –           |
+| `getCategoryId` | Custom function to return the Category ID. \<br>(Mandatory if \`productType\` is \`CATEGORY\`.) | function      | false        | –           |
+| `productType`   | Product type: `SEARCH` or `CATEGORY`.                                                           | string        | false        | `'SEARCH'`  |
+| `priceUnit`     | Currency type of the catalog.                                                                   | string        | false        | `'$'`       |
+
+At the end of this step, you should have configured UnbxdSearchWrapper like mentioned below.
+
+```
+ } apiKey={} 
+    productType={“CATEGORY”}
+    getCategoryId={()=>{}}>
+    ...
+    
+    ...
+ </UnbxdSearchWrapper/>
+```
+
+### Configuring the page
+
+Before we delve into the next set of components, let’s first understand the most common sections present in a search results page or category landing page.A search results page or a category landing page is made up of the following set of sections:
+
+* Products list section
+* View type of module with support for grid or list view
+* Sort by module
+* Pagination module with no. of products per page control
+* Pagination could be infinite scroll or page number based
+* Facets section
+* Spell check / search results message section
+* Merchandising banners section
+
+In the following sections, we will discuss how to configure and render each of these sections with the React Search SDK.
+
+### Search box: A module to enter the search query.
+
+The component contains input and a submit button by default. SearchBox can be further customized by passing a custom Input component, Submit a component according to your needs.
+
+SearchBox Props
