@@ -103,7 +103,7 @@ The following parameters are available:
 | **Content-Type**      | This header signifies the content type of the request being sent. Supported types include `application/json`, `image/*`, `base64image/*` (JPG/JPEG, PNG, TIFF). |
 
 * unbxd-device-type:`{ "type":"tablet" , "os": "iOS" , "source": "app" }  
-  possible values of “type” : “desktop”, “tablet”, “mobile”
+  possible values of “type” : “desktop”, “tablet”, “mobile”  
   possible values of “os” : “android”, “ios”, “windows”
   possible values of “source” : “browser”, “app”`
 * Supported Image Types:\
@@ -115,23 +115,23 @@ The following parameters are available:
 
 The values of the request parameters are defined below:
 
-| **Parameter**      | **Description**                                                                    | **Data Type** | **Possible Values / Format**                                                       |
-| ------------------ | ---------------------------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------- |
-| **version**        | Specifies the API version. Always pass `v2` to access latest features.             | String        | Supported: `v2`                                                                    |
-| **user-type**      | Indicates visit frequency of user.                                                 | String        | Format: \`"first-time"\`\<br>Values: \`first-time\`, \`frequent\`                  |
-| **uid**            | Unique ID to identify visitors. Obtained from `unbxd.userId` cookie.               | String        | Format: `&uid=uid-1666356549013-78531`                                             |
-| **format**         | Specifies response format.                                                         | String        | Format: \`\&format=xml\`\<br>Values: \`JSON\`, \`XML\`\<br>Default: \`JSON\`       |
-| **start**          | Offsets the results by a specific number.                                          | Integer       | Format: \`\&start=2\`\<br>Default: \`0\`                                           |
-| **page**           | Displays the right set of products per page (`rows` determines how many).          | Integer       | Format: `&page=2`                                                                  |
-| **rows**           | Paginates query results OR sets number of buckets when used with bucketing.        | Integer       | Format: \`\&rows=2\`\<br>Default: \`10\`                                           |
-| **variants**       | Displays variants of the same product.                                             | Boolean       | Format: \`\&variants=True\`\<br>Values: \`True\`, \`False\`\<br>Default: \`False\` |
-| **variants.count** | Number of defined variants to show for a product.                                  | Integer       | Format: `&variants.count=5`                                                        |
-| **fields**         | Defines which product attributes to return (e.g., color, size).                    | String        | Format: \`\&fields=color,size\`\<br>Default: returns all fields                    |
-| **bucket.field**   | Groups products by a common field value into buckets.                              | String        | Format: `&bucket.field=brand`                                                      |
-| **bucket.limit**   | Number of products to show in each bucket.                                         | Integer       | Format: \`\&bucket.limit=10\`\<br>Default: \`10\`                                  |
-| **bucket.offset**  | Paginates to the next set of products within a bucket.                             | Integer       | Format: `&bucket.offset=10`                                                        |
-| **analytics**      | Enables or disables tracking for analytics.                                        | String        | Default: Tracking is enabled                                                       |
-| **stats**          | Returns product info with highest and lowest field values (numerical fields only). | –             | Format: `fieldName` (e.g., `price`, `rating`)                                      |
+| **Parameter**      | **Description**                                                                    | **Data Type** | **Possible Values / Format**                                              |
+| ------------------ | ---------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------- |
+| **version**        | Specifies the API version. Always pass `v2` to access latest features.             | String        | Supported: `v2`                                                           |
+| **user-type**      | Indicates visit frequency of user.                                                 | String        | Format: `"first-time"`\<br>Values: `first-time`, `frequent`               |
+| **uid**            | Unique ID to identify visitors. Obtained from `unbxd.userId` cookie.               | String        | Format: `&uid=uid-1666356549013-78531`                                    |
+| **format**         | Specifies response format.                                                         | String        | Format: `&format=xml`\<br>Values: `JSON`, `XML`\<br>Default: `JSON`       |
+| **start**          | Offsets the results by a specific number.                                          | Integer       | Format: `&start=2`\<br>Default: `0`                                       |
+| **page**           | Displays the right set of products per page (`rows` determines how many).          | Integer       | Format: `&page=2`                                                         |
+| **rows**           | Paginates query results OR sets number of buckets when used with bucketing.        | Integer       | Format: `&rows=2`\<br>Default: `10`                                       |
+| **variants**       | Displays variants of the same product.                                             | Boolean       | Format: `&variants=True`\<br>Values: `True`, `False`\<br>Default: `False` |
+| **variants.count** | Number of defined variants to show for a product.                                  | Integer       | Format: `&variants.count=5`                                               |
+| **fields**         | Defines which product attributes to return (e.g., color, size).                    | String        | Format: `&fields=color,size`\<br>Default: returns all fields              |
+| **bucket.field**   | Groups products by a common field value into buckets.                              | String        | Format: `&bucket.field=brand`                                             |
+| **bucket.limit**   | Number of products to show in each bucket.                                         | Integer       | Format: `&bucket.limit=10`\<br>Default: `10`                              |
+| **bucket.offset**  | Paginates to the next set of products within a bucket.                             | Integer       | Format: `&bucket.offset=10`                                               |
+| **analytics**      | Enables or disables tracking for analytics.                                        | String        | Default: Tracking is enabled                                              |
+| **stats**          | Returns product info with highest and lowest field values (numerical fields only). | –             | Format: `fieldName` (e.g., `price`, `rating`)                             |
 
 ### API Response
 
@@ -184,3 +184,19 @@ The above JSON gets added in searchMetaData block, besides queryParams.
 ### Response Components
 
 Unbxd returns the list of products that match the search criteria. The response would be in application/JSON or application/XML content type format.
+
+| **Component**         | **Description**                                                                                                                                           |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID**                | `"id": "ad85491c-9d2b-4cab-900a-df96aa11f0d9"` – A unique UUID assigned to each uploaded image.                                                           |
+| **Boxes**             | An array of bounding boxes for the image. Each box contains a URL (`boxes: [{ box.url }]`) which can be used to retrieve results specific to that region. |
+| **Selected** (Box)    | Stores the **ID of the selected bounding box** that the user has clicked or interacted with.                                                              |
+| **Status**            | HTTP response status code (e.g., `200` for OK, `404` for Not Found, `500` for Server Error).                                                              |
+| **QueryTime**         | Time taken by the system to process the shopper’s request.                                                                                                |
+| **QueryParams**       | Parameters that were sent as part of the image search request.                                                                                            |
+| **NumberOfProducts**  | Total number of products returned in the response.                                                                                                        |
+| **Start**             | Offset value in the result set — determines from which point products are returned.                                                                       |
+| **Products**          | Contains the **product details** that match the request; structure mirrors the product feed schema.                                                       |
+| **RelevantDocument**  | Indicates whether to display the **parent** or **variant** product in the UI. Values can be: `"parent"` or `"variant"`.                                   |
+| **Facets**            | Refers to **filters** shown in the UI that help users narrow down the product list based on specific fields (e.g., brand, price, color).                  |
+| **Breadcrumb**        | Represents the **hierarchical position** of a field (e.g., Category → Subcategory → Product).                                                             |
+| **Selected** (Filter) | Represents **currently selected filters** by the user in the UI.                                                                                          |
