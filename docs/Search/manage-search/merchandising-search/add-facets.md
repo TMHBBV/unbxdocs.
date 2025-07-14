@@ -1,5 +1,5 @@
 ---
-title: 'Search: Facets'
+title: Customised Facets and Navigations
 deprecated: false
 hidden: false
 metadata:
