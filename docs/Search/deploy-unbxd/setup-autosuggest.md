@@ -5,10 +5,11 @@ hidden: false
 metadata:
   robots: index
 ---
-Autosuggest documentation\
 Having product suggestions appear as shoppers type in a query isn’t just about efficiency but also about enhancing your shopper’s user experience. The true value and impact on the user’s search experience come from how to autocomplete suggestions that can assist and guide users toward better search queries.
 
 The purpose of this document is to provide the necessary steps to be followed to integrate Unbxd autosuggest using Unbxd Autosuggest JS SDK.
+
+# Libraries
 
 | **Library**    | **Version**                  |
 | -------------- | ---------------------------- |
@@ -17,7 +18,7 @@ The purpose of this document is to provide the necessary steps to be followed to
 
 If your website is not using the above mentioned libraries then the same can be bundled along with unbxd autosuggest js file. For more details check config options in bundle build procedure.
 
-## Quickstart
+# Quickstart
 
 Through this integration guide you will learn how to integrate the Unbxd AutoSuggest JS SDK to power the keyword and product suggestions on your website.The final integrated result that we are aiming at with this step by step guide can be seen at this [codesandbox](https://codesandbox.io/p/sandbox/shy-currying-1ppvv?file=%2Findex.html).
 
@@ -43,7 +44,7 @@ To instantiate the autosuggest and bind it to the search box,
 Let us walk through the important configs that need to be passed along with their values for powering the auto suggest component.\
 NOTE: You can find a detailed list of all acceptable configs at the end of this doc.
 
-## Authentication
+# Authentication
 
 Once installed, you need to authenticate your Unbxd extension using your Unbxd account keys (also known as Authentication Keys).
 
@@ -53,11 +54,11 @@ For a customer with one website and two environments (production and staging), 2
 For a customer with more than one website (multi website vendor), the site key would be issued for every website + environment combination. So there would be an “n” number (equal to the number of website’s) of API keys generated.
 For multiple site keys, check if you have:
 
-more than one environment\
-more than one website
-different product set for staging and live, or
-wish to track search performance and clicks separately for every microsite.
-To get your Site Key and API Key in the console, please refer to the steps mentioned in the Help Documentation
+* more than one environment
+* more than one website
+* different product set for staging and live, or
+* wish to track search performance and clicks separately for every microsite.\
+  To get your Site Key and API Key in the console, please refer to the steps mentioned in the Help Documentation
 
 Pass the Site Key and API Key that you get from the console in the “siteName” and “APIKey” configs.
 
@@ -95,14 +96,17 @@ At the end of this step, you should have the Site Key & API Key which can be pas
      });
 ```
 
-### Configure the autosuggest options object
+# Configure the autosuggest options object
 
-In this, you would be introduced to the various options properties which can be leveraged to customize the behavior and look and feel of the autosuggest widget.
+In this, you would be introduced to the various options properties that can be leveraged to customize the behavior and look and feel of the autosuggest widget.
 
-**Template Design**\
+<Image align="center" className="border" border={true} width="60% " src="https://files.readme.io/be79373d11c0d94f05f36a0b985e20ccf9b3a6950b5ebb48c9cbdc8efc3eef36-template-design.png" />
+
+## Template Design
+
 The autosuggest widget can be styled as either 1 column or 2 column layout, depending on available real estate and business needs, the two columns are referenced as “maincontent” and “sidecontent”.
 
-#### Styling the autosuggest widge
+# Styling the autosuggest widge
 
 **template**:
 
@@ -137,7 +141,7 @@ new Unbxd.setSearch({
      });
 ```
 
-## Configure the functional behaviour
+# Configure the functional behaviour
 
 The following config options can be used to control the functional behaviour of the widget.
 
@@ -146,7 +150,8 @@ The following config options can be used to control the functional behaviour of 
 | **minChars**  | Number        | False        | `1`         | The minimum number of characters a user must type before autosuggestions are triggered. |
 | **delay**     | Number        | False        | `100`       | Delay (in milliseconds) between user keystrokes and the update of autosuggest results.  |
 
-**Configure the contents of template**\
+# Configure the contents of template
+
 Unbxd offers 6 different types of suggestion for the searched term,
 
 * Keyword suggestion (Textual match to complete or spell correct the searched term)
@@ -185,9 +190,7 @@ At the end of this step the config should be as below,
      });
 ```
 
-<br />
-
-## Configure the various suggestions types
+# Configure the various suggestions types
 
 In this section you would configure details of each suggestion type which is configured in the mainTpl or SideTpl
 
@@ -202,8 +205,6 @@ In this section you would configure details of each suggestion type which is con
 <p><span style="font-weight: 400;">                tpl: "{{{safestring highlighted}}}"</span></p>
 <p><span style="font-weight: 400;">   },</span></p>
 ```
-
-<br />
 
 **Description**
 
@@ -253,7 +254,7 @@ count: 2,
 },
 ```
 
-Description:
+**Description**:
 
 * **count:number** -> the number of suggestions to be shown
 * **header:String** -> Header to be displayed
@@ -1085,7 +1086,8 @@ Handlebars.registerHelper("toUpper", function (context, options) {
 | ------------ | ------------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------ |
 | **filtered** | Boolean       | false        | `false`     | When set to `true`, the **popular products section** is refreshed based on the **hover of each suggestion**. |
 
-**Callback functions**\
+# Callback functions
+
 This section documents the different callback functions exposed by the SDK that you can hook into to listen to respond to various events.
 
 | **Property**      | **Data Type** | **Required** | **Default** | **Description**                                                                                                                                            |
@@ -1160,7 +1162,7 @@ function(data, original) {
       }
 ```
 
-## Sample Options Object
+# Sample Options Object
 
 Including the script object as shown below, would render the autosuggest widget as exhibited on this website
 
