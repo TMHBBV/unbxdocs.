@@ -1,5 +1,5 @@
 ---
-title: Build your Site Search with Quick Onboarding
+title: Search Onboarding
 deprecated: false
 hidden: false
 metadata:
