@@ -1,5 +1,5 @@
 ---
-title: 'Integrating Unbxd Autosuggest '
+title: 'Integrate Unbxd Autosuggest '
 deprecated: false
 hidden: false
 metadata:
