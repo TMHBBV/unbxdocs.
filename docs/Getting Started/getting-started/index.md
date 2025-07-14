@@ -1,5 +1,5 @@
 ---
-title: Introducing Netcore Unbxd
+title: 'Introduction: Netcore Unbxd'
 excerpt: >-
   Turn browsers into buyers with UNBXD; your all-in-one product discovery
   platform.
