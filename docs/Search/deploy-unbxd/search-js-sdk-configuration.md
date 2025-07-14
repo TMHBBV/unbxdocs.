@@ -23,7 +23,7 @@ This document outlines the available configuration options for the UNBXD Search 
 
 ***
 
-## 🔍 Search Template Config
+# Search Template Config
 
 The search template options are configured under the `products` object.
 
@@ -39,7 +39,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## ⏳ Loader Config
+# Loader Config
 
 | **OPTIONS** | **DATATYPE** | **DESCRIPTION**              |
 | ----------- | ------------ | ---------------------------- |
@@ -48,7 +48,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 🚫 No Results Config
+# No Results Config
 
 | **OPTIONS** | **DATATYPE** | **DESCRIPTION**                          |
 | ----------- | ------------ | ---------------------------------------- |
@@ -57,7 +57,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 🧩 Facet Config
+# Facet Config
 
 | **OPTIONS**               | **DATATYPE** | **DESCRIPTION**                                   |
 | ------------------------- | ------------ | ------------------------------------------------- |
@@ -86,7 +86,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 📑 Pagination Config
+# Pagination Config
 
 | **OPTIONS**  | **DATATYPE** | **DESCRIPTION**                                                    |
 | ------------ | ------------ | ------------------------------------------------------------------ |
@@ -98,7 +98,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 🪄 Spellcheck Config
+# Spellcheck Config
 
 | **OPTIONS** | **DATATYPE** | **DESCRIPTION**                             |
 | ----------- | ------------ | ------------------------------------------- |
@@ -108,7 +108,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 🔃 Sort Config
+# Sort Config
 
 | **OPTIONS**         | **DATATYPE** | **DESCRIPTION**                                             |
 | ------------------- | ------------ | ----------------------------------------------------------- |
@@ -120,7 +120,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 📐 PageSize Config
+# PageSize Config
 
 | **OPTIONS**             | **DATATYPE** | **DESCRIPTION**                                |
 | ----------------------- | ------------ | ---------------------------------------------- |
@@ -134,7 +134,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 🧭 Breadcrumb Config
+# Breadcrumb Config
 
 | **OPTIONS**     | **DATATYPE** | **DESCRIPTION**                           |
 | --------------- | ------------ | ----------------------------------------- |
@@ -145,7 +145,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 👓 Product Views
+# Product Views
 
 | **OPTIONS**             | **DATATYPE** | **DESCRIPTION**                                    |
 | ----------------------- | ------------ | -------------------------------------------------- |
@@ -157,7 +157,7 @@ The search template options are configured under the `products` object.
 
 ***
 
-## 🧬 Variants Config
+# Variants Config
 
 | **OPTIONS**  | **DATATYPE** | **DESCRIPTION**                                   |
 | ------------ | ------------ | ------------------------------------------------- |
@@ -166,7 +166,3 @@ The search template options are configured under the `products` object.
 | `groupBy`    | String       | Field to group variants (must exist in catalogue) |
 | `attributes` | Array        | List of required variant fields                   |
 | `mapping`    | Object       | Mapping between product and variant fields        |
-
-***
-
-Let me know if you’d like this exported to a file (Markdown, HTML, PDF) or uploaded to a GitHub README directly.
