@@ -931,9 +931,9 @@ updateConfig
 
 For any issue that you face during integration or need updates on the changes, follow these tips, raise issues, or track log changes.
 
-## Tips & Tricks
-
-* If you are including our Search JS Library, Autosuggest Library & Analytics Library in your HTML page, the order of the files are important.
-* Include the Search JS Library, followed by [Autosuggest Library](https://unbxdocs.readme.io/docs/setup-autosuggest#/) and the [Analytics JS Library](https://unbxdocs.readme.io/docs/browser-integration#/). The code to invoke the library should follow.
-* Always ensure you are invoking the library (i.e., calling the UnbxdSearch constructor) after you have included it either via URL or via npm
-* Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the JavaScript files.
+> 💡 Tips & Tricks
+>
+> * If you are including our Search JS Library, Autosuggest Library & Analytics Library in your HTML page, the order of the files is important.
+> * Include the Search JS Library, followed by [Autosuggest Library](https://unbxdocs.readme.io/docs/setup-autosuggest#/) and the [Analytics JS Library](https://unbxdocs.readme.io/docs/browser-integration#/). The code to invoke the library should follow.
+> * Always ensure you are invoking the library (i.e., calling the UnbxdSearch constructor) after you have included it either via URL or via npm
+> * Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the JavaScript files.
