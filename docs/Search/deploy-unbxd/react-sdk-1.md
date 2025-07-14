@@ -229,3 +229,132 @@ At the end of this step, you should have configured the SearchBox component like
     ...
  </UnbxdSearchWrapper/>
 ```
+
+### Products
+
+A module to handle the rendering of the products.
+
+The module requires a dimension map of the attributes to render the products on the UI. The mapping can be defined as mentioned below:
+
+```
+const attributesMap = {
+  productName: “title”,
+  uniqueId: “uniqueId”,
+  imageUrl: “imageUrl”,
+  price: “default_price”,
+  sellingPrice: “cheapest_price”
+ }
+```
+
+The variants of a product will not be grouped together by default. To enable grouping of variants, pass `showVariants` as `true`. Variants require a mapping of their own. The mapping can be defined as mentioned below.
+
+```
+const variantAttributesMap = {
+  productName: “v_title”,
+  uniqueId: “v_uniqueId”,
+  imageUrl: “v_imageUrl”,
+  price: “v_default_price”,
+  sellingPrice: “v_cheapest_price”
+ }
+```
+
+Apart from handling the number of products per row and the total number of products per page, we can also handle the pagination type of products. The module supports infinite scroll, click and scroll and fixed pagination which can be controlled by `paginationType`prop.
+
+**Fixed Pagination**
+
+If `paginationType` is set to `FIXED_PAGINATION`, please include the `Pagination`component which handles the navigation between pages.
+
+**Infinite Scroll**
+
+If `paginationType` is set to `INFINITE_SCROLL`, the scroll height difference to trigger the next page can be passed by `heightDifferenceToTriggerNextPage` prop.
+
+**Click And Scroll**
+
+If `paginationType` is set to `CLICK_N_SCROLL`, the module provides an inbuilt Load More component which can be overridden by passing a custom `loadMoreComponent`.
+
+Product cards can be further customized by passing a custom `productItemComponent` to the module.\
+**Products Props:**
+
+| **Prop**                      | **Description**                                                                                             | **Data Type** | **Required** | **Default**        |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------- | ------------ | ------------------ |
+| `pageSize`                    | Number of products to be loaded on a page.                                                                  | number        | false        | 10                 |
+| `paginationType`              | Products displayed on a page. Possible options are `INFINITE_SCROLL`, `CLICK_N_SCROLL`, `FIXED_PAGINATION`. | string        | false        | `FIXED_PAGINATION` |
+| `heightDiffToTriggerNextPage` | Height difference to trigger for next page in case of pagination type `INFINITE_SCROLL`.                    | number        | false        | 100                |
+| `loadMoreComponent`           | Custom component instance to load more products in case of `CLICK_N_SCROLL`.                                | element       | false        | –                  |
+| `productIdAttribute`          | Unique ID of the product.                                                                                   | string        | false        | `uniqueId`         |
+| `attributesMap`               | Mapping of catalog Product fields to SDK’s Product fields.                                                  | object        | true         | –                  |
+| `showVariants`                | Display if the product has other variants.                                                                  | bool          | false        | false              |
+| `variantsCount`               | Number of variants to fetch.                                                                                | number        | false        | 5                  |
+| `variantAttributes`           | Mapping of catalog Product variant fields to SDK Product variant fields.                                    | object        | false        | –                  |
+| `showLoader`                  | Should a loader be shown.                                                                                   | bool          | false        | false              |
+| `loaderComponent`             | Custom loader component.                                                                                    | element       | false        | default Loader     |
+| `onProductClick`              | Callback function triggered on click of a product.                                                          | function      | false        | –                  |
+| `onZeroResults`               | Callback function triggered on zero results.                                                                | function      | false        | –                  |
+| `showSwatches`                | Display a small color/image swatch for the product.                                                         | bool          | false        | –                  |
+| `groupBy`                     | Club variants together by the attribute.                                                                    | string        | false        | –                  |
+| `swatchAttributes`            | Swatch attributes that change on click of the swatch.                                                       | object        | false        | –                  |
+| `swatchItem`                  | Custom swatch component instance.                                                                           | element       | false        | –                  |
+| `productItem`                 | Custom product item component instance.                                                                     | element       | false        | –                  |
+| `zeroResults`                 | Custom zero results component instance.                                                                     | element       | false        | –                  |
+
+At the end of this step, you should have configured the Products component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+   <Product
+   ...
+   perRow={3}
+   attributesMap={attributesMap}
+   showVariants={true} 
+   variantsCount={2} 
+   variantAttributesMap={variantAttributesMap}
+/>  
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Text Facets
+
+A module to display text based filters. For ex. brand, type, size, etc.
+
+This module displays the text-based facets (like brand, type, size) that can be applied by the user for the better filtering of the products.
+
+**facetItemComponent**
+
+`TextFacets` can be further customized by passing a custom component instance.
+
+```
+const FacetItemComponent = ({ itemData, onClick }) => {
+    const { name, count, isSelected } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+ 
+    return (
+        <div
+            className={`UNX-facet__item ${isSelected ? '-selected' : ''}`}
+            onClick={handleClick}
+        >
+            <div className="-checkbox"></div>
+            <div className="-label">{name}</div>
+            <div className="-count">({count})</div>
+        </div>
+    );
+ };
+```
+
+| **Prop**             | **Description**                      | **Data Type** | **Required** | **Default** |
+| -------------------- | ------------------------------------ | ------------- | ------------ | ----------- |
+| `facetItemComponent` | Custom facet item component instance | element       | false        | –           |
+| `Label`              | Label for the component              | string        | false        | –           |
+
+At the end of this step, you should have configured the TextFacets component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+  ...
+  <TextFacets />
+  ...
+ </UnbxdSearchWrapper/
+```
