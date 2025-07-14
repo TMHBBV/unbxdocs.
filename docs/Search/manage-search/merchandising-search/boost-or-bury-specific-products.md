@@ -17,9 +17,9 @@ Boost is a merchandising strategy that lets you control the visibility of produc
 ## How to set up use the Boost option?
 
 1. Click the Boost button in the Set merchandising strategy section.
-2. Select Attribute: Choose the [Attribute](/user-guides/merchandising/introduction#attributes) you want to base the condition on from the drop-down menu.
-3. Choose Operator: Define the [Operator](/user-guides/merchandising/introduction#values) by clicking the *=\`* button and selecting the desired one (e.g., equals, contains).
-4. Set Value: Select the attribute [Value](/user-guides/merchandising/introduction#operators) that the condition will match or exclude.
+2. Select Attribute: Choose the [Attribute](https://unbxdocs.readme.io/docs/ui-terminologies#/) you want to base the condition on from the drop-down menu.
+3. Choose Operator: Define the [Operator](https://unbxdocs.readme.io/docs/ui-terminologies#/) by clicking the *=\`* button and selecting the desired one (e.g., equals, contains).
+4. Set Value: Select the attribute [Value](https://unbxdocs.readme.io/docs/ui-terminologies#/) that the condition will match or exclude.
 
 ## Adding multiple conditions within a Boost group:
 
