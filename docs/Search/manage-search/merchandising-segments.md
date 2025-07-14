@@ -67,7 +67,7 @@ To create a segment, follow these steps:
 
 The created segment will be visible on the Listing Page.
 
-# Segment Listing Page
+# Key Functionalities in the Segmentation Dashboard
 
 The functionality below is present on the Segment listing page.
 
