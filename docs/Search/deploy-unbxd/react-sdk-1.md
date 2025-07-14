@@ -13,30 +13,37 @@ With a few simple configurations, you can quickly get up and running with our de
 
 Through this documentation, you will generate a search page template and make corresponding changes to the SDK configuration to render the appropriate UI components.
 
-Version : The current version is **v1.0.1**.
+**Version** : The current version is **v1.0.1**.
 
 ## Quick integration with Unbxd template
 
-To setup Unbxd Search React App quickly, integrate our default search template using our generator package create-unbxd-search-app with your site key and API key as configs.
+To setup Unbxd Search React App quickly, integrate our default search template using our generator package `create-unbxd-search-app` with your site key and API key as configs.
 
 Follow these steps to integrate the default Unbxd template:
+
+1. Open the terminal and run the command:
 
 ```
 npx @unbxd-ui/create-unbxd-search-app  --siteKey  --apiKey 
 ```
 
-This sets up a sample Unbxd Search project so that you can explore Unbxd Search.\
-Note: Refer to this [section](https://unbxdocs.readme.io/docs/configure-site#/) for steps on how to get the Site Key & API Key for your account
-Note: Also, if you do not already have npx installed, type this command to install it:
+This sets up a sample Unbxd Search project so that you can explore Unbxd Search.
+
+**Note**: Refer to this [section](https://unbxdocs.readme.io/docs/configure-site#/) for steps on how to get the **Site Key** & **API Key** for your account
+
+**Note**: Also, if you do not already have npx installed, type this command to install it:
 
 ```
 npm install -g npx
 ```
 
-Set the dimension mapping for the attributes of your catalog.\
+2. Set the dimension mapping for the attributes of your catalog.
+
 Navigate to the **Manage** >  **Configure Site** page in your console dashboard to set up dimension mapping of the catalog attributes to Unbxd fields.
 
-Then, update the same in unbxd-search.config.json present on the root level of the newly created React App. For example, if you have mapped “imageUrl” to “Image\_Link” as shown above, then update the same in the JSON file like below:
+<Image align="center" className="border" border={true} width="60% " src="https://files.readme.io/25973b75b0cee045d95fe527de6e35917768fb4d835f7db3bb05a8590cb8cd13-Mapped-Fields.png" />
+
+Then, update the same in **unbxd-search.config.json** present on the root level of the newly created React App. For example, if you have mapped “imageUrl” to “Image\_Link” as shown above, then update the same in the JSON file like below:
 
 ```
 //unbxd-search.config.json
@@ -55,7 +62,7 @@ Then, update the same in unbxd-search.config.json present on the root level of t
  }
 ```
 
-Finally, run the React app to experience the Unbxd search for your site. On the root directory of the project run any of the below commands based on your preferred package manager:
+3. Finally, run the React app to experience the Unbxd search for your site. On the root directory of the project run any of the below commands based on your preferred package manager:
 
 ```
 yarn start
@@ -110,7 +117,7 @@ Imported Search React SDK components can be passed as children to UnbxdSearchWra
 >
 > The imported components have to be wrapped by UnbxdSearchWrapper, which ensures that the Unbxd Search Context is being passed down to all the components.
 
-### Installation
+## Installation
 
 Here, we will learn how to integrate the Unbxd Search React SDK to optimize and power the search results display page on your site.The integrated result that we are aiming at with this quickstart can be seen at the  [codesandbox](https://sq99w.csb.app/)  link.
 
@@ -120,7 +127,7 @@ Note: You can find a detailed list of all the components here.
 
 Please refer to the “Quick Integration with your site” section above for steps on how to install and import the desired components.
 
-### Authentication
+## Authentication
 
 Once installed, you need to authenticate the Unbxd library using your Unbxd account keys (also known as Authentication Keys).
 
@@ -147,7 +154,7 @@ Pass the Site Key and API Key that you get from the console in the “siteName�
  </UnbxdSearchWrapper/>
 ```
 
-### Types of pages to render
+## Types of pages to render
 
 This section allows you to indicate the product types available in your catalog while excluding specific categories of products while synchronizing.
 
@@ -197,7 +204,7 @@ Before we delve into the next set of components, let’s first understand the mo
 
 In the following sections, we will discuss how to configure and render each of these sections with the React Search SDK.
 
-### Search box: A module to enter the search query.
+## Search box: A module to enter the search query.
 
 The component contains input and a submit button by default. SearchBox can be further customized by passing a custom Input component, Submit a component according to your needs.
 
