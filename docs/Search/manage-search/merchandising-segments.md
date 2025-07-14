@@ -67,9 +67,9 @@ To create a segment, follow these steps:
 
 The created segment will be visible on the Listing Page.
 
-## Segment Listing Page
+# Segment Listing Page
 
-The below functionality is present on the Segment listing page.
+The functionality below is present on the Segment listing page.
 
 1. **Search** : Use the search option (search icon) to find and manage existing segments based on attributes such as location, device, and visit type.
 2. **Filter** : Use the filter option (filter icon) to view the table below to know about the options available in Filters.
