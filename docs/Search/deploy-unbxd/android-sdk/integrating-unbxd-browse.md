@@ -1,5 +1,5 @@
 ---
-title: Integrating Unbxd Browse
+title: Unbxd Browse
 deprecated: false
 hidden: false
 metadata:
