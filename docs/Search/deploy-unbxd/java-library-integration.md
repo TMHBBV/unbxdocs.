@@ -941,10 +941,10 @@ For any issue that you face during integration or need updates on the changes, f
 <br />
 
 Raise Issues\
-Facing some issues? look for solutions or create an issue here.
+Facing some issues? Look for solutions or [create an issue](https://github.com/unbxd/search-JS-library/issues) here.
 
 Stay up to date\
-Look at the changelog to see the latest version & history.
+Look at the [changelog](https://github.com/unbxd/search-JS-library/blob/master/CHANGELOG.md) to see the latest version & history.
 
 List of available Configurations\
-You can find the list of the available configurations in this Github link.
+You can find the list of the available configurations in this [Github link](https://github.com/unbxd/search-JS-library/#full-configuration-list).
