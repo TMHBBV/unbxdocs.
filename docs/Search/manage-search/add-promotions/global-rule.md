@@ -7,8 +7,6 @@ metadata:
 ---
 ## Publish the Global rule
 
-title="Locate the Global rule
-
 1. Login to Netcore Unbxd’s [self-serve console](https://console.unbxd.io/) ↗
 2. From the Site Key Picker, click the site you want to apply a merchandising strategy.
 3. After selecting the appropriate site key, navigate to Merchandising.
