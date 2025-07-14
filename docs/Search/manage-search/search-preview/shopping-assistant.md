@@ -4,7 +4,7 @@ excerpt: >-
   This guide outlines two methods for integrating the Shopping Assistant for
   Netcore Unbxd console.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
