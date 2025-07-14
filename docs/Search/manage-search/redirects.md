@@ -1,5 +1,5 @@
 ---
-title: 'Search: Redirects'
+title: AI Suggested Redirects
 excerpt: >-
   uses AI to smartly redirect traffic, improving user experience by fixing
   broken links and boosting site visibility.
