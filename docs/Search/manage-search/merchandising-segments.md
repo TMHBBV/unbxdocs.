@@ -16,6 +16,17 @@ In eCommerce, a merchandiser uses segmentation to display products more relevant
 
 **Netcore Unbxd** provides a platform to create and manage these segments. It allows configuring attributes (like location, device, and user type) and custom attributes.
 
+## What is Segmentation?
+
+Segmentation categorizes customers into groups based on:
+
+* Shopping history
+* Geographic location
+* Device type
+* Other behavioral or contextual attributes
+
+This enables **targeted marketing** and **personalized merchandising** strategies.
+
 ## Types of Segments
 
 Segments are defined based on:
