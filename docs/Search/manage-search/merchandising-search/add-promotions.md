@@ -198,18 +198,14 @@ Once the details are in place, click **Next** to add an extensive optional optio
 
 <Cards columns={4}>
   <Card title="Promotion: Optional" href="https://unbxdocs.readme.io/update/docs/promotions-optional#/" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+    Learn more about Promotions:Optional
   </Card>
 
-  <Card title="Second Card" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  <Card title="Boost or Bury specific products" href="https://unbxdocs.readme.io/docs/boost-or-bury-specific-products#/" icon="fa-user">
+    Learn more on how to control visibility results on Search based on certain conditions: Boost or Bury
   </Card>
 
-  <Card title="Third Card" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
-  </Card>
-
-  <Card title="Fourth Card" icon="fa-question">
-    **Excepteur sint occaecat cupidatat non proident**
+  <Card title="Filter" href="https://unbxdocs.readme.io/docs/filter-1#/" icon="fa-star">
+    Learn more on how to include or exclude specific products from Search result
   </Card>
 </Cards>
