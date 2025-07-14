@@ -76,3 +76,117 @@ In this reference markup, the query value is extracted by targeting the input va
   </button>
 </form>
 ```
+### Browse event
+
+
+  💡 You can skip this event if you’ve not purchased Netcore Unbxd Browse.
+
+
+The **mandatory** `page` and `pageType` **payloads** should be triggered on all category pages. 
+
+Activating the `categoryPage` event relies on the configuration of category fields in your feed and the method used to request the category API. To enable this event, make sure the `UnbxdAnalyticsConf` object is properly set on the window with accurate `page` and `page_type` values.
+
+In this reference markup, the `page` and `page_type` values are extracted by targeting the `UnbxdAnalyticsConf` object from the window.
+
+```javascript Example markup of the category page
+window.UnbxdAnalyticsConf = window.UnbxdAnalyticsConf || {};
+window.UnbxdAnalyticsConf["page"] =
+  "{{categoryPath used for category api call (value of 'p' parameter)}}";
+window.UnbxdAnalyticsConf["page_type"] = "BOOLEAN";
+```
+
+### Click event
+
+The **mandatory** `pid` **payload** is captured from the product element of the Products Listing Page, and the click event is triggered when the shopper clicks on the product.
+
+**Key points:**
+
+- The `pid` can be obtained from an HTML attribute or a URL, such as the `img_url` or `href` on the product card.
+- If the unique ID for the product has not been added to the product element, refer to the Netcore Unbxd Search API response to pass it.
+
+```html Example markup of the product listing page
+<div class="search-results-grid" pageType="search">
+  <div class="search-result" data-item-id="371823">
+    <a href="https://www.example.com/product/productname">
+      <img src="https://www.example.com/images/productname.png" />
+      <span>Organic Honeycrisp Apple</span>
+    </a>
+  </div>
+  <div class="search-result" data-item-id="371811">
+    <a href="https://www.example.com/product/productname">
+      <img src="https://www.example.com/images/productname.png" />
+      <span>Organic Banana</span>
+    </a>
+  </div>
+</div>
+```
+
+### Cart event
+#### 1. Quick view/Product details page
+
+The mandatory `pid` and `variantid` (if your catalog contains product variants) payloads are captured from the DOM or from a URL, such as the browser URL, `img_url`, or `href` in the product details section. The event is triggered when the respective CTA button is clicked.
+
+**Example browser URL:** `https://www.example.com/product/product_107440/107440_green?sale=clearance`
+
+```html Example markup of the product description page
+<div class="pdp-page" id="quickLook">
+  <div
+    class="product-details"
+    data-item-id="107440"
+    data-variant-id="107440_green"
+  >
+    <div class="hero-img">
+      <img
+        src="https://www.example.com/images/product_107440/107440_green.png"
+      />
+    </div>
+    <div id="productInfo">
+      <h3>Fresh Blackberry Holland 125 gm</h3>
+      <input type="number" class="qty-inputbox" />
+      <span class="price">$10.99</span>
+      <button class="add-to-wishlist" type="button"></button>
+      <button class="add-to-cart" type="button"></button>
+    </div>
+  </div>
+</div>
+```
+
+#### 2. Cart dropdown/Cart page
+
+The mandatory `pid` and `variantid` (if your catalog contains product variants) payloads are captured from the DOM or from a URL, such as the browser URL, `img_url`, or `href` in the product details section. The event is triggered when the quantities are modified.
+
+```html Example markup of the cart page
+<div class="cart-list-grid">
+  <div class="cart-item" data-item-id="107440">
+    <a href="https://www.example.com/product/product_107440">
+      <img src="https://www.example.com/images/product_107440.png" />
+    </a>
+    <div id="productInfo">
+      <h3>Fresh Blackberry Holland 125 gm</h3>
+      <span class="qty">2</span>
+      <span class="price">$10.99</span>
+      <div class="qty-wrap">
+        <span class="quantity-increase"> + </span>
+        <input type="text" class="quantity-value" />
+        <span class="quantity-decrease"> - </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-item" data-item-id="245102">
+    <a href="https://www.example.com/product/product_245102">
+      <img src="https://www.example.com/images/product_245102.png" />
+    </a>
+    <div id="productInfo">
+      <h3>Fresh Orange Navel Box</h3>
+      <span class="qty">1</span>
+      <span class="price">$20.99</span>
+      <div class="qty-wrap">
+        <span class="quantity-increase"> + </span>
+        <input type="text" class="quantity-value" />
+        <span class="quantity-decrease"> - </span>
+      </div>
+    </div>
+  </div>
+</div>
+```
