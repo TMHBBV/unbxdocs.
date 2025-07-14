@@ -275,8 +275,9 @@ const  unbxdSearch =new UnbxdSearch({
 
 Unbxd has two product offerings:
 
-SEARCH:  powers search results pages\
-BROWSE or CATEGORY: powers category listing pages
+* **SEARCH**:  Powers search results pages
+* **BROWSE** or **CATEGORY**: Powers category listing pages
+
 Pass a config parameter called “productType” to indicate whether you want to render the search results page (productType= “SEARCH”) or the category listing page (productType= “CATEGORY”)
 
 ```
@@ -361,37 +362,36 @@ products:{
 
 ## Configuring the Page
 
-Before we delve into the next set of configs, let’s first understand the most common sections present in a search results page or category landing page.A search results page or a category landing page is made up of the following set of sections:
+Before we delve into the next set of configs, let’s first understand the most common sections in a search results page or category landing page. A search results page or a category landing page is made up of the following set of sections:
 
-Products list section\
-View type could be grid or list view
-Sort by widget
-Pagination widget with no. of products per page control
-Pagination could be an infinite scroll or page number based
-Number of results loaded on a page
-Facets section
-Spell check / search results message section
-Merchandising banners section
+1. Products list section
 
-| Property       | Data Type | Required | Default | Description                                                                              |
-| -------------- | --------- | -------- | ------- | ---------------------------------------------------------------------------------------- |
-| searchBoxEl    | Element   | true     | NA      | DOM element for the search input box. Used by the library to bind keyboard input events. |
-| searchButtonEl | Element   | false    | NA      | DOM element for the search button. Used by the library to bind mouse click events.       |
+* View type could be grid or list view
+* Sort by widget
+* Pagination widget with no. of products per page control
+* Pagination could be an infinite scroll or page number based
+* Number of results loaded on a page
 
-searchButtonEl:
+2. Facets section
+3. Spell check/search results message section
+4. Merchandising banners section
 
-| Property       | Data Type   | Required | Default | Description                                                                                                    |
-| -------------- | ----------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------- |
-| searchButtonEl | DOM element | optional | null    | HTML DOM element of the search button that triggers search on click.Ex: `document.getElementById("searchBtn")` |
+<Image align="center" border={true} caption="View Different Sections on a Search Result Page" src="https://files.readme.io/579f01701e7f00ea87d7a06eedf78a17b11759f7ce98fab367613c6f2f906cb3-ConfigurePage.png" width="50% " />
 
-```
-<div class="UNX-input-wrapper">
-<input id="unbxdInput" class="UNX-input" type="text"/>
-<button id="searchBtn" class="fa fa-search"></button>
-</div>
-```
+<br />
 
-At the end of this step, you should have configured the “input” & “search button” as shown below:
+In the following sections, we will discuss how to configure and render each of these features with the Unbxd Search JS Library.
+
+## Search input box & search button selector
+
+The following two configurations are used by the library to bind keyboard and mouse events to the search input field and search button on your website.
+
+| Property           | Data Type | Required | Default | Description                                                                              |
+| ------------------ | --------- | -------- | ------- | ---------------------------------------------------------------------------------------- |
+| **searchBoxEl**    | Element   | true     | NA      | DOM element for the search input box. Used by the library to bind keyboard input events. |
+| **searchButtonEl** | Element   | false    | NA      | DOM element for the search button. Used by the library to bind mouse click events.       |
+
+At the end of this step, you should have configured the “**input**” & “**search button**” as shown below:
 
 ```
 window.unbxdSearch = new UnbxdSearch({
@@ -402,7 +402,11 @@ window.unbxdSearch = new UnbxdSearch({
 });
 ```
 
-## Search Preview
+## Search Results/Product Options
+
+This is the place where products from the search results will be rendered.
+
+<Image align="center" border={true} caption="Configure the Search Results Section" src="https://files.readme.io/e476b8dcfa7af4dd1a861c36d1e5087b68f6a2ccbd15c5915e30cfd3d4c848a5-search-result-render.png" width="60% " />
 
 | **Option**          | **Datatype** | **Default Value**                                                                                                                                                          | **Description**                                                                                                                |
 | ------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -415,7 +419,7 @@ window.unbxdSearch = new UnbxdSearch({
 | `productItemClass`  | String       | `"product-item"`                                                                                                                                                           | Additional CSS class added to each product card.                                                                               |
 | `onProductClick`    | Function     | `function(product, event) {}`                                                                                                                                              | Callback triggered on product card click. Receives `product` and `event` as parameters.                                        |
 
-Sample “products” config:
+**Sample “products” config**:
 
 ```
 products:{
@@ -451,11 +455,15 @@ products:{
    },
 ```
 
+Read more about [product configuration](https://github.com/unbxd/search-JS-library#products-config) here.
+
 ## Sort Options
 
 Sorting allows you to rearrange the search results based on certain fields in a particular order.
 
-To render the Sort By feature, you need to configure the sort config object. The following are the various options available under the object:
+<Image align="center" border={true} caption="Rearrange the Search Results with Sort Option" src="https://files.readme.io/1f698af9a0598366b8486232295f8c23e365b14225ca268ff62b30bddb63e8ea-sort-options-main.png" width="60% " />
+
+To render the Sort By feature, you must configure the sort config object. The following are the various options available under the object:
 
 | **Option**          | **Datatype** | **Default Value**                                                                                                                                                                                              | **Description**                                                                                                            |
 | ------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -467,7 +475,7 @@ To render the Sort By feature, you need to configure the sort config object. The
 | `template`          | Function     | `default`                                                                                                                                                                                                      | Customize the sort UI using this function. Receives two parameters: selected sort value and the entire sort config object. |
 | `action`            | String       | `"change"`                                                                                                                                                                                                     | Event type to trigger sort: either `"click"` or `"change"`.                                                                |
 
-Sample “sort” config
+**Sample “sort” config**
 
 ```
 sort: {
@@ -487,17 +495,23 @@ sort: {
 },
 ```
 
-<br />
+Please find the [complete documentation here](https://github.com/unbxd/search-JS-library/#sort-config).
 
 # Pagination
 
 Pagination helps to control the number of products displayed on the page and the type of pagination (infinite scroll, click to scroll, or fixed pagination) to display.
 
-Fixed Pagination
+<Image align="center" border={true} caption="Control the Number of Products On One Page" src="https://files.readme.io/18867796c1f4e8e4c08b4d44a1cece85fccc144fc6ff7eafd39db51088113679-traditional-pagination.png" width="60% " />
 
-This traditional type of pagination displays the set number of products on one page.
+**Fixed Pagination**: This traditional type of pagination displays the set number of products on one page.
 
-You can configure the pagination feature by updating the required configs under the “pagination” config object.The following are the various options available under the “pagination” config object:
+#### **Click & Scroll**
+
+You can configure the pagination feature by updating the required configs under the “**pagination**” config object.
+
+<Image align="center" className="border" border={true} width="60% " src="https://files.readme.io/23c811c4ed1f91bb85d49c7887d6a80f9c73221be23f600b8ec89e0b6c05398e-click-and-scroll.png" />
+
+The following are the various options available under the “pagination” config object:
 
 | **OPTION**                    | **DATATYPE** | **DEFAULT VALUE**          | **DESCRIPTION**                                                                      |
 | ----------------------------- | ------------ | -------------------------- | ------------------------------------------------------------------------------------ |
@@ -513,7 +527,7 @@ You can configure the pagination feature by updating the required configs under 
 | `heightDiffToTriggerNextPage` | Number       | `100`                      | Height difference to trigger next page fetch (for `"INFINITE_SCROLL"` type)          |
 | `action`                      | String       | `"click"`                  | Action on which pagination should trigger: `"click"` or `"change"`                   |
 
-sample
+**sample**
 
 ```
 pagination : {
@@ -533,7 +547,9 @@ pagination : {
 
 ## Facets
 
-Facets are the products filters provided on your webpage  which allows customers to narrow down the search result set.
+Facets are the product filters provided on your webpage, allowing customers to narrow down the search result set.
+
+<Image align="center" className="border" border={true} width="60% " src="https://files.readme.io/a15dad7e9879ac6415e586cea797948dbb198ed7e673009d9aae439b24ef8977-Facets-main.png" />
 
 To render the facets on the search results page,  you can use the “facet” config object to configure the various options.
 
@@ -575,6 +591,8 @@ To render the facets on the search results page,  you can use the “facet” co
 
 You can configure the range sliders by setting the “rangeWidgetConfig” object under the “facet” object. Range facets will be rendered automatically along with other facets if it is configured on the console dashboard.
 
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/d4e3cfa7e78812693b502ba7a787239b509d9942a514567227e2a215748804dc-facet-price-widget.png" />
+
 The following are the various options available for configuring the range widget
 
 | **OPTION** | **DATATYPE** | **DEFAULT VALUE** | **DESCRIPTION**                                                            |
@@ -583,7 +601,7 @@ The following are the various options available for configuring the range widget
 | `maxLabel` | String       | `""`              | Text label for the **higher end** of the range slider                      |
 | `prefix`   | String       | `"$"`             | Prefix for the range values (e.g., `$` for price range display like `$10`) |
 
-Sample:
+**Sample**
 
 ```
  facet: {
@@ -625,8 +643,11 @@ Sample:
    }
 ```
 
-**Page Size**\
-Page Size widget allows you to configure the number of products shown on each page:
+## **Page Size**
+
+Page Size widget allows you to configure the number of products on each page.
+
+<Image align="center" border={true} caption="Configure the no. of Products on Each Page" src="https://files.readme.io/7ccd75ba5d018888e5fff34b4e3c301be151067e66009565a9eaa229a9791ee4-page-size-new.png" width="80% " />
 
 To render the Page Size widget, you need to configure the “pageSize” config object.
 
@@ -662,6 +683,8 @@ pageSize: {
 
 You can configure the way in which the products have to be displayed (List or Grid) with the Product Views widget.
 
+<Image align="center" border={true} caption="Configure the Way Your Products are Displayed" src="https://files.readme.io/56dc30ffbd628b3b587da7b4d46281751e8b37423d268a7edaf5e0c30e3a9a23-page-view-new.png" width="80% " />
+
 Update the options under the “productView” config object to configure the product view feature.
 
 | **OPTION**              | **DATATYPE** | **DEFAULT VALUE**             | **DESCRIPTION**                                                                                               |
@@ -674,7 +697,7 @@ Update the options under the “productView” config object to configure the pr
 | `viewTypeClass`         | String       | `"UNX-product-view"`          | CSS class to apply to each product view option                                                                |
 | `selectedViewTypeClass` | String       | `"UNX-selected-product-view"` | CSS class to apply to the currently selected product view option                                              |
 
-sample:
+Sample “productView” config
 
 ```
 productView : {
@@ -692,6 +715,8 @@ productView : {
 
 The spell check feature provides spelling suggestions or spell-checks for misspelled search queries.
 
+<Image align="center" border={true} caption="Give Spell-Checks for Misspelled Search Queries" src="https://files.readme.io/aaf6e7a615acda319317f900918318cb870f41802da0b212cffee13d8abb9e8d-spellcheck-1.png" width="80% " />
+
 In such cases, the context-aware algorithm of Unbxd understands your visitor’s intent and sends a “Did You Mean” response along with a search result set for the query, if any.
 
 You can configure the spellcheck feature by updating the required configs under the “spellCheck” config object.
@@ -703,7 +728,7 @@ You can configure the spellcheck feature by updating the required configs under 
 | `template`      | Function     | `default`          | Function to customize the spell check UI. Receives 3 parameters: the search query, suggested query text, and a config object `{start, productsLn, numberOfProducts}` |
 | `selectorClass` | String       | `"UNX-suggestion"` | Additional CSS class name applied to the spell check component                                                                                                       |
 
-sample
+Sample “spellCheck” config
 
 ```
 spellCheck:{
@@ -718,6 +743,8 @@ spellCheck:{
 
 To render the breadcrumb component, set the “breadcrumb” config object.
 
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/ec032786dbc18d21c7dc12f9176b06cd465519dd6f1bc8c59e97d00f6bd8dc64-breadcrumbs.png" />
+
 The following options are available under the object:
 
 | **OPTION**      | **DATATYPE** | **DEFAULT VALUE** | **DESCRIPTION**                                                                      |
@@ -731,6 +758,8 @@ The following options are available under the object:
 
 Configure variants display by setting the “variants” config object.
 
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/63d9d2a6ba9a403b618551b81dd36f954f4ee09c2718d725ad77f831736d0e87-variants-SDK.png" />
+
 The following options are available under the object:
 
 | **OPTION**   | **DATATYPE** | **DEFAULT VALUE**               | **DESCRIPTION**                                                                             |
@@ -741,7 +770,7 @@ The following options are available under the object:
 | `attributes` | Array        | `["title", "v_imageUrl"]`       | Array of catalog fields to include in each variant                                          |
 | `mapping`    | Object       | `{ "image_url": "v_imageUrl" }` | Field mapping from catalog attributes to variant attributes, required for correct rendering |
 
-Sample
+Sample “variants” config
 
 ```
 variants:{
@@ -760,7 +789,9 @@ variants:{
 
 ## Swatches
 
-Configure swatches display by using the configs in this section.
+Configure **swatches** display by using the configs in this section.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/6370c7c1bf6148c2351ad42dcb604e154445f2c128e6ad9bbbb1816267475133-swatches-sdk.png" />
 
 The following options are available under the object:
 
@@ -771,7 +802,7 @@ The following options are available under the object:
 | `swatchClass`   | String       | `"UNX-swatch-btn"`                                                                  | CSS class to apply to swatch buttons                                                                                         |
 | `template`      | Function     | `default`                                                                           | Function to customize the swatch UI. Receives two parameters: the **current swatch data** and the **complete swatches list** |
 
-sample:
+Sample “**swatches**” config
 
 ```
 swatches:{
@@ -820,14 +851,16 @@ variants:{
 
 Configure the banner display by setting the “banner” config object.
 
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/ff9b737f05b3db2f4082d037eb3769fdca7e766bd080714dddb51146812c483d-Banner-sdk.png" />
+
 The following options are available under the object:
 
-| **OPTION** | **DATATYPE** | **DEFAULT VALUE** | **DESCRIPTION**                                                                        |
-| ---------- | ------------ | ----------------- | -------------------------------------------------------------------------------------- |
-| `enabled`  | Boolean      | `false`           | Enables or disables the banner component                                               |
-| `el`       | Element      | `null`            | Element in which the banner component will be rendered                                 |
-| `template` | Function     | `default`         | Custom function to define the banner’s HTML. Receives **list of banners** as parameter |
-| `count`    | Number       | `1`               | Number of banners to be displayed                                                      |
+| **OPTION** | **DATATYPE** | **DEFAULT VALUE**                                                                                | **DESCRIPTION**                                                                        |
+| ---------- | ------------ | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| `enabled`  | Boolean      | `false`                                                                                          | Enables or disables the banner component                                               |
+| `el`       | Element      | `null`                                                                                           | Element in which the banner component will be rendered                                 |
+| `template` | Function     | `[default](https://github.com/unbxd/search-JS-library/blob/master/src/modules/banners/index.js)` | Custom function to define the banner’s HTML. Receives **list of banners** as parameter |
+| `count`    | Number       | `1`                                                                                              | Number of banners to be displayed                                                      |
 
 ## Loader
 
@@ -852,12 +885,10 @@ The following options are available under the object:
 
 ## Miscellaneous Configs
 
-<br />
-
 | **OPTION**          | **DATATYPE** | **DEFAULT VALUE**             | **DESCRIPTION**                                                                                                                                                                                                                            |
 | ------------------- | ------------ | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `siteKey`           | String       | `NA`                          | Unique Site Key assigned by Unbxd (from console dashboard)                                                                                                                                                                                 |
-| `apiKey`            | String       | `NA`                          | Unique API Key assigned by Unbxd (from console dashboard)                                                                                                                                                                                  |
+| `siteKey`           | String       | `NA`                          | Unique Site Key assigned by Unbxd (from the console dashboard). Refer to this section for steps to [get the Site Key for your account.](https://unbxdocs.readme.io/docs/configure-site#/)                                                  |
+| `apiKey`            | String       | `NA`                          | Unique API Key assigned by Unbxd (from console dashboard). Refer to this section for steps to [get the Site Key for your account.](https://unbxdocs.readme.io/docs/configure-site#/)                                                       |
 | `searchBoxEl`       | Element      | `null`                        | DOM element selector for the search input box                                                                                                                                                                                              |
 | `searchButtonEl`    | Element      | `NA`                          | DOM element selector for the search button. Clicking it triggers a search based on `searchBoxEl` value                                                                                                                                     |
 | `unbxdAnalytics`    | Boolean      | `false`                       | Enables Unbxd Analytics event tracking (requires including Unbxd Analytics SDK)                                                                                                                                                            |
@@ -880,7 +911,9 @@ The following options are available under the object:
 
 This section documents the different methods exposed by the Library that you can use to perform various actions.
 
-NOTE: All the below methods can be called on the instance object returned by UnbxdSearch constructor.
+> 📘 Note
+>
+> All the below methods can be called on the instance object returned by UnbxdSearch constructor.
 
 updateConfig
 
@@ -896,12 +929,11 @@ updateConfig
 | `setPageStart(pageNo)`    | Set specific page number to start from                              | `pageNo` (Number)                | `unbxdSearch.setPageStart(1)`                                                                                                                                                                                 |
 | `setRangeSlider(config)`  | Update range slider filter manually                                 | `{ start, end, facetName, gap }` | `unbxdSearch.setRangeSlider({ start: 0, end: 573, facetName: "price", gap: 200 })`                                                                                                                            |
 
-More Information\
 For any issue that you face during integration or need updates on the changes, follow these tips, raise issues, or track log changes.
 
 ## Tips & Tricks
 
 * If you are including our Search JS Library, Autosuggest Library & Analytics Library in your HTML page, the order of the files are important.
-* Include the Search JS Library, followed by Autosuggest Library and then the Analytics JS Library. This should be followed by the code to invoke the library.
-* Always ensure you are invoking the library (i.e. calling the UnbxdSearch constructor) after you have included it either via URL or via npm
-* Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the javascript files.
+* Include the Search JS Library, followed by [Autosuggest Library](https://unbxdocs.readme.io/docs/setup-autosuggest#/) and the [Analytics JS Library](https://unbxdocs.readme.io/docs/browser-integration#/). The code to invoke the library should follow.
+* Always ensure you are invoking the library (i.e., calling the UnbxdSearch constructor) after you have included it either via URL or via npm
+* Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the JavaScript files.
