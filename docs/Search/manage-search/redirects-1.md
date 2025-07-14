@@ -1,5 +1,5 @@
 ---
-title: Set Up Redirects
+title: Setup Redirects
 deprecated: false
 hidden: false
 metadata:
