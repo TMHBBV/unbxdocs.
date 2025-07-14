@@ -1,10 +1,12 @@
 ---
-title: 'Integrating Unbxd Analytics '
+title: 'Integrate Unbxd Analytics '
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
+# Overview
+
 The actions a visitor takes on your e-commerce store are known as Events. Tracking visitor analytics and behavior is essential in order to provide accurate and visitor-specific search and category page results, and also help showcase how your business benefits from Unbxd through the reporting.
 
 Unbxd Analytics tracks different events:
@@ -167,15 +169,11 @@ let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
 
 <br />
 
-But if you have integrated category pages using the API call: \[\[\[\[\[\[\[\[\[\[\[\[[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName\](\](\](\](\](\](\](\](\](\](\](\](](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName]\(]\(]\(]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\(]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)]\()[https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
-
-Then categoryQuery will be called as
+But if you have integrated category pages using the API call: "[https://search.unbxd.io/api-key/site-key/category?p=categoryName](https://search.unbxd.io/api-key/site-key/category?p=categoryName)" Then categoryQuery will be called as
 
 ```
 let categoryQuery = CategoryNamePath(withCategories: ["category:\(categoryName)"]) 
 ```
-
-<br />
 
 PageType: It's an enum defined in the SDK. It accepts the following values:
 
