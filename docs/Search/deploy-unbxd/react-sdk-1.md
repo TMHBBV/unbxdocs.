@@ -581,3 +581,339 @@ const BreadcrumbItemComponent = ({
     );
  };
 ```
+
+Breadcrumb Props:
+
+| **Prop**                  | **Description**                      | **Data Type** | **Required** | **Default** |    |
+| :------------------------ | :----------------------------------- | :------------ | :----------- | :---------- | :- |
+| `root`                    | Root of the breadcrumb               | element       | node         | true        | –  |
+| `breadcrumbItemComponent` | Custom breadcrumb component instance | element       | false        | –           |    |
+
+At the end of this step, you should have configured the SearchTitle component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+   <Breadcrumbs root={<Root/>} separator={separator} />
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Facet Actions
+
+A module to display actions performed on any of the displayed facets. This module allows the user to apply or clear facets with ease.
+
+* showApplyFilter: Hide/Display the facet apply component.
+* showClearFilter: Hide/Display the facet clear component.
+* applyFilterComponent: Apply Filter component can be further customized by passing a custom instance.
+
+```
+ const ApplyFilterComponent = ({ onApplyFilter }) => (
+    <button>
+        Apply
+    </button>
+);
+```
+
+* clearFilterComponent: clear Filter component can be further customized by passing a custom instance.
+
+```
+ const ClearFilterComponent = ({ onClearFilter }) => (
+    <button>
+        Clear
+    </button>
+ );
+```
+
+FacetActions Props:
+
+| **Prop**               | **Description**                        | **Data Type** | **Required** | **Default** |
+| ---------------------- | -------------------------------------- | ------------- | ------------ | ----------- |
+| `showApplyFilter`      | Enable apply facets                    | bool          | false        | true        |
+| `showClearFilter`      | Enable clear facets                    | bool          | false        | true        |
+| `applyFilterComponent` | Custom apply filter component instance | element       | false        | –           |
+| `clearFilterComponent` | Custom clear filter component instance | element       | false        | –           |
+| `onApply`              | Callback called on the click of apply  | function      | false        | –           |
+| `onClear`              | Callback called on the click of clear  | function      | false        | –           |
+
+At the end of this step, you should have configured the FacetActions component as shown below:
+
+```
+  <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+    ...
+   <FacetActions 
+   applyFilterComponent{ApplyFilterComponent}
+   clearFilterComponent={ClearFilterComponent} 
+   /> 
+     ...
+  </UnbxdSearchWrapper>
+```
+
+### Sort
+
+A module to sort the products on different attributes.
+
+* sortOptions: The mandatory sort options can be provided by prop `sortOptions`.
+
+```
+ const sortOptions = [
+  {
+    label: 'Most Popular'
+  },
+  {
+    label: 'Newest',
+    field: 'Date_Added',
+    order: 'desc'
+  },
+  {
+    label: 'Lowest Price',
+    field: 'price',
+    order: 'asc'
+  }
+ ]
+```
+
+* sortItemComponent: `Sort` can be further customized by setting `displayType` to `LIST` and passing a custom component instance.
+
+```
+ const SortItemComponent = ({ itemData, onClick }) => {
+    const { value, isSelected = false } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+    return (
+    <button
+    className={`UNX-sortby__item ${isSelected ? '-selected' : ''}`}
+     data-testid={value.split('|').join(' ')}
+     onClick={handleClick}
+        >
+    {itemData.label}
+     </button>
+    );
+ };
+```
+
+Sort Props:
+
+| **Prop**            | **Description**                                                                | **Data Type** | **Required** | **Default** |
+| ------------------- | ------------------------------------------------------------------------------ | ------------- | ------------ | ----------- |
+| `sortOptions`       | Filter out products based on categories like ‘Most Relevant’ or ‘Most Recent’. | object        | true         | –           |
+| `displayType`       | Products can appear in either a `DROPDOWN` or a `LIST` format.                 | string        | false        | ‘DROPDOWN’  |
+| `sortItemComponent` | Custom sort item component instance                                            | element       | false        | –           |
+| `label`             | Label for the component                                                        | node          | false        | –           |
+
+At the end of this step, you should have configured the Sort component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+    ...
+   <Sort sortOptions={[...]} />
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Pagination
+
+A module to navigate across pages.  This module is displayed only when `paginationType` on `Products` is set to `FIXED_PAGINATION`. If `paginationType` on `Products`is set to `INFINITE_SCROLL` or `CLICK_N_SCROLL`, `Pagination` will be hidden.
+
+* padding: The number of pages on either side of the active page can be configured by passing padding.
+* paginationItemComponent: The default Pagination item component can be overridden by passing a custom component instance.
+
+```
+ const PaginationItemComponent = ({itemData, onClick}) => {
+  const { pageNumber, type } = itemData;
+  const handleClick = () => {
+    onClick(itemData);
+  };
+  return (
+    {type === ‘NUMBER’ && {label}} {type === ‘PREVIOUS’ && <} {type === ‘NEXT’ && >}
+  );
+ };
+```
+
+Pagination Props:
+
+| **Prop**                  | **Description**                           | **Data Type** | **Required** | **Default** |
+| ------------------------- | ----------------------------------------- | ------------- | ------------ | ----------- |
+| `padding`                 | Pages on either side of the active page   | number        | false        | 2           |
+| `paginationItemComponent` | Custom pagination item component instance | element       | false        | –           |
+
+At the end of this step, you should have configured the Pagination component as shown below:
+
+```
+ } apiKey={}
+   ...
+  
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### View Types
+
+A module to handle products’ display.
+
+* viewTypes: You can view the products in either a GRID or LIST style. These can be passed using viewTypes. The first view option passed will be treated as the default view type.
+* viewItemComponent: `ViewTypes` can be further customized by setting `displayType` to `LIST` and passing a custom component instance.
+
+```
+ const ViewItemComponent = ({ itemData, onClick }) => {
+   const { viewType, isSelected } = itemData;
+   const iconClassName = viewType === 'GRID' ? `fa fa-th` : `fa fa-th-list`;
+   const dataTestId = viewType === 'GRID' ? `UNX_gridBtn` : `UNX_listBtn`;
+   const handleClick = () => {
+       onClick(itemData);
+   };
+   return (
+   <div className="UNX-viewType__wrapper">
+   <span
+   className={`UNX-viewType__option ${
+                   isSelected ? '-selected' : ''
+               }`}
+               data-testid={dataTestId}
+               onClick={handleClick}
+           >
+    <i className={iconClassName}></i>
+    </span>
+    </div>
+   );
+ };
+```
+
+viewTypes Props
+
+| **Prop**      | **Description**                                                                      | **Data Type** | **Required** | **Default** |
+| ------------- | ------------------------------------------------------------------------------------ | ------------- | ------------ | ----------- |
+| `viewTypes`   | Display style of products, either in `GRID` style or in `LIST`.                      | object        | false        | \[‘GRID’]   |
+| `displayType` | Products can be displayed as a list or a dropdown. Options are `LIST` or `DROPDOWN`. | string        | false        | ‘LIST’      |
+| `viewItem`    | Custom list item component instance                                                  | element       | false        | –           |
+
+At the end of this step, you should have configured the ViewTypes component as shown below:
+
+```
+  <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+    ...
+    <ViewTypes  viewTypes={['GRID', 'LIST']} />
+    ...
+ </UnbxdSearchWrapper/>
+```
+
+### Page Size
+
+A module to handle the number of products displayed per page.
+
+* size: The number of products on a page is set by defining ‘size’. The default page size can be set by passing `size`.
+* sizeOptions: Page size options can be provided by passing sizeOptions.
+
+```
+ const sizeOptions = [
+  { id: 5, value: '5' },
+  { id: 10, value: '10' },
+  { id: 15, value: '15' },
+  { id: 20, value: '20' }
+ ];
+```
+
+* pageSizeItemComponent: `PageSize` can be further customized by setting `displayType` to `LIST` and passing a custom component instance.
+
+```
+ const PageSizeItemComponent = ({ itemData, onClick }) => {
+    const { value, isSelected } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+    return (
+    <button
+    className={`UNX-pageSize__item ${isSelected ? '-selected' : ''}`}
+            onClick={handleClick}
+        >
+            {value}
+      </button>
+    );
+ };
+```
+
+Please note that default size should be one of the size options. The default `displayType` is set to `DROPDOWN`.
+
+| **Prop**                | **Description**                                       | **Data Type** | **Required** | **Default**                                                                   |
+| ----------------------- | ----------------------------------------------------- | ------------- | ------------ | ----------------------------------------------------------------------------- |
+| `size`                  | Number of products to load on a page.                 | number        | false        | 10                                                                            |
+| `sizeOptions`           | Options for the number of products to load on a page. | object        | false        | `[ { id: 5, value: '5' }, { id: 10, value: '10' }, { id: 15, value: '15' } ]` |
+| `displayType`           | Display type of page size: `DROPDOWN` or `LIST`.      | string        | false        | 'DROPDOWN'                                                                    |
+| `pageSizeItemComponent` | Custom size component instance.                       | element       | false        | –                                                                             |
+| `Label`                 | Label for the component.                              | node          | false        | –                                                                             |
+
+At the end of this step, you should have configured the PageSize component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+   <PageSize  size={10} sizeOptions={[...]} />
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Spellcheck
+
+A module to handle query suggestions. This module tries to suggest an alternate search query based on your query which may yield better results.
+
+* spellCheckItemComponent: `SpellCheck` can be further customized by passing a custom instance.
+
+```
+ const SpellCheckItemComponent = ({ itemData, onClick }) => {
+    const { suggestion } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+    return (
+     <div className="UNX-spellCheck__item">
+    Did you mean
+    <span 
+       className="-suggestion"
+       onClick={handleClick}
+       data-testid={'UNX_spellCheck'}
+     >
+       {suggestion}
+      </span>
+            ?
+      </div>
+```
+
+Spellcheck Props:
+
+| **Prop**                  | **Description**                      | **Data Type** | **Required** | **Default** |
+| ------------------------- | ------------------------------------ | ------------- | ------------ | ----------- |
+| `spellCheckItemComponent` | Custom spellcheck component instance | element       | false        | –           |
+
+At the end of this step, you should have configured the SpellCheck component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+   <SpellCheck />
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Search Title
+
+A module to display search metadata. This module displays the current search query along with the number of products loaded currently and the total number of products.
+
+* searchTitleItem: `SearchTitle` can be further customized by passing a custom instance.
+
+```
+const SearchTitleItem = (props) => {
+  const { searchQuery, start, productsLn, numberOfProducts } = props;
+  return (
+    <div>
+      Showing results for {searchQuery} - {start + 1} to {start + productsLn} of{' '}
+      {numberOfProducts} products
+   </div>
+  );
+ };
+```
+
+searchTitle Props:
+
+| **Prop**          | **Description**                             | **Data Type** | **Required** | **Default** |
+| ----------------- | ------------------------------------------- | ------------- | ------------ | ----------- |
+| `searchTitleItem` | Custom search title item component instance | element       | false        | –           |
