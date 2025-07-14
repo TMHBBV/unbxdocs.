@@ -231,3 +231,109 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsType`  | `KEYWORD_SUGGESTION`             |
 | `data-unxAsSugg`  | suggested query                  |
 | `data-unxAsPrank` | index number                     |
+
+ The attribute names can be defined based on your requirements. However, the attribute values must match EXACTLY as provided above.
+
+```html Example markup
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Apple"
+    data-unxAsPrank="1"
+  >
+    Apple
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Banana"
+    data-unxAsPrank="2"
+  >
+    Banana
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Cherry"
+    data-unxAsPrank="3"
+  >
+    Cherry
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Date"
+    data-unxAsPrank="4"
+  >
+    Date
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="KEYWORD_SUGGESTION"
+    data-unxAsSugg="Elderberry"
+    data-unxAsPrank="5"
+  >
+    Elderberry
+  </li>
+</ul>
+```
+
+#### TOP_SEARCH_QUERIES
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value (Should be an exact match) |
+| ----------------- | -------------------------------- |
+| `data-unxAsType`  | `TOP_SEARCH_QUERIES`             |
+| `data-unxAsSugg`  | suggested query                  |
+| `data-unxAsPrank` | index number                     |
+
+
+  The attribute names can be defined based on your requirements. However, the
+  attribute values must match EXACTLY as provided above.
+
+```html Example markup
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="TOP_SEARCH_QUERIES"
+    data-unxAsSugg="Tops"
+    data-unxAsPrank="1"
+  >
+    Tops
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TOP_SEARCH_QUERIES"
+    data-unxAsSugg="Dress"
+    data-unxAsPrank="2"
+  >
+    Dress
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TOP_SEARCH_QUERIES"
+    data-unxAsSugg="Shirt"
+    data-unxAsPrank="3"
+  >
+    Shirt
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TOP_SEARCH_QUERIES"
+    data-unxAsSugg="Shoes"
+    data-unxAsPrank="4"
+  >
+    Shoes
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TOP_SEARCH_QUERIES"
+    data-unxAsSugg="Wallets"
+    data-unxAsPrank="5"
+  >
+    Wallets
+  </li>
+</ul>
+```
