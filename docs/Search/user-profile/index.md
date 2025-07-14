@@ -1,5 +1,5 @@
 ---
-title: User Profile
+title: User Management
 excerpt: >-
   This is the section where you manage your account details including your
   profile, your team members, and your created sites. 
@@ -8,7 +8,7 @@ hidden: false
 metadata:
   robots: index
 ---
-# User Management Overview
+# Overview
 
 Manage user accounts, permissions, and roles within your system or application. You can edit the details by clicking the **Avatar** at the right-most corner of the console. Navigate to **My profile**.
 
