@@ -1,5 +1,5 @@
 ---
-title: 'Integrating Unbxd Search '
+title: 'Integrate Unbxd Search '
 deprecated: false
 hidden: false
 metadata:
