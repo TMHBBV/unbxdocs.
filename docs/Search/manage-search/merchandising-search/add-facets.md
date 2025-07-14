@@ -1,5 +1,5 @@
 ---
-title: 'Promotions: Facets'
+title: 'Search: Facets'
 deprecated: false
 hidden: false
 metadata:
