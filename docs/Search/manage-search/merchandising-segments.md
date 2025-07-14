@@ -62,7 +62,7 @@ To create a segment, follow these steps:
 
 1. Navigate to **Merchandising** > **Segments** > **Add Segment**
 2. Click on the **add new segment** and provide the name of your segment in the Add Segment Name box at the top.
-3. Set up the attributes in the next block. You can set up a maximum of **6** attributes, which includes **one default** attribute and **five custom attributes.** Refer [here](https://unbxdocs.readme.io/update/docs/attributes#/) for the attribute details.
+3. Set up the attributes in the next block. You can set up a maximum of **6** attributes, which includes **one default** attribute and **five custom attributes.** Refer [here](https://unbxdocs.readme.io/docs/attributes#/) for the attribute details.
 4. Select the "save segment" button.
 
 The created segment will be visible on the Listing Page.
