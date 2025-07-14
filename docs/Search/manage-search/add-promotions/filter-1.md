@@ -66,3 +66,21 @@ After applying the rule, you can do one of the following:
 1. Click the **Save** button to retain the Campaign as a draft.
 2. Continue adding more rules.
 3. Click the **Publish rule** button to push it live.
+
+<Cards columns={4}>
+  <Card title="Filter" href="https://readme.com" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="Second Card" icon="fa-user">
+    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  </Card>
+
+  <Card title="Third Card" icon="fa-star">
+    > Ut enim ad minim veniam, quis nostrud ullamco
+  </Card>
+
+  <Card title="Fourth Card" icon="fa-question">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+</Cards>
