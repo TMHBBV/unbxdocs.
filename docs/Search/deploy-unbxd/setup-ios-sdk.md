@@ -53,6 +53,10 @@ For more information on product feed, see [here](https://unbxd.com/docs).
 
 Unbxd SDK is a dynamic framework programmed using Swift 4. This can be integrated with iOS applications with version 9.0 and above. The Framework is compatible with both Swift and Objective-C.
 
+<Embed typeOfEmbed="youtube" url="https://www.youtube.com/watch?v=9tZ25lY9XqU" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252F9tZ25lY9XqU%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253D9tZ25lY9XqU%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252F9tZ25lY9XqU%252Fhqdefault.jpg%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" href="https://www.youtube.com/watch?v=9tZ25lY9XqU" providerUrl="https://www.youtube.com/" providerName="YouTube" />
+
+<br />
+
 ## Installation
 
 Cocoapods is an application level dependency manager for Cocoa projects. It provides a standard format for managing external libraries. You can install it with the command below:
