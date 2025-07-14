@@ -1,5 +1,5 @@
 ---
-title: Search
+title: Search Management
 deprecated: false
 hidden: false
 metadata:
