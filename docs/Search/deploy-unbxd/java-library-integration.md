@@ -937,3 +937,14 @@ For any issue that you face during integration or need updates on the changes, f
 > * Include the Search JS Library, followed by [Autosuggest Library](https://unbxdocs.readme.io/docs/setup-autosuggest#/) and the [Analytics JS Library](https://unbxdocs.readme.io/docs/browser-integration#/). The code to invoke the library should follow.
 > * Always ensure you are invoking the library (i.e., calling the UnbxdSearch constructor) after you have included it either via URL or via npm
 > * Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the JavaScript files.
+
+<br />
+
+Raise Issues\
+Facing some issues? look for solutions or create an issue here.
+
+Stay up to date\
+Look at the changelog to see the latest version & history.
+
+List of available Configurations\
+You can find the list of the available configurations in this Github link.
