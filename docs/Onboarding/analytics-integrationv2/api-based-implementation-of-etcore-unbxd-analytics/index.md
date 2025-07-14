@@ -1,5 +1,5 @@
 ---
-title: API-based Implementation of etcore Unbxd Analytics
+title: API-based Implementation of Netcore Unbxd Analytics
 deprecated: false
 hidden: false
 metadata:
