@@ -1,7 +1,7 @@
 ---
 title: Glossary
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
