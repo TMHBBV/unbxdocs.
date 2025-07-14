@@ -1,5 +1,5 @@
 ---
-title: Filter
+title: 'Promotions: Filter'
 excerpt: Apply rules to quickly Filter products
 deprecated: false
 hidden: false
