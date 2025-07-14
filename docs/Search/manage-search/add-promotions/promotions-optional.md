@@ -107,7 +107,7 @@ Click the **Save** button to retain the Campaign as a draft. or continue adding 
 
 # Pin Products
 
-Pinning products allows you to control the positioning of specific items in the search results, ensuring they appear in a fixed, prioritized spot based on your merchandising strategy. T
+Pinning products allows you to control the positioning of specific items in the search results, ensuring they appear in a fixed, prioritized spot based on your merchandising strategy.
 
 1. **Drag and Drop**\
    On the right side of the screen, drag and drop products into the desired position to pin them.
