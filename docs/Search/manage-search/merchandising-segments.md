@@ -84,7 +84,7 @@ The functionality below is present on the Segment listing page.
 
 > 📘 Note
 >
-> The attributes can be rearranged in order of importance by drag-and-drop operations on the console. Learn more about Default attributes and Custom attributes [here]().
+> The attributes can be rearranged in order of importance by drag-and-drop operations on the console. Learn more about Default attributes and Custom attributes [here](https://unbxdocs.readme.io/docs/attributes#/types-of-segment-attributes-in-unbxd).
 
 4. **Bulk upload/download segment** : Easily upload or download segments in bulk for efficient management. You can upload a locally created JSON file with multiple segments to the console simultaneously. Similarly, you can download the list of created segments in bulk.
 5. **Delete a Segment** : Custom attributes can be selectively deleted if not used in any active segment and  Unbxd default  attributes are permanent and cannot be removed from the system.
