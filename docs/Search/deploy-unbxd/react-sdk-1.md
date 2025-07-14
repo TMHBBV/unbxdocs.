@@ -966,23 +966,14 @@ For any issue that you face during integration or need updates on the changes, f
 
 ## Tips & Tricks
 
-* If you are including our Search JS Library, Autosuggest Library & Analytics Library in your HTML page, the order of the files are important.
+* If you are including our Search JS Library, [Autosuggest Library](https://unbxdocs.readme.io/docs/setup-autosuggest#/) & Analytics Library in your HTML page, the order of the files are important.
 * Include the Search JS Library, followed by Autosuggest Library and then the Analytics JS Library. This should be followed by the code to invoke the library.
 * Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the javascript files.
 
-<br />
-
-Raise Issues
-
-<br />
+## Raise Issues
 
 Facing some issues? look for solutions or create an issue here.
 
-<br />
+## Stay up to date
 
-&#x20;
-
-<br />
-
-Stay up to date\
 Look at the changelog to see the latest version & history.
