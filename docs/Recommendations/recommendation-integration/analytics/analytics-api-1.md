@@ -30,21 +30,24 @@ Providing relevant and personalised search & category pages results\
 Generating reports
 As a merchandiser or product manager you can make informed decisions and make your shopper’s experience a delightful one.
 
-Events\
+# Events
+
 Events are any action a visitor takes on your eCommerce store.
 
 Once deployed, the JS code tracks shopper events, using information stored within a cookie titled ‘unbxd.userId’. This file tracks, stores, and relays useful session-based information to Unbxd.
 
 This section helps you understand more about the session-based events we track, like:
 
-Visitor: Identifies new and returning shoppers.\
-Experience Impression: Is used to track the products viewed in recommendation widgets for Similar products, Recommended for You, etc.
-Product Click: Is when a shopper clicks on a product in the PLP.
-Product View: Is the number of times a shopper has visited a specific Product Details Page (PDP).
-Add to Cart: Is the number of times shoppers have added products to a cart. This event can be fired from both PDP and PLP.
-Cart Removal: Is the number of times a shopper has removed a product from the cart.
-Orders: Is the number of orders that have been successfully completed.
-API Integration
+* **Visitor**: Identifies new and returning shoppers.
+* **Experience Impression**: Is used to track the products viewed in recommendation widgets for Similar products, Recommended for You, etc.
+* Product Click: Is when a shopper clicks on a product in the PLP.
+* Product View: Is the number of times a shopper has visited a specific Product Details Page (PDP).
+* Add to Cart: Is the number of times shoppers have added products to a cart. This event can be fired from both PDP and PLP.
+* Cart Removal: Is the number of times a shopper has removed a product from the cart.
+* Orders: Is the number of orders that have been successfully completed.
+
+# API Integration
+
 In this method, you integrate the API references for every event that you want Unbxd to track.
 
 NOTE: In case you are using a web browser, it is recommended that you use the Browser-based integration.
@@ -61,10 +64,11 @@ Some of the common attributes used in the APIs are described below:
 **uid**: The unique identifying number for shoppers. Usually we set the “uid” for a particular user in a particular browser. The “uid” is stored within the “uid” cookie, and we store this ID every time we need user-specific event information.
 Every request needs to be passed with the following HTTP headers:
 
-X-Forwarded-For
+* X-Forwarded-For
 
-* **user-agent**
-* **Visitor**
+**user-agent**
+
+## **Visitor**
 
 This event is used to track shoppers and make their user profiles using browser cookies. To enable this event we just need to add Unbxd’s analytics JS library (as done above) inside the head section of all pages of the site.
 
@@ -115,6 +119,58 @@ https://tracker.unbxdapi.com/v2/1p.jpg?data={"experience_pagetype":"{{recs-paget
 | `url`                 | String       | Website URL where the search is performed.                                                                                                |
 | `qty`                 | String       | Quantity being removed by the user, as a string.                                                                                          |
 | `requestId`           | String       | To be extracted from the Unbxd search API response headers, from `unx-request-id`.                                                        |
+
+## Search Hit
+
+The Search event is generated every time a shopper uses the search bar to search for a product on your site.
+
+Here’s how a Search API will look like.
+
+```
+http://tracker.unbxdapi.com/v2/1p.jpg?data={"query":"{{search-query}}","url":"{{url-of-the-website}}","referrer":"","requestId":"{{unx-request-id}}","visit_type":"{{first_or_repeat}}","visitId":"{{visit-id}}"}&UnbxdKey={{unbxd-sitekey}}&action=search&uid={{uid}}5&t=1662365253141|0.6835012308821242
+```
+
+> 📘 NOTE
+>
+> Action for this event will be “search”, as in the API above and does not need to be changed.
+
+| **Attribute Name** | **Datatype** | **What Value to be Passed**                                                                                   |                      |
+| :----------------- | :----------- | :------------------------------------------------------------------------------------------------------------ | :------------------- |
+| `action`           | string       | Indicates the type of event. For search events, the value will be `'search'`.                                 |                      |
+| `query`            | string       | The search query entered by the user.                                                                         |                      |
+| `pid`              | string       | Unique ID for the product (from API response) if `relevantDocumentType = "parent"`. Otherwise, can be `null`. |                      |
+| `url`              | string       | Website URL where the search is performed.                                                                    |                      |
+| `requestId`        | string       | Extract from Unbxd Search API response headers, from the `unx-request-id` value.                              |                      |
+| `visit_type`       | string       | Indicates if the visit is a `"first_time"` or `"repeat"` visit.                                               |                      |
+| `UnbxdKey`         | string       | Value of the `UnbxdSiteKey`.                                                                                  |                      |
+| `uid`              | string       | Extract from the `unbxd.userId` cookie. This is the unique identifier for the shopper.                        |                      |
+| `t`                | –            | Timestamp in the format: \`new Date().getTime() + '                                                           | ' + Math.random();\` |
+| `referrer`         | string       | (Optional) The link or page URL from which the search page was accessed.                                      |                      |
+
+## Search Impression
+
+A Search Impression (also known as Product Impressions) event is generated after a shopper gets a list of products on the search results page. This event is also generated every time a shopper refines the results by facets, filters, scroll-down or pagination. The productId of the products listed in the PLP will be sent as a payload.
+
+Here’s how a Search Impression API will look like.
+
+```
+https://tracker.unbxdapi.com/v2/1p.jpg?data={"query":"{{search-query}}","pids_list":"{{list-of-products-uniqueId}}","url":"{{url-of-the-website}}","referrer":"","requestId":"{{unx-request-id}}","visit_type":"{{first_or_repeat}}",,,"visitId":"{{visit-id}}"}&UnbxdKey={{unbxd-sitekey}}&action=search_impression&uid={{uid}}&t=1662366285967|0.7498946341398707  
+```
+
+<br />
+
+| **Attribute Name** | **Datatype** | **What Value to be Passed**                                                                                        |                      |
+| :----------------- | :----------- | :----------------------------------------------------------------------------------------------------------------- | :------------------- |
+| `action`           | string       | Indicates the type of event. For search impression events, the value will be `'search_impression'`.                |                      |
+| `query`            | string       | The search query entered by the user.                                                                              |                      |
+| `url`              | string       | Website URL where the search is performed.                                                                         |                      |
+| `pids_list`        | string       | List of unique product IDs returned in the current response. If no products are returned, pass an **empty array**. |                      |
+| `requestId`        | string       | Extract from the Unbxd Search API response headers, under the key `unx-request-id`.                                |                      |
+| `visit_type`       | string       | Indicates if the visit is a `"first_time"` or `"repeat"` visit.                                                    |                      |
+| `UnbxdKey`         | string       | The Unbxd Site Key (`UnbxdSitekey` value).                                                                         |                      |
+| `uid`              | string       | Extract from the cookie `unbxd.userId`. This is the unique identifier for the shopper.                             |                      |
+| `t`                | –            | Timestamp formatted as: \`new Date().getTime() + '                                                                 | ' + Math.random();\` |
+| `referrer`         | string       | (Optional) URL of the page from which the search page was opened.                                                  |                      |
 
 ## Product Click
 
