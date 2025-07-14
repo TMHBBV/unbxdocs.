@@ -190,3 +190,44 @@ The mandatory `pid` and `variantid` (if your catalog contains product variants) 
   </div>
 </div>
 ```
+### Order event
+
+The ownership of the Order event lies with the retailer. Details of successfully ordered products should be stored as a variable on the browser's window, as demonstrated in the example below. Netcore Unbxd Pulse will retrieve this data from the window object and trigger the order event accordingly.
+
+
+  💡 The key names need to be maintained as shown in the example below given the ownership of the event will not be with Netcore Unbxd.
+
+
+```JSON Example JSON of the order success page
+window.unbxdOrderData = [
+  {
+    pid: "107440", // Required - Product ID
+    variantId: "107440_01", // Required only if your catalog has variants
+    qty: "1",
+    price: "29.99",
+  },
+  {
+    pid: "245102", // Required - Product ID
+    variantId: "245102_red", // Required only if your catalog has variants
+    qty: "2",
+    price: "10.99",
+  },
+];
+```
+
+### Autosuggest
+
+Things to note before configuration:
+
+- **Only required if you’ve subscribed to the Netcore Unbxd Autosuggest solution.**
+- **Mandatory to add the payload data to the DOM** if you’ve not used the Netcore Unbxd Autosuggest SDK.
+
+#### KEYWORD_SUGGESTION
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value (Should be an exact match) |
+| ----------------- | -------------------------------- |
+| `data-unxAsType`  | `KEYWORD_SUGGESTION`             |
+| `data-unxAsSugg`  | suggested query                  |
+| `data-unxAsPrank` | index number                     |
