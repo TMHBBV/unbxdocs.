@@ -195,3 +195,21 @@ Query-specific merchandising rules allow you to customize promotions for specifi
 > As you update the **Query** name, the instant preview will display products relevant to the query and show the total number of applicable products.
 
 Once the details are in place, click **Next** to add an extensive optional options to strategically control product placement on Search Results Pages.
+
+<Cards columns={4}>
+  <Card title="Promotion: Optional" href="https://unbxdocs.readme.io/update/docs/promotions-optional#/" icon="fa-home" target="_blank">
+    Neque porro quisquam est qui dolorem ipsum quia
+  </Card>
+
+  <Card title="Second Card" icon="fa-user">
+    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  </Card>
+
+  <Card title="Third Card" icon="fa-star">
+    > Ut enim ad minim veniam, quis nostrud ullamco
+  </Card>
+
+  <Card title="Fourth Card" icon="fa-question">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+</Cards>
