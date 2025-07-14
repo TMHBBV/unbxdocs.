@@ -1,5 +1,5 @@
 ---
-title: Boost or Bury specific products
+title: 'Promotions: Boost or Bury'
 deprecated: false
 hidden: false
 metadata:
