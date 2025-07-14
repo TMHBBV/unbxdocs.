@@ -1,5 +1,5 @@
 ---
-title: 'Promotions : Optional '
+title: 'Promotions : Optional Rules'
 excerpt: Powerful tools for Promoting products
 deprecated: false
 hidden: false
