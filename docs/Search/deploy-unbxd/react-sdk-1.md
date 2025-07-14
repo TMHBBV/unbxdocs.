@@ -917,3 +917,72 @@ searchTitle Props:
 | **Prop**          | **Description**                             | **Data Type** | **Required** | **Default** |
 | ----------------- | ------------------------------------------- | ------------- | ------------ | ----------- |
 | `searchTitleItem` | Custom search title item component instance | element       | false        | –           |
+
+```
+<UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+   <SearchTitle />
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Banners
+
+A module to display merchandising banners. This module displays the banners configured based on search/category/event.
+
+* alText: Add an alternate text for the image.
+
+```
+altText="alt banner text"
+```
+
+* bannerItemComponent:`Banner` can be further customized by passing a custom instance.
+
+```
+ const BannerItemComponent = ({ itemData }) => {
+   const { imageUrl } = itemData;
+   return <img src={imageUrl} />;
+ };
+```
+
+| **Prop**              | **Description**                  | **Data Type** | **Required** | **Default**    |
+| --------------------- | -------------------------------- | ------------- | ------------ | -------------- |
+| `altText`             | Image alt text                   | string        | false        | 'banner image' |
+| `bannerItemComponent` | Custom Banner component instance | element       | false        | –              |
+
+At the end of this step, you should have configured the Banners component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+    ...
+    <Banners altText="alt banner text" />
+    ...
+ </UnbxdSearchWrapper/>
+```
+
+## More Information
+
+For any issue that you face during integration or need updates on the changes, follow these tips, raise issues, or track log changes.
+
+## Tips & Tricks
+
+* If you are including our Search JS Library, Autosuggest Library & Analytics Library in your HTML page, the order of the files are important.
+* Include the Search JS Library, followed by Autosuggest Library and then the Analytics JS Library. This should be followed by the code to invoke the library.
+* Include the CSS inside the \<head> tag of your HTML page & the scripts at the end of the body tag. This will ensure that the page rendering is not blocked by the javascript files.
+
+<br />
+
+Raise Issues
+
+<br />
+
+Facing some issues? look for solutions or create an issue here.
+
+<br />
+
+&#x20;
+
+<br />
+
+Stay up to date\
+Look at the changelog to see the latest version & history.
