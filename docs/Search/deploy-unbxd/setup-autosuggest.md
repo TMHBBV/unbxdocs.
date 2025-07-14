@@ -1,5 +1,5 @@
 ---
-title: Autosuggest
+title: Autosuggest SDK
 deprecated: false
 hidden: false
 metadata:
