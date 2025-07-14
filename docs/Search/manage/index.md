@@ -1,5 +1,5 @@
 ---
-title: Manage
+title: Manage Search
 deprecated: false
 hidden: false
 metadata:
