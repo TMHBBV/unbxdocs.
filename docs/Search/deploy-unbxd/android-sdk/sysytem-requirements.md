@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-Before you can integrate our SDK, you need to:
+# Before you can integrate our SDK, you need to:
 
 STEP 1: Set up your Site Search Dashboard
 
