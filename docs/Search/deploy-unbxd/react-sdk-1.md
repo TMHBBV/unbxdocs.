@@ -358,3 +358,226 @@ At the end of this step, you should have configured the TextFacets component as 
   ...
  </UnbxdSearchWrapper/
 ```
+
+### Range Facets
+
+A module to display numerical facets. For ex. price.
+
+This module displays the range facets that can be applied by the user for the better filtering of the products.
+
+facetItemComponent
+
+`RangeFacets` can be further customized by passing a custom component instance.
+
+```
+const FacetItemComponent = ({ itemData, onClick }) => {
+    const { name, count, isSelected } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+ 
+    return (
+        <div
+            className={`UNX-facet__item ${isSelected ? '-selected' : ''}`}
+            onClick={handleClick}
+        >
+            <div className="-checkbox"></div>
+            <div className="-label">{name}</div>
+            <div className="-count">({count})</div>
+        </div>
+    );
+ };
+```
+
+RangeFacets Props:
+
+| **Prop**             | **Description**                      | **Data Type** | **Required** | **Default** |
+| -------------------- | ------------------------------------ | ------------- | ------------ | ----------- |
+| `facetItemComponent` | Custom Facet item component instance | element       | false        | –           |
+| `Label`              | Label for the component              | string        | false        | –           |
+
+At the end of this step, you should have configured the RangeFacets component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+   <TextFacets />
+   ...
+ </UnbxdSearchWrapper/>
+```
+
+### Multilevel Facets
+
+A module to display hierarchical facets.
+
+This module displays the multilevel facets that can be applied by the user for the better filtering of the products.
+
+* facetDepth: Maximum depth of the category.
+* facetLimit: Maximum number of values present in a facet.
+* facetItemComponent: `MultilevelFacets` can be further customized by passing a custom component instance.
+
+```
+ const FacetItemComponent = ({ itemData, onClick }) => {
+    const { name, count, level, isSelected } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+    return (
+        <div
+            className={`UNX-facet__item -l${level} ${
+                isSelected ? '-selected' : ''
+            }`}
+            onClick={handleClick}
+        >
+           <div className="-checkbox"></div>
+            <div className="-label">{name}</div>
+            {count && <div className="-count">({count})</div>}
+        </div>
+    );
+ };
+```
+
+MultilevelFacets Props:
+
+| **Prop**             | **Description**                              | **Data Type** | **Required** | **Default** |
+| -------------------- | -------------------------------------------- | ------------- | ------------ | ----------- |
+| `facetDepth`         | Max sub-categories of a category.            | number        | false        | 6           |
+| `facetLimit`         | Maximum number of values present in a facet. | number        | false        | 100         |
+| `facetItemComponent` | Custom Facet item component instance.        | element       | false        | –           |
+| `label`              | Label for the module.                        | string        | false        | –           |
+
+At the end of this step, you should have configured the TextFacets component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+  ...
+   <MultilevelFacets />
+  ...
+ </UnbxdSearchWrapper/>
+```
+
+### Combined Facets
+
+A module to display all the facets in their respective order .
+
+This module displays all the facets in the intended order, that can be applied by the user for the better filtering of the products. The order of the facets can be configured on the console.
+
+| **Prop**                       | **Description**                                 | **Data Type** | **Required** | **Default** |
+| ------------------------------ | ----------------------------------------------- | ------------- | ------------ | ----------- |
+| `textFacetItemComponent`       | Custom Text Facet item component instance       | element       | false        | –           |
+| `rangeFacetItemComponent`      | Custom Range Facet item component instance      | element       | false        | –           |
+| `multilevelFacetItemComponent` | Custom Multilevel Facet item component instance | element       | false        | –           |
+| `applyMultiple`                | Enable multiple range facets                    | bool          | false        | false       |
+| `onFacetClick`                 | Callback for facet click                        | function      | false        | –           |
+| `label`                        | Label for the module                            | string        | false        | –           |
+
+At the end of this step, you should have configured the CombinedFacets module like shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+  <CombinedFacets />
+  ...
+ </UnbxdSearchWrapper/>
+```
+
+### Selected Facets
+
+A module to display selected facets.
+
+This module displays the selected facets that can be removed by the user with ease.
+
+facetItemComponent
+
+`SelectedFacets` can be further customized by passing a custom component instance.
+
+```
+const FacetItemComponent = ({ itemData, onClick, priceUnit }) => {
+    const { name, type, dataId } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+ 
+    let selectedFacetMarkup = null;
+    if (type === 'TEXT_FACET') {
+        selectedFacetMarkup = <span>{name}</span>;
+    }
+    if (type === 'RANGE_FACET') {
+        const [valMin, valMax] = dataId.split(' TO ');
+        selectedFacetMarkup = (
+         <span>
+        {priceUnit} {valMin} - {priceUnit} {valMax}
+        </span>
+        );
+    }
+    if (type === 'MULTILEVEL_FACET') {
+        selectedFacetMarkup = <span>{name}</span>;
+    }
+    return (
+    <div className="UNX-selectedFacets__item" onClick={handleClick}>
+    {selectedFacetMarkup} <span className="-cross"></span>
+    </div>
+    );
+ };
+```
+
+SelectedFacets Props:
+
+| **Prop**             | **Description**                      | **Data Type** | **Required** | **Default** |
+| -------------------- | ------------------------------------ | ------------- | ------------ | ----------- |
+| `facetItemComponent` | Custom facet item component instance | element       | false        | –           |
+| `Label`              | Label for the component              | string        | false        | –           |
+
+At the end of this step, you should have configured the SelectedFacets component as shown below:
+
+```
+ <UnbxdSearchWrapper siteKey={<site key>} apiKey={<api key>}
+   ...
+   <SelectedFacets/>
+   ...
+ </UnbxdSearchWrapper
+```
+
+### Breadcrumbs
+
+A module to display the current page path. This module displays the current page path with all the levels that allow the user to navigate the categories better.
+
+* root: An element depicting the root of the breadcrumb. This level points to the root of the category hierarchy.
+
+```
+const Root=() =><span>Home</span>;
+```
+
+* separator: An element separating the levels of a category hierarchy.
+
+```
+const separator = <span>/</span>;
+```
+
+* breadcrumbItemComponent: `Breadcrumbs` can be further customized by passing a custom component instance.
+
+```
+const BreadcrumbItemComponent = ({
+    itemData,
+    Root,
+    separator,
+    idx,
+    onClick,
+}) => {
+    const { value } = itemData;
+    const handleClick = () => {
+        onClick(itemData);
+    };
+    return (
+    <>
+    {idx === 0 && }
+    {''}
+    {separator}
+    {''}
+     <div className={'UNX-breadcrumbs-list-item'} onClick={handleClick}>
+     {value}
+     </div>
+     </>
+    );
+ };
+```
