@@ -1,5 +1,5 @@
 ---
-title: Autosuggest
+title: Autosuggest Management
 deprecated: false
 hidden: false
 metadata:
