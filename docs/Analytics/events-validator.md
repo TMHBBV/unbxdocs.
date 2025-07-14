@@ -1,5 +1,5 @@
 ---
-title: Events Validator
+title: Unbxd Events Validator
 deprecated: false
 hidden: false
 metadata:
