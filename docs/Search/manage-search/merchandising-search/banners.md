@@ -1,5 +1,5 @@
 ---
-title: 'Search: Banners'
+title: Publish Banners
 excerpt: Publish query and field-based Banners
 deprecated: false
 hidden: false
