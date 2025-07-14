@@ -27,6 +27,21 @@ Segmentation categorizes customers into groups based on:
 
 This enables **targeted marketing** and **personalized merchandising** strategies.
 
+## Role of Segmentation in eCommerce
+
+Merchandisers use segmentation to show products relevant to a customer’s profile. Examples include:
+
+* Showing **trending products** to new visitors
+* Recommending products based on **past views** for returning users
+
+## Unbxd’s Role in Segmentation
+
+Unbxd provides a robust platform to:
+
+* **Create and manage segments**
+* **Configure default and custom attributes** (e.g., location, device, user type)
+* Use **custom attributes** through API calls
+
 ## Types of Segments
 
 Segments are defined based on:
@@ -39,7 +54,7 @@ Segments are defined based on:
 
 **Custom Attributes**: They are included in the search API request to segment shoppers based on specific requirements.
 
-## Create a Segment
+# Create a Segment
 
 To create a segment, follow these steps:
 
