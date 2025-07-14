@@ -1,5 +1,5 @@
 ---
-title: 'Integrate Unbxd Analytics '
+title: 'Unbxd Analytics '
 deprecated: false
 hidden: false
 metadata:
