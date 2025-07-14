@@ -18,20 +18,22 @@ Browse methods operate on Category fields query which is configured part of Brow
 
 Browse Methods has the following parts:
 
-Browse Query\
-Format
-Start
-Rows
-Spellcheck
-Analytics
-Stats
-Variants
-Fields
-Facets
-Filtering
-Multiple Filter
-Sort
-Browse Query
+* Browse Query
+* Format
+* Start
+* Rows
+* Spellcheck
+* Analytics
+* Stats
+* Variants
+* Fields
+* Facets
+* Filtering
+* Multiple Filter
+* Sort
+
+## Browse Query
+
 BrowseQuery consists of Category path or field details parameter Query with Category can be build as shown below:
 
 `Using Field IDs`
@@ -52,8 +54,6 @@ client.browse(browseQuery, object : ICompletionHandler
                                       }
 )
 ```
-
-<br />
 
 `Using Field Names`
 
@@ -177,7 +177,8 @@ client.browse(browseQuery, object : ICompletionHandler
 >
 > It is an optional parameter and the default value is 10, the maximum value is 100.
 
-**Spellcheck**\
+### **Spellcheck**
+
 The spellcheck feature checks for misspelled search queries and recommends autocorrect suggestions.
 
 ```
@@ -197,7 +198,8 @@ client.browse(browseQuery, object : ICompletionHandler
 )
 ```
 
-**Analytics**\
+### **Analytics**
+
 The analytics parameter enables or disables tracking the query hit for analytics.
 
 ```
@@ -221,7 +223,8 @@ client.browse(browseQuery, object : ICompletionHandler
 >
 > By default, tracking is enabled.
 
-**Stats**\
+### **Stats**
+
 The stats parameter gives information about the products with highest and lowest field value.
 
 ```
@@ -241,7 +244,8 @@ client.browse(browseQuery, object : ICompletionHandler
 )
 ```
 
-**Variants**\
+### **Variants**
+
 This parameter enables or disables variants in the API response.It can take two values: TRUE or FALSE
 
 ```
@@ -266,7 +270,8 @@ client.browse(browseQuery, object : ICompletionHandler
 
 If you want to get more than one variants in the API response, you can use ‘variantCount’ parameter. It can have any numerical value (eg, 1,2,3, etc) or “.max” (to get all the variants).
 
-**Fields**\
+### **Fields**
+
 The fields parameter is used to specify the set of fields to be returned.When returning the results, only fields in the list will be included.
 
 ```
@@ -289,7 +294,8 @@ client.browse(browseQuery, object : ICompletionHandler
 
 <br />
 
-**Facets**\
+### **Facets**
+
 Facets are the filters in the interface that allow shoppers to refine results based on product fields.
 
 Facet option can have three values:
@@ -374,7 +380,8 @@ client.browse(browseQuery, object : ICompletionHandler
 
 <br />
 
-**Filtering**\
+### **Filtering**
+
 Filtering can be performed on fields using field Id or field Name.Three types of filters are supported:
 
 1. Text
@@ -487,7 +494,7 @@ client.browse(browseQuery, object : ICompletionHandler
 )
 ```
 
-**Multilevel**
+### **Multilevel**
 
 The multilevel filter is used to filter products based on categories.The API call can be defined in two ways:
 
@@ -522,7 +529,8 @@ val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val categoryNameFilte
 
 <br />
 
-**Multiple Filters**\
+### **Multiple Filters**
+
 There are two types of filter operations: AND, OR
 
 1. And
@@ -572,7 +580,7 @@ client.browse(browseQuery, object : ICompletionHandler
 
 <br />
 
-**OR**
+### **OR**
 
 * Using Field IDs
 
@@ -617,7 +625,8 @@ client.browse(browseQuery, object : ICompletionHandler
 )
 ```
 
-**Sort**\
+### **Sort**
+
 The sort parameter is used to rank the products based on specified fields in the specified order.Sort can be done on a single field or multiple fields.
 
 Single Field\
@@ -640,7 +649,8 @@ client.browse(browseQuery, object : ICompletionHandler
 )
 ```
 
-**Multiple Fields**\
+### **Multiple Fields**
+
 Here 2 or more FieldSortOrder instances are added.
 
 ```
