@@ -337,3 +337,300 @@ Below are the mandatory HTML attributes and values that need to be placed in the
   </li>
 </ul>
 ```
+#### PROMOTED_SUGGESTION
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value (Should be an exact match) |
+| ----------------- | -------------------------------- |
+| `data-unxAsType`  | `PROMOTED_SUGGESTION`            |
+| `data-unxAsSugg`  | suggested query                  |
+| `data-unxAsPrank` | index number                     |
+
+
+  The attribute names can be defined based on your requirements. However, the
+  attribute values must match EXACTLY as provided above.
+
+
+```html Example Markup
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="PROMOTED_SUGGESTION"
+    data-unxAsSugg="Toys"
+    data-unxAsPrank="1"
+  >
+    Toys
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="PROMOTED_SUGGESTION"
+    data-unxAsSugg="Puma Shoes"
+    data-unxAsPrank="2"
+  >
+    Puma Shoes
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="PROMOTED_SUGGESTION"
+    data-unxAsSugg="Tissot Watch"
+    data-unxAsPrank="3"
+  >
+    Tissot Watch
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="PROMOTED_SUGGESTION"
+    data-unxAsSugg="Christmas Gift"
+    data-unxAsPrank="4"
+  >
+    Christmas Gift
+  </li>
+</ul>
+```
+
+#### TRENDING_QUERIES
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value (Should be an exact match) |
+| ----------------- | -------------------------------- |
+| `data-unxAsType`  | `TRENDING_QUERIES`               |
+| `data-unxAsSugg`  | suggested query                  |
+| `data-unxAsPrank` | index number                     |
+
+
+  The attribute names can be defined based on your requirements. However, the
+  attribute values must match EXACTLY as provided above.
+
+
+```html Example Markup
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Toys"
+    data-unxAsPrank="1"
+  >
+    Toys
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Puma Shoes"
+    data-unxAsPrank="2"
+  >
+    Puma Shoes
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Tissot Watch"
+    data-unxAsPrank="3"
+  >
+    Tissot Watch
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="TRENDING_QUERIES"
+    data-unxAsSugg="Christmas Gift"
+    data-unxAsPrank="4"
+  >
+    Christmas Gift
+  </li>
+</ul>
+```
+
+#### IN_FIELD
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name       | Value (Should be an exact match)                    |
+| -------------------- | --------------------------------------------------- |
+| `data-unxAsType`     | `IN_FIELD`                                          |
+| `data-unxAsSugg`     | suggested query                                     |
+| `data-unxAsPrank`    | index number                                        |
+| `data-unxAsFldName`  | Name of the catalog field associated with the query |
+| `data-unxAsFldValue` | Value of the associated field                       |
+
+  The attribute names can be defined based on your requirements. However, the
+  attribute values must match EXACTLY as provided above.
+
+
+```html Example Markup
+<ul class="autosuggest-suggestions-wrapper">
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsPrank="1"
+  >
+    Music
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsFldName="categoryPath1"
+    data-unxAsFldValue="games"
+    data-unxAsPrank="2"
+  >
+    in games
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsFldName="categoryPath1"
+    data-unxAsFldValue="pop vinyl"
+    data-unxAsPrank="3"
+  >
+    in pop vinyl
+  </li>
+  <li
+    class="list-item"
+    data-unxAsType="IN_FIELD"
+    data-unxAsSugg="Music"
+    data-unxAsFldName="format"
+    data-unxAsFldValue="accessories"
+    data-unxAsPrank="4"
+  >
+    in accessories
+  </li>
+</ul>
+```
+
+#### POPULAR_PRODUCTS
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name    | Value (Should be an exact match)              |
+| ----------------- | --------------------------------------------- |
+| `data-unxAsType`  | `POPULAR_PRODUCTS`                            |
+| `data-unxAsSugg`  | suggested query                               |
+| `data-unxAsPrank` | index number                                  |
+| `data-unxAsPid`   | Unique ID of the product as per Unbxd catalog |
+
+
+  The attribute names can be defined based on your requirements. However, the
+  attribute values must match EXACTLY as provided above.
+
+
+```html Example Markup
+<ul class="autosuggest-products-section">
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS"
+    data-unxAsTitle="Women Black Shoulder Bag"
+    data-unxAsPrank="1"
+    data-unxAsPid="257376"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Women Black Shoulder Bag</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS"
+    data-unxAsTitle="Men Grey Sports Walking Shoes"
+    data-unxAsPrank="2"
+    data-unxAsPid="336355"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Men Grey Sports Walking Shoes</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS"
+    data-unxAsTitle="Mens Pool Sliders"
+    data-unxAsPrank="3"
+    data-unxAsPid="336354"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Mens Pool Sliders</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS"
+    data-unxAsTitle="Men Brown Wallet"
+    data-unxAsPrank="4"
+    data-unxAsPid="249374"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Men Brown Wallet</p>
+    <span> $49 </span>
+  </li>
+</ul>
+```
+
+#### POPULAR_PRODUCTS_FILTERED
+
+Below are the mandatory HTML attributes and values that need to be placed in the Autosuggest UI section:
+
+| Attribute Name       | Value (Should be an exact match)              |
+| -------------------- | --------------------------------------------- |
+| `data-unxAsType`     | `POPULAR_PRODUCTS_FILTERED`                   |
+| `data-unxAsSugg`     | suggested query                               |
+| `data-unxAsPrank`    | index number                                  |
+| `data-unxAsPid`      | Unique ID of the product as per Unbxd catalog |
+| `data-unxAsSrcQuery` | Name of the suggested query shown upon hover  |
+
+
+  The attribute names can be defined based on your requirements. However, the
+  attribute values must match EXACTLY as provided above.
+
+
+```html Example Markup
+<ul class="autosuggest-products-section">
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Women Black Shoulder Bag"
+    data-unxAsPrank="1"
+    data-unxAsPid="257376"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Women Black Shoulder Bag</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Men Grey Sports Walking Shoes"
+    data-unxAsPrank="2"
+    data-unxAsPid="336355"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Men Grey Sports Walking Shoes</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Mens Pool Sliders"
+    data-unxAsPrank="3"
+    data-unxAsPid="336354"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Mens Pool Sliders</p>
+    <span> $49 </span>
+  </li>
+  <li
+    class="product-item"
+    data-unxAsType="POPULAR_PRODUCTS_FILTERED"
+    data-unxAsTitle="Men Brown Wallet"
+    data-unxAsPrank="4"
+    data-unxAsPid="249374"
+    data-unxAsSrcQuery="bags & shoes combo"
+  >
+    <img src="product-image-url" />
+    <p class="product-title">Men Brown Wallet</p>
+    <span> $49 </span>
+  </li>
+</ul>
+```
