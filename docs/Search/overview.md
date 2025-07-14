@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Search Home Dashboard
 excerpt: >-
   Get real-time business insights on the Netcore Unbxd Search Overview
   dashboard.
