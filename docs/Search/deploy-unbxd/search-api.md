@@ -38,15 +38,15 @@ Unbxd requires some header parameters along with the search request in order to 
 
 The following parameters are available:
 
-| Parameter         | Description                                                                                                                                                                           | Significance                                                                                           |
-| :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
-| unbxd-user-id     | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics JavaScript sets the userid in your browser cookie.                                      | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work |
-| user-agent        | Browser identification information is passed to the web server with every HTTPS request.                                                                                              | If not passed, device-based merchandising campaigns will not work.                                     |
-| unbxd-device-type | This header is an Unbxd custom header, which is required to identify if the request is coming from an app.                                                                            | If not passed, device-based merchandising campaigns cannot differentiate between browsers and apps.    |
-| Accept-Encoding   | This header signifies the response's content encoding. Currently, Unbxd supports only gzip compression. To enable this, ‘gzip’ needs to be passed.                                    | If not passed, the response will not be compressed.                                                    |
-| X-Forwarded-For   | This header signifies the end-user's IP address. It is primarily required if the integration is a backend, as Unbxd doesn’t get the IP of the end-user from the browser in that case. | If not passed, segmentation, A/B testing, and personalization will not work.                           |
+| Parameter           | Description                                                                                                                                                                           | Significance                                                                                           |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
+| unbxd-user-id       | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics JavaScript sets the userid in your browser cookie.                                      | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work |
+| user-agent          | Browser identification information is passed to the web server with every HTTPS request.                                                                                              | If not passed, device-based merchandising campaigns will not work.                                     |
+| unbxd-device-type\* | This header is an Unbxd custom header, which is required to identify if the request is coming from an app.                                                                            | If not passed, device-based merchandising campaigns cannot differentiate between browsers and apps.    |
+| Accept-Encoding     | This header signifies the response's content encoding. Currently, Unbxd supports only gzip compression. To enable this, ‘gzip’ needs to be passed.                                    | If not passed, the response will not be compressed.                                                    |
+| X-Forwarded-For     | This header signifies the end-user's IP address. It is primarily required if the integration is a backend, as Unbxd doesn’t get the IP of the end-user from the browser in that case. | If not passed, segmentation, A/B testing, and personalization will not work.                           |
 
-#### unbxd-device-type:
+#### \*unbxd-device-type:
 
 ```
  { "type":"tablet" , "os": "iOS" , "source": "app" }
