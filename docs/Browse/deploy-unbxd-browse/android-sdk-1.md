@@ -1267,6 +1267,408 @@ skuId, query, doctype, internalQuery, etc are obtained from Autosuggest response
 
 If you are subscribed to Unbxd Recommendations, every time the shopper clicks on a Recommendation widget, the API below will be called.
 
+```
+val userId = client.userId()  
+val recommendationWidgetAnalytics = RecommendationWidgetAnalytics(userId.id,  
+userId.visitType, requestId, RecommendationType.RecommendedForYou, arrayOf("1692741, 01692015, 1692908"))  
+client.track(recommendationWidgetAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+userId.id: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+
+userId.visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+requestId: The unbxd request id returned in the search/category page/recommendations API call response.
+
+recommendationType : Specifies the type of recommendation widget. For different permissible values, refer the table below.
+
+| **Widget Type**      | **Box Type**               |
+| -------------------- | -------------------------- |
+| Recommended For You  | RECOMMENDED\_FOR\_YOU      |
+| Recently Viewed      | RECENTLY\_\_VIEWED         |
+| More Like These      | MORE\_LIKE\_\_THESE        |
+| Viewed also Viewed   | ALSO\_\_VIEWED             |
+| Bought also Bought   | ALSO\_\_BOUGHT             |
+| Cart Recommendations | CART\_\_RECOMMEND          |
+| HomePage Top Sellers | TOP\_\_SELLERS             |
+| Category Top Sellers | CATEGORY\_\_TOP\_\_SELLERS |
+| PDP Top Sellers      | PDP\_\_TOP\_\_SELLERS      |
+| Brand Top Sellers    | BRAND\_\_TOP\_\_SELLERS    |
+
+*productIds:* List of product IDs rendered.
+
+### Search Result Impression
+
+A search impression event is fired when a search results page loads for the first time, and whenever results changes on applying pagination, auto scroll, sort, and filters. For each of these actions, the uniqueIds’ of the products visible on the search page will be sent as payload.
+
+```
+val userId = client.userId()  
+val searchImpressionAnalytics = SearchImpressionAnalytics(userId.id, userId.visitType, requestId, "Shoes", arrayOf("1692741", "01692015", "1692908"))  
+client.track(searchImpressionAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+productIds : List of product ids of products visible in the window when the event occurs. For example “arrayOf(“1692741”, “01692015”, “1692908”))” in above code.
+
+\*userId.id: \*The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the device storage so that it will persist across sessions.
+
+userId .visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+* requestId:\* The unbxd request id returned in the search/category page/recommendations API call response.
+
+query:For example “shirt” in the above code.
+
+### Category Page Impression
+
+Similar to a search page impression event, a category page impression event is fired when a category page results loads for the first time, and every time the results changes on applying pagination, auto scroll, sort, and filters. For each of these actions, the uniqueIds’ of the products visible on the search page will be sent as payload.
+
+```
+val categoryPath = CategoryNamePath(arrayOf("home", "furniture", "entrywayfurniture"))  
+val categoryPageImpressionAnalytics = CategoryPageImpressionAnalytics(userId.id, userId.visitType, requestId,  
+categoryPath, PageType.Url, arrayOf("1692741", "01692015", "1692908"))  
+client.track(visitorAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+
+userId.visitType:This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+categoryPath: unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. for instance, If you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=categoryNamethen](https://search.unbxd.io/api-key/site-key/category?p=categoryNamethen) categoryQuery will be called as
+
+```
+let categoryQuery = CategoryNamePath(withCategories:  
+["categoryName"])
+```
+
+<br />
+
+but if you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
+
+then categoryQuery will be called as
+
+```
+let categoryQuery = CategoryNamePath(withCategories: ["category:\(categoryName)"])  
+```
+
+<br />
+
+* pageType: \* It is an enum defined in SDK. it accepts the following values
+
+URL\
+CATEGORY\_PATH
+TAXONOMY\_NODE
+ATTRIBUTE
+BOOLEAN
+requestId: The unbxd request id returned in the search/category page/recommendations API call response.
+
+productIds : List of product ids of products visible in the window when the event occurs. For example “arrayOf(“1692741”, “01692015”, “1692908”))” in above code.
+
+### Dwell Time
+
+A dwell time event is used to capture the amount of time a shopper spends on the product description page.
+
+```
+val userId = client.userId()  
+val dwellTimeAnalytics = DwellTimeAnalytics(userId.id, userId.visitType, requestId,  
+"2301609", 60.0)
+client.track(dwellTimeAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+### Facets
+
+A facet event is fired when a filter is applied on Search or Category pages.
+
+```
+val userId = client.userId()  
+val facetAnalytics = FacetAnalytics(userId.id, userId.visitType, requestId, "Shirts", NameFilter("fit_fq", "Fitted"))  
+client.track(facetAnalytics, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+## Integrating Unbxd Browse
+
+The SDK lets you customize your page experience by leveraging various built-in features of Browse. You can also power any type of page, such as Category, Brand, or any other attribute.
+
+Let’s see how the Browse Query can be composed and passed in browse() method invocation.
+
+### Using Browse Method
+
+Browse methods operate on Category fields query which is configured part of Browse Query.
+
+Browse Methods has the following parts:
+
+* Browse Query
+* Format
+* Start
+* Rows
+* Spellcheck
+* Analytics
+* Stats
+* Variants
+* Fields
+* Facets
+* Filtering
+* Multiple Filter
+* Sort
+* Browse Query
+
+BrowseQuery consists of Category path or field details parameter Query with Category can be build as shown below:
+
+`Using Field IDs`
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+`Using Field Names`
+
+```
+val categoryPath = CategoryNamePath(arrayOf("FA", "FA0484")) val browseQuery = BrowseQuery.Builder(categoryPath).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+`Using Page IDs`
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val browseQuery = BrowseQuery.Builder(categoryPath).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+`Using Page Names`
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val browseQuery = BrowseQuery.Builder(categoryPath).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+### Format
+
+The format parameter specifies the format of the response. Possible values are:\* JSON \* XML.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484")) val browseQuery = BrowseQuery.Builder(categoryPath). responseFormat(ResponseFormat.XML).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }                                     
+)
+```
+
+> 📘 NOTE
+>
+> It is an optional parameter and the default value is ‘json’.
+
+### Start
+
+This parameter is used to offset the results by a specific number. It indicates offset in the complete result set of the products.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath).pageIndex(2).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+> 📘 NOTE
+>
+> This is an optional parameter and the default value is 0.
+
+### Rows
+
+This parameter is used to paginate the results of a query. It indicates the number of products on a single page.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath).rowsCount(20).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+> 📘 NOTE:
+>
+> It is an optional parameter and the default value is 10, the maximum value is 100.
+
+### Spellcheck
+
+The spellcheck feature checks for misspelled search queries and recommends autocorrect suggestions.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath).spellCheck(true).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+### Analytics
+
+The analytics parameter enables or disables tracking the query hit for analytics.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("FA", "FA0484"))  
+val browseQuery = BrowseQuery.Builder(categoryPath).analytics(false).build()  
+client.browse(browseQuery, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
+```
+
+<br />
+
+> 📘 NOTE
+>
+> By default, tracking is enabled.
+
+Stats\
+The stats parameter gives information about the products with highest and lowest field value.
+
 ### Integrating Unbxd Recommendations
 
 Unbxd Recommendations offers a wide range of widgets tailored for different pages. The Recommendations API returns product suggestions such as More Like This, Recently Viewed, and others.
