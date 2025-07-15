@@ -113,10 +113,37 @@ With these two steps you can upload your catalog via Magento2 platform plugin :
 
 Once done, click ‘Proceed’. If the feed is successfully uploaded, the status changes to ‘Feed Upload is successful’.
 
-To know more, read the [Magento2 Documentation]().
+To know more, read the [Magento2 Documentation](https://unbxdocs.readme.io/docs/magento-platform-integration-1#/).
 
-SAP Hybris Platform\
+### SAP Hybris Platform
+
 If your site is on SAP Hybris, do the following:
 
-First, install the Hybris plugin by downloading the module from Unbxd’s GIT directories. Perform the steps as mentioned on the console.\
-Then synchronize your feed from your Hybris site account.
+1. First, install the Hybris plugin by downloading the module from Unbxd’s GIT directories. Perform the steps as mentioned on the console.
+2. Then synchronize your feed from your Hybris site account.
+
+<Image align="center" border={true} caption="Configure Hybris" src="https://files.readme.io/6710011524621b3fc44cbe06c7bbdda25b97955d788ef0419a85a61c316a893d-Screenshot-2020-07-31-at-6.30.38-PM.png" width="80% " />
+
+To know more, read the [SAP Hybris Documentation]().
+
+Once done, click ‘Proceed’. If the feed is successfully uploaded, the status changes to ‘Feed Upload is successful’.
+
+### PIM
+
+Unbxd PIM manages and centralizes all your product-related content and process for accuracy. While we have an advanced Extract, Transform, Load (ETL) platform in place to help with major catalog issues, we require you to make sure that some guiding principles around the catalog are followed.
+
+Unbxd supports uploading the catalog in the following file formats:
+
+* .csv
+* .xls
+* .JSON
+* .XML
+
+Uploading your feed in any of the aforementioned formats initiates the import process. You can also upload it as a zip file for the supported formats.
+
+List of unsupported settings\
+But even after you decide on the file format for upload, check the following settings to avoid Feed Upload Failure or any other discrepancies:
+
+Nested JSON, XML: Nested JSONs are the ones where an object is nested inside other objects. Our system doesn’t support such nested JSON or XML files. Our system understands the linear mapping in the JSON/XML file. To help you understand, let us look at the following example:
+
+What Unbxd  PIM supports: Fields and Values explained in a linear hierarchy.
