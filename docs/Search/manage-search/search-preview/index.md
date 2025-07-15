@@ -20,39 +20,16 @@ You can use this to:
 ## How to Use Search Preview
 
 1. On the Unbxd console, click **SEARCH PREVIEW** located in the top right corner.
+2. Use the search bar at the top to type a keyword, for example, `dress` and press **Enter** or click the **search icon**. You can view the total number of products found and the preview of how products appear to shoppers.
 
-### Step 1: Enter a Search Term
+In the top-right corner, you can switch between the view mode.
 
-Use the search bar at the top to type a keyword (e.g., `dress`)\
-Press **Enter** or click the **search icon**.
+| View Mode    | Description                                           |
+| ------------ | ----------------------------------------------------- |
+| Default View | Standard shopper-facing display                       |
+| Debug View   | Shows backend data like boost scores (for QA/testing) |
 
-You will see:
-
-* Total number of products found
-* Preview of how products appear to shoppers
-
-***
-
-## 🖼️ Product Results Overview
-
-Each product card shows:
-
-| Element          | Details                                      |
-| ---------------- | -------------------------------------------- |
-| 📸 Image         | Main image of the product                    |
-| 🔢 Rank          | Order in which the product appears           |
-| 🏷️ Name         | Product name (e.g., *Striped Dress*)         |
-| 💲 Price         | Product price                                |
-| 🏷️ Discount     | Discount label like "5% off"                 |
-| 🏢 Brand         | Product brand (e.g., Zara, H\&M)             |
-| 🧭 Category Path | Breadcrumb path like *Apparel & Accessories* |
-| 🧵 Variants      | Small images showing different variants      |
-
-***
-
-## 🧰 Filters Panel (Facets)
-
-On the left side, you’ll find filter options to narrow down the results. You can test how filters will appear and work on your storefront.
+On the left side, filter options to narrow down the results. You can test how filters will appear and work on your storefront.
 
 | Available Filters (Facets) |
 | -------------------------- |
@@ -72,7 +49,7 @@ You can also collapse the filter panel using the **Hide Facets** button.
 
 ***
 
-## 🔃 Sort Options
+### Sort Options
 
 You can sort the results using different criteria by clicking the **Sort by: Relevance** dropdown.
 
@@ -86,14 +63,7 @@ You can sort the results using different criteria by clicking the **Sort by: Rel
 
 ***
 
-## 🖥️ View Modes
-
-In the top-right corner, you can switch between:
-
-| View Mode    | Purpose                                               |
-| ------------ | ----------------------------------------------------- |
-| Default View | Standard shopper-facing display                       |
-| Debug View   | Shows backend data like boost scores (for QA/testing) |
+## 🖥️
 
 ***
 
