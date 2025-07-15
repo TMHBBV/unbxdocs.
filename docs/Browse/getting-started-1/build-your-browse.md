@@ -1,5 +1,5 @@
 ---
-title: Build Your Browse
+title: Browse Onboarding
 excerpt: >-
   This page is your guide to everything you need to do to get started with
   Browse on your web store.
