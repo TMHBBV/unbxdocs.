@@ -9,7 +9,7 @@ A schema establishes the properties of each attribute within a product catalog a
 
 ***
 
-# Schema Fonts
+# Schema Formats
 
 The schema is part of a larger JSON feed file and is defined by the “schema” node. Each JSON object within the schema represents a field within your catalog.
 
@@ -26,15 +26,15 @@ Each field must contain the following properties:
 >
 > While we recommend you upload both the schema and catalog as a unified JSON file, you can also upload the schema as a separate file.
 
-### fieldName
+## fieldName
 
 The fieldName specifies the name of the attribute such as title, color, and brand. Field names are case-sensitive; should start with an alphabet or underscore; can only contain alphanumeric characters, hyphens and underscores; cannot contain special characters, spaces, or end with an underscore.
 
-### id
+## id
 
 The id in schema specifies a numerical identifier for an attribute in the catalog. Useful when product feeds may have the fieldID instead of the fieldName.
 
-### dataType
+## dataType
 
 A dataType defines the type of value a specific field can have. We support the following dataTypes.
 
@@ -56,11 +56,11 @@ A dataType defines the type of value a specific field can have. We support the f
 >
 > Data Types of fields that are made searchable display those products on the search results page. Data Types that are not searchable can be used for filtering, sorting, and faceting.
 
-### multiValued
+## multiValued
 
 A multiValued attribute determines if a field can have multiple values for a product. For example, a Nike shoe can be considered sporty and casual in which case you could send multiple values for a style field: “style”:\[“casual”,”sport”]. However, a field such as brand would be single-valued: “brand”:”Nike”. To enable a field to accept multiple values, set multiValued to true, otherwise to false.
 
-### isVariant
+## isVariant
 
 Only required for catalogs with variants, if an attribute is a variant field instead of a parent product field, set it to true, else set it to false.
 
@@ -106,7 +106,7 @@ Only required for catalogs with variants, if an attribute is a variant field ins
 
 ***
 
-### Schema Upload Process
+## Schema Upload Process
 
 You can upload a schema using APIs with the exception of instances where any post-processing is performed by Unbxd on your schema which requires an SFTP upload.
 
@@ -120,35 +120,44 @@ In case the schema has fields that are already found within an existing schema, 
 
 The API parameters along with sample request and response are defined below:
 
-\<Tabs>\
-\<Tab title="API End Point">
-Method: POST
-End Point: \{feed end point}/\{siteKey}/upload/schema
-Description:This API will perform an upload/update of the schema file.
-\</Tab>
-\<Tab title="Parameters">
-siteKey: A unique identifier provided when your Unbxd account is created. This key can also be retrieved
-from your Unbxd Console. This is a required field.
+\<Tabs>
+&#x20; \<Tab title="API Endpoint">
+&#x20;  Method : POST
+End Point :  \{feed end point}/\{siteKey}/upload/schema
+Description : This API will perform an upload/update of the schema file.
+&#x20; \</Tab>
 
-```
-```
+&#x20; \<Tab title="Parameters">
+\*\*siteKey\*\*: A unique identifier provided when your Unbxd account is created. This key can also be retrieved from your Unbxd Console. This is a required field.
 
-```
-```
+secretKey: A unique identifier provided when your Unbxd account is created. The secretKey is used to authorize your upload request. This is a private key and will not be exposed to the public. This is a required field.
 
-\</Tab>\
-\<Tab title="Error Codes">
-We use conventional HTTP response codes to indicate success or failure of an API request.
+file: The name of the schema, as a JSON file.
+
+feed end point : The feed end point depends upon the region selected at the time of site creation.
+
+US region: http\://feed.unbxd.io/
+
+ANZ region : http\://feed-anz.unbxd.io/
+
+UK region : http\://feed-uk.unbxd.io/
+
+SG region : http\://feed-apac.unbxd.io/
+&#x20; \</Tab>
+
+&#x20; \<Tab title="Error Codes">
+&#x20;   We use conventional HTTP response codes to indicate success or failure of an API request.
 201 (Ok): Indicates the upload was successful.
 401 (Authorization Error): Indicates you may have provided an invalid API key.
 400 (Bad Request): Indicates you may have missed a required parameter.
 500 (Internal Server Error): Though these are rare, this indicates we may have messed up.
-\</Tab>
-\<Tab title="Sample Code">
-"curl -X POST https\://\{Feed end point}/api/\{siteKey}/upload/schema
--H 'Authorization:\{secretKey}'
--F file=\{file}"
-\</Tab>
+&#x20; \</Tab>
+
+&#x20; \<Tab title="Sample Request">
+&#x20; curl -X POST https\://\{Feed end point}/api/\{siteKey}/upload/schema&#x20;
+-H 'Authorization:\{secretKey}'&#x20;
+-F file=\{file}
+&#x20; \</Tab>
 \</Tabs>
 
 ***
