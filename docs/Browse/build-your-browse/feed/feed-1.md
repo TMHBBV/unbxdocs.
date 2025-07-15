@@ -120,11 +120,11 @@ In case the schema has fields that are already found within an existing schema, 
 
 The API parameters along with sample request and response are defined below:
 
-* API Endpoint\
+* **API Endpoint**\
   Method : POST
   End Point :  \{feed end point}/\{siteKey}/upload/schema
   Description : This API will perform an upload/update of the schema file.
-* Parameters
+* **Parameters**
   * siteKey: A unique identifier provided when your Unbxd account is created. This key can also be retrieved from your Unbxd Console. This is a required field.
   * secretKey: A unique identifier provided when your Unbxd account is created. The secretKey is used to authorize your upload request. This is a private key and will not be exposed to the public. This is a required field.
   * file: The name of the schema, as a JSON file.
@@ -133,22 +133,16 @@ The API parameters along with sample request and response are defined below:
   * ANZ region : [http://feed-anz.unbxd.io/](http://feed-anz.unbxd.io/)
   * UK region : [http://feed-uk.unbxd.io/](http://feed-uk.unbxd.io/)
   * SG region : \[[http://feed-apac.unbxd.io/](http://feed-apac.unbxd.io/)
-
-Error Codes
-We use conventional HTTP response codes to indicate success or failure of an API request.
-201 (Ok): Indicates the upload was successful.
-401 (Authorization Error): Indicates you may have provided an invalid API key.
-400 (Bad Request): Indicates you may have missed a required parameter.
-500 (Internal Server Error): Though these are rare, this indicates we may have messed up.
-
-Sample Request
-curl -X POST https\://\{Feed end point}/api/\{siteKey}/upload/schema
--H 'Authorization:\{secretKey}'
--F file=\{file}
-
-&#x20;
-
-***
+* **Error Codes**\
+  We use conventional HTTP response codes to indicate success or failure of an API request.
+  201 (Ok): Indicates the upload was successful.
+  401 (Authorization Error): Indicates you may have provided an invalid API key.
+  400 (Bad Request): Indicates you may have missed a required parameter.
+  500 (Internal Server Error): Though these are rare, this indicates we may have messed up.
+* **Sample Request**\
+  curl -X POST https\://\{Feed end point}/api/\{siteKey}/upload/schema
+  -H 'Authorization:\{secretKey}'
+  -F file=\{file}
 
 # Best Practices
 
