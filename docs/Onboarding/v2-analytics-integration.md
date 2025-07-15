@@ -24,6 +24,67 @@ In summary, integrating Netcore Unbxd Analytics is crucial to achieving your con
 
 ## What are the types of events tracked?
 
-<br />
-
 The trackers will capture your users' behavior as they navigate and interact with your online touchpoints.
+  title="Global Events"
+    These are standard interactions tracked across your entire site, such as Visitor, Page views, Product clicks, Product Cart, and Product Order.
+  {" "}
+
+ title="Feature-specific Events"
+    
+    These track user interactions with specific features of your platform, such as Search, Product Impressions, Autosuggest, Category Pages, Browse Impressions, and Recommendations.
+
+
+## What are the events we track?
+
+
+  title="Visitor Event"
+ 
+    The first event created when a shopper visits your site. It tracks and builds profiles using browser cookies for two types of visitors: first-time users and repeat users.
+
+   
+    Site-level information are stored as cookies and are titled as, 
+
+    <ul>
+    <li>
+    User ID: <code>
+    unbxd.userId</code>
+
+    </li>
+
+    
+    <li>
+    Visit ID: <code>
+    unbxd.visitId</code>
+
+    </li>
+
+    
+    <li>
+    Visit Type: <code>
+    unbxd.visit</code>
+
+    </li>
+
+    </ul>
+ 
+  title="Search Hit
+    Triggered when a shopper uses the search bar to find a product on your site or selects one of the suggestions provided by Netcore Unbxd's Autosuggest widget.
+
+    It captures every query the shopper searches, even if no results are returned, providing insights into search effectiveness.
+
+ 
+title="Product Click"
+    Triggered whenever a shopper clicks a product or product image from any Product Listing Page (PLP), Category page, or Recommendation widget. It will capture the clicked product’s unique ID and the page where the click activity occurred.
+
+    This data can be used to highlight ‘Popular Products’ and create personalized ‘Recommended For You’ lists, ensuring a more customized shopping experience.
+
+ title="Add to Cart"
+  
+    Triggered each time a user adds a product to their cart, regardless of the originating page—whether it’s the Product Detail Page (PDP), Product Listing Page (PLP), historical orders, or any other page.
+    For users incrementally adding products, the event should fire once per product addition, and the <code>
+    qty</code>
+
+     parameter should reflect the quantity added during that specific action.
+
+   title="Order"
+     Triggered when a purchase is completed on your site. This event should be fired for each product in the order, capturing valuable data such as the product ID, quantity, and order details.
