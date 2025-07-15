@@ -29,6 +29,8 @@ In the top-right corner, you can switch between the view mode.
 | Default View | Standard shopper-facing display                       |
 | Debug View   | Shows backend data like boost scores (for QA/testing) |
 
+### Facets
+
 On the left side, filter options to narrow down the results. You can test how filters will appear and work on your storefront.
 
 | Available Filters (Facets) |
@@ -61,31 +63,16 @@ You can sort the results using different criteria by clicking the **Sort by: Rel
 | Title: A to Z      | Alphabetical order by product title |
 | Title: Z to A      | Reverse alphabetical order          |
 
-***
+### Filters
 
-## 🖥️
-
-***
-
-## ✅ When to Use Search Preview
-
-Use this feature when you want to:
-
-| Use Case                             | Benefit                                      |
-| ------------------------------------ | -------------------------------------------- |
-| Test new product uploads             | See if the right products appear             |
-| Validate merchandising rules         | Make sure boosts/promotions work as expected |
-| Review shopper experience            | Understand how search behaves live           |
-| Troubleshoot low-performing keywords | Find out what’s showing up and why           |
-
-***
-
-## 🧭 Where to Find It
-
-From your dashboard:
-
-> **Go to:** `Search Preview` tab at the top navigation bar
-
-***
-
-Let me know if you’d like this exported in PDF, Markdown, or HTML for publishing on your help center or product documentation site!
+| **Section**           | **Field/Option**                  | **Description**                                                                                              |
+| --------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Filters**           | **Promotion**                     | Enables merchandising rules to boost products tied to promotions.                                            |
+|                       | **Popularity**                    | Uses metrics like sales, views, or clicks to influence product ranking.                                      |
+|                       | **Fallback**                      | Displays default fallback results when no direct matches are found.                                          |
+|                       | **User Behavior**                 | Personalizes results based on user interaction history (views, clicks, etc.).                                |
+| **Segment Attribute** | **User ID**                       | Enter a specific user ID to simulate personalized results for that user.                                     |
+|                       | **Device**                        | Select a device type (e.g., Desktop, Mobile) to simulate device-specific output.                             |
+| **Custom Attributes** | **Custom Attribute Name = Value** | Add up to 3 attribute-value pairs to test segment-specific behavior. \<br> Example: \`loyaltyStatus = gold\` |
+| **Action Buttons**    | **Reset Filter**                  | Clears all selected toggles, user inputs, and attributes.                                                    |
+|                       | **Apply**                         | Applies the current filter settings and updates the search results preview.                                  |
