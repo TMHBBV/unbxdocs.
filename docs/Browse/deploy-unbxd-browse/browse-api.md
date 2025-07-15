@@ -1396,3 +1396,35 @@ https://search.unbxd.io/63e6578fcb4382aee0eea117aba3a227/docs-unbxd7001815088467
     }
 }
 ```
+
+## Breadcrumb:
+
+The breadcrumb parameter gives the position within category hierarchy where the results appear. For example, if the visitor opens the category page for “Fashion>Women’s Apparel>Jeans”, the breadcrumb would be:
+
+Sample response
+
+```
+{
+    "breadcrumb": {
+        "filterField": "Category1_fq",
+        "values": [{
+            "id": "Fashion"
+        }],
+        "child": {
+            "filterField": "Category2_fq",
+            "values": [{
+                "id": "Women's Apparel"
+            }],
+            "child": {
+                "filterField": "Category3_fq",
+                "values": [{
+                    "id": "Jeans"
+                }],
+                "level": 3
+            },
+            "level": 2
+        },
+        "level": 1
+    }
+}
+```
