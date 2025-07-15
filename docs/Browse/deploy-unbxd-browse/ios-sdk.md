@@ -27,31 +27,35 @@ The Unbxd SDK implements support for making network calls to the Unbxd platform 
 
 The following features are currently supported with Unbxd SDK.
 
-| Features                | Description                                                                 |
-|-------------------------|-----------------------------------------------------------------------------|
-| Analytics               | Allows you to track various visitor events on the eCommerce store such as product clicks, add to cart, orders, etc. |
-| Unbxd Commerce Search   | Allows you to interact with the Unbxd platform and implement all search related functionality with ease. |
-| Autosuggest             | For autocompletion of search queries and showcasing products relevant to query as you type. |
-| Browse                  | Allows you to interact with the Unbxd platform and implement all category related functionality with ease. You can customize the experience on various pages – Category, Brand, or any other attribute by leveraging various built-in features of Browse. |
-| Recommendations         | Allows you to integrate the Unbxd recommendations widgets that showcase personalized product suggestions to visitors on every page of your eCommerce store. |
+| Features              | Description                                                                                                                                                                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Analytics             | Allows you to track various visitor events on the eCommerce store such as product clicks, add to cart, orders, etc.                                                                                                                                       |
+| Unbxd Commerce Search | Allows you to interact with the Unbxd platform and implement all search related functionality with ease.                                                                                                                                                  |
+| Autosuggest           | For autocompletion of search queries and showcasing products relevant to query as you type.                                                                                                                                                               |
+| Browse                | Allows you to interact with the Unbxd platform and implement all category related functionality with ease. You can customize the experience on various pages – Category, Brand, or any other attribute by leveraging various built-in features of Browse. |
+| Recommendations       | Allows you to integrate the Unbxd recommendations widgets that showcase personalized product suggestions to visitors on every page of your eCommerce store.                                                                                               |
 
 ## Prerequisites
 
 Before you get started with the integration, you need to:
 
-- **Get your Site Key**: Set up your Unbxd account and obtain an API key, Site key. These keys are generated at the time of account creation and can be accessed within Console at **Manage > Configure Site > Keys**.
-- **Upload your Product catalog**: A product catalog contains product-specific information for products in your inventory, like, title, price, category, color, description, availability, etc. Unbxd product discovery algorithms rely on the products and their fields within your feed data. You need to upload your catalog as a single JSON file.
+* **Get your Site Key**: Set up your Unbxd account and obtain an API key, Site key. These keys are generated at the time of account creation and can be accessed within Console at **Manage > Configure Site > Keys**.
+* **Upload your Product catalog**: A product catalog contains product-specific information for products in your inventory, like, title, price, category, color, description, availability, etc. Unbxd product discovery algorithms rely on the products and their fields within your feed data. You need to upload your catalog as a single JSON file.
 
 For more information on product feed, see [here](https://unbxd.com/docs).
 
 ## Dependencies
 
-- **Alamofire** 5.1.3 or above – Alamofire is a Swift-based HTTP networking library for iOS and Mac OS X.
-- **CocoaLumberjack** 3.4.1 or above – Logging framework.
+* **Alamofire** 5.1.3 or above – Alamofire is a Swift-based HTTP networking library for iOS and Mac OS X.
+* **CocoaLumberjack** 3.4.1 or above – Logging framework.
 
 ## Supported Platforms
 
 Unbxd SDK is a dynamic framework programmed using Swift 4. This can be integrated with iOS applications with version 9.0 and above. The Framework is compatible with both Swift and Objective-C.
+
+<Embed typeOfEmbed="youtube" url="https://www.youtube.com/watch?v=9tZ25lY9XqU" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252F9tZ25lY9XqU%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253D9tZ25lY9XqU%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252F9tZ25lY9XqU%252Fhqdefault.jpg%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" href="https://www.youtube.com/watch?v=9tZ25lY9XqU" providerUrl="https://www.youtube.com/" providerName="YouTube" />
+
+<br />
 
 ## Installation
 
@@ -111,19 +115,19 @@ The actions a shopper takes on your eCommerce store are known as Events. Trackin
 
 Unbxd Analytics tracks the following events:
 
-- Visitor Logins
-- Search Hit
-- Category Page Hit
-- Product Click
-- Add to Cart
-- Successful Orders
-- Product Page View
-- Cart Removal
-- AutoSuggest
-- Recommendation Widget Impression
-- Search Impression
-- Category Page Impression
-- Dwell time (indicates time spent on a product page)
+* Visitor Logins
+* Search Hit
+* Category Page Hit
+* Product Click
+* Add to Cart
+* Successful Orders
+* Product Page View
+* Cart Removal
+* AutoSuggest
+* Recommendation Widget Impression
+* Search Impression
+* Category Page Impression
+* Dwell time (indicates time spent on a product page)
 
 For more information about different events, see [here](https://unbxd.com/docs).
 
@@ -206,10 +210,10 @@ client.track(analyticsDetails: searchAnalytics, completion: {(response, httpResp
 
 Here in this example, “Shirt” is the string the shopper types in the search box and presses enter or clicks on the search button.
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first-time or a repeat shopper. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **query**: search query typed by a shopper in case products listing page shows the result of search event. “Shirt” in the above example.
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first-time or a repeat shopper. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **query**: search query typed by a shopper in case products listing page shows the result of search event. “Shirt” in the above example.
 
 ### Tracking Category Page Event
 
@@ -225,9 +229,9 @@ client.track(analyticsDetails: categoryPageAnalytics, completion: {(response, ht
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier (UID) to every unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **withCategories**: The unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. for instance, If you have integrated category pages using the API call: `https://search.unbxd.io/api-key/site-key/category?p=categoryName` then `categoryQuery` will be called as:
+* **UID**: The SDK will generate a randomized unique identifier (UID) to every unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **withCategories**: The unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. for instance, If you have integrated category pages using the API call: `https://search.unbxd.io/api-key/site-key/category?p=categoryName` then `categoryQuery` will be called as:
 
 ```swift
 let categoryQuery = CategoryNamePath(withCategories: ["categoryName"])
@@ -239,13 +243,13 @@ but if you have integrated category pages using the API call: `https://search.un
 let categoryQuery = CategoryNamePath(withCategories: ["category:\(categoryName)"]) 
 ```
 
-- **pageType**: Its an enum defined in SDK. it accepts the following values:
-  - URL
-  - CATEGORY_PATH
-  - TAXONOMY_NODE
-  - ATTRIBUTE
-  - BOOLEAN
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **pageType**: Its an enum defined in SDK. it accepts the following values:
+  * URL
+  * CATEGORY\_PATH
+  * TAXONOMY\_NODE
+  * ATTRIBUTE
+  * BOOLEAN
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
 
 ### Tracking Product Click Event
 
@@ -262,25 +266,25 @@ client.track(analyticsDetails: productClickAnalytics, completion: {(response, ht
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to every unique user, who installs your application and it would be used to identify the user as first-time or a repeat shopper. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **query**: search query typed by a shopper in case products listing page shows the result of search event.
-- **pageId**: The unique identifier for the page passed in the category page API as parameter ‘p’ in case of products listing page shows the result of Category pages.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **boxType**: Recommendation widget clicked in case product is clicked from Recommendation Widget. Possible Values are:
+* **UID**: The SDK will generate a randomized unique identifier – UID to every unique user, who installs your application and it would be used to identify the user as first-time or a repeat shopper. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **query**: search query typed by a shopper in case products listing page shows the result of search event.
+* **pageId**: The unique identifier for the page passed in the category page API as parameter ‘p’ in case of products listing page shows the result of Category pages.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **boxType**: Recommendation widget clicked in case product is clicked from Recommendation Widget. Possible Values are:
 
-| Widget Type              | Box Type                   |
-|--------------------------|----------------------------|
-| Recommended For You      | RECOMMENDED_FOR_YOU        |
-| Recently Viewed          | RECENTLY__VIEWED           |
-| More Like These          | MORE_LIKE__THESE           |
-| Viewed also Viewed       | ALSO__VIEWED               |
-| Bought also Bought       | ALSO__BOUGHT               |
-| Cart Recommendations     | CART__RECOMMEND            |
-| HomePage Top Sellers     | TOP__SELLERS               |
-| Category Top Sellers     | CATEGORY__TOP__SELLERS     |
-| PDP Top Sellers          | PDP__TOP__SELLERS          |
-| Brand Top Sellers        | BRAND__TOP__SELLERS        |
+| Widget Type          | Box Type                   |
+| -------------------- | -------------------------- |
+| Recommended For You  | RECOMMENDED\_FOR\_YOU      |
+| Recently Viewed      | RECENTLY\_\_VIEWED         |
+| More Like These      | MORE\_LIKE\_\_THESE        |
+| Viewed also Viewed   | ALSO\_\_VIEWED             |
+| Bought also Bought   | ALSO\_\_BOUGHT             |
+| Cart Recommendations | CART\_\_RECOMMEND          |
+| HomePage Top Sellers | TOP\_\_SELLERS             |
+| Category Top Sellers | CATEGORY\_\_TOP\_\_SELLERS |
+| PDP Top Sellers      | PDP\_\_TOP\_\_SELLERS      |
+| Brand Top Sellers    | BRAND\_\_TOP\_\_SELLERS    |
 
 ### Tracking Add to Cart Event
 
@@ -295,12 +299,12 @@ client.track(analyticsDetails: addToCartAnalytics, completion: {(response, httpR
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The Unbxd request id returned in the search/category page/recommendations API call response.
-- **variantId**: The unique identifier of the variant being added.
-- **quantity**: Quantity of the product added to the checkout bag.
-- **productID**: SKU ID of the product.
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The Unbxd request id returned in the search/category page/recommendations API call response.
+* **variantId**: The unique identifier of the variant being added.
+* **quantity**: Quantity of the product added to the checkout bag.
+* **productID**: SKU ID of the product.
 
 ### Tracking Order Event
 
@@ -315,12 +319,12 @@ client.track(analyticsDetails: orderAnalytics, completion: {(response: Any?, err
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **variantId**: The unique identifier of the variant being added.
-- **quantity**: Quantity of the product added to the checkout bag.
-- **productID**: SKU ID of the product.
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **variantId**: The unique identifier of the variant being added.
+* **quantity**: Quantity of the product added to the checkout bag.
+* **productID**: SKU ID of the product.
 
 ### Tracking Product Display Event
 
@@ -335,10 +339,10 @@ client.track(analyticsDetails: productDisplayPageAnalytics, completion: {(respon
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **SKUID**: SKU ID of the product.
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **SKUID**: SKU ID of the product.
 
 ### Cart Removal Event
 
@@ -353,12 +357,12 @@ client.track(analyticsDetails: cartRemovalAnalytics, completion: {(response, htt
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **variantId**: The unique identifier of the variant being removed.
-- **quantity**: Quantity of the product removed.
-- **SKUID**: SKU ID of the product.
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **variantId**: The unique identifier of the variant being removed.
+* **quantity**: Quantity of the product removed.
+* **SKUID**: SKU ID of the product.
 
 ### Autosuggest Event
 
@@ -373,17 +377,17 @@ client.track(analyticsDetails: autoSuggestAnalytics, completion: {(response, htt
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier (UID) to each unique user, who installs your application and it would be used to identify the user as a first-time or a repeat shopper. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **query**: Autosuggest suggestion returned by Unbxd.
-- **docType**: It can be `IN_FIELD`, `POPULAR_PRODUCTS`, `TOP_SEARCH_QUERIES`, `KEYWORD_SUGGESTION`, `PROMOTED_SUGGESTIONS`.
-- **internalQuery**: Query for which autosuggest results were generated.
-- **fieldValue**: Set when autosuggest_type is `IN_FIELD`. Set to the value of the “infield” in unbxd response. It is set to null otherwise.
-- **fieldName**: Set when autosuggest_type is `IN_FIELD`. Name of the autosuggest field in the search response. It is set to null otherwise.
-- **sourceField**: Name of the fields present in the catalog on the combination of which in fields are generated. It is set when autosuggest_type is not null.
-- **skuId**: SKU id of the product. It is set non-null when autosuggest_type is `POPULAR_PRODUCTS`.
-- **unbxdPrank**: unbxdPrank is the position of selected suggestion the list of items/suggestions received in Autosuggest response.
+* **UID**: The SDK will generate a randomized unique identifier (UID) to each unique user, who installs your application and it would be used to identify the user as a first-time or a repeat shopper. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **query**: Autosuggest suggestion returned by Unbxd.
+* **docType**: It can be `IN_FIELD`, `POPULAR_PRODUCTS`, `TOP_SEARCH_QUERIES`, `KEYWORD_SUGGESTION`, `PROMOTED_SUGGESTIONS`.
+* **internalQuery**: Query for which autosuggest results were generated.
+* **fieldValue**: Set when autosuggest\_type is `IN_FIELD`. Set to the value of the “infield” in unbxd response. It is set to null otherwise.
+* **fieldName**: Set when autosuggest\_type is `IN_FIELD`. Name of the autosuggest field in the search response. It is set to null otherwise.
+* **sourceField**: Name of the fields present in the catalog on the combination of which in fields are generated. It is set when autosuggest\_type is not null.
+* **skuId**: SKU id of the product. It is set non-null when autosuggest\_type is `POPULAR_PRODUCTS`.
+* **unbxdPrank**: unbxdPrank is the position of selected suggestion the list of items/suggestions received in Autosuggest response.
 
 `skuId`, `query`, `doctype`, `internalQuery`, etc are obtained from Autosuggest response data.
 
@@ -400,25 +404,25 @@ client.track(analyticsDetails: recommendationImpressionAnalytics, completion: {(
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **recommendationType**: Specifies the type of recommendation widget. For different permissible values, refer the table below.
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **recommendationType**: Specifies the type of recommendation widget. For different permissible values, refer the table below.
 
-| Widget Type              | Box Type                   |
-|--------------------------|----------------------------|
-| Recommended For You      | RECOMMENDED_FOR_YOU        |
-| Recently Viewed          | RECENTLY__VIEWED           |
-| More Like These          | MORE_LIKE__THESE           |
-| Viewed also Viewed       | ALSO__VIEWED               |
-| Bought also Bought       | ALSO__BOUGHT               |
-| Cart Recommendations     | CART__RECOMMEND            |
-| HomePage Top Sellers     | TOP__SELLERS               |
-| Category Top Sellers     | CATEGORY__TOP__SELLERS     |
-| PDP Top Sellers          | PDP__TOP__SELLERS          |
-| Brand Top Sellers        | BRAND__TOP__SELLERS        |
+| Widget Type          | Box Type                   |
+| -------------------- | -------------------------- |
+| Recommended For You  | RECOMMENDED\_FOR\_YOU      |
+| Recently Viewed      | RECENTLY\_\_VIEWED         |
+| More Like These      | MORE\_LIKE\_\_THESE        |
+| Viewed also Viewed   | ALSO\_\_VIEWED             |
+| Bought also Bought   | ALSO\_\_BOUGHT             |
+| Cart Recommendations | CART\_\_RECOMMEND          |
+| HomePage Top Sellers | TOP\_\_SELLERS             |
+| Category Top Sellers | CATEGORY\_\_TOP\_\_SELLERS |
+| PDP Top Sellers      | PDP\_\_TOP\_\_SELLERS      |
+| Brand Top Sellers    | BRAND\_\_TOP\_\_SELLERS    |
 
-- **productIds**: The unique identifier of the products rendered.
+* **productIds**: The unique identifier of the products rendered.
 
 ### Search Impression
 
@@ -432,11 +436,11 @@ client.track(analyticsDetails: searchImpressionAnalytics, completion: {(response
 })
 ```
 
-- **action**: `search_impression`.
-- **pids_list**: List of product ids of products visible in the window when the event occurs.
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **action**: `search_impression`.
+* **pids\_list**: List of product ids of products visible in the window when the event occurs.
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
 
 ### Category Page Impression
 
@@ -452,9 +456,9 @@ client.track(analyticsDetails: categoryPageImpression, completion: {(response, h
 })
 ```
 
-- **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor.
-- **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
-- **withCategories**: unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. For instance, if you have integrated category pages using the API call: `https://search.unbxd.io/api-key/site-key/category?p=categoryName` then categoryQuery will be called as:
+* **UID**: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor.
+* **visitType**: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+* **withCategories**: unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. For instance, if you have integrated category pages using the API call: `https://search.unbxd.io/api-key/site-key/category?p=categoryName` then categoryQuery will be called as:
 
 ```swift
 let categoryQuery = CategoryNamePath(withCategories: ["categoryName"])
@@ -466,14 +470,14 @@ If you have integrated category pages using the API call: `https://search.unbxd.
 let categoryQuery = CategoryNamePath(withCategories: ["category:\(categoryName)"])  
 ```
 
-- **pageType**: It is an enum defined in SDK. It accepts the following values:
-  - URL
-  - CATEGORY_PATH
-  - TAXONOMY_NODE
-  - ATTRIBUTE
-  - BOOLEAN
-- **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
-- **pids_list**: List of product ids of products visible in the window when the event occurs.
+* **pageType**: It is an enum defined in SDK. It accepts the following values:
+  * URL
+  * CATEGORY\_PATH
+  * TAXONOMY\_NODE
+  * ATTRIBUTE
+  * BOOLEAN
+* **requestId**: The unbxd request id returned in the search/category page/recommendations API call response.
+* **pids\_list**: List of product ids of products visible in the window when the event occurs.
 
 ### Dwell Time
 
@@ -691,9 +695,9 @@ Facets are filters in the UI that allow visitors to narrow down result set based
 
 Facets can be of three types:
 
-- **Multi-level**: Facets on categories. For a given API response, multi-level facets would represent the top-most categories those products lie under.
-- **Text**: Facets on text fields in the feed. For example, color, brand, etc.
-- **Range**: Facets on numeric fields in the feed. For example, price, discount, etc.
+* **Multi-level**: Facets on categories. For a given API response, multi-level facets would represent the top-most categories those products lie under.
+* **Text**: Facets on text fields in the feed. For example, color, brand, etc.
+* **Range**: Facets on numeric fields in the feed. For example, price, discount, etc.
 
 Example: Search with multi-level Facets:
 
@@ -737,7 +741,7 @@ client.search(query: query, completion: {(response, httpResponse, err) -> Void i
 
 A filter is used to restrict the products based on criteria passed. Three types of filters are supported:
 
-- **Text**: It is used to filter products based on fields with string values such as color, gender, brand, etc. It can be defined in the API call in two ways:
+* **Text**: It is used to filter products based on fields with string values such as color, gender, brand, etc. It can be defined in the API call in two ways:
 
   **Using Field Ids**:
 
@@ -773,7 +777,7 @@ A filter is used to restrict the products based on criteria passed. Three types 
   })
   ```
 
-- **Range**: It is used to filter products based on fields with data types – date, number or decimal. It can be defined in the API in two ways:
+* **Range**: It is used to filter products based on fields with data types – date, number or decimal. It can be defined in the API in two ways:
 
   **Using Field Names**:
 
@@ -813,7 +817,7 @@ A filter is used to restrict the products based on criteria passed. Three types 
   })
   ```
 
-- **Multilevel**: It is used to filter products based on categories.
+* **Multilevel**: It is used to filter products based on categories.
 
 Each of the three filters can filter on field-name and field-id. Field-id/field-name is an optional parameter. If passed, it eliminates those products that do not match the criteria.
 
@@ -841,8 +845,8 @@ client.search(query: query, completion: {(response, httpResponse, err) -> Void i
 
 Multiple Filters: Multiple facets can be selected, which applies corresponding filters in a single call. There are two types of filter operations:
 
-- AND
-- OR
+* AND
+* OR
 
 **Search with multiple filters using AND and field ID/field name**:
 
@@ -916,8 +920,8 @@ The sort parameter is used to rank the products based on specified fields in the
 
 **Search with sorting on the single field/multiple fields**:
 
-- **fieldName**: The field on which the sort is applied.
-- **sortOrder**: The order in which the sort is applied. This value can be “ASC” (for ascending) or “DSC” (for descending).
+* **fieldName**: The field on which the sort is applied.
+* **sortOrder**: The order in which the sort is applied. This value can be “ASC” (for ascending) or “DSC” (for descending).
 
 ```swift
 // single field
@@ -959,13 +963,13 @@ The Autosuggest feature provides query suggestions, which helps your visitors to
 
 Unbxd Autosuggest comprises of different types of suggestions that are known as doctypes. A standard Unbxd Autosuggest is segmented into five doctypes:
 
-| Features              | Description                                                                 |
-|-----------------------|-----------------------------------------------------------------------------|
-| **In-fields**         | The In-fields doctype suggest groups of relevant products along with their associated field values the query may belong to. These field values can be categories, brands, occasion, etc. For example, a visitor types ‘Sh’, the In-field doctype will have the following suggestions:  - Shirts - In Men (based on gender) - In Nike (based on brand)  - In Blue (based on occasion) |
-| **Keyword Suggestions** | These are intelligent suggestions generated by Unbxd based on the query being typed and suggests relevant products based on your product feed accordingly. For example, a visitor types ‘Sh', the keyword suggestions doctype will have the following suggestions:  - Shirts - Shorts - Shoes - Shapewear |
-| **Top Queries**      | This doctype displays the frequently searched queries in your e-commerce store populated with the help of Unbxd Analytics, which keeps a track of your store. |
-| **Popular Products** | This doctype displays popular products with thumbnail images. Similar to Top Queries doctype, to render Popular products, Unbxd analytics needs to be integrated in your e-commerce store. |
-| **Promoted Suggestions** | These are documents that a customer can configure directly from merchandising console. For example, if a customer configures “jogging shoes” and “running shoes” as promoted suggestions, and a shopper searches for “sh”, the intended results are returned. |
+| Features                 | Description                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **In-fields**            | The In-fields doctype suggest groups of relevant products along with their associated field values the query may belong to. These field values can be categories, brands, occasion, etc. For example, a visitor types ‘Sh’, the In-field doctype will have the following suggestions:  - Shirts - In Men (based on gender) - In Nike (based on brand)  - In Blue (based on occasion) |
+| **Keyword Suggestions**  | These are intelligent suggestions generated by Unbxd based on the query being typed and suggests relevant products based on your product feed accordingly. For example, a visitor types ‘Sh', the keyword suggestions doctype will have the following suggestions:  - Shirts - Shorts - Shoes - Shapewear                                                                            |
+| **Top Queries**          | This doctype displays the frequently searched queries in your e-commerce store populated with the help of Unbxd Analytics, which keeps a track of your store.                                                                                                                                                                                                                        |
+| **Popular Products**     | This doctype displays popular products with thumbnail images. Similar to Top Queries doctype, to render Popular products, Unbxd analytics needs to be integrated in your e-commerce store.                                                                                                                                                                                           |
+| **Promoted Suggestions** | These are documents that a customer can configure directly from merchandising console. For example, if a customer configures “jogging shoes” and “running shoes” as promoted suggestions, and a shopper searches for “sh”, the intended results are returned.                                                                                                                        |
 
 ### Using Autosuggest Methods
 
@@ -1088,8 +1092,8 @@ Filters are used in the `AutoSuggest` method to restrict the products based on c
 
 Two types of filters are supported in `autoSuggestWithQuery()` method:
 
-- **Text**: It is used to filter products based on fields with string values such as color, gender, brand, etc.
-- **Range**: It is used to filter products based on fields with data types – date, number/decimals.
+* **Text**: It is used to filter products based on fields with string values such as color, gender, brand, etc.
+* **Range**: It is used to filter products based on fields with data types – date, number/decimals.
 
 Each of these filters can filter on field-name and field-id. Field-id/field-name is an optional parameter. If passed, it eliminates those products that do not match the criteria.
 
@@ -1099,8 +1103,8 @@ Each of these filters can filter on field-name and field-id. Field-id/field-name
 
 “filter-id” is used to filter the results using field-id. Using Field IDs, ‘IdFilter’ can be formed with two parameters:
 
-- **fieldID**: The id of the field on which the text filter is applied.
-- **field**: The id of the value on which the results are filtered.
+* **fieldID**: The id of the field on which the text filter is applied.
+* **field**: The id of the value on which the results are filtered.
 
 ```swift
 // Using Field ID
@@ -1126,8 +1130,8 @@ client.autoSuggest(query: autoSuggestQuery, completion: {(response: Any?, error:
 
 “filter-id” is used to filter the results using field-id. Using Field IDs, ‘IdFilter’ can be formed with two parameters:
 
-- **fieldID**: The id of the field on which the text filter is applied.
-- **field**: The id of the value on which the results are filtered.
+* **fieldID**: The id of the field on which the text filter is applied.
+* **field**: The id of the value on which the results are filtered.
 
 ```swift
 // Using Field ID
@@ -1247,9 +1251,9 @@ Facets are the filters in the UI that allow visitors to narrow down result set b
 
 Facets can be of three types:
 
-- **Multi-level**: Facets on categories. For a given API response, multi-level facets would represent the top-most categories those products lie under.
-- **Text**: Facets on text fields in the feed. For example, color, brand, etc.
-- **Range**: Facets on numeric fields in the feed. For example, price, discount, etc.
+* **Multi-level**: Facets on categories. For a given API response, multi-level facets would represent the top-most categories those products lie under.
+* **Text**: Facets on text fields in the feed. For example, color, brand, etc.
+* **Range**: Facets on numeric fields in the feed. For example, price, discount, etc.
 
 **Browse with multi-level facets**:
 
@@ -1297,9 +1301,9 @@ client.browse(query: browseQuery, completion: {(response: Any?, error: Error?) -
 
 A filter is used to restrict the products based on criteria passed. Three types of filters are supported:
 
-- **Text**: It is used to filter products based on fields with string values such as color, gender, brand, etc.
-- **Range**: It is used to filter products based on fields with data types – date, number or decimal.
-- **Multilevel**: It is used to filter products based on categories.
+* **Text**: It is used to filter products based on fields with string values such as color, gender, brand, etc.
+* **Range**: It is used to filter products based on fields with data types – date, number or decimal.
+* **Multilevel**: It is used to filter products based on categories.
 
 Each of the three filters can filter on field-name and field-id. Field-id/field-name is an optional parameter. If passed, it eliminates those products that do not match the criteria.
 
@@ -1309,8 +1313,8 @@ Each of the three filters can filter on field-name and field-id. Field-id/field-
 
 “filter-id” is used to filter the results using field-id. Using Field IDs, ‘IdFilter’ can be formed with two parameters:
 
-- **Field**: The id/name of the field on which the text filter is applied.
-- **Value**: The id/name of the value on which the results are filtered.
+* **Field**: The id/name of the field on which the text filter is applied.
+* **Value**: The id/name of the value on which the results are filtered.
 
 ```swift
 // Using field ID
@@ -1334,9 +1338,9 @@ client.browse(query: browseQuery, completion: {(response: Any?, error: Error?) -
 
 Range filter is built using `FilterIdRange` class and it can be initialized with parameters below.
 
-- **field**: The id/name of the field on which the text filter is applied.
-- **lower**: The id of the lower limit of the range.
-- **upper**: The id of the upper limit of the range.
+* **field**: The id/name of the field on which the text filter is applied.
+* **lower**: The id of the lower limit of the range.
+* **upper**: The id of the upper limit of the range.
 
 ```swift
 // Using field ID
@@ -1390,8 +1394,8 @@ client.browse(query: browseQuery, completion: {(response: Any?, error: Error?) -
 
 Multiple Filters: Multiple facets can be selected which applies corresponding filters in a single call. There are two types of filter operations:
 
-- AND
-- OR
+* AND
+* OR
 
 **Browse with multiple filters using AND and field ID/field name**:
 
@@ -1469,8 +1473,8 @@ For more information, see [here](https://unbxd.com/docs) (Request Parameters sec
 
 **Browse with sorting on the single field/multiple fields**:
 
-- **field**: The field on which the sort is applied.
-- **Order**: The order in which the sort is applied. This value can be “ASC” (for ascending) or “DSC” (for descending).
+* **field**: The field on which the sort is applied.
+* **Order**: The order in which the sort is applied. This value can be “ASC” (for ascending) or “DSC” (for descending).
 
 ```swift
 // single field
@@ -1512,18 +1516,18 @@ Unbxd Recommendations is a set of tailored widgets that showcase personalized pr
 
 The Unbxd SDK supports the following types of widgets:
 
-- Recommended For You
-- Recently Viewed
-- More Like This
-- Viewed also Viewed
-- Bought also Bought
-- Cart Recommendations
-- Top Sellers
-- Homepage Top Sellers
-- Category Top Sellers
-- PDP Top Sellers
-- Brand Top Sellers
-- Complete the Look
+* Recommended For You
+* Recently Viewed
+* More Like This
+* Viewed also Viewed
+* Bought also Bought
+* Cart Recommendations
+* Top Sellers
+* Homepage Top Sellers
+* Category Top Sellers
+* PDP Top Sellers
+* Brand Top Sellers
+* Complete the Look
 
 Recommendations method signature:
 
@@ -1678,5 +1682,5 @@ client.recommend(recommendationQuery: completeTheLookQuery, completion: {(respon
 
 Please find the link to sample iOS App:
 
-- **Fashion vertical**: [https://github.com/unbxd/FashionApp](https://github.com/unbxd/FashionApp)
-- **Home Decor App**: [https://github.com/unbxd/HomeDecorApp](https://github.com/unbxd/HomeDecorApp)
+* **Fashion vertical**: [https://github.com/unbxd/FashionApp](https://github.com/unbxd/FashionApp)
+* **Home Decor App**: [https://github.com/unbxd/HomeDecorApp](https://github.com/unbxd/HomeDecorApp)
