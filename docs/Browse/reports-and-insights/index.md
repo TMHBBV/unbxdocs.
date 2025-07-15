@@ -1,5 +1,5 @@
 ---
-title: Reports and Insights
+title: Reports
 deprecated: false
 hidden: false
 metadata:
