@@ -11,9 +11,15 @@ You can use the JSON /XML response format and customize your search experience b
 
 # Browse Endpoint
 
+Request Method: **GET**
+
+`https://search.unbxd.io/<API-KEY>/<SITE-KEY>/category?`
+
 ```Text Sample Request
 https://search.unbxd.io///category?p=&version=V2  
 &pagetype=boolean&format=<xml|json>&start=&rows=&filter-id=&sort=asc|desc&uid=&<fields=comma separated list of fields>&selectedfacet=true
+```
+```
 ```
 
 ## Authentication
@@ -30,13 +36,13 @@ For Search and Autosuggest API, we can enable personalization, segmentation, and
 
 The following parameters are available:
 
-| Parameter               | Description                                                                                                                                                                                 | Mandatory | Significance                                                                                                   |
-| :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------- | :------------------------------------------------------------------------------------------------------------- |
-| **unbxd-user-id**       | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics javascript sets the userid in your browser cookie.                                            | No        | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work.        |
-| **user-agent**          | Browser identification information passed to the webserver with every HTTP request                                                                                                          | No        | If not passed, device-based merchandising campaigns will not work.                                             |
-| **unbxd-device-type**\* | This header is an Unbxd custom header which is required to identify if the request is coming from an app.                                                                                   | No        | If not passed, device-based merchandising campaigns will not be able to differentiate between browser and apps |
-| **Accept-Encoding**     | This header signifies the content encoding of the response. Currently, Unbxd supports only gzip compression. To enable this, ‘gzip’ needs to be passed                                      | No        | If not passed, the response will not be compressed.                                                            |
-| **X-Forwarded-For**     | This header signifies the IP address of the end-user. This is primarily required if the integration is a backend as Unbxd doesn’t get the IP of the end-user from the browser in that case. | No        | If not passed, segmentation, A/B testing and personalization will not work.                                    |
+| Parameter             | Description                                                                                                                                                                                 | Mandatory | Significance                                                                                                   |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------- | :------------------------------------------------------------------------------------------------------------- |
+| **unbxd-user-id**     | Unique identification for the visitors. Example: uid-1466015353887-20419. The Unbxd Analytics javascript sets the userid in your browser cookie.                                            | No        | If not passed, personalization, segmentation, and A/B testing of merchandising campaigns will not work.        |
+| **user-agent**        | Browser identification information passed to the webserver with every HTTP request                                                                                                          | No        | If not passed, device-based merchandising campaigns will not work.                                             |
+| **unbxd-device-type** | This header is an Unbxd custom header which is required to identify if the request is coming from an app.                                                                                   | No        | If not passed, device-based merchandising campaigns will not be able to differentiate between browser and apps |
+| **Accept-Encoding**   | This header signifies the content encoding of the response. Currently, Unbxd supports only gzip compression. To enable this, ‘gzip’ needs to be passed                                      | No        | If not passed, the response will not be compressed.                                                            |
+| **X-Forwarded-For**   | This header signifies the IP address of the end-user. This is primarily required if the integration is a backend as Unbxd doesn’t get the IP of the end-user from the browser in that case. | No        | If not passed, segmentation, A/B testing and personalization will not work.                                    |
 
 \*unbxd-device-type:
 
