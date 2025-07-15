@@ -20,7 +20,18 @@ A real-time **Product Card Preview** appears in the center of the screen. This p
 
 Below is the reference of how attribute mapping will look like:
 
-ADD IMAGE
+### Why use Product Card Viewer?
+
+When configured correctly, it allows you to see all the key product details at a glance like how your shoppers would see them on your live site. This includes critical product attributes such as:
+
+* **Product Title** : The product's name is clearly displayed to help customers identify and understand the product.
+* **Price** : The cost of the product is prominently shown to inform customers about its price.
+* **Product Image** : The link to the product's image ensures a visual representation is displayed on the product card.
+* Plus any **additional fields** that matter to your business, such as **Size** and **delivery date**.
+
+These attributes are essential because they directly impact the user's ability to understand the product and purchase.
+
+When **Product Mapping** is correctly configured, the **Search Preview** or **Browse Preview** will display products in a seamless, clear, and compelling way.
 
 **Example card includes:**
 
