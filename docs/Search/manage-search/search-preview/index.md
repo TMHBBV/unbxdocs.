@@ -79,4 +79,9 @@ Filters panel in Search Preview allows you to simulate different search scenario
 | **Action Buttons**    | **Reset Filter**                  | Clears all selected toggles, user inputs, and attributes.                                                  |
 |                       | **Apply**                         | Applies the current filter settings and updates the search results preview.                                |
 
-Refer to the following documents to
+Refer to the following documents to know more.
+
+1. View Insights (AI-Meta-Data)
+2. Attribute Enrichment
+3. Shopping Assistant
+4. Product Card Viewer
