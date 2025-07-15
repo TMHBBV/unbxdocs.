@@ -24,67 +24,78 @@ In summary, integrating Netcore Unbxd Analytics is crucial to achieving your con
 
 ## What are the types of events tracked?
 
-The trackers will capture your users' behavior as they navigate and interact with your online touchpoints.
-  title="Global Events"
-    These are standard interactions tracked across your entire site, such as Visitor, Page views, Product clicks, Product Cart, and Product Order.
-  {" "}
+The trackers will capture your users' behavior as they navigate and interact with your online touchpoints.\
+title="Global Events"
+These are standard interactions tracked across your entire site, such as Visitor, Page views, Product clicks, Product Cart, and Product Order.
 
- title="Feature-specific Events"
-    
-    These track user interactions with specific features of your platform, such as Search, Product Impressions, Autosuggest, Category Pages, Browse Impressions, and Recommendations.
+{" "}
 
+title="Feature-specific Events"
+
+These track user interactions with specific features of your platform, such as Search, Product Impressions, Autosuggest, Category Pages, Browse Impressions, and Recommendations.
 
 ## What are the events we track?
 
+title="Visitor Event"
 
-  title="Visitor Event"
- 
-    The first event created when a shopper visits your site. It tracks and builds profiles using browser cookies for two types of visitors: first-time users and repeat users.
+The first event created when a shopper visits your site. It tracks and builds profiles using browser cookies for two types of visitors: first-time users and repeat users.
 
-   
-    Site-level information are stored as cookies and are titled as, 
+Site-level information are stored as cookies and are titled as,
 
-    <ul>
-    <li>
+<ul>
+  <li>
     User ID: <code>
     unbxd.userId</code>
+  </li>
 
-    </li>
-
-    
-    <li>
+  <li>
     Visit ID: <code>
     unbxd.visitId</code>
+  </li>
 
-    </li>
-
-    
-    <li>
+  <li>
     Visit Type: <code>
     unbxd.visit</code>
+  </li>
+</ul>
 
-    </li>
+title="Search Hit\
+Triggered when a shopper uses the search bar to find a product on your site or selects one of the suggestions provided by Netcore Unbxd's Autosuggest widget.
 
-    </ul>
- 
-  title="Search Hit
-    Triggered when a shopper uses the search bar to find a product on your site or selects one of the suggestions provided by Netcore Unbxd's Autosuggest widget.
+It captures every query the shopper searches, even if no results are returned, providing insights into search effectiveness.
 
-    It captures every query the shopper searches, even if no results are returned, providing insights into search effectiveness.
+title="Product Click"\
+Triggered whenever a shopper clicks a product or product image from any Product Listing Page (PLP), Category page, or Recommendation widget. It will capture the clicked product’s unique ID and the page where the click activity occurred.
 
- 
-title="Product Click"
-    Triggered whenever a shopper clicks a product or product image from any Product Listing Page (PLP), Category page, or Recommendation widget. It will capture the clicked product’s unique ID and the page where the click activity occurred.
+This data can be used to highlight ‘Popular Products’ and create personalized ‘Recommended For You’ lists, ensuring a more customized shopping experience.
 
-    This data can be used to highlight ‘Popular Products’ and create personalized ‘Recommended For You’ lists, ensuring a more customized shopping experience.
+title="Add to Cart"
 
- title="Add to Cart"
-  
-    Triggered each time a user adds a product to their cart, regardless of the originating page—whether it’s the Product Detail Page (PDP), Product Listing Page (PLP), historical orders, or any other page.
-    For users incrementally adding products, the event should fire once per product addition, and the <code>
-    qty</code>
+Triggered each time a user adds a product to their cart, regardless of the originating page—whether it’s the Product Detail Page (PDP), Product Listing Page (PLP), historical orders, or any other page.\
+For users incrementally adding products, the event should fire once per product addition, and the <code>
+qty</code>
 
-     parameter should reflect the quantity added during that specific action.
+parameter should reflect the quantity added during that specific action.
 
-   title="Order"
-     Triggered when a purchase is completed on your site. This event should be fired for each product in the order, capturing valuable data such as the product ID, quantity, and order details.
+title="Order"\
+Triggered when a purchase is completed on your site. This event should be fired for each product in the order, capturing valuable data such as the product ID, quantity, and order details.
+
+<br />
+
+## How to integrate Netcore UNBXD Analytics?
+
+The Netcore Unbxd Analytics tracker must be integrated on every page and version of your site, including desktop, mobile, and tablet.
+
+We provide multiple integration options, each designed to meet specific technical requirements and business needs.
+
+Here’s an overview of the implementation methods available:
+
+title="Netcore Unbxd Pulse (Recommended)" icon="thumbs-up" href="/integrations/what-is-pulse">
+Simplify Analytics Integration by adding just one line of code to your site and letting Netcore Unbxd experts handle the rest.
+
+title="API Implementation (Recommended)" icon="webhook" href="/integrations/api-integration/overview">
+With this method, you integrate the API references for each event that needs to be tracked. It is particularly suitable for businesses that require a high level of customization.
+title="JavaScript Implementation" icon="js" href="/integrations/javascript-integration">
+This method allows embedding the tracker as a custom Javascript file, anywhere within the HTML pages in your site.
+title="Tag Manager Implementation" icon="tag" href="/integrations/gtm-integration">
+If your website uses a tag manager such as GTM (Google Tag Manager) or Tealium, you can use your tag manager to easily place the tracker in your site.
