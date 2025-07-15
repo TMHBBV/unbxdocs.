@@ -1,5 +1,5 @@
 ---
-title: 'Search Preview '
+title: 'Search Preview: AI Debug Capability'
 deprecated: false
 hidden: false
 metadata:
