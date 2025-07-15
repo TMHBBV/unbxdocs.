@@ -2221,60 +2221,74 @@ client.recommend(homePageTopSellersRecommendation, object : ICompletionHandler {
 })
 ```
 
-#### Top Sellers – Category Page
+#### Top Sellers – Category Page: This method recommends top selling products from a specific category.
 
 ```kotlin
-val categoryTopSellersRecommendation = CategoryTopSellersRecommendation.Builder(userId.id).region("US").currency("USD").build()
-client.recommend(categoryTopSellersRecommendation, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Client Response", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.d("Client Response", errorMessage)
-    }
-})
+val categoryTopSellersRecommendation = CategoryTopSellersRecommendation.Builder(userId.id, ).region("US").currency("USD").build()  
+client.recommend(categoryTopSellersRecommendation, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-#### Top Sellers – Product Page
+#### Top Sellers – Product Page: This method recommends top selling products from a specific product.
 
 ```kotlin
-val pdpTopSellersRecommendation = PDPTopSellersRecommendation.Builder(userId.id, "23121").region("US").currency("USD").build()
-client.recommend(pdpTopSellersRecommendation, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Client Response", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.d("Client Response", errorMessage)
-    }
-})
+val pdpTopSellersRecommendation = PDPTopSellersRecommendation.Builder(userId.id, "23121").region("US").currency("USD").build()  
+client.recommend(pdpTopSellersRecommendation, object : ICompletionHandler  
+                                      {
+                                       override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-#### Top Sellers – Brand
+#### Top Sellers – Brand: This method recommends top selling products from a specific brand.
 
 ```kotlin
-val brandTopSellersRecommendation = BrandTopSellersRecommendation.Builder(userId.id, "Nike").region("US").currency("USD").build()
-client.recommend(brandTopSellersRecommendation, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Client Response", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.d("Client Response", errorMessage)
-    }
-})
+val brandTopSellersRecommendation = BrandTopSellersRecommendation.Builder(userId.id, "Nike").region("US").currency("USD").build()  
+client.recommend(brandTopSellersRecommendation, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-#### Complete the Look
+#### Complete the Look: The Complete the Look method showcases curated products on a PDP that are usually associated with the original product.
 
 ```kotlin
-val completeTheLookRecommendation = CompleteTheLookRecommendation.Builder(userId.id, "23121").region("US").currency("USD").build()
-client.recommend(completeTheLookRecommendation, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Client Response", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.d("Client Response", errorMessage)
-    }
-})
+val completeTheLookRecommendation = CompleteTheLookRecommendation.Builder(userId.id, "23121").region("US").currency("USD").build()  
+client.recommend(completeTheLookRecommendation, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
 # Sample iOS App
