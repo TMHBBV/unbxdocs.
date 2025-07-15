@@ -1,7 +1,7 @@
 ---
 title: Search Management
 excerpt: >-
-  optimize how search results are presented to shoppers with Searchable Fields
+  Optimize how search results are presented to shoppers with Searchable Fields
   and Facets.
 deprecated: false
 hidden: false
