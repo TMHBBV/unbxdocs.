@@ -1,5 +1,5 @@
 ---
-title: Big Commerce Integration
+title: BigCommerce Integration
 deprecated: false
 hidden: false
 metadata:
