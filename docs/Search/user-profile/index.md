@@ -131,6 +131,14 @@ The list of multiple sites added for your profile are displayed here with the fo
 | **Remaining**                | The remaining number of sites that you can still add.           |
 | **Min Campaign Duration**    | The defined duration for which the campaign will remain active. |
 
+The other details specified based on the account sites are:
+
+* **Site Key**: Every site added on the console has a unique alphanumeric site key used in all API calls to help us identify your site. A sample site key for a site named “**testing**” looks like **testing-u1478243900645**.
+* **Environment**: It can be either on the ‘**Production**’ or ‘**Development**’ environment.
+* **Added-On**: The date on which the site was added here
+* **Campaign Min-Duration**: The timeline for which the created campaign will stay active
+* **Actions**: If you need to edit the site detail for ex. In the region, then click the edit icon.
+
 ## SSO
 
 Single Sign-On (SSO) is an authentication process that allows users to access multiple applications with a single set of credentials. It enhances security, reduces user effort, and simplifies credential management.
