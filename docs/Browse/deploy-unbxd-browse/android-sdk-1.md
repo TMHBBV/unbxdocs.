@@ -649,7 +649,9 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 
 #### Variant
 
-Variants can be enabled or disabled in AutoSuggest query responses.
+Example: Search with variants
+
+Variants parameter enables or disables variants in the API response. It can take two values: “true” or “false”. Default value is “false”.
 
 ```kotlin
 val autosuggestQuery = AutosuggestQuery.Builder("Shir").variant(Variant(true, 2)).build()
@@ -663,7 +665,23 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 })
 ```
 
+If you want to get more than one variants in the API response, you can use variantCount parameter. It can have any numerical value (for example,1,2,3,etc) or “.max” (to get all the variants).
+
 #### Doctype: InField
+
+Autosuggest comprises of different types of suggestions that are known as doctypes as discussed above. A standard Unbxd Autosuggest is segmented into five doctypes:
+
+* InField
+* Keyword Suggestions
+* Top Queries
+* Promoted Suggestions
+* Popular Products
+
+Let’s discuss how to integrate each of these DocTypes, in your autosuggest response.
+
+### InField
+
+The inField doctype with result count can be configured as shown below:
 
 ```kotlin
 val docType = DocTypeInField.Builder().resultCount(3).build()
@@ -677,6 +695,14 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
     }
 })
 ```
+
+> 📘 NOTE
+>
+> If resultCount is not set, default value 2 will be considered as results count for inField doctype.
+
+### Keyword Suggestions
+
+Keyword Suggestions doctype with result count can be configured as shown below:
 
 #### Doctype: Keyword Suggestions
 
@@ -693,7 +719,13 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 })
 ```
 
-#### Doctype: Top Queries
+> 📘 NOTE
+>
+> If resultCount is not set, default value 2 will be considered as results count for Keyword Suggestions doctype.
+
+#### Top Queries
+
+Top Queries doctype with result count can be configured as below:
 
 ```kotlin
 val docType = DocTypeTopQueries.Builder().resultCount(3).build()
@@ -710,6 +742,10 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 
 #### Doctype: Promoted Suggestions
 
+Promoted Suggestions are product recommendations that a merchandiser can configure from the console.
+
+This gives you the flexibility to manually insert keyword suggestions in autosuggest which may not be part of the default relevance results.Promoted Suggestions doctype with result count can be configured as below:
+
 ```kotlin
 val docType = DocTypePromotedSuggestions.Builder().resultCount(5).build()
 val autosuggestQuery = AutosuggestQuery.Builder("Shir").promotedSuggestions(docType).build()
@@ -725,6 +761,10 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 
 #### Doctype: Popular Products
 
+The Popular Products doctype displays products most searched for in your eCommerce store with thumbnail images.
+
+Popular Products doctype with fields and result count can be configured as below:
+
 ```kotlin
 val docType = DocTypePopularProducts.Builder().resultCount(3).fields(arrayOf("vColor", "price")).build()
 val autosuggestQuery = AutosuggestQuery.Builder("Shir").popularProducts(docType).build()
@@ -738,11 +778,23 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 })
 ```
 
+> 📘 NOTE
+>
+> If resultCount is not set, default value 3 will be considered as results count for Promoted Suggestions doctype.
+
 ### Filters in Autosuggest
 
-Filters, when used in AutoSuggest, help restrict products based on criteria passed.
+Filters, when used in AutoSuggest, helps to restrict products based on criteria passed. Two types of filters are supported
+
+* Text
+* Range
+* Text
+
+The text filter is used to filter products based on fields with string values such as color, gender, brand, etc. It can be defined in the API call in two ways:
 
 #### Text Filter: Using Field IDs
+
+IdFilter can be formed with 2 parameters.field: The id of the field on which the text filter is applied. value: The id of the value on which the results are filtered.
 
 ```kotlin
 val idFilter = IdFilter("76678", "5001")
@@ -757,7 +809,10 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 })
 ```
 
-#### Text Filter: Using Field Names
+#### Text Filter: Using Field Names Again NameFilter can be formed with 2 parameters.
+
+* field: The ID of the field on which the text filter is applied.
+* value: The ID of the value on which the results are filtered.
 
 ```kotlin
 val nameFilter = NameFilter("vColor", "Black")
@@ -774,6 +829,16 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 
 #### Range Filter: Using Field IDs
 
+The range filter is used to refine products based on fields with datatypes:
+
+* date
+* number
+* decimal
+
+You can define the API in two ways:
+
+`Using Field IDs`
+
 ```kotlin
 val idFilterRange = IdFilterRange("76678", "2034", "8906")
 val autosuggestQuery = AutosuggestQuery.Builder("Shir").filter(idFilterRange).build()
@@ -786,6 +851,14 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
     }
 })
 ```
+
+Using Field Names
+
+Filter Range of type name is built using FilterNameRange class and it can be initialized with below parameters.
+
+* field: The name of the field on which the text filter is applied.
+* lower: The name of the lower limit of the range.
+* upper: The name of the upper limit of the range.
 
 #### Range Filter: Using Field Names
 
@@ -802,7 +875,7 @@ client.autosuggest(autosuggestQuery, object : ICompletionHandler {
 })
 ```
 
-### Integrating Unbxd Analytics (Advanced)
+### Integrating Unbxd Analytics
 
 Unbxd Analytics tracks a wide range of shopper interactions called **events**, which are essential for optimizing product discovery and generating accurate reports.
 
@@ -820,162 +893,379 @@ Unbxd Analytics tracks a wide range of shopper interactions called **events**, w
 * Recommendation Widget Impression
 * Search Impression
 * Category Page Impression
-* Dwell Time
-* Facet Clicks
+* Dwell time (time spent on a product page)
 
 #### Get User ID and Visit Type
 
+SDK generates user ID internally and using below method in Client, App can get UserId and Visit type.
+
 ```kotlin
-val userId = client.userId()
-val id = userId.id           // Unique User Identifier
-val visitType = userId.visitType  // "first-time" or "repeat"
+fun userId(): UserId  
+User Id instance would have,  
+val id: String  
+val visitType: String
 ```
 
 #### Get Request ID from Response
 
 ```kotlin
-fun Response.unbxdRequestId(): String? {
-    val headers = this.headers()
-    return headers["Unbxd-Request-Id"] ?: headers["x-request-id"]
-}
+fun Response.unbxdRequestId(): String?  
+                                      {
+                                      val allHeaders = this.headers()
+var requestId = allHeaders.get("Unbxd-Request-Id") if (!requestId.isNullOrEmpty())  
+                                      {
+                                      return requestId 
+                                      }
+                                      requestId = allHeaders.get("x-request-id") if (!requestId.isNullOrEmpty()) 
+                                      {
+                                      return requestId 
+                                      }
+                                      return null
+                                      }<br>
 ```
 
-***
+### Tracking Visitor Event
 
-#### Example: Tracking Visitor Event
+Whenever a new user visits the app, a visitor event is fired, containing information about whether a user is a first time visitor or a repeat visitor.
 
-```kotlin
-val visitorAnalytics = VisitorAnalytics(userId.id, userId.visitType, requestId)
-client.track(visitorAnalytics, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Analytics", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.e("Analytics", errorMessage)
-    }
-})
+This information is extracted from a ‘visitor’ cookie which is set every time the visitor event is fired. The cookie maintains the information about “visitType” parameter (also used by other events). Its value can be either ‘first-time’ or ‘repeat’.
+
+The SDK will generate a randomized unique identifier (UUID)- UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to a storage device so that it will persist across sessions.
+
+Whenever a new user installs, launches and do some activity such as search, click, etc.. on the application, a visitor event is fired from SDK, that contains information that shopper is a ‘first-time’ user.
+
+Each session of the shopper on the application has an expiry time of 30 minutes and after it expires, the visitor event is fired again and reset the ‘visitType’ as “repeat” user. Next time the shopper opens the application, if the last visitor event was fired more than 30 minutes ago, the visitor event is fired again with ‘visitType’ as “repeat” user. This means, that if the shopper is logged on to the application for more than 30 minutes, his/her visitType will be changed from ‘first-time’ to ‘repeat’ and will be “repeat” forever until he uninstalls and re-installs the application.
+
+```
+val userId = client.userId()  
+val visitorAnalytics = VisitorAnalytics(userId.id, userId.visitType, requestId)  
+client.track(visitorAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response)                                                                 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-> Note: The SDK automatically tracks visitor events when a user opens the app.
+> 📘 NOTE
+>
+> All of the above-mentioned tracking is done by the SDK itself and you as an application developer has to do nothing in order to track visitor event. You can retrieve the UID and visit type using the userId method.
 
-***
+### Tracking Search Event
 
-#### Example: Tracking Search Event
+A search event is fired when a shopper types something in the search box and presses enter or clicks on the search button. This will take the user to the search results page.
 
-```kotlin
-val searchAnalytics = SearchAnalytics(userId.id, userId.visitType, requestId, "Shirt")
-client.track(searchAnalytics, object : ICompletionHandler { ... })
+```
+val userId = client.userId()  
+val searchAnalytics = SearchAnalytics(userId.id, userId.visitType, requestId,  
+"Shirt")
+client.track(searchAnalytics, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { 
+                                      Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+here in this example, “Shirt” is the string shopper types in the search box and presses enter or clicks the search button.
 
-#### Example: Tracking Category Page Event
+userId.visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.\
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
+requestId: The unbxd request id returned in the search/category page/recommendations api call response.
 
-```kotlin
-val categoryPath = CategoryIdPath(arrayOf("cat3380002"))
-val categoryPageAnalytics = CategoryPageAnalytics(userId.id, userId.visitType, requestId, categoryPath, PageType.Boolean)
-client.track(categoryPageAnalytics, object : ICompletionHandler { ... })
+### Tracking Category Page Event
+
+Category Page event is fired when a user navigates through the categories on the online store and visits a category page.
+
+```
+val categoryPath = CategoryIdPath(arrayOf("cat3380002"))  
+val categoryPageAnalytics = CategoryPageAnalytics(userId.id, userId.visitType,  
+requestId, categoryPath, PageType.Boolean)  
+client.track(categoryPageAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+<br />
 
-#### Example: Product Click Event
+Here,userId.id: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
 
-```kotlin
-val clickAnalytics = ProductClickAnalytics(userId.id, userId.visitType, requestId, "2301609", "Socks", RecommendationType.RecommendedForYou.boxType)
-client.track(clickAnalytics, object : ICompletionHandler { ... })
+userId.visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+requestId: The unbxd request id returned in the search/category page/recommendations API call response.
+
+\*categoryPath: \*:unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page. for instance, If you have integrated category pages using the API call: `[https://search.unbxd.io/api-key/site-key/category?p=categoryName](https://search.unbxd.io/api-key/site-key/category?p=categoryName` then categoryQuery will be called as
+
+```
+let categoryQuery = CategoryNamePath(withCategories:["categoryName"])
 ```
 
-***
+but if you have integrated category pages using the API call: [https://search.unbxd.io/api-key/site-key/category?p=category:categoryName](https://search.unbxd.io/api-key/site-key/category?p=category:categoryName)
 
-#### Example: Add to Cart Event
+then categoryQuery will be called as
 
-```kotlin
-val addToCart = ProductAddToCartAnalytics(userId.id, userId.visitType, requestId, "2301609", "231221", 2)
-client.track(addToCart, object : ICompletionHandler { ... })
+```
+let categoryQuery = CategoryNamePath(withCategories: ["category:\(categoryName)"]) 
 ```
 
-***
+PageType: Its an enum defined in SDK. it accepts the following values:
 
-#### Example: Order Event
+* URL
+* CATEGORY\_PATH
+* TAXONOMY\_NODE
+* ATTRIBUTE
+* BOOLEAN
+* Tracking Product Click Event
 
-```kotlin
-val order = ProductOrderAnalytics(userId.id, userId.visitType, requestId, "2301609", 20.5, 2)
-client.track(order, object : ICompletionHandler { ... })
+Whenever a user clicks on a particular product in the search or category page results, a ‘click’ action is generated.
+
+The following code needs to be called along with the appended data as described below:
+
+```
+val userId = client.userId()  
+val productClickAnalytics = ProductClickAnalytics(userId.id, userId.visitType, requestId, "2301609", "Socks", RecommendationType.RecommendedForYou.boxType)  
+client.track(productClickAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+userId.id: The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
 
-#### Example: PDP View Event
+userId.visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
 
-```kotlin
-val pdp = ProductDisplayPageViewAnalytics(userId.id, userId.visitType, requestId, "2034")
-client.track(pdp, object : ICompletionHandler { ... })
+requestId: The unbxd request id returned in the search/category page/recommendations api call response.
+
+pageId(in example-2301609): Sends the unique identifier for the page passed in the category page API as parameter ‘p’ in case of Category Page.
+
+query( in example-Socks): Sends search query in case of search in the products listing page
+
+boxType: Recommendation widget clicked in case product is clicked from Recommendation Widget. Possible Values are:
+
+| **Widget Type**      | **Box Type**               |
+| -------------------- | -------------------------- |
+| Recommended For You  | RECOMMENDED\_FOR\_YOU      |
+| Recently Viewed      | RECENTLY\_\_VIEWED         |
+| More Like These      | MORE\_LIKE\_\_THESE        |
+| Viewed also Viewed   | ALSO\_\_VIEWED             |
+| Bought also Bought   | ALSO\_\_BOUGHT             |
+| Cart Recommendations | CART\_\_RECOMMEND          |
+| HomePage Top Sellers | TOP\_\_SELLERS             |
+| Category Top Sellers | CATEGORY\_\_TOP\_\_SELLERS |
+| PDP Top Sellers      | PDP\_\_TOP\_\_SELLERS      |
+| Brand Top Sellers    | BRAND\_\_TOP\_\_SELLERS    |
+
+### Tracking Add to Cart Clicks
+
+An Add to Cart click event is fired every time shopper adds an item to cart.
+
+```
+val userId = client.userId()  
+val addToCartAnalytics = ProductAddToCartAnalytics(userId.id, userId.visitType, requestId, "2301609", "231221", 2)  
+client.track(addToCartAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+override fun onFailure(errorMessage: String, exception: Exception)  
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
 
-#### Example: Cart Removal
+userId.visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
 
-```kotlin
-val remove = CartRemovalAnalytics(userId.id, userId.visitType, requestId, "2034", "231221", 2)
-client.track(remove, object : ICompletionHandler { ... })
+\*requestId \*: The unbxd request id returned in the search/category page/recommendations API call response.
+
+PID: SKU id of the product. For example “2301609” in the above code.
+
+variantId: Id of the variant being added. For example “231221” in the above code.
+
+quantity: Quantity of the product added to the checkout bag. For example “2” in the above code.
+
+### Tracking Order Event
+
+A product order event is fired upon order completion after the shopper returns to a product page from the payment gateway.
+
+```
+val userId = client.userId()  
+val orderAnalytics = ProductOrderAnalytics(userId.id, userId.visitType, requestId, "2301609", 20.5, 2)  
+client.track(orderAnalytics, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+Log.d("Client Response",json.toString())  
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+<br />
 
-#### Example: Autosuggest Click
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
 
-```kotlin
-val suggest = AutoSuggestAnalytics(userId.id, userId.visitType, requestId, "2034", "Red Socks", DocType.INFIELD.jsonKey, "red", "Red socks", "infield1", "color type", 6)
-client.track(suggest, object : ICompletionHandler { ... })
+userId.visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+requestId: The unbxd request id returned in the search/category page/recommendations API call response.
+
+\*pid: \*SKU id of the product. For example “2301609” in the above code.
+
+Price: Order Payment of the product paid by the customer. For example “20.5” in the above code.
+
+qty: Quantity of the product bought. For example “2” in the above code.
+
+### Tracking Product Display Page Views
+
+A product display page view event is fired every time a shopper visits a Product Display Page (PDP).
+
+```
+val userId = client.userId()  
+val productDisplayAnalytics = ProductDisplayPageViewAnalytics(userId.id, userId.visitType, requestId, "2034")  
+client.track(productDisplayAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+<br />
 
-#### Example: Recommendation Widget Click
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
 
-```kotlin
-val widgetClick = RecommendationWidgetAnalytics(userId.id, userId.visitType, requestId, RecommendationType.RecommendedForYou, arrayOf("1692741", "01692015", "1692908"))
-client.track(widgetClick, object : ICompletionHandler { ... })
+userId.visitType:This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+requestId:The unbxd request id returned in the search/category page/recommendations api call response.
+
+pid:SKU id of the product. For example “2034” in the above code.
+
+### Tracking Cart Removals
+
+A cart removal event is fired when a shopper removes an item from the cart.
+
+```
+val userId = client.userId()  
+val cartRemovalAnalytics = CartRemovalAnalytics(userId.id, userId.visitType, requestId, "2034", "231221", 2)  
+client.track(cartRemovalAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+<br />
 
-#### Example: Search Impression
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
 
-```kotlin
-val impression = SearchImpressionAnalytics(userId.id, userId.visitType, requestId, "Shoes", arrayOf("1692741", "01692015", "1692908"))
-client.track(impression, object : ICompletionHandler { ... })
+userId.visitType:This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
+
+requestId:The unbxd request id returned in the search/category page/recommendations api call response.
+
+pid:SKU id of the product. For Example “2034” in the above code.
+
+variantId:Id of the variant being removed. For example “231221” in the above code.
+
+qty:Quantity of the product removed. For example “2” in the above code.
+
+### Tracking Autosuggest
+
+An autosuggest event is fired when a shopper searches for a product and clicks on a product within the autosuggest widget/panel.
+
+```
+val userId = client.userId()  
+val autoSuggestAnalytics = AutoSuggestAnalytics(userId.id, userId.visitType, requestId, "2034", "Red Socks", DocType.INFIELD.jsonKey, "red", "Red socks", "infield1", "color type", 6)  
+client.track(autoSuggestAnalytics, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString())                       
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-***
+userId.id:The SDK will generate a randomized unique identifier – UID to each unique user, who installs your application and it would be used to identify the user as first time visitor or a repeat visitor. This distinct ID is saved to the storage device so that it will persist across sessions.
 
-#### Example: Category Page Impression
+userId.visitType: This information is extracted from a ‘visitor’ cookie setup by SDK. Its value can be either ‘first-time’ or ‘repeat’.
 
-```kotlin
-val catPath = CategoryNamePath(arrayOf("home", "furniture", "entrywayfurniture"))
-val catImpression = CategoryPageImpressionAnalytics(userId.id, userId.visitType, requestId, catPath, PageType.Url, arrayOf("1692741", "01692015", "1692908"))
-client.track(catImpression, object : ICompletionHandler { ... })
-```
+\*requestId: \*The unbxd request id returned in the search/category page/recommendations api call response.
 
-***
+pid:SKU id of the product.It is set non-null when autosuggest\_type is POPULAR\_PRODUCTS. For example “2034” in the above code.
 
-#### Example: Dwell Time
+query: Autosuggest suggestion returned by Unbxd.
 
-```kotlin
-val dwell = DwellTimeAnalytics(userId.id, userId.visitType, requestId, "2301609", 60.0)
-client.track(dwell, object : ICompletionHandler { ... })
-```
+\*docType : \*It can be IN\_FIELD, POPULAR\_PRODUCTS TOP\_SEARCH\_QUERIES, KEYWORD\_SUGGESTION, PROMOTED\_SUGGESTIONS.
 
-***
+\*internalQuery : \*Query for which autosuggest results were generated. For example “red” in the above code.
 
-#### Example: Facet Click
+fieldValue : Set when autosuggest\_type is IN\_FIELD. Set to the value of the “infield” in unbxd response. It is set to null otherwise. For example “Red socks” in the above code.
 
-```kotlin
-val facet = FacetAnalytics(userId.id, userId.visitType, requestId, "Shirts", NameFilter("fit_fq", "Fitted"))
-client.track(facet, object : ICompletionHandler { ... })
-```
+fieldName : Set when autosuggest\_type is IN\_FIELD. Name of the autosuggest field in the search response. It is set to null otherwise. For Example “infield1” in the above code.
+
+* sourceField:\* Name of the fields present in the catalog on the combination of which in fields are generated. It is set when autosuggest\_type is not null. For example “color type” in the above code.
+
+* unbxdPrank:\* unbxdPrank is the position of selected suggestion the list of items/suggestions received in Autosuggest response. For example “6” in the above code.
+
+skuId, query, doctype, internalQuery, etc are obtained from Autosuggest response data.
+
+### Tracking Recommendation Widget
+
+If you are subscribed to Unbxd Recommendations, every time the shopper clicks on a Recommendation widget, the API below will be called.
 
 ### Integrating Unbxd Recommendations
 
