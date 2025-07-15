@@ -1,5 +1,5 @@
 ---
-title: Merchandising
+title: Merchandising Features
 deprecated: false
 hidden: false
 metadata:
