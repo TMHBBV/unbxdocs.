@@ -27,10 +27,10 @@ Pulse is engineered to function without impacting site performance. It operates 
 
 ## How to integrate Netcore Unbxd Pulse?
 
-title="Review prerequisites">
+title="Review prerequisites">\
 Every event requires mandatory attributes to form its payload. Ensure these values are accessible in the page, DOM, or URL for sending the event. Additionally, specific HTML attributes may need to be added for each document or event type. Refer to the event payload section for detailed information.
 
-title="Add the integration code">
+title="Add the integration code">\
 Add the following `<script>` tag at the end of your site's HTML body.
 
 ```html
@@ -44,7 +44,7 @@ src="https://libraries.unbxdapi.com/sdk-clients/PROD_SITEKEY/ua/ua.js">
 
 The use of the `defer` attribute is to load the script in parallel with HTML parsing, ensuring the script executes only after the HTML is fully parsed. This improves the load performance of the page.
 
-title="Validate payload data retrieval">
+title="Validate payload data retrieval">\
 Verify that Netcore Unbxd Pulse can retrieve event payload data from sources such as DOM, URL, or browser windows.
 
 ## How to check if event payload data is retrieved?
@@ -280,7 +280,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsSugg`  | suggested query                  |
 | `data-unxAsPrank` | index number                     |
 
-The attribute names can be defined based on your requirements. However, the
+The attribute names can be defined based on your requirements. However, the\
 attribute values must match EXACTLY as provided above.
 
 ```html Example markup
@@ -338,7 +338,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsSugg`  | suggested query                  |
 | `data-unxAsPrank` | index number                     |
 
-The attribute names can be defined based on your requirements. However, the
+The attribute names can be defined based on your requirements. However, the\
 attribute values must match EXACTLY as provided above.
 
 ```html Example Markup
@@ -388,7 +388,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsSugg`  | suggested query                  |
 | `data-unxAsPrank` | index number                     |
 
-The attribute names can be defined based on your requirements. However, the
+The attribute names can be defined based on your requirements. However, the\
 attribute values must match EXACTLY as provided above.
 
 ```html Example Markup
@@ -440,7 +440,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsFldName`  | Name of the catalog field associated with the query |
 | `data-unxAsFldValue` | Value of the associated field                       |
 
-The attribute names can be defined based on your requirements. However, the
+The attribute names can be defined based on your requirements. However, the\
 attribute values must match EXACTLY as provided above.
 
 ```html Example Markup
@@ -497,7 +497,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsPrank` | index number                                  |
 | `data-unxAsPid`   | Unique ID of the product as per Unbxd catalog |
 
-The attribute names can be defined based on your requirements. However, the
+The attribute names can be defined based on your requirements. However, the\
 attribute values must match EXACTLY as provided above.
 
 ```html Example Markup
@@ -561,7 +561,7 @@ Below are the mandatory HTML attributes and values that need to be placed in the
 | `data-unxAsPid`      | Unique ID of the product as per Unbxd catalog |
 | `data-unxAsSrcQuery` | Name of the suggested query shown upon hover  |
 
-The attribute names can be defined based on your requirements. However, the
+The attribute names can be defined based on your requirements. However, the\
 attribute values must match EXACTLY as provided above.
 
 ```html Example Markup
