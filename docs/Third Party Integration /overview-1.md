@@ -1,5 +1,6 @@
 ---
 title: Overview
+excerpt: Collaborate with our Technology Partners to enhance your customer experience.
 deprecated: false
 hidden: false
 metadata:
