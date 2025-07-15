@@ -8,7 +8,7 @@ hidden: false
 metadata:
   robots: index
 ---
-# Pre-requisites
+# Prerequisites
 
 Before you start integrating Browse, you must create an Unbxd account and get the API Keys required to complete the integration. Once you’ve created your Unbxd account, you can get all the keys in Manage > Configure Site > Keys within your Unbxd Console.
 
