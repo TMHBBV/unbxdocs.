@@ -140,9 +140,9 @@ The API parameters along with sample request and response are defined below:
   400 (Bad Request): Indicates you may have missed a required parameter.
   500 (Internal Server Error): Though these are rare, this indicates we may have messed up.
 * **Sample Request**\
-  curl -X POST https\://\{Feed end point}/api/\{siteKey}/upload/schema
+  `curl -X POST https://\{Feed end point}/api/\{siteKey}/upload/schema
   -H 'Authorization:\{secretKey}'
-  -F file=\{file}
+  -F file=\{file}`
 
 # Best Practices
 
