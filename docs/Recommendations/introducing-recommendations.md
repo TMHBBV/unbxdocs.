@@ -2,7 +2,7 @@
 title: Introducing Recommendations
 excerpt: Drive engagement with AI-powered personalized suggestions.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
