@@ -2138,7 +2138,7 @@ client.recommend(recommendedForYou, object : ICompletionHandler {
 })
 ```
 
-#### Recently Viewed
+#### Recently Viewed: The Recently Viewed method recommends products that were recently viewed by a shopper.
 
 ```kotlin
 val recentlyViewedRecommendation = RecentlyViewedRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
@@ -2152,7 +2152,7 @@ client.recommend(recentlyViewedRecommendation, object : ICompletionHandler {
 })
 ```
 
-#### More Like This
+#### More Like This: The “More Like These” method is built to recommend products similar to the one being viewed on the Product Detail Page (PDP).
 
 ```kotlin
 val moreLikeThisRecommendation = MoreLikeThisRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
@@ -2166,49 +2166,48 @@ client.recommend(moreLikeThisRecommendation, object : ICompletionHandler {
 })
 ```
 
-#### Viewed also Viewed
+#### Viewed also Viewed:As the name suggests, this method recommends products viewed by other shoppers.
 
 ```kotlin
-val viewedAlsoViewedRecommendation = ViewedAlsoViewedRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
-client.recommend(viewedAlsoViewedRecommendation, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Client Response", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.d("Client Response", errorMessage)
-    }
-})
+val viewedAlsoViewedRecommendation = ViewedAlsoViewedRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build() client.recommend(viewedAlsoViewedRecommendation, object : ICompletionHandler { override fun onSuccess(json: JSONObject, response: Response) { Log.d("Client Response",json.toString()) } override fun onFailure(errorMessage: String, exception: Exception) { Log.d("Client Response",errorMessage) } } ) val viewedAlsoViewedRecommendation = ViewedAlsoViewedRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build() client.recommend(viewedAlsoViewedRecommendation, object : ICompletionHandler { override fun onSuccess(json: JSONObject, response: Response) { Log.d("Client Response",json.toString()) } override fun onFailure(errorMessage: String, exception: Exception) { Log.d("Client Response",errorMessage) } } )
 ```
 
-#### Bought also Bought
+#### Bought also Bought: Similar to the “Viewed also Viewed” method, the Bought also Bought method recommends products bought by other shoppers.
 
 ```kotlin
-val boughtAlsoBoughtRecommendation = BoughtAlsoBoughtRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()
-client.recommend(boughtAlsoBoughtRecommendation, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Client Response", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.d("Client Response", errorMessage)
-    }
-})
+val boughtAlsoBoughtRecommendation = BoughtAlsoBoughtRecommendation.Builder(userId.id, "2312314").region("US").currency("USD").build()  
+client.recommend(boughtAlsoBoughtRecommendation, object : ICompletionHandler  
+                                      {
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      { Log.d("Client Response",json.toString())
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-#### Cart Recommendations
+#### Cart Recommendations: This method recommends complementary products on the “Cart page” for those present in the shopper’s cart.
 
 ```kotlin
-val cartRecommendation = CartRecommendation.Builder(userId.id).region("US").currency("USD").build()
-client.recommend(cartRecommendation, object : ICompletionHandler {
-    override fun onSuccess(json: JSONObject, response: Response) {
-        Log.d("Client Response", json.toString())
-    }
-    override fun onFailure(errorMessage: String, exception: Exception) {
-        Log.d("Client Response", errorMessage)
-    }
-})
+val cartRecommendation =  
+CartRecommendation.Builder(userId.id).region("US").currency("USD").build()  
+client.recommend(cartRecommendation, object : ICompletionHandler  
+                                      { 
+                                      override fun onSuccess(json: JSONObject, response: Response) 
+                                      {
+                                      Log.d("Client Response",json.toString()) 
+                                      }
+                                      override fun onFailure(errorMessage: String, exception: Exception) 
+                                      { 
+                                      Log.d("Client Response",errorMessage)
+                                      } 
+                                      }
+)
 ```
 
-#### Top Sellers – Home Page
+#### Top Sellers – Home Page: This method recommends top selling products bought from the homepage.
 
 ```kotlin
 val homePageTopSellersRecommendation = HomePageTopSellersRecommendation.Builder(userId.id).region("US").currency("USD").build()
