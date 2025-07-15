@@ -46,8 +46,6 @@ UniqueId is a unique identifier that is associated with every product in the cat
 
 Feature fields are a list of Unbxd fields that are necessary for majority of basic functionality to work and are expected to be included in your catalog.
 
-<br />
-
 | fieldname                      | multiValued | dataType           | Description                                                                                                                                                                                                                                                              |
 | :----------------------------- | :---------- | :----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | uniqueId (mandatory field)     | false       | text               | Unique identifier of a product. It cannot have special character except ‘-’ and ‘\_’                                                                                                                                                                                     |
@@ -81,7 +79,7 @@ Feature fields are a list of Unbxd fields that are necessary for majority of bas
 
 ***
 
-# Custom fields
+## Custom fields
 
 Attributes that are not part of our list of Feature Fields but part of your product catalog are known as Custom Fields. These attributes and their properties are included in your schema.
 
