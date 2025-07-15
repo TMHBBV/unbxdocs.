@@ -1,5 +1,8 @@
 ---
 title: Search Management
+excerpt: >-
+  optimize how search results are presented to shoppers with Searchable Fields
+  and Facets.
 deprecated: false
 hidden: false
 metadata:
@@ -51,4 +54,4 @@ Facets streamline navigation on product listing pages (PLPs) and guide shoppers 
 
 ***
 
-Configure both settings thoughtfully to deliver a smarter, faster, and more relevant search and browse experience to your customers.---
+Configure both settings thoughtfully to deliver a smarter, faster, and more relevant search and browse experience to your customers.
