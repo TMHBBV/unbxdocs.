@@ -1,5 +1,5 @@
 ---
-title: Deploy Unbxd (Browse)
+title: 'Browse: Deploy Unbxd'
 deprecated: false
 hidden: false
 metadata:
