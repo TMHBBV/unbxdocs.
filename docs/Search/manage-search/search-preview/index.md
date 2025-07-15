@@ -65,14 +65,18 @@ You can sort the results using different criteria by clicking the **Sort by: Rel
 
 ### Filters
 
-| **Section**           | **Field/Option**                  | **Description**                                                                                              |
-| --------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Filters**           | **Promotion**                     | Enables merchandising rules to boost products tied to promotions.                                            |
-|                       | **Popularity**                    | Uses metrics like sales, views, or clicks to influence product ranking.                                      |
-|                       | **Fallback**                      | Displays default fallback results when no direct matches are found.                                          |
-|                       | **User Behavior**                 | Personalizes results based on user interaction history (views, clicks, etc.).                                |
-| **Segment Attribute** | **User ID**                       | Enter a specific user ID to simulate personalized results for that user.                                     |
-|                       | **Device**                        | Select a device type (e.g., Desktop, Mobile) to simulate device-specific output.                             |
-| **Custom Attributes** | **Custom Attribute Name = Value** | Add up to 3 attribute-value pairs to test segment-specific behavior. \<br> Example: \`loyaltyStatus = gold\` |
-| **Action Buttons**    | **Reset Filter**                  | Clears all selected toggles, user inputs, and attributes.                                                    |
-|                       | **Apply**                         | Applies the current filter settings and updates the search results preview.                                  |
+Filters panel in Search Preview allows you to simulate different search scenarios by customizing ranking behaviors and user attributes.
+
+| **Section**           | **Field/Option**                  | **Description**                                                                                            |
+| --------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Filters**           | **Promotion**                     | Enables merchandising rules to boost products tied to promotions.                                          |
+|                       | **Popularity**                    | Uses metrics like sales, views, or clicks to influence product ranking.                                    |
+|                       | **Fallback**                      | Displays default fallback results when no direct matches are found.                                        |
+|                       | **User Behavior**                 | Personalizes results based on user interaction history (views, clicks, etc.).                              |
+| **Segment Attribute** | **User ID**                       | Enter a specific user ID to simulate personalized results for that user.                                   |
+|                       | **Device**                        | Select a device type (e.g., Desktop, Mobile) to simulate device-specific output.                           |
+| **Custom Attributes** | **Custom Attribute Name = Value** | Add up to 3 attribute-value pairs to test segment-specific behavior. \<br> Example: `loyaltyStatus = gold` |
+| **Action Buttons**    | **Reset Filter**                  | Clears all selected toggles, user inputs, and attributes.                                                  |
+|                       | **Apply**                         | Applies the current filter settings and updates the search results preview.                                |
+
+Refer to the following documents to
