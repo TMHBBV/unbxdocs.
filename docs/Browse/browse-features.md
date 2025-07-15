@@ -1,7 +1,7 @@
 ---
 title: Browse Features
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
