@@ -1,5 +1,5 @@
 ---
-title: Analytics Introduction
+title: Analytics
 deprecated: false
 hidden: false
 metadata:
