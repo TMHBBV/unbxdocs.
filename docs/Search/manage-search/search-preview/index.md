@@ -1,12 +1,11 @@
 ---
 title: Search Preview
+excerpt: 'Enter query to view products and performance insights of your website.      '
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-Enter a query to view product listings, understand performance metrics like clicks, carts, and orders, and evaluate search relevancy — all in one place.
-
 The **Search Preview** feature lets you test how your customers will see products when they search on your website. It shows you the actual results, filters, and sorting logic before going live.
 
 You can use this to:
@@ -81,7 +80,7 @@ Filters panel in Search Preview allows you to simulate different search scenario
 
 Refer to the following documents to know more.
 
-1. View Insights (AI-Meta-Data)
-2. Attribute Enrichment
-3. Shopping Assistant
-4. Product Card Viewer
+1. [View Insights (AI-Meta-Data)](https://unbxdocs.readme.io/docs/ai-meta-data#/)
+2. [Attribute Enrichment](https://unbxdocs.readme.io/docs/attribute-enrichment#/)
+3. [Shopping Assistant](https://unbxdocs.readme.io/docs/shopping-assistant#/)
+4. [Product Card Viewer](https://unbxdocs.readme.io/docs/product-card-mapping-1#/)
