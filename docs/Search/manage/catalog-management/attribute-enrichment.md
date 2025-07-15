@@ -320,8 +320,50 @@ This below section on the dashboard, helps you monitor the overall progress of y
 <Image align="center" border={true} caption="Add New Enrichment" src="https://files.readme.io/dd7cf10e964f50cba309b2f89540898d946f8870a3d5da5f1102d81de0835410-Attribute_enrich.gif" width="80% " />
 
 1. On the Attribute Enrichment Dashboard, scroll on the Attribute listing page to click on **Enrich Attributes**.
-2. Select the [Strategies](https://unbxdocs.readme.io/docs/attribute-enrichment#/product-enrichment-strategies) that suit your requirement and click on **Next**.
+2. Select the **Strategy** that suits your requirement and click on **Next**.
 3. Configure your enrichment strategy and click **Preview**. Once **Preview** is generated, click on **Run on entire catalog** to proceed.
 4. Review generated attribute values in a sample set. You can download the enriched data file, make changes and re-upload it. Click on **Publish** to apply enriched data to the entire catalog.
+5. Once you have published the enriched attribute, a new row will be added on the attribute enrichment dashboard for review and approval. Once approved, your attribute enrichment cycle is complete.
 
-Leverage Attribute Enrichment to boost your e-commerce platform’s search experience and overall conversion metrics.
+<br />
+
+## Use Case for **Google Translator Enrichment**
+
+1. Click Enrich Attributes to begin the process on the Attribute listing page.
+2. Select **Google Translator Enrichment** as the enrichment strategy and click **Next**.
+3. Configure the enrichment settings by choosing **Translate from English to French** and select the fields to be translated (e.g., product title and description). Then, click on **Preview** to see a sample of translated content.
+4. If you are satisfied with the preview, then click on **Run on entire catalog** to translate product data at scale.
+5. Review the translated output in a downloadable file, make minor edits for local nuances, re-upload the updated version, and click **Publish** to apply changes to the full catalog.
+6. A new entry for internal review and approval appears on the dashboard. Once approved, the translated product attributes go live, enabling localized search and shopping experiences for French users.
+
+Follow the same process for \*\*Transliterate Enrichment \*\*Strategy.
+
+## FAQ & Troubleshooting
+
+<Accordion title="Can I apply enrichment to only a subset of products?">
+  Currently, enrichment is applied to all relevant products within a mapped category. However, you can use filters before running enrichment to narrow down which attributes or product types you want to focus on.
+</Accordion>
+
+<Accordion title="Does enrichment overwrite existing data?">
+  No. Enrichment is designed to fill in only missing or empty fields
+
+  . It will not overwrite existing attribute values unless explicitly configured to do so in a custom implementation.
+</Accordion>
+
+<Accordion title="Is manual review required after enrichment?">
+  While manual review is not mandatory, it is highly recommended
+
+  . You can review enriched outputs via the sample preview, download the file, make edits, and re-upload before publishing changes.
+</Accordion>
+
+<Accordion title="Can I export enriched attribute data?">
+  Yes. You can download enriched data
+
+  during the review stage before publishing, which lets you export, validate, or modify attribute values offline.
+</Accordion>
+
+<Accordion title="Is enrichment available for custom attributes?">
+  Yes. As long as your custom attribute is mapped correctly
+
+  to the system and is relevant to a product category, it can be enriched using any of the supported strategies.
+</Accordion>
