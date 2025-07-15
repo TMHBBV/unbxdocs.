@@ -1,5 +1,6 @@
 ---
 title: What's New
+excerpt: Stay ahead with Netcore Unbxd’s latest releases
 deprecated: false
 hidden: false
 metadata:
@@ -7,7 +8,7 @@ metadata:
 ---
 Netcore Unbxd continuously evolves to help you deliver more intelligent, personalized shopping experiences. In this section, you'll find the latest feature rollouts, performance enhancements, and platform updates designed to optimize product discovery, boost conversions, and elevate the customer journey.
 
-# July 2025
+# June-July 2025
 
 1. **Elevate Your Search Game with Index Time Synonyms**
 
@@ -35,7 +36,7 @@ We’re excited to introduce a new enhancement to your filter and boost conditio
 
 We’re excited to launch AI Suggested Redirects, a feature that leverages the power of artificial intelligence to automatically recommend redirects for search queries. This ensures that users are directed to the most relevant pages, even when they type in incorrect or ambiguous search terms. Read the [documentation](https://unbxdocs.readme.io/docs/redirects#/set-up-ai-suggested-redirects) to know more.
 
-# April 2025
+# April-May 2025
 
 OWASP Compliance for Search/Browse Console
 
