@@ -124,4 +124,135 @@ Tag Type: Custom HTML
 
 HTML Content:
 
-/
+```
+// Pass payload to Unbxd.track function
+// to call the tracker API
+ 
+<script type="text/javascript">
+  var u_payload = {{UnbxdCategoryPagePayload}};
+  if (Unbxd && typeof Unbxd.track === 'function'
+      && u_payload.hasOwnProperty("page")
+      && u_payload.hasOwnProperty("page_type")) {
+      Unbxd.track('categoryPage', u_payload);
+  } else {
+      console.error('ERRNO-002: unbxdAnalytics.js is not loaded or payload incorrect!')
+  }
+</script>
+```
+
+Pushing the event to the dataLayer on category page load.
+
+Push payload to Datalayer:
+
+```
+// Add payload to Datalayer variable CategoryPagePayload 
+// Should be triggered when user lands on category page
+// Payload will contain page and page_type
+
+<script​ ​type="​&quot;text/javascript&quot;​">
+   window.dataLayer = window.dataLayer || [];
+   dataLayer.push(
+       {
+           'event': 'CategoryPage',
+           'CategoryPagePayload':
+           {
+               'requestId' : '{{unbxd-request-id}}',
+               'page': '{{category-path}}',
+               'page_type': '{{category-page-type}}'
+           }
+       }
+   );
+      }
+  });
+</script​>
+```
+
+Payload Details
+
+| Attribute Name | Datatype | Value to be passed                                                                         |
+| -------------- | -------- | ------------------------------------------------------------------------------------------ |
+| requestId      | string   | To be extracted from Unbxd search API response headers, from `unx-request-id`              |
+| page\*         | string   | Category path used for category API call (value of `p` parameter)                          |
+| page\_type\*   | string   | Page type for category path, either `BOOLEAN` or `CATEGORY_PATH` based on the page context |
+
+### Note for payload page and page\_type details:
+
+For example, if user lands on “**/bedrooms/beds**” page and
+
+<br />
+
+1. If parameters for category API look like /category?p=categoryPath:”Bedrooms>Beds”\&pagetype=boolean then, page and page\_type will look like:\
+   \`'SearchQueryPayload':
+   <br />
+   &#x20;  \{
+   <br />
+   ```
+   ```
+   <br />
+   ```
+   ```
+   <br />
+   ```
+   ```
+   <br />
+   }\`
+
+&#x20;  \{
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+}
+
+2. Else If parameters for category API look like /category?p=Bedrooms>Beds then, payload will look like:\
+   'SearchQueryPayload':
+
+<br />
+
+&#x20;  \{
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+}
+
+<br />
+
+On a category page results load, please pass the categoryPath to the dataLayer as shown above. The event flow will be:
+
+<br />
+
+As soon as the `CategoryPage` event got pushed data layer.\
+This initiates the trigger UnbxdCategorPageTrigger which we created in the step-1.
+UnbxdCategorPageTrigger executes the tag: UnbxdCategoryPageTag which we created in step-3.
+Inside UnbxdCategoryPageTag we have added Unbxd analytics category tracker code.
+Category tracker code get the CategoryPath from variable UnbxdCategoryPagePayload which we created in step-2.
+Finally categoryPath of the page will be updated in Unbxd analytics database for the particular siteKey.
