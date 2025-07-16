@@ -1084,3 +1084,689 @@ clickNScrollElementSelector:
 | **Default Value** | `#load-more`                                                          |
 | **Description**   | CSS selector of the button or link that triggers the load more action |
 | **Sample Values** | `#load_more_results`                                                  |
+
+### Facets
+
+When synchronizing a catalog, the Last Synchronization information may display four status codes:
+
+This section documents the different properties used to configure the different aspects of facets or filters section on your webpageTo render the facets on the search results page, you need to configure the CSS selector of the facets container in your webpage. For this you can use the “facetContainerSelector” config.
+
+facetContainerSelector:
+
+| **Field**         | **Value**                                                                |
+| ----------------- | ------------------------------------------------------------------------ |
+| **Data type**     | string                                                                   |
+| **Required**      | True                                                                     |
+| **Default Value** | NA                                                                       |
+| **Description**   | CSS selector of the section containing the facets for the search results |
+| **Sample Values** | `#facets_container`                                                      |
+
+If you have checkboxes for the facet values, configure their CSS selector using  the “facetCheckboxSelector” config.
+
+facetTemp:
+
+| **Field**         | **Value**                                                                                                                                                                                                                                                   |    |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :- |
+| **Data type**     | string                                                                                                                                                                                                                                                      |    |
+| **Required**      | false                                                                                                                                                                                                                                                       |    |
+| **Default Value** | \[‘\{\{#each filters}}’, ‘\<ol>’, ‘\<li>’, ‘\<span class=”label”>\{\{@key}}:\</span>’, ‘\{\{#each this}}’, ‘\<div class=”refineSect”>\{\{@key}}\<a href=”#” class=”btn-remove”>\</a>’, ‘\</div>’, ‘\{\{/each}}’, ‘\</li>’, ‘\</ol>’, ‘\{\{/each}}’].join(”) |    |
+| **Description**   | String representation of the HTML schema to display the facet section                                                                                                                                                                                       |    |
+
+```Text Input Value
+
+*input data -> 
+
+{ facets:[
+
+{
+
+         “name”:”Rating”,
+
+         “facet_name”:”ratings_uFilter”,
+
+         “type”:”facet_fields”,
+
+         “selected”:[
+
+{
+
+               “value”:”1″,
+
+               “count”:429,
+
+               “isMultilevel”:false
+
+            }
+
+         ],
+
+         “unselected”:[
+
+            {
+
+               “value”:”2″,
+
+               “count”:395,
+
+               “isMultilevel”:false
+
+            },
+
+            {
+
+               “value”:”3″,
+
+               “count”:1121,
+
+               “isMultilevel”:false
+
+            },
+
+            {
+
+               “value”:”4″,
+
+               “count”:4389,
+
+               “isMultilevel”:false
+
+            },
+
+            {
+
+               “value”:”5″,
+
+               “count”:4706,
+
+               “isMultilevel”:false
+
+            }
+
+         ],
+
+         “unordered”:[
+
+            {
+
+               “value”:”1″,
+
+               “count”:429,
+
+               “isSelected”:false,
+
+               “isMultilevel”:false
+
+            },
+
+            {
+
+               “value”:”2″,
+
+               “count”:395,
+
+               “isSelected”:false,
+
+               “isMultilevel”:false
+
+            },
+
+            {
+
+               “value”:”3″,
+
+               “count”:1121,
+
+               “isSelected”:false,
+
+               “isMultilevel”:false
+
+            },
+
+            {
+
+               “value”:”4″,
+
+               “count”:4389,
+
+               “isSelected”:false,
+
+               “isMultilevel”:false
+
+            },
+
+            {
+
+               “value”:”5″,
+
+               “count”:4706,
+
+               “isSelected”:false,
+
+               “isMultilevel”:false
+
+            }
+
+         ],
+
+         “isMultilevel”:false,
+
+         “expandByDefault”:false,
+
+         “searchEnabled”:false
+
+         }],
+
+    “rangefacets”:[
+
+      {
+
+         “name”:”Price Range”,
+
+         “facet_name”:”was_price_max”,
+
+         “type”:”facet_ranges”,
+
+         “selected”:[
+
+
+         ],
+
+         “unselected”:[
+
+            {
+
+               “begin”:”0″,
+
+               “end”:”200″,
+
+               “count”:71316,
+
+               “value”:”0 TO 200″
+
+            },
+
+            {
+
+               “begin”:”200″,
+
+               “end”:”400″,
+
+               “count”:4577,
+
+               “value”:”200 TO 400″
+
+            },
+
+            {
+
+               “begin”:”400″,
+
+               “end”:”600″,
+
+               “count”:1586,
+
+               “value”:”400 TO 600″
+
+            },
+
+            {
+
+               “begin”:”600″,
+
+               “end”:”800″,
+
+               “count”:782,
+
+               “value”:”600 TO 800″
+
+            },
+
+            {
+
+               “begin”:”800″,
+
+               “end”:”1000″,
+
+               “count”:402,
+
+               “value”:”800 TO 1000″
+
+            }
+
+         ],
+
+         “unordered”:[
+
+            {
+
+               “begin”:”0″,
+
+               “end”:”200″,
+
+               “count”:71316,
+
+               “value”:”0 TO 200″,
+
+               “isSelected”:false
+
+            },
+
+            {
+
+               “begin”:”200″,
+
+               “end”:”400″,
+
+               “count”:4577,
+
+               “value”:”200 TO 400″,
+
+               “isSelected”:false
+
+            },
+
+            {
+
+               “begin”:”400″,
+
+               “end”:”600″,
+
+               “count”:1586,
+
+               “value”:”400 TO 600″,
+
+               “isSelected”:false
+
+            },
+
+            {
+
+               “begin”:”600″,
+
+               “end”:”800″,
+
+               “count”:782,
+
+               “value”:”600 TO 800″,
+
+               “isSelected”:false
+
+            },
+
+            {
+
+               “begin”:”800″,
+
+               “end”:”1000″,
+
+               “count”:402,
+
+               “value”:”800 TO 1000″,
+
+               “isSelected”:false
+
+            }
+
+         ],
+
+         “isMultilevel”:false,
+
+         “expandByDefault”:false
+
+      }
+
+      ]
+
+}
+```
+```Text Sample Value
+<div class=”facet_heading” precompiled>Narrow Your Search By</div>
+
+{{#facets}}
+
+<div id=”{{facet_name}}”>
+
+    <h3 class=”facet_title”>{{name}}
+
+        {{#if selected.length}}
+
+        <a unbxdParam_facetName=”{{facet_name}}” unbxdParam_facetType=”{{type}}” href=”javascript:;”
+
+            class=”facet_reset”>Clear all</a>
+
+        {{/if}}
+
+    </h3>
+
+    <div class=”facet_values”>
+
+        {{#selected}}
+
+        <div class=”facet_value”>
+
+            <input type=”checkbox” id=”{{../facet_name}}-{{value}}” class=”selected” checked
+
+                unbxdParam_facetName=”{{../facet_name}}” unbxdParam_facetValue=”{{value}}” title=”{{value}}”
+
+                data-id=”{{../facet_name}}” data-value=”{{value}}” data-parent-label=”{../name}}” data-count=”{{count}}”
+
+                rel=”nofollow”>
+
+            <label for=”{{../facet_name}}-{{value}}” class=”selected”>{{#unbxdIf ../facet_name “v_PriceRange_uFilter”}}{{value}}{{else}}{{value}}{{/unbxdIf}}<span
+
+                    class=”facet_result_count”>({{count}})</span></label>
+
+        </div>
+
+        {{/selected}}
+
+        {{#unselected}}
+
+        <div class=”facet_value” unbxdDisplay_Type=”{{displayType}}” {{#if ../viewall}}style=”display:flex”{{/if}}>
+
+            <input type=”checkbox” id=”{{../facet_name}}-{{value}}” unbxdParam_facetName=”{{../facet_name}}”
+
+                unbxdParam_facetValue=”{{value}}” title=”{{value}}” data-id=”{{../facet_name}}” data-value=”{{value}}”
+
+                data-parent-label=”{../name}}” data-count=”{{count}}” rel=”nofollow”>
+
+            <label for=”{{../facet_name}}-{{value}}”>{{#unbxdIf ../facet_name “v_PriceRange_uFilter”}}{{value}}{{else}}{{value}}{{/unbxdIf}}<span
+
+                    class=”facet_result_count”>({{count}})</span></label>
+
+        </div>
+
+        {{/unselected}}
+
+        {{#if displayType}}
+
+        <a href=”javascript:;” class=”facet_more_link” unbxdParam_facetName=”{{facet_name}}” {{#if viewall}}style=”display:none”{{/if}}>more</a>
+
+        <a href=”javascript:;” class=”facet_less_link” unbxdParam_facetName=”{{facet_name}}” {{#if viewall}}style=”display:inline”{{/if}}>less</a>
+
+        {{/if}}
+
+    </div>
+
+</div>
+
+{{/facets}}
+
+{{#rangefacets}}
+
+<div id=”{{facet_name}}”>
+
+    <h3 class=”facet_title”>{{name}}
+
+        {{#if selected.length}}
+
+        <a unbxdParam_facetName=”{{facet_name}}” unbxdParam_facetType=”{{type}}” href=”javascript:;”
+
+            class=”facet_reset”>Clear all</a>
+
+        {{/if}}
+
+    </h3>
+
+    <div class=”facet_values”>
+
+        {{#selected}}
+
+        <div class=”facet_value”>
+
+            <input type=”checkbox” id=”{{../facet_name}}-{{value}}” class=”selected” checked
+
+                unbxdParam_facetName=”{{../facet_name}}” unbxdParam_facetValue=”{{value}}” title=”{{value}}”
+
+                data-id=”{{../facet_name}}” data-value=”{{value}}” data-parent-label=”{../name}}” data-count=”{{count}}”
+
+                rel=”nofollow”>
+
+            <label for=”{{../facet_name}}-{{value}}” class=”selected”>{{value}}<span
+
+                    class=”facet_result_count”>({{count}})</span></label>
+
+        </div>
+
+        {{/selected}}
+
+        {{#unselected}}
+
+        <div class=”facet_value” unbxdDisplay_Type=”{{displayType}}” {{#if ../viewall}}style=”display:flex”{{/if}}>
+
+            <input type=”checkbox” id=”{{../facet_name}}-{{value}}” unbxdParam_facetName=”{{../facet_name}}”
+
+                unbxdParam_facetValue=”{{value}}” title=”{{value}}” data-id=”{{../facet_name}}” data-value=”{{value}}”
+
+                data-parent-label=”{../name}}” data-count=”{{count}}” rel=”nofollow”>
+
+            <label for=”{{../facet_name}}-{{value}}”>{{value}}<span
+
+                    class=”facet_result_count”>({{count}})</span></label>
+
+        </div>
+
+        {{/unselected}}
+
+        {{#if displayType}}
+
+         <a href=”javascript:;” class=”facet_more_link” unbxdParam_facetName=”{{facet_name}}” {{#if viewall}}style=”display:none”{{/if}}>more</a>
+
+        <a href=”javascript:;” class=”facet_less_link” unbxdParam_facetName=”{{facet_name}}” {{#if viewall}}style=”display:inline”{{/if}}>less</a>
+
+         {{/if}}
+
+    </div>
+
+</div>
+
+{{/rangefacets}}
+
+
+```
+
+facetCheckboxSelector:
+
+| **Field**         | **Value**                                                                                |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| **Data type**     | string                                                                                   |
+| **Required**      | True                                                                                     |
+| **Default Value** | NA                                                                                       |
+| **Description**   | CSS selector that applies to all checkbox input elements used to filter the facet values |
+| **Sample Values** | `#facets_container .facet_value input[type=checkbox]`                                    |
+
+facetMultiSelect:
+
+| **Field**         | **Value**                                                                                                                                                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Data type**     | boolean                                                                                                                                                                                                                                                                        |
+| **Required**      | True                                                                                                                                                                                                                                                                           |
+| **Default Value** | true                                                                                                                                                                                                                                                                           |
+| **Description**   | Set to `true` if you have faceted attributes (e.g., brand, color) which can be multi-selected. Example: customers can filter products by multiple colors at the same time (e.g., green, red, or blue). Set to `false` to restrict selection to only one facet value at a time. |
+| **Sample Values** | true                                                                                                                                                                                                                                                                           |
+
+You can configure the handlebars template to be used for displaying the selected facets using the “selectedFacetTemp” config.
+
+selectedFacetTemp:
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Field**
+      </th>
+
+      <th>
+        **Value**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Data type**
+      </td>
+
+      <td>
+        string
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Required**
+      </td>
+
+      <td>
+        false
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Default Value**
+      </td>
+
+      <td>
+        `['{{#each filters}}', '<ol>', '<li>', '<span class="label">{{@key}}:</span>', '{{#each this}}', '<div class="refineSect">{{@key}}<a href="#" class="btn-remove"></a>', '</div>', '{{/each}}', '</li>', '</ol>', '{{/each}}'].join("")`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Description**
+      </td>
+
+      <td>
+        String representation of the HTML schema to display the applied filters
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Input Value
+      </td>
+
+      <td>
+        \*input data ->
+
+        <br />
+
+        \{
+
+        <br />
+
+        filters: \[
+
+        <br />
+
+        &#x20;\{fcode: “Collection”, value: “Sherpa”, fsysname: “collection\_uFilter”}
+
+        <br />
+
+        ],
+
+        <br />
+
+        ranges:\[]
+
+        <br />
+
+        }
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```Text Sample Value
+<ol class=”unbxd_selected_facets”>
+
+    <li class=”sli_facet_list_ele”>Your Selections:</li>
+
+    {{#filters}}
+
+    <li class=”sli_facet_list_ele”>
+
+        {{value}}<a href=”#”><img src=”/images/icons/x.jpg” alt=”Close” role=”button” tabindex=”0″
+
+            data-ae-blurbtype=”button” class=”ae-img unbxd-remove-item” unbxdParam_facetName=”{{fsysname}}” unbxdParam_facetValue=”{{value}}”></a></li>
+
+    {{/filters}}
+
+</ol>
+```
+
+You need to configure the CSS selector of the container where the selected facets can be displayed using the  “selectedFacetContainerSelector” config.
+
+selectedFacetContainerSelector:
+
+| **Field**         | **Value**                                              |
+| ----------------- | ------------------------------------------------------ |
+| **Data type**     | string                                                 |
+| **Required**      | True                                                   |
+| **Default Value** | NA                                                     |
+| **Description**   | CSS selector of the selected facet section on the page |
+| **Sample Values** | `#selected_filters_section`                            |
+
+If you have multilevel facets use the below two configs to indicate to the SDK to render the multilevel facet along with its name
+
+facetMultilevel:
+
+| **Field**         | **Value**                           |
+| ----------------- | ----------------------------------- |
+| **Data type**     | boolean                             |
+| **Required**      | false                               |
+| **Default Value** | false                               |
+| **Description**   | Set to `true` for multilevel facets |
+| **Sample Values** | true                                |
+
+facetMultilevelName:
+
+| **Field**         | **Value**                                    |
+| ----------------- | -------------------------------------------- |
+| **Data type**     | string                                       |
+| **Required**      | True (if `facetMultilevel` is set to true)   |
+| **Default Value** | NA                                           |
+| **Description**   | The field name of the multilevel facet field |
+| **Sample Values** | `CATEGORY`                                   |
+
+<br />
+
+You can configure the CSS selector of the “clear all facets” link using the  “clearSelectedFacetsSelector” config.
+
+clearSelectedFacetsSelector:
+
+| **Field**         | **Value**                                                                      |
+| ----------------- | ------------------------------------------------------------------------------ |
+| **Data type**     | string                                                                         |
+| **Required**      | true                                                                           |
+| **Default Value** | NA                                                                             |
+| **Description**   | CSS selector of the "Clear All" link to remove all applied filters on the page |
+| **Sample Values** | `#clear_all_filters`                                                           |
+
+You can configure the CSS selector for the individual selected facet clear button using the  “removeSelectedfacetSelector” config.
+
+removeSelectedfacetSelector:
+
+| **Field**         | **Value**                                                                       |
+| ----------------- | ------------------------------------------------------------------------------- |
+| **Data type**     | string                                                                          |
+| **Required**      | true                                                                            |
+| **Default Value** | NA                                                                              |
+| **Description**   | CSS selector of the individual reset filter links in the selected facet section |
+| **Sample Values** | `#remove_facet_btn`                                                             |
+
+### Page Size
+
+This section documents the different configs available to enable you to configure the number of products shown in a page.You can configure the number of products to be shown per page using the “pageSize” config
+
+pageSize:
+
+| **Field**         | **Value**                                                         |
+| ----------------- | ----------------------------------------------------------------- |
+| **Data type**     | number                                                            |
+| **Required**      | True (only when select page size section is available on the web) |
+| **Default Value** | 12                                                                |
+| **Description**   | Configure the number of products to be shown on a page            |
+| **Sample Values** | 24                                                                |
