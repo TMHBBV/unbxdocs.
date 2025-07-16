@@ -92,3 +92,161 @@ query is tracked to enable per-query analytics of the visitor. A typical search 
    * Event Name: SearchQuery                                                                                                                                TriggerFiresOn: All custom events
 
 <Image align="center" width="80% " src="https://files.readme.io/ace8019cb8b49f1efb5412038cd7547d35a65b94dbcc82f02432691e4b5ef4e8-image.png" />
+
+2. Create Variable in GTM, to fetch the query from the dataLayer.
+
+Variable Configuration:
+
+* Variable Name: UnbxdSearchQueryPayload
+* Variable Variable Type: Data Layer Variable
+* Data Layer Variable Name: SearchQueryPayload
+
+HTML Content:
+
+<Image align="center" width="80% " src="https://files.readme.io/d635d029ba4fd4d1cf4cea1b4b7d4020e4e702fe7d031ff091dbe3fe3354cd62-image.png" />
+
+3. Create a Javascript tag with the below details.
+
+   Tag Configuration:
+   * Tag Name: UnbxdSearchQueryTag
+   * Tag Type: Custom HTML
+   * HTML Content:
+
+```
+// Pass payload to Unbxd.track function
+// to call the tracker API
+
+<script type="text/javascript">
+   var u_payload = {{UnbxdSearchQueryPayload}};
+   if (Unbxd && typeof Unbxd.track === 'function'
+       && u_payload.hasOwnProperty("query")) {
+       Unbxd.track("search", u_payload);
+   } else {
+       console.error('unbxdAnalytics.js is not loaded or payload incorrect!')
+   }
+</script>
+```
+
+Pushing the event to the dataLayer through a search query.
+
+```
+// Add payload to Datalayer variable SearchQueryPayload
+// Should be triggered on search form submit
+// Please change selectors for form and input box
+
+<script​ ​type=​"text/javascript"​>
+jQuery('#input_form_id').on("submit", function(){
+       var searchQuery = jQuery("#myInput").val();
+       if (searchQuery.length >= 1) {
+           window.dataLayer = window.dataLayer || [];
+               dataLayer.push(
+               {
+                   'event': 'SearchQuery',
+                   'SearchQueryPayload':
+                   {
+                     'requestId' : '{{unbxd-request-id}}',
+                     'query' : '{{searchQuery}}'
+                    }
+               }
+           );
+       }
+   });
+</script>
+```
+
+Payload Details
+
+| Attribute | Datatype | Value to be passed                                                          |
+| --------- | -------- | --------------------------------------------------------------------------- |
+| requestId | string   | To be extracted from Unbxd search API response headers, from unx-request-id |
+| query     | string   | The search query used by user                                               |
+
+On a search query, please pass the searched query to the dataLayer as shown above. The event flow will be:
+
+* As soon as the `SearchQuery` event got pushed data layer.
+* This initiates the trigger UnbxdSearchQueryTrigger which we created in the step-1.
+* UnbxdSearchQueryTrigger executes the tag: UnbxdSearchQueryTag which we created in step-3.
+* Inside UnbxdSearchQueryTag we have added Unbxd analytics search tracker code.
+* Search tracker code get the searched query from variable UnbxdSearchQueryPayload which we created in step-2.
+* Finally searched query will be updated in Unbxd analytics database for the particular siteKey.
+
+## Product Click Unbxd Tracker
+
+Tracking product clicks of visitors helps our search engine to understand their preferences over other products on the listing page. This information is used to compute popular products and render relevant and personalized results. It needs to be tracked in case of search and navigation pages. It is also integrated if customer is using the recommendation widgets.
+
+Through GTM to integrate this event we need to follow the below approach:
+
+Create a Trigger in GTM to catch the click event.
+
+Trigger Configuration:
+
+* TriggerName: UnbxdProductClickTrigger
+* TriggerType: Custom Event
+* EventName: ProductClick
+* TriggerFiresOn: All Custom Events
+
+<Image align="center" width="80% " src="https://files.readme.io/1dc01a993470a27e86d16c1a25d74ed5d9d353acb4651bd0072bb78ed3c24e64-image.png" />
+
+Create Variable in GTM, to fetch the product details from the dataLayer. Variable Configuration:
+
+VariableName: UnbxdProductClickPayload
+
+Variable Type: Data Layer Variable
+
+Data Layer Variable Name: ProductClickPayload
+
+<Image align="center" width="80% " src="https://files.readme.io/97d98ce6a8c01f9dd12311650921890c5b69c0089dac752cce45c11dc65661d6-image.png" />
+
+3. Create a Javascript tag with the below details.
+
+   Tag Configuration:
+   * Tag Name: UnbxdProductClickTag
+   * Tag Type: Custom HTML
+   * HTML Content:
+   ```
+   // Pass payload to Unbxd.track function
+   // to call the tracker API
+
+   <script type="text/javascript">
+      var u_payload = {{UnbxdProductClickPayload}};
+      if (Unbxd && typeof Unbxd.track === 'function'
+          && u_payload.hasOwnProperty("pid")
+          && u_payload.hasOwnProperty ("prank")){
+          Unbxd.track('click', u_payload);
+        } else {
+          console.error('unbxdAnalytics.js is not loaded or payload incorrect!')
+      }
+   </script>
+   ```
+   Pushing the event to the Data Layer through the Product Click.
+
+```
+// Add payload to Datalayer variable ProductClickPayload
+// Should be triggered on product click
+
+<script type="text/javascript">
+   window.dataLayer = window.dataLayer || [];
+   dataLayer.push(
+     {
+      'event': 'ProductClick',
+      'ProductClickPayload':
+       {
+         'requestId': 'REQUEST ID',
+         'pid': 'PRODUCT ID',
+         'variantId': 'VARIANT ID OF SELECTED VARIANT',
+         'prank': 'RANK',
+         'query': 'SEARCH QUERY'
+       }
+     });
+</script>
+```
+
+Payload Details
+
+| Attribute | Datatype | Value to be passed                                                                                    |
+| --------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| requestId | string   | To be extracted from Unbxd search API response headers, from unx-request-id                           |
+| pid       | string   | Unique id for the product, to be taken from API response, if relevantDocumentType = "parent", or null |
+| variantId | string   | The variantId of the selected product variant, if relevantDocumentType = "variant", or null           |
+| prank     | string   | Number aka rank of product in response                                                                |
+| query     | string   | Search query for search listing page                                                                  |
