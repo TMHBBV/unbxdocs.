@@ -17,26 +17,23 @@ The visitor profiles help fetch relevant and personalized products as search res
 
 NOTE: For Unbxd E-commerce Search to function correctly on your site, Unbxd Analytics must be configured.
 
-Introduction to GTM\
+## Introduction to GTM
+
 Google Tag Manager is a free tool that allows you to manage and deploy marketing tags (snippets of code or tracking pixels) on your website (or mobile app) without having to modify the code.
 
 Here’s a very simple example of how GTM works. Information from one data source (your website) is shared with another data source (Analytics) through Google Tag Manager. GTM becomes very handy when you have lots of tags to manage because all the code is stored in one place.
 
-Basic components of GTM
+### Basic components of GTM
 
 Following are the basic components within Google Tag Manager:
 
-Tags – Tags are tracking codes and code fragments that tell GTM what action to take on that page.
+* Tags – Tags are tracking codes and code fragments that tell GTM what action to take on that page.
 
 For example: Sending searched query to Unbxd analytics.
 
-Triggers – Triggers specify the conditions under which a Tag should fire.For example: A trigger with a condition to only fire a Tag when a user views URLs
-
-containing the path /search/.
-
-Variables – Variables are values used in triggers and tags to filter when a specific tag should fire. GTM provides built-in variables and allows you to create custom user-defined variables. For example: A ‘click’ class variable has a value name (such as a word string) assigned to buttons on the website.
-
-DataLayer – The dataLayer is a JSON that contains name value pairs of data points you wish to pass from your website into GTM. (And GTM can then, in turn, pass on to any tags that are managed in GTM, including Unbxd tags.)
+* Triggers – Triggers specify the conditions under which a Tag should fire.For example: A trigger with a condition to only fire a Tag when a user views URLs containing the path /search/.
+* Variables – Variables are values used in triggers and tags to filter when a specific tag should fire. GTM provides built-in variables and allows you to create custom user-defined variables. For example: A ‘click’ class variable has a value name (such as a word string) assigned to buttons on the website.
+* DataLayer – The dataLayer is a JSON that contains name value pairs of data points you wish to pass from your website into GTM. (And GTM can then, in turn, pass on to any tags that are managed in GTM, including Unbxd tags.)
 
 ## Requirements for Unbxd tracking through GTM
 
