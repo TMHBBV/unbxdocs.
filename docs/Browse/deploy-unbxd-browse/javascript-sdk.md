@@ -3169,7 +3169,7 @@ The following table summarises the various properties which can be  passed as se
 {{/products}}
 ```
 
-<Table>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -3671,7 +3671,7 @@ The following table summarises the various properties which can be  passed as se
 
         <br />
 
-        &#x20;\{fcode: “Collection”, value: “Sherpa”, fsysname: “collection\_uFilter”}
+        \{fcode: “Collection”, value: “Sherpa”, fsysname: “collection\_uFilter”}
 
         <br />
 
@@ -3760,3 +3760,705 @@ The following table summarises the various properties which can be  passed as se
 
 </ol>
 ```
+
+onIntialResultLoad
+
+<br />
+
+function
+
+<br />
+
+Call back function invoked when the unbxd page binding happens for the first time.
+
+<br />
+
+Function with one argument of type object which carriers the entire result set including products and facets
+
+<br />
+
+Can be used to trigger analytics event adjust product container height etc.
+
+<br />
+
+function (obj) \{
+
+<br />
+
+var pids\_list = \[];
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+Unbxd.track(impressionObj, ‘search\_impression’);
+
+<br />
+
+}
+
+<br />
+
+<br />
+
+onPageLoad
+
+<br />
+
+function
+
+<br />
+
+Call back function invoked every time when the page content is refreshed after initial load (like applying sort options, changing page size, paginating through the results
+
+<br />
+
+Function with one argument of type object which carriers the entire result set including products and facets
+
+<br />
+
+Can be used to trigger analytics event adjust product container height etc.
+
+<br />
+
+function (obj) \{
+
+<br />
+
+var pids\_list = \[];
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+Unbxd.track(impressionObj, ‘search\_impression’);
+
+<br />
+
+}
+
+<br />
+
+sanitizeQueryString
+
+<br />
+
+function
+
+<br />
+
+Call back function used to sanitize the search query to handle special case as per customer requirement
+
+<br />
+
+Function with one argument of type string which would hold the value of the searched query term
+
+<br />
+
+function (q) \{
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+getFacetStats
+
+<br />
+
+string
+
+<br />
+
+Representing the variable name in the stats object which will hold the min and max values for range facet
+
+<br />
+
+“facetstats”
+
+<br />
+
+processFacetStats
+
+<br />
+
+function
+
+<br />
+
+Function used to leverage the max and min values of range facets to implement slider behaviour
+
+<br />
+
+Function with one argument of type object which would hold all facet information
+
+<br />
+
+function (obj) \{
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+setDefaultFilters
+
+<br />
+
+function
+
+<br />
+
+This function will be invoked on every data fetch call from unbxd search engine. Hence can be used to apply default filters like show only instock products.
+
+<br />
+
+function () \{
+
+<br />
+
+this.addFilter(“stock\_availability”,”In Stock”);
+
+<br />
+
+}
+
+<br />
+
+fields
+
+<br />
+
+array
+
+<br />
+
+List of product attribute name which should be fetched for matching products
+
+<br />
+
+Note only include products fields which are to  be used to save bandwidth\
+\[‘title’, ‘unbxd\_title’, ‘price’, ‘image\_url’, ‘productUrl’, ‘doctype’, ‘saleprice’, ‘desktop\_url’, ‘mobile\_url’, ‘average\_rating’, ‘min\_price’, ‘max\_price’, ‘price’, ‘sash\_css\_class’, ‘v\_image\_url’, ‘brand’
+
+<br />
+
+]
+
+<br />
+
+onNoResult
+
+<br />
+
+function
+
+<br />
+
+This function is invoked when there are no matching products for the search term queried by the user
+
+<br />
+
+It is a function with one argument of type object which holds the result set including search term.
+
+<br />
+
+function(obj)\{
+
+<br />
+
+this.compiledNoResultsTemp = Handlebars.compile(this.options.onNoResultTemp);
+
+<br />
+
+```
+```
+
+<br />
+
+```
+```
+
+<br />
+
+}
+
+<br />
+
+noEncoding
+
+<br />
+
+boolean
+
+<br />
+
+Set to true if you want to enable encoding of url params and subsequent decoding
+
+<br />
+
+customReset
+
+<br />
+
+function
+
+<br />
+
+This function is called when sorting the results, changing the view or resetting all filter options
+
+<br />
+
+No argument function used as a extension point for custom behaviour
+
+<br />
+
+function ()\{ &#x20;
+
+}
+
+bannerSelector
+
+string
+
+Css selector matching the merchandising banner slot on the page
+
+
+# up-sell-banner-section
+
+&#x20;&#x20;
+bannerTemp
+
+string
+
+String representation of the HTMl Schema used to apply promotional banner on the page
+
+
+\*input data ->
+
+\{
+
+landingUrl:””,
+
+imageUrl:””
+
+}
+
+\<a href='\{\{\{landingUrl}}}’>\<img src='\{\{imageUrl}}’/>\</a>
+
+bannerCount
+
+number
+
+Integer representation of the number of banners which should be displayed on the page
+
+2&#x20;
+
+sortContainerSelector
+
+string
+
+Css selector matching the sort section on the page
+
+\#sort-section
+
+sortOptions
+
+array
+
+Can configure the sort options to be displayed on the page
+
+\[\{
+
+&#x20;               name: ‘Popularity’
+
+&#x20;           }, \{
+
+&#x20;               name: ‘Low to High Price’,
+
+&#x20;               field: ‘price\_min’,
+
+&#x20;               order: ‘asc’
+
+&#x20;           }, \{
+
+&#x20;               name: ‘High to Low Price’,
+
+&#x20;               field: ‘price\_max’,
+
+&#x20;               order: ‘desc’
+
+&#x20;           }
+
+&#x20;           }
+
+]
+
+sortContainerType
+
+string
+
+Used to indicate if the selecting a sort option are by click or selecting from dropdown
+
+click (or) select
+
+sortContainerTemp
+
+string
+
+String representation of the HTML schema on how the sort section to be rendered
+
+
+
+\*input data ->&#x20;
+
+\{            &#x20;
+
+&#x20;options: \[\{name: “Popularity”, selected: true}
+
+\{name: “Low to High Price”, field: “price\_min”, friendlyUrlText: “price-low”, order: “asc”, selected: false}
+
+\{name: “High to Low Price”, field: “price\_max”, friendlyUrlText: “price-high”, order: “desc”, selected: false}
+
+\{name: “Newest First”, field: “published\_date”, friendlyUrlText: “newest”, order: “desc”, selected: false}
+
+\{name: “Top Rated”, field: “no\_of\_stars”, friendlyUrlText: “ratings”, order: “desc”, selected: false}
+
+&#x20;]
+
+&#x20;}
+
+
+
+\<span class=”base” data-ui-id=”page-title-wrapper”>Search results \{\{#isNotEmptySearch query}}for:
+
+&#x20;       \{\{query}} \<span class=”product-count-holder”>(\{\{start}} – \{\{end}} of \{\{numberOfProducts}} products)\</span>\{\{/isNotEmptySearch}}\</span> \</h1>&#x20;
+
+&#x20;   &#x20;
+
+\<span class=”ae-label” id=”unbxd-sort-labelledby”>Sort By: \</span>
+
+\<select aria-labelledby=”unbxd-sort-labelledby” data-ae-blurbtype=”select” data-ae-form-field=”true”>
+
+&#x20;       \{\{#options}}
+
+&#x20;       \<option \{\{#if selected}}selected=”selected”\{\{/if}} unbxdsortField=”\{\{field}}” unbxdsortValue=”\{\{order}}”>
+
+&#x20;           \{\{name}}\</option>
+
+&#x20;       \{\{/options}}
+
+\</select>
+
+pageSize
+
+number
+
+Configure the number of products to be shown in a page
+
+24
+
+pageSizeContainerSelector
+
+string
+
+Css selector matching the page size section on the page
+
+\#results-pagesize
+
+pageSizeOptions
+
+array
+
+The possible list of page view option to be shown on the web
+
+\*note unbxd has a maximum limit of 99 products per api call.
+
+\[
+
+&#x20;               \{
+
+&#x20;                   name: ’48 item’,
+
+&#x20;                   value: ’48’
+
+&#x20;               }, \{
+
+&#x20;                   name: ’72 items’,
+
+&#x20;                   value: ’72’
+
+&#x20;               }, \{
+
+&#x20;                   name: ’96 items’,
+
+&#x20;                   value: ’96’
+
+&#x20;               }
+
+&#x20;           ]
+
+pageSizeContainerType
+
+string
+
+Used to indicate if the selecting a page size option is by click or selecting from dropdown
+
+click (or) select
+
+pageSizeContainerTemp
+
+string
+
+String representation of the HTML schema on how the page size  section to be rendered
+
+
+\*inputdata ->&#x20;
+
+\{            &#x20;
+
+&#x20;options: \[\{name: “48 item”, value: “48”, selected: true}
+
+&#x20;\{name: “72 items”, value: “72”, selected: false}
+
+&#x20;\{name: “96 items”, value: “96”, selected: false}
+
+&#x20;]
+
+&#x20;}
+
+
+
+\<span class=”ae-label” id=”unbxd-pageview-labelledby”>Show: \</span>
+
+\<select aria-labelledby=”unbxd-pageview-labelledby” data-ae-blurbtype=”select”
+
+&#x20;       data-ae-form-field=”true”>
+
+&#x20;       \{\{#options}}
+
+&#x20;       \<option \{\{#if selected}}selected=”selected” \{\{/if}} unbxdpagesize=”\{\{value}}”>
+
+&#x20;           \{\{name}}\</option>
+
+&#x20;       \{\{/options}}
+
+\</select>
+
+viewTypeContainerTemp
+
+string
+
+String representation of the HTML schema on how the page view  section to be rendered
+
+\*inputdata ->&#x20;
+
+\{            &#x20;
+
+&#x20;options: \[\{name: “Grid”, value: “grid”, selected: true}
+
+&#x20;\{name: “List”, value: “list”, selected: false}
+
+&#x20; ]
+
+&#x20;}
+
+\<span class=”title”>View:\</span>
+
+\{\{#options}}
+
+\<a class=”\{\{#if selected}}selected\{\{/if}}” unbxdviewtype=”\{\{value}}” href=”javascript:;” “>\{\{value}}\</a>
+
+\{\{/options}}
+
+viewTypeContainerSelector
+
+string
+
+Css selector matching the page view section on the page
+
+\#results-pageview
+
+viewTypes
+
+array
+
+Indicates all different views available on the page
+
+\*If the customer only have grid view then \[‘grid’]
+
+\*If the customer only have list view then \[‘list’]
+
+\*If customer has both views then \[“list”,”grid”]
+
+variants
+
+boolean
+
+Pass true to display variants
+
+true
+
+variantsCount
+
+number
+
+Pass the number of variants to be shown for a product
+
+3
+
+isSwatches
+
+boolean
+
+Pass true to display swatches
+
+true
+
+swatchesSelector
+
+string
+
+CSS selector of the swatches element
+
+.swatch-box
+
+mappedFields
+
+object
+
+Pass the field names for the important product attributes that you want to render
+
+\{
+
+“imageUrl”: “imageUrl”,
+
+“productUrl”: “productUrl”,
+
+“title”: “title”,
+
+“description”: “description”,
+
+“price”: “price”,
+
+“categoryPath”: “categoryPath”,
+
+“variantFields”: \{
+
+“imageUrl”: “v\_imageUrl”,
+
+“productUrl”: “v\_productUrl”,
+
+“title”: “v\_title”,
+
+“price”: “v\_price”,
+
+“groupBy”: “variant\_color”,
+
+“swatchFields”: \{
+
+“swatch\_background\_image”: “variant\_overhead\_swatch”,
+
+“swatch\_background\_color”: “variant\_color”,
+
+“swatch\_click\_image”: “variant\_image\_array”
+
+}
+
+}
+
+}
+
+
+
+retainbaseParam
+
+boolean
+
+&#x20;	&#x20;
+baseParams
+
+array
+
+&#x20;	&#x20;
+requestHeaders
+
+object
+
+Request headers if any to be sent on unbxd search response
+
+&#x20;
