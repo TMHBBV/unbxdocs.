@@ -2685,7 +2685,7 @@ The following table summarises the various properties which can be  passed as se
 
 <br />
 
-<Table>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -2902,10 +2902,125 @@ The following table summarises the various properties which can be  passed as se
         ```
 
         <br />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        deferInitRender
+      </td>
+
+      <td>
+        array
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        spellCheck
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        css selector to identify the did you mention section on the page
+      </td>
+
+      <td>
+        # did\_you\_mean
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        spellCheckTemp
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        String representing the html scheme for did you mean section using handlebars template syntax
 
         <br />
 
+        &#x20;&#x20;
+        \*input data -> \{
+
         <br />
+
+        suggestion: “shoes”
+
+        <br />
+
+        numberOfProducts: 0
+
+        <br />
+
+        }
+      </td>
+
+      <td>
+        ```
+                          <span class=”base” data-ui-id=”page-title-wrapper”>Did you mean <span class=”bold”>{{suggestion}}</span> ?</span> </h1>
+
+
+        ```
+
+        <br />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **searchQueryDisplay**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector to identify the search results message section on the page
+      </td>
+
+      <td>
+        \#search\_result\_display
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchQueryDisplayTemp
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        String representing the html scheme for search message section using handle template syntax
+      </td>
+
+      <td>
+        <br />
+
+        ```
+        <span class=”base” data-ui-id=”page-title-wrapper”>Search results {{#isNotEmptySearch query}}for:
+
+                {{query}} <span class=”product-count-holder”>({{start}} – {{end}} of {{numberOfProducts}} products)</span>{{/isNotEmptySearch}}</span> </h1> 
+        ```
 
         <br />
 
@@ -2915,18 +3030,83 @@ The following table summarises the various properties which can be  passed as se
 
     <tr>
       <td>
-
+        searchResultContainer
       </td>
 
       <td>
-
+        string
       </td>
 
       <td>
-
+        Css selector representing the product results container in the page
       </td>
 
       <td>
+        # results-container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        searchResultSetTemp
+      </td>
+
+      <td>
+        string|function
+      </td>
+
+      <td>
+        String representing the html scheme for displaying the products in the results container
+
+        \*input data -> \{numberOfProducts: 5361
+
+        start: 0
+
+        products: \[
+
+        \{
+
+        productUrl: “/shop/prod/mens-spring-step-casual-shoes/423424.htm”
+
+        was\_price\_min: 69.95
+
+        title: “Mens Spring Step  Casual Shoes”
+
+        was\_price\_max: 69.95
+
+        uniqueId: “ZTZ47C”
+
+        price\_max: 69.95
+
+        brand: \[“Spring Step”]
+
+        price\_min: 69.95
+
+        more\_colors\_available: “true”
+
+        imageUrl: \[“/images/store/product/images/563794479patrick.jpg”]
+
+        variantTotal: 5
+
+        score: 0.4200723
+
+        relevantDocument: “parent”
+
+        variantCount: 5
+
+        unbxdprank: 1
+
+        }]
+
+        unbxdparam\_requestId: null
+
+        }
+
+        Or a javascript function , where the data above will be passed as an input argument and the function should handle the dynamic binding of the html section
+      </td>
+
+      <td>
+          
 
       </td>
     </tr>
