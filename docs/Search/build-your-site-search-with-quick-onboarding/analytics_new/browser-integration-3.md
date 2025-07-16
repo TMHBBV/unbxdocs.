@@ -508,9 +508,9 @@ Use the below code as a reference to be inserted in HTML tags for input box and 
 
 Parameter details:
 
-| Attribute Name | Datatype | What value to be passed                                                            |
-| -------------- | -------- | ---------------------------------------------------------------------------------- |
-| `unbxdattr`    | constant | \`"sq"\` in case of input \`\<div>\`\<br>\`"sq\_bt"\` in case of button \`\<div>\` |
+| Attribute Name | Datatype | What value to be passed                                                   |
+| -------------- | -------- | ------------------------------------------------------------------------- |
+| `unbxdattr`    | constant | `"sq"` in case of input `\<div>`\<br>`"sq_bt"` in case of button `\<div>` |
 
 ### Search Impression
 
@@ -524,7 +524,22 @@ To track a search results page impression, insert the following HTML tag on the 
 <li unbxdAttr="product" unbxdparam_sku="{{uniqueId-of-product}}">
 ```
 
-<br />
+Also, add the script below before Unbxd analytics library is loaded.
+
+```
+<script type="text/javascript">
+UnbxdAnalyticsConf=window.UnbxdAnalyticsConf ||{};
+UnbxdAnalyticsConf["query"]="{{search-query}}";
+</script>
+```
+
+Parameter details:
+
+| Attribute Name   | Datatype | What value to be passed                                                                                            |
+| ---------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `unbxdattr`      | constant | Specifies the type of event being captured. For search results product, the value is `"product"` always.           |
+| `unbxdparam_sku` | variable | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response. |
+| `query`          | variable | The search query which was called for loading the results.                                                         |
 
 ### Product Click
 
