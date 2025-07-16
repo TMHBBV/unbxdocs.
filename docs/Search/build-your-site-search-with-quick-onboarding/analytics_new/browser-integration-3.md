@@ -180,21 +180,32 @@ Payload details:
 
 ## Add to Cart
 
-Whenever a user adds any product to cart or shopping bag, the add to cart will get fired. This helps us further improve the products appearing in the Recommendation widget.
+### Attributes for Add to Cart Tracking
+
+| Attribute Name | Datatype | What value to be passed                                                                      |
+| -------------- | -------- | -------------------------------------------------------------------------------------------- |
+| `pid`          | string   | UniqueId of the selected product                                                             |
+| `variantId`    | string   | VariantId of the selected product variant (if `relevantDocumentType = "variant"`), or `null` |
+| `qty`          | string   | Quantity being added to the cart by the user                                                 |
+
+This event should be tracked whenever any product is added to cart directly from the autocomplete box.
 
 ```
-Add to Cart
-Whenever a user adds any product to cart or shopping bag, the add to cart will get fired. This helps us further improve the products appearing in the Recommendation widget.
+<script type='text/javascript'>
+var payload = {
+  pid: '{{uniqueId-of-the-products}}',
+  variantId: '{{variantId-of-the-products}}', //only if the variants are true
+  qty: '{{number-of-quantities-added-to-the-cart}}',
+}
+if(Unbxd && typeof Unbxd.track === 'function') {
+  Unbxd.track('addToCart', payload)
+} else {
+  console.error('unbxdAnalytics.js is not loaded!')
+}
+</script>
 ```
 
-Payload:
-
-| **Datatype** | **What Value to be Passed**                                                                                                                      |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| string       | Unique ID for the product, to be taken from API response, if `relevantDocumentType="parent"`, in search API response, or null if not applicable. |
-| string       | The variant ID of the selected product variant, if `relevantDocumentType="variant"`, in search API response, or null if not applicable.          |
-| string       | Quantity being added to the cart by the user.                                                                                                    |
-| string       | The unit price of the product (or variant, if a variant is selected).                                                                            |
+<br />
 
 ### Cart Removal
 
@@ -466,17 +477,7 @@ if(Unbxd && typeof Unbxd.track === 'function') {
 </script>
 ```
 
-## Add to Cart
-
-### Attributes for Add to Cart Tracking
-
-| Attribute Name | Datatype | What value to be passed                                                                      |
-| -------------- | -------- | -------------------------------------------------------------------------------------------- |
-| `pid`          | string   | UniqueId of the selected product                                                             |
-| `variantId`    | string   | VariantId of the selected product variant (if `relevantDocumentType = "variant"`), or `null` |
-| `qty`          | string   | Quantity being added to the cart by the user                                                 |
-
-This event should be tracked whenever any product is added to cart directly from the autocomplete box.
+<br />
 
 ```
 <script type='text/javascript'>
@@ -493,7 +494,7 @@ if(Unbxd && typeof Unbxd.track === 'function') {
 </script>
 ```
 
-### Attributes for Popular Product Selection Tracking
+Attributes for Popular Product Selection Tracking
 
 | Attribute Name | Datatype | What value to be passed                                                                    |
 | -------------- | -------- | ------------------------------------------------------------------------------------------ |
@@ -636,7 +637,8 @@ Parameter details:
 | `unbxdparam_prank`     | Variable     | Specifies the position of the product in the search results grid/list. When this value is not specified, the first product will have a value of 1, second will be 2, and so on. |
 | `unbxdparam_requestId` | Variable     | Specifies the request Id, which is part of the response readers of the Search/Category API request. For Search SDK integration, this is handled by the SDK and can be ignored.  |
 
-Product View\
+## Product View
+
 Product View indicates the total number of visits that has been made to the product details page (PDP) by the visitor irrespective of the source (search result page, category page, search engine, email, marketing campaigns, etc).The product view can be tracked whenever a user lands on the PDP page by adding the below link to your HTML on page load.
 
 ```
