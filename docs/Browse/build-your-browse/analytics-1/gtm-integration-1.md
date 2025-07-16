@@ -44,3 +44,37 @@ For example: Sending searched query to Unbxd analytics.
 ### Requirements for Unbxd tracking through GTM
 
 Unbxd analytics scripts need to be loaded across all the pages. We require a tag which will need to be loaded on all the pages. Below is the required code block for Unbxd analytics script. This should be loaded before other Unbxd tracking scripts and is mandatory to be added on all pages.
+
+<br />
+
+```
+// Container ID is present in GTM-XXXX format in GTM Dashboard
+// HTML ID can be found in the url. Eg:
+// containers/422XXXX/workspaces/20 , 20 is the HTML ID
+
+<script type="text/javascript">
+   /* * * CONFIGURATION * * */
+   // Replace the value with the Unbxd Site Key and API Key.
+
+   var UnbxdSiteName = "{{UNBXD_SITE_NAME}}";
+   var UnbxdApiKey = "{{UNBXD_API_KEY}}";
+
+   /* * * DON'T EDIT BELOW THIS LINE * * */
+   (function() {
+   var ubx = document.createElement('script');
+   ubx.type = 'text/javascript';
+   ubx.async = true; ubx.src='//d21gpk1vhmjuf5.cloudfront.net/unbxdAnalytics.js';
+   ubx.addEventListener('load', function() {
+   window.google_tag_manager[{{Container ID}}].onHtmlSuccess({{HTML ID}}); });
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ubx);
+   })();
+</script>
+```
+
+<br />
+
+The above JS snippet needs to be added in a tag and also enable Built-In Variables, i.e., Container ID and HTML ID without fail.
+
+* TagName: UnbxdAnalyticsScript
+* TagType: Custom HTML Tag
+* Trigger: AllPagesPageView
