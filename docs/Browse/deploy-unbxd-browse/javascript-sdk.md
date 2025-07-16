@@ -2034,7 +2034,7 @@ You can configure the different view types to be shown using the “viewTypes”
       </td>
 
       <td>
-        * \`\[‘grid’]\` (only grid view)\<br>- \`\[‘list’]\` (only list view)\<br>- \`\[‘list’, ‘grid’]\` (both views)
+        * `[‘grid’]` (only grid view)\<br>- `[‘list’]` (only list view)\<br>- `[‘list’, ‘grid’]` (both views)
       </td>
     </tr>
   </tbody>
@@ -2339,6 +2339,595 @@ To view the description of the labels in the screenshot above, refer to the tabl
         * Refresh the log content
         * Download the log file
         * Displays current log file location and file size (in KB)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+### Spellcheck
+
+This section documents the different configs that can be used to configure the different views for displaying the products
+
+In such cases, the context-aware algorithm of Unbxd understands your visitor’s intent and sends a “Did You Mean” response along with a search result set for the query, if any.
+
+This section documents the different properties to be configured to show “Did you mean?” spell check section on your webpage
+
+For this, provide the CSS selector for the container element using the “spellCheck” config.
+
+spellCheck:
+
+| **Field**         | **Value**                                                          |
+| ----------------- | ------------------------------------------------------------------ |
+| **Data type**     | String                                                             |
+| **Required**      | false                                                              |
+| **Default Value** | NA                                                                 |
+| **Description**   | CSS selector to identify the "did you mention" section on the page |
+| **Sample Values** | `#did_you_mean`                                                    |
+
+You can further customize the spell check render behaviour by providing a handlebars template for the same using the  “spellCheckTemp” configspellCheckTemp:
+
+| **Field**         | **Value**                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Data type**     | String                                                                                                              |
+| **Required**      | True                                                                                                                |
+| **Default Value** | `'<h3>Did you mean : {{suggestion}}</h3>'`                                                                          |
+| **Description**   | String representing the HTML schema for the "did you mean" section using Handlebars template syntax                 |
+| **Input Data**    | `{ suggestion: "shoes", numberOfProducts: 0 }`                                                                      |
+| **Sample Values** | `<span class="base" data-ui-id="page-title-wrapper">Did you mean <span class="bold">{{suggestion}}</span> ?</span>` |
+
+### Search Query Display
+
+Displays the ‘query name’ while searching for the relevant products.
+
+This section documents the different configs that can be used to show the searched query on your webpage\
+For this, provide the CSS selector for the container element using the “searchQueryDisplay” config
+
+searchQueryDisplay:
+
+| **Field**         | **Value**                                                               |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Data type**     | String                                                                  |
+| **Required**      | True                                                                    |
+| **Default Value** | NA                                                                      |
+| **Description**   | CSS selector to identify the search results message section on the page |
+| **Sample Values** | `#search_result_display`                                                |
+
+You can further customize the search query message render behaviour by providing a handlebars template for the same using the  “searchQueryDisplayTemp” configsearchQueryDisplayTemp:
+
+| **Field**         | **Value**                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Data type**     | String                                                                                                              |
+| **Required**      | True                                                                                                                |
+| **Default Value** | `<h3>Search results for {{query}} – {{numberOfProducts}}</h3>`                                                      |
+| **Description**   | String representing the HTML schema for the search message section using Handlebars template syntax                 |
+| **Sample Input**  | `{ numberOfProducts: 79816, start: 1, end: 48, query: "*" }`                                                        |
+| **Sample Value**  | `<span class="base" data-ui-id="page-title-wrapper">Did you mean <span class="bold">{{suggestion}}</span> ?</span>` |
+
+### Variants
+
+Configure variants display by using the configs in this section.To display variants pass the config “variants” as true
+
+variants:
+
+| **Field**         | **Value**                     |
+| ----------------- | ----------------------------- |
+| **Data type**     | Boolean                       |
+| **Required**      | False                         |
+| **Default Value** | false                         |
+| **Description**   | Pass true to display variants |
+| **Sample Values** | true                          |
+
+Configure the number of variants to be shown using the “variantsCount” config.
+
+**variantsCount**:
+
+| **Field**         | **Value**                                             |
+| ----------------- | ----------------------------------------------------- |
+| **Data type**     | Number                                                |
+| **Required**      | False                                                 |
+| **Default Value** | 1                                                     |
+| **Description**   | Pass the number of variants to be shown for a product |
+| **Sample Values** | 3                                                     |
+
+### Swatches
+
+Configure swatches display by using the configs in this section.To display swatches pass the config “isSwatches” as true
+
+isSwatches:
+
+| **Field**         | **Value**                     |
+| ----------------- | ----------------------------- |
+| **Data type**     | Boolean                       |
+| **Required**      | False                         |
+| **Default Value** | false                         |
+| **Description**   | Pass true to display swatches |
+| **Sample Values** | true                          |
+
+Provide the selector to use for the swatches using “swatchesSelector” config
+
+swatchesSelector:
+
+| **Field**         | **Value**                            |
+| ----------------- | ------------------------------------ |
+| **Data type**     | string                               |
+| **Required**      | False                                |
+| **Default Value** | NA                                   |
+| **Description**   | CSS selector of the swatches element |
+| **Sample Values** | `.swatch-box`                        |
+
+> 📘 NOTE
+>
+> If you wants swatches, variants count should be higher, and “groupBy” field should be present in mapped fields config as shown below:
+
+### Mapped Fields
+
+You can pass on any custom field names for the important product attributes using the mapped fields config:
+
+mappedFields:
+
+| **Field**       | **Value**                                                                         |
+| --------------- | --------------------------------------------------------------------------------- |
+| **Data type**   | object                                                                            |
+| **Required**    | Optional                                                                          |
+| **Description** | Pass the field names for the important product attributes that you want to render |
+
+```Text Sample Values
+{
+
+“imageUrl”: “imageUrl”,
+
+“productUrl”: “productUrl”,
+
+“title”: “title”,
+
+“description”: “description”,
+
+“price”: “price”,
+
+“categoryPath”: “categoryPath”,
+
+“variantFields”: {
+
+“imageUrl”: “v_imageUrl”,
+
+“productUrl”: “v_productUrl”,
+
+“title”: “v_title”,
+
+“price”: “v_price”,
+
+“groupBy”: “variant_color”,
+
+“swatchFields”: {
+
+“swatch_background_image”: “variant_overhead_swatch”,
+
+“swatch_background_color”: “variant_color”,
+
+“swatch_click_image”: “variant_image_array”
+
+}
+
+}
+
+}
+```
+
+### Callback Functions
+
+This section documents the different callback functions exposed by the SDK that you can provide to listen to various events
+
+onFacetLoad:
+
+| **Field**       | **Value**                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Data type**   | function                                                                                                         |
+| **Required**    | Optional                                                                                                         |
+| **Description** | Callback function invoked after facets are rendered on the page. Can be used to scroll to top, bind events, etc. |
+|                 | Function accepts one argument: an object carrying information about the facets displayed.                        |
+
+```Text Sample Values
+function (obj) {
+
+                if (this.facetScrollTop) {
+
+                    jQuery(“html, body”).animate({
+
+                        scrollTop: 0
+
+                    }, 300);
+
+                    this.facetScrollTop = false;
+
+                }
+
+}
+```
+
+onIntialResultLoad:
+
+| **Field**       | **Value**                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Data type**   | function                                                                                                   |
+| **Required**    | Optional                                                                                                   |
+| **Description** | Callback function invoked when the Unbxd page binding happens for the first time.                          |
+|                 | Function receives one argument: an object containing the entire result set, including products and facets. |
+|                 | Can be used to trigger analytics events, adjust product container height, etc.                             |
+
+```Text Sample Values
+function (obj) {
+
+var pids_list = [];
+
+                for (var i = 0; i < obj[‘response’][‘products’].length; i++) {
+
+                    var prd = obj[‘response’][‘products’][i];
+
+                    var sku = prd[‘uniqueId’]
+
+                    pids_list.push(sku.replace(/\./g, “”));
+
+                }
+
+                var impressionObj = { query: obj[‘searchMetaData’][‘queryParams’][‘q’], pids_list: pids_list };
+
+
+                Unbxd.track(impressionObj, ‘search_impression’);
+
+
+}
+
+
+
+```
+
+onPageLoad:
+
+| **Field**       | **Value**                                                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Data type**   | function                                                                                                                                   |
+| **Required**    | Optional                                                                                                                                   |
+| **Description** | Callback function invoked every time the page content is refreshed after the initial load (e.g., sorting, changing page size, paginating). |
+|                 | The function receives one argument: an object containing the entire result set including products and facets.                              |
+|                 | Can be used to trigger analytics events, adjust product container height, etc.                                                             |
+
+```Text Sample Values
+function (obj) {
+
+var pids_list = [];
+
+                for (var i = 0; i < obj[‘response’][‘products’].length; i++) {
+
+                    var prd = obj[‘response’][‘products’][i];
+
+                    var sku = prd[‘uniqueId’]
+
+                    pids_list.push(sku.replace(/\./g, “”));
+
+                }
+
+                var impressionObj = { query: obj[‘searchMetaData’][‘queryParams’][‘q’], pids_list: pids_list };
+
+
+                Unbxd.track(impressionObj, ‘search_impression’);
+
+
+}
+
+
+```
+
+### Unbxd Handlebar Helper Functions
+
+unbxdIf
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Field**
+      </th>
+
+      <th>
+        **Value**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Purpose**
+      </td>
+
+      <td>
+        Use the `unbxdIf` function to conditionally render a block when two arguments are exactly equal.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Arguments**
+      </td>
+
+      <td>
+        Accepts two arguments and evaluates to true if they are physically equal.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Usage**
+      </td>
+
+      <td>
+        \*\*The following example Renders “price” text when the value of facet\_name property is equal to “v\_PriceRange\_uFilter”, else it would render the value of facet\_name.
+
+        <br />
+
+        \{\{#unbxdIf ../facet\_name “v\_PriceRange\_uFilter”}} Price\{\{else}}\{\{../facet\_name}}\{\{/unbxdIf}}\*\*:
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+prepareFacetValue
+
+| **Field**     | **Value**                                                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **Purpose**   | The `prepareFacetValue` function returns three non-breaking spaces if the argument value is empty.                          |
+| **Arguments** | Accepts one argument and returns three non-breaking spaces if the argument is empty; otherwise returns the argument itself. |
+| **Usage**     | \{\{#prepareFacetValue value}}\{\{/prepareFacetValue}}                                                                      |
+
+### List of available Configurations
+
+The following table summarises the various properties which can be  passed as search options while invoking the “setSearch” function in “Unbxd” object.
+
+<br />
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Config Name**
+      </th>
+
+      <th>
+        **Data Type**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+
+      <th>
+        **Sample Values**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **siteName**
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Site name assigned from Unbxd (unique identifier for each customer/site).
+      </td>
+
+      <td>
+        demo-com809841570123270
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        (For customers with multiple websites, different or same siteName depending on product set.)
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **APIKey**
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Unique key assigned from Unbxd
+      </td>
+
+      <td>
+        7689867nbh868u4j3b4u998
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **inputSelector**
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector of the search input box
+      </td>
+
+      <td>
+        \#search\_mini\_form input
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **searchButtonSelector**
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        CSS selector of the search submit button/icon. Can be empty if no search button exists (search submits on enter key).
+      </td>
+
+      <td>
+        \#search\_mini\_form button.searchicon
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **type**
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Indicates whether it’s a search or category page
+      </td>
+
+      <td>
+        "search" or "category"
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        * "search": the search term in URL is used by the library
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        * "category": getCategoryID function invoked to identify category for the URL
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **searchQueryParam**
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Search query parameter name containing the searched keyword
+      </td>
+
+      <td>
+        "q"
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        getCategoryId
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Javascript function used to evaluate the category id (or) path for the page to be loaded.This function is applicable only when the “type” attribute in search options is “category”
+      </td>
+
+      <td>
+        <br />
+
+        ```
+        f (“page_type” in window.UnbxdAnalyticsConf && window.UnbxdAnalyticsConf.page_type == ‘CATEGORY’) {
+
+                            if (“page_id” in window.UnbxdAnalyticsConf) {
+
+                                return ‘categoryPathId:”‘ + window.UnbxdAnalyticsConf[“page_id”] + ‘”‘;
+
+                            } else {
+
+                                return ‘categoryPath:”‘ + window.UnbxdAnalyticsConf[“page”] + ‘”‘;
+
+                            }
+
+                        }
+        ```
+
+        <br />
+
+        <br />
+
+        <br />
+
+        <br />
+
+        <br />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
       </td>
     </tr>
   </tbody>
