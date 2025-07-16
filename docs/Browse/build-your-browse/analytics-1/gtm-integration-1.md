@@ -78,3 +78,50 @@ The above JS snippet needs to be added in a tag and also enable Built-In Variabl
 * TagName: UnbxdAnalyticsScript
 * TagType: Custom HTML Tag
 * Trigger: AllPagesPageView
+
+## Category Page
+
+A category page event is tracked to understand the browse/category interests of your visitors, as in which all category pages are visited by user. Each browse results page is tracked to enable per category page analytics of the visitor. A typical category page event involves:
+
+UnbxdCategoryPageTrigger
+
+Through GTM to integrate this event we need to follow below approach:
+
+Create Trigger in GTM to catch the CategoryPath on browse results page load.\
+Trigger Configuration:
+
+* TriggerName: UnbxdCategoryPageTrigger
+* Trigger Type: Custom Event
+* Event Name: CategoryPage
+* TriggerFiresOn: All custom events
+
+<Image align="center" width="80% " src="https://files.readme.io/4a75e6039100961d7b2dd832bde188d4380f6d33d77f4101c00b3f9361e3aaf9-image.png" />
+
+<br />
+
+Create Variable in GTM, to fetch the query from the dataLayer.\
+Variable Configuration:
+
+Variable Name: UnbxdCategoryPagePayload
+
+Variable Variable Type: Data Layer Variable
+
+Data Layer Variable Name: CategoryPagePayload
+
+HTML Content:
+
+<Image align="center" width="80% " src="https://files.readme.io/440a6e6049fd4d2e37ff9873d3ff4272d8b515f44305d204f80cc445cc5226ac-image.png" />
+
+<br />
+
+Create a Javascript tag with the below details.
+
+Tag Configuration:
+
+Tag Name: UnbxdSearchQueryTag
+
+Tag Type: Custom HTML
+
+HTML Content:
+
+/
