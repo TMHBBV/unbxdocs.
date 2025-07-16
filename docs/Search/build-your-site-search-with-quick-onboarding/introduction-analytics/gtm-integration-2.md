@@ -83,15 +83,12 @@ A Search hit event is tracked to understand the query and intent of your visitor
 
 query is tracked to enable per-query analytics of the visitor. A typical search hit event involves:
 
-SearchQueryTrigger
+**SearchQueryTrigger**: Through GTM to integrate this event we need to follow below approach:
 
-Through GTM to integrate this event we need to follow below approach:
+1. Create Trigger in GTM to catch the search Query on form hit.\
+   Trigger Configuration:
+   * TriggerName: UnbxdSearchQueryTrigger
+   * Trigger Type: Custom Event
+   * Event Name: SearchQuery                                                                                                                                TriggerFiresOn: All custom events
 
-Create Trigger in GTM to catch the search Query on form hit.\
-Trigger Configuration:
-
-TriggerName: UnbxdSearchQueryTrigger
-
-Trigger Type: Custom Event
-
-Event Name: SearchQuery                                                                                                                                TriggerFiresOn: All custom events
+<Image align="center" width="80% " src="https://files.readme.io/ace8019cb8b49f1efb5412038cd7547d35a65b94dbcc82f02432691e4b5ef4e8-image.png" />
