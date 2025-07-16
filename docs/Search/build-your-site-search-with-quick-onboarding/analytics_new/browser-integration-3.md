@@ -479,21 +479,6 @@ if(Unbxd && typeof Unbxd.track === 'function') {
 
 <br />
 
-```
-<script type='text/javascript'>
-var payload = {
-  pid: '{{uniqueId-of-the-products}}',
-  variantId: '{{variantId-of-the-products}}', //only if the variants are true
-  qty: '{{number-of-quantities-added-to-the-cart}}',
-}
-if(Unbxd && typeof Unbxd.track === 'function') {
-  Unbxd.track('addToCart', payload)
-} else {
-  console.error('unbxdAnalytics.js is not loaded!')
-}
-</script>
-```
-
 Attributes for Popular Product Selection Tracking
 
 | Attribute Name | Datatype | What value to be passed                                                                    |
@@ -541,7 +526,7 @@ Parameter details:
 | `unbxdparam_sku`      | Variable     | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response. |
 | `experience_pagetype` | Variable     | Pagetype for the widget should be either Home, Product, Category,\_                                                |
 
-### Visitor
+## Visitor
 
 This event is used to track shoppers and make their user profiles using browser cookies. To enable this event we just need to add Unbxd’s analytics JS library (as done above) inside the head section of all pages of the site.
 
@@ -552,7 +537,7 @@ The Visitor event is the first event that gets created when a shopper visits you
 * First-time shoppers
 * Repeat shoppers
 
-### **Search**
+## **Search**
 
 The search query event should be tracked when the user performs a search on site. It even includes selecting any option from Unbxd’s Autosuggest widget. It should track the query which user used to fetch the response (even the zero result queries should be tracked).
 
@@ -578,7 +563,7 @@ Parameter details:
 | -------------- | -------- | ------------------------------------------------------------------------- |
 | `unbxdattr`    | constant | `"sq"` in case of input `\<div>`\<br>`"sq_bt"` in case of button `\<div>` |
 
-### Search Impression
+## Search Impression
 
 A search impression event is fired when a search results page loads for the first time, and whenever results change on applying pagination, autoscroll, sort, and filters. For each of these actions, unique Ids of the products visible on the search page should be sent as payload.
 
@@ -607,7 +592,7 @@ Parameter details:
 | `unbxdparam_sku` | variable | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response. |
 | `query`          | variable | The search query which was called for loading the results.                                                         |
 
-### Product Click
+## Product Click
 
 The Product Click event is generated every time a shopper clicks on a product in a Product Listing Page (PLP) or in a recommendation widget. This helps us understand your shoppers’ search preferences. This information is analyzed to list and promote ‘Popular Products’ in the autosuggest dropdown  and display personalized ‘Recommended For You’ recommendations.
 
@@ -670,7 +655,50 @@ Parameter details
 | `unbxdparam_qty`       | Variable (Mandatory) | The number of units added to the cart. This should be the string value of the quantity added. For example, if 4 quantities of a product are added, its value would be “4” (instead of 4).                                                                                                    |
 | `unbxdparam_requestId` | Variable             | Specifies the request Id from the response of the search/category API. If the widget is not on the listing page, this parameter can be ignored when products within the PLP widget have the "Add to Cart" button. For Search SDK integration, this is handled by the SDK and can be ignored. |
 
-Cart Removal\
+## Add to Cart
+
+Whenever a user adds any product to cart or shopping bag, the add to cart will get fired.
+
+To track the number of ‘Add to Cart’, insert the following code snippet on the ‘Add to Cart’ button within your HTML page.
+
+```
+<li unbxdattr="AddToCart"  unbxdparam_sku="{{uniqueId-of-product}}" unbxdparam_variant= “{{variantId-of-variant}}” unbxdparam_qty="{{no-of-units}}" unbxdparam_requestId="{{window.requestId}}" ></li>
+```
+
+Payload Details - Add to Cart Event
+
+| Attribute Name         | Datatype | What value to be passed                                                                                                                                                   |
+| ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unbxdattr`            | constant | Specifies the type of event getting captured. For the cart event, the value is `"AddToCart"`                                                                              |
+| `unbxdparam_sku`       | variable | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response                                                         |
+| `unbxdparam_variant`   | variable | *(Optional)* Specifies the uniqueId of the product variant added to the cart as defined in the feed schema. Required if the catalog has variants                          |
+| `unbxdparam_qty`       | variable | *(Mandatory)* The number of units added to the cart. This should be a **string**. For example, `"4"` instead of `4`                                                       |
+| `unbxdparam_requestId` | variable | Specifies the requestId from the response of the search/category API. If the widget is not on the listing page, this can be ignored. (Handled by SDK in SDK integrations) |
+
+## Order
+
+The Orders event is pushed for every product that is purchased on your site.
+
+Using Custom HTML attributes you can integrate the functionality to track orders that have been successfully completed.
+
+You can insert the following code snippet within \< div > of product grid (product thumbnail) or within the \< li > html tag.To display products within the PLP on the search results:
+
+```
+<li unbxdattr="order"  unbxdparam_sku="{{uniqueId-of-product}}" unbxdparam_variant= “{{variantId-of-variant}}” unbxdparam_qty="{{no-of-units}}" unbxdparam_price=“{{price-of-product}}”></li>
+```
+
+Payload Details - Order Event
+
+| Attribute Name       | Datatype | What value to be passed                                                                                                                  |
+| -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `unbxdattr`          | constant | Specifies the type of event getting captured. For product clicks (orders), the value is `"order"` always                                 |
+| `unbxdparam_sku`     | variable | Specifies the `uniqueId` of the product as defined in the feed. You can get this from the UNBXD Search API response                      |
+| `unbxdparam_variant` | variable | *(Optional)* Specifies the uniqueID of the product variant purchased as defined in the feed schema. Required if the catalog has variants |
+| `unbxdparam_qty`     | variable | Specifies the number of products/variants purchased                                                                                      |
+| `unbxdparam_price`   | variable | Specifies the amount paid for a single unit of the product/variant                                                                       |
+
+## Cart Removal
+
 This event tracks every instance a product is removed from cart as well. Information helps us better understand the visitor’s preferences. To track products being removed from cart, insert the following attributes within all “Remove from Cart” buttons on the cart page.
 
 ```
@@ -685,7 +713,8 @@ This event tracks every instance a product is removed from cart as well. Informa
 | `unbxdparam_price`   | Variable             | Specifies the price of the individual product/variant removed from the cart.                                                                                                                      |
 | `unbxdparam_qty`     | Variable (Mandatory) | The number of units removed from the cart. This should be the string value of the quantity removed. For example, if 4 quantities of a product are removed, its value would be “4” (instead of 4). |
 
-Order\
+### Order
+
 The Orders event is pushed for every product that is purchased on your site.
 
 Using Custom HTML attributes you can integrate the functionality to track orders that have been successfully completed.
@@ -705,3 +734,36 @@ Parameter details:
 | `unbxdparam_variant` | Variable (Optional) | Specifies the uniqueID of the product variant purchased as defined in the feed schema. This parameter is required if the catalog has variants. |
 | `unbxdparam_qty`     | Variable            | Specifies the number of products/variants purchased.                                                                                           |
 | `unbxdparam_price`   | Variable            | Specifies the amount of a single unit the shopper has paid for the product/variant.                                                            |
+
+## Cart Removal
+
+This event tracks every instance a product is removed from the cart as well. The information helps us better understand the visitor’s preferences. To track products being removed from the cart, insert the following attributes within all “Remove from Cart” buttons on the cart page.
+
+```
+<button unbxdattr= “RemoveFromcart” unbxdparam_sku= “{{uniqueId-of-product}}” unbxdparam_variant = “{{variantId-of-product}}” unbxdparam_price = “{{price-of-product}}” unbxdparam_qty = “{{no-of-units}}”></button>
+```
+
+Payload Details - Remove From Cart Event
+
+| Attribute Name       | Datatype | What value to be passed                                                                                                                              |
+| -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unbxdattr`          | constant | Specifies the type of event getting captured. For cart removal, the value is `"RemoveFromCart"`                                                      |
+| `unbxdparam_sku`     | variable | Specifies the `uniqueId` of the product as defined in the feed. You can get this from the UNBXD Search API response                                  |
+| `unbxdparam_variant` | variable | *(Optional)* Specifies the uniqueID of the product variant removed from the cart as defined in the feed schema. Required if the catalog has variants |
+| `unbxdparam_price`   | variable | Specifies the price of individual product/variant removed                                                                                            |
+| `unbxdparam_qty`     | variable | The number of units removed from the cart. This should be the **string** value of the quantity. Example: `"4"` instead of `4`                        |
+
+## Facets
+
+A Facet event tracks the guided navigation on the Product Listing Page. The event query will list the specific filters the shopper has selected to narrow down the results on the search results page. Add the below HTML snippet to all the individual facet options \<div>, with the respective facetname and value.
+
+```
+<button unbxdattr= “Facet” unbxdparam_facetname=“{{facet-name}}” unbxdparam_facetvalue=”{{value-of-option}}”/></button>
+```
+
+Payload Details - Facet Selection Event
+
+| Attribute Name          | Datatype | What value to be passed                                                                                  |
+| ----------------------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| `unbxdparam_facetname`  | object   | Should contain the name of the facet returned in API response. For example: if "Color" facet is selected |
+| `unbxdparam_facetvalue` | string   | Value of the option in facet values. For example: if "Blue" is selected in Color facet, pass `"blue"`    |
