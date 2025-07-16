@@ -401,7 +401,13 @@ if(Unbxd && typeof Unbxd.track === 'function') {
 
 Add to Cart
 
-<br />
+### Attributes for Add to Cart Tracking
+
+| Attribute Name | Datatype | What value to be passed                                                                      |
+| -------------- | -------- | -------------------------------------------------------------------------------------------- |
+| `pid`          | string   | UniqueId of the selected product                                                             |
+| `variantId`    | string   | VariantId of the selected product variant (if `relevantDocumentType = "variant"`), or `null` |
+| `qty`          | string   | Quantity being added to the cart by the user                                                 |
 
 This event should be tracked whenever any product is added to cart directly from the autocomplete box.
 
@@ -419,16 +425,6 @@ if(Unbxd && typeof Unbxd.track === 'function') {
 }
 </script>
 ```
-
-<br />
-
-### Attributes for Add to Cart Tracking
-
-| Attribute Name | Datatype | What value to be passed                                                                      |
-| -------------- | -------- | -------------------------------------------------------------------------------------------- |
-| `pid`          | string   | UniqueId of the selected product                                                             |
-| `variantId`    | string   | VariantId of the selected product variant (if `relevantDocumentType = "variant"`), or `null` |
-| `qty`          | string   | Quantity being added to the cart by the user                                                 |
 
 ### Attributes for Popular Product Selection Tracking
 
