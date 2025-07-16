@@ -119,6 +119,8 @@ Sample Response
 }
 ```
 
+## Check Status
+
 After the upload is done, you can check the status of the uploaded feed. There are two ways to do it. Either by URL or via APIs.
 
 * In the address field, type in `https://feed.unbxd.io/api/{siteKey}/catalog/delta/status`
