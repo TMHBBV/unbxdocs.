@@ -1661,7 +1661,7 @@ selectedFacetTemp:
 
         <br />
 
-        &#x20;\{fcode: “Collection”, value: “Sherpa”, fsysname: “collection\_uFilter”}
+        \{fcode: “Collection”, value: “Sherpa”, fsysname: “collection\_uFilter”}
 
         <br />
 
@@ -1770,3 +1770,83 @@ pageSize:
 | **Default Value** | 12                                                                |
 | **Description**   | Configure the number of products to be shown on a page            |
 | **Sample Values** | 24                                                                |
+
+<br />
+
+If you want to show page size on your webpage, you must also provide the CSS selector for the container element using the “pageSizeContainerSelector” config
+
+pageSizeContainerSelector:
+
+| **Field**         | **Value**                                                   |
+| ----------------- | ----------------------------------------------------------- |
+| **Data type**     | string                                                      |
+| **Required**      | True (when page size section is enabled)                    |
+| **Default Value** | NA                                                          |
+| **Description**   | CSS selector of the page size container element on the page |
+| **Sample Values** | `#results_pagesize`                                         |
+
+You can configure the page size options to be shown using the “pageSizeOptions” config.pageSizeOptions:
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Field**
+      </th>
+
+      <th>
+        **Value**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Data type**
+      </td>
+
+      <td>
+        array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Required**
+      </td>
+
+      <td>
+        True (when page size section is enabled)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        \[\{\[\{
+
+        <br />
+
+        ```
+        ```
+
+        <br />
+
+        ```
+        ```
+
+        <br />
+
+        ```
+        ```
+
+        ```
+        ```
+      </td>
+    </tr>
+  </tbody>
+</Table>
