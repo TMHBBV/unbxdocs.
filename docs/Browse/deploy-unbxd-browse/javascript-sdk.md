@@ -3763,4 +3763,620 @@ The following table summarises the various properties which can be  passed as se
 
 <br />
 
-&#x20;
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Config Name
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Description
+      </th>
+
+      <th>
+        Code / Value
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        onIntialResultLoad
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Callback function invoked when the unbxd page binding happens for the first time. Takes one argument (object) carrying entire result set including products and facets. Can be used to trigger analytics event, adjust product container height etc.
+      </td>
+
+      <td>
+        `function (obj) { var pids_list = []; for (var i = 0; i < obj[‘response’][‘products’].length; i++) { var prd = obj[‘response’][‘products’][i]; var sku = prd[‘uniqueId’] pids_list.push(sku.replace(/\./g, “”)); } var impressionObj = { query: obj[‘searchMetaData’][‘queryParams’][‘q’], pids_list: pids_list }; Unbxd.track(impressionObj, ‘search_impression’); }`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        onPageLoad
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Callback function invoked every time the page content refreshes after initial load (e.g. applying sort, changing page size, paginating). Takes one argument (object) carrying entire result set including products and facets.
+      </td>
+
+      <td>
+        `function (obj) { var pids_list = []; for (var i = 0; i < obj[‘response’][‘products’].length; i++) { var prd = obj[‘response’][‘products’][i]; var sku = prd[‘uniqueId’] pids_list.push(sku.replace(/\./g, “”)); } var impressionObj = { query: obj[‘searchMetaData’][‘queryParams’][‘q’], pids_list: pids_list }; Unbxd.track(impressionObj, ‘search_impression’); }`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sanitizeQueryString
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Callback function used to sanitize the search query to handle special cases per customer requirement. Takes one argument (string) holding the searched query term.
+      </td>
+
+      <td>
+        `function (q) { return q.trim();; }`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        getFacetStats
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        Variable name in the stats object which holds min and max values for range facet.
+      </td>
+
+      <td>
+        `"facetstats"`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        processFacetStats
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Function used to leverage max and min values of range facets to implement slider behaviour. Takes one argument (object) holding all facet information.
+      </td>
+
+      <td>
+        `function (obj) { // any logic within }`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        setDefaultFilters
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Invoked on every data fetch call from unbxd search engine. Used to apply default filters like showing only in-stock products.
+      </td>
+
+      <td>
+        `function () { this.addFilter(“stock_availability”,”In Stock”); }`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        fields
+      </td>
+
+      <td>
+        array
+      </td>
+
+      <td>
+        List of product attribute names to fetch for matching products. Only include fields to save bandwidth.
+      </td>
+
+      <td>
+        `['title', 'unbxd_title', 'price', 'image_url', 'productUrl', 'doctype', 'saleprice', 'desktop_url', 'mobile_url', 'average_rating', 'min_price', 'max_price', 'price', 'sash_css_class', 'v_image_url', 'brand']`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        onNoResult
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Invoked when there are no matching products for the searched term. Takes one argument (object) holding result set including search term.
+      </td>
+
+      <td>
+        `function(obj){ this.compiledNoResultsTemp = Handlebars.compile(this.options.onNoResultTemp); jQuery(“#no-results-section”).html(this.compiledNoResultsTemp({ query: obj.searchMetaData.queryParams.q })); }`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        noEncoding
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set to true to enable encoding of URL params and subsequent decoding.
+      </td>
+
+      <td>
+        true/false (value depends on configuration)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        customReset
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Called when sorting results, changing view, or resetting all filters. No arguments.
+      </td>
+
+      <td>
+        `function (){ }`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bannerSelector
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector matching the merchandising banner slot on the page.
+      </td>
+
+      <td>
+        `#up-sell-banner-section`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bannerTemp
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        HTML template string used to apply promotional banner on the page. Input data: `{landingUrl:"", imageUrl:""}`
+      </td>
+
+      <td>
+        `<a href='{{{landingUrl}}}'><img src='{{imageUrl}}'/></a>`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bannerCount
+      </td>
+
+      <td>
+        number
+      </td>
+
+      <td>
+        Number of banners to be displayed on the page.
+      </td>
+
+      <td>
+        2
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sortContainerSelector
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector matching the sort section on the page.
+      </td>
+
+      <td>
+        `#sort-section`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sortOptions
+      </td>
+
+      <td>
+        array
+      </td>
+
+      <td>
+        Configurable sort options displayed on the page.
+      </td>
+
+      <td>
+        `[ { name: 'Popularity' }, { name: 'Low to High Price', field: 'price_min', order: 'asc' }, { name: 'High to Low Price', field: 'price_max', order: 'desc' } ]`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        sortContainerType
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        Indicates if selecting sort option is by click or selecting from dropdown.
+      </td>
+
+      <td>
+        `click` or `select`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **sortContainerTemp**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        HTML schema string for rendering the sort section. Input data example:
+      </td>
+
+      <td>
+        `json { options: [ {name: "Popularity", selected: true}, {name: "Low to High Price", field: "price_min", friendlyUrlText: "price-low", order: "asc", selected: false}, {name: "High to Low Price", field: "price_max", friendlyUrlText: "price-high", order: "desc", selected: false}, {name: "Newest First", field: "published_date", friendlyUrlText: "newest", order: "desc", selected: false}, {name: "Top Rated", field: "no_of_stars", friendlyUrlText: "ratings", order: "desc", selected: false} ] } ` HTML snippet: `html <span class="base" data-ui-id="page-title-wrapper">Search results {{#isNotEmptySearch query}}for: {{query}} <span class="product-count-holder">({{start}} – {{end}} of {{numberOfProducts}} products)</span>{{/isNotEmptySearch}}</span> <span class="ae-label" id="unbxd-sort-labelledby">Sort By: </span> <select aria-labelledby="unbxd-sort-labelledby" data-ae-blurbtype="select" data-ae-form-field="true"> {{#options}} <option {{#if selected}}selected="selected"{{/if}} unbxdsortField="{{field}}" unbxdsortValue="{{order}}"> {{name}} </option> {{/options}} </select> `
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **pageSize**
+      </td>
+
+      <td>
+        number
+      </td>
+
+      <td>
+        Number of products shown per page
+      </td>
+
+      <td>
+        24
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **pageSizeContainerSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector for the page size section
+      </td>
+
+      <td>
+        `#results-pagesize`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **pageSizeOptions**
+      </td>
+
+      <td>
+        array
+      </td>
+
+      <td>
+        List of available page size options (max 99 items per API call)
+      </td>
+
+      <td>
+        `json [ {name: "48 item", value: "48"}, {name: "72 items", value: "72"}, {name: "96 items", value: "96"} ] `
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **pageSizeContainerType**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        How page size option is selected: click or select
+      </td>
+
+      <td>
+        `click` or `select`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **pageSizeContainerTemp**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        HTML schema string for rendering the page size section. Input example:
+      </td>
+
+      <td>
+        `json { options: [ {name: "48 item", value: "48", selected: true}, {name: "72 items", value: "72", selected: false}, {name: "96 items", value: "96", selected: false} ] } ` HTML snippet: `html <span class="ae-label" id="unbxd-pageview-labelledby">Show: </span> <select aria-labelledby="unbxd-pageview-labelledby" data-ae-blurbtype="select" data-ae-form-field="true"> {{#options}} <option {{#if selected}}selected="selected"{{/if}} unbxdpagesize="{{value}}"> {{name}} </option> {{/options}} </select> `
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **viewTypeContainerTemp**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        HTML schema string for rendering page view section. Input example:
+      </td>
+
+      <td>
+        `json { options: [ {name: "Grid", value: "grid", selected: true}, {name: "List", value: "list", selected: false} ] } ` HTML snippet: `html <span class="title">View:</span> {{#options}} <a class="{{#if selected}}selected{{/if}}" unbxdviewtype="{{value}}" href="javascript:;">{{value}}</a> {{/options}} `
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **viewTypeContainerSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector matching the page view section
+      </td>
+
+      <td>
+        `#results-pageview`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **viewTypes**
+      </td>
+
+      <td>
+        array
+      </td>
+
+      <td>
+        Views available on the page. Examples: `['grid']`, `['list']`, or `['list', 'grid']`
+      </td>
+
+      <td>
+        Example values: `['grid']` or `['list']` or `['list','grid']`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **variants**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set to true to display product variants
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **variantsCount**
+      </td>
+
+      <td>
+        number
+      </td>
+
+      <td>
+        Number of variants to display per product
+      </td>
+
+      <td>
+        3
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **isSwatches**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set to true to display swatches
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **swatchesSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector for the swatches element
+      </td>
+
+      <td>
+        `.swatch-box`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **mappedFields**
+      </td>
+
+      <td>
+        object
+      </td>
+
+      <td>
+        Object mapping product attribute names for rendering
+      </td>
+
+      <td>
+        `json { "imageUrl": "imageUrl", "productUrl": "productUrl", "title": "title", "description": "description", "price": "price", "categoryPath": "categoryPath", "variantFields": { "imageUrl": "v_imageUrl", "productUrl": "v_productUrl", "title": "v_title", "price": "v_price", "groupBy": "variant_color", "swatchFields": { "swatch_background_image": "variant_overhead_swatch", "swatch_background_color": "variant_color", "swatch_click_image": "variant_image_array" } } } `
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **retainbaseParam**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        *
+      </td>
+
+      <td>
+        *
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **baseParams**
+      </td>
+
+      <td>
+        array
+      </td>
+
+      <td>
+        *
+      </td>
+
+      <td>
+        *
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **requestHeaders**
+      </td>
+
+      <td>
+        object
+      </td>
+
+      <td>
+        Request headers to send on Unbxd search response
+      </td>
+
+      <td>
+        *
+      </td>
+    </tr>
+  </tbody>
+</Table>
