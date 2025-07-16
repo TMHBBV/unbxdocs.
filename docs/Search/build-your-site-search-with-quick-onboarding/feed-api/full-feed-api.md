@@ -36,7 +36,7 @@ You can detect the feed endpoint for your site by navigating to the Manage > Con
 ```Text API Endpoint
 Method : POST
 
-End Point : {feed end point}/api/{siteKey}/upload/catalog/full
+End Point : {feed end point}/api/siteKey/upload/catalog/full
 
 Description : This API will upload your complete feed file as a single JSON file.
 ```
@@ -109,7 +109,7 @@ https://feed.unbxd.io/api/{siteKey}/upload/catalog/full \
 
 ### Sample Feed
 
-A typical  feed will contain many other attributes, which will have display, searchable, merchandisable, and unique attributes.
+A typical  feed will contain many other attributes, which will have **display**, **searchable**, **merchandisable**, and **unique attributes**.
 
 1. Here’s how a sample feed file with variants would appear.
 
@@ -181,11 +181,13 @@ A typical  feed will contain many other attributes, which will have display, sea
 
 After the upload is done, you can check the status of the uploaded feed. There are two ways to do it. Either by URL or via APIs.
 
-* For URLs, In the address field, type in [https://feed.unbxd.io/api/\{siteKey}/catalog/status](https://feed.unbxd.io/api/\{siteKey}/catalog/status).
-* To check the status of the last 10 uploads, type in\
-  [https://feed.unbxd.io/api/\{siteKey}/catalog/status?count=10](https://feed.unbxd.io/api/\{siteKey}/catalog/status?count=10)
-* To view the status of your upload using the Upload ID [https://feed.unbxd.io/api/\{siteKey}/catalog/\{uploadId}/status](https://feed.unbxd.io/api/\{siteKey}/catalog/\{uploadId}/status)\
-  NOTE: Once you get the response using the Upload ID, replace (uploadID).
+* For URLs, In the address field, type [in](https://feed.unbxd.io/api/%7BsiteKey%7D/catalog/status).
+* To check the status of the last 10 uploads, type [in](https://feed.unbxd.io/api/%7BsiteKey%7D/catalog/status?count=10).
+* To view the status of your upload using the Upload ID `https://feed.unbxd.io/api/%7BsiteKey%7D/catalog/%7BuploadId%7D/status`
+
+> 📘 NOTE
+>
+> Once you get the response using the Upload ID, replace (uploadID).
 
 > 📘 Note
 >
