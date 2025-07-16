@@ -64,7 +64,72 @@ Payload details:
 | experience\_pagetype | string       | Pagetype for widget. Possible values: `Home`, `Product`, `Category`, `Cart`, `Brand` based on the type of page on which the widget is used. |
 | experience\_widget   | string       | Widget type. Possible values: `WIDGET1`, `WIDGET2`, or `WIDGET3`.                                                                           |
 
-Product Click\
+## Search
+
+The search page event should be tracked when the user performs a search on site. It even includes selecting any option from Unbxd’s Autosuggest widget. It should track the query which user used to fetch the response (even the zero result queries should be tracked). Use the below code as a reference to call the Unbxd search track function.The visitor event will be fired from the SDK itself. If you have integrated the Unbxd analytics JS code, this event is tracked and pushed automatically, with no further action required.
+
+NOTE: In case of SDK integration, we do not have to add this event explicitly and is handled by the SDK itself and requestId is also handled by SDK integration. Please ensure that unbxdAnalytics flag is set as “true” to allow this event to fire automatically.
+
+```
+<script type="text/javascript">
+
+  UnbxdAnalyticsConf=window.UnbxdAnalyticsConf ||{};
+  UnbxdAnalyticsConf["query"]="{{search-query}}";
+
+  var payload = {
+  query: '{{search-query}}',
+  requestId: '{{unbxd-request-id}}'
+  }
+
+  if(Unbxd && typeof Unbxd.track === 'function') {
+    Unbxd.track('search', payload)
+  } else {
+    console.error('unbxdAnalytics.js is not loaded!')
+  }
+</script>
+```
+
+Payload Details:
+
+| Attribute Name | Datatype | What value to be passed                                                       |
+| -------------- | -------- | ----------------------------------------------------------------------------- |
+| `requestId`    | string   | To be extracted from Unbxd search API response headers, from `unx-request-id` |
+| `query`        | string   | The search query used by the user                                             |
+
+## Search Impressions
+
+The impressions events should be tracked whenever a new set of results are loaded on search listing page from the API response. It should have the information about the source of the page where results are being loaded and should contain the list of uniqueIds present in the response.
+
+NOTE: In case of SDK integration, we do not have to add this event explicitly and is handled by the SDK itself and requestId is also handled by SDK integration. Please ensure that unbxdAnalytics flag is set as “true” to allow this event to fire automatically.
+
+```
+<script type="text/javascript">
+	var payload = {
+		pids_list: '{{list-of-products-uniqueId}}',
+		query: '{{search-query}}',
+             requestId: '{{unbxd-request-id}}'
+	}
+	var action = 'search_impression'
+	if(Unbxd && typeof Unbxd.track === 'function') {
+		Unbxd.track(action, payload)
+	} else {
+		console.error('unbxdAnalytics.js is not loaded!')
+	}
+</script>
+```
+
+<br />
+
+Payload Details - Search Listing Page
+
+| Attribute Name | Datatype | What value to be passed                                                                                       |
+| -------------- | -------- | ------------------------------------------------------------------------------------------------------------- |
+| `requestId`    | string   | To be extracted from Unbxd search API response headers, from `unx-request-id`                                 |
+| `pids_list`    | string   | List of unique IDs of products loaded with current request. Pass an empty array if zero products are returned |
+| `query`        | string   | Search query for the search listing page                                                                      |
+
+## Product Click
+
 The click event should be tracked whenever a user clicks on any product to go to the product details page. It should have the information about the source of the product listing which will a recommendation widget in this case.
 
 ```
@@ -252,7 +317,7 @@ Payload details:
 | `facets`       | object   | Should contain key-value pairs of selected facet names and list of selected values |
 | `query`        | string   | Search query for the search listing page                                           |
 
-### Autosuggest
+## Autosuggest
 
 If the autocomplete feature on store is powered by Unbxd, then events originating from Unbxd Autosuggest Widget should pass additional metadata. This enables us to improve autocomplete suggestions over time. It is also used to generate reports on how well different types of suggestions are doing.
 
@@ -260,7 +325,7 @@ If the autocomplete feature on store is powered by Unbxd, then events originatin
 
 In this section we will give examples of events which may originate from the user’s interaction with Autosuggest widget and hence should send suggestion related metadata with payload. This will cover Javascript based approach for integrating the events.
 
-**Search**
+## **Search**
 
 Whenever a user selects any suggestion from Autosuggest widget and hits the form submit, this event should be tracked. It should also send additional information about the suggestion using autosuggestParams field in the payload.
 
@@ -401,7 +466,7 @@ if(Unbxd && typeof Unbxd.track === 'function') {
 </script>
 ```
 
-Add to Cart
+## Add to Cart
 
 ### Attributes for Add to Cart Tracking
 
