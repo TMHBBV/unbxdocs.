@@ -89,26 +89,23 @@ Boosting moves certain products higher in the list. Demoting pushes them down. T
 
 Pinned products stay in a fixed position on a page. They are not affected by ranking or rules. You can use this to promote key products or top sellers.
 
-Common Workflows\
-Setting Up Search
-Upload your product catalog.
+# Common Workflows
 
-Configure which product fields should be searchable (like title, brand, or category).
+## Setting Up Search
 
-Set up synonyms and auto-corrections.
+1. Upload your product catalog.
+2. Configure which product fields should be searchable (like title, brand, or category).
+3. Set up synonyms and auto-corrections and enable Unbxd search on your website.
 
-Enable search on your website.
+## Adding Product Recommendations
 
-Adding Product Recommendations\
-Decide where you want to show recommendations like home page, product page, and so on.
+1. Decide where you want to show recommendations, like the home page, product page, and so on.
+2. Select the type of recommendation like “Frequently Bought Together”.
+3. Enable personalization if needed.
+4. Monitor performance and adjust as needed.
 
-Select the type of recommendation like “Frequently Bought Together”.
+# Running a Merchandising Campaign
 
-Enable personalization if needed.
-
-Monitor performance and adjust as needed.
-
-Running a Merchandising Campaign\
 Define your goal like, promote new arrivals.
 
 Set up rules to boost, pin, or hide products.
