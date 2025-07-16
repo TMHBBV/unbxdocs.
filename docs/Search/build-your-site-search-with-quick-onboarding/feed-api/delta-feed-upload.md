@@ -119,12 +119,15 @@ Sample Response
 }
 ```
 
-After the upload is done, you can check the status of the uploaded feed. There are two ways to do it. Either by URL or via APIs. In the address field, type in [https://feed.unbxd.io/api/\{siteKey}/catalog/delta/status](https://feed.unbxd.io/api/\{siteKey}/catalog/delta/status)
+After the upload is done, you can check the status of the uploaded feed. There are two ways to do it. Either by URL or via APIs.
 
-* To check the status of the last 10 uploads, type in\
-  [https://feed.unbxd.io/api/\{siteKey}/catalog/delta/status?count=10](https://feed.unbxd.io/api/\{siteKey}/catalog/delta/status?count=10)
-* To view the status of your upload using the Upload ID: [https://feed.unbxd.io/api/\{siteKey}/catalog/delta/\{uploadId}/status](https://feed.unbxd.io/api/\{siteKey}/catalog/delta/\{uploadId}/status)\
-  NOTE: Once you get the response using the Upload ID, replace (uploadID).
+* In the address field, type in `https://feed.unbxd.io/api/{siteKey}/catalog/delta/status`
+* To check the status of the last 10 uploads, type in `https://feed.unbxd.io/api/{siteKey}/catalog/delta/status?count=10`
+* To view the status of your upload using the Upload ID:`https://feed.unbxd.io/api/{siteKey}/catalog/delta/{uploadId}/status`
+
+> 📘 NOTE
+>
+> Once you get the response using the Upload ID, replace (uploadID).
 
 > 📘 Note
 >
