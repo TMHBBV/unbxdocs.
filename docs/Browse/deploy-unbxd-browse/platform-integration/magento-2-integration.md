@@ -75,9 +75,9 @@ php bin/magento cache:flush
 
 To authenticate, use:
 
-* **Site Key**
-* **API Key**
-* **Secret Key**
+* Site Key: The unique identifier of a Site. Each site added on your dashboard will have a visible unique alphanumeric key
+* API Key: The unique identifier of the API calls made from an account. Unbxd provides only one API Key per account.
+* Secret Key: An additional securely generated key used in important request calls such as Product Feed upload. Secret Key is not exposed in the URL. Unbxd provides one Secret Key per account.
 
 You can find these in the Unbxd Console: `Manage > Configure Site > Keys`.
 
@@ -86,6 +86,24 @@ Steps:
 1. Go to `Unbxd > Setup`
 2. Enter keys in **General Settings**
 3. Click **Save Config**
+
+![](https://files.readme.io/04bf9f7b46facfbf1df11a8242b206d55c0b2d8446dccf5869c414aa3ebb3b51-image.png)
+
+<br />
+
+To authenticate:
+
+On the Unbxd tab, click Setup. In General Settings, type in the values for:
+
+* Site Key
+* Secret Key
+* API Key
+
+To know, where will you get your Site, Secret, or API keys from, refer to our Search Documentation.\
+Click Save Config.
+To know more, check the FEED APIs section.
+
+NOTE: All the keys other than the Site Key need to be saved somewhere as they would be hidden behind the asterisk value.
 
 ***
 
