@@ -1823,29 +1823,522 @@ You can configure the page size options to be shown using the “pageSizeOptions
 
     <tr>
       <td>
+        **Description**
+      </td>
+
+      <td>
+        The list of page size options to be shown
+
+        Note: Unbxd has a maximum limit of 99 products per api call.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```Text Default Value
+[{
+
+            name: ’12’,
+
+            value: ’12’
+
+        }, {
+
+            name: ’24’,
+
+            value: ’24’
+
+        }]
+```
+```Text Sample Values
+[
+
+                {
+
+                    name: ’48 item’,
+
+                    value: ’48’
+
+                }, {
+
+                    name: ’72 items’,
+
+                    value: ’72’
+
+                }, {
+
+                    name: ’96 items’,
+
+                    value: ’96’
+
+                }
+
+            ]
+```
+
+Configure whether you want the page size options to show up as a list in a dropdown or as individual clickable items using the “pageSizeContainerType” config.pageSizeContainerType:
+
+| **Field**           | **Value**                                                                        |
+| ------------------- | -------------------------------------------------------------------------------- |
+| **Data type**       | string                                                                           |
+| **Required**        | True (when page size section is enabled)                                         |
+| **Default Value**   | `select`                                                                         |
+| **Description**     | Indicates if the page size selection is done via click or a dropdown (`select`)  |
+| **Accepted Values** | `click` or `select`                                                              |
+| **click**           | When the page size section is styled as an anchor or any other clickable element |
+| **select**          | When the page size section is styled using a `<select>` element                  |
+
+You can further customize the page size render behaviour by providing a handlebars template for the same using the  “pageSizeContainerTemp” config
+
+pageSizeContainerTemp:
+
+| **Field**     | **Value**                                |
+| ------------- | ---------------------------------------- |
+| **Data type** | string                                   |
+| **Required**  | True (when page size section is enabled) |
+
+```Text Default Value
+[
+
+            ‘<select>’,
+
+            ‘{{#options}}’,
+
+            ‘{{#if selected}}’,
+
+            ‘<option value=”{{value}}” selected unbxdpageSize=”{{value}}”>{{name}}</option>’,
+
+            ‘{{else}}’,
+
+            ‘<option value=”{{value}}” unbxdpageSize=”{{value}}”>{{name}}</option>’,
+
+            ‘{{/if}}’,
+
+            ‘{{/options}}’,
+
+            ‘</select>’
+
+        ].join(”)
+```
+```Text Description
+String representation of the HTML schema on how the page size  section to be rendered
+
+
+*inputdata -> 
+
+{             
+
+ options: [{name: “48 item”, value: “48”, selected: true}
+
+ {name: “72 items”, value: “72”, selected: false}
+
+ {name: “96 items”, value: “96”, selected: false}
+
+ ]
+
+ }
+```
+```Text Sample Values
+<span class=”ae-label” id=”unbxd-pageview-labelledby”>Show: </span>
+
+<select aria-labelledby=”unbxd-pageview-labelledby” data-ae-blurbtype=”select”
+
+        data-ae-form-field=”true”>
+
+        {{#options}}
+
+        <option {{#if selected}}selected=”selected” {{/if}} unbxdpagesize=”{{value}}”>
+
+            {{name}}</option>
+
+        {{/options}}
+
+</select>
+```
+
+### Page View
+
+This section documents the different configs that can be used to configure the different views for displaying the products.
+
+If you want to show an option to toggle the product list view type, you can provide the CSS selector for the container element using the “viewTypeContainerSelector” config & the SDK will render it for you.
+
+viewTypeContainerSelector:
+
+| **Field**         | **Value**                                             |
+| ----------------- | ----------------------------------------------------- |
+| **Data type**     | string                                                |
+| **Required**      | True (if more than one page view is enabled)          |
+| **Default Value** | NA                                                    |
+| **Description**   | CSS selector of the page view section on your webpage |
+| **Sample Values** | `#results-pageview`                                   |
+
+You can configure the different view types to be shown using the “viewTypes” configviewTypes:
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Field**
+      </th>
+
+      <th>
+        **Value**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Data type**
+      </td>
+
+      <td>
+        array
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Required**
+      </td>
+
+      <td>
+        True (if `viewTypeContainerSelector` is provided)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Default Value**
+      </td>
+
+      <td>
+        NA
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Description**
+      </td>
+
+      <td>
+        Indicates all different views available on the page
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Sample Values**
+      </td>
+
+      <td>
+        * \`\[‘grid’]\` (only grid view)\<br>- \`\[‘list’]\` (only list view)\<br>- \`\[‘list’, ‘grid’]\` (both views)
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+You can further customize the render behaviour of the view type section by providing a handlebars template for the same using the  “viewTypeContainerTemp” configviewTypeContainerTemp:
+
+| **Field**     | **Value**                                                                  |
+| ------------- | -------------------------------------------------------------------------- |
+| **Data type** | string                                                                     |
+| **Required**  | True (only when there is an option to switch between views on the website) |
+
+```Text Default Value
+[
+
+            ‘{{#options}}’,
+
+            ‘
+
+‘,
+            ‘‘,
+
+            ‘‘,
+
+            ‘{{value}}’,
+
+            ‘‘,
+
+            ”,
+
+            ”,
+
+            ‘{{/options}}’
+
+        ].join(”),
+
+
+
+```
+```Text Description
+String representation of the HTML schema on how the page view  section to be rendered
+
+
+*inputdata -> 
+
+
+{             
+
+ options: [{name: “Grid”, value: “grid”, selected: true}
+
+ {name: “List”, value: “list”, selected: false}
+
+  ]
+
+ }
+```
+```Text Sample Values
+View:
+
+{{#options}}
+
+{{value}}
+
+{{/options}}
+```
+
+To view the description of the labels in the screenshot above, refer to the table below.
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Label**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **ID**
+      </td>
+
+      <td>
+        Indicates the unique identifier of the record
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Store View**
+      </td>
+
+      <td>
+        Indicates the store related to upload operation
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Created**
+      </td>
+
+      <td>
+        Indicates the calendar date and time the specific upload queue entry was created
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Finished**
+      </td>
+
+      <td>
+        Indicates the upload end time of the catalog
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Execution Time(s)**
+      </td>
+
+      <td>
+        Indicates the duration of time (in seconds) the upload took to complete
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Affected Entities**
+      </td>
+
+      <td>
+        Indicates the total number of products affected by the feed upload
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Number of Entities**
+      </td>
+
+      <td>
+        Indicates the total number of entities in the upload process
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Operation Type**
+      </td>
+
+      <td>
+        Indicates the status of a feed upload operation:
+      </td>
+    </tr>
+
+    <tr>
+      <td>
 
       </td>
 
       <td>
-        \[\{\[\{
+        * **Running**: Catalog is running and has been submitted to Unbxd
+      </td>
+    </tr>
 
-        <br />
+    <tr>
+      <td>
 
-        ```
-        ```
+      </td>
 
-        <br />
+      <td>
+        * **Indexing**: Catalog is being indexed
+      </td>
+    </tr>
 
-        ```
-        ```
+    <tr>
+      <td>
 
-        <br />
+      </td>
 
-        ```
-        ```
+      <td>
+        * **Complete**: Catalog has successfully uploaded
+      </td>
+    </tr>
 
-        ```
-        ```
+    <tr>
+      <td>
+        **Additional Information**
+      </td>
+
+      <td>
+        Indicates the information related to reindexing
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Action**
+      </td>
+
+      <td>
+        Indicates the action available for the specific entity:
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        * **View Details**: View information of the entity; allows ‘delete’ if upload not running
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        * **Delete**: Delete the reindexing activity (not allowed when upload is ‘Running’)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Clear Feed View**
+      </td>
+
+      <td>
+        Allows you to clear the Feed View queue
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **View Log**
+      </td>
+
+      <td>
+        Allows viewing, downloading, refreshing, and clearing log file entries for the entire cron job
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Actions**
+      </td>
+
+      <td>
+        Allows deletion of feed upload for multiple entities
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Filters**
+      </td>
+
+      <td>
+        Allows creating filters to refine the Feed View table
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Default View**
+      </td>
+
+      <td>
+        Allows resetting the Feed View table to its original settings
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Columns**
+      </td>
+
+      <td>
+        Allows selecting which columns to display in the Feed View table
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Log Viewer**
+      </td>
+
+      <td>
+        Provides operations with the log file:
+
+        * Flush the log file
+        * Refresh the log content
+        * Download the log file
+        * Displays current log file location and file size (in KB)
       </td>
     </tr>
   </tbody>
