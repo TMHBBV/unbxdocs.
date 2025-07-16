@@ -2955,7 +2955,6 @@ The following table summarises the various properties which can be  passed as se
 
         <br />
 
-        &#x20;&#x20;
         \*input data -> \{
 
         <br />
@@ -3042,7 +3041,7 @@ The following table summarises the various properties which can be  passed as se
       </td>
 
       <td>
-        # results-container
+        \#results-container
       </td>
     </tr>
 
@@ -3106,9 +3105,658 @@ The following table summarises the various properties which can be  passed as se
       </td>
 
       <td>
-          
-
+        \*\*
       </td>
     </tr>
   </tbody>
 </Table>
+
+```Text **searchResultSetTemp-Sample Value
+{{#products}}
+
+<div class=”unbxd_product_tile”>
+
+    <a href=”{{productUrl}}” class=”image-hover unbxd-product-image” title=”{{title}}” data-url=”{{productUrl}}”
+
+        unbxdparam_title=”{{ItemName}}” unbxdattr=”product” unbxdparam_sku=”{{uniqueId}}”
+
+        unbxdparam_prank=”{{unbxdprank}}”>
+
+        <img alt=”{{title}}” src=”{{imageurl}}”>
+
+   
+
+    <div class=”prod_price assortment_price”>
+
+        <div class=”clearfix subpend-1 price-display featured-pricing money” itemtype=”http://schema.org/Offer”
+
+            itemscope=”” itemprop=”offers”>
+
+            <span class=”bold”>Price: </span>
+
+            <span class=”bold m-large” itemprop=”price”><span
+
+                    class=”dollar”>$</span>{{price_min}}
+
+                – ${{price_max}}</span>
+
+        </div>
+
+    </div>
+
+    <div class=”suppend-1 prod_title”>
+
+        {{title}}
+
+    </div>
+
+    <div class=”subpend-1 product-ratings”><img class=”sli_ratings_scaled ae-img”
+
+            src/store/content/bazaarVoice/images/{{no_of_stars}}.gif”
+
+            alt=”{{no_of_stars}} star rating”>
+
+        ({{getReviewCount}}
+
+        review)</div>
+
+    <p class=”sli_grid_excerpt”>{{description}}</p>
+
+     </a>
+
+</div>
+
+{{/products}}
+```
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Config Name**
+      </th>
+
+      <th>
+        **Data Type**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+
+      <th>
+        **Sample Values / Notes**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **isAutoScroll**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set to true if you want autoscroll behavior and no pagination on the site
+      </td>
+
+      <td>
+        True  *When set to true,`heightDiffToTriggerNextPage` value is mandatory*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **heightDiffToTriggerNextPage**
+      </td>
+
+      <td>
+        number
+      </td>
+
+      <td>
+        Numeric pixels from bottom of page before next page results load
+      </td>
+
+      <td>
+        250  *When scroll position is less than 250 px from bottom, next results load*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **isClickNScroll**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set true to simulate “load more” results instead of autoscroll or paginated links
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **clickNScrollElementSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector for the button or link triggering the load more action
+      </td>
+
+      <td>
+        \#load-more-results
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **isPagination**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set true to enable traditional paginated links for previous and next pages
+      </td>
+
+      <td>
+        True *If both autoscroll and pagination are true, autoscroll takes precedence*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **setPagination**
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        Post results processing hook; function with 3 arguments: total pages (int), page size (int), current page (int)
+      </td>
+
+      <td>
+        Arguments to the function
+
+        <br />
+
+        1.Integer (total number of pages)
+
+        <br />
+
+        2. Integer (no of products per page)
+
+        <br />
+
+        3. Integer (current page number)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **paginationContainerSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector for the pagination section on the page
+      </td>
+
+      <td>
+        .page-nav-section
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **paginationTemp**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        String representing the htm scheme for pagination section on the page
+
+        <br />
+
+        \*Input data ->
+
+        <br />
+
+        \{
+
+        <br />
+
+        hasFirst: false
+
+        <br />
+
+        hasPrev: false
+
+        <br />
+
+        pages: (2) \[\{…}, \{…}]
+
+        <br />
+
+        totalPages: 112
+
+        <br />
+
+        hasNext: true
+
+        <br />
+
+        hasLast: true
+
+        <br />
+
+        productResultCount: 5361
+
+        <br />
+
+        }
+
+        <br />
+
+        <br />
+      </td>
+
+      <td>
+        ***
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```Text ***paginationTemp-Sample Value
+{{#if hasPrev}}
+
+<a href=”javascript:;” class=”pagination-link unbxd_prev” unbxdaction=”prev”>Previous</a><span
+
+    class=”seperator”>|</span>
+
+{{/if}}
+
+<span class=”pagination-label”>Page</span>
+
+{{#pages}}
+
+{{#if current}}
+
+<span class=”pagination-link”>{{page}}</span>
+
+{{else}}
+
+{{#unbxdIf page ../startPage}}
+
+{{#if ../hasFirst}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>&lt;&lt; {{page}}</a>
+
+{{else}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}}</a>
+
+{{/if}}
+
+{{else}}
+
+{{#unbxdIf page ../endPage}}
+
+{{#if ../hasLast}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}} &gt;&gt;</a>
+
+{{else}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}}</a>
+
+{{/if}}
+
+{{else}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}}</a>
+
+{{/unbxdIf}}
+
+{{/unbxdIf}}
+
+{{/if}}
+
+{{/pages}}
+
+<span class=”pagination-label”> of {{totalPages}}</span>
+
+{{#if hasNext}}
+
+<span class=”seperator”>|</span><a href=”javascript:;” class=”pagination-link unbxd_next” unbxdaction=”next”>Next</a>
+
+{{/if}}
+```
+
+<br />
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        **Config Name**
+      </th>
+
+      <th>
+        **Data Type**
+      </th>
+
+      <th>
+        **Description**
+      </th>
+
+      <th>
+        **Sample Values**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **facetMultiSelect**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set to true if facets can be multi-selected
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **facetContainerSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector matching the section containing the facets
+      </td>
+
+      <td>
+        \#facets\_container
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **facetCheckBoxSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector applying to all checkbox input elements for facets
+      </td>
+
+      <td>
+        \#facets\_container .facet\_value input\[type=checkbox]
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **selectedFacetContainerSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector matching the selected facet section on the page
+      </td>
+
+      <td>
+        \#applied-filter-section
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **facetMultilevel**
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Set to true for multilevel facets
+      </td>
+
+      <td>
+        true
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **facetMultilevelName**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        Field name of the multi-level facet field
+      </td>
+
+      <td>
+        CATEGORY
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **clearSelectedFacetsSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector matching clear all link to remove all applied filters
+      </td>
+
+      <td>
+        \#clear-all-filters
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **removeSelectedFacetSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector matching individual reset filter links in selected facet section
+      </td>
+
+      <td>
+        .unbxd-remove-item
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **loaderSelector**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        CSS selector for loader gif/image to indicate async loading
+      </td>
+
+      <td>
+        \#loader-icon
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **selectedFacetTemp**
+      </td>
+
+      <td>
+        string
+      </td>
+
+      <td>
+        String representation of the html schema to display the applied filters
+
+        <br />
+
+        \*input data ->
+
+        <br />
+
+        \{
+
+        <br />
+
+        filters: \[
+
+        <br />
+
+        &#x20;\{fcode: “Collection”, value: “Sherpa”, fsysname: “collection\_uFilter”}
+
+        <br />
+
+        ],
+
+        <br />
+
+        ranges:\[]
+
+        <br />
+
+        }
+      </td>
+
+      <td>
+        ***
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        onFacetLoad
+      </td>
+
+      <td>
+        function
+      </td>
+
+      <td>
+        call back function which would be invoked after painting of facets on the page. This function can be used to scroll the page to top on completion of loading, bind additional event handlers if custom accordion implementation is required
+
+        <br />
+
+        Function with one argument of type object which carriers information about the facets displayed.
+      </td>
+
+      <td>
+        <br />
+
+        <br />
+
+        ```
+        function (obj) {
+
+                        if (this.facetScrollTop) {
+
+                            jQuery(“html, body”).animate({
+
+                                scrollTop: 0
+
+                            }, 300);
+
+                            this.facetScrollTop = false;
+
+                        }
+
+        }
+        ```
+
+        <br />
+
+        <br />
+
+        <br />
+
+        <br />
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```Text ***selectedFacetTemp-Sample Values
+<ol class=”unbxd_selected_facets”>
+
+    <li class=”sli_facet_list_ele”>Your Selections:</li>
+
+    {{#filters}}
+
+    <li class=”sli_facet_list_ele”>
+
+        {{value}}<a href=”#”><img src=”/images/icons/x.jpg” alt=”Close” role=”button” tabindex=”0″
+
+            data-ae-blurbtype=”button” class=”ae-img unbxd-remove-item” unbxdParam_facetName=”{{fsysname}}” unbxdParam_facetValue=”{{value}}”></a></li>
+
+    {{/filters}}
+
+</ol>
+```
