@@ -882,3 +882,205 @@ To render the pagination section with the page links, you need to configure the 
 
 You can configure the handlebars template to be used for the pagination section using the “paginationTemp” config.
 
+| **Field**       | **Value**                                                       |
+| --------------- | --------------------------------------------------------------- |
+| **Data type**   | string                                                          |
+| **Required**    | false                                                           |
+| **Description** | String representing the HTML for pagination section on the page |
+|                 |                                                                 |
+
+```Text Default Value
+[
+
+            ‘{{#if hasFirst}}’,
+
+            ‘<span class=”unbxd_first” unbxdaction=”first”> &laquo; </span>’,
+
+            ‘{{/if}}’,
+
+            ‘{{#if hasPrev}}’,
+
+            ‘<span class=”unbxd_prev” unbxdaction=”prev”> &lt; </span>’,
+
+            ‘{{/if}}’,
+
+            ‘{{#pages}}’,
+
+            ‘{{#if current}}’,
+
+            ‘<span class=”unbxd_page highlight”> {{page}} </span>’,
+
+            ‘{{else}}’,
+
+            ‘<span class=”unbxd_page” unbxdaction=”{{page}}”> {{page}} </span>’,
+
+            ‘{{/if}}’,
+
+            ‘{{/pages}}’,
+
+            ‘<span class=”unbxd_pageof”> of </span>’,
+
+            ‘<span class=”unbxd_totalPages” unbxdaction=”{{totalPages}}”>{{totalPages}}</span>’,
+
+            ‘{{#if hasNext}}’,
+
+            ‘<span class=”unbxd_next” unbxdaction=”next”> &gt; </span>’,
+
+            ‘{{/if}}’,
+
+            ‘{{#if hasLast}}’,
+
+            ‘<span class=”unbxd_last” unbxdaction=”last”>&raquo;</span>’,
+
+            ‘{{/if}}’
+
+        ].join(”)
+```
+```Text Input Values
+The input data will have the following properties
+
+*Input data ->
+
+{
+
+hasFirst: false //if current-2 page is available to navigate
+
+hasPrev: false // if current – 1 page is available to navigate
+
+pages: (2) [{page: 1, current:false},{page: 2, current:true},{page:3,current:false} {…}]
+
+totalPages: 112
+
+hasNext: true // if current + 1 page is available to navigate
+
+hasLast: true // if current+2 page is available to navigate
+
+productResultCount: 5361 // total number of products
+
+
+}
+```
+```Text Sample Values
+{{#if hasPrev}}
+
+<a href=”javascript:;” class=”pagination-link unbxd_prev” unbxdaction=”prev”>Previous</a><span
+
+    class=”seperator”>|</span>
+
+{{/if}}
+
+<span class=”pagination-label”>Page</span>
+
+{{#pages}}
+
+{{#if current}}
+
+<span class=”pagination-link”>{{page}}</span>
+
+{{else}}
+
+{{#unbxdIf page ../startPage}}
+
+{{#if ../hasFirst}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>&lt;&lt; {{page}}</a>
+
+{{else}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}}</a>
+
+{{/if}}
+
+{{else}}
+
+{{#unbxdIf page ../endPage}}
+
+{{#if ../hasLast}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}} &gt;&gt;</a>
+
+{{else}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}}</a>
+
+{{/if}}
+
+{{else}}
+
+<a href=”javascript:;” class=”pagination-link” unbxdaction=”{{page}}”>{{page}}</a>
+
+{{/unbxdIf}}
+
+{{/unbxdIf}}
+
+{{/if}}
+
+{{/pages}}
+
+<span class=”pagination-label”> of {{totalPages}}</span>
+
+{{#if hasNext}}
+
+<span class=”seperator”>|</span><a href=”javascript:;” class=”pagination-link unbxd_next” unbxdaction=”next”>Next</a>
+
+{{/if}}
+```
+
+<Image align="center" src="https://files.readme.io/e43238164520fbfb2fec83e28a8bba4ed69e76d295b193c8bc52c318c8421350-div-pagination.png" />
+
+Infinite scroll based pagination
+
+To implement an infinite scroll or auto scroll based pagination, set the “isAutoScroll” config to “true”
+
+isAutoScroll:
+
+| **Field**           | **Value**                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Data type**       | boolean                                                                                                            |
+| **Required**        | false                                                                                                              |
+| **Description**     | Set it to `true` if you want infinite scroll or autoscroll behavior for the pagination.                            |
+| **Default Value**   | false                                                                                                              |
+| **Accepted Values** | `true` or `false`                                                                                                  |
+| **Note**            | When both `isAutoScroll` and `isPagination` configs are set to `true`, the `isAutoScroll` config takes precedence. |
+
+You can configure the height at which to trigger API call to fetch the next page results using the  “heightDiffToTriggerNextPage” config
+
+heightDiffToTriggerNextPage:
+
+| **Field**         | **Value**                                                                                                                  |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Data type**     | number                                                                                                                     |
+| **Required**      | True (when `isAutoScroll` is set to true)                                                                                  |
+| **Default Value** | 100                                                                                                                        |
+| **Description**   | Numeric representation in pixels from bottom of the page before which a call to fetch the next page results should kick in |
+| **Sample Values** | 250 — When the scroll position is less than 250 px from the bottom of the page, the next set of results will be loaded     |
+
+Load More button pagination
+
+If you want to show a “Load More” button to trigger pagination, set the  “isClickNScroll” config to true.
+
+isClickNScroll:
+
+<br />
+
+| **Field**         | **Value**                                                                                                         |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Data type**     | boolean                                                                                                           |
+| **Required**      | False                                                                                                             |
+| **Default Value** | false                                                                                                             |
+| **Description**   | Set this to true if you want to simulate a “load more” results behavior instead of auto scroll or paginated links |
+| **Sample Values** | true                                                                                                              |
+
+If “isClickNScroll” config is set to “true”, provide the “load more” button container selector using the “clickNScrollElementSelector” config.
+
+<Image align="center" src="https://files.readme.io/4d9db813d7aae2fa4c903550f887732773a6557efe3d16c9cb026fa56a6a146c-div-pagination-1.png" />
+
+clickNScrollElementSelector:
+
+| **Field**         | **Value**                                                             |
+| ----------------- | --------------------------------------------------------------------- |
+| **Data type**     | string                                                                |
+| **Required**      | True (if `isClickNScroll` is true)                                    |
+| **Default Value** | `#load-more`                                                          |
+| **Description**   | CSS selector of the button or link that triggers the load more action |
+| **Sample Values** | `#load_more_results`                                                  |
