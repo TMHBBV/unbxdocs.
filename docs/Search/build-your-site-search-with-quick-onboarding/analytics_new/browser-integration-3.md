@@ -25,7 +25,8 @@ With Browser Integration, you can insert the unique tracker, as a custom Javascr
 
 NOTE: UnbxdSiteName should be initialized with the correct site key for the environment of your account in Unbxd.
 
-Visitor\
+### Visitor
+
 This event is used to track shoppers and make their user profiles using browser cookies. To enable this event we just need to add Unbxd’s analytics JS library (as done above) inside the head section of all pages of the site.
 
 NOTE: The visitor event will be fired from the SDK itself. If you have integrated the Unbxd analytics JS code, this event is tracked and pushed automatically, with no further action required.
@@ -130,7 +131,8 @@ Payload:
 | string       | Quantity being added to the cart by the user.                                                                                                    |
 | string       | The unit price of the product (or variant, if a variant is selected).                                                                            |
 
-Cart Removal\
+### Cart Removal
+
 Whenever a user removes any product from cart or discards the whole cart. The cart removal event should be tracked individually for all products being removed.
 
 ```
@@ -158,7 +160,7 @@ Payload details:
 | qty                | string       | Quantity being removed by the user, as a string.                                                                                                 |
 | price              | string       | Unit price of the product (or variant, if a variant is selected), as a string.                                                                   |
 
-## Order
+### Order
 
 When a user completes the transaction and lands on the order confirmation/success page, the order event should be tracked for each individual product. There are 2 ways to trigger the order event and either of them can be used:
 
@@ -250,7 +252,7 @@ Payload details:
 | `facets`       | object   | Should contain key-value pairs of selected facet names and list of selected values |
 | `query`        | string   | Search query for the search listing page                                           |
 
-## Autosuggest
+### Autosuggest
 
 If the autocomplete feature on store is powered by Unbxd, then events originating from Unbxd Autosuggest Widget should pass additional metadata. This enables us to improve autocomplete suggestions over time. It is also used to generate reports on how well different types of suggestions are doing.
 
@@ -472,6 +474,57 @@ Parameter details:
 | `unbxdattr`           | Constant     | Specifies the type of event being captured. For product clicks, the value is “product” always.                     |
 | `unbxdparam_sku`      | Variable     | Specifies the uniqueId of the product as defined in the feed. You can get this from the UNBXD search API response. |
 | `experience_pagetype` | Variable     | Pagetype for the widget should be either Home, Product, Category,\_                                                |
+
+### Visitor
+
+This event is used to track shoppers and make their user profiles using browser cookies. To enable this event we just need to add Unbxd’s analytics JS library (as done above) inside the head section of all pages of the site.
+
+NOTE: The visitor event will be fired from the SDK itself. If you have integrated the Unbxd analytics JS code, this event is tracked and pushed automatically, with no further action required.
+
+The Visitor event is the first event that gets created when a shopper visits your site.  There are two types of shoppers we track:
+
+* First-time shoppers
+* Repeat shoppers
+
+### **Search**
+
+The search query event should be tracked when the user performs a search on site. It even includes selecting any option from Unbxd’s Autosuggest widget. It should track the query which user used to fetch the response (even the zero result queries should be tracked).
+
+NOTE: In case of Search SDK integration, we do not have to add this event explicitly and is handled hand in hand by the Search and Analytics SDK. Please ensure that unbxdAnalytics flag is set as “true” in Search SDK config, to allow this event to fire automatically with no further action for this event.
+
+Use the below code as a reference to be inserted in HTML tags for input box and search button divs respectively:
+
+1. Insert the unbxdattr=”sq” attribute within the \< input > tag of the search box to capture the search query typed by the shopper. For eg:
+
+```
+<input type="text" placeholder="Search" unbxdattr=”sq”/>
+```
+
+2. The unbxdattr=”sq\_bt” attribute is inserted on the link or search button (usually the magnification/search icon) that triggers search at the backend.
+
+```
+<button type = "submit" unbxdattr = "sq_bt" > Search </button>
+```
+
+Parameter details:
+
+| Attribute Name | Datatype | What value to be passed                                                            |
+| -------------- | -------- | ---------------------------------------------------------------------------------- |
+| `unbxdattr`    | constant | \`"sq"\` in case of input \`\<div>\`\<br>\`"sq\_bt"\` in case of button \`\<div>\` |
+
+### Search Impression
+
+A search impression event is fired when a search results page loads for the first time, and whenever results change on applying pagination, autoscroll, sort, and filters. For each of these actions, unique Ids of the products visible on the search page should be sent as payload.
+
+NOTE: In case of Search SDK integration, we do not have to add this event explicitly and is handled hand in hand by the Search and Analytics SDK. Please ensure that unbxdAnalytics flag is set as “true” in Search SDK config, to allow this event to fire automatically with no further action for this event.
+
+To track a search results page impression, insert the following HTML tag on the search product title on the results page on your site.
+
+```
+<li unbxdAttr="product" unbxdparam_sku="{{uniqueId-of-product}}">
+```
+
+<br />
 
 ### Product Click
 
