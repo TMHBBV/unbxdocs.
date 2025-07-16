@@ -386,7 +386,6 @@ In addition to the “searchResultContainer”, you can also configure the handl
 
         <br />
 
-        &#x20;&#x20;
         \*input data -> \{numberOfProducts: 5361
 
         <br />
@@ -480,161 +479,211 @@ In addition to the “searchResultContainer”, you can also configure the handl
         <br />
       </td>
     </tr>
-
-    <tr>
-      <td>
-        Sample Value
-      </td>
-
-      <td>
-        \[ grid: \[\{\{#products}}
-
-        \<div class=”unbxd\_product\_tile”>
-
-        &#x20;   \<a href=”\{\{productUrl}}” class=”image-hover unbxd-product-image” title=”\{\{title}}” data-url=”\{\{productUrl}}”
-
-        &#x20;       unbxdparam\_title=”\{\{ItemName}}” unbxdattr=”product” unbxdparam\_sku=”\{\{uniqueId}}”
-
-        &#x20;       unbxdparam\_prank=”\{\{unbxdprank}}”>
-
-        &#x20;       \<img alt=”\{\{title}}” src=”\{\{imageurl}}”>
-
-        &#x20; &#x20;
-
-        &#x20;   \<div class=”prod\_price assortment\_price”>
-
-        &#x20;       \<div class=”clearfix subpend-1 price-display featured-pricing money” itemtype=”http\://schema.org/Offer”
-
-        &#x20;           itemscope=”” itemprop=”offers”>
-
-        &#x20;           \<span class=”bold”>Price: \</span>
-
-        &#x20;    \<span class=”bold m-large” itemprop=”price”>\<span
-
-        &#x20;                   class=”dollar”>$\</span>\{\{price\_min}}
-
-        &#x20;               – $\{\{price\_max}}\</span>
-
-        &#x20;       \</div>
-
-        &#x20;   \</div>
-
-        &#x20;   \<div class=”suppend-1 prod\_title”>
-
-        &#x20;       \{\{title}}
-
-        &#x20;   \</div>
-
-        &#x20;   \<div class=”subpend-1 product-ratings”>\<img class=”sli\_ratings\_scaled ae-img”
-
-        &#x20;           src/store/content/bazaarVoice/images/\{\{no\_of\_stars}}.gif”
-
-        &#x20;           alt=”\{\{no\_of\_stars}} star rating”>
-
-        &#x20;       (\{\{getReviewCount}}
-
-        &#x20;       review)\</div>
-
-        &#x20;   \<p class=”sli\_grid\_excerpt”>\{\{description}}\</p>
-
-        &#x20;    \</a>
-
-        \</div>
-
-        \{\{/products}}].join(‘’),
-
-        List: \[\{\{#products}}
-
-        \<div class=”unbxd\_product\_list\_tile”>
-
-        &#x20;   \<div class=”unbxd\_col1″>
-
-        &#x20;       \<a href=”\{\{#getRelativePath productUrl}}\{\{/getRelativePath}}”>\<img
-
-        &#x20;               src=”\{\{#getRelativePath imageUrl}}\{\{/getRelativePath}}” alt=”\{\{ItemName}}” title=”\{\{ItemName}}”
-
-        &#x20;               unbxdparam\_title=”\{\{ItemName}}” unbxdattr=”product” unbxdparam\_sku=”\{\{uniqueId}}”
-
-        &#x20;               unbxdparam\_prank=”\{\{unbxdprank}}”>\</a>\</div>
-
-        &#x20;   \<div class=”unbxd\_col2″>
-
-        &#x20;       \<h2 class=”unbxd\_product\_title”>\<a href=”\{\{#getRelativePath productUrl}}\{\{/getRelativePath}}”
-
-        &#x20;               title=”\{\{ItemName}}” unbxdparam\_title=”\{\{ItemName}}” unbxdattr=”product” unbxdparam\_sku=”\{\{uniqueId}}”
-
-        &#x20;               unbxdparam\_prank=”\{\{unbxdprank}}”>\{\{ItemName}}\</a>\</h2>
-
-        &#x20;       \{\{#if ShortDescription}}\<div class=”unbxd\_product\_description”>\{\{#trim ShortDescription maxchar=400 }}
-
-        &#x20;           \{\{/trim}}\<span>…\<a href=”\{\{#getRelativePath productUrl}}\{\{/getRelativePath}}”>More\</a>\</span>\</div>\{\{/if}}
-
-        &#x20;       \<div class=”unbxd\_product\_price”>
-
-        &#x20;           \{\{#ifValidPrice OriginalPrice CurrentPrice}}
-
-        &#x20;           \{\{#isSalePriceOffered OriginalPrice CurrentPrice}}\<div>Was: \<span
-
-        &#x20;                   class=”was\_price”>$\{\{#priceFormatter OriginalPrice}}\{\{/priceFormatter}}\</span>\</div>
-
-        &#x20;           \<div class=”promo\_price”>Price: $\{\{#priceFormatter CurrentPrice}}\{\{/priceFormatter}}\</div>\{\{else}}
-
-        &#x20;           \<div class=”sell\_price”>Price: $\{\{#priceFormatter CurrentPrice}}\{\{/priceFormatter}}\</div>
-
-        &#x20;           \{\{/isSalePriceOffered}}
-
-        &#x20;           \{\{/ifValidPrice}}
-
-        &#x20;           \<div class=”unbxd-add-to-cart”>
-
-        &#x20;               \{\{#ifValidPrice OriginalPrice CurrentPrice}}
-
-        &#x20;               \<form action=”/shop.axd/AddToCartBP”>
-
-        &#x20;                   \<input type=”hidden” name=”edp\_no” value=”\{\{ProductId}}” />\<input type=”hidden” name=”qty”
-
-        &#x20;                       value=”1″ />
-
-        &#x20;                   \<input type=”image” class=”addToCart”
-
-        &#x20;                       src=”\{\{#getRelativePath “https\://www\.firststreetonline.com/images/buttons/addToCart.png”}}\{\{/getRelativePath}}”
-
-        &#x20;                       value=”Submit” alt=”\{\{ItemName}}” unbxd\_variant\_count=”\{\{variantCount}}”
-
-        &#x20;                       unbxd\_product=”\{\{ProductId}}” />
-
-        &#x20;               \</form>
-
-        &#x20;               \{\{else}}
-
-        &#x20;               \<a href=”\{\{#getRelativePath productUrl}}\{\{/getRelativePath}}” unbxdparam\_title=”\{\{ItemName}}”
-
-        &#x20;                   unbxdattr=”product” unbxdparam\_sku=”\{\{uniqueId}}” unbxdparam\_prank=”\{\{unbxdprank}}”
-
-        &#x20;                   class=”unbxd-clickable-text”>\<span>Click for More Info\</span>\</a>
-
-        &#x20;               \{\{/ifValidPrice}}
-
-
-        &#x20;           \</div>
-
-        &#x20;       \</div>
-
-        &#x20;   \</div>
-
-        &#x20;   \<div class=”clear”>\</div>
-
-        \</div>
-
-        \{\{/products}}
-
-        ].join(‘’)
-
-        ]
-      </td>
-    </tr>
   </tbody>
 </Table>
+
+```Text Sample Value
+Properties in the input object, 
+
+
+numberOfProducts:number ->  Total Count of products matching the search term or browse location
+
+Start:number ->  starting position of the result in the array (this would change while paginating through pages)
+
+Products:array -> Product result data 
+
+
+*input data -> {numberOfProducts: 5361
+
+start: 0 
+
+products: [
+
+{
+
+productUrl: “/shop/prod/mens-spring-step-casual-shoes/423424.htm”
+
+was_price_min: 69.95
+
+title: “Mens Spring Step  Casual Shoes”
+
+was_price_max: 69.95
+
+uniqueId: “ZTZ47C”
+
+price_max: 69.95
+
+brand: [“Spring Step”]
+
+price_min: 69.95
+
+more_colors_available: “true”
+
+imageUrl: [“/images/store/product/images/563794479patrick.jpg”]
+
+variantTotal: 5
+
+score: 0.4200723
+
+relevantDocument: “parent”
+
+variantCount: 5
+
+unbxdprank: 1
+
+}]
+
+unbxdparam_requestId: null
+
+}
+
+Sample Value
+
+[ grid: [{{#products}}
+
+<div class=”unbxd_product_tile”>
+
+    <a href=”{{productUrl}}” class=”image-hover unbxd-product-image” title=”{{title}}” data-url=”{{productUrl}}”
+
+        unbxdparam_title=”{{ItemName}}” unbxdattr=”product” unbxdparam_sku=”{{uniqueId}}”
+
+        unbxdparam_prank=”{{unbxdprank}}”>
+
+        <img alt=”{{title}}” src=”{{imageurl}}”>
+
+   
+
+    <div class=”prod_price assortment_price”>
+
+        <div class=”clearfix subpend-1 price-display featured-pricing money” itemtype=”http://schema.org/Offer”
+
+            itemscope=”” itemprop=”offers”>
+
+            <span class=”bold”>Price: </span>
+
+     <span class=”bold m-large” itemprop=”price”><span
+
+                    class=”dollar”>$</span>{{price_min}}
+
+                – ${{price_max}}</span>
+
+        </div>
+
+    </div>
+
+    <div class=”suppend-1 prod_title”>
+
+        {{title}}
+
+    </div>
+
+    <div class=”subpend-1 product-ratings”><img class=”sli_ratings_scaled ae-img”
+
+            src/store/content/bazaarVoice/images/{{no_of_stars}}.gif”
+
+            alt=”{{no_of_stars}} star rating”>
+
+        ({{getReviewCount}}
+
+        review)</div>
+
+    <p class=”sli_grid_excerpt”>{{description}}</p>
+
+     </a>
+
+</div>
+
+{{/products}}].join(‘’),
+
+List: [{{#products}}
+
+<div class=”unbxd_product_list_tile”>
+
+    <div class=”unbxd_col1″>
+
+        <a href=”{{#getRelativePath productUrl}}{{/getRelativePath}}”><img
+
+                src=”{{#getRelativePath imageUrl}}{{/getRelativePath}}” alt=”{{ItemName}}” title=”{{ItemName}}”
+
+                unbxdparam_title=”{{ItemName}}” unbxdattr=”product” unbxdparam_sku=”{{uniqueId}}”
+
+                unbxdparam_prank=”{{unbxdprank}}”></a></div>
+
+    <div class=”unbxd_col2″>
+
+        <h2 class=”unbxd_product_title”><a href=”{{#getRelativePath productUrl}}{{/getRelativePath}}”
+
+                title=”{{ItemName}}” unbxdparam_title=”{{ItemName}}” unbxdattr=”product” unbxdparam_sku=”{{uniqueId}}”
+
+                unbxdparam_prank=”{{unbxdprank}}”>{{ItemName}}</a></h2>
+
+        {{#if ShortDescription}}<div class=”unbxd_product_description”>{{#trim ShortDescription maxchar=400 }}
+
+            {{/trim}}<span>…<a href=”{{#getRelativePath productUrl}}{{/getRelativePath}}”>More</a></span></div>{{/if}}
+
+        <div class=”unbxd_product_price”>
+
+            {{#ifValidPrice OriginalPrice CurrentPrice}}
+
+            {{#isSalePriceOffered OriginalPrice CurrentPrice}}<div>Was: <span
+
+                    class=”was_price”>${{#priceFormatter OriginalPrice}}{{/priceFormatter}}</span></div>
+
+            <div class=”promo_price”>Price: ${{#priceFormatter CurrentPrice}}{{/priceFormatter}}</div>{{else}}
+
+            <div class=”sell_price”>Price: ${{#priceFormatter CurrentPrice}}{{/priceFormatter}}</div>
+
+            {{/isSalePriceOffered}}
+
+            {{/ifValidPrice}}
+
+            <div class=”unbxd-add-to-cart”>
+
+                {{#ifValidPrice OriginalPrice CurrentPrice}}
+
+                <form action=”/shop.axd/AddToCartBP”>
+
+                    <input type=”hidden” name=”edp_no” value=”{{ProductId}}” /><input type=”hidden” name=”qty”
+
+                        value=”1″ />
+
+                    <input type=”image” class=”addToCart”
+
+                        src=”{{#getRelativePath “https://www.firststreetonline.com/images/buttons/addToCart.png”}}{{/getRelativePath}}”
+
+                        value=”Submit” alt=”{{ItemName}}” unbxd_variant_count=”{{variantCount}}”
+
+                        unbxd_product=”{{ProductId}}” />
+
+                </form>
+
+                {{else}}
+
+                <a href=”{{#getRelativePath productUrl}}{{/getRelativePath}}” unbxdparam_title=”{{ItemName}}”
+
+                    unbxdattr=”product” unbxdparam_sku=”{{uniqueId}}” unbxdparam_prank=”{{unbxdprank}}”
+
+                    class=”unbxd-clickable-text”><span>Click for More Info</span></a>
+
+                {{/ifValidPrice}}
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class=”clear”></div>
+
+</div>
+
+{{/products}}
+
+].join(‘’)
+
+]
+```
 
 <br />
 
@@ -647,3 +696,189 @@ Sorting allows you to rearrange the search results based on certain fields in a 
 To render the Sort By feature, you need to configure the CSS selector of the Sort By container in your webpage. For this you can use the “sortContainerSelector” config.
 
 sortContainerSelector:
+
+| **Field**        | **Value**                                        |
+| ---------------- | ------------------------------------------------ |
+| **Required**     | false                                            |
+| **Default**      | NA                                               |
+| **Description**  | CSS selector of the sort section in your webpage |
+| **Sample Value** | `#sort_section`                                  |
+
+You can configure the list of sort by options to be displayed using the “sortOptions” config.
+
+sortOptions:
+
+| **Field**                        | **Value**                                                                                                                                |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Data type**                    | array                                                                                                                                    |
+| **Required**                     | false                                                                                                                                    |
+| **Description**                  | List of sort by options to be displayed on the web                                                                                       |
+| **Sample Value / Default Value** | `[ { name: 'Relevancy' }, { name: 'Price: H-L', field: 'price', order: 'desc' }, { name: 'Price: L-H', field: 'price', order: 'asc' } ]` |
+
+<br />
+
+You can configure whether the sort by options should be shown as a dropdown or as individual clickable items using the “sortContainerType” config.
+
+sortContainerType:
+
+| **Field**           | **Value**                                                                                             |
+| ------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Data type**       | string                                                                                                |
+| **Required**        | True (only if sort is applicable)                                                                     |
+| **Default**         | `select`                                                                                              |
+| **Description**     | Used to indicate if the sort option is implemented as a select dropdown or individual clickable items |
+| **Accepted Values** | `click` or `select`                                                                                   |
+| **click**           | When the sort is styled as an anchor or any other clickable element                                   |
+| **select**          | When the sort section is styled using a `<select>` element                                            |
+
+<br />
+
+You can further customize the HTML of the sort by options by providing a handlebars template in the “sortContainerTemp” config.
+
+sortContainerTemp:
+
+<br />
+
+| **Field**              | **Value**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Data type**          | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Required**           | True (only if sort is applicable)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Default Value**      | `'{{#options}}', '{{#if selected}}', '{{name}}', '{{else}}', '{{name}}', '{{/if}}', '{{/options}}'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Description**        | String representation of the HTML schema on how the sort section is to be rendered.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Input Value**        | An array of sort option objects is passed as input to the template. The currently selected sort option will have the `selected` property set to `true`.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Input Data Example** | `json { "options": [ { "name": "Popularity", "selected": true }, { "name": "Low to High Price", "field": "price_min", "friendlyUrlText": "price-low", "order": "asc", "selected": false }, { "name": "High to Low Price", "field": "price_max", "friendlyUrlText": "price-high", "order": "desc", "selected": false }, { "name": "Newest First", "field": "published_date", "friendlyUrlText": "newest", "order": "desc", "selected": false }, { "name": "Top Rated", "field": "no_of_stars", "friendlyUrlText": "ratings", "order": "desc", "selected": false } ] } ` |
+| **Sample Value**       | `html Search results {{#if query}}for: {{query}} ({{start}} – {{end}} of {{numberOfProducts}} products){{/if}} Sort By: {{#options}} {{name}} {{/options}} `                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+### Pagination
+
+Pagination displays the right set of products with respect to the number of products shown on one page(rows parameter).
+
+You can configure the different pagination sections in a certain way.
+
+Traditional Based Pagination
+
+This traditional type of pagination displays the set number of products on one page.
+
+<Image align="center" className="border" border={true} width="80% " src="https://files.readme.io/03060a9385ad3034227f28b36dae8127ef4a3b243a596e4f81fa515f80016d72-Pagination-749x1024.png" />
+
+<br />
+
+isPagination:
+
+To implement a traditional page number based pagination, set the “isPagination” config to “true”.
+
+| **Field**           | **Value**                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| **Data type**       | boolean                                                                              |
+| **Required**        | false                                                                                |
+| **Default**         | false                                                                                |
+| **Description**     | Set it to `true` if you need traditional paginated links for previous and next pages |
+| **Default Value**   | false                                                                                |
+| **Accepted Values** | `true` or `false`                                                                    |
+
+setPagination:
+
+The user can be redirected to another page after clicking a page link which is configured using ‘setPagination’. This is a callback function.
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        **Field**
+      </th>
+
+      <th>
+        **Value**
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **Data type**
+      </td>
+
+      <td>
+        function
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Required**
+      </td>
+
+      <td>
+        false
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Default**
+      </td>
+
+      <td>
+        NA
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Description**
+      </td>
+
+      <td>
+        Post-results processing hook to extend custom behavior. It is a function with three arguments:
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        1. `totalNumberOfProducts`: Integer indicating the total number of products
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        2. `pageSize`: Integer indicating the number of products per page
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        3. `currentPage`: Integer indicating the current page number
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+### paginationContainerSelector:
+
+To render the pagination section with the page links, you need to configure the CSS selector of the pagination container in your web page using “paginationContainerSelector”.
+
+| **Field**         | **Value**                                              |
+| ----------------- | ------------------------------------------------------ |
+| **Data type**     | string                                                 |
+| **Required**      | true (only if `isPagination` is true)                  |
+| **Default Value** | NA                                                     |
+| **Description**   | CSS selector of the pagination section on your webpage |
+| **Sample Values** | `#pagination_section`                                  |
+
+### paginationTemp:
+
+You can configure the handlebars template to be used for the pagination section using the “paginationTemp” config.
+
