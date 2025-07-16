@@ -76,3 +76,22 @@ The above JS snippet needs to be added in a tag and also enable Built-In Variabl
 * TagName: UnbxdAnalyticsScript
 * TagType: Custom HTML Tag
 * Trigger: AllPagesPageView
+
+## Search Query Tracker
+
+A Search hit event is tracked to understand the query and intent of your visitors. Each search
+
+query is tracked to enable per-query analytics of the visitor. A typical search hit event involves:
+
+SearchQueryTrigger
+
+Through GTM to integrate this event we need to follow below approach:
+
+Create Trigger in GTM to catch the search Query on form hit.\
+Trigger Configuration:
+
+TriggerName: UnbxdSearchQueryTrigger
+
+Trigger Type: Custom Event
+
+Event Name: SearchQuery                                                                                                                                TriggerFiresOn: All custom events
